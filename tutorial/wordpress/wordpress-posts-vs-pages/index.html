@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="This chapter of WordPress Tutorial explains WordPress Posts and Pages and lists differences between them so that you can decide WordPress Posts vs. Pages.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Posts vs Pages - WordPress Tutorial - CodeTab",
+        "headline" : "Posts vs Pages - WordPress Tutorial - CodeTab",
+        "description" : "This chapter of WordPress Tutorial explains WordPress Posts and Pages and lists differences between them so that you can decide WordPress Posts vs. Pages.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 03:20:00 +0530 IST",
+        "dateModified" : "2019-01-11 03:20:00 +0530 IST",
+        "url" : "/tutorial/wordpress/wordpress-posts-vs-pages/",
+        "wordCount" : "1173",
+        "keywords" : [ "wordpress posts","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Posts vs Pages - WordPress Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WordPress Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress/" class="toc-page text-muted ">
+            About WordPress
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift-wordpress/" class="toc-page text-muted ">
+            OpenShift WordPress Tutorial
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-installation/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-settings/" class="toc-page text-muted ">
+            Settings
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/" class="toc-page text-danger ">
+            Posts Vs Pages
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-themes/" class="toc-page text-muted ">
+            Themes
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-plugins/" class="toc-page text-muted ">
+            Plugins
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-w3-total-cache" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        W3 Total Cache
+    </a>
+    
+    <div id="tutorial-wordpress-w3-total-cache" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/" class="toc-page dropdown-item text-muted">
+            W3 Total Cache Settings
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/" class="toc-page dropdown-item text-muted">
+            W3 Total Cache Browser Cache
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/" class="toc-page dropdown-item text-muted">
+            W3 Total Cache Minify Settings
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/" class="toc-page dropdown-item text-muted">
+            Performance Analyze
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-seo" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Search Engine Optimization
+    </a>
+    
+    <div id="tutorial-wordpress-seo" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/seo/seo-tips/" class="toc-page dropdown-item text-muted">
+            SEO Tips
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/" class="toc-page dropdown-item text-muted">
+            SEO Plugin
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-webmaster-tools" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Web Master Tools
+    </a>
+    
+    <div id="tutorial-wordpress-webmaster-tools" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/" class="toc-page dropdown-item text-muted">
+            Google Analytics
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/webmaster-tools/google-webmaster-tools/" class="toc-page dropdown-item text-muted">
+            Google Webmaster Tools
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-import" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Import Static Site
+    </a>
+    
+    <div id="tutorial-wordpress-import" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/import/import-static-html-site/" class="toc-page dropdown-item text-muted">
+            Import Static HTML Site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/import/child-theme/" class="toc-page dropdown-item text-muted">
+            Child Theme
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/import/dynamic-stylesheets/" class="toc-page dropdown-item text-muted">
+            Dynamic Stylesheets
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-backup" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Backup
+    </a>
+    
+    <div id="tutorial-wordpress-backup" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/" class="toc-page dropdown-item text-muted">
+            Backup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/" class="toc-page dropdown-item text-muted">
+            Dropbox Backup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/" class="toc-page dropdown-item text-muted">
+            Restore, Clone, Migrate
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-openshift" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        OpenShift Cloud
+    </a>
+    
+    <div id="tutorial-wordpress-openshift" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/install-source/" class="toc-page dropdown-item text-muted">
+            OpenShift WordPress Install Source
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/dns-setup/" class="toc-page dropdown-item text-muted">
+            OpenShift DNS Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/" class="toc-page dropdown-item text-muted">
+            OpenShift RHC Client Tools
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/linux-primer/" class="toc-page dropdown-item text-muted">
+            OpenShift Linux Primer
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<p>In earlier chapters, we learned how to install and setup WordPress site
+on OpenShift cloud platform. Now, we are ready to add contents - Posts,
+Pages and Media - to the WordPress site.</p>
+
+<p>Let&rsquo;s add a Post to know the process and then, understand the
+differences between WordPress Posts and WordPress Pages.</p>
+
+<h2 id="wordpress-posts">WordPress Posts</h2>
+
+<p>Open <strong>Dashboard</strong> → <strong>Posts</strong> to display the list of posts from the
+site.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-posts.png" alt="WordPress Posts listing" />
+</figure>
+
+
+<p>Use <strong>Add New</strong> to add a new post. <strong>Add New</strong> opens the Visual Editor.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-addnew.png" alt="WordPress Posts - WordPress Visual Editor" />
+</figure>
+
+
+<p>WordPress Visual Editor has all the standard styling options that we
+find in any standard visual editor. One of the useful features is
+<strong>Distraction Free Writing Mode</strong>. Click on
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-fullscreen.png" alt="" />
+</figure>
+ button from the format bar to open the
+editor in full screen mode, which is useful when we use the editor for
+content creation.</p>
+
+<p>As we have set custom structure /%category%/%postname%/ for the
+permalinks, WordPress has set permalink for the above post as
+/uncategorized/ornage-is-new-black/. We can edit the permalink, but we
+suggest leaving that to the default value.</p>
+
+<p><strong>Add Media</strong> button opens <strong>Insert Media pop-up window</strong>, where we may
+drop media files to upload the files to Media Library and then insert
+them to the post. Media pop-up also has  <strong>Media Library</strong> tab where we
+may select existing media files from the Media Library. While inserting
+media files to a post, we may choose to insert single media file or
+there is also an option to create a gallery. We can use that to group
+multiple media files as a Media Gallery.</p>
+
+<p>In the editor, <strong>Text</strong> tab next to the <strong>Visual</strong> tab switches the
+editor from the visual to text mode, which shows the HTML source of the
+post and we can use it add HTML contents.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Publish section allows us to set the status of the published post.
+Allowed values are:</p>
+
+<ul>
+<li><p><strong>Status</strong> - post status may be <strong>Draft</strong> or <strong>Pending Review</strong>.</p></li>
+
+<li><p><strong>Visibility</strong> - post may be <strong>Public</strong>, <strong>Private</strong> and <strong>Password
+Protected</strong>.</p></li>
+
+<li><p><strong>Publish</strong> - post either published <strong>Immediately</strong> or on a
+specified <strong>Date and Time</strong>.</p></li>
+</ul>
+
+<p>While editing a post, WordPress auto saves the post contents as Draft to
+the MySQL database table so that we do not loose the changes. Once
+completed, click <strong>Publish</strong> to save the post. Status of the post is set
+to the value in <strong>Status</strong>, <strong>Visibility</strong> and <strong>Publish</strong> fields. After
+publish, WordPress switches Add post screen to Edit Post screen with a
+<strong>View Post</strong> option.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-postpublish.png" alt="WordPress Posts - WordPress Edit Post" />
+</figure>
+
+
+<p>After the publish, we may continue editing the post and also change the
+status and other fields and republish again.</p>
+
+<p>Apart from the standard format, posts can have others. In the Themes
+that supports Post Formats, they change the look and feel of the posts.
+For example, Aside typically has no title and Gallery presents a gallery
+of images, etc.</p>
+
+<p>Post deletion is a two steps process. Delete the post to move it to the
+Trash and then delete it permanently from the Trash.</p>
+
+<h2 id="wordpress-categories-and-tags">WordPress Categories and Tags</h2>
+
+<p>To the WordPress Posts, we can add two attributes - Categories and Tags
+- to distinguish or group them.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-catexample.png" alt="WordPress Posts - WordPress category example" />
+</figure>
+
+
+<p><strong>WordPress Categories</strong> are hierarchical. In this example, Music,
+Television and Uncategorized (default category) are top level
+categories, while Movie and Serial, which are also categories, are sub
+categories of parent category Television.</p>
+
+<p><strong>WordPress Tags</strong> are words that we may attach to a post. Tags are
+non-hierarchical.</p>
+
+<p>To create and edit categories and tags, use <strong>Categories</strong> and <strong>Tags</strong>
+dashboard menu options or <strong>Add Category</strong> or <strong>Add Tags</strong> links in
+<strong>Edit Post</strong> screen. To the example post, Orange is the new black, we
+may add <strong>Serial</strong> as category and attach <strong>comedy-drama</strong>, <strong>crime</strong> as
+tags. Posts can have multiple categories and multiple tags. When we add
+a category - Serial - to the example post, it updates the permalink. To
+the permalink, it not only adds the serial but also television, the
+parent category of serial.
+<code>http://quickstart-wordpressguide.rhcloud.com/television/serial/orange-is-new-black/.</code></p>
+
+<h2 id="wordpress-media-library">WordPress Media Library</h2>
+
+<p>Use <strong>Dashboard</strong> → <strong>Media</strong> to upload media files - images, video,
+audio - to WordPress Media Library. We can also upload documents and
+even text files. To upload, drag and drop the media file. In the
+<strong>Edit</strong> screen, we can add caption, alternate text and description to a
+media and also we can attach it a post or page. Media Library screen is
+similar to that of posts.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-media.png" alt="WordPress Posts - WordPress Media Library listing" />
+</figure>
+
+
+<p><strong>Media File URL</strong></p>
+
+<p>WordPress stores Posts and Pages in a database table called
+<strong>wp_posts</strong>. However, media files are handled differently. WordPress
+stores media meta data like ID, caption, description, permalink in
+database table wp_posts (yes that&rsquo;s correct, in wp_posts!), but saves
+the uploaded media files in a file directory called
+<code>wp-content/uploads/</code>. That&rsquo;s why we always find wp-content/uploads in a
+media file URL -
+<code>http://quickstart-wordpressguide.rhcloud.com/wp-content/uploads/DSC-0834.jpg</code></p>
+
+<h2 id="wordpress-post-vs-page">WordPress Post vs. Page</h2>
+
+<p>WordPress Pages are the special type of posts - we say this because, in
+WordPress both posts and pages live in same database table wp_posts -
+however they are different from the posts in many aspects. In this
+section, we explain the differences between the two so that you can
+choose between them.</p>
+
+<p>Page life cycle is same as posts. Use <strong>Dashboard</strong> → <strong>Pages</strong> to list
+or add pages as we done with the posts.</p>
+
+<p>Let&rsquo;s now understand the dissimilarities between the two:</p>
+
+<ul>
+<li><p>WordPress Posts are suitable for blogs, which follow a chronological
+order, while WordPress Pages are suitable for static contents like
+About us, Privacy, which are less time-dependent.</p></li>
+
+<li><p>WordPress Posts are usually displayed in reverse time sequence, with
+latest posts first. WordPress Pages do not follow any such order.</p></li>
+
+<li><p>To navigate, Posts have <strong>Next Post</strong> and <strong>Previous Post</strong> links in
+their footer, on the other hand, WordPress Pages do not have such
+navigation links.</p></li>
+
+<li><p>WordPress Posts can have categories and tags, but pages cannot have
+categories and also tags. However, a WordPress Page can have another
+page as its parent.</p></li>
+
+<li><p>Hierarchy among WordPress Posts is maintained with the help of
+categories. Among WordPress Pages, hierarchy is achieved through
+parent page.</p></li>
+</ul>
+
+<p><strong>CodeTab Posts are Pages !</strong></p>
+
+<p>As of now, all the posts in our site <strong>www.codetab.org</strong> are WordPress
+Pages!</p>
+
+<p>Reason being; we create our tutorials in Fedora Publican, a DocBook
+publishing toolkit. Publican outputs the book to HTML, and we import the
+entire set to WordPress as Pages. In case, we upload them as posts, then
+the chapter and section ordering breaks as HTML file&rsquo;s time stamp is
+taken as blog date.</p>
+
+<p>Sometimes, we may also break lengthy chapter into two and then,
+maintaining order becomes even more difficult if they are posts. No such
+issue with pages.</p>
+
+<p>Earlier we told that WordPress Pages do not come with navigational links
+in the footer. Then, how come our pages have a navigational footer!
+That nice looking navigational bar is not added by the WordPress; it is
+by Publican.</p>
+
+<script>
+    console.log("slot C"); 
+</script>
+
+<p>To sum up, if articles are blogs and add them regularly, then create or
+upload them as WordPress Posts. When our articles are grouped as a book,
+then upload them as WordPress Pages.</p>
+
+<p>In the next chapter, we install and setup a new theme for the site.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

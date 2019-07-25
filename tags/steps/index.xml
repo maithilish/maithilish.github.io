@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Steps on Codetab</title>
+    <link>http://www.codetab.org/tags/steps/</link>
+    <description>Recent content in Steps on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jan 2019 05:01:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/steps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Steps - Scoopi Web Scraper - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/</link>
+      <pubDate>Sat, 12 Jan 2019 05:01:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/</guid>
+      <description>Steps So far, we explored locators to define the pages to scrape, tasks to execute and dataDef to parse data from the pages. But, we haven&amp;rsquo;t explained how Scoopi executes tasks and scrape data.
+Scoopi is designed to execute tasks as workflow which is normally referred as steps which in turn consists of multiple step. By default, Scoopi ships with two defaults steps jsoupDefault and htmlUnitDefault and they are defined in steps-default.</description>
+    </item>
+    
+    <item>
+      <title>Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</link>
+      <pubDate>Fri, 11 Jan 2019 23:59:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</guid>
+      <description>Steps So far, we explored locators, tasks and dataDef to scrape data from the pages. But, we haven&amp;rsquo;t explained how Scoopi executes tasks and scrape data.
+Scoopi is designed to execute tasks as workflow which is normally referred as steps which in turn consists of multiple step. Scoopi ships with two in-built defaults steps jsoupDefault and htmlUnitDefault and they are defined in steps-default.yml which is packaged inside Scoopi distribution jar.</description>
+    </item>
+    
+  </channel>
+</rss>

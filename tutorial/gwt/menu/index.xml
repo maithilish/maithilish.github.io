@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Menu on Codetab</title>
+    <link>http://www.codetab.org/tutorial/gwt/menu/</link>
+    <description>Recent content in Menu on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/gwt/menu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ClientBundle - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/menu/menu/</link>
+      <pubDate>Thu, 10 Jan 2019 13:17:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/menu/menu/</guid>
+      <description>Chapter 4. Menu This Chapter covers design of Menu system used by Fins. Menu contains three widgets
+ MenuItem
+ MenuHeader
+ MenuBar
+   Figure 4.1. Menu parts MenuHeader is a stylish header that display menu categories. MenuItem is GWT Anchor widget and the user clicks them to invoke menu options. MenuBar is a StackLayoutPanel with MenuHeader as header and MenuItem as content.
+ console.log(&#34;slot C&#34;);  4.</description>
+    </item>
+    
+    <item>
+      <title>Anchors - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/menu/menu-parts/</link>
+      <pubDate>Thu, 10 Jan 2019 11:37:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/menu/menu-parts/</guid>
+      <description>4.2. Menu MenuHeader MenuHeader widget is the header for the menu bar stacks. Add ui and class file to in.fins.client.widget package.
+in.fins.client.widget/MenuHeader.ui.xml
+&amp;lt;!DOCTYPE ui:UiBinder SYSTEM &amp;#34;http://dl.google.com/gwt/DTD/xhtml.ent&amp;#34;&amp;gt; &amp;lt;ui:UiBinder xmlns:ui=&amp;#34;urn:ui:com.google.gwt.uibinder&amp;#34; xmlns:g=&amp;#34;urn:import:com.google.gwt.user.client.ui&amp;#34;&amp;gt; &amp;lt;ui:with type=&amp;#34;in.fins.client.FinsResources&amp;#34; field=&amp;#34;resource&amp;#34; /&amp;gt; &amp;lt;g:SimplePanel&amp;gt; &amp;lt;g:HorizontalPanel&amp;gt; &amp;lt;g:Image ui:field=&amp;#34;image&amp;#34; /&amp;gt; &amp;lt;g:Image resource=&amp;#34;{resource.blank}&amp;#34; /&amp;gt; &amp;lt;g:HTML ui:field=&amp;#34;html&amp;#34; /&amp;gt; &amp;lt;/g:HorizontalPanel&amp;gt; &amp;lt;/g:SimplePanel&amp;gt; &amp;lt;/ui:UiBinder&amp;gt;  in.fins.client.widget/MenuHeader.java
+package in.fins.client.widget; import com.google.gwt.core.client.GWT; import com.google.gwt.resources.client.ImageResource; import com.google.gwt.uibinder.client.UiBinder; import com.google.gwt.uibinder.client.UiConstructor; import com.google.gwt.uibinder.client.UiField; import com.google.gwt.user.client.ui.Composite; import com.google.gwt.user.client.ui.HTML; import com.google.gwt.user.client.ui.Image; import com.google.gwt.user.client.ui.Widget; public class MenuHeader extends Composite { interface MenuHeaderBinder extends UiBinder&amp;lt;Widget, MenuHeader&amp;gt; { } private static UiBinder&amp;lt;Widget, MenuHeader&amp;gt; binder = GWT .</description>
+    </item>
+    
+    <item>
+      <title>EventBus - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/</link>
+      <pubDate>Thu, 10 Jan 2019 11:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/</guid>
+      <description>4.3. GWT EventBus and Events ContentPanel has to listen for MenuItem clicks and add tab with appropriate content.
+Traditional Event Handling Implement ClickHandler in ContentPanel with the following modifications.
+in.fins.client.widget/ContentPanel.java
+.... import com.google.gwt.event.dom.client.ClickEvent; import com.google.gwt.event.dom.client.ClickHandler; import com.google.gwt.user.client.ui.Anchor; import com.google.gwt.user.datepicker.client.DateBox; ..... public class ContentPanel extends ResizeComposite implements ClickHandler .... @Override public void onClick(ClickEvent event) { String text = ((Anchor) event.getSource()).getText(); addTab(text, new DateBox()); } .... DateBox is a placeholder, and actual content replaces it later.</description>
+    </item>
+    
+    <item>
+      <title>EvenBus - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/</link>
+      <pubDate>Fri, 11 Jan 2019 00:05:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/</guid>
+      <description>4.4. GWT EventBus Example One of the best widgets to explain the benefits of EventBus is Status widget. Various objects of the application may like to send messages to Status widget for display, and with the traditional style, each and every object has to register Status widget as a handler, and for this, all interested objects has to get a reference to the Status widget. But EventBus eliminates these unnecessary couplings.</description>
+    </item>
+    
+  </channel>
+</rss>

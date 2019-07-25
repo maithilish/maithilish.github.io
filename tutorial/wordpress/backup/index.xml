@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on Codetab</title>
+    <link>http://www.codetab.org/tutorial/wordpress/backup/</link>
+    <description>Recent content in Backup on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/wordpress/backup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backup - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/</link>
+      <pubDate>Fri, 11 Jan 2019 03:53:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/</guid>
+      <description>11.1. WordPress Backup So far in the tutorial, we covered WordPress topics that assist us to install WordPress, add contents, optimize the performance and page ranking. All that effort we put to build a quality site may go in vein unless we have a good WordPress Backup and Restore strategy. In this chapter, we cover WordPress Backup topics - Backup, Restore, Migrate and Clone.
+WordPress Backup There are a number of plugins for WordPress backup.</description>
+    </item>
+    
+    <item>
+      <title>Dropbox Backup - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/</link>
+      <pubDate>Fri, 11 Jan 2019 04:44:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/</guid>
+      <description>11.2. WordPress Dropbox Backup In the previous section, we backup the WordPress installation. In this section, we setup Dropbox to receive files from OpenShift and then automate the WordPress Dropbox Backup process.
+OpenShift to Dropbox It makes sense to move the backup files out of OpenShift to Dropbox as it serves two purposes - conserves storage space and in the unlikely event of application corruption, we have a safe set in Dropbox.</description>
+    </item>
+    
+    <item>
+      <title>Restore Clone Migrate - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/</link>
+      <pubDate>Fri, 11 Jan 2019 04:57:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/</guid>
+      <description>11.3. WordPress Restore, Clone In the previous section, we saw how to offload the backup files to the Dropbox. In this section, we use the backup for a full WordPress restore and also to clone it to a new site and use it cloned site as testing or staging area.
+WordPress Restore WordPress Restore procedure involves following steps:
+ Create a new WordPress application on OpenShift.
+ Import MySQL dump to database.</description>
+    </item>
+    
+  </channel>
+</rss>

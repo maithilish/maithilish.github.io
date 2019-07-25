@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Maven Tutorial - CodeTab on Codetab</title>
+    <link>http://www.codetab.org/tutorial/apache-maven/</link>
+    <description>Recent content in Apache Maven Tutorial - CodeTab on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 16:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/apache-maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/introduction/</link>
+      <pubDate>Fri, 11 Jan 2019 16:03:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/introduction/</guid>
+      <description>Introduction Best resources about Apache Maven are from Sonatype Maven Reference Book and Maven By Example. However, the exhaustive details in these books may confuse and overwhelm the beginners.
+This tutorial series tries to explain the Apache Maven concepts and workflow in easy steps. Focus is to explain Apache Maven with simple examples and easy explanations for benefit of beginners and intermediate users.
+As objective of the tutorial is to explain Apache Maven concepts and its working, the Java examples we use in the tutorial are extremely simple and small, so that focus is more on Maven rather than Java projects.</description>
+    </item>
+    
+    <item>
+      <title>Installation - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/install-apache-maven/</link>
+      <pubDate>Fri, 11 Jan 2019 15:08:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/install-apache-maven/</guid>
+      <description>Install Apache Maven Download latest release of the software from Apache Maven Download Page.
+Installing on Linux and Mac Extract the downloaded zip file to some folder. For the sake of explanation, we use /opt/apache-maven directory as the maven home.
+$ mkdir /opt/apache-maven $ cd /opt/apache-maven $ unzip apache-maven-3.3.1-bin.zip $ ln -s apache-maven-3.3.1 maven Next, set and export M2_HOME and PATH environment variables.
+export M2_HOME=/opt/apache-maven/maven export PATH=$M2_HOME/bin:${PATH} To persist these variables across restarts, add the exports to $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Simple Project - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/simple-project/</link>
+      <pubDate>Fri, 11 Jan 2019 15:53:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/simple-project/</guid>
+      <description>Simple Maven Project In the previous chapter we introduced Apache Maven and installed it. In this chapter, we create a simple Maven project and build it with Maven.
+Maven comes with wizard to create various type of projects, but for now we are not going to use Maven to create project for us. Instead, we hand code the project as beginners can learn more from the process.
+Work Dir Throughout the guide, we use a work directory to run Apache Maven examples.</description>
+    </item>
+    
+    <item>
+      <title>Dependency Management - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/dependency-management/</link>
+      <pubDate>Fri, 11 Jan 2019 14:48:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/dependency-management/</guid>
+      <description>Dependency Management In the previous chapter, we created a simple Java project and build it with Maven. In this chapter, we use Maven Dependency Management feature to add external modules to the project.
+Maven can manage both internal and external dependencies. For a Java project, external dependencies might be libraries such as JUnit, Apache Commons, Log4J etc., Internal dependencies are modules of a related project. We will cover internal dependencies in a later chapter when we deal with multi module projects.</description>
+    </item>
+    
+    <item>
+      <title>Lifecycle Phases - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/</link>
+      <pubDate>Fri, 11 Jan 2019 15:15:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/</guid>
+      <description>Lifecycle Phases Apart from the options, the mvn command accepts only two things - goal or phase.
+ This chapter covers Phases which are related to Lifecycles and in the next chapter explains Goals which are related to Plugins.
+Maven Lifecycles and Phases To understand the concepts of lifecycle and phase, let&amp;rsquo;s recap how we used to build Java projects by hand.
+ copy resources such as conf files to some build folder compile the source files copy dependency jars to build folder run unit tests package the build folder as jar  The job consisted of series of tasks or steps which we used to run one after another in some predefined order.</description>
+    </item>
+    
+  </channel>
+</rss>

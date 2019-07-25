@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Split Definitions. The definition file job.xml tends to grow as you scrape more and more data sets or pages. This chapter explains how to split the defin">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Split Definitions - Gotz ETL - CodeTab",
+        "headline" : "Split Definitions - Gotz ETL - CodeTab",
+        "description" : "Split Definitions. The definition file job.xml tends to grow as you scrape more and more data sets or pages. This chapter explains how to split the defin",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 21:31:00 +0530 IST",
+        "dateModified" : "2019-01-11 21:31:00 +0530 IST",
+        "url" : "/tutorial/gotz-etl/split-definitions/",
+        "wordCount" : "310",
+        "keywords" : [ "split definitions","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Split Definitions - Gotz ETL - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Gotz ETL</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Gotz ETL - Gotz ETL - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/gotz-installation-quick-start/" class="toc-page text-muted ">
+            Installation and Quick Start
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/bean-locator/" class="toc-page text-muted ">
+            Bean and Locator
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/datadef-axis-member/" class="toc-page text-muted ">
+            DataDef, Axis and Member
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/query-region-field/" class="toc-page text-muted ">
+            Query, Region and Field
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/" class="toc-page text-muted ">
+            Members and Dynamic Query
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/indexrange-index/" class="toc-page text-muted ">
+            IndexRange, Index and BreakAfter
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/filters/" class="toc-page text-muted ">
+            Filters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/namespace/" class="toc-page text-muted ">
+            Namespace
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/tasks-steps/" class="toc-page text-muted ">
+            Tasks and Steps
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/" class="toc-page text-muted ">
+            Multiple Task and Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/converters/" class="toc-page text-muted ">
+            Converters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/persistence/" class="toc-page text-muted ">
+            Persistence
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/appenders-encoders/" class="toc-page text-muted ">
+            Appenders and Encoders
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/split-definitions/" class="toc-page text-danger ">
+            Split Definitions
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<p>The definition file <strong>job.xml</strong> tends to grow as you scrape more and
+more data sets or pages. This chapter explains how to split the
+definitions into multiple files for easy maintenance.</p>
+
+<p>Gotz allows you to split the definitions either on job types or on model
+types.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="split-on-job-types">Split on Job Types</h2>
+
+<p>The examples so far scraped BS, PL, Quote data - price and snapshot - of
+Acme. We can split the definitions into three job types quote, bs and
+pl. The Example-13 splits job.xml into quote.xml, bs.xml and pl.xml. The
+bean.xml merges these files and creates the effective job definition.
+The bean.xml is as below</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz</span> <span class="na">xmlns=</span><span class="s">&#34;http://codetab.org/gotz&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task quote&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;quote.xml&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task bs&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;bs.xml&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task pl&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;pl.xml&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
+<p>When we split on job types, the broad outline of each definition file is
+as below</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
+
+    <span class="nt">&lt;locators</span> <span class="nt">/&gt;</span>               <span class="c">&lt;!-- one or more --&gt;</span>
+
+    <span class="nt">&lt;fields&gt;</span>
+        <span class="nt">&lt;steps</span> <span class="nt">/&gt;</span>            
+        <span class="nt">&lt;tasks&gt;</span>                <span class="c">&lt;!-- one or more --&gt;</span>
+            <span class="nt">&lt;task&gt;</span>             <span class="c">&lt;!-- one or more --&gt;</span>     
+               <span class="nt">&lt;steps&gt;</span>
+                  <span class="nt">&lt;step</span> <span class="nt">/&gt;</span>     <span class="c">&lt;!-- optional local steps --&gt;</span>     
+               <span class="nt">&lt;/steps&gt;</span>
+            <span class="nt">&lt;/task&gt;</span>
+        <span class="nt">&lt;/tasks&gt;</span>
+    <span class="nt">&lt;/fields&gt;</span>
+
+    <span class="nt">&lt;dataDef&gt;</span>                  <span class="c">&lt;!-- one or more --&gt;</span>
+
+<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
+<h2 id="split-on-model">Split on Model</h2>
+
+<p>Another way to split is based Gotz model objects. The Locators, DataDef
+and Fields are model objects. The Example-14 shows how to split on them.
+The bean.xml is as follows</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz</span> <span class="na">xmlns=</span><span class="s">&#34;http://codetab.org/gotz&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;locator&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;locator.xml&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;task.xml&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;datadef&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;datadef.xml&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
+<p>The outline of files are as below.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p><strong>locator.xml</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
+
+    <span class="nt">&lt;locators</span> <span class="nt">/&gt;</span>               <span class="c">&lt;!-- one or more --&gt;</span>
+
+<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
+<p><strong>task.xml</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
+
+    <span class="nt">&lt;fields&gt;</span>
+        <span class="nt">&lt;steps</span> <span class="nt">/&gt;</span>            
+        <span class="nt">&lt;tasks&gt;</span>                <span class="c">&lt;!-- one or more --&gt;</span>
+            <span class="nt">&lt;task&gt;</span>             <span class="c">&lt;!-- one or more --&gt;</span>     
+               <span class="nt">&lt;steps&gt;</span>
+                  <span class="nt">&lt;step</span> <span class="nt">/&gt;</span>     <span class="c">&lt;!-- optional local steps --&gt;</span>     
+               <span class="nt">&lt;/steps&gt;</span>
+            <span class="nt">&lt;/task&gt;</span>
+        <span class="nt">&lt;/tasks&gt;</span>
+    <span class="nt">&lt;/fields&gt;</span>
+
+<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
+<p><strong>datadef.xml</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
+
+  <span class="nt">&lt;dataDef</span> <span class="nt">/&gt;</span>               <span class="c">&lt;!-- one or more --&gt;</span>
+
+<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
+<p>In the next chapter we explain the logging framework of Gotz.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="This chapter of Apache Ivy Tutorial explains Apache Ivy installation. We require Apache Ant, Apache Ivy and IvyDE Plugin for Eclipse">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Installation - Apache Ivy Tutorial - CodeTab",
+        "headline" : "Installation - Apache Ivy Tutorial - CodeTab",
+        "description" : "This chapter of Apache Ivy Tutorial explains Apache Ivy installation. We require Apache Ant, Apache Ivy and IvyDE Plugin for Eclipse",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 21:17:00 +0530 IST",
+        "dateModified" : "2019-01-10 21:17:00 +0530 IST",
+        "url" : "/tutorial/apache-ivy/installation/",
+        "wordCount" : "555",
+        "keywords" : [ "apache ivy installation","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Installation - Apache Ivy Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Ivy Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/installation/" class="toc-page text-danger ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ant-tasks/" class="toc-page text-muted ">
+            Ant Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/resolve/" class="toc-page text-muted ">
+            Resolve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/" class="toc-page text-muted ">
+            Cachepath and Retrieve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/pattern/" class="toc-page text-muted ">
+            Pattern
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/" class="toc-page text-muted ">
+            Resolvers and Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/" class="toc-page text-muted ">
+            Install Task and Local Repositories
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/shared-repository/" class="toc-page text-muted ">
+            Shared Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/publish/" class="toc-page text-muted ">
+            Publish
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-ivy-ivyde" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse Ivy Plugin
+    </a>
+    
+    <div id="tutorial-apache-ivy-ivyde" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/" class="toc-page dropdown-item text-muted">
+            IvyDE Plugin for Eclipse
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/" class="toc-page dropdown-item text-muted">
+            IvyDE Settings and Retrieve
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      <p>To work through the tutorial, we require Apache Ivy, Ant and IvyDE, and
+this chapter covers installation of software.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Software</th>
+<th align="center">Version</th>
+<th align="center">Size (approximate)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Apache Ivy</td>
+<td align="center">2.2</td>
+<td align="center">1 MB</td>
+</tr>
+
+<tr>
+<td align="left">Apache Ant</td>
+<td align="center">1.8.2</td>
+<td align="center">8 MB</td>
+</tr>
+
+<tr>
+<td align="left">IvyDE Eclipse Plugin</td>
+<td align="center"></td>
+<td align="center">8 MB</td>
+</tr>
+</tbody>
+</table>
+
+<p>Apache Ant and Apache Ivy Installation</p>
+
+<p>We require Apache Ant and Apache Ivy to work through the tutorial.
+Download latest distribution of Apache Ivy and Ant from Apache site. In
+case Ant is already installed in your system, ignore the its
+installation commands. Following commands installs Apache Ant at
+<code>/opt/ant</code>, but any other location is perfectly fine. Adjust settings
+accordingly.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">tar -C /opt/ant/ -xzvf apache-ant-1.8.2-bin.tar.gz
+tar -xzvf apache-ivy-2.2.0-bin-with-deps.tar.gz
+cp apache-ivy-2.2.0/ivy-2.2.0.jar /opt/ant/apache-ant-1.8.2/lib
+export ANT_HOME=/opt/ant/apache-ant-1.8.2
+export PATH=$PATH:$ANT_HOME/bin</code></pre></div>
+<p>Environment variables ANT_HOME and PATH are essential to run Ant. These
+exports may be moved to <code>.bash_profile</code> in Linux so that they are always
+set when you login.</p>
+
+<p><strong>Work Dir</strong></p>
+
+<p>Throughout the tutorial, we use a work directory to run Apache Ivy
+examples, This directory is some location like $HOME/work, but you are
+free to choose any other location. We will be using phrases like &ldquo;create
+a file in work dir&rdquo;, &ldquo;add a ivy.xml to workdir&rdquo; and &ldquo;run from work dir&rdquo;
+etc., which simply means do that in the work directory.</p>
+
+<p>Test the Apache Ivy installation</p>
+
+<p>To test the Ant and Apache Ivy installation, add following build.xml
+file to work
+dir.</p>
+
+<p><code>build.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;test ivy&#34;</span> <span class="na">default=</span><span class="s">&#34;test&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;test&#34;</span> <span class="na">description=</span><span class="s">&#34;Test ivy installation&#34;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;ivy:settings</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/target&gt;</span>
+<span class="nt">&lt;/project&gt;</span></code></pre></div>
+<p>and run Ant.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">ant</code></pre></div>
+<p>Successful build indicates that ant and ivy installation is fine.</p>
+
+<p><strong>Build Error</strong></p>
+
+<p>Typical error installation error
+is</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">build.xml:5: Problem: failed to create task or type antlib:org.apache.ivy.ant:settings</code></pre></div>
+<p>check the following to resolve this</p>
+
+<ul>
+<li><p>environment variable ANT_HOME is not set properly</p></li>
+
+<li><p>ivy.jar is missing from ANT_HOME/lib</p></li>
+</ul>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Install IvyDE Eclipse Plugin</p>
+
+<p>IvyDE Plugin for Eclipse integrates Apache Ivy with Eclipse IDE. From <a href="/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/">IvyDE Plugin for Eclipse</a> onwards we use the IvyDE plugin to enable dependency management of Eclipse projects. Install IvyDE using one of the following installation methods.</p>
+
+<p><strong>Update Site</strong> : To install IvyDE, start Eclipse and go to <strong>Help</strong> →
+<strong>Install New Software &hellip;</strong> and it displays the Available Softwares
+window. In  <strong>Work with</strong>  text box, enter IvyDE update site
+<strong><a href="http://www.apache.org/dist/ant/ivyde/updatesite/">http://www.apache.org/dist/ant/ivyde/updatesite/</a></strong> and click Add and
+then in Add Repository window click OK. It displays the following
+plugins.</p>
+
+<ul>
+<li><p>Apache Ivy library</p></li>
+
+<li><p>Apache IvyDE Eclipse plugin</p></li>
+</ul>
+
+<p>Select both and proceed. This will install Apache Ivy, Ivy Ant Tasks and
+IvyDE.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p><strong>Manual Installation</strong> : This method involves the installation of two
+plugins - IvyDE and Apache Ivy plugins.</p>
+
+<p><strong>IvyDE Plugin</strong> : This plugin links core Ivy to Eclipse. Download the
+IvyDE plugin from <a href="https://ant.apache.org/ivy/ivyde/download.html">https://ant.apache.org/ivy/ivyde/download.html</a>. For
+Eclipse Indigo download apache-ivyde- 2.1.0.201008101807-RELEASE.tar.gz
+and uncompress. to get two folders containing the artifacts to deploy.
+Copy the plugin and features to Eclipse installation directory as
+follows:</p>
+
+<ul>
+<li><p>plugins/org.apache.ivyde.eclipse_2.1.0.201008101807-RELEASE.jar to
+$ECLIPSE_HOME/plugins</p></li>
+
+<li><p>features/org.apache.ivyde.feature_2.1.0.201008101807-RELEASE.jar to
+$ECLIPSE_HOME/features</p></li>
+</ul>
+
+<p><strong>Apache Ivy Plugin</strong> : This plugin contains core Apache Ivy and Ant
+Tasks. Get the latest Ivy feature and plugin from following sites</p>
+
+<ul>
+<li><a href="http://www.apache.org/dist/ant/ivyde/updatesite">http://www.apache.org/dist/ant/ivyde/updatesite</a>
+<br /></li>
+</ul>
+
+<p>For Eclipse Indigo download and copy them to your eclipse installation
+directory as follows</p>
+
+<ul>
+<li><p>org.apache.ivy_2.2.0.final_20100923230623.jar to
+$ECLIPSE_HOME/plugin</p></li>
+
+<li><p>org.apache.ivy.eclipse.ant_2.2.0.final_20100923230623.jar to
+$ECLIPSE_HOME/plugin</p></li>
+
+<li><p>org.apache.ivy.feature_2.2.0.final_20100923230623.jar to
+$ECLIPSE_HOME/features</p></li>
+</ul>
+
+<p>After installation, restart Eclipse and menu bar should show the Resolve
+button of IvyDE.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-ivy/media/menu.png" alt="Apache Ivy Tutorial - Chapter Apache Ivy and IvyDE Installation" />
+</figure>
+
+
+<p>With these installations we are ready to Automate the dependency
+management with Apache Ivy.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

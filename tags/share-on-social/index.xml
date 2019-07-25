@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Share on Social on Codetab</title>
+    <link>http://www.codetab.org/tags/share-on-social/</link>
+    <description>Recent content in Share on Social on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/share-on-social/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Share on Social</title>
+      <link>http://www.codetab.org/projects/share-on-social/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.codetab.org/projects/share-on-social/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshots - Share on Social WordPress Plugin - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-social-screenshots/</link>
+      <pubDate>Fri, 11 Jan 2019 06:26:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-social-screenshots/</guid>
+      <description>  Share on Social Locker in action.  Google Plus Interactive Post shared by the Plugin.  Share on Social Menu and Lockers.  Add and customize your own lockers  Share details by date.  Summary stats. </description>
+    </item>
+    
+  </channel>
+</rss>

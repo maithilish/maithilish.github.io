@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Ivy Beginners Guide on Codetab</title>
+    <link>http://www.codetab.org/tags/apache-ivy-beginners-guide/</link>
+    <description>Recent content in Apache Ivy Beginners Guide on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 23:15:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/apache-ivy-beginners-guide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction - Apache Ivy Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-ivy/introduction/</link>
+      <pubDate>Thu, 10 Jan 2019 23:15:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-ivy/introduction/</guid>
+      <description>Introduction Apache Ivy Tutorial is a step by step beginners guide which covers Apache Ivy and IvyDE installation, basic usage, essential Ivy Ant Tasks, building private and enterprise repositories, installing and publishing modules to repositories and Apache Ivy in Eclipse projects with IvyDE Plugin for Eclipse. Basic objective of Apache Ivy Tutorial is to explain Ivy concepts and tasks through easy to follow examples and assist beginners as well as intermediate users to kick start their projects with automated dependency management.</description>
+    </item>
+    
+  </channel>
+</rss>

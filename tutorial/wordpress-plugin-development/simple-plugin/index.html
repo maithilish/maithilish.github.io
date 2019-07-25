@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="In this tutorial, we assemble a WordPress Simple Plugin to learn plugin basics. We also explain the method to hot deploy the plugin during development.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Simple Plugin - WordPress Plugin Development - CodeTab",
+        "headline" : "Simple Plugin - WordPress Plugin Development - CodeTab",
+        "description" : "In this tutorial, we assemble a WordPress Simple Plugin to learn plugin basics. We also explain the method to hot deploy the plugin during development.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 08:04:00 +0530 IST",
+        "dateModified" : "2019-01-11 08:04:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/simple-plugin/",
+        "wordCount" : "581",
+        "keywords" : [ "wordpress simple plugin","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Simple Plugin - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-danger ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="2-1-wordpress-simple-plugin">2.1. WordPress Simple Plugin</h2>
+
+<p>In this section, we setup a simple WordPress Plugin and also explain an
+easy way to deploy it during development phase.</p>
+
+<p>We use Eclipse IDE with PDT (PHP Development Tools), but you are free to
+use your favorite PHP IDE.</p>
+
+<p>Create PHP Project</p>
+
+<p>In Eclipse, create a new empty PHP project named <strong>wp-simple-plugin</strong>.
+Next add the plugins&rsquo; main file <code>wp-simple-plugin.php</code> in the top folder
+with the following contents.</p>
+
+<p><code>wp-simple-plugin/wp-simple-plugin.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="err">&lt;</span>?php
+
+/**
+ * Plugin Name: WordPress Simple Plugin
+ * Plugin URI: http://www.codetab.org/wordpress-tutorial/
+ * Description: Plugin to explain WordPress Plugin Basics
+ * Version: 1.0.0 
+ * Author: maithilish
+ * Author URI: http://www.codetab.org/about/
+ * License: GPLv2
+ */
+
+defined( &#39;ABSPATH&#39; ) or die( &#34;Access denied !&#34; );</code></pre></div>
+<p>The header comments are mandatory items and from this WordPress knows
+that it a plugin. WordPress also use these comments to display info
+about the plugin.</p>
+
+<p>To disallow direct access to plugin pages, it is suggested to start all
+php files of plugin with a <code>defined( 'ABSPATH' ) or die().</code></p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Deploy the plugin</p>
+
+<p>At this stage even though plugin doesn&rsquo;t do anything useful, we can
+still deploy it to WordPress. To deploy, create a zip including the
+parent directory i.e. wp-simple-plugin
+directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd workspace           // or location where you have created the project
+$ zip -r wp-simple-plugin.zip wp-simple-plugin</code></pre></div>
+<p>Open <strong>WordPress Admin</strong> → <strong>Plugins</strong> → <strong>Add New</strong> and select and
+upload the <code>wp-simple-plugin.zip</code>. Our bare-bone plugin is now visible
+in <strong>Installed Plugins</strong> page and shows the info from header comments of
+<code>wp-simple-plugin.php</code>. Activate the plugin.</p>
+
+<p>In-place deployment</p>
+
+<p>During development it is cumbersome to deploy the plugin like this.
+Better approach would be to use In-place deployment.</p>
+
+<p>Remove the installed WordPress Simple Plugin. Go to <strong>WordPress Admin</strong>
+→ <strong>Plugins</strong> → <strong>Installed Plugins</strong> and deactivate the WordPress
+Simple Plugin and then delete it.</p>
+
+<p>In in-place deployment, we create a symbolic link to our project
+directory in <code>wp-content/plugins</code> directory. This allows to continue the
+plugin development in IDE workspace and changes are visible immediately
+in WordPress. Let&rsquo;s see how to do that.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># cd /opt/lampp/htdocs/wordpress-4.0.1/wp-content/plugins/
+# ln -s $HOME/workspace/wp-simple-plugin wp-simple-plugin</code></pre></div>
+<p>change <code>$HOME/workspace/wp-simple-plugin</code> with the path where you have
+created the plugin project.</p>
+
+<script>
+    console.log("slot C"); 
+</script>
+
+<p>Windows users have to create the shortcut wp-simple-plugin in folder
+<code>c:xampphtdocswordpress-4.0.1wp-contentplugins</code>pointing to
+<code>workspacewp-simple-plugin</code>.</p>
+
+<p>With that link, our plugin deploys in-place to WordPress. However,
+plugin is <strong>inactive</strong> and we have to activate it in <strong>WordPress Admin</strong>
+→ <strong>Plugins</strong> → <strong>Installed Plugins</strong> page.</p>
+
+<p>Further code changes are visible in WordPress immediately with the
+browser refresh.</p>
+
+<p><strong>Plugin deletion.</strong></p>
+
+<p>In-place deployment is very convenient during development, but there is
+a downside. If we delete the plugin, then WordPress deletes
+<code>wp-simple-plugin</code> directory as well as its files, which simply means it
+deletes our project in workspace. Remember to take a backup of the
+project directory before doing a delete else you will loose all the hard
+work.</p>
+
+<p>In Linux, alternatively, use permissions to avoid this nasty surprise.
+Create symbolic link as root and change its ownership with following
+command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># cd /opt/lampp/htdocs/wordpress-4.0.1/wp-content/plugins
+# chown -h daemon.daemon wp-simple-plugin</code></pre></div>
+<p>In IDE workspace, create the actual plugin project as regular user (non
+root user). WordPress will not be able to delete the files owned by
+other users as httpd process owner is daemon.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-delete-plugin-error.png" alt="WordPress Simple Plugin - delete plugin error." />
+</figure>
+
+
+<p>An added benefit with this method is that we need root access only to
+create initial symbolic link. During development, we can add new files
+to the project as regular user.</p>
+
+<p>In the next section, let&rsquo;s add some functionality to our plugin.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

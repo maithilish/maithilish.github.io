@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Scoopi web scraper default steps can be overriden to define new set of steps. It also possible to convert or format data using converter plugins">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Converters - Scoopi Web Scraper - CodeTab",
+        "headline" : "Converters - Scoopi Web Scraper - CodeTab",
+        "description" : "Scoopi web scraper default steps can be overriden to define new set of steps. It also possible to convert or format data using converter plugins",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-12 02:25:00 +0530 IST",
+        "dateModified" : "2019-01-12 02:25:00 +0530 IST",
+        "url" : "/tutorial/scoopi-web-scraper-v094/converters-v094/",
+        "wordCount" : "374",
+        "keywords" : [ "converters","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Converters - Scoopi Web Scraper - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Scoopi Web Scraper</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Scoopi Web Scraper V094">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/" class="toc-page text-muted ">
+            Installation and Quick Start
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/definition-file-v094/" class="toc-page text-muted ">
+            Definition File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/datadef-v094/" class="toc-page text-muted ">
+            DataDef
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/" class="toc-page text-muted ">
+            Selector
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/" class="toc-page text-muted ">
+            Members
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/" class="toc-page text-muted ">
+            Index, IndexRange and BreakAfter
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/" class="toc-page text-muted ">
+            Filters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/" class="toc-page text-muted ">
+            Multiple Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/" class="toc-page text-muted ">
+            Steps and Plugins
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/" class="toc-page text-danger ">
+            Converters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/" class="toc-page text-muted ">
+            Create Locators from Links
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/persistence-v094/" class="toc-page text-muted ">
+            Persistence
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/appender-and-encoder-v094/" class="toc-page text-muted ">
+            Appender and Encoder
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/split-definitions-v094/" class="toc-page text-muted ">
+            Split Definitions
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/" class="toc-page text-muted ">
+            Logs
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/dashboard-v094/" class="toc-page text-muted ">
+            Dashboard
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/db-setup-v094/" class="toc-page text-muted ">
+            DB Setup
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="converters">Converters</h1>
+
+<p>This chapter explain step override and converters.</p>
+
+<h2 id="step-override">Step Override</h2>
+
+<p>We can override any step at task level. The
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-8/job.yml" target="_blank">Example 8</a>
+overrides <em>converter</em> step of <em>jsoupDefault</em> steps in bs task. The
+relevant snippet is shown below</p>
+
+<p><code>defs/examples/jsoup/ex-8/job.yml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsGroup:
+
+  bsTask:
+    dataDef: bs
+    steps:
+      jsoupDefault:
+        converter:
+          class: &#34;org.codetab.scoopi.step.convert.DataConverter&#34;
+          previous: process
+          next: appender</code></pre></div>
+<p>The other tasks in the example uses jsoupDefault steps as it is but the
+<em>bsTask</em> takes all steps from jsoupDefault and replace converter step
+with the step defined locally at task level.</p>
+
+<p>The structure of steps override is as follows</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsGroup:                     -- task group
+
+  bsTask:                    -- task name
+    dataDef: bs              
+    steps:                 
+      jsoupDefault:          -- steps name
+        converter:           -- name of the step to override </code></pre></div>
+<p>Multiple steps can be overridden in single steps definition.</p>
+
+<p>It is also possible to define completely new steps definition in job.yml
+file using top level steps definition. To do that, copy steps definition
+and jsoupDefault steps from
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/steps-default.yml" target="_blank">steps-default.yml</a>
+and add it to job.yml and rename jsoupDefault in job.yml to some other
+name say userStepsX and then make required changes to any of the step.
+In task, we can refer it as</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsGroup:
+
+  bsTask:
+    dataDef: bs
+    steps: userStepsX</code></pre></div>
+<h2 id="converters-1">Converters</h2>
+
+<p>Now we can plugin converters to the locally defined step so that they
+are applied only to bs task and not to other tasks.</p>
+
+<p>The complete overridden step from the example is as show below.</p>
+
+<p><code>defs/examples/jsoup/ex-8/job.yml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsGroup:
+
+  bsTask:
+    dataDef: bs
+    steps:
+      jsoupDefault:
+        converter:
+          class: &#34;org.codetab.scoopi.step.convert.DataConverter&#34;
+          previous: process
+          next: appender
+          plugins: &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html&#34; target=&#34;_blank&#34;&gt;
+            plugin: {
+                   name: converter,
+                   class: &#34;org.codetab.scoopi.plugin.converter.DateRoller&#34;,
+                   axis: col,
+                   inPattern: &#34;MMM &#39;&#39;YY&#34;,
+                   outPattern: &#34;yyyy-MM-dd&#34;,
+                   roll: &#34;DAY_OF_MONTH=ceil&#34; }
+         ]</code></pre></div>
+<p>It uses <em>org.codetab.scoopi.plugin.converter.DateRoller</em> which, based on
+inPattern and outPattern, changes the date pattern and also roll any
+date field to ceiling and floor. For example, if col axis date text is
+<em>Dec &lsquo;16</em>, the DateRoller first changes the date to format YYYY-MM-dd
+and date becomes 2016-12-01, but as financial dates are normally month
+end we need to roll the date field <em>DAY_OF_MONTH</em> to ceiling to get
+month end date. Refer
+[SimpleDateFormat</a>
+for in and out patterns and
+<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html" target="_blank">Calendar</a>
+for date fields.</p>
+
+<p>To change the format we can use
+<em>org.codetab.scoopi.plugin.converter.DateFormater</em> but, to change format
+and adjust date we require DateRoller.</p>
+
+<p>The next chapter explains the creation of locators from links parsed
+from the pages.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

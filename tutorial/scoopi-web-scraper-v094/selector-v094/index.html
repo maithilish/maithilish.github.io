@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Google Chrome can assist us to construct selector or xpath for specific element in the web page and let&#39;s see how to get selector for Scoopi web scraper">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Selector - Scoopi Web Scraper - CodeTab",
+        "headline" : "Selector - Scoopi Web Scraper - CodeTab",
+        "description" : "Google Chrome can assist us to construct selector or xpath for specific element in the web page and let&#39;s see how to get selector for Scoopi web scraper",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-12 04:34:00 +0530 IST",
+        "dateModified" : "2019-01-12 04:34:00 +0530 IST",
+        "url" : "/tutorial/scoopi-web-scraper-v094/selector-v094/",
+        "wordCount" : "615",
+        "keywords" : [ "selector","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Selector - Scoopi Web Scraper - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Scoopi Web Scraper</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Scoopi Web Scraper V094">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/" class="toc-page text-muted ">
+            Installation and Quick Start
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/definition-file-v094/" class="toc-page text-muted ">
+            Definition File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/datadef-v094/" class="toc-page text-muted ">
+            DataDef
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/" class="toc-page text-danger ">
+            Selector
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/" class="toc-page text-muted ">
+            Members
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/" class="toc-page text-muted ">
+            Index, IndexRange and BreakAfter
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/" class="toc-page text-muted ">
+            Filters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/" class="toc-page text-muted ">
+            Multiple Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/" class="toc-page text-muted ">
+            Steps and Plugins
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/" class="toc-page text-muted ">
+            Converters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/" class="toc-page text-muted ">
+            Create Locators from Links
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/persistence-v094/" class="toc-page text-muted ">
+            Persistence
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/appender-and-encoder-v094/" class="toc-page text-muted ">
+            Appender and Encoder
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/split-definitions-v094/" class="toc-page text-muted ">
+            Split Definitions
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/" class="toc-page text-muted ">
+            Logs
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/dashboard-v094/" class="toc-page text-muted ">
+            Dashboard
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/db-setup-v094/" class="toc-page text-muted ">
+            DB Setup
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="query-region-and-field">Query, Region and Field</h1>
+
+<p>In this chapter we describe how to build query using JSoup Selectors.</p>
+
+<h2 id="selectors">Selectors</h2>
+
+<p>In
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-1/job.yml" target="_blank">Example-1</a>, we query price data from <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/page/acme-quote.html" target="_blank">defs/examples/page/acme-quote.html</a> page. The price snippet from this page is</p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;price_tick&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;price_tick_span&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>315.25<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+<p>To access the value the JSoup selector is</p>
+
+<pre><code>div#price_tick/*
+</code></pre>
+
+<h3 id="use-chrome-to-get-selector">Use Chrome to get Selector</h3>
+
+<p>Chrome browser can assist you in constructing the Selector or XPath. To
+do that, open the HTML page in Chrome and select the item which we are
+interested. Next, right click to open the context menu and select
+<em>Inspect</em> from the list to open the Inspect panel. Then in Inspect
+panel, select the highlighted item and right click and select copy menu.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/scoopi-web-scraper-v094/media/scoopi-query-chrome.png" alt="Scoopi web scraper get JSoup selector from Chrome" />
+</figure>
+
+
+<p>The Copy have option, among other things, to copy the Selector or XPath
+to clipboard. Copy and paste the selector to editor. For price, selector
+provided by chrome is</p>
+
+<pre><code>#price_tick_span &gt; strong
+</code></pre>
+
+<p>We are using slightly different selector in the example as selectors can
+be constructed with different elements.</p>
+
+<h3 id="jsoup-selector-syntax">JSoup Selector Syntax</h3>
+
+<p>To access complex items, we may have to use functions to access specific
+item. Learn more about selector in <a href="https://jsoup.org/cookbook/extracting-data/selector-syntax" target="_blank">JSoup Selector Syntax</a> and <a href="https://jsoup.org/apidocs/org/jsoup/select/Selector.html" target="_blank">JSoup Selector API</a>.</p>
+
+<h2 id="query-region-and-field-1">Query - Region and Field</h2>
+
+<p>Selector has to be further split into region and field to optimize the
+query performance.</p>
+
+<p>For example, take the case of table</p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">....
+....
+<span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>Sources of Funds<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>           
+        ....
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>    
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>Share Capital<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>804.72<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>801.55<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>795.32<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>790.18<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>781.84<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span></code></pre></div>
+<p>The selector to access table data is</p>
+
+<pre><code>table:contains(Sources Of Funds) &gt; tr:nth-child(2) &gt; td:nth-child(1)
+</code></pre>
+
+<p>In case we use the selector to get each and every &lt;td&gt; item in table,
+JSoup has to parse the entire page, build DOM and then zero in on
+particular node for each item and parse becomes quite expensive.</p>
+
+<p>To optimize the parse, split the selector into two components -
+<strong>region</strong> and <strong>field</strong>. The query, after the split, becomes</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+
+  bs:
+    axis:
+      row:
+        query:
+          region: &#34;table:contains(Sources Of Funds)&#34;
+          field: &#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</code></pre></div>
+<p>Now, Scoopi fires the region query and parse the table and its child
+nodes and caches it in a HashMap. Next, it uses the field query on the
+cached node, instead of entire page, to get the target node. As cached
+region nodes are subset of entire page, fields selector query the subset
+instead of entire page.</p>
+
+<p>For each region query, Scoopi first consult the cache and if it finds it
+in cache then it is reused. Page is parsed only when region node is not
+found in cache.</p>
+
+<p>While splitting the selector, put the top most element of the area which
+we are interested in region and the selector to access its children in
+the field property. In the above example, it is quite natural to select
+and cache the table as it is top most element of the area we are
+interested in and subsequently, access its children repeatedly with
+field selector.</p>
+
+<h2 id="dynamic-query">Dynamic Query</h2>
+
+<p>When scraping single data point, we can hard code the selector as</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">query:
+  region: &#34;table:contains(Sources Of Funds)&#34;
+  field: &#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</code></pre></div>
+<p>But, to access next &lt;tr&gt; we need another query with field as
+<strong>tr:nth-child(3) &gt; td:nth-child(1)</strong>. To access a table with 5 cols
+and 4 rows, we need to define 20 queries.</p>
+
+<p>Instead, we can use Scoopi dynamic query feature. The hard coded query
+can be converted into dynamic query with substitution variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">query:
+  region: &#34;table:contains(Sources Of Funds)&#34;
+  field: &#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</code></pre></div>
+<p>Scoopi dynamically substitute the variable <em>%{row.index}</em> with the index
+value of the member and fires the query. With the dynamic query, we can
+scrape any number of rows or cols with single query.</p>
+
+<p>Allowed variables are</p>
+
+<pre><code>%{col.index}
+%{col.match}
+%{row.index}
+%{row.match}
+</code></pre>
+
+<p>The subsequent chapters covers dynamic queries extensively with more
+examples.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

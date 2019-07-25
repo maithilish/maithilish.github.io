@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Converters on Codetab</title>
+    <link>http://www.codetab.org/tags/converters/</link>
+    <description>Recent content in Converters on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 20:56:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/converters/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Converters - Gotz ETL - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gotz-etl/converters/</link>
+      <pubDate>Fri, 11 Jan 2019 20:56:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gotz-etl/converters/</guid>
+      <description>In this chapter we cover step override and converters.
+Step Override When using common steps, we can override any step at task level.
+In Example-8, defs/examples/jsoup/ex-8/job.xml, we override DataConverter step of commonSteps in bs task. The relevant snippet is shown below
+&amp;lt;steps name=&amp;#34;commonSteps&amp;#34;&amp;gt; ... &amp;lt;step name=&amp;#34;converter&amp;#34; class=&amp;#34;org.codetab.gotz.step.convert.DataConverter&amp;#34;&amp;gt; &amp;lt;nextStep&amp;gt;appender&amp;lt;/nextStep&amp;gt; &amp;lt;/step&amp;gt; .... &amp;lt;/steps&amp;gt; &amp;lt;tasks name=&amp;#34;quote tasks&amp;#34; group=&amp;#34;quote&amp;#34;&amp;gt; &amp;lt;task name=&amp;#34;snapshot task&amp;#34; dataDef=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;steps ref=&amp;#34;commonSteps&amp;#34; /&amp;gt; &amp;lt;/task&amp;gt; .... &amp;lt;/tasks&amp;gt; &amp;lt;tasks name=&amp;#34;bs&amp;#34; group=&amp;#34;bs&amp;#34;&amp;gt; &amp;lt;task name=&amp;#34;bs&amp;#34; dataDef=&amp;#34;bs&amp;#34;&amp;gt; &amp;lt;steps ref=&amp;#34;commonSteps&amp;#34;&amp;gt; &amp;lt;step name=&amp;#34;converter&amp;#34; class=&amp;#34;org.</description>
+    </item>
+    
+    <item>
+      <title>Converters - Scoopi Web Scraper - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/</link>
+      <pubDate>Sat, 12 Jan 2019 02:25:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/</guid>
+      <description>Converters This chapter explain step override and converters.
+Step Override We can override any step at task level. The Example 8 overrides converter step of jsoupDefault steps in bs task. The relevant snippet is shown below
+defs/examples/jsoup/ex-8/job.yml
+bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org.codetab.scoopi.step.convert.DataConverter&amp;#34; previous: process next: appender The other tasks in the example uses jsoupDefault steps as it is but the bsTask takes all steps from jsoupDefault and replace converter step with the step defined locally at task level.</description>
+    </item>
+    
+    <item>
+      <title>Converters - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</link>
+      <pubDate>Sat, 12 Jan 2019 00:16:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</guid>
+      <description>Converters This chapter explain adding new steps to workflow and converter plugins.
+Add new Step We can add new steps at task level. The Example 8 adds converter step to jsoupDefault steps in bs task. The relevant snippet is shown below
+defs/examples/fin/jsoup/ex-8/job.yml
+bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org.codetab.scoopi.step.process.DataConverter&amp;#34; previous: filter next: appender ....  The bsTask uses jsoupDefault built-in step as base and inserts converter step between filter and appender steps.</description>
+    </item>
+    
+  </channel>
+</rss>

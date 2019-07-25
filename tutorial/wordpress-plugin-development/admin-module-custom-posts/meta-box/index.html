@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="WordPress Meta Box groups HTML input and other elements. In this tutorial we setup, render and customize custom post type editor with WordPress Meta Box.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Meta Box - WordPress Plugin Development - CodeTab",
+        "headline" : "Meta Box - WordPress Plugin Development - CodeTab",
+        "description" : "WordPress Meta Box groups HTML input and other elements. In this tutorial we setup, render and customize custom post type editor with WordPress Meta Box.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 09:52:00 +0530 IST",
+        "dateModified" : "2019-01-11 09:52:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/",
+        "wordCount" : "949",
+        "keywords" : [ "wordpress meta box","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Meta Box - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-danger">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="7-2-wordpress-meta-box">7.2. WordPress Meta Box</h2>
+
+<p>In the previous blog, we saw how to register a new custom post type
+named sos and use it as Social Lockers. To manage the custom post type
+items, in this blog we setup, render and customize Sos Locker editor
+with WordPress Meta Box.</p>
+
+<p>While registering the custom post type, we used
+<strong>register_meta_box_cb</strong> to register the callback method
+<code>setup_meta_boxes()</code>.</p>
+
+<p><code>share-on-social/admin/class-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function create_post_type () {
+
+        register_post_type( $this-&gt;post_type, 
+                 // other args
+                &#39;register_meta_box_cb&#39; =&gt; array($this,&#39;setup_meta_boxes&#39;)
+        ) );
+
+        ....
+    }</code></pre></div>
+<p>When we add or edit Sos Locker WordPress calls the callback, which we
+use to customize meta boxes of the editor.</p>
+
+<h3 id="wordpress-meta-box">WordPress Meta Box</h3>
+
+<p>WordPress Post editor is composed of Meta Boxes which holds HTML input
+and other elements. The screenshot of Sos Locker editor shows three meta
+boxes. The main meta box titled <strong>Share Locker</strong> is to edit lockers&rsquo;
+meta data. On the right there are two meta boxes - CodeTab which is used
+to advertise this tutorial and the standard Publish meta box that
+WordPress adds to post editor.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-add-new.png" alt="WordPress Meta Box - Share on Social Add New Locker" />
+</figure>
+
+
+<p>Let&rsquo;s see how this is done. In the callback method <code>setup_meta_boxes()</code>,
+we use two WordPress functions - <a href="http://codex.wordpress.org/Function_Reference/add_meta_box" target="_blank">add_meta_box()</a> and <a href="http://codex.wordpress.org/Function_Reference/remove_meta_box" target="_blank">remove_meta_box()</a>.</p>
+
+<p><code>share-on-social/admin/class-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function setup_meta_boxes ( $post ) {
+
+        add_meta_box( &#39;locker_meta_box&#39;, __( &#39;Share Locker&#39;, &#39;sos-domain&#39; ),
+                array($this,&#39;render_locker_meta_box&#39;), $this-&gt;post_type, &#39;normal&#39;, &#39;high&#39; );
+
+        add_meta_box( &#39;codedrops_meta_box&#39;, &#39;CodeDrops&#39;, 
+                array($this,&#39;render_codedrops_meta_box&#39;), $this-&gt;post_type, &#39;side&#39; );
+
+        remove_meta_box( &#39;slider_sectionid&#39;, $this-&gt;post_type, &#39;normal&#39; );
+        remove_meta_box( &#39;layout_sectionid&#39;, $this-&gt;post_type, &#39;normal&#39; );
+
+    }</code></pre></div>
+<p>To add <strong>Share Locker</strong> meta box, we use following arguments.</p>
+
+<ul>
+<li><p><strong>id</strong> - locker_meta_box,</p></li>
+
+<li><p><strong>title</strong> - Share Locker.</p></li>
+
+<li><p><strong>callback</strong> - method <code>render_locker_meta_box()</code> renders this meta
+box.</p></li>
+
+<li><p><strong>post_type</strong> - only applicable to custom post type and we set it
+<strong>sos</strong>.</p></li>
+
+<li><p><strong>context</strong> - edit page is divided into three area - normal,
+advanced and side. We use normal to position the meta box below the
+title field. While, <strong>advanced</strong> places the meta box below the
+normal and <strong>side</strong> places box on the side bar.</p></li>
+
+<li><p><strong>priority</strong> - when there are multiple meta boxes in each area
+(context), their placement may fine tuned with priority - high,
+core, default and low.</p></li>
+
+<li><p><strong>callback_args</strong> - arguments to callback, if any.</p></li>
+</ul>
+
+<p>We similarly add the second meta box to the side bar. WordPress adds
+other standard meta boxes - Layout and Slider - to the editor. Sos
+Lockers editor doesn&rsquo;t require these two meta boxes. We use
+remove_meta_box() function to remove these meta boxes for sos custom
+post type.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Let&rsquo;s get back to Share Locker meta box and see how it is rendered by
+the callback.</p>
+
+<p><code>share-on-social/admin/class-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function render_locker_meta_box () {
+
+        wp_nonce_field( &#39;save_locker&#39;, &#39;locker_nonce&#39; );
+        
+        echo $this-&gt;get_table();
+        
+        $this-&gt;add_editor();
+    }
+
+    function get_table () {
+
+        global $post;
+        
+        $locker_id = get_post_meta( $post-&gt;ID, &#39;locker_id&#39;, true );
+        // other meta data
+       
+        $locker_id_label = __( &#39;Locker ID&#39;, &#39;sos-domain&#39; );
+        // other labels
+        
+        $table = <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
+<span class="err">&lt;</span><span class="na">div</span><span class="p">&gt;</span>$see_help_message<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-table&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;locker_id&#34;</span><span class="p">&gt;</span>$locker_id_label<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;locker_id&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;locker_id&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;$locker_id&#34;</span> <span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    
+        // html elements of other metadata fields
+
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+EOD;
+        return $table;
+}</code></pre></div>
+<p>In the rendering method, we set <strong>nonce</strong> token which is a security
+feature of WordPress to authenticate the requests. Next, we echo a HTML
+table containing the the required text fields, check boxes and radio
+buttons.</p>
+
+<p>When we edit a locker, WordPress sets the locker object which is a sos
+custom post of type in the global variable $post and we use the $post
+object to get the post_id of the locker as <code>$post-&gt;ID</code>.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Locker edit page also has TINY MCE Visual Editor at the bottom to enter
+the display text of the locker. Rendering method calls <code>add_editor()</code>
+method to add the TINY MCE editor.</p>
+
+<p><code>share-on-social/admin/class-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_editor () {
+        global $post;
+        
+        $id = &#39;locker_text&#39;;
+        $name = &#39;locker_text&#39;;
+        $value = wp_kses_post( get_post_meta( $post-&gt;ID, &#39;locker_text&#39;, true ) );
+        
+        $editor_options = array(
+                &#39;textarea_name&#39; =&gt; $name,
+                &#39;textarea_rows&#39; =&gt; 10,
+                &#39;tinymce&#39; =&gt; array(
+                        &#39;toolbar1&#39; =&gt; &#39;bold italic underline | alignleft aligncenter alignright | outdent indent | undo redo |  fullscreen&#39;,
+                        &#39;toolbar2&#39; =&gt; &#39;formatselect fontselect fontsizeselect | forecolor backcolor | removeformat&#39;
+                )
+        );
+        wp_editor( $value, $id, $editor_options );
+    }</code></pre></div>
+<p>In add_editor() method, we use TINY MCE editor options to set essential
+toolbar icons and then call WordPress
+<a href="http://codex.wordpress.org/Function_Reference/wp_editor" target="_blank">wp_editor()</a>
+function which adds the visual editor. When post is saved we can fetch
+the text entered in editor from the $_POST[&lsquo;locker_text&rsquo;] as the
+editor option <strong>textarea_name</strong> is set to  <strong>locker_text</strong>.</p>
+
+<p><strong>Post Contents</strong></p>
+
+<p>Share on Social plugin saves locker display text as meta data. The
+Display Text field is just a bunch of HTML text and it may very well
+saved as post content instead of separate meta data.</p>
+
+<p>While registering sos custom post type, we disabled the default content
+editor that WordPress adds to the post editor and enabled a separate
+TINY MCE editor to enter the display text. We do so to have a better
+control over the editor. WordPress places the default content editor at
+the top of the page. As it is meant to edit post content, its dimension
+is quite large. By going for custom TINY MCE editor, we could do the
+following.</p>
+
+<ul>
+<li><p>place the editor at the bottom of meta box after all other fields.</p></li>
+
+<li><p>make editor smaller.</p></li>
+
+<li><p>disable some of the toolbar items.</p></li>
+</ul>
+
+<h3 id="hide-publish-details">Hide Publish Details</h3>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-publish-details.png" alt="WordPress Meta Box - Publish Meta box" />
+</figure>
+
+
+<p>The default Publish Meta box has editable fields such as <strong>Status</strong>,
+<strong>Visibility</strong> and <strong>Published on</strong> etc., Sos Lockers doesn&rsquo;t require
+these information. The block that displays these things is the
+minor-publishing section and there is no documented way to remove it.
+Instead, we toggle the block style and hide it in <code>hide_minor_publish()</code>
+method which is hooked to <strong>admin_head</strong> hook.</p>
+
+<p><code>share-on-social/admin/class-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function hide_minor_publish () {
+   $screen = get_current_screen();
+   if ( in_array( $screen-&gt;id, 
+      array($this-&gt;post_type) ) ) {
+       echo &#39;<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;#</span><span class="nn">minor-publishing</span> <span class="p">{</span> <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="p">}&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>&#39;;
+   } 
+}</code></pre></div>
+<p>In the next section, we see how to publish the post.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

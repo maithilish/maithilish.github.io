@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="WordPress Plugin Simple Unit Tests tutorial shows how to write unit test for basic types of plugin methods such as those return values and those echo output">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Simple Unit Test - WordPress Plugin Development - CodeTab",
+        "headline" : "Simple Unit Test - WordPress Plugin Development - CodeTab",
+        "description" : "WordPress Plugin Simple Unit Tests tutorial shows how to write unit test for basic types of plugin methods such as those return values and those echo output",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 13:07:00 +0530 IST",
+        "dateModified" : "2019-01-11 13:07:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/",
+        "wordCount" : "1058",
+        "keywords" : [ "wordpress plugin simple unit tests","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Simple Unit Test - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-danger">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="12-3-wordpress-plugin-simple-unit-tests">12.3. WordPress Plugin Simple Unit Tests</h2>
+
+<p>In the previous blog, we setup PHPUnit for WordPress Plugin and verified
+the setup with a Simple Plugin. The rest of the blog explains various
+types of unit tests we used to test the Share on Social Plugin.</p>
+
+<p>The real hurdle in testing a plugin is to understand the WordPress
+architecture and write the appropriate tests for it. For better
+understanding, we selected various types of methods that are typical to
+a plugin and explain how to test them. The complete set of tests of
+Share on Social Plugin is available for download from <a href="https://github.com/maithilish/codefs/tree/master/share-on-social" target="_blank">GitHub</a>.</p>
+
+<p>In this blog, we start with PHPUnit Test Case, Setup, Tear down and then
+explain a couple of basic types of plugin tests.</p>
+
+<h3 id="test-case-setup-tear-down">Test Case, Setup, Tear Down</h3>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-test-files.png" alt="WordPress Plugin Simple Unit Tests - test files" />
+</figure>
+
+
+<p>In Share on Social Plugin, for each class file there is corresponding
+test class file in <code>tests/phpunit/tests</code> directory. The test file is a
+regular PHP class which extends WordPress Tests Librarys&rsquo;
+<code>WP_UnitTestCase</code> which itself extends <code>PHPUnit_Framework_TestCase</code>.</p>
+
+<p>The test method names are prefixed with <strong>test_</strong> as PHPUnit requires
+that to distinguish the test methods from others in the test case.</p>
+
+<p>In all test classes, we define a variable with class scope that holds
+the instance of class under test. In the next snippet, the var <code>$sos</code>
+will hold an instance of class <code>Sos</code> which is the class under test.</p>
+
+<p>The instance of the class under test is normally created in <code>setup()</code>
+method.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos extends WP_UnitTestCase {
+
+    var $sos;
+
+    public function setup () {
+        parent::setup();
+        
+        require_once &#39;admin/class-sos.php&#39;;
+        $this-&gt;sos = new Sos();
+    }
+    ....
+}</code></pre></div>
+<p>In the <code>setup()</code> method, we need to call <code>parent::setup()</code> before doing
+any other thing. Next, we include the class file of class under test
+with require_once(). In the above test case, we include
+<code>admin/class-sos.php</code> which defines the class <code>Sos</code>. Finally, we create
+an instance of Sos and assign it to the variable $sos. PHPUnit calls
+setup() before running each test and so, for each test we get a fresh
+instance of class Sos.</p>
+
+<p>After completion of each test, PHPUnit calls <code>teardown()</code>, where we call
+<code>parent::teardown()</code> and then any clean up required to run subsequent
+tests.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos extends WP_UnitTestCase {
+
+    var $sos;
+
+    ....
+
+    public function teardown () {
+        parent::teardown();
+        unload_textdomain( &#39;sos-domain&#39; );
+        Util::set_activate_plugins_cap( false );
+    }
+    ....
+}</code></pre></div>
+<p>In majority of test cases, in <code>teardown()</code> method, we unload the text
+domain which we explain in a later blog when we cover the WordPress
+Internationalization testing. In the above test case, we also remove a
+user capability which is enabled by some test in this particular test
+case.</p>
+
+<p>The things we do in setup() and teardown() methods varies for each test
+case, but they are easy to understand once you go through test class.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="methods-with-return-value">Methods with Return Value</h3>
+
+<p>The simplest type of plugin tests are of the methods that return some
+value. For example, the <code>Sos_Options::sanitize_options()</code> method takes
+an array as input which hold key, value pairs and the method sanitize
+the values using WP function <a href="http://codex.wordpress.org/Function_Reference/wp_filter_nohtml_kses" target="_blank">wp_filter_nohtml_kses()</a> and add the sanitized value to an output array. The method returns the output array which holds the sanitized values.</p>
+
+<p><code>share-on-social/admin/class-options.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function sanitize_options ( $input ) {
+        $output = array();
+        foreach ( $input as $key =&gt; $val ) {
+            if ( isset( $input<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://phpunit.de/manual/current/en/appendixes.assertions.html&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> $key ] ) ) {
+                // $output[$key] = strip_tags(stripslashes($input[$key]));
+                $output[ $key ] = wp_filter_nohtml_kses( $input[ $key ] );
+            }
+        }
+        return apply_filters( &#39;sanitize_options&#39;, $output, $input );
+    }</code></pre></div>
+<p>We test this type of methods by asserting whether the returned object
+contains the expected values.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_sanitize_options_scripts () {
+        $input = array(
+                &#39;id&#39; =&gt; &#39;test id<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="nx">evil</span> <span class="cp">?&gt;</span>&#39;
+        );
+        $output = $this-&gt;sos_options-&gt;sanitize_options( $input );
+        $this-&gt;assertCount( 1, $output );
+        $this-&gt;assertSame( &#39;test id&#39;, $output[ &#39;id&#39; ] );
+    }
+</code></pre></div>
+<p>In the test method, first we construct an input array and add an option
+value which contains some PHP script tags. Next, we call method under
+test <code>Sos_Options::sanitize_options()</code> by passing input array as
+parameter. Then, we test whether the returned output has only one
+element and whether the method has sanitized the value by removing the
+PHP tags from the input value. The instance of class <code>Sos_Options</code> is
+instantiated in test case setup() method and assigned to the variable
+$this-&gt;sos_options.</p>
+
+<p><strong>Always Count</strong></p>
+
+<p>When testing an array, always assert the size of the array with
+<a href="https://phpunit.de/manual/current/en/appendixes.assertions.html" target="_blank">assertCount()</a>. It ensures that test fails whenever you make changes to the code that affects the size of the array, and failure alerts you to write additional assertions to test the changes.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="methods-that-echo-output">Methods that Echo Output</h3>
+
+<p>One more type of frequently used methods are those which echo output
+without return value. Plugin uses such methods as callbacks to render
+pages, menu etc.,</p>
+
+<p>One such example is <code>Sos_Stats::render_stats_page()</code> method from
+<code>admin/class-stats.php</code>.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_stats_page () {
+        $heading = __( &#39;Share Stats&#39;, &#39;sos-domain&#39; );
+        echo <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
+        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>{$heading}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;summary_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>        
+EOD;
+    }</code></pre></div>
+<p>In Share on Social, we test such methods by capturing the echoed output
+with PHP output buffer functions.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_render_stats_page () {
+        ob_start();
+        $this-&gt;sos_stats-&gt;render_stats_page();
+        $result = ob_get_contents();
+        ob_end_clean();
+        $expected = <span class="err">&lt;&lt;</span><span class="p">&lt;</span> <span class="nt">EOD</span>
+        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>Share Stats<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;summary_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>    
+EOD;
+        $this-&gt;assertSame( trim( $expected ), trim( $result ) );
+    }</code></pre></div>
+<p>PHP output buffer functions are used to capture the output. After
+turning on the output buffer with PHP function
+<a href="http://php.net/manual/en/function.ob-start.php" target="_blank">ob_start()</a>, we call
+the method under test. The echoed output is obtained with
+<a href="http://php.net/manual/en/function.ob-get-contents.php" target="_blank">ob_get_contents()</a>
+and after that, buffer is turned off with
+<a href="http://php.net/manual/en/function.ob-end-clean.php" target="_blank">ob_end_clean()</a>.
+The result is asserted for desired value.</p>
+
+<p><strong>Multiple Assertions</strong></p>
+
+<p>Unit Test best practice recommends to have single assertion per test
+which ensures that tests are concise and readable. When test fails,
+developers can easily pinpoint the error and refactor the code.</p>
+
+<p>But in Share on Social Plugin test cases we have not followed this
+recommendation. Single assert per test rule results in too many tests
+and it is bit difficult to browse the test code and comprehend. Instead,
+we use single test to test single condition by making multiple
+assertions to test that condition.</p>
+
+<p>If you don&rsquo;t mind too many test methods and have knack to meaningfully
+name them, then it is better to stick with the single assertion per test
+rule.</p>
+
+<p>In the next blog, we explain some of the advanced types of tests that
+are unique to WordPress Plugin.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

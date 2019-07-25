@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Plugin Structure on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-plugin-structure/</link>
+    <description>Recent content in Wordpress Plugin Structure on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 07:30:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-structure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plugin Structure - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/</link>
+      <pubDate>Fri, 11 Jan 2019 07:30:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/</guid>
+      <description>3. WordPress Plugin Structure When we plan to develop and release a production level WordPress Plugin, we have to follow certain best practices suggested by WordPress and also by other accomplished Plugin developers. WordPress Plugin structure as to follow some well defined layout.
+In this section, we show how to structure a WordPress Plugin and also highlight some of the coding standards that makes the plugin easy to maintain and increase readability.</description>
+    </item>
+    
+  </channel>
+</rss>

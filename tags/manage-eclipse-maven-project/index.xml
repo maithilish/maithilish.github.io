@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Manage Eclipse Maven Project on Codetab</title>
+    <link>http://www.codetab.org/tags/manage-eclipse-maven-project/</link>
+    <description>Recent content in Manage Eclipse Maven Project on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 18:15:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/manage-eclipse-maven-project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eclipse Maven Project - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/</link>
+      <pubDate>Fri, 11 Jan 2019 18:15:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/</guid>
+      <description>Manage Eclipse Maven Project In the previous tutorial we installed M2E Plugin and created Maven Project with it. In this tutorial, we describe the features of M2E that are useful to manage Eclipse Maven Project.
+POM Editor When we open pom.xml in Eclipse, M2E opens it in GUI POM Editor shown in the screenshot.
+ The Overview tab is useful to manage project coordinates, parent or modules of the project and properties.</description>
+    </item>
+    
+  </channel>
+</rss>

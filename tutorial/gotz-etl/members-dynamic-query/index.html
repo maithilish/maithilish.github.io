@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Gotz Members and Dynamic Queries - this chapter explores extracting multiple values with members and dynamic query. The Example extracts snapshot data from">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Members Dynamic Query - Gotz ETL - CodeTab",
+        "headline" : "Members Dynamic Query - Gotz ETL - CodeTab",
+        "description" : "Gotz Members and Dynamic Queries - this chapter explores extracting multiple values with members and dynamic query. The Example extracts snapshot data from",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 19:44:00 +0530 IST",
+        "dateModified" : "2019-01-11 19:44:00 +0530 IST",
+        "url" : "/tutorial/gotz-etl/members-dynamic-query/",
+        "wordCount" : "467",
+        "keywords" : [ "members","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Members Dynamic Query - Gotz ETL - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Gotz ETL</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Gotz ETL - Gotz ETL - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/gotz-installation-quick-start/" class="toc-page text-muted ">
+            Installation and Quick Start
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/bean-locator/" class="toc-page text-muted ">
+            Bean and Locator
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/datadef-axis-member/" class="toc-page text-muted ">
+            DataDef, Axis and Member
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/query-region-field/" class="toc-page text-muted ">
+            Query, Region and Field
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/" class="toc-page text-danger ">
+            Members and Dynamic Query
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/indexrange-index/" class="toc-page text-muted ">
+            IndexRange, Index and BreakAfter
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/filters/" class="toc-page text-muted ">
+            Filters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/namespace/" class="toc-page text-muted ">
+            Namespace
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/tasks-steps/" class="toc-page text-muted ">
+            Tasks and Steps
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/" class="toc-page text-muted ">
+            Multiple Task and Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/converters/" class="toc-page text-muted ">
+            Converters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/persistence/" class="toc-page text-muted ">
+            Persistence
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/appenders-encoders/" class="toc-page text-muted ">
+            Appenders and Encoders
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/split-definitions/" class="toc-page text-muted ">
+            Split Definitions
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      <p>This chapter explores extracting multiple values with members and
+dynamic query.</p>
+
+<p>The <strong>Example 2</strong> extracts snapshot data from
+<strong>defs/examples/page/acme-quote.html</strong> page</p>
+
+<ul>
+<li>MARKET CAP</li>
+<li>EPS (TTM)</li>
+<li>P/E</li>
+<li>P/C</li>
+<li>BOOK VALUE</li>
+<li>PRICE/BOOK</li>
+<li>DIV (%)</li>
+<li>DIV YIELD</li>
+<li>FACE VALUE</li>
+<li>INDUSTRY P/E</li>
+</ul>
+
+<p>The snippet of HTML from the page is</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#34;snapshot&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>MARKET CAP<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>382,642.57<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>P/E<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>-<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>BOOK VALUE<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>27.89<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+   ....</code></pre></div>
+<p>The datadef used to extract data from this page is</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dataDef</span> <span class="na">name=</span><span class="s">&#34;snapshot&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;col&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xf:fields&gt;</span>
+            <span class="nt">&lt;xf:script</span> <span class="na">script=</span><span class="s">&#34;document.getFromDate()&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xf:fields&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;date&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/axis&gt;</span>
+    <span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;row&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xf:fields&gt;</span>
+            <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#snapshot&#34;</span>
+                <span class="na">field=</span><span class="s">&#34;div:matchesOwn(^%{row.match})&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xf:fields&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;MC&#34;</span> <span class="na">match=</span><span class="s">&#34;MARKET CAP&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;EPS&#34;</span> <span class="na">match=</span><span class="s">&#34;EPS \(TTM\)&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;PE&#34;</span> <span class="na">match=</span><span class="s">&#34;P/E&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;PC&#34;</span> <span class="na">match=</span><span class="s">&#34;P/C&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;BV&#34;</span> <span class="na">match=</span><span class="s">&#34;BOOK VALUE&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;PB&#34;</span> <span class="na">match=</span><span class="s">&#34;PRICE/BOOK&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;DIV&#34;</span> <span class="na">match=</span><span class="s">&#34;DIV \(%\)&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;DY&#34;</span> <span class="na">match=</span><span class="s">&#34;DIV YIELD&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;FV&#34;</span> <span class="na">match=</span><span class="s">&#34;FACE VALUE&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;IND PE&#34;</span> <span class="na">match=</span><span class="s">&#34;INDUSTRY P/E&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/axis&gt;</span>
+    <span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;fact&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xf:fields&gt;</span>
+            <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#snapshot&#34;</span>
+                <span class="na">field=</span><span class="s">&#34;div:matchesOwn(^%{row.match}) + div&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xf:fields&gt;</span>
+    <span class="nt">&lt;/axis&gt;</span>
+<span class="nt">&lt;/dataDef&gt;</span></code></pre></div>
+<p>Here, row axis defines multiple members elements with <strong>name</strong> and
+<strong>match</strong> attributes.</p>
+
+<p>The previous example defined price as &lt;member name=&ldquo;Price&rdquo;
+value=&ldquo;Price&rdquo; /&gt; with value attribute, instead of match. The <strong>value</strong>
+attribute assigns the value directly to the member without any query.</p>
+
+<p>But the present example uses match attribute</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;FV&#34;</span> <span class="na">match=</span><span class="s">&#34;FACE VALUE&#34;</span> <span class="nt">/&gt;</span></code></pre></div>
+<p>When <strong>match</strong> attribute is defined it can be accessed through
+substitution variable <strong>%{&lt;axisName&gt;.match}</strong> and in the row query, we
+are using the match as substitution variable in the selector.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;row&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xf:fields&gt;</span>
+        <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#snapshot&#34;</span>
+            <span class="na">field=</span><span class="s">&#34;div:matchesOwn(^%{row.match})&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xf:fields&gt;</span>
+
+    ... Members ....
+
+<span class="nt">&lt;/axis&gt;</span></code></pre></div>
+<p>When Gotz process row axis, for each member defined in the axis it gets
+the raw query and replaces its %{row.match} with the value of member&rsquo;s
+match attribute and then dispatches the query to JSoup and once JSoup
+returns the content of selected item, it assigns the value to member&rsquo;s
+value field.</p>
+
+<p>Let&rsquo;s see how match=&ldquo;BOOK VALUE&rdquo; is handled by each axis. For, HTML
+snippet</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>BOOK VALUE<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>27.89<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<p>when axis <strong>row</strong> is processed, selector selects the element &lt;div&gt;BOOK
+VALUE&lt;/div&gt; as it contains matching text and returns its content which
+is nothing but &ldquo;BOOK VALUE&rdquo;</p>
+
+<p>The <strong>fact</strong> axis uses slightly modified selector</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;fact&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xf:fields&gt;</span>
+            <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#snapshot&#34;</span>
+                <span class="na">field=</span><span class="s">&#34;div:matchesOwn(^%{row.match}) + div&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xf:fields&gt;</span>
+<span class="nt">&lt;/axis&gt;</span></code></pre></div>
+<p>The fact selector is same as row selector but with the trailing <strong>+
+div</strong>. This selector, selects next sibling of the matched element which
+is &lt;div&gt;27.89&lt;/div&gt; and returns its content i.e. 27.89</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>When we scrape limited number of items as in this example then it is
+convenient to use members directly either with match attribute. But,
+when we scrape large number of items then dataDef definition becomes
+lengthy and to overcome that, Gotz comes with two more features
+<strong>indexRange</strong> and <strong>breakAfter</strong>.</p>
+
+<p>The next chapter describe indexRange and how to define dataDef with it.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

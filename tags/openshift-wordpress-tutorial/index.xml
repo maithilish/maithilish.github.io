@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openshift Wordpress Tutorial on Codetab</title>
+    <link>http://www.codetab.org/tags/openshift-wordpress-tutorial/</link>
+    <description>Recent content in Openshift Wordpress Tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 01:46:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/openshift-wordpress-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenShift - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/openshift-wordpress/</link>
+      <pubDate>Fri, 11 Jan 2019 01:46:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/openshift-wordpress/</guid>
+      <description>In the OpenShift WordPress Tutorial, we cover the steps to create a free OpenShift account and a WordPress application.
+OpenShift is a cloud computing Platform as a Service (PaaS) from Red Hat, which, in simple terms, means it offers a virtual server with all the server components we need to run an application. In other words, OpenShift offers a virtual development environment - Linux OS with Internet connectivity - where we are free to deploy, develop and run various types of application written in supported languages.</description>
+    </item>
+    
+  </channel>
+</rss>

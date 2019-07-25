@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gwt Eventbus on Codetab</title>
+    <link>http://www.codetab.org/tags/gwt-eventbus/</link>
+    <description>Recent content in Gwt Eventbus on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 11:54:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/gwt-eventbus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EventBus - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/</link>
+      <pubDate>Thu, 10 Jan 2019 11:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/</guid>
+      <description>4.3. GWT EventBus and Events ContentPanel has to listen for MenuItem clicks and add tab with appropriate content.
+Traditional Event Handling Implement ClickHandler in ContentPanel with the following modifications.
+in.fins.client.widget/ContentPanel.java
+.... import com.google.gwt.event.dom.client.ClickEvent; import com.google.gwt.event.dom.client.ClickHandler; import com.google.gwt.user.client.ui.Anchor; import com.google.gwt.user.datepicker.client.DateBox; ..... public class ContentPanel extends ResizeComposite implements ClickHandler .... @Override public void onClick(ClickEvent event) { String text = ((Anchor) event.getSource()).getText(); addTab(text, new DateBox()); } .... DateBox is a placeholder, and actual content replaces it later.</description>
+    </item>
+    
+  </channel>
+</rss>

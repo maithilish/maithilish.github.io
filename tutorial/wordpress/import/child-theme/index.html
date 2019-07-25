@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="In this section of WordPress Tutorial, we use WordPress Child Theme to handle page stylesheets. WordPress child theme is the flexible way to extend a Theme.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Child Theme - WordPress Tutorial - CodeTab",
+        "headline" : "Child Theme - WordPress Tutorial - CodeTab",
+        "description" : "In this section of WordPress Tutorial, we use WordPress Child Theme to handle page stylesheets. WordPress child theme is the flexible way to extend a Theme.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 04:37:00 +0530 IST",
+        "dateModified" : "2019-01-11 04:37:00 +0530 IST",
+        "url" : "/tutorial/wordpress/import/child-theme/",
+        "wordCount" : "1118",
+        "keywords" : [ "wordpress child theme","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Child Theme - WordPress Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WordPress Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress/" class="toc-page text-muted ">
+            About WordPress
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift-wordpress/" class="toc-page text-muted ">
+            OpenShift WordPress Tutorial
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-installation/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-settings/" class="toc-page text-muted ">
+            Settings
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/" class="toc-page text-muted ">
+            Posts Vs Pages
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-themes/" class="toc-page text-muted ">
+            Themes
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress/wordpress-plugins/" class="toc-page text-muted ">
+            Plugins
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-w3-total-cache" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        W3 Total Cache
+    </a>
+    
+    <div id="tutorial-wordpress-w3-total-cache" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/" class="toc-page dropdown-item text-muted">
+            W3 Total Cache Settings
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/" class="toc-page dropdown-item text-muted">
+            W3 Total Cache Browser Cache
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/" class="toc-page dropdown-item text-muted">
+            W3 Total Cache Minify Settings
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/" class="toc-page dropdown-item text-muted">
+            Performance Analyze
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-seo" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Search Engine Optimization
+    </a>
+    
+    <div id="tutorial-wordpress-seo" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/seo/seo-tips/" class="toc-page dropdown-item text-muted">
+            SEO Tips
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/" class="toc-page dropdown-item text-muted">
+            SEO Plugin
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-webmaster-tools" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Web Master Tools
+    </a>
+    
+    <div id="tutorial-wordpress-webmaster-tools" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/" class="toc-page dropdown-item text-muted">
+            Google Analytics
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/webmaster-tools/google-webmaster-tools/" class="toc-page dropdown-item text-muted">
+            Google Webmaster Tools
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-import" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Import Static Site
+    </a>
+    
+    <div id="tutorial-wordpress-import" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/import/import-static-html-site/" class="toc-page dropdown-item text-muted">
+            Import Static HTML Site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/import/child-theme/" class="toc-page dropdown-item text-danger">
+            Child Theme
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/import/dynamic-stylesheets/" class="toc-page dropdown-item text-muted">
+            Dynamic Stylesheets
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-backup" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Backup
+    </a>
+    
+    <div id="tutorial-wordpress-backup" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/" class="toc-page dropdown-item text-muted">
+            Backup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/" class="toc-page dropdown-item text-muted">
+            Dropbox Backup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/" class="toc-page dropdown-item text-muted">
+            Restore, Clone, Migrate
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-openshift" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        OpenShift Cloud
+    </a>
+    
+    <div id="tutorial-wordpress-openshift" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/install-source/" class="toc-page dropdown-item text-muted">
+            OpenShift WordPress Install Source
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/dns-setup/" class="toc-page dropdown-item text-muted">
+            OpenShift DNS Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/" class="toc-page dropdown-item text-muted">
+            OpenShift RHC Client Tools
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress/openshift/linux-primer/" class="toc-page dropdown-item text-muted">
+            OpenShift Linux Primer
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="10-2-wordpress-child-theme">10.2. WordPress Child Theme</h2>
+
+<p>In the previous section, we import static HTML files with HTML Import 2
+Plugin. The Plugin imports the HTML content and linked images, but it
+does not import the linked stylesheets and rightly so! In this section,
+we use WordPress child theme to handle page stylesheets.</p>
+
+<h3 id="wordpress-theme-components">WordPress Theme Components</h3>
+
+<p>Before extending a theme with a child theme, let&rsquo;s understand the
+structure and components of a WordPress theme. WordPress Theme is a set
+of files that work together to create the design and functionality of
+the site and enables WordPress instantly to change the site&rsquo;s layout and
+design.</p>
+
+<p>WordPress theme comes as a zip files. On the extraction, we find a
+directory, named after the theme&rsquo;s name, which contains stylesheets, PHP
+files, JavaScripts and images. We can divide the theme files into these
+groups - stylesheet files, template file, functions file, JavaScript and
+images. Trimmed down structure of Customizr theme is shown in the next
+screenshot.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-ct-customizrstruct.png" alt="WordPress Child Theme - Theme structure" />
+</figure>
+
+
+<p>Stylesheets</p>
+
+<p>In a theme, the main stylesheet file is named as <code>style.css</code>. Apart from
+the CSS style data, it also provides details about the theme in its
+comments headers. From comment header, WordPress recognizes that it is a
+theme and uses it to display the theme details in Admin Dashboard. The
+comment header lines from Customizr theme <code>style.css</code> is shown in the
+screenshot.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-ct-styleheader.png" alt="WordPress Child Theme - WordPress Theme style.css header" />
+</figure>
+
+
+<p>Template Files</p>
+
+<p>Template files are PHP files that generate the requested page, and they
+are made up of HTML, PHP snippets and WordPress Template tags. WordPress
+defines some 20 odd special template files like home.php, single.php,
+page.php etc., which have special meaning to WordPress. Typical template
+files are: index.php, header.php, footer.php, sidebar.php, comments.php.</p>
+
+<p>Functions File</p>
+
+<p>Theme can optionally have a functions file named <code>functions.php</code> that
+acts as a plugin to the theme and is useful to define functions used by
+template files.</p>
+
+<p>Let&rsquo;s understand how all these fit together. When a page is requested,
+WordPress calls the theme&rsquo;s <code>index.php</code> file. The template file
+index.php fetches the parts of page by calling other template files like
+header.php, footer.php, page.php, etc. using template tags. By
+processing all the parts, index.php constructs the page as defined by
+the template files of the theme.</p>
+
+<p>With that brief introduction to the structure of a WordPress theme,
+let&rsquo;s see how to extend it with a child theme.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="wordpress-child-theme">WordPress Child Theme</h3>
+
+<p>Sometimes we may wish to extend or modify a theme. WordPress comes with
+Theme Editor in Dashboard Appearance menu that assists to edit the
+theme&rsquo;s files. However, it is not a good idea to directly make the
+changes to the theme files as the changes are lost when we update the
+theme to the latest version.</p>
+
+<p>Instead of direct changes to the theme, a better approach is to extend
+it with a WordPress Child Theme and carry out changes in the child
+theme. Benefits are:</p>
+
+<ul>
+<li><p>Avoids changes to the parent theme that are lost during version
+upgrades.</p></li>
+
+<li><p>It is easy to manage and track the changes in a child theme as it
+uses fewer files when compared with the parent theme.</p></li>
+</ul>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress/media/wp-ct-missinghatom.png" alt="WordPress Child Theme - Google Structured Data Testing Tool - Missing updated and hCard fields." />
+</figure>
+
+
+<p>We explain the construction of the WordPress Child Theme with a real
+example from codetab.org. Customizr theme used in codetab.org has a
+minor issue, that it does not add two essential Structured Data
+hatom-entry items - field updated and hCard author. When we preview the
+Customizr constructed page in <a href="http://www.google.com/webmasters/tools/richsnippets" target="_blank">Google Structured Data Testing Tool</a>, it shows the missing errors. Google Webmaster Tools too shows the errors in Structured Data graphs. Let&rsquo;s fix this to see a Child Theme in action. For this exercise,we assume that we have already installed <strong>Customizr</strong> theme.</p>
+
+<p>To begin with let&rsquo;s create a basic WordPress child theme called
+WPTutorial and install it to WordPress. In the PC, create a directory
+named <code>WpTutorial</code> and add a file named <code>style.css</code> to it with following
+contents.</p>
+
+<p><code>WpTutorial/style.css</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">/*
+* Theme Name:     WpTutorial
+* Theme URI:      http://www.codetab.org/wordpress-tutorial/
+* Description:    CodeTab WpTutorial Theme
+* Author:         Maithilish
+* Author URI:     http://www.codetab.org
+* Template:       customizr
+* Version:        1.0.0
+*/
+
+@import url(&#34;../customizr/style.css&#34;);</code></pre></div>
+<p>The comment header lines in style.css is mandatory, and WordPress uses
+it to displays the theme details in dashboard. In the header, we
+indicate that WpTutorial theme is a child theme of Customizr. We also
+include a reference to the parent&rsquo;s style.css file with the use of an
+import directive.</p>
+
+<p>Next, zip the entire WpTutorial directory as <code>WpTutorial.zip</code>. When
+compressing, it is important to include the theme directory. Now the
+WpTutorial theme is ready. To install the theme, go to <strong>Dashboard</strong> →
+<strong>Appearance</strong> → <strong>Add New</strong> and choose upload. Browse and select newly
+created WpTutorial.zip and install. After the installation, activate the
+theme. We can now view the theme WpTutorial and its details in
+<strong>Installed Themes</strong> screen.</p>
+
+<p>The WordPress child theme, WpTutorial, inherits look and feel from its
+parent theme - Customizr. At this point, the site looks same as before
+even though active theme is WpTutorial.</p>
+
+<p>To resolve the missing structured data items, we need to add following
+lines within header tags of the page.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">  &lt;span class=&#34;date updated&#34;&gt;&lt;?php echo get_the_date();?&gt;&lt;/span&gt;
+  &lt;span class=&#34;vcard author&#34;&gt;
+        &lt;span class=&#34;fn&#34;&gt;&lt;?php the_author(); ?&gt;&lt;/span&gt;
+  &lt;/span&gt;</code></pre></div>
+<p>To do that, we need a template file from the Customizr that inserts
+&lt;header&gt; tag to the page. Easy way to get that file is to download
+Customizr theme zip file from <a href="http://wordpress.org/themes/" target="_blank">WordPress Themes
+Directory</a> and extract it to some folder
+in our PC. By browsing the header related files we find that
+<code>Customizr/parts/class-content-headings.php</code> contains the header tags.
+We require this file in the child theme. In WpTutorial theme folder
+create a directory named <code>parts</code> and copy
+<code>Customizr/parts/class-content-headings.php</code> to it. It is mandatory to
+place the template file in the same location as in the parent theme. If
+the parent theme&rsquo;s template file is in <code>parts</code> directory then it should
+be in <code>parts</code> directory of child theme. Next edit
+<code>WpTutorial/parts/class-content-headings.php</code>, and add the missing items
+just before closing &lt;/header&gt; tag so that tail portion of the file
+looks like this.</p>
+
+<p><code>WpTutorial/parts/class-content-headings.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#34;date updated&#34;</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo get_the_date();?&gt;</span><span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#34;vcard author&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#34;fn&#34;</span><span class="nt">&gt;</span><span class="cp">&lt;?php the_author(); ?&gt;</span><span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;/span&gt;</span>
+
+        <span class="nt">&lt;/header&gt;</span><span class="c">&lt;!-- .entry-header --&gt;</span>
+
+      <span class="err">&lt;</span>?php
+    }//end of function
+
+}//end of class</code></pre></div>
+<p>Compress the theme directory as WpTutorial.zip and upload it to install
+it again. The updated WpTutorial theme inherits everything from the
+parent Customizr theme except the template file
+<code>class-content-headings.php</code>. WordPress Child theme, uses any template
+file it has else it uses the file from the parent theme.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>With that WordPress Child Theme adds missing structured data items to
+the header of the pages. Similarly, we can do other customizations with
+a child theme.</p>
+
+<p>In the next section, we cover use of functions files in WordPress Child
+Theme and use it to manage dynamic stylesheets in WordPress.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

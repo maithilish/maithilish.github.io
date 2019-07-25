@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Java Generics Tutorial focuses on confusing aspects and try to explain them with multiple examples">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Java Generics - CodeTab",
+        "headline" : "Java Generics - CodeTab",
+        "description" : "Java Generics Tutorial focuses on confusing aspects and try to explain them with multiple examples",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-07-23 13:54:00 +0530 IST",
+        "dateModified" : "2019-07-23 13:54:00 +0530 IST",
+        "url" : "/tutorial/java-generics/introduction/",
+        "wordCount" : "995",
+        "keywords" : [ "java generics tutorial","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Java Generics - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Java Generics Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Java Generics Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/introduction/" class="toc-page text-danger ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/subtype/" class="toc-page text-muted ">
+            Subtypes
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/wildcards/" class="toc-page text-muted ">
+            Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/bounded-wildcards/" class="toc-page text-muted ">
+            Bounded Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/" class="toc-page text-muted ">
+            Type Parameter Bounds
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="java-generics">Java Generics</h1>
+
+<p>There are enough tutorials on Java Generics. However, many are either too easy or too difficult to get a clear view of the subject. In this series, we focus on confusing aspects and try to explain them with multiple examples.</p>
+
+<p>If you are new to generics, we suggest you to go through <a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html">Java Tutorial Trail - Generics</a> as we don&rsquo;t cover the basics. Even after going through it, if certain aspects are not clear then go through this tutorial.</p>
+
+<p>Except enum types, anonymous inner classes and exception classes, all other types can be generic, but we use classes and interfaces as examples.</p>
+
+<h2 id="define-a-generic-type">Define a Generic Type</h2>
+
+<p>A generic type is a type with formal type parameters.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span><span class="o">);</span>
+        <span class="kd">public</span> <span class="n">E</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
+    <span class="o">}</span></code></pre></div>
+<p>The interface List is a <strong>generic type</strong> with single <strong>type parameter</strong> - E. Type parameters can be more than one. The class Pair, shown below, is a <strong>generic type</strong> with two <strong>type parameters</strong> - T, U.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pair</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">private</span> <span class="n">T</span> <span class="n">first</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">U</span> <span class="n">second</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Pair</span><span class="o">(</span><span class="n">T</span> <span class="n">first</span><span class="o">,</span> <span class="n">U</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="n">second</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">T</span> <span class="nf">getFirst</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">first</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">U</span> <span class="nf">getSecond</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">second</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>  </code></pre></div>
+<p>The syntax to define Generic class is:</p>
+
+<p><code>modifiers class className&lt;T1, T2, ..., Tn&gt; { }</code></p>
+
+<p>The type parameter section is delimited by angle brackets <code>&lt; &gt;</code> which follows the class name and contains the type parameters (also called type variables) T1, T2, &hellip;, and Tn delimited by comma. The scope of type parameters defined at class level is limited to the class. It can referred within the class as method parameters, return type and fields.</p>
+
+<h2 id="how-to-use-generic-type">How to use Generic Type</h2>
+
+<p>To use a generic type, either we have to create a new instance or refer the instance using a variable. Creating and using the generic type is called invocation; to do that, we have to use parameterized type. In parameterized type, the type parameters such as <code>E</code> are replaced with actual type arguments such as <code>String</code></p>
+
+<p>To create an instance of ArrayList<E>, we use parameterized type ArrayList<String></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// for generic type List&lt;E&gt;, the parameterized type is
+</span><span class="c1"></span>    <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>  </code></pre></div>
+<p>To refer the instance of a generic type, we need variable with parameterized type</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+
+    <span class="c1">// or short form
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span></code></pre></div>
+<p>From Java 1.7 onwards, we can skip actual type argument and short it as <code>new ArrayList&lt;&gt;()</code> as compiler can infer it from the parameterized type on the left side.</p>
+
+<p>Let&rsquo;s create some objects of generic type Pair<T,U>,</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">oddPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pairs</span><span class="o">&lt;&gt;(</span><span class="s">&#34;hello&#34;</span><span class="o">,</span><span class="n">10</span><span class="o">);</span>  
+
+    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="n">1</span><span class="o">,</span><span class="n">7</span><span class="o">);</span> 
+    </code></pre></div>
+<p>In first example, to instantiate generic type <code>Pair&lt;T, U&gt;</code>, we use parameterized type <code>Pair&lt;String, Integer&gt;</code>. It replaces <strong>type parameter</strong> (T and U) with actual <strong>type arguments</strong> (String and Integer). In second example, we use Integer as actual type argument for both T and U.</p>
+
+<p>Loosely speaking, to define a generic type use <strong>type parameters</strong>; to refer a generic type instance (either through variables or fields) use <strong>parameterized type</strong>.</p>
+
+<h2 id="naming-the-type-parameters">Naming the Type Parameters</h2>
+
+<p>There is no hard and fast rule about the type parameter names, however by convention, type parameter names are single, uppercase letters. Most commonly used ones are:</p>
+
+<ul>
+<li>T - Type and U,V etc. - 2nd, 3rd types</li>
+<li>E - Element</li>
+<li>K - Key</li>
+<li>V - Value</li>
+<li>N - Number</li>
+<li>R - Return type</li>
+</ul>
+
+<p>Some more examples of generic types and its instantiation and reference.</p>
+
+<table>
+<thead>
+<tr>
+<th>Generic Types (uses Type Parameters)</th>
+<th>Instantiation or Reference (uses Parameterized Type)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>List&lt;E&gt;</td>
+<td>ArrayList&lt;String&gt;</td>
+</tr>
+
+<tr>
+<td>Map&lt;K,V&gt;</td>
+<td>TreeMap&lt;String, Date&gt;</td>
+</tr>
+
+<tr>
+<td>Function&lt;T,R&gt;</td>
+<td>Function&lt;String, Boolean&gt;</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="define-generic-method">Define Generic Method</h2>
+
+<p>Just like generic type declaration, type parameters can be used in method declarations, but its scope is limited to the method where it is declared.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// add elements of array of a type to collection of same type
+</span><span class="c1"></span>    <span class="c1">// &lt;T&gt; is type parameter 
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">addAll</span><span class="o">(</span><span class="n">T</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">coll</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">element</span> <span class="o">:</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">coll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">element</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span></code></pre></div>
+<p>The addAll() method adds all elements of array to the collection. It defines type parameter <code>&lt;T&gt;</code> and uses it in methods&rsquo; formal parameters - <code>T[] elements</code> and <code>Collection&lt;T&gt; coll</code>. In for loop, all the items of elements array are added to Collection coll. The method is called as below,</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span><span class="o">[]</span> <span class="n">alphabets</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;b&#34;</span><span class="o">};</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span><span class="n">stringList</span><span class="o">);</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span><span class="n">intList</span><span class="o">);</span>      <span class="o">//</span> <span class="n">error</span></code></pre></div>
+<p>Both the parameters - elements and coll is of same type T, and to invoke the method, we should use array and List of same type otherwise compiler throws error. For example, when try to pass array of String and list of integer code will not compile.</p>
+
+<p>Syntax to define generic method is:</p>
+
+<p><code>modifiers &lt;T1, T2, ..., Tn&gt; returnType methodName(formal parameters) { }</code></p>
+
+<p>The type parameter list - <code>&lt;T&gt;, &lt;E&gt;, or &lt;T, U&gt;</code> - is placed just before the method&rsquo;s return type. The scope of type parameters is restricted to the method where it is defined. The type parameters defined at method level can be referred in method parameters, method return type and the method body.</p>
+
+<p>As explained earlier, to refer a generic object we use parameterized type with actual type arguments such as <code>List&lt;String&gt; list;</code>. However, to call a generic method there is no need to specify actual type as the compiler infers the type argument from the types of the actual arguments. For example to call addAll() method, we simply call it as <code>addAll(alphabets,list)</code>. Compiler infers the most specific type argument that will make the call type-correct.</p>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+<li>to define a generic type, use type parameters - class <code>Pair&lt;T, U&gt; { }</code></li>
+<li>to refer a generic type (define a variable or field), use parameterized type -  <code>Pair&lt;String, Integer&gt; oddPairs;</code></li>
+<li>type parameters can be defined at class level or method level.
+
+<ul>
+<li>When defined at class level, its scope is the entire class.</li>
+<li>when defined at method level its scope is restricted to the method.</li>
+</ul></li>
+<li>type parameters can be referred as fields and methods` formal parameters, body and return type.</li>
+</ul>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

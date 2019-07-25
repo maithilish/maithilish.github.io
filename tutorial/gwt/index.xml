@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GWT Tutorial - Complete Project - CodeTab on Codetab</title>
+    <link>http://www.codetab.org/tutorial/gwt/</link>
+    <description>Recent content in GWT Tutorial - Complete Project - CodeTab on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 10:14:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/gwt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/introduction/</link>
+      <pubDate>Thu, 10 Jan 2019 14:46:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/introduction/</guid>
+      <description>Introduction GWT Tutorial explains the design of a complete application using Google Web Toolkit (GWT) ™ 2.x. Written in a style keeping both beginners, as well as, intermediate developers in mind, book covers client side user interface design, server side communication, effective persistence strategies and hosting the application on Google App Engine. Fins is an GWT app developed in this book, displays financial performance of a company in a clean and easy to use user interface.</description>
+    </item>
+    
+    <item>
+      <title>Installation - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/install/</link>
+      <pubDate>Thu, 10 Jan 2019 12:51:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/install/</guid>
+      <description>Install GWT This chapter explains the steps required to install GWT Plugin for Eclipse.
+Software used in the book are
+   Software Version Size (approximate)     Eclipse 4.2 Juno 220 MB   Google Plugin for Eclipse (GPE) 3.2.0 60 MB (including any Juno updates)   GWT Designer for GPE  20 MB   Google Web Toolkit SDK 2.5.0 105 MB   Google App Engine SDK 1.</description>
+    </item>
+    
+    <item>
+      <title>Project Setup - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/create-project/</link>
+      <pubDate>Thu, 10 Jan 2019 14:01:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/create-project/</guid>
+      <description>Chapter 2. Create Project In this chapter, we are going to create a plain GWT Project and then add other components, those makes up a GWT project, by hand.
+Create barebone GWT project GWT project can be created in two ways, command line tool webAppCreator or Eclipse New Web Application Project wizard .
+Let&amp;rsquo;s use New Web Application wizard to create GWT project. Choose  GDT Pulldown → New Web Application Project &amp;hellip; or File → New → Web Application Project and fill details as below</description>
+    </item>
+    
+    <item>
+      <title>Project Code - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/gwt-project-code/</link>
+      <pubDate>Thu, 10 Jan 2019 20:33:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/gwt-project-code/</guid>
+      <description>GWT Project Code The code for complete project covered in this tutorial can be downloaded from GitHub
+Source code of the GWT project is archived into part-1.zip, part-2.zip etc., corresponding to parts of the book. Each archive contains Chapter or Section wise code. Instead of sifting through a fully developed project, chapter/section wise code helps one to understand the source without much effort. Download section also contains a standalone java application, RStore, which is used to load the data to database in Part 2 of the book.</description>
+    </item>
+    
+    <item>
+      <title>Demo - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/gwt-demo/</link>
+      <pubDate>Thu, 10 Jan 2019 20:25:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/gwt-demo/</guid>
+      <description>Welcome to the Fins demo !
+ GWT Tutorial Demo showcases Fins, the application developed in the tutorial, hosted on Google App Engine Google App Engine</description>
+    </item>
+    
+  </channel>
+</rss>

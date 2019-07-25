@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Apache Ivy Resolver defines the location, layout and structure of the repositories and Ivy uses resolvers to connect and fetch from the repositories.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Resolvers - Apache Ivy Tutorial – CodeTab",
+        "headline" : "Resolvers - Apache Ivy Tutorial – CodeTab",
+        "description" : "Apache Ivy Resolver defines the location, layout and structure of the repositories and Ivy uses resolvers to connect and fetch from the repositories.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 23:45:00 +0530 IST",
+        "dateModified" : "2019-01-10 23:45:00 +0530 IST",
+        "url" : "/tutorial/apache-ivy/repository-resolvers/",
+        "wordCount" : "888",
+        "keywords" : [ "apache ivy resolver","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Resolvers - Apache Ivy Tutorial – CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Ivy Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/installation/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ant-tasks/" class="toc-page text-muted ">
+            Ant Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/resolve/" class="toc-page text-muted ">
+            Resolve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/" class="toc-page text-muted ">
+            Cachepath and Retrieve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/pattern/" class="toc-page text-muted ">
+            Pattern
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/" class="toc-page text-danger ">
+            Resolvers and Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/" class="toc-page text-muted ">
+            Install Task and Local Repositories
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/shared-repository/" class="toc-page text-muted ">
+            Shared Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/publish/" class="toc-page text-muted ">
+            Publish
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-ivy-ivyde" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse Ivy Plugin
+    </a>
+    
+    <div id="tutorial-apache-ivy-ivyde" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/" class="toc-page dropdown-item text-muted">
+            IvyDE Plugin for Eclipse
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/" class="toc-page dropdown-item text-muted">
+            IvyDE Settings and Retrieve
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="5-2-apache-ivy-resolvers-and-repository">5.2. Apache Ivy Resolvers and Repository</h2>
+
+<p>Apache Ivy Repositories</p>
+
+<p>Until now, we used the public repository to resolve dependencies. But
+you may want to set up your own repository for reasons like</p>
+
+<ul>
+<li><p>restricted Internet access – your network may have Internet access
+or usage policy. This may limit or even restrict access to Internet.
+Setting up an enterprise repository helps to overcome this issue.</p></li>
+
+<li><p>reliability/accuracy – modules available in public repository may
+have quality issues.</p></li>
+
+<li><p>security – module available in public repository may have security
+issues and Information Security policy of your organisation may deny
+the access to these repositories.</p></li>
+</ul>
+
+<p>The Default configuration of Ivy allows following types of repository.</p>
+
+<ul>
+<li><p>Public – repositories available publicly in Internet</p></li>
+
+<li><p>Local – private repository, access is restricted to the user</p></li>
+
+<li><p>Shared – a common repository shared between the members of a team</p></li>
+</ul>
+
+<p>Default settings of these repositories are defined by Ivy in its own
+ivysettings.xml which is packaged within the ivy.jar.</p>
+
+<p>Apache Ivy Resolvers</p>
+
+<p>One of the configurable items in the ivysettings.xml is Resolvers.
+Repositories are not homogeneous and they may be hosted on a web server,
+local file-system, VFS file-system, ssh server, etc. Layout of the
+repositories and naming of artifacts differs among repositories. To
+accommodate all these variations in location and structure of the
+repositories, Ivy uses a concept called <strong>Resolver</strong> to contact the
+repository and fetch the files. Resolver takes care of following
+aspects.</p>
+
+<ul>
+<li><p>decide network or file-system protocol to access the repository.</p></li>
+
+<li><p>locate and fetch the Ivy file which may follow different
+layout/naming in different repositories.</p></li>
+
+<li><p>locate and fetch proper artifacts which may follow different
+layout/naming in different repositories.</p></li>
+</ul>
+
+<p>Resolver defines these aspects so that Ivy can properly resolve the
+dependencies. &lt;resolvers&gt; element in ivysettings.xml defines a list of
+dependency resolvers &lt;resolver&gt;. Each &lt;resolver&gt; is identified by
+its name. Ivy ships with built-in dependency resolvers that handle most
+common needs. Next table lists the Built-in resolvers.</p>
+
+<p><strong>Table 5.3. Ivy Built-in
+Resolvers</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>IBiblio</td>
+<td>Standard</td>
+<td>Finds artifacts on ibiblio.</td>
+</tr>
+
+<tr>
+<td>FileSystem</td>
+<td>Standard</td>
+<td>This resolver finds ivy files and artifacts in your file system.</td>
+</tr>
+
+<tr>
+<td>Url</td>
+<td>Standard</td>
+<td>This resolver finds ivy files and artifacts in your file system.</td>
+</tr>
+
+<tr>
+<td>Chain</td>
+<td>Composite</td>
+<td>Delegates the resolve to a chain of sub resolvers.</td>
+</tr>
+
+<tr>
+<td>Dual</td>
+<td>Composite</td>
+<td>Delegates the resolve of ivy file to one resolver and artifacts to another.</td>
+</tr>
+</tbody>
+</table>
+
+<p>There are two types of resolvers</p>
+
+<ul>
+<li><p>standard – these resolvers are used by Ivy for actual resolve task</p></li>
+
+<li><p>composite – these resolvers delegate the work to standard resolvers</p></li>
+</ul>
+
+<p>Let&rsquo;s go through an ivysettings.xml with a Url resolver :</p>
+
+<p><code>ivysettings.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;ivysettings&gt;</span>
+  <span class="nt">&lt;resolvers&gt;</span>
+    <span class="nt">&lt;url</span> <span class="na">name=</span><span class="s">&#34;url-example&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ivy</span> <span class="na">pattern=</span><span class="s">&#34;http://ivyrep.xyz.com/[module]/[revision]/ivy-[revision].xml&#34;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;artifact</span> <span class="na">pattern=</span><span class="s">&#34;http://ivyrep.xyz.com/[module]/[revision]/[artifact].[ext]&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/resolvers&gt;</span>
+<span class="nt">&lt;/ivysettings&gt;</span></code></pre></div>
+<p>The resolver named url-example will look for ivy.xml using &lt;ivy&gt;
+element and artifacts using &lt;artifact&gt;. In the both elements, location
+and layout of the repository are defined in pattern attribute.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Apache Ivy Resolvers Examples</p>
+
+<p>Resolver is one the important concepts in Apache Ivy and understanding
+it thoroughly is quite essential. Examples listed below will help to
+reinforce the concept.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
+      <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;xyz&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;resolvers&gt;</span></code></pre></div>
+<p>The above snippet defines a resolver called xyz using the maven 2 public
+repository to find module metadata (using maven 2 poms) and artifacts.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
+   <span class="nt">&lt;url</span> <span class="na">name=</span><span class="s">&#34;test&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;artifact</span> 
+         <span class="na">pattern=</span> <span class="s">&#34;http://repo1.maven.org/maven2/[organisation]/[module]/[revision]/
+</span><span class="s">                     [artifact]-[revision].[ext]&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;resolvers&gt;</span></code></pre></div>
+<p>defines a resolver named test using url. This is equivalent to the
+in-built ibiblio resolver.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
+   <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;pentaho&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span>
+         <span class="na">root=</span><span class="s">&#34;http://repo.pentaho.org/artifactory/repo&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;resolvers&gt;</span></code></pre></div>
+<p>defines a resolver using ibiblio pointing to
+<a href="http://repo.pentaho.org/artifactory/repo">http://repo.pentaho.org/artifactory/repo</a> instead of the default
+<a href="http://repo1.maven.org/maven2">http://repo1.maven.org/maven2</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
+   <span class="nt">&lt;filesystem</span> <span class="na">name=</span><span class="s">&#34;mylocal&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ivy</span> <span class="na">pattern=</span> <span class="s">&#34;${ivy.default.ivy.user.dir}/local/[organisation]/
+</span><span class="s">                        [module]/[type]s/[artifact]-[revision]-[type]s.[ext]&#34;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;artifact</span> <span class="na">pattern=</span> <span class="s">&#34;${ivy.default.ivy.user.dir}/local/[organisation]/
+</span><span class="s">                           [module]/[type]s/[artifact]-[revision]-[type]s.[ext]&#34;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/filesystem&gt;</span>
+<span class="nt">&lt;/resolvers&gt;</span></code></pre></div>
+<p>defines a local filesystem resolver named mylocal. Pattern uses Ivy
+variable <strong>ivy.default.ivy.user.dir</strong> which by default points .ivy2
+directory in user home directory and ${ivy.default.ivy.user.dir}/local
+points to $HOME/.ivy2/local directory. Rest of the tokens in the pattern
+<code>[organisation]/[module]/[type]s/[artifact]-[revision]-[type]s.[ext]</code>
+defines the repository layout.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;settings</span> <span class="na">defaultResolver=</span><span class="s">&#34;chain-resolver&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;resolvers&gt;</span>
+   <span class="nt">&lt;chain</span> <span class="na">name=</span><span class="s">&#34;chain-resolver&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;filesystem</span> <span class="na">name=</span><span class="s">&#34;mylocal&#34;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;ivy</span> <span class="na">pattern=</span> <span class="s">&#34;${ivy.default.ivy.user.dir}/local/[organisation]/
+</span><span class="s">                           [module]/type]s/artifact]-[revision]-[type]s.[ext]&#34;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;artifact</span> <span class="na">pattern=</span> <span class="s">&#34;${ivy.default.ivy.user.dir}/local/[organisation]/
+</span><span class="s">                                [module]/type]s/artifact]-[revision]-[type]s.[ext]&#34;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/filesystem&gt;</span>
+      <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;ibiblio&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/chain&gt;</span>
+<span class="nt">&lt;/resolvers&gt;</span></code></pre></div>
+<p>defines a Chain resolver. Chain is a composite resolver which delegates
+to a chain of sub resolvers. Here Ivy first tries to resolve through the
+local filesystem resolver and on failure, it will try maven2 public
+repository.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Apache Ivy Default Resolvers</p>
+
+<p>In the absence of user defined resolvers, Ivy uses default resolvers
+which comes bundled with it.</p>
+
+<p><strong>Table 5.4. Default
+Resolvers</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>local</td>
+<td>standard</td>
+<td>Filesystem resolver points to $HOME/.ivy2/local</td>
+</tr>
+
+<tr>
+<td>shared</td>
+<td>standard</td>
+<td>Filesystem resolver points to $HOME/.ivy2/shared</td>
+</tr>
+
+<tr>
+<td>public</td>
+<td>standard</td>
+<td>Ibiblio resolver points <a href="http://repo1.maven.org/maven2">http://repo1.maven.org/maven2</a></td>
+</tr>
+
+<tr>
+<td>main</td>
+<td>composite</td>
+<td>Chain and Dual resolver to shared and public</td>
+</tr>
+
+<tr>
+<td>default</td>
+<td>composite</td>
+<td>Chain resolver to local and main</td>
+</tr>
+</tbody>
+</table>
+
+<p>Hierarchical relationship of default resolvers is as follows</p>
+
+<ul>
+<li><p>default</p>
+
+<ul>
+<li><p>local</p></li>
+
+<li><p>main</p>
+
+<ul>
+<li><p>shared</p></li>
+
+<li><p>public</p></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Ivy by default uses resolver named default which first tries the local
+and on failure looks for shared and finally public. We can check this by
+running resolve task after deleting the $HOME/.ivy2/cache directory and
+disabling Internet connection of the machine.</p>
+
+<p><strong>Clearing the Cache</strong></p>
+
+<p>Once the cache directory is deleted, Ivy has to resolve and rebuild the
+cache by downloading the artifacts from Internet. So try this when you
+have less artifacts in cache.</p>
+
+<p>The screen shot shows that it has tried local, shared and public in that
+order</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-ivy/media/resolvers.png" alt="Apache Ivy Repository and Ivy Resolvers" />
+</figure>
+
+
+<p><strong>Figure 5.1. Default Resolve Order</strong></p>
+
+<p>Having gone through some of the important concepts, we are ready to
+build our own repositories.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

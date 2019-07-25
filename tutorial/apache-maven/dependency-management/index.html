@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Maven Dependency Management feature is useful to add external libraries to the project. In this tutorial, we add couple of dependencies to our project">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Dependency Management - Apache Maven Tutorial – CodeTab",
+        "headline" : "Dependency Management - Apache Maven Tutorial – CodeTab",
+        "description" : "Maven Dependency Management feature is useful to add external libraries to the project. In this tutorial, we add couple of dependencies to our project",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 14:48:00 +0530 IST",
+        "dateModified" : "2019-01-11 14:48:00 +0530 IST",
+        "url" : "/tutorial/apache-maven/dependency-management/",
+        "wordCount" : "1479",
+        "keywords" : [ "maven dependency management","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Dependency Management - Apache Maven Tutorial – CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Maven Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Maven Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/install-apache-maven/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/simple-project/" class="toc-page text-muted ">
+            Simple Project
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/dependency-management/" class="toc-page text-danger ">
+            Dependency Management
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/" class="toc-page text-muted ">
+            Lifecycle Phases
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-plugins" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Plugins
+    </a>
+    
+    <div id="tutorial-apache-maven-plugins" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugins/" class="toc-page dropdown-item text-muted">
+            Plugins
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/" class="toc-page dropdown-item text-muted">
+            Plugin Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/" class="toc-page dropdown-item text-muted">
+            Lifecycle and Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-configuration/" class="toc-page dropdown-item text-muted">
+            Plugin Configuration
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/" class="toc-page dropdown-item text-muted">
+            Plugin Execution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" class="toc-page dropdown-item text-muted">
+            POM – Project Object Model
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/" class="toc-page dropdown-item text-muted">
+            Resources Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/manage-maven-directories/" class="toc-page dropdown-item text-muted">
+            Manage Directories
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/" class="toc-page dropdown-item text-muted">
+            Archetype Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/useful-maven-help-commands/" class="toc-page dropdown-item text-muted">
+            Useful Help Commands
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-distribution" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Project Distribution
+    </a>
+    
+    <div id="tutorial-apache-maven-distribution" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/" class="toc-page dropdown-item text-muted">
+            Project Distribution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-assembly-plugin/" class="toc-page dropdown-item text-muted">
+            Assembly Plugin
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-profile" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Profile
+    </a>
+    
+    <div id="tutorial-apache-maven-profile" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/profile/maven-profiles/" class="toc-page dropdown-item text-muted">
+            Profiles
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-multi-module" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Multi Module
+    </a>
+    
+    <div id="tutorial-apache-maven-multi-module" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/" class="toc-page dropdown-item text-muted">
+            Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/" class="toc-page dropdown-item text-muted">
+            Hierarchical Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/" class="toc-page dropdown-item text-muted">
+            Multi Module Inheritance
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/" class="toc-page dropdown-item text-muted">
+            Multi Module Dependency Management
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-eclipse" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse
+    </a>
+    
+    <div id="tutorial-apache-maven-eclipse" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/" class="toc-page dropdown-item text-muted">
+            Install Eclipse Maven Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/" class="toc-page dropdown-item text-muted">
+            Manage Eclipse Maven Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/" class="toc-page dropdown-item text-muted">
+            Eclipse Multi Module
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="dependency-management">Dependency Management</h1>
+
+<p>In the previous chapter, we created a simple Java project and build it
+with Maven. In this chapter, we use Maven Dependency Management feature
+to add external modules to the project.</p>
+
+<p>Maven can manage both internal and external dependencies. For a Java
+project, external dependencies might be libraries such as JUnit, Apache
+Commons, Log4J etc., Internal dependencies are modules of a related
+project. We will cover internal dependencies in a later chapter when we
+deal with multi module projects.</p>
+
+<h2 id="project-dependencies">Project Dependencies</h2>
+
+<p>The simple app developed earlier is doesn&rsquo;t use any dependency. Let&rsquo;s
+add Apache Commons Lang library to the project and use it to format and
+display the date. Replace the App.java contents with the following code.</p>
+
+<p><code>simple-app/src/main/java/com/xyz/App.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">com.xyz</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.commons.lang.time.DateFormatUtils</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&#34;http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-project-dependencies.html#pom-relationships-sect-dependency-scope&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="o">&gt;]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello World! Today is &#34;</span> <span class="o">+</span> <span class="n">getToday</span><span class="o">());</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getToday</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">today</span> <span class="o">=</span> <span class="n">DateFormatUtils</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">(),</span> <span class="s">&#34;dd-MMM-yyyy&#34;</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">today</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>Nothing big, except that we add an external dependency to our project.
+Let&rsquo;s try to build the project.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn compile</code></pre></div>
+<p>As expected, build fails since complier is unable to find Commons Lang
+library.</p>
+
+<p>Let&rsquo;s delegate the dependency management to Maven and to do that, add
+dependency details to POM. Modify pom.xml with following
+contents.</p>
+
+<p><code>simple-app/pom.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class="nt">&gt;</span>
+
+
+        <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+        <span class="c">&lt;!-- project coordinates --&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.xyz<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>simple-app<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+
+        <span class="c">&lt;!-- project dependencies --&gt;</span>
+        <span class="nt">&lt;dependencies&gt;</span>
+                <span class="nt">&lt;dependency&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>commons-lang<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>commons-lang<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;version&gt;</span>2.4<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;/dependencies&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span></code></pre></div>
+<p>The dependency is defined using &lt;dependencies&gt;/&lt;dependency&gt;. The
+element &lt;dependencies&gt; can contain multiple &lt;dependency&gt; and in each
+dependency, we provide the coordinates of the library (groupId,
+artifactId and version) we wish to add as dependency to our project and
+the above declaration adds commons-lang version 2.4.</p>
+
+<p>Run command <code>mvn compile</code> and Maven downloads commons lang version 2.4
+from the central repository and save it in local repository, and then
+compiles the project. This time, javac finds the library in build path
+and compilation goes through without any error.</p>
+
+<p>However, we can&rsquo;t run the app directly using the java command. Java
+throws <code>NoClassDefFoundError</code> as it is unable to find commons-lang in
+runtime classpath. There are multiple ways to handle this:</p>
+
+<p>Brute force method is add commons-lang.jar to classpath. Maven caches
+the commons-lang.jar in the local repository and we find its location
+and add the location to the runtime classpath.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ java -cp target/simple-app-1.0.jar:$HOME/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar com.xyz.App</code></pre></div>
+<p>But, the better and suggested approach is to use Maven to run the app.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn exec:java -Dexec.mainClass=&#34;com.xyz.App&#34;</code></pre></div>
+<p>We will explain the meaning of this command in greater detail in Plugins
+chapter and for the time being, it is sufficient to know that we use
+<strong>Maven Exec Plugin</strong> to run a class.</p>
+
+<p>The command uses <strong>exec-maven-plugin</strong> to execute the class com.xyz.App.
+It is important to note that, the plugin builds the runtime classpath
+from the dependencies listed in pom.xml, by adding the location of
+commons-lang-2.4 jar, before executing the app.</p>
+
+<h3 id="net-connection">Net Connection</h3>
+
+<p>Whenever a new dependency is added to pom.xml or a new plugin is
+required, Maven downloads the dependency or plugin artifact from its
+central repository, if they are not available in the local repository.
+Hence, ensure that Internet connection is enabled whenever you add a new
+dependency or plugin to pom.xml or a new plugin is required to run the
+command.</p>
+
+<p>When connection is down and Maven triggers build failure, you can always
+rerun command after enabling the connection.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="unit-tests-and-junit-dependency">Unit Tests and JUnit Dependency</h2>
+
+<p>Next, let&rsquo;s add a unit test to test the getToday() method.</p>
+
+<p>In Maven Java project, the test source files are placed in
+<code>src/test/java</code> directory. To, test getToday(), we also need a package
+com.xyz to add test files. Create these directories as shown here.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
+$ mkdir -p src/test/java
+$ mkdir -p src/test/java/com/xyz</code></pre></div>
+<p>The mkdir creates directories to hold test files and for the package
+com.xyz. If you observe the directory structure is same as the one we
+created to hold source file <code>src/main/java/com/xyz</code>, except that
+<strong>main</strong> directory is replaced with <strong>test</strong> directory. Next, add test
+file AppTest.java with following code.</p>
+
+<p><code>simple-app/src/test/java/com/xyz/AppTest.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">com.xyz</span><span class="o">;</span>
+
+<span class="kn">import static</span> <span class="nn">org.junit.Assert.assertEquals</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppTest</span> <span class="o">{</span>
+
+        <span class="nd">@Test</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGetToday</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="na">getToday</span><span class="o">();</span>
+                <span class="n">String</span> <span class="n">expected</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;dd-MMM-yyyy&#34;</span><span class="o">)</span>
+                                <span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+                <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>Try to run tests with command <code>mvn test</code> but build fails as Maven
+requires JUnit 4 in the build classpath to compile the test files. Edit
+pom.xml and modify &lt;dependencies&gt; element to look as shown in the next
+snippet.</p>
+
+<p><code>simple-app/pom.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;dependencies&gt;</span>
+                <span class="nt">&lt;dependency&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
+                        <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+                <span class="nt">&lt;/dependency&gt;</span>
+                <span class="nt">&lt;dependency&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>commons-lang<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>commons-lang<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;version&gt;</span>2.4<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;/dependencies&gt;</span></code></pre></div>
+<p>Apart from the coordinates of the Junit (groupId, artifactId, version),
+the dependency contains a new item - <strong>scope</strong>. It tells Maven to add
+JUnit dependency to the classpath only during test compile phase and
+test phase. With this scope, JUnit will not added to classpath during
+source compile. Scope controls which dependencies are available in which
+classpath, and which are included with an application. Maven provides
+five dependency scopes - <strong>compile, provided, runtime, test and
+system</strong>. Refer <a href="http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-project-dependencies.html#pom-relationships-sect-dependency-scope" target="_blank">Maven Reference - Dependency Scope</a> to know more about them.</p>
+
+<p>To run tests, use command <code>mvn test</code>. Maven compiles Java source files
+and then compile test files and finally, run the tests. Maven uses a
+plugin called <a href="http://maven.apache.org/surefire/maven-surefire-plugin/index.html" target="_blank">Maven Surefire Plugin</a> (maven-surefire-plugin) to handle tests and to output the test results.</p>
+
+<p>To run tests, use command mvn test. Maven compiles Java source files and then compile test files and finally, run the tests. Maven uses a plugin called Maven Surefire Plugin (maven-surefire-plugin) to handle tests and to output the test results. The test result is shown in the screenshot.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-dep-tests.png" alt="Maven Dependency Management - JUnit Test Run" />
+</figure>
+
+
+<h2 id="get-maven-dependency-coordinates">Get Maven Dependency Coordinates</h2>
+
+<p>Now, the question is how to find the coordinates of library or module
+which we want to add to the pom.xml.</p>
+
+<p>When an organization deploys the module to Maven central repository they
+define the coordinates and from the central repository we can easily
+find the coordinates of any library or module. As an example, let&rsquo;s find
+out the coordinates of commons-lang, from the repository. Go to Maven
+Central Repository at <a href="http://search.maven.org/">http://search.maven.org/</a> and search for commons
+lang which yields all matching commons module. In the list, go the
+commons-langs row and select <strong>All</strong> in  <strong>Latest Version</strong> column. It
+displays the GroupId, ArtifactId and Version for each release. From
+these values, we can construct the dependency element.</p>
+
+<p>Alternatively, we can even get the complete dependency snippet from <a href="http://mvnrepository.com/" target="_blank">MvnRepository</a>. In the
+repository, search for commons lang and from the search result, select
+commons-lang link, which shows the available versions.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-dep-repo-versions.png" alt="Maven Dependency Management - module versions" />
+</figure>
+
+
+<p>Click on 2.6 or whatever version you are interested. Repositories hosts
+modules for Maven and also other build systems like Ivy, Grape etc.
+Select <strong>Maven tab</strong> and there you get the exact dependency element as
+required by Apache Maven as shown in the next screenshot. Cut and paste
+it to pom.xml.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-dep-dep-element.png" alt="Maven Dependency Management - dependency element" />
+</figure>
+
+
+<p>Another thing about this particular dependency is that the <strong>groupId</strong>
+is mentioned as commons-lang whereas it should have been <strong>apache.org</strong>.
+For some reasons, while deploying the module to the repository,
+developer (the build guy) has mentioned it as commons-lang instead of
+apache.org and so it is continuing like that. From version 3 onwards
+groupId is corrected as apache.org.</p>
+
+<p>Instead of guessing, it is much easier to search in the Maven repository
+and copy the dependency element from there.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="maven-artifacts">Maven Artifacts</h2>
+
+<p>In general software terms, an <strong>Artifact</strong> is something produced by the
+software development process, whether it be an executable file or
+documentation.</p>
+
+<p>In Maven terminology, anything built and deployed by Maven to its
+repository is an artifact.</p>
+
+<p>Some of the examples of Maven Artifacts:</p>
+
+<ul>
+<li><p><strong>dependencies</strong> - libraries such as commons-io, commons-lang,
+JUnit, Log4j etc.,</p></li>
+
+<li><p><strong>Maven plugins</strong> - even, the JAR of Maven Plugins such as
+maven-clean-plugin, maven-compiler-plugin etc., are also artifacts
+since they, too, built and deployed by Maven.</p></li>
+
+<li><p><strong>documentation jars</strong> - Javadoc archive of the projects.</p></li>
+
+<li><p><strong>source jars</strong> - source code archive of the projects.</p></li>
+</ul>
+
+<p>The screenshot shows the layout of the local repository that contains
+artifacts of two projects - Apache Commons Exec and Maven Jar Plugin. As
+we can see, each contains a JAR (the artifact), POM file and SHA key
+files.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-dep-artifacts.png" alt="Maven Dependency Management - Maven Artifacts" />
+</figure>
+
+
+<p>To use an artifact (either as dependency or plugin) in a Maven project,
+we refer it by its coordinates. The Maven coordinates is combination of
+&lt;groupId&gt;:&lt;artifactId&gt;:&lt;version&gt;.</p>
+
+<ul>
+<li><p><strong>groupId</strong> - name of the organization which owns the project and
+usually a reversed domain name, for example org.example.foo.</p></li>
+
+<li><p><strong>artifactId</strong> - name of the project, library, plugin or a software
+component.</p></li>
+
+<li><p><strong>version</strong> - a version string.</p></li>
+</ul>
+
+<p>Maven uses the coordinates to construct the layout repository and also,
+to locate the artifacts in the repository. For example, the coordinates
+of commons-exec is org.apache.commons (groupId), commons-exec
+(artifactId), 1.3 (version) and in the repository, it lands in
+<code>org/apache/commons/commons-exec/1.3</code> folder.</p>
+
+<p>In the next chapter, we look at Maven Lifecycle and Phases.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

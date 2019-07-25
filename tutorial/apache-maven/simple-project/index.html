@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="In this tutorial, we create a Simple Maven project and build it. We hand code the project as beginners can learn more about the Maven Project structure">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Simple Project - Apache Maven Tutorial – CodeTab",
+        "headline" : "Simple Project - Apache Maven Tutorial – CodeTab",
+        "description" : "In this tutorial, we create a Simple Maven project and build it. We hand code the project as beginners can learn more about the Maven Project structure",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 15:53:00 +0530 IST",
+        "dateModified" : "2019-01-11 15:53:00 +0530 IST",
+        "url" : "/tutorial/apache-maven/simple-project/",
+        "wordCount" : "1255",
+        "keywords" : [ "simple maven project","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Simple Project - Apache Maven Tutorial – CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Maven Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Maven Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/install-apache-maven/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/simple-project/" class="toc-page text-danger ">
+            Simple Project
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/dependency-management/" class="toc-page text-muted ">
+            Dependency Management
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/" class="toc-page text-muted ">
+            Lifecycle Phases
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-plugins" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Plugins
+    </a>
+    
+    <div id="tutorial-apache-maven-plugins" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugins/" class="toc-page dropdown-item text-muted">
+            Plugins
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/" class="toc-page dropdown-item text-muted">
+            Plugin Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/" class="toc-page dropdown-item text-muted">
+            Lifecycle and Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-configuration/" class="toc-page dropdown-item text-muted">
+            Plugin Configuration
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/" class="toc-page dropdown-item text-muted">
+            Plugin Execution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" class="toc-page dropdown-item text-muted">
+            POM – Project Object Model
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/" class="toc-page dropdown-item text-muted">
+            Resources Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/manage-maven-directories/" class="toc-page dropdown-item text-muted">
+            Manage Directories
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/" class="toc-page dropdown-item text-muted">
+            Archetype Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/useful-maven-help-commands/" class="toc-page dropdown-item text-muted">
+            Useful Help Commands
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-distribution" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Project Distribution
+    </a>
+    
+    <div id="tutorial-apache-maven-distribution" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/" class="toc-page dropdown-item text-muted">
+            Project Distribution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-assembly-plugin/" class="toc-page dropdown-item text-muted">
+            Assembly Plugin
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-profile" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Profile
+    </a>
+    
+    <div id="tutorial-apache-maven-profile" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/profile/maven-profiles/" class="toc-page dropdown-item text-muted">
+            Profiles
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-multi-module" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Multi Module
+    </a>
+    
+    <div id="tutorial-apache-maven-multi-module" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/" class="toc-page dropdown-item text-muted">
+            Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/" class="toc-page dropdown-item text-muted">
+            Hierarchical Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/" class="toc-page dropdown-item text-muted">
+            Multi Module Inheritance
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/" class="toc-page dropdown-item text-muted">
+            Multi Module Dependency Management
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-eclipse" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse
+    </a>
+    
+    <div id="tutorial-apache-maven-eclipse" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/" class="toc-page dropdown-item text-muted">
+            Install Eclipse Maven Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/" class="toc-page dropdown-item text-muted">
+            Manage Eclipse Maven Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/" class="toc-page dropdown-item text-muted">
+            Eclipse Multi Module
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="simple-maven-project">Simple Maven Project</h1>
+
+<p>In the previous chapter we introduced Apache Maven and installed it. In
+this chapter, we create a simple Maven project and build it with Maven.</p>
+
+<p>Maven comes with wizard to create various type of projects, but for now
+we are not going to use Maven to create project for us. Instead, we hand
+code the project as beginners can learn more from the process.</p>
+
+<h3 id="work-dir">Work Dir</h3>
+
+<p>Throughout the guide, we use a work directory to run Apache Maven
+examples. The work directory is some location like $HOME/work or
+C:Usersxwork, but you are free to choose any other location. Throughout
+the guide, we use phrases such as create a file, add pom.xml, run Maven
+etc., which simply means carryout that task from <strong>work</strong> directory.
+When a task is to be done from some other folder then we will explicitly
+say so.</p>
+
+<h2 id="create-project">Create Project</h2>
+
+<p>Let&rsquo;s start with the Simple Maven Project named Simple App. Create
+project folder in work directory and then add source folders.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Linux
+
+$ mkdir simple-app
+$ cd simple-app
+$ mkdir src/main/java -p
+
+
+Windows 
+
+C:Usersxwork&gt; mkdir simple-app
+C:Usersxwork&gt; cd simple-app
+C:Usersxwork&gt; mkdir srcmainjava</code></pre></div>
+<p>In Maven, Java source files are placed under <code>src/main/java</code> directory
+and it is a custom enforced by Maven.</p>
+
+<h3 id="note">Note</h3>
+
+<p>Windows user can use Notepad and Linux users can use vi, nano or any
+other editor to add or edit the files.</p>
+
+<p>For sake of brevity, here onwards, we present only the commands for
+Linux. As commands are simple ones such as mkdir, cp, cd etc., users
+should not find it difficult to adapt them for Windows OS.</p>
+
+<p>Next, create package named <strong>com.xyz</strong> in it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd src/main/java
+$ mkdir com/xyz -p
+$ cd com/xyz</code></pre></div>
+<p>Add a Java class <code>App.java</code> to <code>src/main/java/com/xyz</code> folder with
+following contents.</p>
+
+<p><code>simple-app/src/main/java/com/xyz/App.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">com.xyz</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello World!&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+<span class="o">}</span></code></pre></div>
+<p>The App outputs just a greeting and nothing more. In the examples, we
+use simple and trivial code so that we can focus more on Maven rather
+than the project.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="add-pom">Add POM</h2>
+
+<p>Finally, add Maven Project Object Model (POM) file named <code>pom.xml</code> to
+the top level folder of the project i.e. to the <code>simple-app</code>
+folder.</p>
+
+<p><code>simple-app/pom.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+        <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+        <span class="c">&lt;!-- project coordinates --&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.xyz<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>simple-app<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span></code></pre></div>
+<p>Maven Project Object Model (POM) is sort of build file, but much more.
+The POM is where a project’s identity and structure are declared, builds
+are configured, and projects are related to one another. The presence of
+a pom.xml file indicates that project uses Maven as project management
+tool.</p>
+
+<p>At this stage, we use a bare minimum POM to define the project. The
+elements in pom.xml are:</p>
+
+<ul>
+<li><p>project - the top level or root element of the POM.</p>
+
+<ul>
+<li><p>modelVersion - POM model to use and it should be set to 4.0.0</p></li>
+
+<li><p>groupId - project&rsquo;s group id and normally, it is organization
+name which owns the project such as org.apache, org.springsource
+etc.,</p></li>
+
+<li><p>artifactId - name of the project such as commons-lang, junit
+etc.,</p></li>
+
+<li><p>version - artifact version.</p></li>
+</ul></li>
+</ul>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-simple-app-files.png" alt="Simple Maven Project - directory structure" />
+</figure>
+
+
+<p>The trio - groupId, artifactId and version - is known as <strong>Maven
+Coordinates</strong>. The coordinate provides an unique identity to a Maven
+project and every project should have them. The coordinates should be
+unique and no two Maven projects can have same coordinates. These three
+values form the project&rsquo;s fully qualified artifact name and the fully
+qualified name of our simple maven project is <strong>com.xyz:simple-app:1.0</strong>.</p>
+
+<p>At this point, the simple-app project directory structure is as shown in
+the figure.</p>
+
+<h3 id="ellipsis">Ellipsis</h3>
+
+<p>As we progress through Maven, the pom.xml becomes lengthy and it would
+be difficult to present the complete listing each and every time.</p>
+
+<p>To shorten the listing, we use Ellipses (&hellip;) in the listing.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        ...
+        <span class="c">&lt;!-- project build --&gt;</span>
+        <span class="nt">&lt;build&gt;</span>
+          <span class="nt">&lt;filters&gt;</span>
+              <span class="nt">&lt;filter&gt;</span>src/main/filters/default.properties<span class="nt">&lt;/filter&gt;</span>
+          <span class="nt">&lt;/filters&gt;</span>
+        ...</code></pre></div>
+<p>To run the examples, add the snippet between the ellipses to the
+existing pom.xml or other files at appropriate place.</p>
+
+<h2 id="build-project">Build Project</h2>
+
+<p>It&rsquo;s time to run Maven and use it compile simple-app.</p>
+
+<p>Maven downloads core plugins during initial run. So, enable Internet
+connection, and execute the Maven from the top folder of the project
+where <code>pom.xml</code> exists i.e. from <code>simple-app</code> folder.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
+$ mvn compile</code></pre></div>
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-simple-app-target.png" alt="Simple Maven Project - build directory structure" />
+</figure>
+
+
+<p>Maven downloads some of core plugins (around 6MB) and then compile the
+project. It creates a build directory called <code>target</code> in the top folder
+and complied class files goes into it. At this point, the simple-app
+folder is as shown in the screenshot.</p>
+
+<p>Maven core, installed in the previous chapter, is just under 10MB and
+reason for such a small core is, Maven delegates the functionality such
+as compile,test etc., to plugins. On first run of command <code>mvn compile</code>,
+Maven downloads <strong>Apache Resources Plugin</strong> and <strong>Apache Compiler
+Plugin</strong> from its central repository and saves it in the local
+repository and then uses the Complier Plugin to compile the project. On
+subsequent invocation of the command, it finds the Complier Plugin in
+local repository and uses it to execute the command.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="maven-cli">Maven CLI</h2>
+
+<p>The command line interface (CLI) of Maven is <code>mvn</code>, which is used to
+build, manage and also to interact with Maven. Everything in Maven is
+done through <code>mvn</code> and it&rsquo;s always executed from the top folder of the
+project that contains the <code>pom.xml</code>.</p>
+
+<p>Let&rsquo;s now package the our app for distribution with Maven.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn package</code></pre></div>
+<p>Again, since it&rsquo;s first run of package command, Maven downloads <strong>Maven
+Jar Plugin</strong> and some others (around 4MB) from central repository and
+then, it completes the packaging of the project by creating a jar file
+named <code>simple-app-1.0.jar</code> in target folder.</p>
+
+<p>Let&rsquo;s check whether our app is built properly.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ java -cp target/simple-app-1.0.jar com.xyz.App</code></pre></div>
+<p>If app runs without any error and outputs Hello World! message, then we
+have build our first project with Maven.</p>
+
+<p>We can now remove the build directory with following command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn clean</code></pre></div>
+<p>Again, Maven has to delegate the cleaning task to a plugin called
+<strong>Apache Clean Plugin</strong> and to do that, it downloads the plugin (around
+2MB) and then, clean plugin deletes the build directory i.e. target and
+its subdirectories.</p>
+
+<p>We can tryout compile, package again to rebuild the project, and this
+time, we can do so without Internet connection as all required plugins
+are there in the local directory.</p>
+
+<h3 id="resource-encoding">Resource Encoding</h3>
+
+<p>In the build output, you might have observed a
+warning</p>
+
+<p>[WARNING] File encoding has not been set, using platform encoding UTF-8, <br />
+          i.e. build is platform dependent!</p>
+
+<p>To overcome the issue and make build platform independent, modify
+pom.xml and set project.build.sourceEncoding property to UTF-8 as shown
+in the listing.</p>
+
+<p><code>simple-app/pom.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        ...
+        <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+        <span class="c">&lt;!-- set encoding to make build platform independent --&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+                <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+
+        <span class="c">&lt;!-- project coordinates --&gt;</span>
+        ...</code></pre></div>
+<h2 id="maven-repository">Maven Repository</h2>
+
+<p>In the previous section, we executed Maven commands, it downloaded the
+core plugins from Maven central repository such as <code>https://repo.maven.apache.org</code> and stores or caches them in a local repository.</p>
+
+<p>Apart from plugins, Maven also stores dependencies in the local
+repository. For example, if our project depends on Apache Commons Lang
+and when project is built, Maven downloads artifacts of Commons Lang
+from the central repository and caches them in the local repository.</p>
+
+<p>The local repository is normally located in Users home directory under a
+folder named .m2. In Linux, it defaults <code>$HOME/.m2</code> and in Windows, it
+is <code>C:Documents and Settings{username}.m2</code>. Beyond this, we need not
+bother much about the repository and its contents.</p>
+
+<p>In the next chapter, we go through Maven Dependency Management and add
+some dependencies to our Simple App.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

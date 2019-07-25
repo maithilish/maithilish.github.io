@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Custom Post Type on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-custom-post-type/</link>
+    <description>Recent content in Wordpress Custom Post Type on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 09:36:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-custom-post-type/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom Post Type - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/</link>
+      <pubDate>Fri, 11 Jan 2019 09:36:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/</guid>
+      <description>7.1. WordPress Custom Post Type With Share on Social Plugin, admins can create and configure multiple Social Lockers. While it is not impossible to use WordPress option to store locker settings, better approach would be to use WordPress Custom Post Type which provides much more robust and convenient framework to manage multiple items of a type.
+In this chapter, we explain how to add new WordPress Custom Post Type and manage custom posts and its meta data.</description>
+    </item>
+    
+  </channel>
+</rss>

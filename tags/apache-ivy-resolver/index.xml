@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Ivy Resolver on Codetab</title>
+    <link>http://www.codetab.org/tags/apache-ivy-resolver/</link>
+    <description>Recent content in Apache Ivy Resolver on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 23:45:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/apache-ivy-resolver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resolvers - Apache Ivy Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</link>
+      <pubDate>Thu, 10 Jan 2019 23:45:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</guid>
+      <description>5.2. Apache Ivy Resolvers and Repository Apache Ivy Repositories
+Until now, we used the public repository to resolve dependencies. But you may want to set up your own repository for reasons like
+ restricted Internet access – your network may have Internet access or usage policy. This may limit or even restrict access to Internet. Setting up an enterprise repository helps to overcome this issue.
+ reliability/accuracy – modules available in public repository may have quality issues.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multiple Tasks on Codetab</title>
+    <link>http://www.codetab.org/tags/multiple-tasks/</link>
+    <description>Recent content in Multiple Tasks on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jan 2019 03:54:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/multiple-tasks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multiple Tasks - Scoopi Web Scraper - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/</link>
+      <pubDate>Sat, 12 Jan 2019 03:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/</guid>
+      <description>Multiple Tasks Scoopi can execute multiple tasks for a locator and also multiple tasks on multiple locatorGroups.
+Multiple tasks and single Locator group The Example-1 scrape Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. One option is to define acme-quote.html locator in two locatorGroups and assign task to each of them. This unnecessarily downloads acme-quote.html twice. Instead, it is better to define single locatorGroup and assign two tasks - priceTask and snapshotTask so that page downloads only once.</description>
+    </item>
+    
+    <item>
+      <title>Multi Tasks - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</link>
+      <pubDate>Fri, 11 Jan 2019 23:51:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</guid>
+      <description>Multiple Tasks Scoopi can execute multiple tasks for a locator and also multiple tasks on multiple locatorGroups.
+Multiple tasks and single Locator group The Example-1 from fin folder scrape Price data from acme-snapshot.html page while Example-2 extracts Snapshot data from the same page. One option is to define acme-snapshot.html locator in two locatorGroups and assign task to each of them. This unnecessarily downloads acme-snapshot.html twice. Instead, it is better to define single locatorGroup and assign two tasks - priceTask and snapshotTask so that page downloads only once.</description>
+    </item>
+    
+  </channel>
+</rss>

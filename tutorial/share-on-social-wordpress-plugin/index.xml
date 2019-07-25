@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Share on Social on Codetab</title>
+    <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/</link>
+    <description>Recent content in Share on Social on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 06:11:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction - Share on Social WordPress Plugin - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-wordpress-plugin/</link>
+      <pubDate>Fri, 11 Jan 2019 06:11:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-wordpress-plugin/</guid>
+      <description>Share on Social WordPress Plugin allows you to lock a part of content on a WordPress Post or Page until user shares your blogs in social media. Plugin posts the shared link - as interactive posts - to users&amp;rsquo; wall and helps you to drive new visitors and increase engagement.</description>
+    </item>
+    
+    <item>
+      <title>Usage - Share on Social WordPress Plugin - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</link>
+      <pubDate>Fri, 11 Jan 2019 06:55:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</guid>
+      <description>Usage In this blog, we explain Share on Social WordPress Plugin usage through examples. Share on Social lockers can be placed on WordPress Posts and Pages. For ease of explanation, we refer WordPress Posts and Pages as page. Basic Locker Simply by placing the content between shortcode [[share-on-social] [/share-on-social]] we can activate lockers. It uses default locker named Basic and shares the URL of the page (post or page) where locker is placed.</description>
+    </item>
+    
+    <item>
+      <title>Setup Apps - Share on Social WordPress Plugin - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/create-facebook-google-plus-apps/</link>
+      <pubDate>Fri, 11 Jan 2019 06:39:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/create-facebook-google-plus-apps/</guid>
+      <description>Facebook App ID for Share on Social First we need to register as developer with Facebook. Open Facebook Developers and sign in with your Facebook account. Clicks Apps in top menu bar and select Register as Developer from the drop down menu. Complete the developer registration process by PIN verification via SMS or Phone call. After registering as developer go back to Facebook Developers and select Add a New App from Apps drop down menu.</description>
+    </item>
+    
+    <item>
+      <title>Screenshots - Share on Social WordPress Plugin - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-social-screenshots/</link>
+      <pubDate>Fri, 11 Jan 2019 06:26:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-social-screenshots/</guid>
+      <description>  Share on Social Locker in action.  Google Plus Interactive Post shared by the Plugin.  Share on Social Menu and Lockers.  Add and customize your own lockers  Share details by date.  Summary stats. </description>
+    </item>
+    
+  </channel>
+</rss>

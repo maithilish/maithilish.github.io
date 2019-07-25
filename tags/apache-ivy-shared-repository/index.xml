@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Ivy Shared Repository on Codetab</title>
+    <link>http://www.codetab.org/tags/apache-ivy-shared-repository/</link>
+    <description>Recent content in Apache Ivy Shared Repository on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 23:32:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/apache-ivy-shared-repository/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shared Repository - Apache Ivy Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-ivy/shared-repository/</link>
+      <pubDate>Thu, 10 Jan 2019 23:32:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-ivy/shared-repository/</guid>
+      <description>6.2. Apache Ivy Shared Repository Apache Ivy Shared Repository
+Shared repository is similar to a local repository in almost all aspects except that all users can access a shared repository and whereas local repository is private to the user who owns it.
+Default configuration comes with a resolver named shared which points to $HOME/.ivy2/shared directory. If you don&amp;rsquo;t like a shared repository in your home directory, then it may be moved to any other locations.</description>
+    </item>
+    
+  </channel>
+</rss>

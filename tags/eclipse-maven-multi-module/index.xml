@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse Maven Multi Module on Codetab</title>
+    <link>http://www.codetab.org/tags/eclipse-maven-multi-module/</link>
+    <description>Recent content in Eclipse Maven Multi Module on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Jun 2019 22:12:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/eclipse-maven-multi-module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eclipse Maven Multi Module - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/</link>
+      <pubDate>Fri, 21 Jun 2019 22:12:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/</guid>
+      <description>Eclipse Maven Multi Module In this tutorial we explain steps to create a Maven Multi Module Project using Eclipse Maven Plugin (M2E) Wizard.
+The main steps are
+ create top level maven project add modules to top level project  Create Top Level Maven Project Open Maven Project Wizard with File → New → Others → Maven → Maven Project.
+ The wizard opens Select project name and location window.</description>
+    </item>
+    
+  </channel>
+</rss>

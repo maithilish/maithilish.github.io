@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WordPress Plugin Development - CodeTab on Codetab</title>
+    <link>http://www.codetab.org/tutorial/wordpress-plugin-development/</link>
+    <description>Recent content in WordPress Plugin Development - CodeTab on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 07:12:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/wordpress-plugin-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/</link>
+      <pubDate>Fri, 11 Jan 2019 07:12:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/</guid>
+      <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab WordPress Plugin Development Tutorial Some time back, we released Share on Social, a social media sharing plugin. In this WordPress Plugin Development Tutorial, we go through the construction of the plugin and also other essentials to develop a robust WordPress plugin, so as to share the experience with aspiring WordPress Plugin developers.
+There are enough blogs about WordPress Plugin Development.</description>
+    </item>
+    
+    <item>
+      <title>Local Install - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</link>
+      <pubDate>Fri, 11 Jan 2019 08:22:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</guid>
+      <description>Install WordPress locally While it is possible to develop WordPress Plugin on a WordPress installation hosted on server or cloud, it is much more convenient to do that on local machine.In this section, we explain the steps to install WordPress on local system.
+XAMPP is probably the easiest way to install WordPress locally. XAMPP by Apache Friends bundles Apache, MySQL, PHP and Pearl as an installer. XAMPP comes as separate package for Linux, Windows and Mac.</description>
+    </item>
+    
+    <item>
+      <title>Simple Plugin - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</link>
+      <pubDate>Fri, 11 Jan 2019 08:04:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</guid>
+      <description>2.1. WordPress Simple Plugin In this section, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
+We use Eclipse IDE with PDT (PHP Development Tools), but you are free to use your favorite PHP IDE.
+Create PHP Project
+In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&amp;rsquo; main file wp-simple-plugin.php in the top folder with the following contents.</description>
+    </item>
+    
+    <item>
+      <title>Shortcode - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/</link>
+      <pubDate>Fri, 11 Jan 2019 07:46:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/</guid>
+      <description>2.2. WordPress Shortcode Let&amp;rsquo;s add some functionality to our plugin using WordPress Shortcode API.
+This is our first brush with WordPress API and we go with Shortcode because they are easy to understand and implement.
+WordPress Shortcode are macros that can be placed in posts. When processing the posts, WordPress replaces the shortcode with contents returned by a handler function.
+Add following code to wp-simple-plugin.php after defined( &#39;ABSPATH&#39; ) or die.</description>
+    </item>
+    
+    <item>
+      <title>Plugin Structure - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/</link>
+      <pubDate>Fri, 11 Jan 2019 07:30:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/</guid>
+      <description>3. WordPress Plugin Structure When we plan to develop and release a production level WordPress Plugin, we have to follow certain best practices suggested by WordPress and also by other accomplished Plugin developers. WordPress Plugin structure as to follow some well defined layout.
+In this section, we show how to structure a WordPress Plugin and also highlight some of the coding standards that makes the plugin easy to maintain and increase readability.</description>
+    </item>
+    
+    <item>
+      <title>Main File - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</link>
+      <pubDate>Fri, 11 Jan 2019 08:56:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</guid>
+      <description>In this chapter, we step through the plugins&amp;rsquo; main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
+Plugin Info The main file share-on-social.php starts with header comments. As already described in the Section 2.1, “WordPress Simple Plugin”](wordpress-simple-plugin/), WordPress uses the header comments from the main file to display the Plugin info in plugins page.
+Define Constants Throughout the plugin, we often refer some paths and constants.</description>
+    </item>
+    
+    <item>
+      <title>Hooks Actions Filters - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</link>
+      <pubDate>Fri, 11 Jan 2019 08:33:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</guid>
+      <description>WordPress Hooks, Actions and Filters are the pieces which dock plugins to WordPress core. They are at the heart of each and every plugin. In this chapter, we explain this very important aspect of plugin development.
+In the plugins&amp;rsquo; main file, we use add_action() to to load admin module and similarly, many setup() methods of plugin class files use add_action(). Here is a snippet from class-options.php.
+share-on-social/admin/class-options.php
+class Sos_Options { public function setup () { add_action( &amp;#39;admin_init&amp;#39;, array($this,&amp;#39;init_common_options&amp;#39;) ); add_action( &amp;#39;admin_menu&amp;#39;, array($this,&amp;#39;register_settings_page&amp;#39;) ); } Let&amp;rsquo;s understand what they mean.</description>
+    </item>
+    
+  </channel>
+</rss>

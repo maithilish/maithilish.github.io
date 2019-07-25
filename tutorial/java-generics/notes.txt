@@ -1,0 +1,39 @@
+terminology
+-----------
+generic type - List<T>
+type parameter - <T> 
+type argument - <String>
+parameterized type - List<String> list;
+formal parameter - foo(String x)
+formal type parameter - foo(T x) or Bar<T>
+type parameter bounds -  <T extends Comparable<T>>
+unbounded wildcard - ?
+wildcard with upper bound - ? extends Type 
+wildcard with lower bound - ? super Type 
+
+legal
+-----
+
+1. class FoodList<T extends Food> { }
+
+2. List<?> anyList = new ArrayList<String>();
+
+
+illegal 
+-------
+
+List<?> list = new ArrayList<?>();
+new FoodList<?>();
+
+class FoodList<?> { }
+
+class FoodList<T super Cookie> { }
+
+class MyClass implements Comparable<?> { }
+
+FoodList<String> for class FoodList<T extends Food> { } 
+
+List<?> anyList = new ArrayList<String>();  // ok
+List<String> stringList = anyList;          // error
+
+

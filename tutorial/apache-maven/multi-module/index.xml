@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi Module on Codetab</title>
+    <link>http://www.codetab.org/tutorial/apache-maven/multi-module/</link>
+    <description>Recent content in Multi Module on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/apache-maven/multi-module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multi Module Project - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/</link>
+      <pubDate>Fri, 11 Jan 2019 17:45:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/</guid>
+      <description>Maven Multi Module As project size and complexity increases, it makes sense to split the project into multiple modules. While it is always possible to split the project into multiple projects and link them as dependencies, it complicates the build process. In Maven, the preferred approach is to structure the project as multi module project and delegate the rest to Maven.
+In this tutorial, we go through a simple multi module project.</description>
+    </item>
+    
+    <item>
+      <title>Maven Hierarchical Multi Module Project - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</link>
+      <pubDate>Fri, 11 Jan 2019 21:49:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</guid>
+      <description>Hierarchical Multi Module Project The previous tutorial explained the structure of a simple multi module project. Let&amp;rsquo;s extend it further to learn advanced features of Maven multi module project.
+The example code is available at GitHub Maven Examples. Download the examples as zip and extract it to some location or clone it with git.
+Flat vs Hierarchical Layout In extended-multi project, we add one more module to simple-multi and the new module, config, has one class ConfigService that uses Apache Commons Configuration library to manage configurations of the app.</description>
+    </item>
+    
+    <item>
+      <title>Multi Module Inheritance - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/</link>
+      <pubDate>Fri, 11 Jan 2019 21:55:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/</guid>
+      <description>Multi Module Inheritance The previous tutorials explained the structure of simple and hierarchical multi module project. This tutorial explain the use of inheritance feature to compact and streamline the module POMs.
+The example code extended-multi, used in this tutorial, is available at GitHub Maven Examples. Download the examples as zip and extract it to some location or clone it with git.
+Most elements from the parent POM are inherited by its children.</description>
+    </item>
+    
+    <item>
+      <title>Multi Module Dependency - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/</link>
+      <pubDate>Fri, 11 Jan 2019 22:12:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/</guid>
+      <description>Multi Module Dependency Management Dependency inheritance (explained in previous chapter) is useful when a dependency is required by all child modules. When a dependency is required by some or even many, but not by all modules, then use dependency management feature.
+The example code extended-multi, used in this tutorial, is available at GitHub Maven Examples. Download the examples as zip and extract it to some location or clone it with git.</description>
+    </item>
+    
+  </channel>
+</rss>

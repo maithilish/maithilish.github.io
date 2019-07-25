@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Dropbox Backup on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-dropbox-backup/</link>
+    <description>Recent content in Wordpress Dropbox Backup on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 04:44:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-dropbox-backup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dropbox Backup - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/</link>
+      <pubDate>Fri, 11 Jan 2019 04:44:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/</guid>
+      <description>11.2. WordPress Dropbox Backup In the previous section, we backup the WordPress installation. In this section, we setup Dropbox to receive files from OpenShift and then automate the WordPress Dropbox Backup process.
+OpenShift to Dropbox It makes sense to move the backup files out of OpenShift to Dropbox as it serves two purposes - conserves storage space and in the unlikely event of application corruption, we have a safe set in Dropbox.</description>
+    </item>
+    
+  </channel>
+</rss>

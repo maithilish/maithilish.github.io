@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datadef on Codetab</title>
+    <link>http://www.codetab.org/tags/datadef/</link>
+    <description>Recent content in Datadef on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 22:47:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/datadef/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</link>
+      <pubDate>Fri, 11 Jan 2019 22:47:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</guid>
+      <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
+In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
+The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
+dataDefs: price: query: block: &amp;#34;div#price_tick&amp;#34; selector: &amp;#34;*&amp;#34; items: [ item: { name: &amp;#34;Price&amp;#34;, value: &amp;#34;Price&amp;#34; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
+    </item>
+    
+    <item>
+      <title>DataDef Axis Member - Gotz ETL - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gotz-etl/datadef-axis-member/</link>
+      <pubDate>Fri, 11 Jan 2019 19:13:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gotz-etl/datadef-axis-member/</guid>
+      <description>Gotz uses datadef to define data. Datadef contains axis, query, script and members which collectively defines the data to be scrapped from the HTML page.
+The job.xml in Example 1 uses a simple DataDef which scrape one data point i.e. price of the company&amp;rsquo;s share from defs/examples/page/acme-quote.html page.
+The datadef snippet from defs/examples/jsoup/ex-1/job.xml is as below
+&amp;lt;dataDef name=&amp;#34;price&amp;#34;&amp;gt; &amp;lt;axis name=&amp;#34;col&amp;#34;&amp;gt; &amp;lt;xf:fields&amp;gt; &amp;lt;xf:script script=&amp;#34;configs.getRunDateTime()&amp;#34; /&amp;gt; &amp;lt;/xf:fields&amp;gt; &amp;lt;member name=&amp;#34;date&amp;#34; /&amp;gt; &amp;lt;/axis&amp;gt; &amp;lt;axis name=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;member name=&amp;#34;Price&amp;#34; value=&amp;#34;Price&amp;#34; /&amp;gt; &amp;lt;/axis&amp;gt; &amp;lt;axis name=&amp;#34;fact&amp;#34;&amp;gt; &amp;lt;xf:fields&amp;gt; &amp;lt;xf:query region=&amp;#34;div#price_tick&amp;#34; field=&amp;#34;\*&amp;#34; /&amp;gt; &amp;lt;/xf:fields&amp;gt; &amp;lt;/axis&amp;gt; &amp;lt;/dataDef&amp;gt; It defines a dataDef named price with three axes.</description>
+    </item>
+    
+    <item>
+      <title>DataDef - Scoopi Web Scraper - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/datadef-v094/</link>
+      <pubDate>Sat, 12 Jan 2019 02:47:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/datadef-v094/</guid>
+      <description>DataDef Scoopi uses datadef to define data. Datadef contains axis, query, script and members which collectively defines the data to be scrapped from the HTML page.
+In this chapter, we go through Example-1 job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/page/acme-quote.html page.
+The datadef snippet from defs/examples/jsoup/ex-1/job.yml is as below
+dataDefs: price: axis: fact: query: region: &amp;#34;div#price_tick&amp;#34; field: &amp;#34;*&amp;#34; col: query: script: configs.</description>
+    </item>
+    
+  </channel>
+</rss>

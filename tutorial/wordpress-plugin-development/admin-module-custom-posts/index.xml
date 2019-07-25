@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Admin Module - Posts on Codetab</title>
+    <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/</link>
+    <description>Recent content in Admin Module - Posts on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom Post Type - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/</link>
+      <pubDate>Fri, 11 Jan 2019 09:36:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/</guid>
+      <description>7.1. WordPress Custom Post Type With Share on Social Plugin, admins can create and configure multiple Social Lockers. While it is not impossible to use WordPress option to store locker settings, better approach would be to use WordPress Custom Post Type which provides much more robust and convenient framework to manage multiple items of a type.
+In this chapter, we explain how to add new WordPress Custom Post Type and manage custom posts and its meta data.</description>
+    </item>
+    
+    <item>
+      <title>Meta Box - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/</link>
+      <pubDate>Fri, 11 Jan 2019 09:52:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/</guid>
+      <description>7.2. WordPress Meta Box In the previous blog, we saw how to register a new custom post type named sos and use it as Social Lockers. To manage the custom post type items, in this blog we setup, render and customize Sos Locker editor with WordPress Meta Box.
+While registering the custom post type, we used register_meta_box_cb to register the callback method setup_meta_boxes().
+share-on-social/admin/class-sos.php
+public function create_post_type () { register_post_type( $this-&amp;gt;post_type, // other args &amp;#39;register_meta_box_cb&amp;#39; =&amp;gt; array($this,&amp;#39;setup_meta_boxes&amp;#39;) ) ); .</description>
+    </item>
+    
+    <item>
+      <title>Save Post - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/</link>
+      <pubDate>Fri, 11 Jan 2019 10:10:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/</guid>
+      <description>7.3. WordPress Save Post In the previous two blogs, we saw how to add custom post type and customize post editor. In this blog, we cover the steps to save the custom post and its meta data.
+ We added sos custom post type as use it as social lockers. Sos Lockers defines four meta data fields. One of benefits of WordPress Custom Post Type is that we can use WordPress Post management framework to handle activities such as publish, trash and edit.</description>
+    </item>
+    
+  </channel>
+</rss>

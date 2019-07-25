@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Child Theme on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-child-theme/</link>
+    <description>Recent content in Wordpress Child Theme on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 04:37:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-child-theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Child Theme - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/import/child-theme/</link>
+      <pubDate>Fri, 11 Jan 2019 04:37:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/import/child-theme/</guid>
+      <description>10.2. WordPress Child Theme In the previous section, we import static HTML files with HTML Import 2 Plugin. The Plugin imports the HTML content and linked images, but it does not import the linked stylesheets and rightly so! In this section, we use WordPress child theme to handle page stylesheets.
+WordPress Theme Components Before extending a theme with a child theme, let&amp;rsquo;s understand the structure and components of a WordPress theme.</description>
+    </item>
+    
+  </channel>
+</rss>

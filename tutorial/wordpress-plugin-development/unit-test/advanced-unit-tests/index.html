@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="WordPress Advanced Unit Tests Tutorial shows the use of WordPress global arrays and classes such as WP_Screen, WP_Scripts etc., to unit test the plugins.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Advanced Unit Tests - WordPress Plugin Development - CodeTab",
+        "headline" : "Advanced Unit Tests - WordPress Plugin Development - CodeTab",
+        "description" : "WordPress Advanced Unit Tests Tutorial shows the use of WordPress global arrays and classes such as WP_Screen, WP_Scripts etc., to unit test the plugins.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 13:36:00 +0530 IST",
+        "dateModified" : "2019-01-11 13:36:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/",
+        "wordCount" : "1275",
+        "keywords" : [ "wordpress advanced unit tests","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Advanced Unit Tests - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-danger">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="12-5-wordpress-advanced-unit-tests">12.5. WordPress Advanced Unit Tests</h2>
+
+<p>In the previous blog we saw tests that uses WordPress API functions to
+investigate the outcome of a method. However, such WordPress functions
+which are helpful to write tests are few, and to test majority of plugin
+methods, we need to rely on WordPress global variables and classes. Many
+WordPress functions store information in global variables or in classes
+which is used later to construct the output i.e. response sent to the
+browser. In unit tests, it is easy to fetch the data from the global
+variables or classes for tests.</p>
+
+<p>In this blog, we explain test methods which rely on WordPress globals
+and classes, and also, show an easy way to find out the global variables
+used by such WordPress functions.</p>
+
+<p>But before that, we touch upon another category of tests that simulate
+WordPress admin screen.</p>
+
+<h3 id="admin-screen">Admin Screen</h3>
+
+<p>The main file of the plugin, share-on-social.php, is coded in such way
+that when plugin is loaded, it includes front end php files. However,
+for admin screen along with front end files, it also includes admin php
+file. As front end files are loaded both for site screens as well for
+admin screen, we can test their inclusion easily. But, we need to
+simulate admin screen to test admin files inclusion.</p>
+
+<p>WordPress uses class
+<a href="http://codex.wordpress.org/Class_Reference/WP_Screen" target="_blank">WP_Screen</a> to
+define the screen and a global variable <strong>current_screen</strong> holds the
+current <code>WP_Screen</code> object. Normally, when a test runs the
+current_screen is null which indicates that tests are are executed in
+normal site screens. To switch to Admin screen, we have to create a new
+WP_Screen object and assign it to current_screen.</p>
+
+<p>The trimmed version of <code>Test_Share_On_Social::test_setup_for_admin()</code>
+shows how it is done.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-share-on-social.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_setup_for_admin () {
+        global $current_screen;
+        $this-&gt;assertNull( $current_screen );
+
+        $included_files = get_included_files();
+                
+        $file = SOS_PATH . &#39;admin/class-admin.php&#39;;
+        $this-&gt;assertNotContains( $file, $included_files );
+        
+        $this-&gt;assertFalse( has_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; ) );
+                
+        // setup admin screen to make is_admin() as true
+
+        
+        $screen = WP_Screen::get( &#39;admin_init&#39; );
+        $current_screen = $screen;
+        
+        // now call setup
+        setup_sos_plugin();
+        
+        // test for admin stuff
+        $included_files = get_included_files();
+        
+        $file = SOS_PATH . &#39;admin/class-admin.php&#39;;
+        $this-&gt;assertContains( $file, $included_files );
+       
+        $this-&gt;assertTrue( 
+                has_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; ) == true );
+       
+        // revert back the screen
+        $current_screen = null;
+    }</code></pre></div>
+<p>To start with, we assert that global current_screen is null which
+confirms that we are in site screen. Next, with PHP function
+get_included_files(), we get list of loaded files and assert that
+admin files are not loaded as we are in site screen at this stage.</p>
+
+<p>Next, we obtain an instance of admin screen with the static method
+<code>WP_Screen::get()</code>. The parameter <strong>admin_init</strong> is the hook name to
+which the screen is related. The returned screen object is assigned to
+global current_screen and with this, we are now effectively in admin
+screen and the WordPress function is_admin() function returns true.</p>
+
+<p>Next, we call <code>setup_sos_plugin()</code> and as is_admin() returns true, it
+loads admin files in addition to the front end files. We test whether
+admin files are included and also, whether function load_sos_admin()
+is hooked to action <strong>plugin_loaded</strong>. Once tests are over, we revert
+back to site screen by assigning the current_screen to null.</p>
+
+<p>We use WP_Screen also in some test methods in <code>Test_Help</code> and
+<code>Test_Sos</code> test cases.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="wordpress-global-variables-and-classes">WordPress Global Variables and Classes.</h3>
+
+<p>More often than not, WordPress functions use variety of global arrays to
+hold data of menu items, actions, scripts etc., which are subsequently
+used to build the response that is sent to the browser. Similarly, some
+functions use class objects such as WP_Screen, WP_Scripts etc., to
+hold data which again are accessed through global variables. Methods
+which use such functions can be tested by accessing the global arrays
+and class objects.</p>
+
+<h3 id="test-localized-scripts">Test Localized Scripts</h3>
+
+<p>In <code>Sos_Frontend::add_sos_script()</code>, apart from enqueue, we also
+localize script data with the help of WordPress function
+<a href="http://codex.wordpress.org/Function_Reference/wp_localize_script" target="_blank">wp_localize_script()</a>.
+WordPress sends the localized data to the browser which is used by the
+scripts on client side.</p>
+
+<p><code>share-on-social/frontend/class-frontend.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
+        ....            
+        wp_localize_script( &#39;sos_script&#39;, &#39;sos_data&#39;, 
+                    array(
+                            &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
+                            &#39;nonce&#39; =&gt; wp_create_nonce( &#39;sos-save-stat&#39; ),
+                            &#39;gplus_client_id&#39; =&gt; $gplus_client_id
+                    ) );
+    }</code></pre></div>
+<p>Since WordPress doesn&rsquo;t provide any function to access the localized
+data, we test them using WordPress class <code>WP_Scripts</code>.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-frontend.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_localized_script () {
+        global $wp_scripts;      
+        ....
+        // add shortcode and localize data
+        $this-&gt;frontend-&gt;setup();
+        $this-&gt;frontend-&gt;add_sos_scripts();
+        
+        $data = $wp_scripts-&gt;get_data( &#39;sos_script&#39;, &#39;data&#39; );
+        $data = substr( $data, strpos( $data, &#39;{&#39; ) - 1, strpos( $data, &#39;}&#39; ) + 1 );
+        $sos_data = json_decode( $data, true );
+        $this-&gt;assertCount( 3, $sos_data );        
+        $this-&gt;assertarrayHasKey( &#39;ajax_url&#39;, $sos_data );
+        $this-&gt;assertarrayHasKey( &#39;nonce&#39;, $sos_data );
+        $this-&gt;assertarrayHasKey( &#39;gplus_client_id&#39;, $sos_data );
+        $this-&gt;assertSame( $sos_data<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/wp_verify_nonce&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> &#39;ajax_url&#39; ],
+                      &#39;http://localhost/wp-admin/admin-ajax.php&#39; );      
+        $this-&gt;assertSame( $sos_data[ &#39;gplus_client_id&#39; ], &#39;test_gplusclientid&#39; );
+        // wp_verify_nonce returns 1 or 2 when valid else false
+        $this-&gt;assertSame( 1,wp_verify_nonce( $sos_data[ &#39;nonce&#39; ], &#39;sos-save-stat&#39; ) );
+    }</code></pre></div>
+<p><code>WP_Script::get_data()</code> returns the localized data as JSON string and
+PHP function json_decode() is used to decode which returns the array of
+localized data. Out of the localized data, nonce is a special case as
+its value is random. WordPress function
+[wp_verify_nonce()</a>
+is used to test whether nonce is valid.</p>
+
+<h3 id="test-custom-post-type">Test Custom Post Type</h3>
+
+<p>The method <code>Sos::create_post_type()</code> defined in
+<code>share-on-social/admin/class-sos.php</code> registers a custom post type and
+the test uses global array <code>$wp_post_types</code> to test it.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_create_post_type () {
+        global $wp_post_types;
+        
+        if ( isset( $wp_post_types[ &#39;sos&#39; ] ) ) {
+            unset( $wp_post_types[ &#39;sos&#39; ] );
+        }
+        $this-&gt;assertarrayNotHasKey( &#39;sos&#39;, $wp_post_types );
+        
+        // register post type
+        $this-&gt;sos-&gt;create_post_type();
+        $this-&gt;assertarrayHasKey( &#39;sos&#39;, $wp_post_types );
+        
+        $sos_type = $wp_post_types[ &#39;sos&#39; ];
+        $this-&gt;assertFalse( $sos_type-&gt;public );
+        $this-&gt;assertFalse( $sos_type-&gt;hierarchical );
+        $this-&gt;assertTrue( $sos_type-&gt;exclude_from_search );
+        $this-&gt;assertFalse( $sos_type-&gt;publicly_queryable );
+        $this-&gt;assertTrue( $sos_type-&gt;has_archive );
+        
+        $this-&gt;assertSame( 15, $sos_type-&gt;menu_position );
+        $this-&gt;assertTrue( $sos_type-&gt;show_ui );
+        $this-&gt;assertTrue( $sos_type-&gt;show_in_menu );
+        $this-&gt;assertTrue( $sos_type-&gt;show_in_admin_bar );
+        $this-&gt;assertFalse( $sos_type-&gt;show_in_nav_menus );
+        $this-&gt;assertSame( SOS_URL . &#39;/images/sos-icon.png&#39;, 
+                $sos_type-&gt;menu_icon );
+    }</code></pre></div>
+<h3 id="test-menu-and-sub-menu">Test Menu and Sub Menu</h3>
+
+<p>Method <code>Sos_Options::register_settings_page()</code> creates sub menu for the
+options page and WordPress holds sub menu data in global array
+<code>$submenu</code>.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_register_settings_page () {
+        global $submenu;
+        
+        $this-&gt;assertFalse( isset( $submenu[ &#39;edit.php?post_type=sos&#39; ] ) );
+        $this-&gt;assertFalse( 
+                Util::has_action( &#39;admin_page_sos_settings_page&#39;, 
+                        $this-&gt;sos_options, &#39;render_settings_page&#39; ) );
+        
+        $this-&gt;sos_options-&gt;register_settings_page();
+        
+        $this-&gt;assertTrue( isset( $submenu[ &#39;edit.php?post_type=sos&#39; ] ) );
+        $settings = $submenu[ &#39;edit.php?post_type=sos&#39; ];
+        $this-&gt;assertSame( &#39;Settings&#39;, $settings[ 0 ][ 0 ] );
+        $this-&gt;assertSame( &#39;administrator&#39;, $settings[ 0 ][ 1 ] );
+        $this-&gt;assertSame( &#39;sos_settings_page&#39;, $settings[ 0 ][ 2 ] );
+        $this-&gt;assertSame( &#39;Common Options&#39;, $settings[ 0 ][ 3 ] );
+        $this-&gt;assertTrue( 
+                Util::has_action( &#39;admin_page_sos_settings_page&#39;, 
+                        $this-&gt;sos_options, &#39;render_settings_page&#39; ) );
+    }</code></pre></div>
+<p>Throughout the Share on Social Plugin test suit you will find many such
+tests that uses WordPress global arrays and class objects.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="find-global-variable-and-class">Find Global Variable and Class</h3>
+
+<p>When you write tests extensively then it is important to learn a
+technique to find out whether a WordPress function uses global array or
+class object. Let&rsquo;s explain this with an example.</p>
+
+<p>Method <code>Sos_Options::register_settings_page()</code> uses WordPress function
+<code>add_submenu_page()</code>. To know, whether this function uses any global
+array, open the function reference page
+<a href="http://codex.wordpress.org/Function_Reference/add_submenu_page">http://codex.wordpress.org/Function_Reference/add_submenu_page</a> and
+scroll down to Source File section where you will find a link to the
+source file of the function.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-source-file.png" alt="WordPress Advanced Unit Tests - function source file" />
+</figure>
+
+
+<p>Open the source file and search for function add_submenu_page() and
+there you gather that it uses global $submenu and $menu among other
+globals. When function uses multiple globals, you may have to study the
+source little bit to understand which of them holds the functions&rsquo;
+outcome.</p>
+
+<p>Once you know the target global variable, you can echo it in the test
+method to know more about data held by it. As globals are typically
+array or class object. use print_r() function to output the data.</p>
+
+<p>Bear in mind, some of these arrays and objects are huge in size. It is
+much easier to analyze the output if data is piped to some file.</p>
+
+<p>In the next blog, we explain the unit tests for internationalization
+functions.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

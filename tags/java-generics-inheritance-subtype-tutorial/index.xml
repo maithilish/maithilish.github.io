@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Generics Inheritance Subtype Tutorial on Codetab</title>
+    <link>http://www.codetab.org/tags/java-generics-inheritance-subtype-tutorial/</link>
+    <description>Recent content in Java Generics Inheritance Subtype Tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/java-generics-inheritance-subtype-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Generics Subtype - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/java-generics/subtype/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/java-generics/subtype/</guid>
+      <description>Generic Inheritance and Subtypes 
+To explain Generic inheritance, subtypes and wildcards, we use following class hierarchy:
+ The Food, Snack and Cookie classes are as below. Fruit and Apple classes are similar.
+public class Food { public void foodMethod(){ } } public class Snack extends Food { public void snackMethod(){ } } public class Cookie extends Snack { public void cookieMethod(){ } } We use Java List interface in examples with a focus on its add() and get() methods.</description>
+    </item>
+    
+  </channel>
+</rss>

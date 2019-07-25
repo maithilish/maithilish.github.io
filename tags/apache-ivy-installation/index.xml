@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Ivy Installation on Codetab</title>
+    <link>http://www.codetab.org/tags/apache-ivy-installation/</link>
+    <description>Recent content in Apache Ivy Installation on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 21:17:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/apache-ivy-installation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation - Apache Ivy Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-ivy/installation/</link>
+      <pubDate>Thu, 10 Jan 2019 21:17:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-ivy/installation/</guid>
+      <description>To work through the tutorial, we require Apache Ivy, Ant and IvyDE, and this chapter covers installation of software.
+   Software Version Size (approximate)     Apache Ivy 2.2 1 MB   Apache Ant 1.8.2 8 MB   IvyDE Eclipse Plugin  8 MB    Apache Ant and Apache Ivy Installation
+We require Apache Ant and Apache Ivy to work through the tutorial.</description>
+    </item>
+    
+  </channel>
+</rss>

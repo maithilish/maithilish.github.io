@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Scoopi Query Aanalyzer comes handy to analyze web pages and construct and fine tune selector or xpath for specific element">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Selector - Scoopi Web Scraper - why just scrape when you can scoop",
+        "headline" : "Selector - Scoopi Web Scraper - why just scrape when you can scoop",
+        "description" : "Scoopi Query Aanalyzer comes handy to analyze web pages and construct and fine tune selector or xpath for specific element",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 23:10:00 +0530 IST",
+        "dateModified" : "2019-01-11 23:10:00 +0530 IST",
+        "url" : "/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/",
+        "wordCount" : "809",
+        "keywords" : [ "selector","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Selector - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Scoopi Web Scraper</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Scoopi Web Scraper">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-basic" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Basics
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-basic" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/" class="toc-page dropdown-item text-muted">
+            Installation and Quick Start
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/" class="toc-page dropdown-item text-muted">
+            Definition File
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/" class="toc-page dropdown-item text-muted">
+            DataDef
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/" class="toc-page dropdown-item text-muted">
+            Dimensions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/" class="toc-page dropdown-item text-muted">
+            Data Items and Dynamic Query
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/" class="toc-page dropdown-item text-muted">
+            Index, IndexRange and BreakAfter
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/" class="toc-page dropdown-item text-muted">
+            Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/" class="toc-page dropdown-item text-danger">
+            Selector
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-advanced" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Advanced
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-advanced" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/" class="toc-page dropdown-item text-muted">
+            Multi Dimensions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/" class="toc-page dropdown-item text-muted">
+            Multi Tasks
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/" class="toc-page dropdown-item text-muted">
+            WorkFlow, Steps and Plugins
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/" class="toc-page dropdown-item text-muted">
+            Converters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/" class="toc-page dropdown-item text-muted">
+            Scripter
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/" class="toc-page dropdown-item text-muted">
+            Create Locators from Links
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/" class="toc-page dropdown-item text-muted">
+            Pagination
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/" class="toc-page dropdown-item text-muted">
+            Appender and Encoder
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/" class="toc-page dropdown-item text-muted">
+            Dom Loader
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-manage" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Manage
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-manage" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/" class="toc-page dropdown-item text-muted">
+            Persistence
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/" class="toc-page dropdown-item text-muted">
+            Split Definitions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/" class="toc-page dropdown-item text-muted">
+            Logs
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/manage/dashboard/" class="toc-page dropdown-item text-muted">
+            Dashboard
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper/manage/db-setup/" class="toc-page dropdown-item text-muted">
+            DB Setup
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="query-block-and-selector">Query, Block and Selector</h1>
+
+<p>So far in this guide, we have covered the basics locators, tasks and
+datadefs. In this chapter we review selectors and also, show how to get
+selector or xpath using Firefox or Chrome browsers and fine tune it with
+Query Analyzer.</p>
+
+<h2 id="selector">Selector</h2>
+
+<p>In Scoopi, selector is a common term which refers either to the selector
+(Jsoup) or to the xpath (HtmlUnit or Selenium driver) that is used to
+scrape data from the page.</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+  bs:
+    query:
+      block: &#34;body &gt; table &gt; tbody&#34;
+      selector: &#34;tr:nth-child(6) &gt; td:nth-child(2)&#34;
+    items:  
+      - item:
+          name: item
+          selector: &#34;tr:nth-child(6) &gt; td:nth-child(1)&#34;
+
+    dims:  
+      - item:
+          name: year
+          selector: &#34;tr:nth-child(1) &gt; td:nth-child(2)&#34;</code></pre></div>
+<p>The above datadef defines two axis - items/item and dims/item and three
+selectors. Let&rsquo;s understand how they are used. Scoopi creates a data
+item object to hold the data and for each item in items and dims array
+it creates an axis and assigns respective selectors defined in item.
+Additionally, it also adds a default fact axis and assigns the selector
+defined in query element to the fact axis. For the above datadef, the
+data item object looks as below.</p>
+
+<table>
+<thead>
+<tr>
+<th>Axis Name</th>
+<th>Item Name</th>
+<th>Axis selector</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>dim</td>
+<td>year</td>
+<td>tr:nth-child(1) &gt; td:nth-child(2)</td>
+</tr>
+
+<tr>
+<td>item</td>
+<td>item</td>
+<td>tr:nth-child(6) &gt; td:nth-child(1)</td>
+</tr>
+
+<tr>
+<td>fact</td>
+<td>fact</td>
+<td>tr:nth-child(6) &gt; td:nth-child(2)</td>
+</tr>
+</tbody>
+</table>
+
+<p>The query element defines two selectors - block and selector.</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bs:
+    query:
+      block: &#34;body &gt; table &gt; tbody&#34;
+      selector: &#34;tr:nth-child(6) &gt; td:nth-child(2)&#34;</code></pre></div>
+<p>As already explained, selector defined by query/selector is assigned to
+fact axis. The selector defined by query/block is also a selector and is
+common to all other selectors. It is used to select a block of nodes
+from HTML page and cached. The HTML page is represented as tree of DOM
+nodes and cached block nodes is sub tree of nodes and to speed up parse,
+axis selector are fired against the sub tree and not the entire tree.</p>
+
+<h2 id="finding-the-selector-with-chrome-or-firefox-browser">Finding the Selector with Chrome or Firefox browser</h2>
+
+<p>Let&rsquo;s use
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/quickstart/job.yml" target="_blank">Quickstart</a>,
+we query price data from <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/page/acme-bs.html" target="_blank">defs/examples/fin/page/acme-bs.html</a> page to understand the process to find the selector or xpath.</p>
+
+<p>The HTML snippet from the page is shown below.</p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Dec &#39;16<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Dec &#39;15<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Dec &#39;14<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>Total Share Capital<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>804.72<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>801.55<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>795.32<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>        
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+
+  ....</code></pre></div>
+<p>Open the page in Chrome and select Dec &lsquo;16 and right click to get
+context menu and select <em>Inspect</em> to open Inspection panel. In the
+inspection panel, right click to open context menu and choose copy
+option where we can either copy selector or xpath. Copy selector and
+paste it to some text editor and repeat the process for Total Share
+Capital and its value value 804.72. The selector provided by Chrome for
+each of these items are shown
+below.</p>
+
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>HTML item</th>
+<th>Selector</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Dim</td>
+<td>Dec &lsquo;16</td>
+<td>body &gt; table &gt; tbody &gt; tr:nth-child(1) &gt; td:nth-child(2)</td>
+</tr>
+
+<tr>
+<td>Item</td>
+<td>Total Share Capital</td>
+<td>body &gt; table &gt; tbody &gt; tr:nth-child(6) &gt; td:nth-child(1)</td>
+</tr>
+
+<tr>
+<td>Fact</td>
+<td>804.72</td>
+<td>body &gt; table &gt; tbody &gt; tr:nth-child(6) &gt; td:nth-child(2)</td>
+</tr>
+</tbody>
+</table>
+
+<p>From this we know <em>body &gt; table &gt; tbody</em> is common in all three
+selectors. Remove the common part from selectors and move it block
+property.</p>
+
+<p>The procedure is same for Firefox but in copy option select CSS
+Selector. The selectors returned by Firefox
+are</p>
+
+<table>
+<thead>
+<tr>
+<th>HTML item</th>
+<th>Selector</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Dec &lsquo;16</td>
+<td>body &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(2)</td>
+</tr>
+
+<tr>
+<td>Total Share Capital</td>
+<td>body &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(5) &gt; td:nth-child(1)</td>
+</tr>
+
+<tr>
+<td>804.72</td>
+<td>body &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(6) &gt; td:nth-child(2)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Here we can cut the common part of selector <em>body &gt; table:nth-child(1)
+&gt; tbody:nth-child(1)</em> from selectors and move it to query/block.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/scoopi-web-scraper/media/scoopi-query-chrome.png" alt="Scoopi web scraper get JSoup selector from Chrome" />
+</figure>
+
+
+<h3 id="query-analyzer">Query Analyzer</h3>
+
+<p>Many a times with complex data, the selector provided by browser may not
+produce the expected results. Scoopi has a little tool - Query Analyzer
+that useful to fine tune the selector or xpath.</p>
+
+<p>To use Query Analyzer, edit <code>conf/scoopi.properties</code> and set
+scoopi.defs.dir=/defs/analyzer. Next edit <code>defs/analyzer/job.yml</code> and
+set locator url to the HTML page you want use. By default, analyzer can
+analyze selectors using JSoup. To analyze XPath query with HtmlUnit
+change steps property in analyzeTask to htmlUnitQuery.</p>
+
+<p>Now run Scoopi and it loads the page and displays a prompt</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/scoopi-web-scraper/media/scoopi-analyzer.png" alt="Scoopi Query Analyzer" />
+</figure>
+
+
+<p>At the prompt enter the selector or XPath and analyzer displays the
+matching HTML elements from the page. This helps you to understand and
+adjust selectors. After analyzer displays the matching elements it waits
+for next input so that you can continuously loop through till results
+are as expected.</p>
+
+<p>When matched element is more than 10 lines, analyzer truncates the
+element and displays only top and bottom 5 lines. To change number of
+lines to be displayed, use option 3. We can view the page source with
+option 1 and option 2 writes the page source to a file.</p>
+
+<p>To access complex items, we may have to use functions to access specific
+item. Learn more about selector in <a href="https://jsoup.org/cookbook/extracting-data/selector-syntax" target="_blank">JSoup Selector Syntax</a> and <a href="https://jsoup.org/apidocs/org/jsoup/select/Selector.html" target="_blank">JSoup Selector API</a>.</p>
+
+<p>The next chapter explains multi-dimensional data.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

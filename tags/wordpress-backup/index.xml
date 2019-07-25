@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Backup on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-backup/</link>
+    <description>Recent content in Wordpress Backup on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 03:53:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-backup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backup - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/</link>
+      <pubDate>Fri, 11 Jan 2019 03:53:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/</guid>
+      <description>11.1. WordPress Backup So far in the tutorial, we covered WordPress topics that assist us to install WordPress, add contents, optimize the performance and page ranking. All that effort we put to build a quality site may go in vein unless we have a good WordPress Backup and Restore strategy. In this chapter, we cover WordPress Backup topics - Backup, Restore, Migrate and Clone.
+WordPress Backup There are a number of plugins for WordPress backup.</description>
+    </item>
+    
+  </channel>
+</rss>

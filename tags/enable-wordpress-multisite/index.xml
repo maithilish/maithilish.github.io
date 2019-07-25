@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enable Wordpress Multisite on Codetab</title>
+    <link>http://www.codetab.org/tags/enable-wordpress-multisite/</link>
+    <description>Recent content in Enable Wordpress Multisite on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 12:29:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/enable-wordpress-multisite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multisite - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</link>
+      <pubDate>Fri, 11 Jan 2019 12:29:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</guid>
+      <description>11.2. Enable WordPress Multisite To understand plugin multisite activation, we require a WordPress Multisite installation. In this blog, we install a new instance and enable WordPress Multisite.
+Install WordPress So far in the tutorial, we used WordPress Single Site installation and it is possible to convert it to Multisite installation. Still, better approach is to install a new instance of WordPress and use it for multisite testing so as to leave the existing installation free for single site testing.</description>
+    </item>
+    
+  </channel>
+</rss>

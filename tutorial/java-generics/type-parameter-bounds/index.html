@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="With Type Parameter Bound we can restrict accepted generic type arguments">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Java Generics Type Parameter Bounds - CodeTab",
+        "headline" : "Java Generics Type Parameter Bounds - CodeTab",
+        "description" : "With Type Parameter Bound we can restrict accepted generic type arguments",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-07-23 13:54:00 +0530 IST",
+        "dateModified" : "2019-07-23 13:54:00 +0530 IST",
+        "url" : "/tutorial/java-generics/type-parameter-bounds/",
+        "wordCount" : "375",
+        "keywords" : [ "java generics type parameter bounds tutorial","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Java Generics Type Parameter Bounds - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Java Generics Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Java Generics Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/subtype/" class="toc-page text-muted ">
+            Subtypes
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/wildcards/" class="toc-page text-muted ">
+            Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/bounded-wildcards/" class="toc-page text-muted ">
+            Bounded Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/" class="toc-page text-danger ">
+            Type Parameter Bounds
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="type-parameter-bound">Type Parameter Bound</h1>
+
+<p>The <code>List&lt;E&gt;</code> can take any type as type argument. With Type Parameter Bound we can restrict accepted types.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FoodList</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Food</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">T</span> <span class="n">element</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// return element
+</span><span class="c1"></span>        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span> <span class="n">apples</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>
+
+    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">apples</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>     <span class="o">//</span> <span class="n">error</span></code></pre></div>
+<p>The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</p>
+
+<h2 id="member-visibility">Member Visibility</h2>
+
+<p>First let&rsquo;s consider type which is not bounded.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">(</span><span class="n">T</span> <span class="n">element</span><span class="o">){</span>
+            <span class="c1">// on element, we can access only the members (fields and methods)
+</span><span class="c1"></span>            <span class="c1">// of Object class such as getClass() etc.,
+</span><span class="c1"></span>            <span class="n">element</span><span class="o">.</span><span class="na">getClass</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span></code></pre></div>
+<p>The actual type that replaces T can be anything and only thing that is known is that it is subtype of Java Object class. Because of this, we can only access methods such as getClass(), hashCode() and equals() etc., of Object class on element variable.</p>
+
+<p>Now consider,</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SnackList</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Snack</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">(</span><span class="n">T</span> <span class="n">element</span><span class="o">){</span>            
+             <span class="c1">// we can access members of Snack and its supertypes - Food and Object.             
+</span><span class="c1"></span>             <span class="n">element</span><span class="o">.</span><span class="na">snackMethod</span><span class="o">();</span>
+             <span class="n">element</span><span class="o">.</span><span class="na">foodMethod</span><span class="o">();</span>
+             <span class="n">element</span><span class="o">.</span><span class="na">getClass</span><span class="o">();</span>
+
+             <span class="n">element</span><span class="o">.</span><span class="na">cookieMethod</span><span class="o">();</span> <span class="c1">// error
+</span><span class="c1"></span>        <span class="o">}</span>        
+    <span class="o">}</span></code></pre></div>
+<p>By extending T with Snack, all methods of Snack and its supertypes - Food and Object are visible.</p>
+
+<p>There is a small twist here.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>
+
+    <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>  <span class="o">//</span> <span class="n">error</span></code></pre></div>
+<p>We can create SnackList of Snack or Cookie but not Food as <code>&lt;T extends Snack&gt;</code> allows only Snack and its subtypes. But, within the SnackList we can access members of Snack, Food and Object but not Cookie.</p>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+<li>the <code>&lt;T extends type&gt;</code> restricts the generic type to type and its subtype.</li>
+<li>type parameter bound also make members of type and all its supertypes visible within the generic type.</li>
+<li>there is no type parameter bound <code>&lt;T super type&gt;</code>.
+<br /></li>
+</ul>
+
+<h2 id="summary-of-generic-terminology">Summary of Generic Terminology</h2>
+
+<ul>
+<li>generic type <code>List&lt;T&gt;</code></li>
+<li>type parameter/type variables <code>&lt;T&gt;</code></li>
+<li>type argument <code>&lt;String&gt;</code></li>
+<li>parameterized type <code>List&lt;String&gt; list;</code></li>
+<li>formal parameter <code>foo(String x)</code></li>
+<li>formal type parameter <code>foo(T x) or Bar&lt;T&gt;</code></li>
+<li>type parameter bounds <code>&lt;T extends Comparable&lt;T&gt;&gt;</code></li>
+<li>unbounded wildcard <code>&lt;?&gt;</code></li>
+<li>wildcard with upper bound <code>&lt;? extends Type&gt;</code></li>
+<li>wildcard with lower bound <code>&lt;? super Type&gt;</code></li>
+</ul>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

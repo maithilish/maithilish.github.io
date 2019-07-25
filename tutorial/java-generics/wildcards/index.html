@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Unbounded wildcards removes the generic subtyping restrictions">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Java Generics Wildcards - CodeTab",
+        "headline" : "Java Generics Wildcards - CodeTab",
+        "description" : "Unbounded wildcards removes the generic subtyping restrictions",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-07-23 13:54:00 +0530 IST",
+        "dateModified" : "2019-07-23 13:54:00 +0530 IST",
+        "url" : "/tutorial/java-generics/wildcards/",
+        "wordCount" : "888",
+        "keywords" : [ "java generics unbounded wildcards tutorial","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Java Generics Wildcards - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Java Generics Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Java Generics Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/subtype/" class="toc-page text-muted ">
+            Subtypes
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/wildcards/" class="toc-page text-danger ">
+            Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/bounded-wildcards/" class="toc-page text-muted ">
+            Bounded Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/" class="toc-page text-muted ">
+            Type Parameter Bounds
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="wildcards">Wildcards</h1>
+
+<p>The previous tutorial explained that there is <strong>no relationship</strong>, what so ever, between <code>List&lt;Food&gt;</code>, <code>List&lt;Snack&gt;</code> and <code>List&lt;Cookie&gt;</code>,even though <a href="/tutorial/java-generics/subtyping#example-hierarchy" target="_blank">Food, Snack and Cookie</a> belongs to same family. Each of these list is distinct and doesn&rsquo;t belongs to any single group or family; moreover, we can&rsquo;t assign one to another. The wildcards helps us to overcome this restriction.</p>
+
+<h2 id="unbounded-wildcard">Unbounded Wildcard</h2>
+
+<p>Consider a method to display the elements of a List.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+       <span class="c1">// display the list elements       
+</span><span class="c1"></span>    <span class="o">}</span>
+    
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;());</span>         
+
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;());</span>         <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;());</span>        <span class="c1">// error
+</span><span class="c1"></span>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;());</span>         <span class="c1">// error 
+</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;());</span>         <span class="c1">// error
+</span><span class="c1"></span>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>        <span class="c1">// error
+</span><span class="c1"></span>    </code></pre></div>
+<p>The method can display only the list of Food and nothing else. As explained in the previous tutorial,
+the variable of generic type can&rsquo;t be assigned to another. This rule is also applicable to parameters of methods i.e parameter <code>List&lt;Food&gt;</code> can accept only list of Food and nothing else. Because of this restriction, the display method is quite useless. We can overcome this restriction using wildcard - ?. Replace <code>List&lt;Food&gt;</code> with <code>List&lt;?&gt;</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// display the list elements
+</span><span class="c1"></span>    <span class="o">}</span>
+
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;());</span>         
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;());</span>        
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;());</span>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;());</span>        
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;());</span> 
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>       </code></pre></div>
+<p>The <code>List&lt;?&gt;</code> means list of unknown type. We can pass list of any type; even the <code>List&lt;String&gt;</code>, <code>List&lt;Integer&gt;</code> etc.,</p>
+
+<p>We can do the same thing with variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              <span class="c1">// error    
+</span><span class="c1"></span>
+    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              </code></pre></div>
+<p>Even though Cookie is subtype of Snack, there is no relationship between <code>List&lt;Cookie&gt;</code> and <code>List&lt;Snack&gt;</code> and compiler doesn&rsquo;t allow to assign one to another. But the variable <code>List&lt;?&gt;</code> accepts list of any type.</p>
+
+<p>In essence, the wildcard ? clubs the lists of any type into a single group or family.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/java-generics/media/generics-wildcard-family.png" alt="Java Generics wildcard family" />
+</figure>
+
+
+<h2 id="wildcard-restrictions">Wildcard Restrictions</h2>
+
+<p>Can we reassign <code>List&lt;?&gt; any</code> to variable of specific type? Answer is no.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+   <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>              
+      
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringsCopy</span> <span class="o">=</span> <span class="n">any</span><span class="o">;</span>  <span class="c1">// error
+</span><span class="c1"></span>   <span class="n">strings</span> <span class="o">=</span> <span class="n">any</span><span class="o">;</span>                   <span class="c1">// error
+</span><span class="c1"></span>
+   <span class="n">stringsCopy</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>           <span class="o">//</span> <span class="n">allowed</span></code></pre></div>
+<p>Can we call any method on <code>List&lt;?&gt;</code>? No, there are some restrictions.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+   <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              
+   
+   <span class="n">any</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cookie</span><span class="o">());</span>  <span class="c1">// error
+</span><span class="c1"></span>   <span class="n">any</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Snack</span><span class="o">());</span>   <span class="c1">// error
+</span><span class="c1"></span>
+   <span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">any</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>   <span class="o">//</span> <span class="n">allowed</span></code></pre></div>
+<p>Once we assign a list to List&lt;?&gt;, then we can&rsquo;t call <code>add(E element)</code> method as compiler doesn&rsquo;t know the type of <code>List&lt;?&gt;</code>. Only thing we can add to such list is a <strong>null</strong>. In general, calling any method that uses type parameter triggers compilation error.</p>
+
+<p>However, we are free to call methods such as <code>boolean remove​(Object o)</code> or <code>int size()</code> or <code>clear()</code> etc., on <code>List&lt;?&gt;</code> as there is no type parameter in their parameters.</p>
+
+<p>Can we call a method whose return type is type parameter? Yes, we can.</p>
+
+<p>We can call method such as <code>E get(int index)</code> or <code>E remove​(int index)</code> that has type parameter in return type.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">foods</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>        
+        
+    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="n">foods</span><span class="o">;</span>  
+    <span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">wildList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>    
+    <span class="n">Object</span> <span class="n">removedObj</span> <span class="o">=</span> <span class="n">wildList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>    </code></pre></div>
+<p>But, note that the type of object returned by such methods is <strong>Object</strong> as type E is unknown for <code>List&lt;?&gt;</code>.</p>
+
+<p>Let&rsquo;s go through some methods <code>List&lt;E&gt;</code> which are allowed on variable <code>List&lt;?&gt;</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>        
+        
+    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="n">foods</span><span class="o">;</span>
+        
+    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+            
+    <span class="c1">// not allowed
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">,</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>         <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>           <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>                 <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">Food</span><span class="o">());</span>        <span class="c1">// error
+</span><span class="c1"></span>        
+    <span class="c1">// allowed    
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+    <span class="n">wildList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>        
+    <span class="n">wildList</span><span class="o">.</span><span class="na">removeAll</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+    <span class="n">wildList</span><span class="o">.</span><span class="na">retainAll</span><span class="o">(</span><span class="n">c</span><span class="o">);</span></code></pre></div>
+<p>Reason why they are allowed or not is as follows:</p>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Allowed</th>
+<th>Reason</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>void add​(int index, E element)</td>
+<td>No</td>
+<td>parameter has E (type parameter)</td>
+</tr>
+
+<tr>
+<td>boolean add(​E element)</td>
+<td>No</td>
+<td>parameter has E</td>
+</tr>
+
+<tr>
+<td>boolean addAll​(Collection&lt;? extends E&gt; c)</td>
+<td>No</td>
+<td>parameter has E</td>
+</tr>
+
+<tr>
+<td>E set​(int index, E element)</td>
+<td>No</td>
+<td>parameter has E</td>
+</tr>
+
+<tr>
+<td>E remove​(int index)</td>
+<td>Yes</td>
+<td>no E in parameter, even though return type is E</td>
+</tr>
+
+<tr>
+<td>boolean remove​(Object o)</td>
+<td>Yes</td>
+<td>no E in parameter</td>
+</tr>
+
+<tr>
+<td>boolean removeAll​(Collection&lt;?&gt; c)</td>
+<td>Yes</td>
+<td>no E in parameter</td>
+</tr>
+
+<tr>
+<td>boolean retainAll​(Collection&lt;?&gt; c)</td>
+<td>Yes</td>
+<td>no E in parameter</td>
+</tr>
+</tbody>
+</table>
+
+<p>The above restrictions are true for all generic types that uses wildcard ?; not just the <code>List&lt;?&gt;</code>.</p>
+
+<h2 id="list-lt-gt-vs-list-lt-object-gt">List&lt;?&gt; vs List&lt;Object&gt;</h2>
+
+<p>Remember that <code>List&lt;Object&gt;</code> and <code>List&lt;?&gt;</code> are not the same.</p>
+
+<ul>
+<li>we can assign only a list of Object to <code>List&lt;Object&gt;</code>, but we can assign list of any type to <code>List&lt;?&gt;</code></li>
+<li>we can insert an Object or its subtype, into a <code>List&lt;Object&gt;</code>, but we can only insert <strong>null</strong> into a List&lt;?&gt;.<br /></li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+<li>the <code>List&lt;?&gt;</code> means list of unknown type.</li>
+<li>we can assign or pass list of any type to <code>List&lt;?&gt;</code>.</li>
+<li>we can&rsquo;t assign <code>List&lt;?&gt;</code> to any other list variable such as <code>List&lt;String&gt;</code>.</li>
+<li>we can&rsquo;t call methods which uses type parameter such as <code>add(E element)</code> on <code>List&lt;?&gt;</code>.</li>
+<li>we are free to call methods such as <code>boolean remove​(Object o)</code> or <code>int size()</code> etc., on <code>List&lt;?&gt;</code> as there is no type parameter in their parameters.</li>
+<li>we can also call methods such as <code>E get(int index)</code> or <code>E remove​(int index)</code> that has type parameter in return type. The object returned by such methods is of type <strong>Object</strong>.</li>
+</ul>
+
+<p>If we think <code>List&lt;Snack&gt;</code>, <code>List&lt;String&gt;</code> etc., as one extreme (which can accept list of a specific type), the List&lt;?&gt; is the other extreme (which can accept list of any type). Can we define something in between? Yes, Generics use <strong>extends</strong> and <strong>super</strong> keywords to fine tune the variable and parameter declarations. With them we can place upper or lower bound on wildcards and next chapter explains it.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

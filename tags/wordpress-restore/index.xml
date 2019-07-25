@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Restore on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-restore/</link>
+    <description>Recent content in Wordpress Restore on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 04:57:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-restore/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Restore Clone Migrate - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/</link>
+      <pubDate>Fri, 11 Jan 2019 04:57:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/</guid>
+      <description>11.3. WordPress Restore, Clone In the previous section, we saw how to offload the backup files to the Dropbox. In this section, we use the backup for a full WordPress restore and also to clone it to a new site and use it cloned site as testing or staging area.
+WordPress Restore WordPress Restore procedure involves following steps:
+ Create a new WordPress application on OpenShift.
+ Import MySQL dump to database.</description>
+    </item>
+    
+  </channel>
+</rss>

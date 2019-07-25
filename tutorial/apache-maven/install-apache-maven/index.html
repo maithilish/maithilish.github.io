@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Tutorial explains how to install Apache Maven. Normally, a couple of things puts off beginners from Apache Maven; complicated terms, endless downloads">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Installation - Apache Maven Tutorial – CodeTab",
+        "headline" : "Installation - Apache Maven Tutorial – CodeTab",
+        "description" : "Tutorial explains how to install Apache Maven. Normally, a couple of things puts off beginners from Apache Maven; complicated terms, endless downloads",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 15:08:00 +0530 IST",
+        "dateModified" : "2019-01-11 15:08:00 +0530 IST",
+        "url" : "/tutorial/apache-maven/install-apache-maven/",
+        "wordCount" : "229",
+        "keywords" : [ "install apache maven","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Installation - Apache Maven Tutorial – CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Maven Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Maven Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/install-apache-maven/" class="toc-page text-danger ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/simple-project/" class="toc-page text-muted ">
+            Simple Project
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/dependency-management/" class="toc-page text-muted ">
+            Dependency Management
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/" class="toc-page text-muted ">
+            Lifecycle Phases
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-plugins" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Plugins
+    </a>
+    
+    <div id="tutorial-apache-maven-plugins" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugins/" class="toc-page dropdown-item text-muted">
+            Plugins
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/" class="toc-page dropdown-item text-muted">
+            Plugin Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/" class="toc-page dropdown-item text-muted">
+            Lifecycle and Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-configuration/" class="toc-page dropdown-item text-muted">
+            Plugin Configuration
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/" class="toc-page dropdown-item text-muted">
+            Plugin Execution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" class="toc-page dropdown-item text-muted">
+            POM – Project Object Model
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/" class="toc-page dropdown-item text-muted">
+            Resources Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/manage-maven-directories/" class="toc-page dropdown-item text-muted">
+            Manage Directories
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/" class="toc-page dropdown-item text-muted">
+            Archetype Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/useful-maven-help-commands/" class="toc-page dropdown-item text-muted">
+            Useful Help Commands
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-distribution" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Project Distribution
+    </a>
+    
+    <div id="tutorial-apache-maven-distribution" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/" class="toc-page dropdown-item text-muted">
+            Project Distribution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-assembly-plugin/" class="toc-page dropdown-item text-muted">
+            Assembly Plugin
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-profile" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Profile
+    </a>
+    
+    <div id="tutorial-apache-maven-profile" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/profile/maven-profiles/" class="toc-page dropdown-item text-muted">
+            Profiles
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-multi-module" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Multi Module
+    </a>
+    
+    <div id="tutorial-apache-maven-multi-module" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/" class="toc-page dropdown-item text-muted">
+            Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/" class="toc-page dropdown-item text-muted">
+            Hierarchical Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/" class="toc-page dropdown-item text-muted">
+            Multi Module Inheritance
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/" class="toc-page dropdown-item text-muted">
+            Multi Module Dependency Management
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-eclipse" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse
+    </a>
+    
+    <div id="tutorial-apache-maven-eclipse" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/" class="toc-page dropdown-item text-muted">
+            Install Eclipse Maven Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/" class="toc-page dropdown-item text-muted">
+            Manage Eclipse Maven Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/" class="toc-page dropdown-item text-muted">
+            Eclipse Multi Module
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="install-apache-maven">Install Apache Maven</h1>
+
+<p>Download latest release of the software from <a href="http://maven.apache.org/download.cgi" target="_blank">Apache Maven Download
+Page</a>.</p>
+
+<h2 id="installing-on-linux-and-mac">Installing on Linux and Mac</h2>
+
+<p>Extract the downloaded zip file to some folder. For the sake of
+explanation, we use <code>/opt/apache-maven</code> directory as the maven home.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ mkdir /opt/apache-maven
+$ <span class="nb">cd</span> /opt/apache-maven
+$ unzip apache-maven-3.3.1-bin.zip
+$ ln -s apache-maven-3.3.1 maven</code></pre></div>
+<p>Next, set and export <code>M2_HOME</code> and <code>PATH</code> environment variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">M2_HOME</span><span class="o">=</span>/opt/apache-maven/maven
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$M2_HOME</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span></code></pre></div>
+<p>To persist these variables across restarts, add the exports to
+<code>$HOME/.bash_profile</code>.</p>
+
+<h2 id="installing-on-windows">Installing on Windows</h2>
+
+<p>In Windows, extract the downloaded zip to <code>c:Program Files</code>directory
+and then set environment variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:Usersm &gt; set M2_HOME=c:Program Filesapache-maven-3.3.1
+C:Usersm &gt; set PATH=%PATH%;%M2_HOME%bin</code></pre></div>
+<p>To make these environment variables persistence across restarts, add
+them to the System environment variables through the control panel. Go
+to <strong>Control Panel</strong> and select <strong>System</strong>. Go to <strong>Advanced</strong> tab and
+click <strong>Environment Variables</strong>. Use <strong>New</strong> to add <code>M2_HOME</code> variable.
+To modify the path, select Path from System Variables section and click
+<strong>Edit</strong> and add string <strong>%M2_HOME%bin;</strong> in the <strong>Variable</strong> value
+field to the front of the existing value and save changes.</p>
+
+<h2 id="verify-the-setup">Verify the setup</h2>
+
+<p>Verify the setup by running <code>mvn -- version</code>.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-verify-setup.png" alt="Install Apache Maven - verify setup" />
+</figure>
+
+
+<p>In case of error, check whether <code>M2_HOME</code> and <code>PATH</code> are set properly
+and Java executable is available in the path.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>In the next chapter, we create a simple project and use Maven to build
+it.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

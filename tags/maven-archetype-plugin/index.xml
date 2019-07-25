@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven Archetype Plugin on Codetab</title>
+    <link>http://www.codetab.org/tags/maven-archetype-plugin/</link>
+    <description>Recent content in Maven Archetype Plugin on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 14:42:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/maven-archetype-plugin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Archetype Plugin - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/</link>
+      <pubDate>Fri, 11 Jan 2019 14:42:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/</guid>
+      <description>Maven Archetype Plugin In the previous tutorial, we covered Maven Resources Plugin. In this tutorial, we introduce Maven Archetype Plugin.
+An archetype is a template for a Maven project which is used by the Maven Archetype plugin to create new projects. Simply put, it generates skeleton for different types of projects.
+To better understand, lets create a new project using Maven Archetype Plugin.
+$ mvn archetype:generate -DgroupId=com.xyz -DartifactId=my-app -Dversion=1.0 -DpackageName=com.</description>
+    </item>
+    
+  </channel>
+</rss>

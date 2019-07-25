@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Apache Ivy Beginners Guide explains how to set up Ivy and use it to automate dependency management with Ant scripts or IvyDE">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Introduction - Apache Ivy Tutorial - CodeTab",
+        "headline" : "Introduction - Apache Ivy Tutorial - CodeTab",
+        "description" : "Apache Ivy Beginners Guide explains how to set up Ivy and use it to automate dependency management with Ant scripts or IvyDE",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 23:15:00 +0530 IST",
+        "dateModified" : "2019-01-10 23:15:00 +0530 IST",
+        "url" : "/tutorial/apache-ivy/introduction/",
+        "wordCount" : "839",
+        "keywords" : [ "apache ivy beginners guide","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Introduction - Apache Ivy Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Ivy Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/introduction/" class="toc-page text-danger ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/installation/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ant-tasks/" class="toc-page text-muted ">
+            Ant Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/resolve/" class="toc-page text-muted ">
+            Resolve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/" class="toc-page text-muted ">
+            Cachepath and Retrieve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/pattern/" class="toc-page text-muted ">
+            Pattern
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/" class="toc-page text-muted ">
+            Resolvers and Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/" class="toc-page text-muted ">
+            Install Task and Local Repositories
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/shared-repository/" class="toc-page text-muted ">
+            Shared Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/publish/" class="toc-page text-muted ">
+            Publish
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-ivy-ivyde" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse Ivy Plugin
+    </a>
+    
+    <div id="tutorial-apache-ivy-ivyde" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/" class="toc-page dropdown-item text-muted">
+            IvyDE Plugin for Eclipse
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/" class="toc-page dropdown-item text-muted">
+            IvyDE Settings and Retrieve
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Apache Ivy Tutorial is a step by step beginners guide which covers Apache Ivy and IvyDE installation, basic usage, essential Ivy Ant Tasks, building private and enterprise repositories, installing and publishing modules to repositories and Apache Ivy in Eclipse projects with IvyDE Plugin for Eclipse. Basic objective of Apache Ivy Tutorial is to explain Ivy concepts and tasks through easy to follow examples and assist beginners as well as intermediate users to kick start their projects with automated dependency management.</p>
+
+<p>A complex piece of software depends on external modules and libraries.
+For example, a lot of Java projects depend on popular libraries like
+Apache Commons, JDBC, Log4j etc., In any project, it makes sense to
+reuse the existing libraries instead of coding our own libraries from
+the scratch. For simple projects those depend on a couple of libraries,
+hands on dependency management works well. But when the project ends up
+with dozens of external libraries, managing their dependencies becomes
+laborious. Problem accentuates further when the project is developed by
+a team as developers tends add the external libraries independently of
+others and it is high time to move the projects to automated dependency
+management.</p>
+
+<p>Apache Maven is by far the most popular build manager for Java projects
+which combines build manager with dependency manager. Maven follows
+<strong>Custom over Configuration</strong> approach, which means your project has to
+fall into certain customs or best practices dictated by Maven with less
+flexibility over configuration. It is the default choice for the
+developers who don&rsquo;t mind adapting to certain customs. Maven also comes
+with other features like project information reports etc., to cover all
+aspects of a good build process.</p>
+
+<p>Another equally popular build system is Apache Ant, which follows
+<strong>Configuration over Custom</strong> approach. Developers who like to configure
+the build system from scratch and wants a flexible build process prefer
+Ant over Maven. When you work with Ant, Apache Ivy is a good choice for
+automated dependency management.</p>
+
+<p>Apache Ivy is a dependency manager from Apache and it gels perfectly
+with Apache Ant to automate dependency management to improve overall
+build system. Apache Ivy also has a Plugin for Eclipse, <strong>IvyDE</strong>, that
+plugs Apache Ivy into Eclipse.</p>
+
+<p>If you have some compelling reasons to use Apache Ant and Ivy as the
+build system then go with them otherwise use Apache Maven as the build
+system as Apache Maven is much easier to learn and use. To learn more about it see <a href="/tutorial/apache-maven/introduction/">CodeTab Apache Maven Tutorial</a>.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="automated-dependency-management">Automated Dependency Management</h2>
+
+<p>Developers who are not introduced to automated dependency management
+normally maintains a lib directory and place all essential libraries
+like apache-commons, jdbc drivers, dom4j, log4j etc., with corresponding
+source, javadoc jars. For each project, they copy the required jars to
+project workspace and add them to project build path. If they require
+IDE context help feature, then they also have to link the respective
+source and javadoc in the IDE. In this approach, developer has to be
+careful to include proper version of these libraries in build file to
+avoid runtime errors in production. No doubt, whole process is fraught
+with pitfalls.</p>
+
+<p>To improve the productivity and to avoid build issues, move to automated
+dependency management with Apache Ivy and IvyDE, which streamlines the
+whole process. All that is required is to add an ivy.xml file to the
+project and to its build path. This simple file lists the dependencies
+and versions. When the project requires a new library, just add the
+dependency line for that library to ivy.xml and Ivy syncs the whole
+system. Housekeeping of libraries is no longer necessary as Apache Ivy
+fetches the dependencies, its source and javadoc jars from public
+repositories and adds them to the project. It also cache them for future
+use by other projects.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="about-apache-ivy-tutorial">About Apache Ivy Tutorial</h2>
+
+<p>Apache Ivy is highly configurable and a powerful piece of software. The
+Ivy official site has some excellent tutorials and detailed reference
+documentation, but multiple configurable options and coupled with some
+of the difficult concepts overwhelms the beginners, who usually find it
+difficult to get them right in the first go. This tutorial helps the
+beginners as well as intermediate users to easily get over the tough
+spots of Apache Ivy.</p>
+
+<p>Apache Ivy Tutorial is also a step-by-step Beginners Guide that explains
+how to set up Ivy and use it to automate dependency management either
+through command line (CLI) or with IvyDE Plugin for Eclipse. It also
+covers some of the frequently encountered concepts like Apache Ivy Local
+Repository, Shared Repository, Patterns and Resolvers.</p>
+
+<p>Basic objective of Apache Ivy Beginners Guide it to provide a clear
+understanding of Apache Ivy for the beginners and intermediate users.
+Once you are comfortable with the basic concepts, it enables you to
+explore the advanced features of Apache Ivy by going through official
+Reference documentation and other resources. As such, in all the
+examples we have used a minimal set of configurations to complete a
+given task.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

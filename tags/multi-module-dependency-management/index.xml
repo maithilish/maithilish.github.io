@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi Module Dependency Management on Codetab</title>
+    <link>http://www.codetab.org/tags/multi-module-dependency-management/</link>
+    <description>Recent content in Multi Module Dependency Management on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 22:12:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/multi-module-dependency-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multi Module Dependency - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/</link>
+      <pubDate>Fri, 11 Jan 2019 22:12:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/</guid>
+      <description>Multi Module Dependency Management Dependency inheritance (explained in previous chapter) is useful when a dependency is required by all child modules. When a dependency is required by some or even many, but not by all modules, then use dependency management feature.
+The example code extended-multi, used in this tutorial, is available at GitHub Maven Examples. Download the examples as zip and extract it to some location or clone it with git.</description>
+    </item>
+    
+  </channel>
+</rss>

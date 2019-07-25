@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Plugin Localization on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-plugin-localization/</link>
+    <description>Recent content in Wordpress Plugin Localization on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 11:44:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-localization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Localization - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/</link>
+      <pubDate>Fri, 11 Jan 2019 11:44:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/</guid>
+      <description>10.2. WordPress Plugin Localization After internationalization of the plugin, next step is to prepare language files. This process is known as Localization which consists of following steps.
+ generate Portable Object Template (POT) file.
+ generate Portable Object (PO) file for each language.
+ get PO file translated by a translator.
+ generate Machine Object (MO) file from each PO file.
+  Install Software To generate POT file, install WordPress Tools with following commands.</description>
+    </item>
+    
+  </channel>
+</rss>

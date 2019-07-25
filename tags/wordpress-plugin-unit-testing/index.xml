@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Plugin Unit Testing on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-plugin-unit-testing/</link>
+    <description>Recent content in Wordpress Plugin Unit Testing on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 12:56:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-unit-testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unit Test - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/</link>
+      <pubDate>Fri, 11 Jan 2019 12:56:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/</guid>
+      <description>Plugin Unit Test One of the challenges that we faced while developing the Share on Social Plugin was to setup unit tests. Many tutorials and blogs on the subject and even the official WordPress documentation couldn&amp;rsquo;t help us much to overcome the initial hurdles. Knowing well the difficulties faced by the beginners, some developers have packaged and hosted the testing frameworks for WordPress on GitHub to ease the setup but they are unable to reduce the overall confusion.</description>
+    </item>
+    
+  </channel>
+</rss>

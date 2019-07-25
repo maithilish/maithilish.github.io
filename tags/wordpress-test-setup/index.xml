@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Test Setup on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-test-setup/</link>
+    <description>Recent content in Wordpress Test Setup on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 13:24:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-test-setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test Setup - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/</link>
+      <pubDate>Fri, 11 Jan 2019 13:24:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/</guid>
+      <description>12.2. WordPress Test Setup In the previous blog, WordPress PHPUnit Setup we put up all the scaffolding necessary to run WordPress Plugin Tests. In this blog, we test the setup by running some test cases.
+Run Test Cases The test cases are placed in plugins&amp;rsquo; tests/phpunit/tests folder. Let&amp;rsquo;s start with a test case to test the constants defined in the wp-simple-plugin.php. Add a test file test-wp-simple-plugin.php to tests/phpunit/tests with following contents.</description>
+    </item>
+    
+  </channel>
+</rss>

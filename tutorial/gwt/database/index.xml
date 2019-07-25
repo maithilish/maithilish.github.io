@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Codetab</title>
+    <link>http://www.codetab.org/tutorial/gwt/database/</link>
+    <description>Recent content in Database on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/gwt/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Database Setup - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/database/setup-database/</link>
+      <pubDate>Thu, 10 Jan 2019 12:28:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/database/setup-database/</guid>
+      <description>Setup Database It&amp;rsquo;s time to say goodbye to mock datastore SymbolDatabase.
+This section explains the GWT Database setup. Any RDBMS accessible through JDBC should do, and we choose HSQLDB for its configuration simplicity. HSQLDB, a full fledged RDBMS, is easy to setup and requires almost zero configuration. Further, HSQLDB plugin for Eclipse makes the process even more simpler.
+Once database is up, we require to load it with data. For that, we are going to use a small java application, RStore.</description>
+    </item>
+    
+    <item>
+      <title>JDO Persistence - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/database/persist/</link>
+      <pubDate>Thu, 10 Jan 2019 18:45:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/database/persist/</guid>
+      <description>8.2. Persist To load data, we use RStore which has following features,
+ enhance java classes for persistence
+ create database schema
+ delete database schema
+ persist and retrieve objects from database
+  Prepare RStore project Download RStore.zip from the book site. Create a regular Java project named rstore with default settings. Select the project in Project Explorer and choose File → Import. In Import dialog, expand general and choose Archive File and import RStore.</description>
+    </item>
+    
+    <item>
+      <title>JDO – Hibernate - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/database/retrieve/</link>
+      <pubDate>Thu, 10 Jan 2019 19:22:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/database/retrieve/</guid>
+      <description>8.3. Retrieve In this section, we retrieve persisted symbols through a variety of ORM like JDO, Hibernate and MyBatis. We do so, just to demonstrate that objects persisted through an ORM are readily retrievable through others.
+JDO In JDO, we use PersistenceManager to retrieve an object from the database.
+PersistenceManager pm = pmf.getPersistenceManager(); try { Symbol symbol = pm.getObjectById(Symbol.class, name); // use the object  } finally { pm.close(); } Sometimes, we may be like to retrieve only a certain fields of an object, and for this, JDO supports JDOQL and SQL query.</description>
+    </item>
+    
+    <item>
+      <title>DAO - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/database/gwt-dao/</link>
+      <pubDate>Thu, 10 Jan 2019 12:11:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/database/gwt-dao/</guid>
+      <description>Chapter 9. DAO This chapter explores the design of GWT Dao. Data Access Object (DAO) layer allows the app flip between ORM effortlessly. In the last chapter, we introduced three ORM, and now they help us to verify the design of GWT DAO layer.
+DAO design Service layer of the application interacts with the database through DAO layer. To accomodate multiple ORM, DAO layer consists of an Abstract Factory and an Interface to access data.</description>
+    </item>
+    
+  </channel>
+</rss>

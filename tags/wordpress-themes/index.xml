@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Themes on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-themes/</link>
+    <description>Recent content in Wordpress Themes on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 03:45:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-themes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Themes - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/wordpress-themes/</link>
+      <pubDate>Fri, 11 Jan 2019 03:45:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/wordpress-themes/</guid>
+      <description>In the previous chapter, we saw how to add and manage contents - Posts, Pages and Media - in the WordPress. In this chapter, we install a new WordPress Theme and customize.
+WordPress theme customizes the look and feel of the site. WordPress, being one of the leading CMS, attracts hundreds of designers and developers who contribute themes and plugins to WordPress ecosystem. There is no dearth themes to meet one&amp;rsquo;s need and on last count, there are about 2500 themes.</description>
+    </item>
+    
+  </channel>
+</rss>

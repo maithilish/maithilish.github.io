@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gwt Plugin for Eclipse on Codetab</title>
+    <link>http://www.codetab.org/tags/gwt-plugin-for-eclipse/</link>
+    <description>Recent content in Gwt Plugin for Eclipse on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 12:51:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/gwt-plugin-for-eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/install/</link>
+      <pubDate>Thu, 10 Jan 2019 12:51:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/install/</guid>
+      <description>Install GWT This chapter explains the steps required to install GWT Plugin for Eclipse.
+Software used in the book are
+   Software Version Size (approximate)     Eclipse 4.2 Juno 220 MB   Google Plugin for Eclipse (GPE) 3.2.0 60 MB (including any Juno updates)   GWT Designer for GPE  20 MB   Google Web Toolkit SDK 2.5.0 105 MB   Google App Engine SDK 1.</description>
+    </item>
+    
+  </channel>
+</rss>

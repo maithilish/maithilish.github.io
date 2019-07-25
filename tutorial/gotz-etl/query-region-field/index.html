@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Gotz Query, Region and Field. We describe how to build query using JSoup Selectors and same holds good for XPath while using HtmlUnit. Selector">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Query Region Field - Gotz ETL - CodeTab",
+        "headline" : "Query Region Field - Gotz ETL - CodeTab",
+        "description" : "Gotz Query, Region and Field. We describe how to build query using JSoup Selectors and same holds good for XPath while using HtmlUnit. Selector",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 19:27:00 +0530 IST",
+        "dateModified" : "2019-01-11 19:27:00 +0530 IST",
+        "url" : "/tutorial/gotz-etl/query-region-field/",
+        "wordCount" : "652",
+        "keywords" : [ "Query","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Query Region Field - Gotz ETL - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Gotz ETL</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Gotz ETL - Gotz ETL - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/gotz-installation-quick-start/" class="toc-page text-muted ">
+            Installation and Quick Start
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/bean-locator/" class="toc-page text-muted ">
+            Bean and Locator
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/datadef-axis-member/" class="toc-page text-muted ">
+            DataDef, Axis and Member
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/query-region-field/" class="toc-page text-danger ">
+            Query, Region and Field
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/" class="toc-page text-muted ">
+            Members and Dynamic Query
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/indexrange-index/" class="toc-page text-muted ">
+            IndexRange, Index and BreakAfter
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/filters/" class="toc-page text-muted ">
+            Filters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/namespace/" class="toc-page text-muted ">
+            Namespace
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/tasks-steps/" class="toc-page text-muted ">
+            Tasks and Steps
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/" class="toc-page text-muted ">
+            Multiple Task and Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/converters/" class="toc-page text-muted ">
+            Converters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/persistence/" class="toc-page text-muted ">
+            Persistence
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/appenders-encoders/" class="toc-page text-muted ">
+            Appenders and Encoders
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gotz-etl/split-definitions/" class="toc-page text-muted ">
+            Split Definitions
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<p>In this chapter we describe how to build query using JSoup Selectors and
+same holds good for XPath while using HtmlUnit.</p>
+
+<h2 id="selectors">Selectors</h2>
+
+<p>In Example 1, we query price data from
+defs/examples/page/acme-quote.html page. The price snippet from this
+page is</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#34;price_tick&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&#34;price_tick_span&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>315.25<span class="nt">&lt;/strong&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<p>To access the value the JSoup selector is</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">div#price_tick/*</code></pre></div>
+<p>Use Chrome to get Selector</p>
+
+<p>Chrome browser can assist you in constructing the Selector or XPath. To
+do that, open the HTML page in Chrome and select the item which we are
+interested. Next, right click to open the context menu and select
+<strong>Inspect</strong> from the list to open the Inspect panel. Then in Inspect
+panel, select the highlighted item and right click and select copy menu.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/gotz-etl/media/gotz-query-chrome.png" alt="Gotz Query JSoup selector from Chrome" />
+</figure>
+
+
+<p>In Copy, we have option, among other things, to copy the Selector or
+XPath to clipboard. Copy and paste the selector to editor. For price,
+selector provided by chrome is</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">#price_tick_span &gt; strong</code></pre></div>
+<p>We are using slightly different selector in the example as selectors can
+be constructed with different elements.</p>
+
+<p>JSoup Selector Syntax</p>
+
+<p>To access complex items, we may have to use functions to access specific
+item. Learn more about selector in <a href="https://jsoup.org/cookbook/extracting-data/selector-syntax" target="_blank">Selector
+Syntax</a> and
+<a href="https://jsoup.org/apidocs/org/jsoup/select/Selector.html" target="_blank">JSoup Selector
+API</a>.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="query-region-and-field">Query - Region and Field</h2>
+
+<p>Selector has to be further split into region and field to optimize the
+query performance.</p>
+
+<p>For example, take the case of table</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
+....    
+<span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&#34;1&#34;</span><span class="nt">&gt;</span>Sources of Funds<span class="nt">&lt;/td&gt;</span>           
+        ....
+    <span class="nt">&lt;/tr&gt;</span>    
+    <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&#34;1&#34;</span><span class="nt">&gt;</span>Share Capital<span class="nt">&lt;/td&gt;</span>              
+            <span class="nt">&lt;td&gt;</span>804.72<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>801.55<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>795.32<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>790.18<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>781.84<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span></code></pre></div>
+<p>The selector to access table data is</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">table:contains(Sources Of Funds) &gt; tr:nth-child(2) &gt; td:nth-child(1)</code></pre></div>
+<p>In case we use the selector to get each and every &lt;td&gt; item in table,
+JSoup has to parse the entire page, build DOM from it and then zero in
+on particular node for each item. Data rich pages may have hundreds of
+node and then parse becomes quite expensive.</p>
+
+<p>To optimize the parse, we need to split the selector into two components
+- <strong>region</strong> and <strong>field</strong>. The query, after the split, becomes</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;row&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xf:fields&gt;</span>
+        <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;table:contains(Sources Of Funds)&#34;</span>
+              <span class="na">field=</span><span class="s">&#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xf:fields&gt;</span></code></pre></div>
+<p>Now, Gotz fires the region query first and parse the table and its child
+nodes and caches it in a HashMap. Next, it fires the field query on the
+cached table, instead of entire page, to get the target node. As cached
+region nodes are subset of entire page, fields selector query the subset
+instead of entire page.</p>
+
+<p>For each region query, Gotz first consult the cache and if it finds it
+in cache then it is reused. Otherwise, if region is not found in cache
+then only page is parsed and cached for reuse.</p>
+
+<p>While splitting the selector, put the top most element of the area which
+we are interested in region attribute and the selector to access its
+children in the field attribute. In the above example, it is quite
+natural to select and cache the table as it is top most element of the
+area we are interested in and subsequently, access its children
+repeatedly with field selector.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="dynamic-query">Dynamic Query</h2>
+
+<p>When scraping single data point, we can hard code the selector as</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;table:contains(Sources Of Funds)&#34;</span>
+          <span class="na">field=</span><span class="s">&#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</span> <span class="nt">/&gt;</span></code></pre></div>
+<p>But, to access next &lt;tr&gt; we need another query with field as
+<strong>tr:nth-child(3) &gt; td:nth-child(1)</strong>. To access a table with 5 cols
+and 4 rows, we need to define 20 queries.</p>
+
+<p>Instead, we can use Gotz dynamic query feature. The hard coded query can
+be converted into dynamic query with substitution variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;table:contains(Sources Of Funds)&#34;</span>
+      <span class="na">field=</span><span class="s">&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</span> <span class="nt">/&gt;</span></code></pre></div>
+<p>Gotz dynamically substitute the variable <strong>%{row.index}</strong> with the index
+value of the member and fires the query. With the dynamic query, we can
+scrape any number of rows or cols with single query.</p>
+
+<p>Allowed variables are</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">%{col.index}
+%{col.match}
+%{row.index}
+%{row.match}</code></pre></div>
+<p>The subsequent chapters covers dynamic queries extensively with
+examples.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

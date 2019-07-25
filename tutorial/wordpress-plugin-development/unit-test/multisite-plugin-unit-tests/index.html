@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="WordPress Multisite Plugin Unit Tests Tutorial explains PHPUnit configuration to force Test Library to use WordPress Multisite instance for multisite tests.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Multi Site Unit Test - WordPress Plugin Development - CodeTab",
+        "headline" : "Multi Site Unit Test - WordPress Plugin Development - CodeTab",
+        "description" : "WordPress Multisite Plugin Unit Tests Tutorial explains PHPUnit configuration to force Test Library to use WordPress Multisite instance for multisite tests.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 14:12:00 +0530 IST",
+        "dateModified" : "2019-01-11 14:12:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/",
+        "wordCount" : "898",
+        "keywords" : [ "WordPress Multisite Plugin Unit Tests","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Multi Site Unit Test - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-danger">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="12-8-wordpress-multisite-plugin-unit-tests">12.8. WordPress Multisite Plugin Unit Tests</h2>
+
+<p>In the previous blogs we covered single site unit tests. In this
+concluding blog of the series, we explain WordPress Multisite Plugin
+unit tests.</p>
+
+<p>As explained earlier, WordPress Test Lib creates an in-memory WordPress
+instance to run unit tests. The test instance is actually a WordPress
+single site installation and it is not useful to carryout the multisite
+tests.</p>
+
+<p>In <a href="/tutorial/wordpress-plugin-development/activation/enable-multisite/">Enable WordPress
+Multisite</a>,
+we saw how to go about WordPress Multisite Installation wherein we used
+wp-config.php to convert WordPress installation into multisite
+installation. The process makes extensive changes to WordPress database
+and then multisite logic kicks in. This also means that we can&rsquo;t have
+both plain installation and multisite installation side by side.</p>
+
+<p>Similarly, WordPress Test Lib has features to create Multisite instance
+for multisite tests. As with actual installation, here too, we can&rsquo;t
+have both single and multisite instance active at the same time. This
+essentially means that Test Lib can create and handle only one instance
+during test run - either plain site or a multisite.</p>
+
+<p>Because of this, we need an entirely new PHPUnit configuration to force
+WordPress Test Lib to create and use WordPress Multisite Installation.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="configure-phpunit-for-multisite">Configure PHPUnit for Multisite</h3>
+
+<p>For WordPress Test Lib to create multisite installation, we have to set
+a PHP constant <strong>WP_TESTS_MULTISITE</strong> in PHPUnit configuration file.</p>
+
+<p>Earlier, for single site tests, we placed PHPUnit configuration file
+<code>phpunit.xml</code> in top folder of the plugin and we reserve this file
+exclusively for single site testing. For multisite testing, we use a new
+PHPUnit configuration file named <code>multisite.xml</code> under <code>tests/phpunit</code>
+folder. The multisite.xml file is similar to phpunit.xml except that in
+multisite.xml we define the constant WP_TESTS_MULTISITE.</p>
+
+<p><code>share-on-social/tests/phpunit/multisite.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="p">&lt;</span><span class="nt">phpunit</span> <span class="na">bootstrap</span><span class="o">=</span><span class="s">&#34;bootstrap.php&#34;</span> <span class="na">backupGlobals</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">colors</span><span class="o">=</span><span class="s">&#34;false&#34;</span>
+<span class="na">convertErrorsToExceptions</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">convertNoticesToExceptions</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+<span class="na">convertWarningsToExceptions</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">php</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">const</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;WP_TESTS_MULTISITE&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">php</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">testsuites</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">testsuite</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- don&#39;t change order of next two files --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-share-on-social.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-admin.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-ajax.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+
+      <span class="c">&lt;!-- no order --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-sos.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-options.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-stats.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-help.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-frontend.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-helper.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-ajax-others.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-uninstall-multisite.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+
+      <span class="c">&lt;!-- need to be last as it breaks mysqli --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-activator-multisite.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">testsuite</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">testsuites</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">groups</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">exclude</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">group</span><span class="p">&gt;</span>ajax<span class="p">&lt;/</span><span class="nt">group</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">exclude</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">groups</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">phpunit</span><span class="p">&gt;</span></code></pre></div>
+<p>Multisite tests are defined in separate test case files - <code>
+tests/test-uninstall-multisite.php</code> and
+<code>tests/test-activator-multisite.php</code>. We add these test files in
+<strong>&lt;testsuite&gt;</strong> element of <code>multisite.xml</code>.</p>
+
+<p><strong>Note</strong></p>
+
+<p>We can also define WP_TESTS_MULTISITE in WordPress Test Lib config
+file <code>tests/phpunit/wp-tests-config.php</code> as explained in <a href="https://make.wordpress.org/core/handbook/automated-testing/" target="_blank">WordPress Core Handbook</a>. But we prefer multisite.xml as it allows us to add separate set of multisite test files to test suite.</p>
+
+<p>When you run phpunit for single site it shows the message - <strong>To run
+multisite, use -c tests/phpunit/multisite.xml</strong>. For this reason, we
+place multisite.xml in tests/phpunit directory. Tests will go through
+even when it is in top folder, but we go with the WordPress standard and
+place it in <code>tests/phpunit</code> folder.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-ms-usage.png" alt="WordPress Multisite Plugin Unit Tests" />
+</figure>
+
+
+<p>Execute Multisite tests with following command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ phpunit -c tests/phpunit/multisite.xml</code></pre></div>
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="multisite-tests">Multisite Tests</h3>
+
+<p>When we run PHPUnit using multisite.xml, WordPress Test Lib creates an
+instance of WordPress Multisite. However, it will have only one default
+site. For tests, we require one more site in the network and to add
+additional site, we use <code>WP_UnitTestCase::add_blog()</code> method in test
+case <code>setup()</code> method.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos_Activator extends WP_UnitTestCase {
+
+    public function setup () {
+        parent::setup();
+        
+        // create sos post type
+        require_once &#39;admin/class-sos.php&#39;;
+        $this-&gt;sos = new Sos();
+        
+        require_once &#39;admin/class-activator.php&#39;;
+        $this-&gt;activator = new Sos_Activator();
+        
+        // add one more blog to the site
+        $this-&gt;add_blog( &#39;test1&#39;, &#39;Test 1&#39; );
+        
+        // set default admin - some test change user
+        wp_set_current_user( 1 );
+        Util::set_admin_role( true );
+    }</code></pre></div>
+<p>In the multisite tests, we use following construct to fetch blogs and
+switch between them. The WordPress function <a href="https://codex.wordpress.org/Function_Reference/wp_get_sites" target="_blank">wp_get_sites()</a> returns an array of blogs i.e. sites in the multisite network.</p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">        $blogs = wp_get_sites();
+        $this-&gt;assertCount( 2, $blogs );
+
+        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
+
+        .... some test
+
+        restore_current_blog();
+
+        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
+
+        .... repeat the test in blog 2
+
+        restore_current_blog();</code></pre></div>
+<p>One such multisite test from Test_Sos_Activator is shown in the next
+snippet.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_multisite_activate_by_superadmin () {
+        // list of blogs in site
+        $blogs = wp_get_sites();
+        $this-&gt;assertCount( 2, $blogs );
+        
+        // networkwide activation - superadmin
+        $networkwide = true;
+        
+        // create locker and no options
+        switch_to_blog( $blogs[ 0 ][ &#39;blog_id&#39; ] );
+        Util::set_activate_plugins_cap( true );
+        $this-&gt;sos-&gt;create_post_type();
+        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
+        $this-&gt;assertTrue( isset( $post_id ) );
+        $options = get_option( &#39;sos_common_options&#39; );
+        $this-&gt;assertFalse( $options );
+        restore_current_blog();
+        
+        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
+        Util::set_activate_plugins_cap( true );
+        $this-&gt;sos-&gt;create_post_type();
+        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
+        $this-&gt;assertTrue( isset( $post_id ) );
+        $options = get_option( &#39;sos_common_options&#39; );
+        $this-&gt;assertFalse( $options );
+        restore_current_blog();
+        
+        // we can&#39;t remove super admin status from default user so create new
+        // user
+        $user_id = $this-&gt;add_user( &#39;testuser&#39; );
+        wp_set_current_user( $user_id );
+        
+        // grant super admin and activate
+        grant_super_admin( $user_id );
+        $this-&gt;activator-&gt;activate( $networkwide );
+        
+        // test activation - locker deleted, options created
+        switch_to_blog( $blogs[ 0 ][ &#39;blog_id&#39; ] );
+        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
+        $this-&gt;assertFalse( isset( $post_id ) );
+        $options = get_option( &#39;sos_common_options&#39; );
+        $this-&gt;assertNotFalse( $options );
+        $this-&gt;assertCount( 1, $options );
+        $this-&gt;assertSame( SOS_VERSION, $options[ &#39;version&#39; ] );
+        restore_current_blog();
+        
+        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
+        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
+        $this-&gt;assertFalse( isset( $post_id ) );
+        $options = get_option( &#39;sos_common_options&#39; );
+        $this-&gt;assertNotFalse( $options );
+        $this-&gt;assertCount( 1, $options );
+        $this-&gt;assertSame( SOS_VERSION, $options[ &#39;version&#39; ] );
+        restore_current_blog();
+    }</code></pre></div>
+<p>Tests in multisite test files - test-activator-multisite.php and
+test-uninstall-multisite.php - follow similar pattern.</p>
+
+<p>With that, we are at the end of WordPress Plugin Development Tutorial
+series.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

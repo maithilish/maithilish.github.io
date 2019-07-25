@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ajax on Codetab</title>
+    <link>http://www.codetab.org/tags/ajax/</link>
+    <description>Recent content in Ajax on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jan 2019 07:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ajax - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</link>
+      <pubDate>Sat, 12 Jan 2019 07:03:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</guid>
+      <description>Browser interaction with WebDriver In this previous chapter, we scrape data from page with JavaScript created contents. In this chapter, we extend it further and show how to interact with WebDriver to emulate browser automation.
+Browser Scrolling and Ajax The Quote Example 2 scrape quotations from Scroll - infinite scrolling pagination page loads next set of quotes through Ajax call when we scroll to the bottom of browser.
+The locator and task snippet from this example is as below.</description>
+    </item>
+    
+  </channel>
+</rss>

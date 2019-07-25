@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Generics Unbounded Wildcards Tutorial on Codetab</title>
+    <link>http://www.codetab.org/tags/java-generics-unbounded-wildcards-tutorial/</link>
+    <description>Recent content in Java Generics Unbounded Wildcards Tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/java-generics-unbounded-wildcards-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Generics Wildcards - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/java-generics/wildcards/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/java-generics/wildcards/</guid>
+      <description>Wildcards The previous tutorial explained that there is no relationship, what so ever, between List&amp;lt;Food&amp;gt;, List&amp;lt;Snack&amp;gt; and List&amp;lt;Cookie&amp;gt;,even though Food, Snack and Cookie belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
+Unbounded Wildcard Consider a method to display the elements of a List.</description>
+    </item>
+    
+  </channel>
+</rss>

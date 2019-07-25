@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>W3 Total Cache Browser Cache on Codetab</title>
+    <link>http://www.codetab.org/tags/w3-total-cache-browser-cache/</link>
+    <description>Recent content in W3 Total Cache Browser Cache on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 05:39:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/w3-total-cache-browser-cache/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>W3 Total Browser Cache - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/</link>
+      <pubDate>Fri, 11 Jan 2019 05:39:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/</guid>
+      <description>7.2. W3 Total Cache Browser Cache In the previous section, we installed W3 Total Cache and enabled its Page Cache module. This section shows the best W3 Total Cache Browser Cache Settings to boost the WordPress performance and page speed.
+W3 Total Cache Browser Cache Browser can cache the pages, JavaScript, CSS and media when user views a web page and on subsequent visits to the page or site, reuse the cached objects instead of repeated fetches from the site.</description>
+    </item>
+    
+  </channel>
+</rss>

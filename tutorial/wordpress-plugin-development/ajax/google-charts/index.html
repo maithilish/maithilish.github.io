@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="WordPress Google Charts tutorial explains the steps to load Google Chart API, fetch chart data with Ajax and draw Google Charts.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Google Charts - WordPress Plugin Development - CodeTab",
+        "headline" : "Google Charts - WordPress Plugin Development - CodeTab",
+        "description" : "WordPress Google Charts tutorial explains the steps to load Google Chart API, fetch chart data with Ajax and draw Google Charts.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 11:22:00 +0530 IST",
+        "dateModified" : "2019-01-11 11:22:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/ajax/google-charts/",
+        "wordCount" : "834",
+        "keywords" : [ "wordpress google charts","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Google Charts - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-danger">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="9-3-wordpress-google-charts">9.3. WordPress Google Charts</h2>
+
+<p>In the previous blog, we setup a new sub menu page to display the charts
+and enqueue Google Chart API scripts. In this blog, we explain the steps
+to load Google Chart API, fetch chart data with Ajax and draw WordPress
+Google Charts.</p>
+
+<h3 id="load-google-charts-api">Load Google Charts API</h3>
+
+<p><a href="https://developers.google.com/chart/interactive/docs/quick_start" target="_blank">Google
+Charts</a>
+is a versatile package to present data as charts. It is robust and
+provides large number of ready to use chart types. Google Chart script
+is dynamically loaded from Google servers which eliminates the need to
+install chart software on the WordPress server.</p>
+
+<p>The script <code>js/chart.js</code>, loads Google Charts API and its corechart
+package and sets drawChart() function as callback.</p>
+
+<p><code>share-on-social/js/chart.js</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">google</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">&#39;visualization&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;packages&#39;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;https://developers.google.com/chart/interactive/docs/reference#dataparam&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="s1">&#39;corechart&#39;</span> <span class="p">]</span>
+<span class="p">});</span>
+
+<span class="nx">google</span><span class="p">.</span><span class="nx">setOnLoadCallback</span><span class="p">(</span><span class="nx">drawChart</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">drawChart</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">drawSummaryChart</span><span class="p">();</span>
+    <span class="nx">drawStatsChart</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This will fetch Google Chart API and corechart package from Google
+servers. Once API is loaded, the callback function <code>drawChart()</code> is
+invoked which calls functions to draw Summary chart and Stats chart. We
+will step through the Summary Chart to understand the flow.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h3 id="fetch-chart-data-using-wordpress-ajax">Fetch Chart Data using WordPress Ajax</h3>
+
+<p>On the server side, <code>Sos_Ajax::setup()</code> method registers
+<code>Sos_Ajax::get_stats_summary()</code> method as the callback to action hook
+<strong>wp_ajax_get-stats-summary</strong>.</p>
+
+<p><code>share-on-social/admin/class-ajax.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Ajax {
+
+    public function setup () {
+        ....                
+        add_action( &#39;wp_ajax_get-stats-summary&#39;, 
+                array($this,&#39;get_stats_summary&#39;) );
+    }</code></pre></div>
+<p>When chart.js makes an Ajax call with action as <strong>get-stats-summary</strong>,
+WordPress Ajax script <code>wp-admin/admin-ajax.php</code> invokes
+<code>Sos_Ajax::get_stats_summary()</code>.</p>
+
+<p>After linking Ajax handler on server side, we make Ajax call in the
+function <code>drawSummaryChart()</code> to fetch chart data.</p>
+
+<p><code>share-on-social/js/chart.js</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">drawSummaryChart</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+       <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+       <span class="nx">url</span> <span class="o">:</span> <span class="nx">sos_chart</span><span class="p">.</span><span class="nx">ajax_url</span><span class="p">,</span>
+       <span class="nx">dataType</span> <span class="o">:</span> <span class="s2">&#34;json&#34;</span><span class="p">,</span>
+       <span class="nx">data</span> <span class="o">:</span> <span class="p">{</span>
+         <span class="nx">action</span> <span class="o">:</span> <span class="s1">&#39;get-stats-summary&#39;</span><span class="p">,</span>
+         <span class="nx">_ajax_nonce</span> <span class="o">:</span> <span class="nx">sos_chart</span><span class="p">.</span><span class="nx">stats_summary_nonce</span><span class="p">,</span>
+       <span class="p">},</span>
+       <span class="kr">async</span> <span class="o">:</span> <span class="kc">false</span>
+     <span class="p">}).</span><span class="nx">responseText</span><span class="p">;</span>
+
+    <span class="p">....</span>
+</code></pre></div>
+<p>Client uses<code>jQuery.ajax()</code> function to make Ajax call with following
+parameters. It uses some of the data passed by the server earlier
+through <strong>sos_chart</strong> variable.</p>
+
+<ul>
+<li><p><strong>type</strong> - use POST type for the call.</p></li>
+
+<li><p><strong>url</strong> - URL of the WordPress Ajax routing script
+<code>wp-admin/admin-ajax.php</code>.</p></li>
+
+<li><p><strong>dataType</strong> - call returns JSON data.</p></li>
+
+<li><p><strong>data:action</strong> - use <strong>get-stats-summary</strong> as Ajax action name
+which we have linked to Ajax method <code>Sos_Ajax::get_stats_summary()</code>
+through action hook <strong>wp_ajax_get-stats-summary</strong>.</p></li>
+
+<li><p><strong>_ajax_nonce</strong> - WordPress security token to ensure that only the
+designated client makes the call.</p></li>
+</ul>
+
+<p>When WordPress Ajax routing script admin-ajax.php receives the call, it
+invokes <code>Sos_Ajax::get_stats_summary()</code> method to handle the request.</p>
+
+<p><code>share-on-social/admin/class-ajax.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function get_stats_summary () {
+        $valid_req = check_ajax_referer( &#39;sos-get-stats-summary&#39;, false, false );
+        if ( false == $valid_req ) {
+            wp_die( &#39;-1&#39; );
+        }
+        $data = $this-&gt;get_stats_summary_json();
+        wp_die( $data );
+    }</code></pre></div>
+<p>The method, first checks whether it is a valid Ajax request originated
+from indented client by using the security token nonce. If not, then
+call terminates and returns -1 to client. If security check goes through
+then it obtains summary stats as JSON string and returns it to the
+client.</p>
+
+<h3 id="google-chart-data-json">Google Chart Data JSON</h3>
+
+<p>The WordPress Option <strong>sos_stats_summary</strong> holds the stats summary and
+<code>Sos_Ajax::get_stats_summary_json()</code> fetches the data and constructs an
+array out of it. The data array is encoded as JSON using PHP function
+<code>json_encode()</code> and returned.</p>
+
+<p><code>share-on-social/admin/class-ajax.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function get_stats_summary_json () {
+       
+        // add cols to data
+        $data = array();
+        $data[ &#39;cols&#39; ][] = array(
+                &#39;label&#39; =&gt; __( &#39;Share On&#39;, &#39;sos-domain&#39; ),
+                &#39;type&#39; =&gt; &#39;string&#39;
+        );
+        $data[ &#39;cols&#39; ][] = array(
+                &#39;label&#39; =&gt; __( &#39;Total&#39;, &#39;sos-domain&#39; ),
+                &#39;type&#39; =&gt; &#39;number&#39;
+        );
+        
+        // get summary stats and if no found then return just cols
+        $summary = get_option( &#39;sos_stats_summary&#39; );
+        if ( false == $summary ) {
+            return json_encode( $data );
+        }
+        
+        // from summary create and add rows to data
+        foreach ( $summary as $key =&gt; $value ) {
+            $row = array();
+            $row[][ &#39;v&#39; ] = $this-&gt;get_label( $key );
+            $row[][ &#39;v&#39; ] = $value;
+            $data[ &#39;rows&#39; ][][ &#39;c&#39; ] = $row;
+        }
+        
+        return json_encode( $data );
+    }</code></pre></div>
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-stats-json.png" alt="WordPress Google Charts - chart data json" />
+</figure>
+
+
+<p>The assoc array, $data, uses index &lsquo;cols&rsquo; to set two columns <strong>Share
+on</strong> (Social Media name) and <strong>Total</strong> and their data types - <strong>string</strong>
+or <strong>number</strong>. Next, we scroll through the option data $summary and
+construct rows. The index &lsquo;rows&rsquo; holds rows of data as cells &copy; and
+each cell holds values (v) for each social media - name and total. Refer
+[DataQuery
+JSON</a>
+to know more about the data format.</p>
+
+<h3 id="draw-chart">Draw Chart</h3>
+
+<p>The function <code>drawSummaryChart()</code> uses JSON data to draw the chart.</p>
+
+<p><code>share-on-social/js/chart.js</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">drawSummaryChart</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">....</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">visualization</span><span class="p">.</span><span class="nx">DataTable</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">visualization</span><span class="p">.</span><span class="nx">BarChart</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;summary_chart&#39;</span><span class="p">));</span>
+
+    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="nx">title</span> <span class="o">:</span> <span class="nx">sos_chart</span><span class="p">.</span><span class="nx">summary_title</span><span class="p">,</span>
+       <span class="nx">orientation</span> <span class="o">:</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+       <span class="nx">width</span> <span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+       <span class="nx">height</span> <span class="o">:</span> <span class="mi">400</span>
+    <span class="p">};</span>
+
+    <span class="nx">chart</span><span class="p">.</span><span class="nx">draw</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>From JSON data, it constructs <code>DataTable</code> object. Next, it creates a <code>
+BarChart</code> object and attaches &lt;div id=&lsquo;summary_chart&rsquo;&gt;&lt;/div&gt;, the
+empty placeholder to render the chart set in the previous blog. The
+chart options such as orientation, width, height etc., are set in
+<strong>options</strong> object. Finally, <code>chart.draw()</code> function draws the chart
+with the data and options as parameter.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>The second chart, Shares, is displayed in the similar way, but uses Line
+Chart to present the Shares by date.</p>
+
+<p>The next chapter explains the steps to internationalize the plugin.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

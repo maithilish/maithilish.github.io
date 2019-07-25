@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gwt Tablayoutpanel on Codetab</title>
+    <link>http://www.codetab.org/tags/gwt-tablayoutpanel/</link>
+    <description>Recent content in Gwt Tablayoutpanel on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 11:14:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/gwt-tablayoutpanel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TabLayoutPanel - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/shell/contentpanel/</link>
+      <pubDate>Thu, 10 Jan 2019 11:14:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/shell/contentpanel/</guid>
+      <description>3.3. ContentPanel ContentPanel Next task is to design custom widgets and dock them in DockLayoutPanel of FinsShell. Let us start with ContentPanel which displays the contents of the application. GWT comes with a stock tab panel, GWT TabLayoutPanel, which can display contents in multiple tabs and it is a perfect panel for content area.
+Just for convenience, place all the custom widgets in a separate package. Go ahead and create a package  in.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gwt Openshift on Codetab</title>
+    <link>http://www.codetab.org/tags/gwt-openshift/</link>
+    <description>Recent content in Gwt Openshift on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 18:55:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/gwt-openshift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenShift - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</link>
+      <pubDate>Thu, 10 Jan 2019 18:55:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</guid>
+      <description>12.2. GWT OpenShift Project Project fins developed so far is configured for App Engine and there are two options to deploy its code on OpenShift.
+ create a new project and import the code.
+ modify the existing project.
+  As we are exploring the functionalities of OpenShift with a demo application, we suggest you to go with a new project. For a live project, we suggest the second one.</description>
+    </item>
+    
+  </channel>
+</rss>

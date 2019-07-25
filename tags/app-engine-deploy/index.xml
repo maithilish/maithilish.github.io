@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App Engine Deploy on Codetab</title>
+    <link>http://www.codetab.org/tags/app-engine-deploy/</link>
+    <description>Recent content in App Engine Deploy on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 17:26:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/app-engine-deploy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploy on App Engine - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/</link>
+      <pubDate>Thu, 10 Jan 2019 17:26:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/</guid>
+      <description>10.2. Deploy Once app is ready, Google App Engine Deploy is a simple affair with following steps.
+ login to http://appspot.com using your Google ID.
+ in Google App Engine welcome screen, create an application using Create Application option.
+ in project context menu, choose Google → App Engine Settings . In App Engine dialog, enter the Application ID field with Application ID created in previous step. Start with 1 for Version number and increment it whenever there is a major release of the app.</description>
+    </item>
+    
+  </channel>
+</rss>

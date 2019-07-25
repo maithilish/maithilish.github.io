@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="This chapter of Apache Ivy Tutorial covers IvyDE settings and retrieve dependencies to Eclipse project workspace using IvyDE Retrieve">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "IvyDE Settings - Apache Ivy Tutorial - CodeTab",
+        "headline" : "IvyDE Settings - Apache Ivy Tutorial - CodeTab",
+        "description" : "This chapter of Apache Ivy Tutorial covers IvyDE settings and retrieve dependencies to Eclipse project workspace using IvyDE Retrieve",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 21:50:00 +0530 IST",
+        "dateModified" : "2019-01-10 21:50:00 +0530 IST",
+        "url" : "/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/",
+        "wordCount" : "801",
+        "keywords" : [ "IvyDE Settings","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>IvyDE Settings - Apache Ivy Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Ivy Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/installation/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ant-tasks/" class="toc-page text-muted ">
+            Ant Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/resolve/" class="toc-page text-muted ">
+            Resolve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/" class="toc-page text-muted ">
+            Cachepath and Retrieve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/pattern/" class="toc-page text-muted ">
+            Pattern
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/" class="toc-page text-muted ">
+            Resolvers and Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/" class="toc-page text-muted ">
+            Install Task and Local Repositories
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/shared-repository/" class="toc-page text-muted ">
+            Shared Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/publish/" class="toc-page text-muted ">
+            Publish
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-ivy-ivyde" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse Ivy Plugin
+    </a>
+    
+    <div id="tutorial-apache-ivy-ivyde" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/" class="toc-page dropdown-item text-muted">
+            IvyDE Plugin for Eclipse
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/" class="toc-page dropdown-item text-danger">
+            IvyDE Settings and Retrieve
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      <p>This chapter explains the IvyDE Settings which are useful to enable
+project specific behavior. Settings are managed through IvyDE Managed
+Libraries window that has tabs for Settings, Retrieve and Advanced.</p>
+
+<p>IvyDE Managed Libraries</p>
+
+<p>To manage Ivy settings in Eclipse, you need to open IvyDE Managed
+Libraries window and to open that, there should be an Ivy Library in the
+project build path which is added using Add Ivy Library, as explained in
+the last chapter.</p>
+
+<p>To open the IvyDE Managed Libraries window, select project in the
+Project Explorer and right click to get the context menu and then choose
+<strong>Build Path</strong> →  <strong>Configure Build Path</strong> which shows the Java Build
+Path window. Select the Libraries tab which shows the <strong>ivy.xml[*]</strong>
+library among others. There select ivy.xml[*] library and click Edit
+which pops up the IvyDE Managed Libraries window.</p>
+
+<p>Let&rsquo;s try out some of the IvyDE Settings.</p>
+
+<p>IvyDE Settings</p>
+
+<p>In <a href="/tutorial/apache-ivy/shared-repository/#sec-shared-web">Apache Ivy Shared Repository</a>, we used ivysettings.xml to access a shared web respository through a custom resolver named web. We use Settings tab of IvyDE to override the default settings with an ivysettings.xml. This may be either done at workspace level or at project level. Place the ivysettings.xml in root folder of workspace to enable custom settings at workspace level or in root folder of the project for custom settings at project level.</p>
+
+<p>For project level settings, select <strong>Enable project specific settings</strong>
+checkbox and set <strong>Ivy settings path</strong> field to ivysettings.xml file.
+For workspace level settings, use <strong>Configure Workspace Settings</strong> link
+which takes you to Eclipse Preferences window where you may set the
+ivysettings.xml. (for workspace level setting you may also use
+<strong>Window</strong> → <strong>Preferences</strong> → <strong>Ivy</strong> → <strong>Settings</strong>).</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-ivy/media/ivydesettingstab.png" alt="IvyDE Settings and IvyDE Settings file" />
+</figure>
+
+
+<p><strong>Figure 9.1. IvyDE Settings Tab</strong></p>
+
+<p>IvyDE Retrieve</p>
+
+<p>Apache Ivy Retrieve task copies the resolved dependencies to the project
+workspace. In IvyDE, we can enable retrieve at two levels either at the
+workspace level or at the project level.</p>
+
+<p>Enable IvyDE Retrieve at project level</p>
+
+<p>To set retrieve at project level, open Ivy Managed Libraries window and
+select Retrieve tab. Make changes as shown in the screenshot and save
+the settings.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-ivy/media/retrievesettings2.png" alt="IvyDE Settings and IvyDE Retrieve" />
+</figure>
+
+
+<p><strong>Figure 9.2. IvyDE Retrieve Tab</strong></p>
+
+<p>These settings indicate that</p>
+
+<ul>
+<li><p>IvyDE has to retrieve after resolve.</p></li>
+
+<li><p>Retrieve pattern <code>lib/[artifact]-[revision]-[type].[ext]</code> places the
+retrieved modules in lib directory.</p></li>
+
+<li><p>delete stale artifacts which are no longer in dependencies list and
+lying in lib directory.</p></li>
+
+<li><p>Types - jar means we want only actual library jar files and not
+javadoc, source jar, etc. Multiple comma separated types are allowed
+like jar, bundle, etc.</p></li>
+</ul>
+
+<p>Refresh the project with F5 and Ivy creates lib directory in root
+folders of the project and copies the resolved artifacts to it.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Enable IvyDE Retrieve at workspace level</p>
+
+<p>Go to <strong>Window</strong> → <strong>Preferences</strong> → <strong>Ivy</strong> → <strong>Retrieve</strong></p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-ivy/media/ivyderetrieve.png" alt="IvyDE Settings and IvyDE Retrieve" />
+</figure>
+
+
+<p><strong>Figure 9.3. IvyDE Retrieve Tab</strong></p>
+
+<p>Make changes as shown in next the screenshot and save settings</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-ivy/media/retrievesettings1.png" alt="IvyDE Settings and IvyDE Retrieve" />
+</figure>
+
+
+<p><strong>Figure 9.4. IvyDE Retrieve Tab</strong></p>
+
+<p>Refresh the project with F5. Ivy creates a lib directory in root folders
+of the project (only in those projects which have ivy.xml[*] library
+in their build path and there is no project specific settings) and
+copies the resolved jars to it.</p>
+
+<p>In our opinion, out of the two, project level setting is the better
+option.</p>
+
+<p>Advanced Tab</p>
+
+<p>This tab is used to</p>
+
+<ul>
+<li><p>define accepted types</p></li>
+
+<li><p>define source types and suffixes</p></li>
+
+<li><p>defines javadoc types and suffixes</p></li>
+
+<li><p>change ordering of classpath entries</p></li>
+</ul>
+
+<p>Again, these things can be set at the workspace level or at the project
+level.</p>
+
+<p> </p>
+
+<p> </p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Going Further</p>
+
+<p>That brings us to the end of the <strong>Apache Ivy Beginners Guide</strong>. In this
+guide, we have covered some of the essential concepts and usage of
+Apache Ivy which assists developers to start using Apache Ivy in their
+projects.</p>
+
+<p>But it&rsquo;s just the start: Apache Ivy comes with many additional features
+to meet the rigorous needs of an enterprise dependency management
+system. Below, we provide some of the pointers for users to gain further
+insight into Apache Ivy and help them to convert their build system into
+a professional one.</p>
+
+<p><strong>Tutorials</strong> - Official documentation contains set of tutorials which
+explains some of the advanced features. These tutorials walk through the
+examples provided in src/example directory of Apache Ivy distribution.</p>
+
+<p><strong>Reference Documentation</strong> - Official documentation also contains
+detailed Reference documentation which covers following areas</p>
+
+<ul>
+<li><p>Setting Files – defines the structure of ivysettings.xml and the
+allowed tags.</p></li>
+
+<li><p>Ivy Files - defines the structure of ivy.xml and the allowed tags.</p></li>
+
+<li><p>Ant Tasks – provides reference about the various Apache Ivy Ant
+tasks.</p></li>
+</ul>
+
+<p><strong>Ivy Module Configuration</strong> - In this guide, we used the default
+configuration named <strong>default</strong>. Apache Ivy comes with a powerful
+feature known as Module Configurations which groups a set of artifacts
+and gives meaning to it. Official tutorial – Using Ivy Module
+Configurations explains this concept.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Scoopi Web Scraper can scrape links from a start page and dynamically create locators from links. It allows you to recursively scrape the web pages.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Link Locator - Scoopi Web Scraper - CodeTab",
+        "headline" : "Link Locator - Scoopi Web Scraper - CodeTab",
+        "description" : "Scoopi Web Scraper can scrape links from a start page and dynamically create locators from links. It allows you to recursively scrape the web pages.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-12 05:16:00 +0530 IST",
+        "dateModified" : "2019-01-12 05:16:00 +0530 IST",
+        "url" : "/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/",
+        "wordCount" : "621",
+        "keywords" : [ "create locators from links","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Link Locator - Scoopi Web Scraper - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Scoopi Web Scraper</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Scoopi Web Scraper V094">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/" class="toc-page text-muted ">
+            Installation and Quick Start
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/definition-file-v094/" class="toc-page text-muted ">
+            Definition File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/datadef-v094/" class="toc-page text-muted ">
+            DataDef
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/" class="toc-page text-muted ">
+            Selector
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/" class="toc-page text-muted ">
+            Members
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/" class="toc-page text-muted ">
+            Index, IndexRange and BreakAfter
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/" class="toc-page text-muted ">
+            Filters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/" class="toc-page text-muted ">
+            Multiple Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/" class="toc-page text-muted ">
+            Steps and Plugins
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/" class="toc-page text-muted ">
+            Converters
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/" class="toc-page text-danger ">
+            Create Locators from Links
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/persistence-v094/" class="toc-page text-muted ">
+            Persistence
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/appender-and-encoder-v094/" class="toc-page text-muted ">
+            Appender and Encoder
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/split-definitions-v094/" class="toc-page text-muted ">
+            Split Definitions
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/" class="toc-page text-muted ">
+            Logs
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/dashboard-v094/" class="toc-page text-muted ">
+            Dashboard
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/scoopi-web-scraper-v094/db-setup-v094/" class="toc-page text-muted ">
+            DB Setup
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="create-locators-from-links">Create Locators from Links</h1>
+
+<p>The definitions would become lengthy when we define each and every link
+in job.xml. Instead, we can use Scoopi to scrape links from a start page
+and dynamically create locators. This feature allows you to recursively
+scrape the web pages. Let&rsquo;s see how to create locators from scraped
+links.</p>
+
+<h2 id="link-scrape-step">Link Scrape Step</h2>
+
+<p>The
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-9/job.yml" target="_blank">Example 9</a>
+scrapes Balance Sheet and Profit &amp; Loss links from
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/page/acme-quote-links.html" target="_blank">acme-quote.html</a>
+page. Links snippet in the html page is as below.</p>
+
+<p>recursively</p>
+
+<p><code>defs/examples/page/acme-quote-links.html</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="c">&lt;!-- links to other pages --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;page_links&#34;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Financial<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-bs.html&#34;</span><span class="p">&gt;</span>Balance Sheet<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-pl.html&#34;</span><span class="p">&gt;</span>Profit <span class="err">&amp;</span> Loss<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+<p>In job.xml, instead of locators for bs and pl, we just define locator
+for acme-quote-links.html and a task to scrape and convert links.</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+
+  quoteGroup:
+    locators: &lt;a href=&#34;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-10/job.yml&#34; target=&#34;_blank&#34;&gt;
+       { name: acme, url: &#34;/defs/examples/page/acme-quote-links.html&#34; }
+    ]
+
+taskGroups:
+
+  quoteGroup:
+
+    linkTask:
+      dataDef: links
+      steps:
+        jsoupDefault:
+          process:
+            class: &#34;org.codetab.scoopi.step.convert.LocatorCreator&#34;
+            previous: parser
+            next: seeder</code></pre></div>
+<p>In default steps <em>jsoupDefault</em>, the parser step handover data to
+process step to filter which in turn handover the filtered data to
+converter. The work flow is</p>
+
+<pre><code>seeder -&gt; loader -&gt; parser -&gt; process (filter) -&gt; converter
+</code></pre>
+
+<p>But, the task <em>linkTask</em> override process step of <em>jsoupDefault</em> with a
+local step which executes
+<code>org.codetab.scoopi.step.convert.LocatorCreator</code> which creates a new
+locator from the links and hand them over to seeder step and the work
+flow
+becomes</p>
+
+<pre><code> seeder -&gt; loader -&gt; parser -&gt; process (locator creator) -&gt; seeder -&gt; loader -&gt; parser -&gt; process (filter) -&gt; converter
+</code></pre>
+
+<h2 id="datadef-for-links">DataDef for Links</h2>
+
+<p>The linkTask used dataDef named <em>links</em> where we define the member to
+hold the scraped link which as follows</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">links:
+  axis:
+    fact:
+      query:
+        region: &#34;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&#34;
+        field: &#34;li:nth-child(%{row.index}) &gt; a[href]&#34;
+        attribute: &#34;href&#34;
+      prefix: [ &#34;/defs/examples/page/&#34; ]
+    col:
+      query:
+        script: &#34;configs.getRunDateTime()&#34;
+      members: [
+        member: {name: date},
+      ]
+    row:
+      query:
+        region: &#34;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&#34;
+        field: &#34;li:nth-child(%{row.index}) &gt; a[href]&#34;
+      members: [
+        member: {name: bs, index: 2, linkGroup: bsGroup},
+        member: {name: pl, index: 3, linkGroup: plGroup},
+      ]</code></pre></div>
+<p>The row axis defines two members bs and pl to hold the scraped links.
+The linkGroup is name of the task group that has to set to the newly
+created locator. Let&rsquo;s clarify this aspect in detail. The task group of
+the task linkTask is quoteGroup. So the parsed member bs initially
+belongs to task group quoteGroup. But any dataDef of tasks in quoteGroup
+are not able to parse the acme-bs.html page. Only tasks in bsGroup are
+able to parse the acme-bs.html as they use bs dataDef. So we need to
+assign newly created bs locator to bsGroup which is specified using
+linkGroup property of
+member.</p>
+
+<pre><code> |-----            quoteGroup                       -----|                     bsGroup 
+
+ seeder -&gt; loader -&gt; parser -&gt; process (locator creator) -&gt; seeder -&gt; loader -&gt; parser -&gt; process (filter) -&gt; converter
+</code></pre>
+
+<h2 id="prefix">Prefix</h2>
+
+<p>The web pages uses absolute or relative links. The example
+acme-quote-links.html uses relative links as shown below.</p>
+
+<p><code>defs/examples/page/acme-quote-links.html</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="c">&lt;!-- links to other pages --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;page_links&#34;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Financial<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-bs.html&#34;</span><span class="p">&gt;</span>Balance Sheet<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-pl.html&#34;</span><span class="p">&gt;</span>Profit <span class="err">&amp;</span> Loss<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+<p>We have to prefix path <code>/defs/examples/page/</code> to link value
+<code>acme-bs.html</code> otherwise loader is not able to load the page. Use prefix
+property in axis to add any prefix to axis value. In the example, as
+scraped link value is in fact axis it defines fact axis as</p>
+<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">links:
+  axis:
+    fact:
+      query:
+        region: &#34;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&#34;
+        field: &#34;li:nth-child(%{row.index}) &gt; a[href]&#34;
+        attribute: &#34;href&#34;
+      prefix: [ &#34;/defs/examples/page/&#34; ]</code></pre></div>
+<p>The
+[Example 10</a>
+combines all the definitions we have used so far (examples 1 to 9) -
+links, price, snapshot, bs and pl - into single job which outputs all
+the data to data.txt file.</p>
+
+<p>In this next chapter we setup database and use persistence feature of
+Scoopi.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

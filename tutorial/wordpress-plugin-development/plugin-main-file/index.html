@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="In this chapter, we step through the WordPress Plugin main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Main File - WordPress Plugin Development - CodeTab",
+        "headline" : "Main File - WordPress Plugin Development - CodeTab",
+        "description" : "In this chapter, we step through the WordPress Plugin main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 08:56:00 +0530 IST",
+        "dateModified" : "2019-01-11 08:56:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/plugin-main-file/",
+        "wordCount" : "802",
+        "keywords" : [ "wordpress plugin main file","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Main File - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-danger ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<p>In this chapter, we step through the plugins&rsquo; main file. We also explain
+the benefits of PHP Classes to code the plugin instead of functions.</p>
+
+<h2 id="plugin-info">Plugin Info</h2>
+
+<p>The main file <code>share-on-social.php</code> starts with header comments. As
+already described in the <a href="http://codex.wordpress.org/Function_Reference/is_admin" target="_blank">Section 2.1, “WordPress Simple
+Plugin”](wordpress-simple-plugin/), WordPress uses the header comments
+from the main file to display the Plugin info in plugins page.</p>
+
+<h2 id="define-constants">Define Constants</h2>
+
+<p>Throughout the plugin, we often refer some paths and constants.
+Normally, the constants are defined at the start of plugins. In Share on
+Social, we define following constants.</p>
+
+<p><code>share-on-social/share-on-social.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">define( &#39;SOS_NAME&#39;, &#39;share-on-social&#39; );
+define( &#34;SOS_VERSION&#34;, &#39;1.0.0&#39; );
+
+define( &#34;SOS_URL&#34;, trailingslashit( plugin_dir_url( __FILE__ ) ) );
+
+// plugin path
+define( &#34;SOS_PATH&#34;, plugin_dir_path( __FILE__ ) );
+
+//basename share-on-social/share-on-social.php
+define( &#34;SOS_PLUGIN_BASENAME&#34;, plugin_basename( __FILE__ ) );
+
+// main file - share-on-social.php
+define( &#34;SOS_PLUGIN_FILE&#34;, __FILE__ );</code></pre></div>
+<p>We prefix constants with <strong>SOS_</strong> so that names don&rsquo;t clash with
+constants from theme and other plugins. Always prefix the constants with
+the plugin name or some unique abbreviation.</p>
+
+<h2 id="functions-and-classes">Functions and Classes</h2>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-classfiles.png" alt="WordPress Plugin Main File and Class files." />
+</figure>
+
+
+<p>It is easy to code the plugin functionality with PHP functions. But this
+approach may results in name conflict either with functions defined by
+site theme and other active plugins or even with WordPress API.</p>
+
+<p>Even though bit difficult to read, better approach is to use PHP Classes
+which eliminates the name conflict.</p>
+
+<p>In Share on Social Plugin, we use classes for all modules except the
+main file and uninstall.php where we use regular functions. Rest of the
+code is split into class files which are included in main file.</p>
+
+<p>Let&rsquo;s see how this is done with two class files; one for front end and
+another for admin module. In the following code snippet, we include two
+class files class-frontend.php and class-admin.php.</p>
+
+<p><code>share-on-social/share-on-social.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">// plugin entry point
+setup_sos_plugin();
+
+function setup_sos_plugin () {
+
+    require_once SOS_PATH . &#39;include/class-helper.php&#39;;
+    
+    if ( is_admin() ) {
+       
+        require_once SOS_PATH . &#39;admin/class-admin.php&#39;;
+        add_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; );
+
+    } else {
+
+        require_once SOS_PATH . &#39;frontend/class-frontend.php&#39;;
+        add_action( &#39;plugins_loaded&#39;, &#39;load_sos_frontend&#39; );
+
+    }
+}
+
+function load_sos_admin () {
+    $sos_admin = new Sos_Admin();
+    $sos_admin-&gt;setup();
+}
+
+
+function load_sos_frontend () {
+    $sos_frontend = new Sos_Frontend();
+    $sos_frontend-&gt;setup();
+}</code></pre></div>
+<ul>
+<li><p>in the main file, we call a single function <code>setup_sos_plugin()</code>
+which is also the the entry point of the plugin.</p></li>
+
+<li><p>in the function, we check whether we are in admin screen or in site
+with the help of <code>is_admin()</code>. WordPress function
+[is_admin()</a>
+return true when we are in the admin screen. Please note that we
+should not use this function to check whether the user has admin
+privileges or not.</p></li>
+
+<li><p>if we are in admin screen, then include <code>class-admin.php</code> and attach
+<code>load_sos_admin()</code> function to WordPress hook <strong>plugins_loaded</strong>
+using <code>add_action()</code>. Next chapter covers add_action() in depth,
+but for the time it is suffice to note that when all active plugins
+are loaded, WordPress calls our function load_sos_admin().</p></li>
+
+<li><p>in <code>load_sos_admin()</code> function, we create a object of class
+<code>Sos_Admin</code> and call its <code>setup()</code> method.</p></li>
+
+<li><p>when is_admin is false, we include class-frontend.php and load its
+class.</p></li>
+</ul>
+
+<p>It is important to note that <code>load_sos_admin()</code> and
+<code>load_sos_frontend()</code> are not called immediately by add_action() in
+<code>setup_sos_plugin()</code>, but their execution is deferred.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Just for the sake of explanation, we split this into two phases. When we
+access the site, as part of phase one, WordPress processes all activated
+plugins. When <code>share-on-social.php</code> is processed its
+<code>setup_sos_plugin()</code> function is called. In this function, WordPress
+includes the class files and calls add_action() which just registers
+<code>load_sos_admin()</code> or <code>load_sos_frontend()</code> as <strong>callback functions</strong>
+with WordPress for a hook named <strong>plugins_loaded</strong>. Then WordPress goes
+on to process other plugins which are active in the site. When all
+active plugins are processed, WordPress triggers second phase by calling
+the hook plugins_loaded. At this point, WordPress calls registered
+callback methods <code>load_sos_admin()</code> or <code>load_sos_frontend()</code> and
+executes the code they contain.</p>
+
+<p>Next, let&rsquo;s go through a plugin class file to see how classes are
+defined with a snippet from class-frontend.php .</p>
+
+<p><code>share-on-social/frontend/class-frontend.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="err">&lt;</span>?php
+
+defined( &#39;ABSPATH&#39; ) or die( &#34;Access denied !&#34; );
+
+class Sos_Frontend {
+
+    var $sos_shortcode = &#39;share-on-social&#39;;
+
+    public function setup () {
+        
+        // enable shortcode
+        add_shortcode( $this-&gt;sos_shortcode, 
+                array(
+                        $this,
+                        &#39;enable_sos_shortcode&#39;
+                ) );
+    }
+
+
+    // other methods of the class
+
+}</code></pre></div>
+<p>In the class file, we define class <code>Sos_Frontend</code> and its method. At the
+top, we define variables which have class scope such as
+<code>$sos_shortcode</code>. In classes, we use <code>setup()</code> to carry out
+initializations tasks such as add actions, filters, shortcodes and also
+to include other class files and modules etc., Other class files of the
+plugin follow similar pattern. For the moment, it is enough to
+understand the overall structure of the plugin and its files as
+throughout the tutorial, we cover its code in detail.</p>
+
+<script>
+    console.log("slot C"); 
+</script>
+
+<p>In the next chapter, we explain the the important WordPress concepts
+Actions, Filters and Hooks which allows plugins to plug to the WordPress
+core.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gwt Suggestbox on Codetab</title>
+    <link>http://www.codetab.org/tags/gwt-suggestbox/</link>
+    <description>Recent content in Gwt Suggestbox on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 15:56:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/gwt-suggestbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SuggestBox - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</link>
+      <pubDate>Thu, 10 Jan 2019 15:56:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</guid>
+      <description>6.2. AutoSuggest AutoSuggest accepts user input and displays matching list of Symbols for selection. It uses GWT SuggestBox to display suggestions those matches input.
+Default SuggestOracle of SuggestBox is MultiWordSuggestOracle which displays sorted drop down list of matches. List of names comes from SymbolDatabase.getSymbolNames(), which returns names of four symbols, and method MultiWordSuggestOracle.setSymbolNames() adds list to the oracle.
+in.fins.client.widget/AutoSuggest.java
+private void setSymbolNames() { List&amp;lt;String&amp;gt; list = SymbolDatabase.getSymbolNames(); ((MultiWordSuggestOracle) suggestBox.getSuggestOracle()).addAll(list); } In Part 2 of the book, RPS calls to the server replaces  SymbolDatabase calls.</description>
+    </item>
+    
+  </channel>
+</rss>

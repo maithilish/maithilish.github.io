@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="This chapter of Apache Ivy Tutorial explains the use of Apache Ivy Cachepath task to construct an Ant classpath consisting of resolved artifacts cache.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Cachepath – Apache Ivy Tutorial - CodeTab",
+        "headline" : "Cachepath – Apache Ivy Tutorial - CodeTab",
+        "description" : "This chapter of Apache Ivy Tutorial explains the use of Apache Ivy Cachepath task to construct an Ant classpath consisting of resolved artifacts cache.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 22:18:00 +0530 IST",
+        "dateModified" : "2019-01-10 22:18:00 +0530 IST",
+        "url" : "/tutorial/apache-ivy/cachepath-retrieve/",
+        "wordCount" : "590",
+        "keywords" : [ "apache ivy cachepath","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Cachepath – Apache Ivy Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Ivy Guide</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/installation/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ant-tasks/" class="toc-page text-muted ">
+            Ant Tasks
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/resolve/" class="toc-page text-muted ">
+            Resolve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/" class="toc-page text-danger ">
+            Cachepath and Retrieve
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/pattern/" class="toc-page text-muted ">
+            Pattern
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/" class="toc-page text-muted ">
+            Resolvers and Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/" class="toc-page text-muted ">
+            Install Task and Local Repositories
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/shared-repository/" class="toc-page text-muted ">
+            Shared Repository
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-ivy/publish/" class="toc-page text-muted ">
+            Publish
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-ivy-ivyde" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse Ivy Plugin
+    </a>
+    
+    <div id="tutorial-apache-ivy-ivyde" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/" class="toc-page dropdown-item text-muted">
+            IvyDE Plugin for Eclipse
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/" class="toc-page dropdown-item text-muted">
+            IvyDE Settings and Retrieve
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      <p>In the last chapter we worked with &lt;ivy:resolve&gt;, which resolves the
+dependencies indicated in ivy.xml file and places the resolved modules
+in the cache. But it does not link the dependencies to the project build
+path. To expose the dependencies to the Java build path, Apache Ivy
+provides two Ant tasks .</p>
+
+<ul>
+<li><p>&lt;ivy:cachepath&gt; task</p></li>
+
+<li><p>&lt;ivy:retrieve&gt; task</p></li>
+</ul>
+
+<p>Apache Ivy Cachepath Task</p>
+
+<p>&lt;ivy:cachepath&gt; constructs an Ant classpath consisting of resolved
+artifacts in the cache.</p>
+
+<p>In the sample project from the last chapter, Ant executed
+&lt;ivy:resolve&gt; which resolved commons-langs 2.6 module and placed the
+artifacts in the cache. To compile Java class files, Ant require a
+classpath that refers to the artifacts in the cache, and Ivy Cachepath
+task constructs the required classpath.</p>
+
+<p>Modify build.xml as
+follows</p>
+
+<p><code>build.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;ivy example&#34;</span> <span class="na">default=</span><span class="s">&#34;compile&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;resolve&#34;</span> <span class="na">description=</span><span class="s">&#34;resolve dependencies with ivy&#34;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ivy:resolve</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;ivy:cachepath</span> <span class="na">pathid=</span><span class="s">&#34;default.classpath&#34;</span> <span class="nt">/&gt;</span>
+ <span class="nt">&lt;/target&gt;</span>
+ <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;compile&#34;</span> <span class="na">depends=</span><span class="s">&#34;resolve&#34;</span> <span class="na">description=</span><span class="s">&#34;Compile&#34;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&#34;build/classes&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;javac</span> <span class="na">srcdir=</span><span class="s">&#34;src&#34;</span> <span class="na">destdir=</span><span class="s">&#34;build/classes&#34;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;classpath</span> <span class="na">refid=</span><span class="s">&#34;default.classpath&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/javac&gt;</span>
+ <span class="nt">&lt;/target&gt;</span>
+<span class="nt">&lt;/project&gt;</span></code></pre></div>
+<p>In the resolve target, we have added &lt;ivy:cachepath
+pathid=&ldquo;default.classpath&rdquo; /&gt; after &lt;ivy:resolve&gt;. After a successful
+resolve, Ivy constructs Ant classpath named <strong>default.classpath</strong>. This
+classpath points to the resolved artifacts in the cache and in sample
+project it points commons-lang.jar in cache. Next in &lt;javac&gt; task, we
+refer default.classpath through attribute refid. When Ant executes
+&lt;javac&gt; task it finds resolved artifacts in the classpath and compile
+goes through.</p>
+
+<p><strong>Artifacts location</strong></p>
+
+<p>It is important to note that, neither &lt;ivy:cachepath&gt; nor
+&lt;ivy:resolve&gt; copy the artifacts from cache to the project workspace.
+Artifacts continue to be in the cache. and &lt;ivy:cachepath&gt; simply
+constructs a classpath that points to artifacts in the cache.</p>
+
+<p>In case, task &lt;ivy:cachepath&gt; is called directly without a
+&lt;ivy:resolve&gt; then &lt;ivy:resolve&gt; is internally called before
+executing &lt;ivy:cachepath&gt;</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Apache Ivy Retrieve Task</p>
+
+<p>Instead of &lt;ivy:cachepath&gt; task, better approach is to copy the
+dependencies to the project workspace and use the standard Ant classpath
+mechanism to build the project. Apache Ivy Retrieve task comes handy to
+do that.</p>
+
+<p>Task &lt;ivy:retrieve&gt; copies resolved dependencies to a specified
+location in the project workspace.</p>
+
+<p>Modify <code>build.xml</code> as
+follows</p>
+
+<p><code>build.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;ivy example&#34;</span> <span class="na">default=</span><span class="s">&#34;retrieve&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;retrieve&#34;</span> <span class="na">description=</span><span class="s">&#34;Resolve and Retrieve with ivy&#34;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ivy:resolve</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;ivy:retrieve</span> <span class="na">sync=</span><span class="s">&#34;true&#34;</span> <span class="na">type=</span><span class="s">&#34;jar&#34;</span> <span class="nt">/&gt;</span>
+ <span class="nt">&lt;/target&gt;</span>
+<span class="nt">&lt;/project&gt;</span></code></pre></div>
+<p>We have added &lt;ivy:retrieve sync=&ldquo;true&rdquo; type=&ldquo;jar&rdquo; /&gt; after
+&lt;ivy:resolve&gt; which instructs Ivy to copy the resolved artifacts from
+cache to lib directory within the project workspace. Ivy will create the
+lib directory if it is not there.</p>
+
+<p>Important attributes that are used in this task are</p>
+
+<ul>
+<li><p><strong>Sync</strong> set to true will ensure that any extra files in the lib
+directory is deleted.</p></li>
+
+<li><p><strong>Type</strong> set to jar tells ivy to copy only jar artifacts. Source and
+javadoc artifacts are ignored.</p></li>
+</ul>
+
+<p><strong>Types</strong></p>
+
+<p>Frequently used types are <strong>jar</strong> for jar artifact, <strong>src</strong> or
+<strong>source</strong> for Java source artifact and <strong>doc</strong> for javadoc artifact.
+But some modules like log4j, refer jar artifacts as <strong>bundle</strong> instead
+of <strong>jar</strong>. To include log4j artifacts, you need to change the type
+attribute to <code>&lt;ivy:retrieve sync=&quot;true&quot; type=&quot;jar,bundle&quot; /&gt;</code></p>
+
+<p>In case &lt;ivy:retrieve&gt; is called directly without a &lt;ivy:resolve&gt;,
+then &lt;ivy:resolve&gt; is internally called before retrieving the
+artifacts.</p>
+
+<p>Once the dependencies are in project workspace, use standard ant path
+creation to build the project.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Ivy Retrieve Pattern</p>
+
+<p>By default &lt;ivy:retrieve&gt; places the retrieved artifacts in lib
+directory of the project and may change this by using <strong>Ivy Retrieve
+pattern</strong> attribute.</p>
+
+<p><code>&lt;ivy:retrieve sync=&quot;true&quot; type=&quot;jar&quot;
+pattern=&quot;myfolder/[artifact]-[revision].[ext]&quot; /&gt;</code></p>
+
+<p>Attribute pattern tells Ivy Retrieve to copy the artifacts to myfolder
+directory. The next chapter covers other aspects of the pattern.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

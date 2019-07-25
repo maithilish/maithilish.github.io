@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google App Engine on Codetab</title>
+    <link>http://www.codetab.org/tags/google-app-engine/</link>
+    <description>Recent content in Google App Engine on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 12:45:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/google-app-engine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google App Engine - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/</link>
+      <pubDate>Thu, 10 Jan 2019 12:45:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/</guid>
+      <description>Google App Engine Google App Engine (GAE), also known as App Engine, enables you to host web applications on Google&amp;rsquo;s infrastructure. GAE is a Platform as a Service (PaaS) cloud computing platform for hosting web applications in Google-managed data centers. App Engine offers automatic scaling for web applications as request increases by allocating more resources for the application to handle the additional demand.
+App Engine supports applications written in Java, Python and Go.</description>
+    </item>
+    
+  </channel>
+</rss>

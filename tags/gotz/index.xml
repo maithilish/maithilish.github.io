@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gotz on Codetab</title>
+    <link>http://www.codetab.org/tags/gotz/</link>
+    <description>Recent content in Gotz on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 18:51:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/gotz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bean Locator - Gotz ETL - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gotz-etl/bean-locator/</link>
+      <pubDate>Fri, 11 Jan 2019 18:51:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gotz-etl/bean-locator/</guid>
+      <description>Gotz uses set of definition files to extract data from HTML pages. As HTML pages are unstructured in nature, the definition to extract and handle data can become quite complex. To learn the XML elements used by the definition files, Gotz distribution comes with a set of examples which are under def/examples folder. Examples are named as ex-1, ex-2 and so on, each with increasing complexity.
+Gotz Definition Files Gotz creates the data model based on XML definition files.</description>
+    </item>
+    
+  </channel>
+</rss>

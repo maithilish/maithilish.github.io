@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Plugin Uninstall on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-plugin-uninstall/</link>
+    <description>Recent content in Wordpress Plugin Uninstall on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 12:42:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-uninstall/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uninstall - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/</link>
+      <pubDate>Fri, 11 Jan 2019 12:42:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/</guid>
+      <description>11.5. WordPress Plugin Uninstall In the previous blogs, we customized activation and deactivation phases for the plugin. In this tutorial, we use uninstall phase to clean up the entities created by the plugin.
+When a plugin is uninstalled, it is already in deactivated state and it means that WordPress Action framework is no longer usable with in the plugin code. WordPress do provide a uninstall hook register_uninstall_hook(), but when when a plugin can not be written without running code within the plugin there is another mechanism to handle uninstall.</description>
+    </item>
+    
+  </channel>
+</rss>

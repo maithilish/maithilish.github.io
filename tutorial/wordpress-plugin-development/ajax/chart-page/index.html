@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="In the next two tutorials, we add a sub menu to Share on Social Plugin menu to display the share statistics in WordPress Chart Page with Google Charts API.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Chart Page - WordPress Plugin Development - CodeTab",
+        "headline" : "Chart Page - WordPress Plugin Development - CodeTab",
+        "description" : "In the next two tutorials, we add a sub menu to Share on Social Plugin menu to display the share statistics in WordPress Chart Page with Google Charts API.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 11:09:00 +0530 IST",
+        "dateModified" : "2019-01-11 11:09:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/ajax/chart-page/",
+        "wordCount" : "621",
+        "keywords" : [ "wordpress chart page","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Chart Page - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-danger">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="9-2-wordpress-chart-page">9.2. WordPress Chart Page</h2>
+
+<p>In the next two blogs, we add a sub menu to Share on Social Plugin menu
+to display the share statistics with Google Charts API. The chart page
+uses functionalities already discussed in following topics.</p>
+
+<ul>
+<li><p><a href="/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/">Add Menu</a></p></li>
+
+<li><p><a href="/tutorial/wordpress-plugin-development/admin-module-settings/options-page/">Options Page</a></p></li>
+
+<li><p><a href="/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/">Plugin Enqueue Scripts</a></p></li>
+
+<li><p><a href="/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/">Pass Data to JavaScript</a></p></li>
+
+<li><p><a href="/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/">Ajax</a></p></li>
+</ul>
+
+<p>The plugin uses two files <code>admin/class-stats.php</code> and<code>js/chart.js</code>. As
+many of the concepts are already covered in the tutorial we will not get
+into the detail, instead explain the overall flow with the relevant code
+snippets.</p>
+
+<h3 id="add-sub-menu-page">Add Sub Menu Page</h3>
+
+<p>To add sub menu, <code>Sos_Stats::setup()</code> adds <code>
+Sos_Stats::register_stats_page()</code> to action hook <strong>admin_menu</strong>.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Stats {
+
+    public function setup () {
+        add_action( &#39;admin_menu&#39;, array($this,&#39;register_stats_page&#39;) );
+    }</code></pre></div>
+<p>The action method, adds the sub menu <strong>Statistics</strong> to <strong>sos</strong> post type
+menu using the slug <strong>edit.php?post_type=sos</strong>.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function register_stats_page () {
+        $menu_label = __( &#39;Statistics&#39;, &#39;sos-domain&#39; );
+        $page_title = __( &#39;Share on Social Statistics&#39;, &#39;sos-domain&#39; );
+        $stats_page = &#39;sos_stats_page&#39;;
+        $page_hook_suffix = add_submenu_page( &#39;edit.php?post_type=sos&#39;, 
+                $page_title, $menu_label, &#39;administrator&#39;, $stats_page, 
+                array(<span class="err">&amp;</span>$this,&#39;render_stats_page&#39;) );
+        /*
+         * link scripts only on a specific administration screen. see example:
+         * Link Scripts Only on a Plugin Administration Screen in
+         * http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+         */
+        add_action( &#39;admin_print_scripts-&#39; . $page_hook_suffix, 
+                array($this,&#39;enqueue_chart_scripts&#39;) );
+    }</code></pre></div>
+<p>Normally, plugins use <strong>wp_enqueue_scripts</strong> hook to enqueue scripts,
+but here we use a dynamic hook so that chart scripts are added only to
+plugins&rsquo; admin screens. The <code>add_submenu_page()</code> returns the slug of
+newly added sub menu and we use that to add the <code>
+Sos_Stats::enqueue_chart_scripts()</code> method to action hook
+<strong>admin_print_scripts-&lt;menu slug&gt;</strong>. Refer <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Link_Scripts_Only_on_a_Plugin_Administration_Screen" target="_blank">Link Scripts Only on a Plugin Administration Screen</a> to known more about this.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-stats-charts.png" alt="WordPress chart page - statistics menu." />
+</figure>
+
+
+<h3 id="enqueue-scripts">Enqueue Scripts</h3>
+
+<p>Actual enqueue happens in <code>Sos_Stats::enqueue_chart_scripts(</code>) method
+which is called only when we click Statistics sub menu.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function enqueue_chart_scripts () {
+
+        wp_enqueue_script( &#39;sos_google_api&#39; );
+        wp_enqueue_script( &#39;sos_chart_script&#39; );
+
+        ....
+    }</code></pre></div>
+<p>We use script handles to enqueue, so we need to register them before
+they actually enqueue.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>We do that in <code>Sos_Stats::setup()</code> where we add
+<code>Sos_Stats::init_chart_scripts()</code> to <strong>admin_init</strong> action hook.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Stats {
+
+    public function setup () {
+        add_action( &#39;admin_init&#39;, array($this,&#39;init_chart_scripts&#39;) );
+    }
+
+....</code></pre></div>
+<p>In the action method, we register the two scripts</p>
+
+<ul>
+<li><p>Google Chart API which draws the charts. The real benefit of using
+Google Chart API is that there is no need to install any chart
+library on the server.</p></li>
+
+<li><p>Plugin script file<code>js/chart.js</code> which is used to fetch chart data
+and draw the chart with Google Chart API.</p></li>
+</ul>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function init_chart_scripts () {       
+        $google_api = &#39;https://www.google.com/jsapi&#39;;
+        wp_register_script( &#39;sos_google_api&#39;, $google_api, 
+                array(&#39;jquery&#39;), null, false );
+        wp_register_script( &#39;sos_chart_script&#39;, SOS_URL . &#39;/js/chart.js&#39; );
+    }</code></pre></div>
+<h3 id="render-chart-page">Render Chart Page</h3>
+
+<p>To render the page, <code>add_submenu_page()</code> used <code>
+Sos_Stats::render_stats_page()</code> method as the callback.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_stats_page () {
+        $heading = __( &#39;Share Stats&#39;, &#39;sos-domain&#39; );
+        echo <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
+        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>{$heading}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;summary_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>        
+EOD;
+    }</code></pre></div>
+<p>In the callback method, apart from the heading, we place two empty
+&lt;div&gt; elements as placeholders, where Google Charts API draws the
+charts. The &lt;div&gt; with id summary_chart is for the chart that shows
+total share for each Social network and the other one for the chart that
+shows share details by date.</p>
+
+<h3 id="pass-data-to-client">Pass Data to Client</h3>
+
+<p>We also use <code>Sos_Stats::enqueue_chart_scripts()</code> method to pass data to
+the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()</code>.</p>
+
+<p><code>share-on-social/admin/class-stats.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function enqueue_chart_scripts () {
+        ....
+        wp_localize_script( &#39;sos_chart_script&#39;, &#39;sos_chart&#39;, 
+            array(
+                    &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
+                    &#39;stats_nonce&#39; =&gt; wp_create_nonce( &#39;sos-get-stats&#39; ),
+                    &#39;stats_summary_nonce&#39; =&gt; wp_create_nonce(&#39;sos-get-stats-summary&#39; ),
+                    &#39;summary_title&#39; =&gt; __( &#39;Summary&#39;, &#39;sos-domain&#39; ),
+                    &#39;stats_title&#39; =&gt; __( &#39;Shares&#39;, &#39;sos-domain&#39; )
+            ) );
+    }</code></pre></div>
+<p>Apart from the standard WordPress Ajax URL, we also pass <strong>title</strong> and
+<strong>nonce</strong> for the two charts.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>In the next section, we use WordPress Ajax to fetch the data from the
+server and draw chart with the Google Chart API.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

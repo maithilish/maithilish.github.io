@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Installation on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-installation/</link>
+    <description>Recent content in Wordpress Installation on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 03:06:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-installation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation - WordPress Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress/wordpress-installation/</link>
+      <pubDate>Fri, 11 Jan 2019 03:06:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress/wordpress-installation/</guid>
+      <description>In the previous chapter, we created a WordPress application on OpenShift platform. In this chapter, we go through WordPress installation and Admin Dashboard.
+WordPress Installation WordPress Installation is a simple affair. Open the app&amp;rsquo;s Public URL in the browser. If you forget to note the URL, then you need to revisit the Application Overview Screen in OpenShift Web Console and find out the Public URL. On the first access, WordPress displays the Welcome screen where we have to fill site&amp;rsquo;s title and also, information about an administrator user.</description>
+    </item>
+    
+  </channel>
+</rss>

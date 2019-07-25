@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="App Engine Data Upload - GWT Tutorial develops a module to upload XML data to Google App Engine. In the process it covers some of App Engine features.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "GAE Data Upload - GWT Tutorial - CodeTab",
+        "headline" : "GAE Data Upload - GWT Tutorial - CodeTab",
+        "description" : "App Engine Data Upload - GWT Tutorial develops a module to upload XML data to Google App Engine. In the process it covers some of App Engine features.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 13:01:00 +0530 IST",
+        "dateModified" : "2019-01-10 13:01:00 +0530 IST",
+        "url" : "/tutorial/gwt/google-app-engine/app-engine-manage-data/",
+        "wordCount" : "1708",
+        "keywords" : [ "app engine data upload","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>GAE Data Upload - GWT Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">GWT Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="GWT Tutorial - Complete Project - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/install/" class="toc-page text-muted ">
+            Install GWT in Eclipse
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/create-project/" class="toc-page text-muted ">
+            Project Setup
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/gwt-project-code/" class="toc-page text-muted ">
+            GWT Project Code
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/gwt-demo/" class="toc-page text-muted ">
+            GWT Tutorial Demo
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-shell" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Shell
+    </a>
+    
+    <div id="tutorial-gwt-shell" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/shell/finsshell/" class="toc-page dropdown-item text-muted">
+            UIBinder and Custom Widget
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/shell/contentpanel/" class="toc-page dropdown-item text-muted">
+            TabLayoutPanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/shell/gwt-logging/" class="toc-page dropdown-item text-muted">
+            Logging
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-menu" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Menu
+    </a>
+    
+    <div id="tutorial-gwt-menu" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/menu/" class="toc-page dropdown-item text-muted">
+            ClientBundle
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/menu-parts/" class="toc-page dropdown-item text-muted">
+            Anchor 
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/" class="toc-page dropdown-item text-muted">
+            EventBus
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/" class="toc-page dropdown-item text-muted">
+            EventBus Example
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-model" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Modle
+    </a>
+    
+    <div id="tutorial-gwt-model" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/model/model/" class="toc-page dropdown-item text-muted">
+            Model
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-content" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Content
+    </a>
+    
+    <div id="tutorial-gwt-content" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/content/" class="toc-page dropdown-item text-muted">
+            GWT Tutorial - Content
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-celltable/" class="toc-page dropdown-item text-muted">
+            CellTable
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/" class="toc-page dropdown-item text-muted">
+            SuggestBox
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/titlepanel/" class="toc-page dropdown-item text-muted">
+            TitlePanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-uifactory/" class="toc-page dropdown-item text-muted">
+            UiFactory
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/factpanel/" class="toc-page dropdown-item text-muted">
+            FactPanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/" class="toc-page dropdown-item text-muted">
+            DisclosurePanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/toolbar/" class="toc-page dropdown-item text-muted">
+            Toolbar
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-datagrid/" class="toc-page dropdown-item text-muted">
+            DataGrid
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-chart/" class="toc-page dropdown-item text-muted">
+            Google Chart
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/" class="toc-page dropdown-item text-muted">
+            Close Tabs
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-rpc" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        RPC
+    </a>
+    
+    <div id="tutorial-gwt-rpc" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/" class="toc-page dropdown-item text-muted">
+            RPC
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/" class="toc-page dropdown-item text-muted">
+            Rest of RPC
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-database" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Database
+    </a>
+    
+    <div id="tutorial-gwt-database" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/setup-database/" class="toc-page dropdown-item text-muted">
+            Database Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/persist/" class="toc-page dropdown-item text-muted">
+            JDO Persistence 
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/retrieve/" class="toc-page dropdown-item text-muted">
+            JDO and Hibernate
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/gwt-dao/" class="toc-page dropdown-item text-muted">
+            DAO
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-google-app-engine" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Goolge App Engine
+    </a>
+    
+    <div id="tutorial-gwt-google-app-engine" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/" class="toc-page dropdown-item text-muted">
+            Google App Engine
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/" class="toc-page dropdown-item text-muted">
+            App Engine Deploy
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/" class="toc-page dropdown-item text-danger">
+            GAE Data Upload
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/" class="toc-page dropdown-item text-muted">
+            App Engine Cache
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/" class="toc-page dropdown-item text-muted">
+            App Engine Task Queue
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/" class="toc-page dropdown-item text-muted">
+            GAE Backends
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-openshift" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        OpenShift
+    </a>
+    
+    <div id="tutorial-gwt-openshift" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift/" class="toc-page dropdown-item text-muted">
+            OpenShift Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/" class="toc-page dropdown-item text-muted">
+            Prepare Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-configure/" class="toc-page dropdown-item text-muted">
+            Configure
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/" class="toc-page dropdown-item text-muted">
+            Build and Deploy
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-development/" class="toc-page dropdown-item text-muted">
+            Development
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/" class="toc-page dropdown-item text-muted">
+            OpenShift Online V3 Deployment
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-build" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Apache Ivy
+    </a>
+    
+    <div id="tutorial-gwt-build" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/build/apache-ivy/" class="toc-page dropdown-item text-muted">
+            Apache Ivy
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="manage-data">Manage Data</h1>
+
+<p>Fins uses DAO Layer and JDO for data access and it is ready to interact
+with App Engine datastore without any further changes. But as of now, we
+don&rsquo;t have any data in App Engine datastore. Earlier, we used RStore to
+load data to HSQLDB, but this is of little use as it is not possible to
+move this data to App Engine datastore. Let&rsquo;s explore the ways to load
+data into App Engine datastore.</p>
+
+<p>There is couple of option. App Engine Python SDK comes with appcfg.py
+which has features to upload data. Unfortunately, Java SDK doesn&rsquo;t
+support this feature. Even then, appcfg.py has certain limitations like
+it supports only Master/Slave datastore and not High Replication
+Datastore, configuration and class mapping files are in python and
+finally it more suited for bulk uploads rather than for incremental
+upload. The last one is the deal breaker as we like to upload
+incremental data periodically.</p>
+
+<p>Another option is to create some sort of web service on GAE for App
+Engine data upload, but we are hesitant to go for this strategy as this
+requires additional application to act as client.</p>
+
+<p>Instead, it is better to have a menu in Fins itself to upload the XML
+data to App Engine. Coding would be easy as we may reuse certain
+components like XML parsing etc., from RStore. Even though the task is
+quite simple, surprising it throws quite a bit of challenges which are
+unique to App Engine and in the process, provides an opportunity to
+explore a handful of GWT and App Engine features like FormPanel,
+FileUpload, MemCache, Tasks, Queue and backends.</p>
+
+<p>Our initial tries revolved around following logic.</p>
+
+<ol>
+<li><p>upload the XML file using GWT FileUpload widget.</p></li>
+
+<li><p>on server side, parse XML and create a list of Symbol.</p></li>
+
+<li><p>loop through list and persist the Symbol one by one.</p></li>
+</ol>
+
+<p>This simple logic should work perfectly well in any normal web server,
+but its implementation on App Engine, throws some serious errors because
+restrictions imposed by App Engine. Let&rsquo;s broach these restrictions
+before attempting to rework the logic.</p>
+
+<h5 id="app-engine-restrictions">App Engine Restrictions</h5>
+
+<p>App Engine runs the app in a secure sandbox and provides little access
+to underlying operating system. Secure sandbox environment imposes
+following restrictions.</p>
+
+<ul>
+<li><p>applications are allowed to read files that are uploaded with the
+application code, but not allowed write to the file system, and to
+persist data between requests, apps must use App Engine services
+like datastore, memcache etc.,.</p></li>
+
+<li><p>application code only runs in response to a web request and in case,
+must return response data within 60 seconds, and request handler
+cannot spawn a sub-process or execute code after the response has
+been sent. Beyond this limit, server terminates the process and
+returns an error code to the user. The request timeout is dynamic
+and may be shortened if a request handler reaches its timeout
+frequently to conserve resources.</p></li>
+</ul>
+
+<p>App Engine doesn&rsquo;t allow the app to save uploaded file to file system
+and next best thing is to persist the file content to datastore as a
+Blob object for later retrieval. App Engine imposes size restriction of
+1MB for Blob, and we will not be able to handle files larger than this.
+App Engine supports Blobstore service to handle files larger than 1MB
+which is mainly used for serving the files. Even though Blobstore is
+suitable for our purpose, it consumes unnecessary resources like
+datastore writes etc..</p>
+
+<p>Second restriction is that request has to be finished within 60 seconds
+else App Engine returns an error. This time limit is sufficient to
+upload XML file with data for about ten Symbols. We should keep these
+restrictions in mind while designing apps for App Engine.</p>
+
+<p>In addition, one has to be careful about the resource utilization as App
+Engine imposes quota for various resources like instance hours, backend
+hours, bandwidth, datastore writes and reads etc.</p>
+
+<p>Considering all these aspects, one of the efficient ways to upload data
+is as follows.</p>
+
+<ol>
+<li><p>zip the XML file on local system to reduce the upload traffic.</p></li>
+
+<li><p>upload the zip using GWT FileUpload and FormPanel widgets.</p></li>
+
+<li><p>on server side, a servlet handles the uploaded file and unzips XML
+content into a byte array and then parses it to create a list of
+Symbols. User may upload multiple files in a session and all parsed
+data accumulates in the list.</p></li>
+
+<li><p>once all the files are uploaded, user sends a request to servlet to
+move the symbols to App Engine&rsquo;s MemCache. This step moves the
+symbols from a private memory area of the servlet to apps global
+area which is available to all processes or services.</p></li>
+
+<li><p>after symbols are cached, user initiates a RPC call which gets the
+symbols from MemCache one by one and creates datastore insert task
+and adds them to App Engine task queue. It completes the request by
+informing the user about the number of tasks pushed to App Engine
+task queue.</p></li>
+
+<li><p>App Engine processes these insert tasks and executes the tasks in a
+separately configured Backend instance of the app where each task
+persists one symbol into App Engine datastore. There is no 60
+seconds timeout for queues and tasks as they run in background.</p></li>
+</ol>
+
+<p>Rest of the chapter implements this logic to add a menu option to Manage
+Data that works seamlessly, in both App Engine as well as in generic app
+servers.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="11-1-upload-xml-data">11.1. Upload XML Data</h2>
+
+<p>In this section, we going to add a new content page to Fins which allows
+the user to upload zip files to the server. On the client side, we
+design a custom widget, <code>UploadPanel</code>, with GWT <code>FileUpload</code> and
+<code>FormPanel</code> widgets. On the server, <code>UploadService</code>, handles the upload
+request and parses the data into a list of symbols.</p>
+
+<h5 id="datastore-content-page">DataStore content page</h5>
+
+<p>Its been a long time since we did anything on the client side and
+designing the content page, <code>DataStore</code>, recaps some of things we
+learned earlier.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/gwt/media/datastore.png" alt="DataStore content page" />
+</figure>
+
+
+<h6 id="figure-11-1-datastore-content-page">Figure 11.1. DataStore content page</h6>
+
+<p><code>DataStore</code> content page contains three widgets - <code>UploadPanel</code>,
+<code>CachePanel</code> and <code>DataStorePanel</code>. Through UploadPanel, user may upload
+multiple zip files which are parsed by server to a list of Symbols. Once
+upload is completed, user clicks Cache Symbols button to cache the
+Symbols and then clicks Persist Symbols button to persists the Symbols
+to datastore.</p>
+
+<p>First thing is to add a menu option, DataStore, to MenuBar.</p>
+
+<p><code>in.fins.client.widget/MenuBar.ui.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  <span class="nt">&lt;g:stack&gt;</span>
+          <span class="nt">&lt;g:customHeader</span> <span class="na">size=</span><span class="s">&#39;1.8&#39;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;f:MenuHeader</span> <span class="na">text=</span><span class="s">&#34;Manage&#34;</span> <span class="na">imageResource=</span><span class="s">&#34;{resource.spanner}&#34;</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/g:customHeader&gt;</span>
+          <span class="nt">&lt;g:LayoutPanel&gt;</span>
+                  <span class="nt">&lt;g:layer</span> <span class="na">left=</span><span class="s">&#39;0.5em&#39;</span> <span class="na">width=</span><span class="s">&#39;10em&#39;</span> <span class="na">top=</span><span class="s">&#39;0.5em&#39;</span> <span class="na">height=</span><span class="s">&#39;3em&#39;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;f:MenuItem</span> <span class="na">contentName=</span><span class="s">&#34;DataStore&#34;</span> <span class="na">text=</span><span class="s">&#34;DataStore&#34;</span>
+                                  <span class="na">imageResource=</span><span class="s">&#34;{resource.dollar}&#34;</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;/g:layer&gt;</span>
+          <span class="nt">&lt;/g:LayoutPanel&gt;</span>
+  <span class="nt">&lt;/g:stack&gt;</span></code></pre></div>
+<p><code>ContentPanel.onMenuSelection()</code> method adds a tab, with DataStore
+widget as content, when user clicks the menu.</p>
+
+<p><code>in.fins.client.widget/ContentPanel.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onMenuSelection</span><span class="o">(</span><span class="n">MenuEvent</span> <span class="n">menuEvent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">contentName</span> <span class="o">=</span> <span class="n">menuEvent</span><span class="o">.</span><span class="na">getMenu</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">contentName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;Snapshot&#34;</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">addTab</span><span class="o">(</span><span class="n">contentName</span><span class="o">,</span> <span class="k">new</span> <span class="n">Snapshot</span><span class="o">());</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">contentName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;DataStore&#34;</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">addTab</span><span class="o">(</span><span class="n">contentName</span><span class="o">,</span> <span class="k">new</span> <span class="n">DataStore</span><span class="o">());</span>
+                <span class="o">}</span>
+        <span class="o">}</span></code></pre></div>
+<p>During development, just for convince, we make DataStore as the home
+page in class <code>in.fins.client.content.FinsShell</code>.</p>
+
+<p>DataStore widget uses <code>LayoutPanel</code> as root widget and within which a
+<code>VerticalPanel</code> holds other widgets.</p>
+
+<p><code>in.fins.client.content/DataStore.ui.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;!DOCTYPE ui:UiBinder SYSTEM &#34;http://dl.google.com/gwt/DTD/xhtml.ent&#34;&gt;</span>
+<span class="nt">&lt;ui:UiBinder</span> <span class="na">xmlns:ui=</span><span class="s">&#34;urn:ui:com.google.gwt.uibinder&#34;</span>
+        <span class="na">xmlns:g=</span><span class="s">&#34;urn:import:com.google.gwt.user.client.ui&#34;</span> <span class="na">xmlns:f=</span><span class="s">&#34;urn:import:in.fins.client.widget&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;g:LayoutPanel&gt;</span>
+                <span class="nt">&lt;g:layer</span> <span class="na">left=</span><span class="s">&#39;10%&#39;</span> <span class="na">width=</span><span class="s">&#39;60%&#39;</span> <span class="na">top=</span><span class="s">&#39;10%&#39;</span> <span class="na">height=</span><span class="s">&#39;60%&#39;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;g:VerticalPanel</span> <span class="na">spacing=</span><span class="s">&#34;40&#34;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;f:UploadPanel</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/g:VerticalPanel&gt;</span>
+                <span class="nt">&lt;/g:layer&gt;</span>
+        <span class="nt">&lt;/g:LayoutPanel&gt;</span>
+<span class="nt">&lt;/ui:UiBinder&gt;</span></code></pre></div>
+<p>DataStore.java initializes the UI binder. We are free to add any other
+widgets to DataStore widget by modifying its UIBinder file and
+initially, it contains UploadPanel, a custom widget.</p>
+
+<h5 id="uploadpanel">UploadPanel</h5>
+
+<p>This widget contains two components, form to upload the file and a
+button to clear the symbol list.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/gwt/media/uploadpanel.png" alt="UploadPanel" />
+</figure>
+
+
+<h6 id="figure-11-2-uploadpanel">Figure 11.2. UploadPanel</h6>
+
+<p><code>in.fins.client.widget/UploadPanel.ui.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;g:CaptionPanel</span> <span class="na">captionText=</span><span class="s">&#34;Upload&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;g:HorizontalPanel&gt;</span>
+                <span class="nt">&lt;g:VerticalPanel&gt;</span>
+                        <span class="nt">&lt;g:FormPanel</span> <span class="na">ui:field=</span><span class="s">&#34;uploadForm&#34;</span> <span class="na">action=</span><span class="s">&#34;/upload&#34;</span><span class="nt">&gt;</span>
+                               ....
+
+                        <span class="nt">&lt;/g:FormPanel&gt;</span>
+                <span class="nt">&lt;/g:VerticalPanel&gt;</span>
+                <span class="nt">&lt;g:VerticalPanel&gt;</span>
+                        <span class="nt">&lt;g:FormPanel</span> <span class="na">ui:field=</span><span class="s">&#34;clearListForm&#34;</span> <span class="na">action=</span><span class="s">&#34;/upload&#34;</span><span class="nt">&gt;</span>
+                                     ....
+
+                        <span class="nt">&lt;/g:FormPanel&gt;</span>
+                <span class="nt">&lt;/g:VerticalPanel&gt;</span>
+        <span class="nt">&lt;/g:HorizontalPanel&gt;</span>
+<span class="nt">&lt;/g:CaptionPanel&gt;</span></code></pre></div>
+<p>At the top, it has a CaptionPanel within which a <code>HorizontalPanel</code> holds
+two FormPanels. <code>FormPanel</code> is a panel that warps its content in HTML
+&lt;FORM&gt; element. The first FormPanel is for file upload and the second
+one to clear the list, and they both invoke <code>UploadService</code> servlet on
+submission. While using multiple FormPanel in a widget, it is important
+to place them in separate panels else form submission doesn&rsquo;t happen
+properly. For example, following UI declaration doesn&rsquo;t work as desired
+as multiple forms are placed in a panel.</p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;g:CaptionPanel</span> <span class="na">captionText=</span><span class="s">&#34;Upload&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;g:HorizontalPanel&gt;</span>
+                        <span class="nt">&lt;g:FormPanel</span> <span class="na">ui:field=</span><span class="s">&#34;uploadForm&#34;</span> <span class="na">action=</span><span class="s">&#34;/upload&#34;</span><span class="nt">&gt;</span>
+                               ....
+                        <span class="nt">&lt;/g:FormPanel&gt;</span>
+                        <span class="nt">&lt;g:FormPanel</span> <span class="na">ui:field=</span><span class="s">&#34;clearListForm&#34;</span> <span class="na">action=</span><span class="s">&#34;/upload&#34;</span><span class="nt">&gt;</span>
+                                     ....
+                        <span class="nt">&lt;/g:FormPanel&gt;</span>
+        <span class="nt">&lt;/g:HorizontalPanel&gt;</span>
+<span class="nt">&lt;/g:CaptionPanel&gt;</span></code></pre></div>
+<p>Within uploadForm, we use a <code>Grid</code> to place GWT FileUpload widget.</p>
+
+<p><code>in.fins.client.widget/UploadPanel.ui.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
+
+<span class="nt">&lt;g:FormPanel</span> <span class="na">ui:field=</span><span class="s">&#34;uploadForm&#34;</span> <span class="na">action=</span><span class="s">&#34;/upload&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;g:Grid&gt;</span>
+                <span class="nt">&lt;g:row&gt;</span> 
+                        <span class="nt">&lt;g:customCell&gt;</span>
+                                <span class="nt">&lt;g:Label</span> <span class="na">text=</span><span class="s">&#34;Zip file&#34;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/g:customCell&gt;</span>
+                        <span class="nt">&lt;g:customCell&gt;</span>
+                                <span class="nt">&lt;g:FileUpload</span> <span class="na">name=</span><span class="s">&#34;uploadFormElement&#34;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/g:customCell&gt;</span>
+                        <span class="nt">&lt;g:customCell&gt;</span>
+                                <span class="nt">&lt;g:Button</span> <span class="na">text=</span><span class="s">&#34;Upload&#34;</span> <span class="na">ui:field=</span><span class="s">&#34;uploadButton&#34;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/g:customCell&gt;</span>
+                        <span class="nt">&lt;g:customCell&gt;</span>
+                                <span class="nt">&lt;g:Hidden</span> <span class="na">name=</span><span class="s">&#34;action&#34;</span> <span class="na">value=</span><span class="s">&#34;uploadAndParse&#34;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/g:customCell&gt;</span> 
+                <span class="nt">&lt;/g:row&gt;</span>
+        <span class="nt">&lt;/g:Grid&gt;</span>               
+<span class="nt">&lt;/g:FormPanel&gt;</span></code></pre></div>
+<p>GWT <code>Hidden</code> widget represents a hidden field in an HTML form, and we
+use this to distinguish the forms on the server side.</p>
+
+<p><code>Upload.java</code> handles Form encoding, submission and response of both
+forms.</p>
+
+<p><code>in.fins.client.widget/Upload.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">UploadPanel</span><span class="o">()</span> <span class="o">{</span>
+
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">uiBinder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+                <span class="n">uploadForm</span><span class="o">.</span><span class="na">setMethod</span><span class="o">(</span><span class="n">FormPanel</span><span class="o">.</span><span class="na">METHOD_POST</span><span class="o">);</span>
+                <span class="n">uploadForm</span><span class="o">.</span><span class="na">setEncoding</span><span class="o">(</span><span class="n">FormPanel</span><span class="o">.</span><span class="na">ENCODING_MULTIPART</span><span class="o">);</span>
+
+        <span class="o">}</span>
+
+        <span class="nd">@UiHandler</span><span class="o">(</span><span class="s">&#34;uploadButton&#34;</span><span class="o">)</span>
+        <span class="kt">void</span> <span class="nf">onUploadClick</span><span class="o">(</span><span class="n">ClickEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">uploadForm</span><span class="o">.</span><span class="na">submit</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="nd">@UiHandler</span><span class="o">(</span><span class="s">&#34;uploadForm&#34;</span><span class="o">)</span>
+        <span class="kt">void</span> <span class="nf">onUploadFormSubmitComplete</span><span class="o">(</span><span class="n">SubmitCompleteEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">StatusEvent</span> <span class="n">se</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StatusEvent</span><span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getResults</span><span class="o">());</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">fireEvent</span><span class="o">(</span><span class="n">se</span><span class="o">);</span>
+        <span class="o">}</span></code></pre></div>
+<p>Encoding is set to <strong>ENCODING_MULTIPART</strong> which is essential for file
+upload and submit method is set to <strong>POST</strong>. ClickEvent handler is
+attached to the button which on click submits the form. To handle the
+response, <code>SubmitCompleteEvent</code> is attached to the form, and this
+handler, displays the response in the status bar.</p>
+
+<p>Second form, clearListForm, is to clear the symbol list, and its design
+is similar to the uploadForm.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h5 id="uploadservice">UploadService</h5>
+
+<p><code>UploadService</code> extends <code>HttpServlet</code>. It uses Apache Commons FileUpload
+and IOUtils to handle the upload content. <code>HttpServlet.doPost()</code> method
+handles the upload as follows.</p>
+
+<ol>
+<li><p>uses Apache Commons <code>ServletFileUpload</code> to get the form fields and
+file contents.</p></li>
+
+<li><p>if it is file, it uses <code>IOUtils.toByteArray()</code> method to convert the
+content to a byte[] which is nothing but uploaded zip file.</p></li>
+
+<li><p>if the value of the hidden field action is uploadAndParse, then call
+<code>uploadAndParse()</code> method.</p></li>
+
+<li><p>if the hidden field&rsquo;s value is clearList, then call <code>clearSymbols()</code>
+method.</p></li>
+</ol>
+
+<p>Zip file can contain multiple files and <code>processZipFile()</code> method gets
+<code>ZipEntry</code>, from byte[], one by one and unzip the entry into XML. For
+each entry, it calls <code>parseSymbols()</code> method, which uses <code>SymbolParser</code>
+to parse the XML into Symbol. <code>SymbolParser</code> is the same one which we
+used in RStore. Symbols accumulate in a List, and if Symbol with the
+same name exists in the list, then <code>mergeSymbol()</code> method merges the
+Symbol with the existing Symbol using <code>SymbolHelper.updateSymbol()</code>
+method. Method <code>clearSymbols()</code> clears the list.</p>
+
+<p>Servlet-mapping in web.xml maps FormPanel to UploadService.</p>
+
+<p><code>war/WEB-INF/web.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">...
+        <span class="nt">&lt;servlet&gt;</span>
+                <span class="nt">&lt;servlet-name&gt;</span>uploadService<span class="nt">&lt;/servlet-name&gt;</span>
+                <span class="nt">&lt;servlet-class&gt;</span>in.fins.server.service.UploadService<span class="nt">&lt;/servlet-class&gt;</span>
+        <span class="nt">&lt;/servlet&gt;</span>
+
+        <span class="nt">&lt;servlet-mapping&gt;</span>
+                <span class="nt">&lt;servlet-name&gt;</span>uploadService<span class="nt">&lt;/servlet-name&gt;</span>
+                <span class="nt">&lt;url-pattern&gt;</span>/upload<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;/servlet-mapping&gt;</span></code></pre></div>
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

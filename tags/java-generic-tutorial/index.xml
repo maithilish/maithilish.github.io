@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Generic Tutorial on Codetab</title>
+    <link>http://www.codetab.org/tags/java-generic-tutorial/</link>
+    <description>Recent content in Java Generic Tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/java-generic-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Generics Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/java-generics/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/java-generics/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

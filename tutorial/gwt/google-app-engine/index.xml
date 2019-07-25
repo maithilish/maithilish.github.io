@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Goolge App Engine on Codetab</title>
+    <link>http://www.codetab.org/tutorial/gwt/google-app-engine/</link>
+    <description>Recent content in Goolge App Engine on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tutorial/gwt/google-app-engine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google App Engine - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/</link>
+      <pubDate>Thu, 10 Jan 2019 12:45:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/</guid>
+      <description>Google App Engine Google App Engine (GAE), also known as App Engine, enables you to host web applications on Google&amp;rsquo;s infrastructure. GAE is a Platform as a Service (PaaS) cloud computing platform for hosting web applications in Google-managed data centers. App Engine offers automatic scaling for web applications as request increases by allocating more resources for the application to handle the additional demand.
+App Engine supports applications written in Java, Python and Go.</description>
+    </item>
+    
+    <item>
+      <title>Deploy on App Engine - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/</link>
+      <pubDate>Thu, 10 Jan 2019 17:26:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/</guid>
+      <description>10.2. Deploy Once app is ready, Google App Engine Deploy is a simple affair with following steps.
+ login to http://appspot.com using your Google ID.
+ in Google App Engine welcome screen, create an application using Create Application option.
+ in project context menu, choose Google → App Engine Settings . In App Engine dialog, enter the Application ID field with Application ID created in previous step. Start with 1 for Version number and increment it whenever there is a major release of the app.</description>
+    </item>
+    
+    <item>
+      <title>GAE Data Upload - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/</link>
+      <pubDate>Thu, 10 Jan 2019 13:01:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/</guid>
+      <description>Manage Data Fins uses DAO Layer and JDO for data access and it is ready to interact with App Engine datastore without any further changes. But as of now, we don&amp;rsquo;t have any data in App Engine datastore. Earlier, we used RStore to load data to HSQLDB, but this is of little use as it is not possible to move this data to App Engine datastore. Let&amp;rsquo;s explore the ways to load data into App Engine datastore.</description>
+    </item>
+    
+    <item>
+      <title>GAE Cache - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/</link>
+      <pubDate>Thu, 10 Jan 2019 16:38:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/</guid>
+      <description>11.2. Cache The next task is to cache the symbols in App Engine MemCache. By moving the symbols from List&amp;lt;Symbol&amp;gt; in UploadService servlet to MemCache, they become accessible to App Engine services like Queue, Tasks etc.
+CachePanel This widget has two Buttons - Cache Symbols and Clear cache, with obvious functionality.
+ Figure 11.3. CachePanel Its design is similar to the UploadPanel described in the previous section, and it uses FormPanel to submit data to the server and invokes UploadService servlet, through regular HTML form submission rather than GWT RPC.</description>
+    </item>
+    
+    <item>
+      <title>Task Queue - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/</link>
+      <pubDate>Thu, 10 Jan 2019 19:33:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/</guid>
+      <description>11.3. Task Queue Once we have Symbols in the cache, all that it takes to persist is to retrieve them, one by one, from the cache and persist with a call to JDO. This simple task seems to be achievable through RPC, but it will not work as intended on App Engine. Let&amp;rsquo;s understand the limitations imposed by the App Engine.
+RPC has to be completed within 60 seconds, and when there are few symbols, call may finish within the deadline.</description>
+    </item>
+    
+    <item>
+      <title>GAE Backends - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/</link>
+      <pubDate>Thu, 10 Jan 2019 16:02:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/</guid>
+      <description>11.4. Backends So far, App Engine handled file upload, cache ops and task execution through a default frontend instance. This instance has 60 seconds deadline for HTTP requests and 10 minutes deadline for tasks and a low memory cap of 128MB.
+App Engine Backends allows us to configure additional instances to overcome these limits. App Engine Backends are special instances that have no request deadlines and comes with higher memory and CPU limits, and provides persistent state across requests.</description>
+    </item>
+    
+  </channel>
+</rss>

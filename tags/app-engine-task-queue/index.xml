@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App Engine Task Queue on Codetab</title>
+    <link>http://www.codetab.org/tags/app-engine-task-queue/</link>
+    <description>Recent content in App Engine Task Queue on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 19:33:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/app-engine-task-queue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Task Queue - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/</link>
+      <pubDate>Thu, 10 Jan 2019 19:33:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/</guid>
+      <description>11.3. Task Queue Once we have Symbols in the cache, all that it takes to persist is to retrieve them, one by one, from the cache and persist with a call to JDO. This simple task seems to be achievable through RPC, but it will not work as intended on App Engine. Let&amp;rsquo;s understand the limitations imposed by the App Engine.
+RPC has to be completed within 60 seconds, and when there are few symbols, call may finish within the deadline.</description>
+    </item>
+    
+  </channel>
+</rss>

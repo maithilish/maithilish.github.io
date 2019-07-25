@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Ajax on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-ajax/</link>
+    <description>Recent content in Wordpress Ajax on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 11:01:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ajax - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/</link>
+      <pubDate>Fri, 11 Jan 2019 11:01:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/</guid>
+      <description>In Share on Social Plugin, we use WordPress Ajax to save and view the share statistics. In this chapter, we use WordPress Ajax to send share details from client to server and save it as WordPress options and then add a menu page to display the statistics in Google Charts.
+9.1. WordPress Ajax When user shares a blog, functions in js/share.js use Social Network API to share and on success, send the share details to the server.</description>
+    </item>
+    
+  </channel>
+</rss>

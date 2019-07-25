@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Test Internationalization Functions Tutorial explains unit test of WordPress Plugin i18n functions using localization files generated with GetText utility.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Test Internationalization - WordPress Plugin Development - CodeTab",
+        "headline" : "Test Internationalization - WordPress Plugin Development - CodeTab",
+        "description" : "Test Internationalization Functions Tutorial explains unit test of WordPress Plugin i18n functions using localization files generated with GetText utility.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 13:50:00 +0530 IST",
+        "dateModified" : "2019-01-11 13:50:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/",
+        "wordCount" : "1093",
+        "keywords" : [ "test internationalization functions","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Test Internationalization - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-muted">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-danger">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<p># Test Internationalization Functions</p>
+
+<p>Share on Social Plugin uses WordPress Internationalization (i18n)
+functions extensively and we need an easy method to test the string
+translations. In this blog, we explain the unit tests of i18n functions.</p>
+
+<h3 id="setup-language-files-for-tests">Setup Language Files for Tests</h3>
+
+<p>In <a href="/tutorial/wordpress-plugin-development/internationalization/localization/">WordPress Localization</a>, we installed GetText software required for WordPress i18n and l10n, and
+also generated language files for the plugin.</p>
+
+<p>To test plugin internationalization, we require separate set of language
+files. Procedure to generate test language files is described here.</p>
+
+<p>Language files for tests are placed in <code>tests/phpunit/langs</code> directory.
+Create a new directory with next command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd share-on-social/tests/phpunit
+$ mkdir langs</code></pre></div>
+<p>Next, copy the POT file generated by localization, to the test langs directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd share-on-social
+$ cp langs/share-on-social.pot tests/phpunit/langs</code></pre></div>
+<p>Next, generate PO file for the default language. The default language of
+Share on Social Plugin is <strong>en_US</strong>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd tests/phpunit/langs
+$ msginit -i share-on-social.pot -o sos-domain-en_US.po -l en_US</code></pre></div>
+<p>The PO for en_US is shown in the next listing. For default language,
+both <strong>msgid</strong> (orginal string) and <strong>msgstr</strong> (translated string) will
+have same string.</p>
+
+<p><code>share-on-social/tests/phpunit/langs/sos-domain-en_US.po</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"># Copyright (C) 2014 Share on Social
+# This file is distributed under the same license as the Share on Social package.
+msgid &#34;&#34;
+msgstr &#34;&#34;
+&#34;Project-Id-Version: Share on Social 1.0.0n&#34;
+&#34;Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-socialn&#34;
+&#34;POT-Creation-Date: 2014-11-14 13:45:33+00:00n&#34;
+&#34;MIME-Version: 1.0n&#34;
+&#34;Content-Type: text/plain; charset=UTF-8n&#34;
+&#34;Content-Transfer-Encoding: 8bitn&#34;
+&#34;PO-Revision-Date: 2014-11-14 19:16+0530n&#34;
+&#34;Last-Translator: m <span class="p">&lt;</span><span class="nt">m</span><span class="err">@</span><span class="na">m</span><span class="p">&gt;</span>n&#34;
+&#34;Language-Team: Englishn&#34;
+&#34;Language: en_USn&#34;
+&#34;Plural-Forms: nplurals=2; plural=(n != 1);n&#34;
+
+#: admin/class-activator.php:109
+msgid &#34;Content is Locked&#34;
+msgstr &#34;Content is Locked&#34;
+
+#: admin/class-activator.php:110
+msgid &#34;Share to unlock the content&#34;
+msgstr &#34;Share to unlock the content&#34;
+
+....</code></pre></div>
+<p>Copy the default PO file to Esperanto France language file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd tests/phpunit/langs
+$ cp sos-domain-en_US.po sos-domain-eo_FR.po</code></pre></div>
+<p>Next, edit the <code>sos-domain-eo_FR.po</code> and prefix each and every
+<strong>msgstr</strong> string with <strong>Espéranto-France</strong>. The default and modified
+msgstr looks as follows.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># ORIGINAL
+
+msgstr &#34;Content is Locked&#34;
+
+
+# MODIFIED
+
+msgstr &#34;Espéranto-France Content is Locked&#34;</code></pre></div>
+<p>Also, modify the header and change <strong>Language-Team</strong> to Esperanto and
+<strong>Language</strong> to es_FR. The modified <code>sos-domain-eo_FR.po</code> file is shown
+in the next listing.</p>
+
+<p><code>share-on-social/tests/phpunit/langs/sos-domain-eo_FR.po</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"># Copyright (C) 2014 Share on Social
+# This file is distributed under the same license as the Share on Social package.
+msgid &#34;&#34;
+msgstr &#34;&#34;
+&#34;Project-Id-Version: Share on Social 1.0.0n&#34;
+&#34;Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-socialn&#34;
+&#34;POT-Creation-Date: 2014-11-14 13:45:33+00:00n&#34;
+&#34;MIME-Version: 1.0n&#34;
+&#34;Content-Type: text/plain; charset=UTF-8n&#34;
+&#34;Content-Transfer-Encoding: 8bitn&#34;
+&#34;PO-Revision-Date: 2014-11-14 19:17+0530n&#34;
+&#34;Last-Translator: m <span class="p">&lt;</span><span class="nt">m</span><span class="err">@</span><span class="na">m</span><span class="p">&gt;</span>n&#34;
+&#34;Language-Team: Esperanton&#34;
+&#34;Language: eo_FRn&#34;
+&#34;Plural-Forms: nplurals=2; plural=(n != 1);n&#34;
+
+#: admin/class-activator.php:109
+msgid &#34;Content is Locked&#34;
+msgstr &#34;Espéranto-France Content is Locked&#34;
+
+#: admin/class-activator.php:110
+msgid &#34;Share to unlock the content&#34;
+msgstr &#34;Espéranto-France Share to unlock the content&#34;
+
+....</code></pre></div>
+<p>Finally, generate MO file for Esperanto from PO using GetText&rsquo;s <code>msgfmt</code>
+command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd tests/phpunit/langs
+$ msgfmt -o sos-domain-eo_FR.mo  sos-domain-eo_FR.po</code></pre></div>
+<p>With that, language files for i18n unit tests are ready, and we can go
+ahead with the translation tests.</p>
+
+<h3 id="test-internationalization-functions">Test Internationalization Functions</h3>
+
+<p>In translation tests, we use <code>Util::change_locale()</code> method to change
+the locale and load the language files from <code>tests/phpunit/langs</code>
+directory.</p>
+
+<p><code>share-on-social/tests/phpunit/util/class-util.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    static function change_locale ( $lang ) {
+        global $locale;
+        $locale = $lang;
+        load_plugin_textdomain( &#39;sos-domain&#39;, FALSE, 
+                &#39;share-on-social/tests/phpunit/langs&#39; );
+    }</code></pre></div>
+<p>Text domain is unloaded in teardown() method which reverts the test case
+back to the default language.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-help.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Help extends WP_UnitTestCase {
+
+    public function setup () {
+        parent::setup();
+        
+        require_once &#39;admin/class-help.php&#39;;
+        $this-&gt;sos_help = new Sos_Help();
+    }
+
+    public function teardown () {
+        parent::teardown();
+        unload_textdomain( &#39;sos-domain&#39; );
+    }</code></pre></div>
+<p>Let&rsquo;s go through a method which uses internationalization function to
+understand how translations are tested. In Sos Locker admin screen, we
+display context help to create a new locker and these help text tabs are
+generated in <code>Sos_Help</code> class. <code>Sos_Help::locker_id_tab()</code> returns help
+text tab for locker id, and as we use i18n function <code>__()</code> for the help
+text, they get translated based on locale.</p>
+
+<p><code>share-on-social/admin/class-help.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function locker_id_tab () {
+        $label = __( &#39;Locker ID&#39;, &#39;sos-domain&#39; );
+        $help1 = __( &#39;Enter a uniquie ID for the locker. &#39;, &#39;sos-domain&#39; );
+        $help1 .= __( &#39;Both name and number are allowed as the id. &#39;, 
+                &#39;sos-domain&#39; );
+        $help2 = __( 
+                &#39;Use some descriptive name as locker id which is easy to remember&#39;, 
+                &#39;sos-domain&#39; );
+        $html = <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
+<span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>$label<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>$help1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>$help2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+EOD;
+        return $this-&gt;get_tab( &#39;locker_id_tab&#39;, $label, $html );
+    }</code></pre></div>
+<p>The method is tested in test case <code>Test_Help</code>, where the method
+<code>Test_Help::test_locker_id_tab()</code> test the locker id help text for
+default language <strong>en_US</strong>.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-help.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_locker_id_tab () {
+        $tab = $this-&gt;sos_help-&gt;locker_id_tab();       
+        $this-&gt;assertCount( 3, $tab );
+        $this-&gt;assertSame( &#39;locker_id_tab&#39;, $tab[ &#39;id&#39; ] );
+        $this-&gt;assertSame( &#39;Locker ID&#39;, $tab[ &#39;title&#39; ] );
+
+        $expected = $this-&gt;expected_locker_id_tab();
+        $this-&gt;assertSame( Util::trim_whitespaces( $expected ), 
+                Util::trim_whitespaces( $tab[ &#39;content&#39; ] ) );
+    }</code></pre></div>
+<p>It fetch the help tab array from method under test
+<code>Sos_Help::locker_id_tab()</code>. As the text domain is not loaded, the
+$tab[&lsquo;title&rsquo;] returns default string &lsquo;Locker ID&rsquo;.</p>
+
+<p>To test the help text, it calls a private method
+<code>Test_Help::expected_locker_id_tab()</code> which returns the expected help
+text for the tab. For default language, the $lang_str parameter is
+<strong>null</strong>, so the expected text will not have any prefix.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-help.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    private function expected_locker_id_tab ( $lang_str = &#39;&#39; ) {
+        $lang_str == &#39;&#39; ? $lang_str : $lang_str .= &#39; &#39;;
+        $html = <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
+        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>{$lang_str}Locker ID<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{$lang_str}Enter a uniquie ID for the locker. {$lang_str}Both name and number are allowed as the id. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{$lang_str}Use some descriptive name as locker id which is easy to remember<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+EOD;
+        return $html;
+    }</code></pre></div>
+<p>Actual translation is tested in next test,
+<code>Test_Help::test_locker_id_tab_translate()</code>.</p>
+
+<p><code>share-on-social/tests/phpunit/tests/test-help.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_locker_id_tab_translate () {
+        Util::change_locale( &#39;eo_FR&#39; );
+        $tab = $this-&gt;sos_help-&gt;locker_id_tab();        
+        $this-&gt;assertCount( 3, $tab );
+        $this-&gt;assertSame( &#39;locker_id_tab&#39;, $tab[ &#39;id&#39; ] );
+        $this-&gt;assertSame( &#39;Espéranto-France Locker ID&#39;, $tab[ &#39;title&#39; ] );
+
+        $expected = $this-&gt;expected_locker_id_tab( &#39;Espéranto-France&#39; );
+        $this-&gt;assertSame( Util::trim_whitespaces( $expected ), 
+                Util::trim_whitespaces( $tab[ &#39;content&#39; ] ) );
+    }</code></pre></div>
+<p>In this test, we first change the locale to Esperanto France by calling
+utility method <code>Util::change_locale( 'eo_FR' )</code>. Earlier, while
+preparing the <strong>eo_FR</strong> language file, we prefixed all <strong>msgstr</strong> items
+with <strong>Espéranto-France</strong>. Now, i18n functions kicks in and returns the
+translated strings. For example, for string &lsquo;Locker ID&rsquo;, it returns
+&lsquo;Espéranto-France Locker ID&rsquo;.</p>
+
+<p>As done before, we fetch the help tab array from method under test
+<code>Sos_Help::locker_id_tab()</code>. But this time, as text domain is set to
+Esperanto by Util::change_locale(), the $tab[&lsquo;title&rsquo;] is loaded with
+the string from eo_FR file, and it is &lsquo;Espéranto-France Locker ID&rsquo;
+instead of default &lsquo;Locker ID&rsquo;.</p>
+
+<p>Since eo_FR is loaded, tabs&rsquo; help text is also now prefixed with
+<strong>Espéranto-France</strong>. So, while calling the private method
+Test_Help::expected_locker_id_tab(), we pass string
+<strong>Espéranto-France</strong> as parameter so that expected text is also
+prefixed with string Espéranto-France. If everything is in order -
+translation files in proper directory, loading of text domain and proper
+use of i18n function - then test passes through.</p>
+
+<p>In the next blog, we show how to test WordPress Ajax calls.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

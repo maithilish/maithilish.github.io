@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openshift Setup on Codetab</title>
+    <link>http://www.codetab.org/tags/openshift-setup/</link>
+    <description>Recent content in Openshift Setup on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 13:47:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/openshift-setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenShift Setup - GWT Tutorial - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/gwt/openshift/openshift/</link>
+      <pubDate>Thu, 10 Jan 2019 13:47:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/gwt/openshift/openshift/</guid>
+      <description>OpenShift OpenShift is a cloud computing platform as a service (PaaS) product from Red Hat. Unlike App Engine which restricts it self to select set of languages and databases, OpenShift gives you a wide range of choice programming languages including Java, Ruby, PHP, Node.js, Python and Perl. It supports variety of databases like MySQL, MangoDB, PostgreSQL etc.,
+OpenShift also comes with a free account which allows you to host three applications.</description>
+    </item>
+    
+  </channel>
+</rss>

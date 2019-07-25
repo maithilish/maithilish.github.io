@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="WordPress Plugin Enqueue Script Tutorial shows how to include JavaScript and Stylesheet for plugin frontend including external API such as Facebook SDK.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Enqueue Scripts - WordPress Plugin Development - CodeTab",
+        "headline" : "Enqueue Scripts - WordPress Plugin Development - CodeTab",
+        "description" : "WordPress Plugin Enqueue Script Tutorial shows how to include JavaScript and Stylesheet for plugin frontend including external API such as Facebook SDK.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 10:19:00 +0530 IST",
+        "dateModified" : "2019-01-11 10:19:00 +0530 IST",
+        "url" : "/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/",
+        "wordCount" : "753",
+        "keywords" : [ "WordPress Plugin Enqueue Script","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Enqueue Scripts - WordPress Plugin Development - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="WordPress Plugin Development - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" class="toc-page text-muted ">
+            Install Locally
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/" class="toc-page text-muted ">
+            Simple Plugin
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/" class="toc-page text-muted ">
+            Shortcode
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/" class="toc-page text-muted ">
+            Plugin Structure
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" class="toc-page text-muted ">
+            Main File
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/" class="toc-page text-muted ">
+            Hooks, Actions, Filters
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Settings
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/" class="toc-page dropdown-item text-muted">
+            Add Menu
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/" class="toc-page dropdown-item text-muted">
+            Settings API
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/" class="toc-page dropdown-item text-muted">
+            Options Page
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Admin Module - Posts
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/" class="toc-page dropdown-item text-muted">
+            Custom Post Type
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/" class="toc-page dropdown-item text-muted">
+            Meta Box
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/" class="toc-page dropdown-item text-muted">
+            Save Post
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Frontend
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-frontend" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/" class="toc-page dropdown-item text-danger">
+            Plugin Enqueue Scripts
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/" class="toc-page dropdown-item text-muted">
+            Pass Data to JavaScript
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/" class="toc-page dropdown-item text-muted">
+            Debug Info
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Ajax
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/" class="toc-page dropdown-item text-muted">
+            Ajax
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/" class="toc-page dropdown-item text-muted">
+            Chart Page
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/" class="toc-page dropdown-item text-muted">
+            Google Charts
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Internationalization
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/" class="toc-page dropdown-item text-muted">
+            Internationalization
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/" class="toc-page dropdown-item text-muted">
+            Localization
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Activation
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/" class="toc-page dropdown-item text-muted">
+            Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/" class="toc-page dropdown-item text-muted">
+            Multi site
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/" class="toc-page dropdown-item text-muted">
+            Multi site Activation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/" class="toc-page dropdown-item text-muted">
+            Deactivation
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/" class="toc-page dropdown-item text-muted">
+            Uninstall
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Testing
+    </a>
+    
+    <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/" class="toc-page dropdown-item text-muted">
+            Unit Test
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/" class="toc-page dropdown-item text-muted">
+            Test Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/" class="toc-page dropdown-item text-muted">
+            Simple Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/" class="toc-page dropdown-item text-muted">
+            Unit Test Scripts, Actions, Filters
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/" class="toc-page dropdown-item text-muted">
+            Advanced Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/" class="toc-page dropdown-item text-muted">
+            Test Internationalization Functions
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/" class="toc-page dropdown-item text-muted">
+            Ajax Unit Tests
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" class="toc-page dropdown-item text-muted">
+            Multi site Plugin Unit Tests
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<p>In the tutorial, so far, we covered WordPress Plugin basics and the
+admin module. In this chapter, we describe the frontend of Share on
+Social Plugin, the plugin project developed in the tutorial.</p>
+
+<p>For frontend, Share on Social Plugin uses class file
+<code>class-frontend.php</code> and the methods may broadly divided into three
+groups.</p>
+
+<ul>
+<li><p>which handle locker shortcode, fetch locker information and output
+social lockers.</p></li>
+
+<li><p>which handle scripts and stylesheets.</p></li>
+
+<li><p>methods to collect debug info.</p></li>
+</ul>
+
+<p>We will not dwell much into the first one as you may not develop a
+similar plugin. Instead, we explain the other two - handling of scripts
+and collect debug info - as they are essential to all plugins.</p>
+
+<h2 id="8-1-wordpress-plugin-enqueue-scripts">8.1. WordPress Plugin Enqueue Scripts</h2>
+
+<p>Share on Social Plugin uses following scripts and stylesheets.</p>
+
+<ul>
+<li><p>Stylesheet of the plugin. - <strong>css/style.js</strong>.</p></li>
+
+<li><p>JavaScript to handle social shares - <strong>js/share.js</strong>.</p></li>
+
+<li><p>FaceBook API JavaScript-
+<a href="https://connect.facebook.net/en_US/all.js">https://connect.facebook.net/en_US/all.js</a></p></li>
+
+<li><p>Google Plus API JavaScript -
+<a href="https://apis.google.com/js/plusone.js">https://apis.google.com/js/plusone.js</a></p></li>
+
+<li><p>Twitter API JavaScript -
+<a href="https://platform.twitter.com/widgets.js">https://platform.twitter.com/widgets.js</a></p></li>
+</ul>
+
+<p>To add these scripts and stylesheet, either to header or footer, we have
+to use WordPress API Enqueue Functions.</p>
+
+<ul>
+<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_register_script" target="_blank">wp register
+script()</a></p>
+
+<ul>
+<li>registers a script with WordPress core.</li>
+</ul></li>
+
+<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script" target="_blank">wp enqueue
+script()</a></p>
+
+<ul>
+<li>links script file to WordPress generated
+page.</li>
+</ul></li>
+
+<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_register_style" target="_blank">wp_register_style()</a></p>
+
+<ul>
+<li>registers
+stylesheet.</li>
+</ul></li>
+
+<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style" target="_blank">wp_enqueue_style()</a></p>
+
+<ul>
+<li>links stylesheet to WordPress generated page.</li>
+</ul></li>
+</ul>
+
+<p>In Sos_Frontend::setup() method, we hook <code>add_sos_script()</code> method to
+action hook <strong>wp_enqueue_scripts</strong>. In the method, we enqueue scripts
+and stylesheets.</p>
+
+<p><code>share-on-social/frontend/class-frontend.php</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Frontend {
+
+    public function setup () {
+
+        add_action( &#39;wp_enqueue_scripts&#39;, array($this,&#39;add_sos_scripts&#39;) );
+        
+        ....
+    }
+
+    function add_sos_scripts () {
+        global $post;        
+        
+        wp_register_style( &#39;sos_style&#39;, SOS_URL . &#39;/css/style.css&#39; );
+        wp_register_script(&#39;sos_script&#39;, SOS_URL . &#39;/js/share.js&#39;, array(&#39;jquery&#39;),&#39;&#39;, true);
+    
+        if ( has_shortcode( $post-&gt;post_content, $this-&gt;sos_shortcode ) ) {
+
+            wp_enqueue_style( &#39;sos_style&#39; );
+            wp_enqueue_script( &#39;sos_script&#39; );
+     
+            ....
+
+            $twitter_sdk = &#39;https://platform.twitter.com/widgets.js&#39;;
+            wp_enqueue_script( &#39;twitter&#39;, $twitter_sdk, &#39;&#39;, &#39;&#39;, FALSE );
+
+            ....
+        }
+    }</code></pre></div>
+<p>In the action method, we register plugins stylesheet <code>css/style.css</code> and
+script <code>js/share.js</code>. If the page contains <strong>share-on-social</strong>
+shortcode, then we enqueue the registered items and also the Twitter API
+script.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>The script enqueue functions wp_register_script() and
+wp_enqueue_script() takes following parameters.</p>
+
+<ul>
+<li><p><strong>handle</strong> - name used as handle to the script.</p></li>
+
+<li><p><strong>src</strong> - URL of the script.</p></li>
+
+<li><p><strong>deps</strong> - array of handles of the registered scripts that this
+script depends on.</p></li>
+
+<li><p><strong>ver</strong> - string to specify the script version number.</p></li>
+
+<li><p><strong>in_footer</strong> - if true, then script is added to footer.</p></li>
+</ul>
+
+<p>These functions links script files at the right time according to the
+script dependencies. While registering js/share.js, we passed <code>array(
+'jquey')</code> in the third parameter - deps. It indicates that our script
+depends on JQuery script and WordPress links share.js after JQuery
+script is added to the page.</p>
+
+<p>Version parameter adds version number to end of URL as query string
+<strong>?ver=x.x</strong>. It is used to ensure that the correct version is sent to
+the client regardless of caching. To stop adding version to URL, set
+this parameter to null.</p>
+
+<p>Enqueue functions, normally, adds script to the page &lt;header&gt;. If last
+parameter in_footer is set as true, then script adds to the &lt;footer&gt;
+provided the site theme has wp_footer() template tag at right place.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-enqueuescript.png" alt="WordPress Enqueue Script - script enqueued to footer" />
+</figure>
+
+
+<p><strong>Register and Enqueue</strong></p>
+
+<p>We can enqueue script by calling wp_enqueue_script() without
+pre-registering. In the above code, we may directly enqueue <code>
+js/share.js</code> without registering it.</p>
+
+<p>The function wp_register_script() is useful either to register all the
+scripts in one place and enqueue them when needed or to handle
+dependencies.</p>
+
+<p>Scripts that are registered do not need to be manually enqueued, if they
+are listed as a dependency of another script that is enqueued. WordPress
+automatically links the registered script before it links the enqueued
+script that lists the registered script&rsquo;s handle as a dependency. For
+example, say bar.js is depends on foo.js and foo.js is registered, then
+enqueue bar.js links both foo.js and bar.js, in the order, to the page.</p>
+
+<p>Stylesheet register or enqueue functions are similar to script
+functions, except that stylesheets are always linked in &lt;header&gt; so
+there is in_footer parameter. Instead style functions has parameter -
+<strong>media</strong>, which specifying the media for which the stylesheet is
+defined.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>The functions referred here are only for use with frontend and there are
+equivalent functions for admin screen and login screen.</p>
+
+<p><strong>WordPress jQuery</strong></p>
+
+<p>jQuery library included with WordPress is set to noConflict mode and in
+that mode, we are allowed to use jQuery(#somefunction) and not the
+normal jQuery shorthand $(#somefunction). For more information on this
+refer <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#jQuery_noConflict_Wrappers" target="_blank">jQuery noConflict Wrappers</a></p>
+
+<p>In the next section, we explain the steps to pass data to the client
+i.e. browser. We touch upon enqueue of Facebook and Google Plus scripts
+while doing that.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

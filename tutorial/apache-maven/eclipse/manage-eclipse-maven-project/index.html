@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="This tutorial covers the features of Maven Eclipse Plugin, M2E, that are useful to manage Eclipse Maven Project. The visual editor of M2E is useful">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Eclipse Maven Project - Apache Maven Tutorial – CodeTab",
+        "headline" : "Eclipse Maven Project - Apache Maven Tutorial – CodeTab",
+        "description" : "This tutorial covers the features of Maven Eclipse Plugin, M2E, that are useful to manage Eclipse Maven Project. The visual editor of M2E is useful",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11 18:15:00 +0530 IST",
+        "dateModified" : "2019-01-11 18:15:00 +0530 IST",
+        "url" : "/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/",
+        "wordCount" : "503",
+        "keywords" : [ "manage eclipse maven project","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Eclipse Maven Project - Apache Maven Tutorial – CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Apache Maven Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Apache Maven Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/install-apache-maven/" class="toc-page text-muted ">
+            Installation
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/simple-project/" class="toc-page text-muted ">
+            Simple Project
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/dependency-management/" class="toc-page text-muted ">
+            Dependency Management
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/" class="toc-page text-muted ">
+            Lifecycle Phases
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-plugins" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Plugins
+    </a>
+    
+    <div id="tutorial-apache-maven-plugins" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugins/" class="toc-page dropdown-item text-muted">
+            Plugins
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/" class="toc-page dropdown-item text-muted">
+            Plugin Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/" class="toc-page dropdown-item text-muted">
+            Lifecycle and Goals
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-configuration/" class="toc-page dropdown-item text-muted">
+            Plugin Configuration
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/" class="toc-page dropdown-item text-muted">
+            Plugin Execution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" class="toc-page dropdown-item text-muted">
+            POM – Project Object Model
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/" class="toc-page dropdown-item text-muted">
+            Resources Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/manage-maven-directories/" class="toc-page dropdown-item text-muted">
+            Manage Directories
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/" class="toc-page dropdown-item text-muted">
+            Archetype Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/plugins/useful-maven-help-commands/" class="toc-page dropdown-item text-muted">
+            Useful Help Commands
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-distribution" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Project Distribution
+    </a>
+    
+    <div id="tutorial-apache-maven-distribution" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/" class="toc-page dropdown-item text-muted">
+            Project Distribution
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/distribution/maven-assembly-plugin/" class="toc-page dropdown-item text-muted">
+            Assembly Plugin
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-profile" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Profile
+    </a>
+    
+    <div id="tutorial-apache-maven-profile" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/profile/maven-profiles/" class="toc-page dropdown-item text-muted">
+            Profiles
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-multi-module" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Multi Module
+    </a>
+    
+    <div id="tutorial-apache-maven-multi-module" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/" class="toc-page dropdown-item text-muted">
+            Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/" class="toc-page dropdown-item text-muted">
+            Hierarchical Multi Module Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/" class="toc-page dropdown-item text-muted">
+            Multi Module Inheritance
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/" class="toc-page dropdown-item text-muted">
+            Multi Module Dependency Management
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-eclipse" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Eclipse
+    </a>
+    
+    <div id="tutorial-apache-maven-eclipse" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/" class="toc-page dropdown-item text-muted">
+            Install Eclipse Maven Plugin
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/" class="toc-page dropdown-item text-danger">
+            Manage Eclipse Maven Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/" class="toc-page dropdown-item text-muted">
+            Eclipse Multi Module
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="manage-eclipse-maven-project">Manage Eclipse Maven Project</h1>
+
+<p>In the previous tutorial we installed M2E Plugin and created Maven
+Project with it. In this tutorial, we describe the features of M2E that
+are useful to manage Eclipse Maven Project.</p>
+
+<h2 id="pom-editor">POM Editor</h2>
+
+<p>When we open pom.xml in Eclipse, M2E opens it in GUI POM Editor shown in
+the screenshot.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-pomeditor.png" alt="Manage Eclipse Maven Project - POM Editor" />
+</figure>
+
+
+<p>The Overview tab is useful to manage project coordinates, parent or
+modules of the project and properties. With the Dependencies tab, we can
+manage project dependencies. While the Dependency Hierarchy tab shows
+how project dependencies are organized, the Effective POM tab displays
+the effective POM of the project. The last tab, pom.xml. is the source
+editor.</p>
+
+<h2 id="add-dependency">Add Dependency</h2>
+
+<p>To add dependencies, go to <strong>Dependency Tab</strong> of the POM Editor and
+click <strong>Add</strong> button to open the Add Dependency window.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-dependencies.png" alt="Manage Eclipse Maven Project - POM Editor Dependency Tab" />
+</figure>
+
+
+<p>Alternatively, select the pom.xml in Project Explorer and right click to
+open the context menu where we can select <strong>Maven</strong> → <strong>Add Dependency</strong>
+to open the Select Dependency window.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-selectdependency.png" alt="Manage Eclipse Maven Project - Select Dependency Window" />
+</figure>
+
+
+<p>In the Select Dependency window, enter a search string to display
+matching artifacts from the local or global repository. On selecting an
+item from the search results, the artifact coordinates are populated.
+Click <strong>OK</strong> button to add it as dependency to the project.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="repository-index">Repository Index</h2>
+
+<p>Search works only when repositories are properly indexed. Please refer
+<a href="/tutorial/apache-maven/eclipse/maven-eclipse-plugin/#maven-repo-view">Maven Repository View</a> to rebuild the index.</p>
+
+<h2 id="add-plugin">Add Plugin</h2>
+
+<p>To add a Maven Plugin to the project, select the pom.xml in the Project
+Explorer view and right click to open its context menu. Then, select
+<strong>Maven</strong> → <strong>Add Plugin</strong> to open the Add Plugin window.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-addpluginmenu.png" alt="Manage Eclipse Maven Project - Add Plugin Context Menu" />
+</figure>
+
+
+<p>In the Add Plugin window, enter a search string to display matching
+Maven Plugins in local or global repository. On selecting an item from
+the search results, the plugin coordinates are populated. Click <strong>OK</strong>
+button to add plugin to the project.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-selectplugin.png" alt="Manage Eclipse Maven Project - Select Plugin Window" />
+</figure>
+
+
+<h2 id="edit-pom">Edit POM</h2>
+
+<p>The last tab of the POM Editor, pom.xml, is useful to view and edit the
+source of pom.xml.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-configureplugin.png" alt="Manage Eclipse Maven Project - edit pom context help" />
+</figure>
+
+
+<p>In the source editor, we can use <strong>Alt</strong>+<strong>Space</strong> at any location to
+know the allowed Maven elements at that level. We can scroll through the
+list to display the help for each element and select the element which
+will be inserted to the pom.xml. The screenshot shows the allowed
+elements within a plugin element and its help message.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h2 id="build-maven-project">Build Maven Project</h2>
+
+<p>To build a Maven Project, select the project or its pom.xml in Project
+Explorer and right click to open the context menu and select <strong>Run As</strong>
+to show the available build options.</p>
+
+<figure class="text-center" >
+  <img class="lazy" data-src="/tutorial/apache-maven/media/mvn-m2e-build.png" alt="Manage Eclipse Maven Project - Run As Maven Build menu items" />
+</figure>
+
+
+<p>Among others, the drop down menu shows six Maven build options. The last
+four build options - <strong>Maven clean</strong>, <strong>Maven generate-sources</strong>,
+<strong>Maven install</strong> and <strong>Maven test</strong> executes respective lifecycle
+phases.</p>
+
+<p>The  <strong>Maven build&hellip;</strong> opens the Eclipse&rsquo;s Edit Configuration dialog,
+where we can enter Goal or lifecycle phase in <strong>Goals</strong> field and run
+the build. When you have multiple run configurations, use <strong>Maven
+build</strong> to select and run build from the existing run configurations.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

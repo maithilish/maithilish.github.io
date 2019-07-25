@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="OpenShift Configure - GWT Tutorial uses JDO and MYSQL database with OpenShift environment variables and also shows the better options like JNDI datasource.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "OpenShift Configure - GWT Tutorial - CodeTab",
+        "headline" : "OpenShift Configure - GWT Tutorial - CodeTab",
+        "description" : "OpenShift Configure - GWT Tutorial uses JDO and MYSQL database with OpenShift environment variables and also shows the better options like JNDI datasource.",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-10 17:20:00 +0530 IST",
+        "dateModified" : "2019-01-10 17:20:00 +0530 IST",
+        "url" : "/tutorial/gwt/openshift/openshift-configure/",
+        "wordCount" : "413",
+        "keywords" : [ "openshift configure","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>OpenShift Configure - GWT Tutorial - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">GWT Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="GWT Tutorial - Complete Project - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/install/" class="toc-page text-muted ">
+            Install GWT in Eclipse
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/create-project/" class="toc-page text-muted ">
+            Project Setup
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/gwt-project-code/" class="toc-page text-muted ">
+            GWT Project Code
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/gwt/gwt-demo/" class="toc-page text-muted ">
+            GWT Tutorial Demo
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-shell" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Shell
+    </a>
+    
+    <div id="tutorial-gwt-shell" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/shell/finsshell/" class="toc-page dropdown-item text-muted">
+            UIBinder and Custom Widget
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/shell/contentpanel/" class="toc-page dropdown-item text-muted">
+            TabLayoutPanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/shell/gwt-logging/" class="toc-page dropdown-item text-muted">
+            Logging
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-menu" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Menu
+    </a>
+    
+    <div id="tutorial-gwt-menu" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/menu/" class="toc-page dropdown-item text-muted">
+            ClientBundle
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/menu-parts/" class="toc-page dropdown-item text-muted">
+            Anchor 
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/" class="toc-page dropdown-item text-muted">
+            EventBus
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/" class="toc-page dropdown-item text-muted">
+            EventBus Example
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-model" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Modle
+    </a>
+    
+    <div id="tutorial-gwt-model" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/model/model/" class="toc-page dropdown-item text-muted">
+            Model
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-content" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Content
+    </a>
+    
+    <div id="tutorial-gwt-content" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/content/" class="toc-page dropdown-item text-muted">
+            GWT Tutorial - Content
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-celltable/" class="toc-page dropdown-item text-muted">
+            CellTable
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/" class="toc-page dropdown-item text-muted">
+            SuggestBox
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/titlepanel/" class="toc-page dropdown-item text-muted">
+            TitlePanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-uifactory/" class="toc-page dropdown-item text-muted">
+            UiFactory
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/factpanel/" class="toc-page dropdown-item text-muted">
+            FactPanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/" class="toc-page dropdown-item text-muted">
+            DisclosurePanel
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/toolbar/" class="toc-page dropdown-item text-muted">
+            Toolbar
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-datagrid/" class="toc-page dropdown-item text-muted">
+            DataGrid
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-chart/" class="toc-page dropdown-item text-muted">
+            Google Chart
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/" class="toc-page dropdown-item text-muted">
+            Close Tabs
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-rpc" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        RPC
+    </a>
+    
+    <div id="tutorial-gwt-rpc" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/" class="toc-page dropdown-item text-muted">
+            RPC
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/" class="toc-page dropdown-item text-muted">
+            Rest of RPC
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-database" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Database
+    </a>
+    
+    <div id="tutorial-gwt-database" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/setup-database/" class="toc-page dropdown-item text-muted">
+            Database Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/persist/" class="toc-page dropdown-item text-muted">
+            JDO Persistence 
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/retrieve/" class="toc-page dropdown-item text-muted">
+            JDO and Hibernate
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/database/gwt-dao/" class="toc-page dropdown-item text-muted">
+            DAO
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-google-app-engine" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Goolge App Engine
+    </a>
+    
+    <div id="tutorial-gwt-google-app-engine" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/" class="toc-page dropdown-item text-muted">
+            Google App Engine
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/" class="toc-page dropdown-item text-muted">
+            App Engine Deploy
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/" class="toc-page dropdown-item text-muted">
+            GAE Data Upload
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/" class="toc-page dropdown-item text-muted">
+            App Engine Cache
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/" class="toc-page dropdown-item text-muted">
+            App Engine Task Queue
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/" class="toc-page dropdown-item text-muted">
+            GAE Backends
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-openshift" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        OpenShift
+    </a>
+    
+    <div id="tutorial-gwt-openshift" class="">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift/" class="toc-page dropdown-item text-muted">
+            OpenShift Setup
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/" class="toc-page dropdown-item text-muted">
+            Prepare Project
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-configure/" class="toc-page dropdown-item text-danger">
+            Configure
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/" class="toc-page dropdown-item text-muted">
+            Build and Deploy
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-development/" class="toc-page dropdown-item text-muted">
+            Development
+        </a>
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/" class="toc-page dropdown-item text-muted">
+            OpenShift Online V3 Deployment
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-build" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Apache Ivy
+    </a>
+    
+    <div id="tutorial-gwt-build" class="collapse">
+        
+        
+        <a href="http://www.codetab.org/tutorial/gwt/build/apache-ivy/" class="toc-page dropdown-item text-muted">
+            Apache Ivy
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h2 id="12-3-openshift-configure">12.3. OpenShift Configure</h2>
+
+<p>This section explains the changes required in application configuration
+and code to run Fins on OpenShift.</p>
+
+<h5 id="jdo-config-for-mysql">JDO config for MySQL</h5>
+
+<p>In JDO configuration file <code>META-INF/jdoconfig.xml</code>, we have to add a new
+<strong>persistence-manager-factory</strong> for MySQL.</p>
+
+<p>Configuration requires connection URL, User Name and Password and we
+obtain them through</p>
+<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc app ssh demo
+&gt; env | grep -i mysql
+OPENSHIFT_MYSQL_DB_PORT=60311
+OPENSHIFT_MYSQL_DB_HOST=51fb####-finsdemo.rhcloud.com
+OPENSHIFT_MYSQL_DB_PASSWORD=w1pd####
+OPENSHIFT_MYSQL_DB_USERNAME=admin####</code></pre></div>
+<p>Use the values for configuration in <code>jdoconfig.xml</code>.</p>
+
+<p><code>META-INF/jdoconfig.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.PersistenceManagerFactoryClass&#34;</span>
+                        <span class="na">value=</span><span class="s">&#34;org.datanucleus.api.jdo.JDOPersistenceManagerFactory&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionDriverName&#34;</span>
+                          <span class="na">value=</span><span class="s">&#34;com.mysql.jdbc.Driver&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionURL&#34;</span> 
+                      <span class="na">value=</span><span class="s">&#34;jdbc:mysql://51fb####-finsdemo.rhcloud.com:60311/demo&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionUserName&#34;</span> <span class="na">value=</span><span class="s">&#34;admin####&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionPassword&#34;</span> <span class="na">value=</span><span class="s">&#34;w1pd####&#34;</span> <span class="nt">/&gt;</span>
+           ....</code></pre></div>
+<p>This hard coded configuration works, but problem with this approach is
+that, OpenShift may change the Host and Port in future and then
+application fails to connect to MySQL. To overcome these nasty
+surprises, OpenShift suggests to use environment variables as shown in
+following snippet.</p>
+
+<p><code>META-INF/jdoconfig.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">   <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
+      ....
+       <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionURL&#34;</span>
+          <span class="na">value=</span><span class="s">&#34;jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/demo&#34;</span> <span class="nt">/&gt;</span>
+ 
+      ....</code></pre></div>
+<p>But, when JDO tries create the connection it doesn&rsquo;t patch the env
+variables with their actual values and throws exception. OpenShift forum
+suggests to use <strong>${env.OPENSHIFT_MYSQL_DB_HOST}</strong> but that too
+fails.</p>
+
+<p>Another option is to add a JNDI datasource to Tomcat context file -
+<code>META-INF/context.xml</code> with these env variables. But, even Tomcat fails
+to patch the variable with actual values.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<p>Fortunately OpenShift JBoss EWS comes with a pre-configured JNDI
+datasource for MySQL and PostgreSQL, which is in
+<code>.openshift/config/context.xml</code> in cloned application folder . It
+defines two JNDI resources; <strong>jdbc/MysqlDS</strong> and <strong>jdbc/PostgreSQLDS</strong>
+using OpenShift environment variables and we may use this resource for
+our JDO config.</p>
+
+<p>The new <strong>persistence-manager-factory</strong> configuration for MySQL is added
+to jdoconfig.xml.</p>
+
+<p><code>META-INF/jdoconfig.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">       <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.PersistenceManagerFactoryClass&#34;</span>
+                        <span class="na">value=</span><span class="s">&#34;org.datanucleus.api.jdo.JDOPersistenceManagerFactory&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionFactoryName&#34;</span>
+                          <span class="na">value=</span><span class="s">&#34;java:comp/env/jdbc/MysqlDS&#34;</span> <span class="nt">/&gt;</span>
+
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.NontransactionalRead&#34;</span> <span class="na">value=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.NontransactionalWrite&#34;</span>
+                        <span class="na">value=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.RetainValues&#34;</span> <span class="na">value=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.appengine.autoCreateDatastoreTxns&#34;</span>
+                        <span class="na">value=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.cache.level2.type&#34;</span> <span class="na">value=</span><span class="s">&#34;soft&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.metadata.validate&#34;</span> <span class="na">value=</span><span class="s">&#34;false&#34;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.autoCreateSchema&#34;</span> <span class="na">value=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/persistence-manager-factory&gt;</span></code></pre></div>
+<p>To use JNDI resource, we require a resource-ref definition in <code>web.xml</code>.</p>
+
+<p><code>war/WEB-INF/web.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;resource-ref&gt;</span>
+                <span class="nt">&lt;description&gt;</span>DataSource<span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;res-ref-name&gt;</span>jdbc/MysqlDS<span class="nt">&lt;/res-ref-name&gt;</span>
+                <span class="nt">&lt;res-type&gt;</span>javax.sql.DataSource<span class="nt">&lt;/res-type&gt;</span>
+                <span class="nt">&lt;res-auth&gt;</span>Container<span class="nt">&lt;/res-auth&gt;</span>
+        <span class="nt">&lt;/resource-ref&gt;</span></code></pre></div>
+<p>Value generator <strong>uuid-string</strong> throws duplicate key exception for
+MySQL, instead it requires <strong>auid</strong> as value generator. In
+<code>src/in/fins/shared/package.jdo</code> value-strategy attribute of Data and
+DataGroup is set to <strong>auid</strong>.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+<h5 id="form-url">Form URL</h5>
+
+<p>For FormPanel, we had given form action as <strong>/upload</strong>, but this fails
+to work in OpenShift. For OpenShift, we have to remove the leading <strong>/</strong>
+from <strong>/upload</strong> in <code>in/fins/client/widget/UploadPanel.ui.xml</code> and
+<code>in/fins/client/widget/CachePanel.ui.xml</code>.</p>
+
+<p>With these changes, Fins is ready for deployment and the next section
+explains how it done.</p>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

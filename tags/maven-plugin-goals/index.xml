@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven Plugin Goals on Codetab</title>
+    <link>http://www.codetab.org/tags/maven-plugin-goals/</link>
+    <description>Recent content in Maven Plugin Goals on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 16:39:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/maven-plugin-goals/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plugin Goals - Apache Maven Tutorial – CodeTab</title>
+      <link>http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/</link>
+      <pubDate>Fri, 11 Jan 2019 16:39:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/</guid>
+      <description>Maven Plugin Goals Maven plugin is a collection of one or more goals which do some task or job. It is also known as Mojo - Maven Plain Old Java Object.
+For example, Maven uses maven-surefire-plugin to run tests and it comes with two goals.
+ Similarly, Maven uses maven-compiler-plugin to compile the source and test files and it provides three goals - compiler:compile, compiler:testCompile and compiler:help.
+&amp;nbsp;   (adsbygoogle = window.</description>
+    </item>
+    
+  </channel>
+</rss>

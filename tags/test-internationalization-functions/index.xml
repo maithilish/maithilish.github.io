@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test Internationalization Functions on Codetab</title>
+    <link>http://www.codetab.org/tags/test-internationalization-functions/</link>
+    <description>Recent content in Test Internationalization Functions on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 13:50:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/test-internationalization-functions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test Internationalization - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/</link>
+      <pubDate>Fri, 11 Jan 2019 13:50:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/</guid>
+      <description># Test Internationalization Functions
+Share on Social Plugin uses WordPress Internationalization (i18n) functions extensively and we need an easy method to test the string translations. In this blog, we explain the unit tests of i18n functions.
+Setup Language Files for Tests In WordPress Localization, we installed GetText software required for WordPress i18n and l10n, and also generated language files for the plugin.
+To test plugin internationalization, we require separate set of language files.</description>
+    </item>
+    
+  </channel>
+</rss>

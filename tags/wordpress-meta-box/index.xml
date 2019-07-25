@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress Meta Box on Codetab</title>
+    <link>http://www.codetab.org/tags/wordpress-meta-box/</link>
+    <description>Recent content in Wordpress Meta Box on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 09:52:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/wordpress-meta-box/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meta Box - WordPress Plugin Development - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/</link>
+      <pubDate>Fri, 11 Jan 2019 09:52:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/</guid>
+      <description>7.2. WordPress Meta Box In the previous blog, we saw how to register a new custom post type named sos and use it as Social Lockers. To manage the custom post type items, in this blog we setup, render and customize Sos Locker editor with WordPress Meta Box.
+While registering the custom post type, we used register_meta_box_cb to register the callback method setup_meta_boxes().
+share-on-social/admin/class-sos.php
+public function create_post_type () { register_post_type( $this-&amp;gt;post_type, // other args &amp;#39;register_meta_box_cb&amp;#39; =&amp;gt; array($this,&amp;#39;setup_meta_boxes&amp;#39;) ) ); .</description>
+    </item>
+    
+  </channel>
+</rss>
