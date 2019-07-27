@@ -741,6 +741,17 @@ WordPress theme customizes the look and feel of the site. WordPress, being one o
     </item>
     
     <item>
+      <title>Java Generics Design - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/java-generics/design/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/java-generics/design/</guid>
+      <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
+Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
+The union method, for example, takes two sets and returns a new set which is union of two.</description>
+    </item>
+    
+    <item>
       <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>http://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</link>
       <pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate>

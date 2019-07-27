@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Guidelines to design your own generic types">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://www.codetab.org/"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Java Generics Design - CodeTab",
+        "headline" : "Java Generics Design - CodeTab",
+        "description" : "Guidelines to design your own generic types",
+        "inLanguage" : "en",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": "Maithilish",
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-07-23 13:54:00 +0530 IST",
+        "dateModified" : "2019-07-23 13:54:00 +0530 IST",
+        "url" : "/tutorial/java-generics/design/",
+        "wordCount" : "812",
+        "keywords" : [ "java generics design tutorial","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<title>Java Generics Design - CodeTab</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <aside id="sidebar" class="col-md-4">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+        
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Java Generics Tutorial</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Java Generics Tutorial - CodeTab">
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/introduction/" class="toc-page text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/subtype/" class="toc-page text-muted ">
+            Subtypes
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/wildcards/" class="toc-page text-muted ">
+            Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/bounded-wildcards/" class="toc-page text-muted ">
+            Bounded Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/" class="toc-page text-muted ">
+            Type Parameter Bounds
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://www.codetab.org/tutorial/java-generics/design/" class="toc-page text-danger ">
+            Guidelines
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+      <div class="row my-5 justify-content-center">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+    <main id="content" class="col-md-8 post-basic">
+      
+
+<h1 id="design-generic-types">Design Generic Types</h1>
+
+<p>The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.</p>
+
+<h2 id="use-wildcards-on-input-parameters">Use wildcards on input parameters</h2>
+
+<p>For flexibility, use wildcard types on input parameters to make them either producers or consumers.</p>
+
+<p>The union method, for example, takes two sets and returns a new set which is union of two.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="nf">union</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">s1</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">s2</span><span class="o">)</span>  <span class="o">{...}</span></code></pre></div>
+<p>As both input sets are used to produce elements, we can rewrite the method as below. The PECS (producer extends and consumer super) comes handy to choose the wildcard bounds on input parameters.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="nf">union</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">E</span><span class="o">&gt;</span> <span class="n">s1</span><span class="o">,</span> 
+                                   <span class="n">Set</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">E</span><span class="o">&gt;</span> <span class="n">s2</span><span class="o">)</span>  <span class="o">{...}</span> </code></pre></div>
+<p>It also makes input sets s1 and s2 unmodifiable as we can&rsquo;t invoke add() or set() methods on them. The next example, copy(), copies src to dest list.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">copy</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dest</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">src</span><span class="o">)</span>  <span class="o">{...}</span></code></pre></div>
+<p>Here src is producer and dest is consumer, and the preferred way to code it is as follows:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// src is producer, dest is consumer
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">copy</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">dest</span><span class="o">,</span> 
+                                <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">src</span><span class="o">)</span>  <span class="o">{...}</span></code></pre></div>
+<p>Again, we use PECS to choose proper bounds on wildcards.</p>
+
+<h2 id="pecs-and-recursive-type-bound">PECS and Recursive Type Bound</h2>
+
+<p>The previous post discussed recursive type bound using max() method as example which is as below:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">T</span> <span class="nf">max</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>  <span class="o">{...}</span></code></pre></div>
+<p>It can be revised, applying PECS, as follows:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;&gt;</span> 
+                  <span class="n">T</span> <span class="nf">max</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>  <span class="o">{...}</span></code></pre></div>
+<p>As we are interested in finding max value, the list is used as producer, so input parameter is modified as <code>List&lt;? extends T&gt; list</code>.</p>
+
+<p>The Comparable of T consumes instances of T and produces integer.  Comparable is always consumer, so it becomes <code>Comparable&lt;? super T&gt;</code>.</p>
+
+<h2 id="don-t-use-wildcard-types-as-return-type">Don&rsquo;t use wildcard types as return type</h2>
+
+<p>In the union() method, which we saw above, the input parameters uses wildcard but return type is plain E.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="nf">union</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">E</span><span class="o">&gt;</span> <span class="n">s1</span><span class="o">,</span> 
+                                   <span class="n">Set</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">E</span><span class="o">&gt;</span> <span class="n">s2</span><span class="o">)</span>  <span class="o">{...}</span>  </code></pre></div>
+<p>Had we used wildcard in return type then it forces user to use wildcard in client code also. Hence, don&rsquo;t use wildcards types as return type.</p>
+
+<h2 id="single-type-parameter-methods">Single type parameter methods</h2>
+
+<p>The static swap() method of java.util.Collections class can be declared in following ways:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span>  <span class="o">{...}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span>  <span class="o">{...}</span></code></pre></div>
+<p>Out of these, the second one is preferred and used in Collections class. When type parameter appears in single formal parameter, then replace it with wildcard <code>?</code> as it allows to pass list of any type. Rules to replace is as follows:</p>
+
+<ul>
+<li>replace unbounded type parameter with unbounded wildcard. Example: <code>List&lt;T&gt; list</code> with <code>List&lt;?&gt; list</code></li>
+<li>replace bounded type parameter with bounded wildcard. Example: <code>List&lt;T extends Food&gt; list</code> with <code>List&lt;? extends Food&gt; list</code></li>
+</ul>
+
+<h2 id="helper-methods">Helper Methods</h2>
+
+<p>The above rules creates another problem. We have already learned that, add group of methods are not allowed on wildcard list. To overcome it, the swap() uses raw type. The source code of the method is here:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="nd">@SuppressWarnings</span><span class="o">({</span><span class="s">&#34;rawtypes&#34;</span><span class="o">,</span> <span class="s">&#34;unchecked&#34;</span><span class="o">})</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// instead of using a raw type here, it&#39;s possible to capture
+</span><span class="c1"></span>        <span class="c1">// the wildcard but it will require a call to a supplementary
+</span><span class="c1"></span>        <span class="c1">// private method
+</span><span class="c1"></span>        <span class="kd">final</span> <span class="n">List</span> <span class="n">l</span> <span class="o">=</span> <span class="n">list</span><span class="o">;</span>
+        <span class="n">l</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">l</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">j</span><span class="o">,</span> <span class="n">l</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)));</span>
+    <span class="o">}</span></code></pre></div>
+<p>The developers of the method are sure that nothing new is added to the list in the method; so, they assign the generic list to raw type List variable l. However, it is clearly documented that it is possible to use a supplementary private method instead of raw type. The private method is also known as helper method. To avoid usage of raw type, we can rewrite the method as below:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">swapHelper</span><span class="o">(</span><span class="n">list</span><span class="o">,</span><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">swapHelper</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">List</span> <span class="n">l</span> <span class="o">=</span> <span class="n">list</span><span class="o">;</span>
+        <span class="n">l</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">l</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">j</span><span class="o">,</span> <span class="n">l</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)));</span>
+    <span class="o">}</span>    </code></pre></div>
+<h2 id="summary">Summary</h2>
+
+<ul>
+<li>for flexible API, use wildcard types on input parameters to make them either producers or consumers.</li>
+<li>don&rsquo;t use wildcard type as return type.</li>
+<li>in single type parameter methods:
+
+<ul>
+<li>replace unbounded type parameter with unbounded wildcard. Example: <code>List&lt;T&gt; list</code> with <code>List&lt;?&gt; list</code>.</li>
+<li>replace bounded type parameter with bounded wildcard. Example: <code>List&lt;T extends Food&gt; list</code> with <code>List&lt;? extends Food&gt; list</code>.</li>
+</ul></li>
+<li>use private helper method to overcome wildcard capture error.</li>
+<li>go through source code of classes in java.util package to get good insight on generic types and methods design.</li>
+</ul>
+
+<h2 id="summary-of-generic-terminology">Summary of Generic Terminology</h2>
+
+<ul>
+<li>generic type <code>List&lt;T&gt;</code></li>
+<li>type parameter/type variables <code>&lt;T&gt;</code></li>
+<li>type argument <code>&lt;String&gt;</code></li>
+<li>parameterized type <code>List&lt;String&gt; list;</code></li>
+<li>formal parameter <code>foo(String x)</code></li>
+<li>formal type parameter <code>foo(T x) or Bar&lt;T&gt;</code></li>
+<li>type parameter bounds <code>&lt;T extends Comparable&lt;T&gt;&gt;</code></li>
+<li>unbounded wildcard <code>&lt;?&gt;</code></li>
+<li>wildcard with upper bound <code>&lt;? extends Type&gt;</code></li>
+<li>wildcard with lower bound <code>&lt;? super Type&gt;</code></li>
+</ul>
+
+    </main>
+  </div>
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+</body>
+
+</html>

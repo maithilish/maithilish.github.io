@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Generics Design Tutorial on Codetab</title>
+    <link>http://www.codetab.org/tags/java-generics-design-tutorial/</link>
+    <description>Recent content in Java Generics Design Tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.codetab.org/tags/java-generics-design-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Generics Design - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/java-generics/design/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/java-generics/design/</guid>
+      <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
+Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
+The union method, for example, takes two sets and returns a new set which is union of two.</description>
+    </item>
+    
+  </channel>
+</rss>

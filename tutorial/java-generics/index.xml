@@ -64,5 +64,16 @@ public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the li
 public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
     </item>
     
+    <item>
+      <title>Java Generics Design - CodeTab</title>
+      <link>http://www.codetab.org/tutorial/java-generics/design/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>http://www.codetab.org/tutorial/java-generics/design/</guid>
+      <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
+Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
+The union method, for example, takes two sets and returns a new set which is union of two.</description>
+    </item>
+    
   </channel>
 </rss>
