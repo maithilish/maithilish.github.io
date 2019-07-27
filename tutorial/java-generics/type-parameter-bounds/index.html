@@ -38,7 +38,7 @@
         "datePublished": "2019-07-23 13:54:00 +0530 IST",
         "dateModified" : "2019-07-23 13:54:00 +0530 IST",
         "url" : "/tutorial/java-generics/type-parameter-bounds/",
-        "wordCount" : "375",
+        "wordCount" : "476",
         "keywords" : [ "java generics type parameter bounds tutorial","Blog" ]
     }
 </script>
@@ -289,12 +289,19 @@
     <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>  <span class="o">//</span> <span class="n">error</span></code></pre></div>
 <p>We can create SnackList of Snack or Cookie but not Food as <code>&lt;T extends Snack&gt;</code> allows only Snack and its subtypes. But, within the SnackList we can access members of Snack, Food and Object but not Cookie.</p>
 
+<h2 id="recursive-type-bound">Recursive Type Bound</h2>
+
+<p>A type parameter bounded by an expression may contain type parameter itself. This is known as recursive type bound. The max() method from javax.util.Collection which used recursive type bound is shown below:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">T</span> <span class="nf">max</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span></code></pre></div>
+<p>The type parameter of max() is <code>&lt;T extends Comparable&lt;T&gt;&gt;</code> which is read as &ldquo;for every type T that can be compared to itself&rdquo;. In other words, every element of list should be comparable with each other.</p>
+
 <h2 id="summary">Summary</h2>
 
 <ul>
 <li>the <code>&lt;T extends type&gt;</code> restricts the generic type to type and its subtype.</li>
 <li>type parameter bound also make members of type and all its supertypes visible within the generic type.</li>
-<li>there is no type parameter bound <code>&lt;T super type&gt;</code>.
+<li>there is no type parameter bound <code>&lt;T super type&gt;</code>.</li>
+<li>recursive type bound <code>&lt;T extends Comparable&lt;T&gt;&gt;</code> is read as &ldquo;for every type T that can be compared to itself&rdquo;.
 <br /></li>
 </ul>
 
