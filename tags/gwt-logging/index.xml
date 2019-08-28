@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Logging on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-logging/</link>
+    <link>https://www.codetab.org/tags/gwt-logging/</link>
     <description>Recent content in Gwt Logging on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 11:22:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-logging/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-logging/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Logging - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/shell/gwt-logging/</link>
+      <link>https://www.codetab.org/tutorial/gwt/shell/gwt-logging/</link>
       <pubDate>Thu, 10 Jan 2019 11:22:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/shell/gwt-logging/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/shell/gwt-logging/</guid>
       <description>3.4. LogTab In GWT, client side log messages may be sent to the server or log them in the client itself. LogTab composite displays log messages on the client side.
 Add LogTab.java and LogTab.ui.xml to in.fins.client.content package. Please note that content related classes are placed in in.fins.client.content whereas custom widgets are placed in in.fins.client.widget.
 in.fins.client.content/LogTab.ui.xml

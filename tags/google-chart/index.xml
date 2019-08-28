@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Chart on Codetab</title>
-    <link>http://www.codetab.org/tags/google-chart/</link>
+    <link>https://www.codetab.org/tags/google-chart/</link>
     <description>Recent content in Google Chart on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 16:51:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/google-chart/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/google-chart/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google Charts - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-chart/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-chart/</link>
       <pubDate>Thu, 10 Jan 2019 16:51:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-chart/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-chart/</guid>
       <description>6.10. Chart Earlier, we designed FactDisclosePanel and ChartPanel but stopped short of completing the actual charts as it may be difficult to grasp at that stage. In this chapter, we are going to complete it and display charts using Google Chart Tools also known as Google Visualization.
  Figure 6.16. Chart Install Google Chart Tools GWT SDK doesn&amp;rsquo;t ship with Chart module, and we have to download and add Google Chart Tools module to the project.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Factpanel on Codetab</title>
-    <link>http://www.codetab.org/tags/factpanel/</link>
+    <link>https://www.codetab.org/tags/factpanel/</link>
     <description>Recent content in Factpanel on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 18:22:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/factpanel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/factpanel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FactPanel - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/factpanel/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/factpanel/</link>
       <pubDate>Thu, 10 Jan 2019 18:22:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/factpanel/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/factpanel/</guid>
       <description>6.5. FactPanel FactPanel displays FactItem in a HorizontalPanel as shown in figure.
  Figure 6.4. FactPanel FactItem is a widget with two Labels, one for text and another for value, and FactPanel holds the FactItems. Instead of UiBinder template, FactPanel and FactItem directly extends HorizontalPanel.
 in.fins.client.widget/FactItem.java

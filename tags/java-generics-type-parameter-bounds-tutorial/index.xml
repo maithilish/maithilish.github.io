@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java Generics Type Parameter Bounds Tutorial on Codetab</title>
-    <link>http://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/</link>
+    <link>https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/</link>
     <description>Recent content in Java Generics Type Parameter Bounds Tutorial on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java Generics Type Parameter Bounds - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
       <description>Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
 public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
     </item>

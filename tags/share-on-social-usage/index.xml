@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Share on Social Usage on Codetab</title>
-    <link>http://www.codetab.org/tags/share-on-social-usage/</link>
+    <link>https://www.codetab.org/tags/share-on-social-usage/</link>
     <description>Recent content in Share on Social Usage on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 06:55:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/share-on-social-usage/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/share-on-social-usage/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Usage - Share on Social WordPress Plugin - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</link>
+      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</link>
       <pubDate>Fri, 11 Jan 2019 06:55:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</guid>
+      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</guid>
       <description>Usage In this blog, we explain Share on Social WordPress Plugin usage through examples. Share on Social lockers can be placed on WordPress Posts and Pages. For ease of explanation, we refer WordPress Posts and Pages as page. Basic Locker Simply by placing the content between shortcode [[share-on-social] [/share-on-social]] we can activate lockers. It uses default locker named Basic and shares the URL of the page (post or page) where locker is placed.</description>
     </item>
     

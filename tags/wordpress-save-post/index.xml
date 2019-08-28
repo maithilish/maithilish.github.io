@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Save Post on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-save-post/</link>
+    <link>https://www.codetab.org/tags/wordpress-save-post/</link>
     <description>Recent content in Wordpress Save Post on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 10:10:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-save-post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-save-post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Save Post - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/</link>
       <pubDate>Fri, 11 Jan 2019 10:10:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/</guid>
       <description>7.3. WordPress Save Post In the previous two blogs, we saw how to add custom post type and customize post editor. In this blog, we cover the steps to save the custom post and its meta data.
  We added sos custom post type as use it as social lockers. Sos Lockers defines four meta data fields. One of benefits of WordPress Custom Post Type is that we can use WordPress Post management framework to handle activities such as publish, trash and edit.</description>
     </item>

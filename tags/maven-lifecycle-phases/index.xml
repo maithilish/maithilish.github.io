@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maven Lifecycle Phases on Codetab</title>
-    <link>http://www.codetab.org/tags/maven-lifecycle-phases/</link>
+    <link>https://www.codetab.org/tags/maven-lifecycle-phases/</link>
     <description>Recent content in Maven Lifecycle Phases on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 15:15:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/maven-lifecycle-phases/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/maven-lifecycle-phases/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lifecycle Phases - Apache Maven Tutorial – CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/</link>
+      <link>https://www.codetab.org/tutorial/apache-maven/lifecycle-phases/</link>
       <pubDate>Fri, 11 Jan 2019 15:15:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-maven/lifecycle-phases/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-maven/lifecycle-phases/</guid>
       <description>Lifecycle Phases Apart from the options, the mvn command accepts only two things - goal or phase.
  This chapter covers Phases which are related to Lifecycles and in the next chapter explains Goals which are related to Plugins.
 Maven Lifecycles and Phases To understand the concepts of lifecycle and phase, let&amp;rsquo;s recap how we used to build Java projects by hand.

@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Activation on Codetab</title>
-    <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/</link>
+    <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/</link>
     <description>Recent content in Activation on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tutorial/wordpress-plugin-development/activation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Activation - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</link>
       <pubDate>Fri, 11 Jan 2019 11:53:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</guid>
       <description>While it is true that WordPress takes care of the majority of the activation and deactivation process, these phases are ideal to carryout any specific customizations related to the plugin. With this background, in this chapter we cover WordPress Plugin Activation, Deactivation and Uninstall phases in detail and also, how to deal them in WordPress Multisite Installations.
 11.1. WordPress Plugin Activation In Share on Social Plugin, we use Activation phase to remove stale basic locker that is left over by the previous installation and also, add settings such as plugin version etc.</description>
     </item>
     
     <item>
       <title>Multisite - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</link>
       <pubDate>Fri, 11 Jan 2019 12:29:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</guid>
       <description>11.2. Enable WordPress Multisite To understand plugin multisite activation, we require a WordPress Multisite installation. In this blog, we install a new instance and enable WordPress Multisite.
 Install WordPress So far in the tutorial, we used WordPress Single Site installation and it is possible to convert it to Multisite installation. Still, better approach is to install a new instance of WordPress and use it for multisite testing so as to leave the existing installation free for single site testing.</description>
     </item>
     
     <item>
       <title>Multisite Activation - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/</link>
       <pubDate>Fri, 11 Jan 2019 12:18:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/</guid>
       <description>11.3. WordPress Multisite Activation In the previous blog, we installed and configured WordPress Multisite. In this blog, we explain the plugin activation in Multisite Installations.
 Multisite Super Admin and Site Admins WordPress Multisite Installation will have a Super Admin (SA) to manage the network and multiple admins to manage the sites in the network.
 In multisite, only SA can install (add) and update the plugins and site admins are not allowed to do so.</description>
@@ -44,10 +44,10 @@ In multisite, only SA can install (add) and update the plugins and site admins a
     
     <item>
       <title>Deactivation - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</link>
       <pubDate>Fri, 11 Jan 2019 12:01:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</guid>
       <description>11.4. WordPress Plugin Deactivation In the previous blogs, we installed WordPress Multisite and learned to code plugin multisite activation. WordPress Plugin Deactivation follows similar pattern but in Share on Social Plugin it has some minor twists.
 Share on Social Plugin uses the same class file class-activator.php for deactivation too. In Sos_Activator::setup() method we register Sos_Activator::deactivate() as the deactivation method using WordPress function register_deactivation_hook().
 share-on-social/admin/class-activator.php
@@ -56,10 +56,10 @@ class Sos_Activator { public function setup () { register_deactivation_hook( SOS
     
     <item>
       <title>Uninstall - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/</link>
       <pubDate>Fri, 11 Jan 2019 12:42:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/</guid>
       <description>11.5. WordPress Plugin Uninstall In the previous blogs, we customized activation and deactivation phases for the plugin. In this tutorial, we use uninstall phase to clean up the entities created by the plugin.
 When a plugin is uninstalled, it is already in deactivated state and it means that WordPress Action framework is no longer usable with in the plugin code. WordPress do provide a uninstall hook register_uninstall_hook(), but when when a plugin can not be written without running code within the plugin there is another mechanism to handle uninstall.</description>
     </item>

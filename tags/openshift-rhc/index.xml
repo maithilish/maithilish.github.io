@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openshift Rhc on Codetab</title>
-    <link>http://www.codetab.org/tags/openshift-rhc/</link>
+    <link>https://www.codetab.org/tags/openshift-rhc/</link>
     <description>Recent content in Openshift Rhc on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 00:53:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/openshift-rhc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/openshift-rhc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RHC Client Tools - WordPress Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</link>
+      <link>https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</link>
       <pubDate>Fri, 11 Jan 2019 00:53:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</guid>
       <description>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server. OpenShift RHC Client Tools is useful to manage OpenShift applications and to access OpenShift Shell. We have to access OpenShift Shell for a couple of tasks: to backup the site and to place the sample HTML in the server.
 OpenShift RHC Client Tools OpenShift Client tools also called as RHC is a command line tool used to create and manage the OpenShift applications.</description>
     </item>

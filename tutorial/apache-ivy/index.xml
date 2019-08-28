@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab on Codetab</title>
-    <link>http://www.codetab.org/tutorial/apache-ivy/</link>
+    <link>https://www.codetab.org/tutorial/apache-ivy/</link>
     <description>Recent content in Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 22:33:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tutorial/apache-ivy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tutorial/apache-ivy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Introduction - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/introduction/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/introduction/</link>
       <pubDate>Thu, 10 Jan 2019 23:15:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/introduction/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/introduction/</guid>
       <description>Introduction Apache Ivy Tutorial is a step by step beginners guide which covers Apache Ivy and IvyDE installation, basic usage, essential Ivy Ant Tasks, building private and enterprise repositories, installing and publishing modules to repositories and Apache Ivy in Eclipse projects with IvyDE Plugin for Eclipse. Basic objective of Apache Ivy Tutorial is to explain Ivy concepts and tasks through easy to follow examples and assist beginners as well as intermediate users to kick start their projects with automated dependency management.</description>
     </item>
     
     <item>
       <title>Installation - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/installation/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/installation/</link>
       <pubDate>Thu, 10 Jan 2019 21:17:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/installation/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/installation/</guid>
       <description>To work through the tutorial, we require Apache Ivy, Ant and IvyDE, and this chapter covers installation of software.
    Software Version Size (approximate)     Apache Ivy 2.2 1 MB   Apache Ant 1.8.2 8 MB   IvyDE Eclipse Plugin  8 MB    Apache Ant and Apache Ivy Installation
 We require Apache Ant and Apache Ivy to work through the tutorial.</description>
@@ -33,10 +33,10 @@ We require Apache Ant and Apache Ivy to work through the tutorial.</description>
     
     <item>
       <title>Ivy Ant Tasks - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/ant-tasks/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/ant-tasks/</link>
       <pubDate>Thu, 10 Jan 2019 22:51:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/ant-tasks/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/ant-tasks/</guid>
       <description>This chapter explains some of the frequently used Apache Ivy Ant Tasks and Apache Ivy terminologies. We will explore them in detail throughout the tutorial.
 Apache Ivy Ant Tasks
 Apache Ivy comes with its own set of Ant Tasks which can be called from Ant build file. In this tutorial, we cover following Ivy Tasks
@@ -46,10 +46,10 @@ Table 2.1. Ivy Ant tasks
     
     <item>
       <title>Resolve - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/resolve/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/resolve/</link>
       <pubDate>Thu, 10 Jan 2019 22:06:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/resolve/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/resolve/</guid>
       <description>Resolve task, resolve dependencies described in ivy.xml and places the resolved dependencies in the Apache Ivy cache.
 Let&amp;rsquo;s go through a sample project to understand this important concept. First, create a directory tree for package in.ex.ivy in the work dir
 mkdir -p src/in/ex/ivy Add following class file to src/in/ex/ivy.
@@ -59,10 +59,10 @@ package in.ex.ivy; import org.apache.commons.lang.StringUtils; public class Exam
     
     <item>
       <title>Cachepath – Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/</link>
       <pubDate>Thu, 10 Jan 2019 22:18:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/</guid>
       <description>In the last chapter we worked with &amp;lt;ivy:resolve&amp;gt;, which resolves the dependencies indicated in ivy.xml file and places the resolved modules in the cache. But it does not link the dependencies to the project build path. To expose the dependencies to the Java build path, Apache Ivy provides two Ant tasks .
  &amp;lt;ivy:cachepath&amp;gt; task
  &amp;lt;ivy:retrieve&amp;gt; task
@@ -72,10 +72,10 @@ package in.ex.ivy; import org.apache.commons.lang.StringUtils; public class Exam
     
     <item>
       <title>Pattern - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/pattern/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/pattern/</link>
       <pubDate>Thu, 10 Jan 2019 21:01:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/pattern/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/pattern/</guid>
       <description>Before going further, it&amp;rsquo;s important to understand some of the core concepts of Apache Ivy.
 Apache Ivy Settings Files Till now we have used default settings to carry out the tasks. Apache Ivy allows to override the default settings through a settings file. Apache Ivy setting file is an XML file, usually named as  ivysettings.xml. In subsequent chapters, we use ivysettings.xml to override the default settings.
 Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and settings.</description>
@@ -83,10 +83,10 @@ Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and se
     
     <item>
       <title>Resolvers - Apache Ivy Tutorial – CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</link>
       <pubDate>Thu, 10 Jan 2019 23:45:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</guid>
       <description>5.2. Apache Ivy Resolvers and Repository Apache Ivy Repositories
 Until now, we used the public repository to resolve dependencies. But you may want to set up your own repository for reasons like
  restricted Internet access – your network may have Internet access or usage policy. This may limit or even restrict access to Internet. Setting up an enterprise repository helps to overcome this issue.
@@ -95,19 +95,19 @@ Until now, we used the public repository to resolve dependencies. But you may wa
     
     <item>
       <title>Install Task - Local Repository - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</link>
       <pubDate>Thu, 10 Jan 2019 21:29:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</guid>
       <description>To build private repository like local or shared repositories we have to copy the module&amp;rsquo;s files and artifacts from public repository to private repository and we have to use Apache Ivy Install task for this. It resolves a module and its dependencies from a repository and install them in another repository. Apache Ivy Install task copies module&amp;rsquo;s ivy file and artifacts from a source repository to a target repository.</description>
     </item>
     
     <item>
       <title>Shared Repository - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/shared-repository/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/shared-repository/</link>
       <pubDate>Thu, 10 Jan 2019 23:32:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/shared-repository/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/shared-repository/</guid>
       <description>6.2. Apache Ivy Shared Repository Apache Ivy Shared Repository
 Shared repository is similar to a local repository in almost all aspects except that all users can access a shared repository and whereas local repository is private to the user who owns it.
 Default configuration comes with a resolver named shared which points to $HOME/.ivy2/shared directory. If you don&amp;rsquo;t like a shared repository in your home directory, then it may be moved to any other locations.</description>
@@ -115,10 +115,10 @@ Default configuration comes with a resolver named shared which points to $HOME/.
     
     <item>
       <title>Publish - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/publish/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/publish/</link>
       <pubDate>Thu, 10 Jan 2019 22:00:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/publish/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/publish/</guid>
       <description>Occasionally we may want to add modules developed by us to the repository. This chapter explains the Apache Ivy Publish Task which publishes modules to Ivy Repository.
 Apache Ivy Publish Task
 &amp;lt;ivy:publish&amp;gt; task publishes module&amp;rsquo;s artifacts and resolved descriptor to a repository. It is used to publish our own modules or even modules developed by others which are not available in any repository.

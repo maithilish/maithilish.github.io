@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hierarchical Multi Module Project on Codetab</title>
-    <link>http://www.codetab.org/tags/hierarchical-multi-module-project/</link>
+    <link>https://www.codetab.org/tags/hierarchical-multi-module-project/</link>
     <description>Recent content in Hierarchical Multi Module Project on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 21:49:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/hierarchical-multi-module-project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/hierarchical-multi-module-project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Maven Hierarchical Multi Module Project - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</link>
+      <link>https://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</link>
       <pubDate>Fri, 11 Jan 2019 21:49:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</guid>
       <description>Hierarchical Multi Module Project The previous tutorial explained the structure of a simple multi module project. Let&amp;rsquo;s extend it further to learn advanced features of Maven multi module project.
 The example code is available at GitHub Maven Examples. Download the examples as zip and extract it to some location or clone it with git.
 Flat vs Hierarchical Layout In extended-multi project, we add one more module to simple-multi and the new module, config, has one class ConfigService that uses Apache Commons Configuration library to manage configurations of the app.</description>

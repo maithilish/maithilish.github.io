@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Content on Codetab</title>
-    <link>http://www.codetab.org/tutorial/gwt/content/</link>
+    <link>https://www.codetab.org/tutorial/gwt/content/</link>
     <description>Recent content in Content on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tutorial/gwt/content/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tutorial/gwt/content/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contents - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/content/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/content/</link>
       <pubDate>Thu, 10 Jan 2019 12:01:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/content/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/content/</guid>
       <description>Content GWT project contains three content pages.
  Snapshot – displays financial details like Balance Sheet (BS), Profit and Loss A/c (PL), Quarterly data (Qtr), Cash Flow (CF) and Holding details of a Symbol with forward or backward navigation capability to view other periods. It has collapsible graphs of Price, Price to Earnings (PE) and Price to Book (PB) movements. For each category a Pop up displays data for the entire period.</description>
     </item>
     
     <item>
       <title>CellTable - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-celltable/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-celltable/</link>
       <pubDate>Thu, 10 Jan 2019 18:36:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-celltable/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-celltable/</guid>
       <description>6.7. FactTable This section uses GWT CellTable to display the data in a table. FactTable displays facts of a category for a specific date. FactTable may be nested within another FactTable, and inner FactTable can display facts of another category. Figure shows a nested FactTable where outer FactTable shows Facts as on Mar 2012 for category PL and inner FactTable displays Facts for category Cash Flow. On load, Snapshot displays Facts for the latest available date for each category.</description>
     </item>
     
     <item>
       <title>SuggestBox - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</link>
       <pubDate>Thu, 10 Jan 2019 15:56:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</guid>
       <description>6.2. AutoSuggest AutoSuggest accepts user input and displays matching list of Symbols for selection. It uses GWT SuggestBox to display suggestions those matches input.
 Default SuggestOracle of SuggestBox is MultiWordSuggestOracle which displays sorted drop down list of matches. List of names comes from SymbolDatabase.getSymbolNames(), which returns names of four symbols, and method MultiWordSuggestOracle.setSymbolNames() adds list to the oracle.
 in.fins.client.widget/AutoSuggest.java
@@ -44,20 +44,20 @@ private void setSymbolNames() { List&amp;lt;String&amp;gt; list = SymbolDatabase
     
     <item>
       <title>TitlePanel - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/titlepanel/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/titlepanel/</link>
       <pubDate>Thu, 10 Jan 2019 19:48:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/titlepanel/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/titlepanel/</guid>
       <description>6.3. TitlePanel TitlePanel displays the symbol name on selection by the user and uses a SimplePanel and Label.
 Why a separate widget when a Label is suffice, and reason for this is with more and more widgets added to Snapshot events handling becomes complicated and with a separate widget we can wire events much more elegantly. Hence TitlePanel is pulled out as a separate widget with TitlePanel.ui.xml and TitlePanel.java.</description>
     </item>
     
     <item>
       <title>UiFactory - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-uifactory/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/</link>
       <pubDate>Thu, 10 Jan 2019 20:11:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-uifactory/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/</guid>
       <description>6.4. UiFactory UiBinder constructs a widget in multiple ways, and they fall into two categories.
  UiBinder creates the widget and insert it to UI structure.
  Application code creates the widget and hand it over to UiBinder to insert it to UI structure.
@@ -67,10 +67,10 @@ Without value attributes - For &amp;lt;f:TitlePanel ui:field=”titlePanel” /&
     
     <item>
       <title>FactPanel - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/factpanel/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/factpanel/</link>
       <pubDate>Thu, 10 Jan 2019 18:22:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/factpanel/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/factpanel/</guid>
       <description>6.5. FactPanel FactPanel displays FactItem in a HorizontalPanel as shown in figure.
  Figure 6.4. FactPanel FactItem is a widget with two Labels, one for text and another for value, and FactPanel holds the FactItems. Instead of UiBinder template, FactPanel and FactItem directly extends HorizontalPanel.
 in.fins.client.widget/FactItem.java
@@ -79,10 +79,10 @@ public class FactItem extends HorizontalPanel { private Label label; private Str
     
     <item>
       <title>DisclosurePanel - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</link>
       <pubDate>Thu, 10 Jan 2019 17:51:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</guid>
       <description>6.6. FactDisclosePanel FactDisclosePanel shows or hide the Price, PB and PE graphs.
  Figure 6.6. FactDisclosePanel FactDisclosePanel (FDP) uses two GWT widgets, GWT DisclosurePanel and inner CaptionPanel. DisclosurePanel, contains header and a content panel, that discloses the underlying content when a user clicks the header, and CaptionPanel encloses its contents with border and a caption on upper left corner.
 in.fins.client.widget/FactDisclosePanel.java
@@ -91,10 +91,10 @@ in.fins.client.widget/FactDisclosePanel.java
     
     <item>
       <title>Toolbar - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/toolbar/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/toolbar/</link>
       <pubDate>Thu, 10 Jan 2019 20:03:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/toolbar/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/toolbar/</guid>
       <description>6.8. Toolbar FactTable displays the latest available data for a category, but the user may also like to view data for previous periods, and through ToolbarItem user may navigate Forward or Backward.
  Figure 6.11. Toolbar Following UI declaration adds ToolbarItem to FactTable.
 in.fins.client.content/Snapshot.ui.xml
@@ -103,30 +103,30 @@ in.fins.client.content/Snapshot.ui.xml
     
     <item>
       <title>DataGrid - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</link>
       <pubDate>Thu, 10 Jan 2019 18:06:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</guid>
       <description>6.9. FactGrid FactGrid uses GWT DataGrid widget to display the data in a tabular view. Instead of adding it to Snapshot which already full with widgets, a GWT PopupPanel comes handy to display more data without forcing the user to leave the page.
  Figure 6.13. FactGrid Like the CellTable, which we used earlier in FactTable, GWT DataGrid also displays data in tabular view. Both are subclasses of AbstractCellTable and supports columns, sorting, paging whereas DataGrid additionally has a Header, Footer and a scrollable content area in the center.</description>
     </item>
     
     <item>
       <title>Google Charts - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-chart/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-chart/</link>
       <pubDate>Thu, 10 Jan 2019 16:51:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-chart/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-chart/</guid>
       <description>6.10. Chart Earlier, we designed FactDisclosePanel and ChartPanel but stopped short of completing the actual charts as it may be difficult to grasp at that stage. In this chapter, we are going to complete it and display charts using Google Chart Tools also known as Google Visualization.
  Figure 6.16. Chart Install Google Chart Tools GWT SDK doesn&amp;rsquo;t ship with Chart module, and we have to download and add Google Chart Tools module to the project.</description>
     </item>
     
     <item>
       <title>Close Tabs - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</link>
       <pubDate>Thu, 10 Jan 2019 17:03:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</guid>
       <description>6.11. Close Tabs Last thing we are going to do on the client side is to add a control to close the tabs.
  Figure 6.17. ClosePanel Except the remove() method offered by TabLayoutPanel, there is no other well documented method to close the tab, but using this method to close tab is little cumbersome when there are multiple tabs. Hence, we are designing a custom widget to do the job.</description>
     </item>

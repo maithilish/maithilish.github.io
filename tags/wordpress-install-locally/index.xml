@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Install Locally on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-install-locally/</link>
+    <link>https://www.codetab.org/tags/wordpress-install-locally/</link>
     <description>Recent content in Wordpress Install Locally on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 08:22:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-install-locally/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-install-locally/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Local Install - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</link>
       <pubDate>Fri, 11 Jan 2019 08:22:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</guid>
       <description>Install WordPress locally While it is possible to develop WordPress Plugin on a WordPress installation hosted on server or cloud, it is much more convenient to do that on local machine.In this section, we explain the steps to install WordPress on local system.
 XAMPP is probably the easiest way to install WordPress locally. XAMPP by Apache Friends bundles Apache, MySQL, PHP and Pearl as an installer. XAMPP comes as separate package for Linux, Windows and Mac.</description>
     </item>

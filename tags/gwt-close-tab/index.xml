@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Close Tab on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-close-tab/</link>
+    <link>https://www.codetab.org/tags/gwt-close-tab/</link>
     <description>Recent content in Gwt Close Tab on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 17:03:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-close-tab/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-close-tab/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Close Tabs - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</link>
       <pubDate>Thu, 10 Jan 2019 17:03:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/</guid>
       <description>6.11. Close Tabs Last thing we are going to do on the client side is to add a control to close the tabs.
  Figure 6.17. ClosePanel Except the remove() method offered by TabLayoutPanel, there is no other well documented method to close the tab, but using this method to close tab is little cumbersome when there are multiple tabs. Hence, we are designing a custom widget to do the job.</description>
     </item>

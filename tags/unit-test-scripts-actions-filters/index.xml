@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unit Test Scripts Actions Filters on Codetab</title>
-    <link>http://www.codetab.org/tags/unit-test-scripts-actions-filters/</link>
+    <link>https://www.codetab.org/tags/unit-test-scripts-actions-filters/</link>
     <description>Recent content in Unit Test Scripts Actions Filters on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 13:30:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/unit-test-scripts-actions-filters/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/unit-test-scripts-actions-filters/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Unit Test Scripts Action Filter - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/</link>
       <pubDate>Fri, 11 Jan 2019 13:30:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/</guid>
       <description>12.4. Unit Test Scripts, Actions, Filters In the previous blog, we saw how to write tests for plugin methods that returns value or echo output. In this blog, we explore third category of plugin methods where outcome is tested using corresponding WordPress API functions.
 For example, add_action() which registers an action hook is tested using WordPress function has_action().
 But, before exploring such tests, we briefly explain an utility class used by Share on Social Plugin test cases to reduce boilerplate code in tests and also, learn to toggle user capability to test methods which depends on user capability.</description>

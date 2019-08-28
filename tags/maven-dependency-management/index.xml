@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maven Dependency Management on Codetab</title>
-    <link>http://www.codetab.org/tags/maven-dependency-management/</link>
+    <link>https://www.codetab.org/tags/maven-dependency-management/</link>
     <description>Recent content in Maven Dependency Management on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 14:48:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/maven-dependency-management/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/maven-dependency-management/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dependency Management - Apache Maven Tutorial – CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-maven/dependency-management/</link>
+      <link>https://www.codetab.org/tutorial/apache-maven/dependency-management/</link>
       <pubDate>Fri, 11 Jan 2019 14:48:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-maven/dependency-management/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-maven/dependency-management/</guid>
       <description>Dependency Management In the previous chapter, we created a simple Java project and build it with Maven. In this chapter, we use Maven Dependency Management feature to add external modules to the project.
 Maven can manage both internal and external dependencies. For a Java project, external dependencies might be libraries such as JUnit, Apache Commons, Log4J etc., Internal dependencies are modules of a related project. We will cover internal dependencies in a later chapter when we deal with multi module projects.</description>
     </item>

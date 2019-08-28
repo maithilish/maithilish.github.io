@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java Generics Tutorial on Codetab</title>
-    <link>http://www.codetab.org/tags/java-generics-tutorial/</link>
+    <link>https://www.codetab.org/tags/java-generics-tutorial/</link>
     <description>Recent content in Java Generics Tutorial on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/java-generics-tutorial/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/java-generics-tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java Generics - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/introduction/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/introduction/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/introduction/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid>
       <description>Java Generics There are enough tutorials on Java Generics. However, many are either too easy or too difficult to get a clear view of the subject. In this series, we focus on confusing aspects and try to explain them with multiple examples.
 If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as we don&amp;rsquo;t cover the basics. Even after going through it if certain aspects are not clear, then try this tutorial.</description>
     </item>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenShift on Codetab</title>
-    <link>http://www.codetab.org/tutorial/gwt/openshift/</link>
+    <link>https://www.codetab.org/tutorial/gwt/openshift/</link>
     <description>Recent content in OpenShift on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tutorial/gwt/openshift/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tutorial/gwt/openshift/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenShift Setup - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/openshift/openshift/</link>
+      <link>https://www.codetab.org/tutorial/gwt/openshift/openshift/</link>
       <pubDate>Thu, 10 Jan 2019 13:47:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/openshift/openshift/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift/</guid>
       <description>OpenShift OpenShift is a cloud computing platform as a service (PaaS) product from Red Hat. Unlike App Engine which restricts it self to select set of languages and databases, OpenShift gives you a wide range of choice programming languages including Java, Ruby, PHP, Node.js, Python and Perl. It supports variety of databases like MySQL, MangoDB, PostgreSQL etc.,
 OpenShift also comes with a free account which allows you to host three applications.</description>
     </item>
     
     <item>
       <title>OpenShift - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</link>
+      <link>https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</link>
       <pubDate>Thu, 10 Jan 2019 18:55:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</guid>
       <description>12.2. GWT OpenShift Project Project fins developed so far is configured for App Engine and there are two options to deploy its code on OpenShift.
  create a new project and import the code.
  modify the existing project.
@@ -35,10 +35,10 @@ OpenShift also comes with a free account which allows you to host three applicat
     
     <item>
       <title>OpenShift Configure - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/openshift/openshift-configure/</link>
+      <link>https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/</link>
       <pubDate>Thu, 10 Jan 2019 17:20:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/openshift/openshift-configure/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/</guid>
       <description>12.3. OpenShift Configure This section explains the changes required in application configuration and code to run Fins on OpenShift.
 JDO config for MySQL In JDO configuration file META-INF/jdoconfig.xml, we have to add a new persistence-manager-factory for MySQL.
 Configuration requires connection URL, User Name and Password and we obtain them through
@@ -47,10 +47,10 @@ $ rhc app ssh demo &amp;gt; env | grep -i mysql OPENSHIFT_MYSQL_DB_PORT=60311 OP
     
     <item>
       <title>Deploy on OpenShift - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/</link>
+      <link>https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/</link>
       <pubDate>Thu, 10 Jan 2019 16:20:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/</guid>
       <description>12.4. OpenShift Deployment Even though, we developed a fairly complicated GWT application and deployed it to App Engine, surprisingly we never discussed about build cycle. Google Plugin for Eclipse (GPE) was building the application in background. But, when it comes to OpenShift, we have to build and deploy.
 Steps to build a GWT application with JDO are
  compile the java classes with javac.
@@ -59,10 +59,10 @@ Steps to build a GWT application with JDO are
     
     <item>
       <title>OpenShift Development - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/openshift/openshift-development/</link>
+      <link>https://www.codetab.org/tutorial/gwt/openshift/openshift-development/</link>
       <pubDate>Thu, 10 Jan 2019 17:41:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/openshift/openshift-development/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift-development/</guid>
       <description>12.5. OpenShift Development Without any changes to the code, we are able to deploy Fins to OpenShift. But, you may require a local setup to develop your app before moving it to OpenShift, and this section shows how to develop GWT applications with Tomcat.
 Setup Tomcat Extract Tomcat archive to some location on your system and we refer this folder as CATALINA_HOME.
 Officially suggested method to run GWT on external server is to copy static, image files and gwt dir to tomcat/webapps and on any changes in server side classes (like rcp etc.</description>
@@ -70,10 +70,10 @@ Officially suggested method to run GWT on external server is to copy static, ima
     
     <item>
       <title>OpenShift V3 - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/</link>
+      <link>https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/</link>
       <pubDate>Fri, 11 Jan 2019 18:33:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/</guid>
       <description>12.6. OpenShift Online V3 Deployment The earlier chapters explained configuration and deployment of GWT applications on OpenShift V2 using RHC command line tool. OpenShift V2 is discontinued from October 2017 and replaced with OpenShift V3 which is no longer free for production applications. However, for development there is free starters account with limited resources. This tutorial, OpenShift Online V3 Deployment, explains the configuration and deployment process to host the GWT application on OpenShift V3.</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openshift Linux on Codetab</title>
-    <link>http://www.codetab.org/tags/openshift-linux/</link>
+    <link>https://www.codetab.org/tags/openshift-linux/</link>
     <description>Recent content in Openshift Linux on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 01:11:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/openshift-linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/openshift-linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenShift Linux Primer - WordPress Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</link>
+      <link>https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</link>
       <pubDate>Fri, 11 Jan 2019 01:11:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</guid>
       <description>In this appendix, we start with some of the basic Linux commands so that Windows users feel comfortable working with the OpenShift Linux Shell. After that, we show how to copy files from the PC to OpenShift Linux server using secure copy feature of SSH.
 Note
 To go through this Appendix, we have to complete the RHC (OpenShift Client Tools) installation. To work from a Windows system, we also require PuTTY.</description>

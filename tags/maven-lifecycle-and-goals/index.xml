@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maven Lifecycle and Goals on Codetab</title>
-    <link>http://www.codetab.org/tags/maven-lifecycle-and-goals/</link>
+    <link>https://www.codetab.org/tags/maven-lifecycle-and-goals/</link>
     <description>Recent content in Maven Lifecycle and Goals on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 16:21:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/maven-lifecycle-and-goals/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/maven-lifecycle-and-goals/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lifecycle Goals - Apache Maven Tutorial – CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/</link>
+      <link>https://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/</link>
       <pubDate>Fri, 11 Jan 2019 16:21:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/</guid>
       <description>Maven Lifecycle and Goals The previous section covered plugin goals and how to run goals from command line. In very few situations we invoke plugin goals directly and more often than not, lifecycle phases are preferred. In this chapter, we describe the link between Maven Lifecycle and Goals.
 Lifecycle Phases and Plugin Goals When a lifecycle phase is run, depending on project type and packaging type, Maven binds plugin goals to lifecycle phases.</description>
     </item>

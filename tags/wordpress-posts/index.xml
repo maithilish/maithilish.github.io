@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Posts on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-posts/</link>
+    <link>https://www.codetab.org/tags/wordpress-posts/</link>
     <description>Recent content in Wordpress Posts on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 03:20:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Posts vs Pages - WordPress Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</link>
+      <link>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</link>
       <pubDate>Fri, 11 Jan 2019 03:20:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</guid>
       <description>In earlier chapters, we learned how to install and setup WordPress site on OpenShift cloud platform. Now, we are ready to add contents - Posts, Pages and Media - to the WordPress site.
 Let&amp;rsquo;s add a Post to know the process and then, understand the differences between WordPress Posts and WordPress Pages.
 WordPress Posts Open Dashboard → Posts to display the list of posts from the site.

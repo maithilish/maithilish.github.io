@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Admin Module - Settings on Codetab</title>
-    <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/</link>
+    <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/</link>
     <description>Recent content in Admin Module - Settings on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Add Menu - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/</link>
       <pubDate>Fri, 11 Jan 2019 08:41:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/</guid>
       <description>6.1. WordPress Add Menu Share on Social Plugin uses common options such as FaceBook App ID. In this section, we add a new menu item - Settings - to WordPress Administration Menu to display the option page.
  In Share on Social Plugin, class file admin/class-options.php defines class Sos_Optionsto manage the Settings page.
 share-on-social/admin/admin.php
@@ -25,10 +25,10 @@ require_once SOS_PATH . &amp;#39;admin/class-options.php&amp;#39;; /** * Class t
     
     <item>
       <title>Settings API - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</link>
       <pubDate>Fri, 11 Jan 2019 09:27:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</guid>
       <description>6.2. WordPress Settings API In the previous blog, we add a sub menu to admin menu to accept common settings from users. In this blog, we add sections and fields to the menu page.
 WordPress Settings API allows developers to add form pages to Admin screen by defining pages, sections and fields and partially automates the form and data management.
 But before that, we briefly touch upon WordPress Options API, which we use to store plugins&amp;rsquo; settings or options in WordPress database.</description>
@@ -36,10 +36,10 @@ But before that, we briefly touch upon WordPress Options API, which we use to st
     
     <item>
       <title>Options Page - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/</link>
       <pubDate>Fri, 11 Jan 2019 09:13:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/</guid>
       <description>6.3. WordPress Options Page In previous two blogs, we created a sub menu and saw how to add fields with WordPress Settings API. In this blog, as the final step, we explore WordPress Settings functions to render the WordPress Options Page.
 While adding the sub menu, we passed render_settings_page()method as callback function to add_submenu_page() function . The callback method has to echo the HTML required to display the page and also, use WordPress Settings API functions to output the registered fields.</description>
     </item>

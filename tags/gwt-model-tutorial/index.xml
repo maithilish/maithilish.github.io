@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Model Tutorial on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-model-tutorial/</link>
+    <link>https://www.codetab.org/tags/gwt-model-tutorial/</link>
     <description>Recent content in Gwt Model Tutorial on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 13:35:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-model-tutorial/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-model-tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Model - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/model/model/</link>
+      <link>https://www.codetab.org/tutorial/gwt/model/model/</link>
       <pubDate>Thu, 10 Jan 2019 13:35:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/model/model/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/model/model/</guid>
       <description>Chapter 5. Model Domain Model Data model of the application consists of following classes
  Symbol – holds details about a symbol
  DataGroup – holds various categories of data like BS (Balance Sheet), PL (Profit and Loss), CF (Cash Flow) etc

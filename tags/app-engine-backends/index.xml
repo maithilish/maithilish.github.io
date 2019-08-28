@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>App Engine Backends on Codetab</title>
-    <link>http://www.codetab.org/tags/app-engine-backends/</link>
+    <link>https://www.codetab.org/tags/app-engine-backends/</link>
     <description>Recent content in App Engine Backends on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 16:02:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/app-engine-backends/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/app-engine-backends/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GAE Backends - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/</link>
+      <link>https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/</link>
       <pubDate>Thu, 10 Jan 2019 16:02:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/</guid>
       <description>11.4. Backends So far, App Engine handled file upload, cache ops and task execution through a default frontend instance. This instance has 60 seconds deadline for HTTP requests and 10 minutes deadline for tasks and a low memory cap of 128MB.
 App Engine Backends allows us to configure additional instances to overcome these limits. App Engine Backends are special instances that have no request deadlines and comes with higher memory and CPU limits, and provides persistent state across requests.</description>
     </item>

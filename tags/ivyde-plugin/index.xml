@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ivyde Plugin on Codetab</title>
-    <link>http://www.codetab.org/tags/ivyde-plugin/</link>
+    <link>https://www.codetab.org/tags/ivyde-plugin/</link>
     <description>Recent content in Ivyde Plugin on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 21:41:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/ivyde-plugin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/ivyde-plugin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IvyDE Eclipse Plugin - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/</link>
       <pubDate>Thu, 10 Jan 2019 21:41:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/</guid>
       <description>Command line Apache Ivy was quite helpful to learn Ivy concepts and basic tasks, but it is a bit difficult to work with that in an IDE. IvyDE Plugin for Eclipse, which bundles Apache Ivy and Ivy Ant tasks, enables Eclipse projects to exploit the full benefits of Apache Ivy for project dependency management.
 Before proceeding further, install IvyDE Plugin for Eclipse as explained in Apache Ivy and IvyDE Installation.</description>
     </item>

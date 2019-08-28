@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Borg Backup Automate Python Script on Codetab</title>
-    <link>http://www.codetab.org/tags/borg-backup-automate-python-script/</link>
+    <link>https://www.codetab.org/tags/borg-backup-automate-python-script/</link>
     <description>Recent content in Borg Backup Automate Python Script on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 27 Aug 2019 11:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/borg-backup-automate-python-script/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/borg-backup-automate-python-script/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automate Borg Backup</title>
-      <link>http://www.codetab.org/post/borg-backup-automate/</link>
+      <link>https://www.codetab.org/post/borg-backup-automate/</link>
       <pubDate>Tue, 27 Aug 2019 11:00:00 +0000</pubDate>
       
-      <guid>http://www.codetab.org/post/borg-backup-automate/</guid>
+      <guid>https://www.codetab.org/post/borg-backup-automate/</guid>
       <description>The previous post, Borg Backup, explained installation and basics of Borg, and this post introduces Pybs, a simple python script to automate backups in Linux systems. To automate the backups, Pybs uses Python, YAML, Borg and Systemd. For non-linux platforms use some other task scheduler in place of Systemd.
 Installation Download Pybs from Github and extract it in your home dir.
 Pybs, by default, uses Borg repository at $HOME/backup/borgrepo located in user home directory, and for sake of explanation, we stick with it.</description>

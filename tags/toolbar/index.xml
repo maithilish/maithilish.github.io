@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Toolbar on Codetab</title>
-    <link>http://www.codetab.org/tags/toolbar/</link>
+    <link>https://www.codetab.org/tags/toolbar/</link>
     <description>Recent content in Toolbar on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 20:03:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/toolbar/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/toolbar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Toolbar - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/toolbar/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/toolbar/</link>
       <pubDate>Thu, 10 Jan 2019 20:03:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/toolbar/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/toolbar/</guid>
       <description>6.8. Toolbar FactTable displays the latest available data for a category, but the user may also like to view data for previous periods, and through ToolbarItem user may navigate Forward or Backward.
  Figure 6.11. Toolbar Following UI declaration adds ToolbarItem to FactTable.
 in.fins.client.content/Snapshot.ui.xml

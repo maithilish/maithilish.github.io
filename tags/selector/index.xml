@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Selector on Codetab</title>
-    <link>http://www.codetab.org/tags/selector/</link>
+    <link>https://www.codetab.org/tags/selector/</link>
     <description>Recent content in Selector on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Jan 2019 04:34:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/selector/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/selector/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Selector - Scoopi Web Scraper - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/</link>
       <pubDate>Sat, 12 Jan 2019 04:34:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/</guid>
       <description>Query, Region and Field In this chapter we describe how to build query using JSoup Selectors.
 Selectors In Example-1, we query price data from defs/examples/page/acme-quote.html page. The price snippet from this page is
 &amp;lt;div id=&amp;#34;price_tick&amp;#34;&amp;gt; &amp;lt;span id=&amp;#34;price_tick_span&amp;#34;&amp;gt; &amp;lt;strong&amp;gt;315.25&amp;lt;/strong&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; To access the value the JSoup selector is
@@ -25,10 +25,10 @@ div#price_tick/*  Use Chrome to get Selector Chrome browser can assist you in co
     
     <item>
       <title>Selector - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</link>
       <pubDate>Fri, 11 Jan 2019 23:10:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</guid>
       <description>Query, Block and Selector So far in this guide, we have covered the basics locators, tasks and datadefs. In this chapter we review selectors and also, show how to get selector or xpath using Firefox or Chrome browsers and fine tune it with Query Analyzer.
 Selector In Scoopi, selector is a common term which refers either to the selector (Jsoup) or to the xpath (HtmlUnit or Selenium driver) that is used to scrape data from the page.</description>
     </item>

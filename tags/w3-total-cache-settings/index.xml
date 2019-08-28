@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>W3 Total Cache Settings on Codetab</title>
-    <link>http://www.codetab.org/tags/w3-total-cache-settings/</link>
+    <link>https://www.codetab.org/tags/w3-total-cache-settings/</link>
     <description>Recent content in W3 Total Cache Settings on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 01:55:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/w3-total-cache-settings/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/w3-total-cache-settings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>W3 Cache Settings - WordPress Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</link>
+      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</link>
       <pubDate>Fri, 11 Jan 2019 01:55:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</guid>
       <description>W3 Total Cache - Page Cache In the previous chapter, we installed essential plugins to extend the functionality of the WordPress. In this chapters, we optimize the site to boost the performance.
 Out of the box, WordPress performance is suboptimal. Performance penalty stems from the dynamic nature of the pages and the scripting language used to develop the WordPress. Unlike regular programming languages, scripting languages like PHP interpret the code on the fly.</description>
     </item>

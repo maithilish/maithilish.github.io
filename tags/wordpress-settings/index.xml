@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Settings on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-settings/</link>
+    <link>https://www.codetab.org/tags/wordpress-settings/</link>
     <description>Recent content in Wordpress Settings on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 03:29:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-settings/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-settings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Settings - WordPress Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress/wordpress-settings/</link>
+      <link>https://www.codetab.org/tutorial/wordpress/wordpress-settings/</link>
       <pubDate>Fri, 11 Jan 2019 03:29:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress/wordpress-settings/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-settings/</guid>
       <description>In the previous chapter, we completed the WordPress Installation. In this chapter, we go through some of the important WordPress Settings that affect the site and some of them may become difficult to change in the future.
 WordPress Settings As objective of this tutorial is to guide beginners quickly to build a high performance WordPress site, we avoid discussion on each and every setting. WordPress Settings are well documented in WordPress official Codex - WordPress Administration Screen.</description>
     </item>

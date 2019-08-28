@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Codetab</title>
-    <link>http://www.codetab.org/projects/</link>
+    <link>https://www.codetab.org/projects/</link>
     <description>Recent content in Projects on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scoopi</title>
-      <link>http://www.codetab.org/projects/scoopi-web-scraper/</link>
+      <link>https://www.codetab.org/projects/scoopi-web-scraper/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.codetab.org/projects/scoopi-web-scraper/</guid>
+      <guid>https://www.codetab.org/projects/scoopi-web-scraper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Share on Social</title>
-      <link>http://www.codetab.org/projects/share-on-social/</link>
+      <link>https://www.codetab.org/projects/share-on-social/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.codetab.org/projects/share-on-social/</guid>
+      <guid>https://www.codetab.org/projects/share-on-social/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fins Demo</title>
-      <link>http://www.codetab.org/projects/gwt/</link>
+      <link>https://www.codetab.org/projects/gwt/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.codetab.org/projects/gwt/</guid>
+      <guid>https://www.codetab.org/projects/gwt/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache Ivy Ant Tasks on Codetab</title>
-    <link>http://www.codetab.org/tags/apache-ivy-ant-tasks/</link>
+    <link>https://www.codetab.org/tags/apache-ivy-ant-tasks/</link>
     <description>Recent content in Apache Ivy Ant Tasks on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 22:51:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/apache-ivy-ant-tasks/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/apache-ivy-ant-tasks/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ivy Ant Tasks - Apache Ivy Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-ivy/ant-tasks/</link>
+      <link>https://www.codetab.org/tutorial/apache-ivy/ant-tasks/</link>
       <pubDate>Thu, 10 Jan 2019 22:51:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-ivy/ant-tasks/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-ivy/ant-tasks/</guid>
       <description>This chapter explains some of the frequently used Apache Ivy Ant Tasks and Apache Ivy terminologies. We will explore them in detail throughout the tutorial.
 Apache Ivy Ant Tasks
 Apache Ivy comes with its own set of Ant Tasks which can be called from Ant build file. In this tutorial, we cover following Ivy Tasks

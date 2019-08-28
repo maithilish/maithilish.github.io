@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Multisite Plugin Unit Tests on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-multisite-plugin-unit-tests/</link>
+    <link>https://www.codetab.org/tags/wordpress-multisite-plugin-unit-tests/</link>
     <description>Recent content in Wordpress Multisite Plugin Unit Tests on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 14:12:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-multisite-plugin-unit-tests/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-multisite-plugin-unit-tests/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Multi Site Unit Test - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/</link>
       <pubDate>Fri, 11 Jan 2019 14:12:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/</guid>
       <description>12.8. WordPress Multisite Plugin Unit Tests In the previous blogs we covered single site unit tests. In this concluding blog of the series, we explain WordPress Multisite Plugin unit tests.
 As explained earlier, WordPress Test Lib creates an in-memory WordPress instance to run unit tests. The test instance is actually a WordPress single site installation and it is not useful to carryout the multisite tests.
 In Enable WordPress Multisite, we saw how to go about WordPress Multisite Installation wherein we used wp-config.</description>

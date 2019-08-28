@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Clientbundle on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-clientbundle/</link>
+    <link>https://www.codetab.org/tags/gwt-clientbundle/</link>
     <description>Recent content in Gwt Clientbundle on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 13:17:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-clientbundle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-clientbundle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ClientBundle - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/menu/menu/</link>
+      <link>https://www.codetab.org/tutorial/gwt/menu/menu/</link>
       <pubDate>Thu, 10 Jan 2019 13:17:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/menu/menu/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/menu/menu/</guid>
       <description>Chapter 4. Menu This Chapter covers design of Menu system used by Fins. Menu contains three widgets
  MenuItem
  MenuHeader

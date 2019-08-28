@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pagination on Codetab</title>
-    <link>http://www.codetab.org/tags/pagination/</link>
+    <link>https://www.codetab.org/tags/pagination/</link>
     <description>Recent content in Pagination on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Jan 2019 06:40:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/pagination/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/pagination/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</link>
       <pubDate>Sat, 12 Jan 2019 06:40:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</guid>
       <description>Pagination Many pages provide pagination buttons or links to navigate through series of pages. We can use link locators described in previous chapter to scrape pages using pagination.
 The Books example folder contains three HTML pages which has pagination link at the bottom of pages.
 defs/examples/book/page/page-1.html

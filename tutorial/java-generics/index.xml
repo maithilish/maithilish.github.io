@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java Generics Tutorial - CodeTab on Codetab</title>
-    <link>http://www.codetab.org/tutorial/java-generics/</link>
+    <link>https://www.codetab.org/tutorial/java-generics/</link>
     <description>Recent content in Java Generics Tutorial - CodeTab on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java Generics - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/introduction/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/introduction/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/introduction/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid>
       <description>Java Generics There are enough tutorials on Java Generics. However, many are either too easy or too difficult to get a clear view of the subject. In this series, we focus on confusing aspects and try to explain them with multiple examples.
 If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as we don&amp;rsquo;t cover the basics. Even after going through it if certain aspects are not clear, then try this tutorial.</description>
     </item>
     
     <item>
       <title>Java Generics Subtype - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/subtype/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/subtype/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/subtype/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/subtype/</guid>
       <description>Generic Inheritance and Subtypes 
 To explain Generic inheritance, subtypes and wildcards, we use following class hierarchy:
  The Food, Snack and Cookie classes are as below. Fruit and Apple classes are similar.
@@ -35,20 +35,20 @@ public class Food { public void foodMethod(){ } } public class Snack extends Foo
     
     <item>
       <title>Java Generics Wildcards - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/wildcards/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/wildcards/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/wildcards/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/wildcards/</guid>
       <description>Wildcards The previous tutorial explained that there is no relationship, what so ever, between List&amp;lt;Food&amp;gt;, List&amp;lt;Snack&amp;gt; and List&amp;lt;Cookie&amp;gt;,even though Food, Snack and Cookie belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
 Unbounded Wildcard Consider a method to display the elements of a List.</description>
     </item>
     
     <item>
       <title>Java Generics Bounded Wildcards - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/bounded-wildcards/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/bounded-wildcards/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</guid>
       <description>Bounded Wildcards We can use wildcard ? with either upper or lower bound.
 Extends The &amp;lt;? extends Type&amp;gt; is a wildcard with upper bound. Extends allows us to restrict the unbounded List&amp;lt;?&amp;gt; to some type and its subtypes. For example, we want restrict display method only to Food and its subclasses and for change list parameter as below.
 public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the list elements  } display(new ArrayList&amp;lt;Food&amp;gt;()); display(new ArrayList&amp;lt;Snack&amp;gt;()); display(new ArrayList&amp;lt;Cookie&amp;gt;()); display(new ArrayList&amp;lt;Fruit&amp;gt;()); display(new ArrayList&amp;lt;Apple&amp;gt;()); display(new ArrayList&amp;lt;String&amp;gt;()); // error  display(new ArrayList&amp;lt;Integer&amp;gt;()); // error  Now display() accepts only the list of Food and its subtypes - Snack, Cookie, Fruit, Apple and nothing else.</description>
@@ -56,20 +56,20 @@ public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the li
     
     <item>
       <title>Java Generics Type Parameter Bounds - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
       <description>Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
 public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
     </item>
     
     <item>
       <title>Java Generics Design - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/java-generics/design/</link>
+      <link>https://www.codetab.org/tutorial/java-generics/design/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/java-generics/design/</guid>
+      <guid>https://www.codetab.org/tutorial/java-generics/design/</guid>
       <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
 Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
 The union method, for example, takes two sets and returns a new set which is union of two.</description>

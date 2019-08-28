@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Debug Info on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-debug-info/</link>
+    <link>https://www.codetab.org/tags/wordpress-debug-info/</link>
     <description>Recent content in Wordpress Debug Info on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 10:32:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-debug-info/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-debug-info/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Debug Info - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/</link>
       <pubDate>Fri, 11 Jan 2019 10:32:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/</guid>
       <description>8.3. WordPress Debug Info To support Share on Social Plugin developed in the tutorial, plugin need to collect debug info. In this tutorial, we describe the steps to dump debug info.
 After the release, sooner or later, plugin developer has to face bug reports and support requests. To troubleshoot, developer requires inputs from the user as well as debug info to understand the plugin usage by the user. In Share on Social Plugin, when user enables Debug in Settings page, plugin collects info about Share Lockers used in a page and dump the debug info as comments at the end of the pages.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Analytics on Codetab</title>
-    <link>http://www.codetab.org/tags/google-analytics/</link>
+    <link>https://www.codetab.org/tags/google-analytics/</link>
     <description>Recent content in Google Analytics on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 02:07:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/google-analytics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/google-analytics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google Analytics - WordPress Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/</link>
+      <link>https://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/</link>
       <pubDate>Fri, 11 Jan 2019 02:07:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/</guid>
       <description>Google Analytics for WordPress In the previous chapter, we finished Search Engine Optimization. In this chapter, we cover a related area, Webmaster Tools, that helps us tweak some of the left out areas. To start with, we try out Google Analytics and get insights into visitors who visit the site.
 There are many products and plugins to gather and present analytics about the traffic to a WordPress site. We choose Google Analytics for our site for the ease of setup, customizable dashboard and reports.</description>
     </item>

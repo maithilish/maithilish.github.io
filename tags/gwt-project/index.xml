@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Project on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-project/</link>
+    <link>https://www.codetab.org/tags/gwt-project/</link>
     <description>Recent content in Gwt Project on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 14:01:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project Setup - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/create-project/</link>
+      <link>https://www.codetab.org/tutorial/gwt/create-project/</link>
       <pubDate>Thu, 10 Jan 2019 14:01:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/create-project/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/create-project/</guid>
       <description>Chapter 2. Create Project In this chapter, we are going to create a plain GWT Project and then add other components, those makes up a GWT project, by hand.
 Create barebone GWT project GWT project can be created in two ways, command line tool webAppCreator or Eclipse New Web Application Project wizard .
 Let&amp;rsquo;s use New Web Application wizard to create GWT project. Choose  GDT Pulldown → New Web Application Project &amp;hellip; or File → New → Web Application Project and fill details as below</description>
@@ -24,10 +24,10 @@ Let&amp;rsquo;s use New Web Application wizard to create GWT project. Choose  GD
     
     <item>
       <title>Project Code - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/gwt-project-code/</link>
+      <link>https://www.codetab.org/tutorial/gwt/gwt-project-code/</link>
       <pubDate>Thu, 10 Jan 2019 20:33:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/gwt-project-code/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/gwt-project-code/</guid>
       <description>GWT Project Code The code for complete project covered in this tutorial can be downloaded from GitHub
 Source code of the GWT project is archived into part-1.zip, part-2.zip etc., corresponding to parts of the book. Each archive contains Chapter or Section wise code. Instead of sifting through a fully developed project, chapter/section wise code helps one to understand the source without much effort. Download section also contains a standalone java application, RStore, which is used to load the data to database in Part 2 of the book.</description>
     </item>

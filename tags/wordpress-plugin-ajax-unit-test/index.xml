@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Plugin Ajax Unit Test on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-plugin-ajax-unit-test/</link>
+    <link>https://www.codetab.org/tags/wordpress-plugin-ajax-unit-test/</link>
     <description>Recent content in Wordpress Plugin Ajax Unit Test on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 13:44:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-ajax-unit-test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-plugin-ajax-unit-test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ajax Unit Tests - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/</link>
       <pubDate>Fri, 11 Jan 2019 13:44:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/</guid>
       <description>12.7. WordPress Plugin Ajax Unit Tests In the previous six blogs, we gone through the unit tests for the WordPress plugin regular methods. In this blog, we explore WordPress Plugin Ajax unit tests.
 The normal test cases extend WP_UnitTestCase. For Ajax unit tests, WordPress Test Library comes with a separate class WP_Ajax_UnitTestCase. Moreover, the construction of the test methods are also bit different from the regular ones.
 Ajax Test Case Group and Files While normal test cases takes very little time to complete, WordPress Plugin Ajax tests are inherently very slow.</description>

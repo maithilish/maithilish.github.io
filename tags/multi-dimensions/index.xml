@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multi Dimensions on Codetab</title>
-    <link>http://www.codetab.org/tags/multi-dimensions/</link>
+    <link>https://www.codetab.org/tags/multi-dimensions/</link>
     <description>Recent content in Multi Dimensions on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Jan 2019 06:14:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/multi-dimensions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/multi-dimensions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</link>
       <pubDate>Sat, 12 Jan 2019 06:14:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</guid>
       <description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
 The defs/examples/book/page/page-1.html page lists details of 20 books similar to an e-commerce site. The Example 1 extracts one book and its related data.
 The snippet of HTML of a book item is

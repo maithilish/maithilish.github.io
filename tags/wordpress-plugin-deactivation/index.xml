@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Plugin Deactivation on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-plugin-deactivation/</link>
+    <link>https://www.codetab.org/tags/wordpress-plugin-deactivation/</link>
     <description>Recent content in Wordpress Plugin Deactivation on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 12:01:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-deactivation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-plugin-deactivation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Deactivation - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</link>
       <pubDate>Fri, 11 Jan 2019 12:01:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</guid>
       <description>11.4. WordPress Plugin Deactivation In the previous blogs, we installed WordPress Multisite and learned to code plugin multisite activation. WordPress Plugin Deactivation follows similar pattern but in Share on Social Plugin it has some minor twists.
 Share on Social Plugin uses the same class file class-activator.php for deactivation too. In Sos_Activator::setup() method we register Sos_Activator::deactivate() as the deactivation method using WordPress function register_deactivation_hook().
 share-on-social/admin/class-activator.php

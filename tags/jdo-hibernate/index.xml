@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jdo Hibernate on Codetab</title>
-    <link>http://www.codetab.org/tags/jdo-hibernate/</link>
+    <link>https://www.codetab.org/tags/jdo-hibernate/</link>
     <description>Recent content in Jdo Hibernate on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 19:22:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/jdo-hibernate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/jdo-hibernate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JDO – Hibernate - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/database/retrieve/</link>
+      <link>https://www.codetab.org/tutorial/gwt/database/retrieve/</link>
       <pubDate>Thu, 10 Jan 2019 19:22:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/database/retrieve/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/database/retrieve/</guid>
       <description>8.3. Retrieve In this section, we retrieve persisted symbols through a variety of ORM like JDO, Hibernate and MyBatis. We do so, just to demonstrate that objects persisted through an ORM are readily retrievable through others.
 JDO In JDO, we use PersistenceManager to retrieve an object from the database.
 PersistenceManager pm = pmf.getPersistenceManager(); try { Symbol symbol = pm.getObjectById(Symbol.class, name); // use the object  } finally { pm.close(); } Sometimes, we may be like to retrieve only a certain fields of an object, and for this, JDO supports JDOQL and SQL query.</description>

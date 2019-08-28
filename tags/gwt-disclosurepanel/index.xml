@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Disclosurepanel on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-disclosurepanel/</link>
+    <link>https://www.codetab.org/tags/gwt-disclosurepanel/</link>
     <description>Recent content in Gwt Disclosurepanel on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 17:51:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-disclosurepanel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-disclosurepanel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DisclosurePanel - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</link>
+      <link>https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</link>
       <pubDate>Thu, 10 Jan 2019 17:51:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/</guid>
       <description>6.6. FactDisclosePanel FactDisclosePanel shows or hide the Price, PB and PE graphs.
  Figure 6.6. FactDisclosePanel FactDisclosePanel (FDP) uses two GWT widgets, GWT DisclosurePanel and inner CaptionPanel. DisclosurePanel, contains header and a content panel, that discloses the underlying content when a user clicks the header, and CaptionPanel encloses its contents with border and a caption on upper left corner.
 in.fins.client.widget/FactDisclosePanel.java

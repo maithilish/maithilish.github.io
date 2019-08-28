@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multi Module Inheritance on Codetab</title>
-    <link>http://www.codetab.org/tags/multi-module-inheritance/</link>
+    <link>https://www.codetab.org/tags/multi-module-inheritance/</link>
     <description>Recent content in Multi Module Inheritance on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 21:55:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/multi-module-inheritance/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/multi-module-inheritance/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Multi Module Inheritance - Apache Maven Tutorial – CodeTab</title>
-      <link>http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/</link>
+      <link>https://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/</link>
       <pubDate>Fri, 11 Jan 2019 21:55:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/</guid>
+      <guid>https://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/</guid>
       <description>Multi Module Inheritance The previous tutorials explained the structure of simple and hierarchical multi module project. This tutorial explain the use of inheritance feature to compact and streamline the module POMs.
 The example code extended-multi, used in this tutorial, is available at GitHub Maven Examples. Download the examples as zip and extract it to some location or clone it with git.
 Most elements from the parent POM are inherited by its children.</description>

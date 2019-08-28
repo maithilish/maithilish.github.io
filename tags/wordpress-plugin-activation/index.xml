@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress Plugin Activation on Codetab</title>
-    <link>http://www.codetab.org/tags/wordpress-plugin-activation/</link>
+    <link>https://www.codetab.org/tags/wordpress-plugin-activation/</link>
     <description>Recent content in Wordpress Plugin Activation on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 11:53:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/wordpress-plugin-activation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/wordpress-plugin-activation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Activation - WordPress Plugin Development - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</link>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</link>
       <pubDate>Fri, 11 Jan 2019 11:53:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</guid>
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/</guid>
       <description>While it is true that WordPress takes care of the majority of the activation and deactivation process, these phases are ideal to carryout any specific customizations related to the plugin. With this background, in this chapter we cover WordPress Plugin Activation, Deactivation and Uninstall phases in detail and also, how to deal them in WordPress Multisite Installations.
 11.1. WordPress Plugin Activation In Share on Social Plugin, we use Activation phase to remove stale basic locker that is left over by the previous installation and also, add settings such as plugin version etc.</description>
     </item>

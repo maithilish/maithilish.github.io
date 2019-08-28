@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gwt Anchor on Codetab</title>
-    <link>http://www.codetab.org/tags/gwt-anchor/</link>
+    <link>https://www.codetab.org/tags/gwt-anchor/</link>
     <description>Recent content in Gwt Anchor on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 11:37:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gwt-anchor/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gwt-anchor/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Anchors - GWT Tutorial - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gwt/menu/menu-parts/</link>
+      <link>https://www.codetab.org/tutorial/gwt/menu/menu-parts/</link>
       <pubDate>Thu, 10 Jan 2019 11:37:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gwt/menu/menu-parts/</guid>
+      <guid>https://www.codetab.org/tutorial/gwt/menu/menu-parts/</guid>
       <description>4.2. Menu MenuHeader MenuHeader widget is the header for the menu bar stacks. Add ui and class file to in.fins.client.widget package.
 in.fins.client.widget/MenuHeader.ui.xml
 &amp;lt;!DOCTYPE ui:UiBinder SYSTEM &amp;#34;http://dl.google.com/gwt/DTD/xhtml.ent&amp;#34;&amp;gt; &amp;lt;ui:UiBinder xmlns:ui=&amp;#34;urn:ui:com.google.gwt.uibinder&amp;#34; xmlns:g=&amp;#34;urn:import:com.google.gwt.user.client.ui&amp;#34;&amp;gt; &amp;lt;ui:with type=&amp;#34;in.fins.client.FinsResources&amp;#34; field=&amp;#34;resource&amp;#34; /&amp;gt; &amp;lt;g:SimplePanel&amp;gt; &amp;lt;g:HorizontalPanel&amp;gt; &amp;lt;g:Image ui:field=&amp;#34;image&amp;#34; /&amp;gt; &amp;lt;g:Image resource=&amp;#34;{resource.blank}&amp;#34; /&amp;gt; &amp;lt;g:HTML ui:field=&amp;#34;html&amp;#34; /&amp;gt; &amp;lt;/g:HorizontalPanel&amp;gt; &amp;lt;/g:SimplePanel&amp;gt; &amp;lt;/ui:UiBinder&amp;gt;  in.fins.client.widget/MenuHeader.java

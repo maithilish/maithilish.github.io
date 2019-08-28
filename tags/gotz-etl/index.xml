@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gotz Etl on Codetab</title>
-    <link>http://www.codetab.org/tags/gotz-etl/</link>
+    <link>https://www.codetab.org/tags/gotz-etl/</link>
     <description>Recent content in Gotz Etl on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 18:43:00 +0530</lastBuildDate>
     
-	<atom:link href="http://www.codetab.org/tags/gotz-etl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.codetab.org/tags/gotz-etl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gotz ETL - Gotz ETL - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gotz-etl/</link>
+      <link>https://www.codetab.org/tutorial/gotz-etl/</link>
       <pubDate>Fri, 11 Jan 2019 18:43:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gotz-etl/</guid>
+      <guid>https://www.codetab.org/tutorial/gotz-etl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction - Gotz ETL - CodeTab</title>
-      <link>http://www.codetab.org/tutorial/gotz-etl/introduction/</link>
+      <link>https://www.codetab.org/tutorial/gotz-etl/introduction/</link>
       <pubDate>Fri, 11 Jan 2019 18:43:00 +0530</pubDate>
       
-      <guid>http://www.codetab.org/tutorial/gotz-etl/introduction/</guid>
+      <guid>https://www.codetab.org/tutorial/gotz-etl/introduction/</guid>
       <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
 Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:</description>
     </item>
