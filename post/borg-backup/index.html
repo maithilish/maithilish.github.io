@@ -38,7 +38,7 @@
         "datePublished": "2019-08-27 10:00:00 +0000 UTC",
         "dateModified" : "2019-08-27 10:00:00 +0000 UTC",
         "url" : "/post/borg-backup/",
-        "wordCount" : "858",
+        "wordCount" : "887",
         "keywords" : [ "borg backup features basics","Blog" ]
     }
 </script>
@@ -155,7 +155,7 @@
 <div class="container-fluid">
   <div class="row">&nbsp;</div>
   <div class="row">
-    <aside id="sidebar" class="col-md-2">
+    <aside id="sidebar" class="col-md-3">
       <div class="row my-5 justify-content-center">
 <div>&nbsp;</div>
 
@@ -172,7 +172,7 @@
 </div>
     </aside>
 
-    <div id="contentspace" class="col-md-8 post-basic">
+    <div id="contentspace" class="col-md-7 post-basic">
       <h2>Borg Backup</h2>
       <small class="text-muted">
         Aug 27, 2019 . 5 min read
@@ -311,7 +311,7 @@ Tuesday          Tue, 2019-07-30 10:45:14
 
 <p>We can obtain info about the repository using borg info command. The info from my borg repository is shown below:</p>
 <div class="highlight"><pre class="chroma"><code class="language-Screen" data-lang="Screen">    
-$ sudo borg info /cherry/borgrepo/
+$ borg info /cherry/borgrepo/
 
 Repository ID: 0307c0296168c2e75c357334b8ae
 Location: /cherry/borgrepo
@@ -329,10 +329,13 @@ Chunk index:                   27125               353185</code></pre></div>
 <h3 id="extract-archive">Extract Archive</h3>
 
 <p>Use extract command to retrieve data from the repository.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">         
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">$ mkdir tem
+$ <span class="nb">cd</span> tem         
 $ borg extract <span class="nv">$HOME</span>/borgrepo::Monday</code></pre></div>
+<p>Extract always writes into the current working directory, so make sure you cd to the right place before calling borg extract!</p>
+
 <p>You can pass &ndash;exclude option to exclude specific path or paths. We can also pass specific path to extract as below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">         
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">$ <span class="nb">cd</span> tem         
 $ borg extract <span class="nv">$HOME</span>/borgrepo::Monday  **/Documents/somefolder
      </code></pre></div>
 <h3 id="prune-repository">Prune Repository</h3>

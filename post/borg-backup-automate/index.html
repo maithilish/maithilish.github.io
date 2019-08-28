@@ -155,7 +155,7 @@
 <div class="container-fluid">
   <div class="row">&nbsp;</div>
   <div class="row">
-    <aside id="sidebar" class="col-md-2">
+    <aside id="sidebar" class="col-md-3">
       <div class="row my-5 justify-content-center">
 <div>&nbsp;</div>
 
@@ -172,7 +172,7 @@
 </div>
     </aside>
 
-    <div id="contentspace" class="col-md-8 post-basic">
+    <div id="contentspace" class="col-md-7 post-basic">
       <h2>Automate Borg Backup</h2>
       <small class="text-muted">
         Aug 27, 2019 . 4 min read
@@ -287,7 +287,7 @@ $ borg init -e none backup/borgrepo
     </code></pre></div>
 <p>Next, setup systemd daily backup.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
-$ mkdir .config/systemd/user -p
+$ mkdir -p .config/systemd/user
 $ cp pybs/systemd/*.service .config/systemd/user
 $ systemctl --user daemon-reload
 $ systemctl --user start pybs-daily
