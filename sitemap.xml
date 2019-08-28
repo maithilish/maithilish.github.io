@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.codetab.org/post/borg-backup/</loc>
+    <lastmod>2019-08-27T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.codetab.org/tutorial/java-generics/introduction/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
@@ -165,6 +170,11 @@
   <url>
     <loc>http://www.codetab.org/tutorial/java-generics/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.codetab.org/post/borg-backup-automate/</loc>
+    <lastmod>2019-08-27T11:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1313,6 +1323,11 @@
   </url>
   
   <url>
+    <loc>http://www.codetab.org/post/</loc>
+    <lastmod>2019-08-01T12:11:22+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.codetab.org/</loc>
     <lastmod>2019-01-07T12:11:22+05:30</lastmod>
   </url>
@@ -1440,6 +1455,18 @@
   <url>
     <loc>http://www.codetab.org/tags/appenders/</loc>
     <lastmod>2019-01-11T21:17:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.codetab.org/tags/borg-backup-automate-python-script/</loc>
+    <lastmod>2019-08-27T11:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.codetab.org/tags/borg-backup-features-basics/</loc>
+    <lastmod>2019-08-27T10:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

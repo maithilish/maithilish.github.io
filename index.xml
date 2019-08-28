@@ -12,13 +12,23 @@
     
     
     <item>
+      <title>Borg Backup</title>
+      <link>http://www.codetab.org/post/borg-backup/</link>
+      <pubDate>Tue, 27 Aug 2019 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.codetab.org/post/borg-backup/</guid>
+      <description>For long, I was looking for an ideal backup setup. Expectations were minimal;periodically backup set of folders from the main disk to secondary disk, compressing the files to save disk space, retaining the earlier sets and easy to learn, deploy and maintain. I tried and dropped many backup solutions because of cumbersome setup and steep learning curve.
+Finally, I chose Borg Backup for its sophistication and ease of use; thereupon, using it for more than a year now.</description>
+    </item>
+    
+    <item>
       <title>Java Generics - CodeTab</title>
       <link>http://www.codetab.org/tutorial/java-generics/introduction/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
       <guid>http://www.codetab.org/tutorial/java-generics/introduction/</guid>
       <description>Java Generics There are enough tutorials on Java Generics. However, many are either too easy or too difficult to get a clear view of the subject. In this series, we focus on confusing aspects and try to explain them with multiple examples.
-If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as we don&amp;rsquo;t cover the basics. Even after going through it, if certain aspects are not clear then go through this tutorial.</description>
+If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as we don&amp;rsquo;t cover the basics. Even after going through it if certain aspects are not clear, then try this tutorial.</description>
     </item>
     
     <item>
@@ -187,6 +197,17 @@ Like many other Web sites, http://www.</description>
       
       <guid>http://www.codetab.org/home/tutorials/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Automate Borg Backup</title>
+      <link>http://www.codetab.org/post/borg-backup-automate/</link>
+      <pubDate>Tue, 27 Aug 2019 11:00:00 +0000</pubDate>
+      
+      <guid>http://www.codetab.org/post/borg-backup-automate/</guid>
+      <description>The previous post, Borg Backup, explained installation and basics of Borg, and this post introduces Pybs, a simple python script to automate backups in Linux systems. To automate the backups, Pybs uses Python, YAML, Borg and Systemd. For non-linux platforms use some other task scheduler in place of Systemd.
+Installation Download Pybs from Github and extract it in your home dir.
+Pybs, by default, uses Borg repository at $HOME/backup/borgrepo located in user home directory, and for sake of explanation, we stick with it.</description>
     </item>
     
     <item>

@@ -48,7 +48,8 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<link rel="stylesheet" href="/css/vendor.min.06af1451a3c5b3b70a0c0bd7be26092e20e9c31251c08d44dbe1486a9a2a414c.css" integrity="sha256-Bq8UUaPFs7cKDAvXviYJLiDpwxJRwI1E2&#43;FIapoqQUw=">
 
 <title>FactPanel - GWT Tutorial - CodeTab</title></head>
 
@@ -102,6 +103,23 @@
                     <a class="nav-link" href="/#projects"  >
                         
                         <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/post"  >
+                        
+                        <span>Posts</span>
                         
                     </a>
                 </li>
@@ -577,8 +595,80 @@
 <div>&nbsp;</div>
 </div>
     </aside>
-    <main id="content" class="col-md-8 post-basic">
-      
+    <div id="contentbar" class="col-md-8">
+      <div id="share" class="row justify-content-end">
+
+
+
+
+
+<div title=twitter>
+    <a href="https://twitter.com/intent/tweet?url=http://www.codetab.org/tutorial/gwt/content/factpanel/&amp;text=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-twitter-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=facebook>
+    <a href="https://www.facebook.com/sharer.php?u=http://www.codetab.org/tutorial/gwt/content/factpanel/&amp;t=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-facebook-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=linkedin>
+    <a href="https://www.linkedin.com/shareArticle?url=http://www.codetab.org/tutorial/gwt/content/factpanel/&amp;title=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-linkedin-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=email>
+    <a href="mailto:?subject=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab&amp;body=http://www.codetab.org/tutorial/gwt/content/factpanel/" target="_blank" rel="noopener">
+        <i class="icon-mail-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=whatsapp>
+    <a href="https://web.whatsapp.com/send?text=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab%20http://www.codetab.org/tutorial/gwt/content/factpanel/" target="_blank" rel="noopener">
+        <i class="icon-whatsapp text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=reddit>
+    <a href="https://reddit.com/submit?url=http://www.codetab.org/tutorial/gwt/content/factpanel/&amp;title=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-reddit-alien text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=weibo>
+    <a href="https://service.weibo.com/share/share.php?url=http://www.codetab.org/tutorial/gwt/content/factpanel/&amp;title=FactPanel%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-weibo text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<i class="icon-blank ctab-transparent"></i></div>
+      <div class="row">
+        <main id="content" class="col-md-11 post-basic">
+          
 
 <h2 id="6-5-factpanel">6.5. FactPanel</h2>
 
@@ -661,6 +751,7 @@ Low&rdquo;.</p>
 displays the fact values.</p>
 
 
+
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -674,6 +765,8 @@ displays the fact values.</p>
 </script>
 
 <div>&nbsp;</div>
+
+
 
 
 <h5 id="symbolevent-and-symbolaction">SymbolEvent and SymbolAction</h5>
@@ -797,6 +890,7 @@ selects a name.</p>
                 <span class="k">return</span> <span class="n">fp</span><span class="o">;</span>
         <span class="o">}</span></code></pre></div>
 
+
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -810,6 +904,7 @@ selects a name.</p>
 </script>
 
 <div>&nbsp;</div>
+
 
 
 <h2 id="filtermap">FilterMap</h2>
@@ -827,7 +922,11 @@ this in the next part when we cover the RPC calls.</p>
 <p>This pattern of event handling is used extensively for the custom widget
 from now onwards.</p>
 
-    </main>
+        </main>
+        <aside id="sidebar-right" class="col-md-1">
+        </aside>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -839,20 +938,23 @@ from now onwards.</p>
                 <a class="text-muted" href="/privacy-policy">Privacy</a>
             </div>
             <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
+                        rel="noopener">Hugo</a></span>
             </div>
         </div>
         <div class="col mr-auto">
             <span class="float-right">
                 <a href="#" id="back_to_top">
-                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                    <i class="icon-up-open h1 text-secondary"></i>
                 </a>
             </span>
         </div>
     </div>
 
 </footer>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
 
 

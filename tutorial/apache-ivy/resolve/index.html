@@ -48,7 +48,8 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+
+<link rel="stylesheet" href="/css/vendor.min.06af1451a3c5b3b70a0c0bd7be26092e20e9c31251c08d44dbe1486a9a2a414c.css" integrity="sha256-Bq8UUaPFs7cKDAvXviYJLiDpwxJRwI1E2&#43;FIapoqQUw=">
 
 <title>Resolve - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -102,6 +103,23 @@
                     <a class="nav-link" href="/#projects"  >
                         
                         <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/post"  >
+                        
+                        <span>Posts</span>
                         
                     </a>
                 </li>
@@ -291,8 +309,80 @@
 <div>&nbsp;</div>
 </div>
     </aside>
-    <main id="content" class="col-md-8 post-basic">
-      <p>Resolve task, resolve dependencies described in ivy.xml and places the
+    <div id="contentbar" class="col-md-8">
+      <div id="share" class="row justify-content-end">
+
+
+
+
+
+<div title=twitter>
+    <a href="https://twitter.com/intent/tweet?url=http://www.codetab.org/tutorial/apache-ivy/resolve/&amp;text=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-twitter-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=facebook>
+    <a href="https://www.facebook.com/sharer.php?u=http://www.codetab.org/tutorial/apache-ivy/resolve/&amp;t=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-facebook-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=linkedin>
+    <a href="https://www.linkedin.com/shareArticle?url=http://www.codetab.org/tutorial/apache-ivy/resolve/&amp;title=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-linkedin-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=email>
+    <a href="mailto:?subject=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab&amp;body=http://www.codetab.org/tutorial/apache-ivy/resolve/" target="_blank" rel="noopener">
+        <i class="icon-mail-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=whatsapp>
+    <a href="https://web.whatsapp.com/send?text=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab%20http://www.codetab.org/tutorial/apache-ivy/resolve/" target="_blank" rel="noopener">
+        <i class="icon-whatsapp text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=reddit>
+    <a href="https://reddit.com/submit?url=http://www.codetab.org/tutorial/apache-ivy/resolve/&amp;title=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-reddit-alien text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=weibo>
+    <a href="https://service.weibo.com/share/share.php?url=http://www.codetab.org/tutorial/apache-ivy/resolve/&amp;title=Resolve%20-%20Apache%20Ivy%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
+        <i class="icon-weibo text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<i class="icon-blank ctab-transparent"></i></div>
+      <div class="row">
+        <main id="content" class="col-md-11 post-basic">
+          <p>Resolve task, resolve dependencies described in ivy.xml and places the
 resolved dependencies in the Apache Ivy cache.</p>
 
 <p>Let&rsquo;s go through a sample project to understand this important concept.
@@ -426,6 +516,7 @@ Dependency line &lt;dependency org=&ldquo;log4j&rdquo; name=&ldquo;log4j&rdquo; 
 transitive=&ldquo;false&rdquo; /&gt; downloads just log4j.</p>
 
 
+
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -439,6 +530,8 @@ transitive=&ldquo;false&rdquo; /&gt; downloads just log4j.</p>
 </script>
 
 <div>&nbsp;</div>
+
+
 
 
 <p>Ivy dependency line</p>
@@ -490,6 +583,7 @@ contains the example class to run some examples and so, don&rsquo;t delete
 that.</p>
 
 
+
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -503,6 +597,7 @@ that.</p>
 </script>
 
 <div>&nbsp;</div>
+
 
 
 <p>Apache Ivy Cache</p>
@@ -519,7 +614,11 @@ Beyond that, we need not bother much about the internals of the cache.</p>
 place them in the cache and the next chapter covers tasks to expose the
 resolved artifacts to the project.</p>
 
-    </main>
+        </main>
+        <aside id="sidebar-right" class="col-md-1">
+        </aside>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -531,20 +630,23 @@ resolved artifacts to the project.</p>
                 <a class="text-muted" href="/privacy-policy">Privacy</a>
             </div>
             <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
+                        rel="noopener">Hugo</a></span>
             </div>
         </div>
         <div class="col mr-auto">
             <span class="float-right">
                 <a href="#" id="back_to_top">
-                    <img src="/icon/arrow-up.png" alt="Back to Top">
+                    <i class="icon-up-open h1 text-secondary"></i>
                 </a>
             </span>
         </div>
     </div>
 
 </footer>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
 
 

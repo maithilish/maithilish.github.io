@@ -12,7 +12,7 @@
     
     
     
-    <link rel="stylesheet" href="/css/vendor.min.fda72737edeb853fff288025d5ea04d671489f0f524e38c245ccf83306a19ab3.css" integrity="sha256-/acnN&#43;3rhT//KIAl1eoE1nFInw9STjjCRcz4MwahmrM=">
+    <link rel="stylesheet" href="/css/vendor.min.06af1451a3c5b3b70a0c0bd7be26092e20e9c31251c08d44dbe1486a9a2a414c.css" integrity="sha256-Bq8UUaPFs7cKDAvXviYJLiDpwxJRwI1E2&#43;FIapoqQUw=">
 
     <title>Codetab</title>
 </head>
@@ -79,6 +79,23 @@
                 
                 
                 
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/post"  >
+                        
+                        <span>Posts</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
                 
                 
 
@@ -103,7 +120,9 @@
             <h1>404 - Page not found</h1>
         </div>
     </main>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
 
 
