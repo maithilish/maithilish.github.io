@@ -38,7 +38,7 @@
         "datePublished": "2019-08-27 11:00:00 +0000 UTC",
         "dateModified" : "2019-08-27 11:00:00 +0000 UTC",
         "url" : "/post/borg-backup-automate/",
-        "wordCount" : "632",
+        "wordCount" : "645",
         "keywords" : [ "borg backup automate python script","Blog" ]
     }
 </script>
@@ -175,7 +175,7 @@
     <div id="contentspace" class="col-md-8 post-basic">
       <h2>Automate Borg Backup</h2>
       <small class="text-muted">
-        Aug 27, 2019 . 3 min read
+        Aug 27, 2019 . 4 min read
       </small>
       <div id="share" class="row mx-0 justify-content-end">
 
@@ -260,7 +260,7 @@
 <p>Pybs, by default, uses Borg repository at <code>$HOME/backup/borgrepo</code> located in user home directory, and for sake of explanation, we stick with it. However, for actual backup, the repository should be located in a separate disk or device, otherwise the backup is lost in case of system failure.</p>
 
 <p>To run, Pybs needs Python and Python YAML. Install them with,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">sudo apt install python python-yaml</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">$ sudo apt install python python-yaml</code></pre></div>
 <h2 id="pybs-setup">Pybs Setup</h2>
 
 <p>In all files, the paths are hard-coded as <code>/home/x</code>. Edit files listed below and change all occurrences of <code>/home/x</code> to absolute path of your home directory.</p>
@@ -275,48 +275,53 @@ pybs/systemd/pybs-weekly.service
     </code></pre></div>
 <p>We explain the Pybs configuration bit later. Let&rsquo;s run Pybs and do some backup.</p>
 
+<p><a id="runpybs"></a></p>
+
 <h2 id="run-pybs-as-normal-user">Run Pybs as normal user</h2>
 
 <p>Create Borg repository with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
-<span class="nb">cd</span> <span class="nv">$HOME</span>
-mkdir backup
-borg init -e none backup/borgrepo
+$ <span class="nb">cd</span> <span class="nv">$HOME</span>
+$ mkdir backup
+$ borg init -e none backup/borgrepo
     </code></pre></div>
 <p>Next, setup systemd daily backup.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
-mkdir .config/systemd/user -p
-cp pybs/systemd/*.service .config/systemd/user
-systemctl --user daemon-reload
-systemctl --user start pybs-daily
+$ mkdir .config/systemd/user -p
+$ cp pybs/systemd/*.service .config/systemd/user
+$ systemctl --user daemon-reload
+$ systemctl --user start pybs-daily
         </code></pre></div>
 <p>To run Pybs service as normal user, create <code>$HOME/.config/systemd/user</code> dir and copy systemd service files to it. After reloading systemd daemon, start pybs-daily service. Wait for sometime and see the backup status with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
-systemctl --user status pybs-daily
+$ systemctl --user status pybs-daily
         </code></pre></div>
 <p>To enable timer, copy and start timer files with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
-cp pybs/systemd/*.timer .config/systemd/user/
-systemctl --user daemon-reload
-systemctl --user <span class="nb">enable</span> pybs-daily.timer
-systemctl --user start pybs-daily.timer    
-systemctl --user list-timers
+$ cp pybs/systemd/*.timer .config/systemd/user/
+$ systemctl --user daemon-reload
+$ systemctl --user <span class="nb">enable</span> pybs-daily.timer
+$ systemctl --user start pybs-daily.timer    
+$ systemctl --user list-timers
     </code></pre></div>
 <h2 id="run-pybs-as-super-user">Run Pybs as super user</h2>
 
 <p>To backup system wide files and directories, run systemd scripts and timers as root. For that, first create Borg repository as explained above and then place service and timer files in <code>/etc/systemd/system</code> dir as,</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">## service
-</span><span class="c1"></span>cp pybs/systemd/*.service /etc/systemd/system
-systemctl daemon-reload
-systemctl start pybs-daily
-systemctl status pybs-daily    
+</span><span class="c1"></span>
+$ cp pybs/systemd/*.service /etc/systemd/system
+$ systemctl daemon-reload
+$ systemctl start pybs-daily
+$ systemctl status pybs-daily    
 
 <span class="c1">## timer
-</span><span class="c1"></span>cp pybs/systemd/*.timer /etc/systemd/system
-systemctl daemon-reload
-systemctl <span class="nb">enable</span> pybs-daily.timer
-systemctl start pybs-daily.timer
-systemctl list-timers    </code></pre></div>
+</span><span class="c1"></span>
+$ cp pybs/systemd/*.timer /etc/systemd/system
+$ systemctl daemon-reload
+$ systemctl <span class="nb">enable</span> pybs-daily.timer
+$ systemctl start pybs-daily.timer
+$ systemctl list-timers    
+    </code></pre></div>
 <h2 id="pybs-configuration">Pybs Configuration</h2>
 
 <p>Let&rsquo;s create a new monthly backup service to know Pybs configuration. In <code>pybs/systemd</code> dir, create a new env file and name it as you like with following content,</p>
@@ -367,7 +372,7 @@ systemctl list-timers    </code></pre></div>
 <span class="nv">WantedBy</span><span class="o">=</span>timers.target</code></pre></div>
 <p>The file should be named same as service file base name, but with .timer extension. The backup frequency is set with <code>OnCalendar</code> variable. Refer systemd documentation to know more about timers.</p>
 
-<p>To end, add backup entries for monthly backup. Label the backup sets with the label specified in env file.</p>
+<p>Finally, add backup entries for monthly backup. Label the backup sets with the label specified in env file.</p>
 
 <p><code>pybs/backup.yml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="w">    
@@ -387,7 +392,7 @@ systemctl list-timers    </code></pre></div>
 </span><span class="w">    </span></code></pre></div>
 <p>The new backup service backups only the Music dir excluding all wmv files.</p>
 
-<p>Thats all there is to configure. To run new backup service, copy and enable service and timer units as explained earlier in <strong>Pybs Run as normal user</strong> or <strong>Run as super user</strong>.</p>
+<p>Thats all there is to configure. To run new backup service, copy and enable service and timer units as explained in <a href="#runpybs">Run Pybs</a></p>
 
       </main>
     </div>
