@@ -55,7 +55,7 @@
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</guid>
       <description>Scoopi Web Scraper Scoopi web scraper extracts and transform data from HTML pages. JSoup and HtmlUnit makes it quite easy to scrape web pages in Java, but the things get complicated when data is from large number of pages. Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
- Data being unstructured, may requires many queries to scrape them Data may not be in desired format and to make them usable, needs filter and transform Connection may drop during a run and all the work is lost When data is from thousands of pages, performance does matter Need Java or Python proficiency to use scraper libraries  &amp;nbsp;   (adsbygoogle = window.</description>
+ Data being unstructured, may requires many queries to scrape them Data may not be in desired format and to make them usable, needs filter and transform Connection may drop during a run and all the work is lost When data is from thousands of pages, performance does matter Need Java or Python proficiency to use scraper libraries  Scraping libraries do well in scraping data from limited set of pages but they are not meant to handle thousands of pages.</description>
     </item>
     
     <item>
