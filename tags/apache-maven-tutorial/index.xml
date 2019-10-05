@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apache Maven Tutorial on Codetab</title>
+    <title>apache maven tutorial on Codetab</title>
     <link>https://www.codetab.org/tags/apache-maven-tutorial/</link>
-    <description>Recent content in Apache Maven Tutorial on Codetab</description>
+    <description>Recent content in apache maven tutorial on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate>
@@ -17,25 +17,7 @@
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/apache-maven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plugins</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/plugins/</link>
-      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/plugins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Apache Maven Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/</link>
-      <pubDate>Fri, 11 Jan 2019 16:03:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/</guid>
-      <description></description>
+      <description>Dive into project management with Apache Maven</description>
     </item>
     
     <item>
@@ -47,42 +29,6 @@
       <description>Introduction Best resources about Apache Maven are from Sonatype Maven Reference Book and Maven By Example. However, the exhaustive details in these books may confuse and overwhelm the beginners.
 This tutorial series tries to explain the Apache Maven concepts and workflow in easy steps. Focus is to explain Apache Maven with simple examples and easy explanations for benefit of beginners and intermediate users.
 As objective of the tutorial is to explain Apache Maven concepts and its working, the Java examples we use in the tutorial are extremely simple and small, so that focus is more on Maven rather than Java projects.</description>
-    </item>
-    
-    <item>
-      <title>Eclipse</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/eclipse/</link>
-      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/eclipse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multi Module</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/multi-module/</link>
-      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/multi-module/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Profile</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/profile/</link>
-      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/profile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project Distribution</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/distribution/</link>
-      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/distribution/</guid>
-      <description></description>
     </item>
     
   </channel>

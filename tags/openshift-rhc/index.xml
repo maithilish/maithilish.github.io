@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Openshift Rhc on Codetab</title>
+    <title>openshift rhc on Codetab</title>
     <link>https://www.codetab.org/tags/openshift-rhc/</link>
-    <description>Recent content in Openshift Rhc on Codetab</description>
+    <description>Recent content in openshift rhc on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 00:53:00 +0530</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Openshift Dns Setup on Codetab</title>
+    <title>openshift dns setup on Codetab</title>
     <link>https://www.codetab.org/tags/openshift-dns-setup/</link>
-    <description>Recent content in Openshift Dns Setup on Codetab</description>
+    <description>Recent content in openshift dns setup on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 00:40:00 +0530</lastBuildDate>

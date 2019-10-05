@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Openshift Configure on Codetab</title>
+    <title>openshift configure on Codetab</title>
     <link>https://www.codetab.org/tags/openshift-configure/</link>
-    <description>Recent content in Openshift Configure on Codetab</description>
+    <description>Recent content in openshift configure on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 17:20:00 +0530</lastBuildDate>

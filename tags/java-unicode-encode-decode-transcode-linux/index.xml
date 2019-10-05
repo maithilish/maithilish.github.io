@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java Unicode Encode Decode Transcode Linux on Codetab</title>
+    <title>java unicode encode decode transcode linux on Codetab</title>
     <link>https://www.codetab.org/tags/java-unicode-encode-decode-transcode-linux/</link>
-    <description>Recent content in Java Unicode Encode Decode Transcode Linux on Codetab</description>
+    <description>Recent content in java unicode encode decode transcode linux on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Sep 2019 11:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 29 Sep 2019 11:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/post/java-unicode-basics/</guid>
-      <description>Fun with Unicode in Java Normally we don&amp;rsquo;t pay much attention character encoding in Java. However, when we crisscross byte and char streams, things can get confusing unless we know the charset basics. Many tutorials and posts about character encoding are heavy in theory with little real examples. In this post, we try to demystify Unicode with easy to grasp examples.
+      <description>Fun with Unicode in Java Normally we don&amp;rsquo;t pay much attention to character encoding in Java. However, when we crisscross byte and char streams, things can get confusing unless we know the charset basics. Many tutorials and posts about character encoding are heavy in theory with little real examples. In this post, we try to demystify Unicode with easy to grasp examples.
 Encode and Decode Before diving into Unicode, first let&amp;rsquo;s understand terms - encode and decode.</description>
     </item>
     

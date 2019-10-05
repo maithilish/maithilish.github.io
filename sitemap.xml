@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/java-generics/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/downloads/</loc>
     <lastmod>2019-02-13T23:54:00+05:30</lastmod>
   </url>
@@ -165,11 +170,6 @@
   <url>
     <loc>https://www.codetab.org/home/tutorials/</loc>
     <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tutorial/java-generics/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
   
   <url>
@@ -1328,8 +1328,973 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tags/java-unicode-encode-decode-transcode-linux/</loc>
+    <lastmod>2019-09-29T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/</loc>
+    <lastmod>2019-09-29T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/borg-backup-automate-python-script/</loc>
+    <lastmod>2019-08-27T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/borg-backup-features-basics/</loc>
+    <lastmod>2019-08-27T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/post/</loc>
     <lastmod>2019-08-01T12:11:22+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics-bounded-wildcards-tutorial/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics-design-tutorial/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics-inheritance-subtype-tutorial/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics-tutorial/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics-unbounded-wildcards-tutorial/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-generics/</loc>
+    <lastmod>2019-07-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorials/</loc>
+    <lastmod>2019-07-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/eclipse-maven-multi-module/</loc>
+    <lastmod>2019-06-21T22:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/downloads/</loc>
+    <lastmod>2019-02-13T23:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-tutorial/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-maven-tutorial/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/projects/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scoopi-web-scraper/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/share-on-social/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-development/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-tutorial/</loc>
+    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/ajax/</loc>
+    <lastmod>2019-01-12T07:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/dom-loader/</loc>
+    <lastmod>2019-01-12T06:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/pagination/</loc>
+    <lastmod>2019-01-12T06:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scripter/</loc>
+    <lastmod>2019-01-12T06:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multi-dimensions/</loc>
+    <lastmod>2019-01-12T06:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/data-items/</loc>
+    <lastmod>2019-01-12T05:57:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/dimensions/</loc>
+    <lastmod>2019-01-12T05:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scoopi-installation/</loc>
+    <lastmod>2019-01-12T05:26:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/create-locators-from-links/</loc>
+    <lastmod>2019-01-12T05:16:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/steps/</loc>
+    <lastmod>2019-01-12T05:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/split-definitions/</loc>
+    <lastmod>2019-01-12T04:46:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/selector/</loc>
+    <lastmod>2019-01-12T04:34:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/definition-file/</loc>
+    <lastmod>2019-01-12T04:27:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/persistence/</loc>
+    <lastmod>2019-01-12T04:11:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multiple-tasks/</loc>
+    <lastmod>2019-01-12T03:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/members/</loc>
+    <lastmod>2019-01-12T03:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/logs/</loc>
+    <lastmod>2019-01-12T03:34:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/indexrange/</loc>
+    <lastmod>2019-01-12T03:23:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/filters/</loc>
+    <lastmod>2019-01-12T03:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/db-setup/</loc>
+    <lastmod>2019-01-12T03:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/datadef/</loc>
+    <lastmod>2019-01-12T02:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/dashboard/</loc>
+    <lastmod>2019-01-12T02:35:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/converters/</loc>
+    <lastmod>2019-01-12T02:25:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/appender/</loc>
+    <lastmod>2019-01-12T02:11:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multi-module-dependency-management/</loc>
+    <lastmod>2019-01-11T22:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multi-module-inheritance/</loc>
+    <lastmod>2019-01-11T21:55:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/hierarchical-multi-module-project/</loc>
+    <lastmod>2019-01-11T21:49:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/appenders/</loc>
+    <lastmod>2019-01-11T21:17:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multiple-task/</loc>
+    <lastmod>2019-01-11T20:43:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/tasks/</loc>
+    <lastmod>2019-01-11T20:30:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/namespace/</loc>
+    <lastmod>2019-01-11T20:22:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/query/</loc>
+    <lastmod>2019-01-11T19:27:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gotz-installation/</loc>
+    <lastmod>2019-01-11T19:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gotz/</loc>
+    <lastmod>2019-01-11T18:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gotz-etl/</loc>
+    <lastmod>2019-01-11T18:43:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-online-v3-deployment/</loc>
+    <lastmod>2019-01-11T18:33:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/manage-eclipse-maven-project/</loc>
+    <lastmod>2019-01-11T18:15:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-eclipse-plugin/</loc>
+    <lastmod>2019-01-11T18:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-profile/</loc>
+    <lastmod>2019-01-11T17:53:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-multi-module-project/</loc>
+    <lastmod>2019-01-11T17:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-assembly-plugin/</loc>
+    <lastmod>2019-01-11T17:27:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-project-distribution/</loc>
+    <lastmod>2019-01-11T17:10:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-project-object-model/</loc>
+    <lastmod>2019-01-11T17:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-plugin-execution/</loc>
+    <lastmod>2019-01-11T16:48:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-plugin-goals/</loc>
+    <lastmod>2019-01-11T16:39:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-lifecycle-and-goals/</loc>
+    <lastmod>2019-01-11T16:21:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-plugin-configuration/</loc>
+    <lastmod>2019-01-11T16:13:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/simple-maven-project/</loc>
+    <lastmod>2019-01-11T15:53:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-resources-plugin/</loc>
+    <lastmod>2019-01-11T15:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-plugins/</loc>
+    <lastmod>2019-01-11T15:25:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-lifecycle-phases/</loc>
+    <lastmod>2019-01-11T15:15:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/install-apache-maven/</loc>
+    <lastmod>2019-01-11T15:08:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/manage-maven-directories/</loc>
+    <lastmod>2019-01-11T15:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-dependency-management/</loc>
+    <lastmod>2019-01-11T14:48:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/maven-archetype-plugin/</loc>
+    <lastmod>2019-01-11T14:42:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/useful-maven-help-commands/</loc>
+    <lastmod>2019-01-11T14:20:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-multisite-plugin-unit-tests/</loc>
+    <lastmod>2019-01-11T14:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/test-internationalization-functions/</loc>
+    <lastmod>2019-01-11T13:50:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-ajax-unit-test/</loc>
+    <lastmod>2019-01-11T13:44:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-advanced-unit-tests/</loc>
+    <lastmod>2019-01-11T13:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/unit-test-scripts-actions-filters/</loc>
+    <lastmod>2019-01-11T13:30:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-test-setup/</loc>
+    <lastmod>2019-01-11T13:24:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-simple-unit-tests/</loc>
+    <lastmod>2019-01-11T13:07:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-unit-testing/</loc>
+    <lastmod>2019-01-11T12:56:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-uninstall/</loc>
+    <lastmod>2019-01-11T12:42:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/enable-wordpress-multisite/</loc>
+    <lastmod>2019-01-11T12:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-multisite-activation/</loc>
+    <lastmod>2019-01-11T12:18:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-deactivation/</loc>
+    <lastmod>2019-01-11T12:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-activation/</loc>
+    <lastmod>2019-01-11T11:53:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-localization/</loc>
+    <lastmod>2019-01-11T11:44:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-internationalization/</loc>
+    <lastmod>2019-01-11T11:33:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-google-charts/</loc>
+    <lastmod>2019-01-11T11:22:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-chart-page/</loc>
+    <lastmod>2019-01-11T11:09:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-ajax/</loc>
+    <lastmod>2019-01-11T11:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-pass-data-to-javascript/</loc>
+    <lastmod>2019-01-11T10:48:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-debug-info/</loc>
+    <lastmod>2019-01-11T10:32:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-enqueue-script/</loc>
+    <lastmod>2019-01-11T10:19:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-save-post/</loc>
+    <lastmod>2019-01-11T10:10:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-meta-box/</loc>
+    <lastmod>2019-01-11T09:52:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-custom-post-type/</loc>
+    <lastmod>2019-01-11T09:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-settings-api/</loc>
+    <lastmod>2019-01-11T09:27:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-options-page/</loc>
+    <lastmod>2019-01-11T09:13:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-main-file/</loc>
+    <lastmod>2019-01-11T08:56:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-add-menu/</loc>
+    <lastmod>2019-01-11T08:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-hooks-actions-filters/</loc>
+    <lastmod>2019-01-11T08:33:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-install-locally/</loc>
+    <lastmod>2019-01-11T08:22:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-simple-plugin/</loc>
+    <lastmod>2019-01-11T08:04:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-shortcode/</loc>
+    <lastmod>2019-01-11T07:46:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugin-structure/</loc>
+    <lastmod>2019-01-11T07:30:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/share-on-social-usage/</loc>
+    <lastmod>2019-01-11T06:55:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/create-facebook-google-plus-apps/</loc>
+    <lastmod>2019-01-11T06:39:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/share-on-social-wordpress-plugin/</loc>
+    <lastmod>2019-01-11T06:11:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/w3-total-cache-minify/</loc>
+    <lastmod>2019-01-11T05:53:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/w3-total-cache-browser-cache/</loc>
+    <lastmod>2019-01-11T05:39:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-dynamic-stylesheets/</loc>
+    <lastmod>2019-01-11T05:28:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-seo-plugin/</loc>
+    <lastmod>2019-01-11T05:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-restore/</loc>
+    <lastmod>2019-01-11T04:57:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-dropbox-backup/</loc>
+    <lastmod>2019-01-11T04:44:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-child-theme/</loc>
+    <lastmod>2019-01-11T04:37:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-performance/</loc>
+    <lastmod>2019-01-11T04:20:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-seo-tips/</loc>
+    <lastmod>2019-01-11T04:08:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-backup/</loc>
+    <lastmod>2019-01-11T03:53:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-themes/</loc>
+    <lastmod>2019-01-11T03:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-settings/</loc>
+    <lastmod>2019-01-11T03:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-posts/</loc>
+    <lastmod>2019-01-11T03:20:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-plugins/</loc>
+    <lastmod>2019-01-11T03:13:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-installation/</loc>
+    <lastmod>2019-01-11T03:06:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-wordpress-install/</loc>
+    <lastmod>2019-01-11T02:52:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/google-webmaster-tools/</loc>
+    <lastmod>2019-01-11T02:28:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/google-analytics/</loc>
+    <lastmod>2019-01-11T02:07:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/w3-total-cache-settings/</loc>
+    <lastmod>2019-01-11T01:55:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-wordpress-tutorial/</loc>
+    <lastmod>2019-01-11T01:46:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-import-static-html/</loc>
+    <lastmod>2019-01-11T01:28:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-linux/</loc>
+    <lastmod>2019-01-11T01:11:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-rhc/</loc>
+    <lastmod>2019-01-11T00:53:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-dns-setup/</loc>
+    <lastmod>2019-01-11T00:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress/</loc>
+    <lastmod>2019-01-11T00:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-eventbus-example/</loc>
+    <lastmod>2019-01-11T00:05:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/privacy-policy/</loc>
+    <lastmod>2019-01-10T23:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-resolver/</loc>
+    <lastmod>2019-01-10T23:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-shared-repository/</loc>
+    <lastmod>2019-01-10T23:32:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-beginners-guide/</loc>
+    <lastmod>2019-01-10T23:15:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-ant-tasks/</loc>
+    <lastmod>2019-01-10T22:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-cachepath/</loc>
+    <lastmod>2019-01-10T22:18:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-resolve/</loc>
+    <lastmod>2019-01-10T22:06:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-publish/</loc>
+    <lastmod>2019-01-10T22:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/ivyde-settings/</loc>
+    <lastmod>2019-01-10T21:50:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/ivyde-plugin/</loc>
+    <lastmod>2019-01-10T21:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-install/</loc>
+    <lastmod>2019-01-10T21:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-installation/</loc>
+    <lastmod>2019-01-10T21:17:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy-pattern/</loc>
+    <lastmod>2019-01-10T21:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-project/</loc>
+    <lastmod>2019-01-10T20:33:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-tutorial-demo/</loc>
+    <lastmod>2019-01-10T20:25:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-uifactory/</loc>
+    <lastmod>2019-01-10T20:11:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/toolbar/</loc>
+    <lastmod>2019-01-10T20:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/titlepanel/</loc>
+    <lastmod>2019-01-10T19:48:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/app-engine-task-queue/</loc>
+    <lastmod>2019-01-10T19:33:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/jdo-hibernate/</loc>
+    <lastmod>2019-01-10T19:22:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/rpc/</loc>
+    <lastmod>2019-01-10T19:05:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-openshift/</loc>
+    <lastmod>2019-01-10T18:55:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/jdo-persistence/</loc>
+    <lastmod>2019-01-10T18:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-celltable/</loc>
+    <lastmod>2019-01-10T18:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/factpanel/</loc>
+    <lastmod>2019-01-10T18:22:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-datagrid/</loc>
+    <lastmod>2019-01-10T18:06:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-disclosurepanel/</loc>
+    <lastmod>2019-01-10T17:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-development/</loc>
+    <lastmod>2019-01-10T17:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/app-engine-deploy/</loc>
+    <lastmod>2019-01-10T17:26:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-configure/</loc>
+    <lastmod>2019-01-10T17:20:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-close-tab/</loc>
+    <lastmod>2019-01-10T17:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/google-chart/</loc>
+    <lastmod>2019-01-10T16:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/app-engine-cache/</loc>
+    <lastmod>2019-01-10T16:38:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-deployment/</loc>
+    <lastmod>2019-01-10T16:20:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/app-engine-backends/</loc>
+    <lastmod>2019-01-10T16:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-suggestbox/</loc>
+    <lastmod>2019-01-10T15:56:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/google-web-toolkit-tutorial/</loc>
+    <lastmod>2019-01-10T14:46:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-rpc/</loc>
+    <lastmod>2019-01-10T14:09:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/openshift-setup/</loc>
+    <lastmod>2019-01-10T13:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-model-tutorial/</loc>
+    <lastmod>2019-01-10T13:35:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-clientbundle/</loc>
+    <lastmod>2019-01-10T13:17:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/app-engine-data-upload/</loc>
+    <lastmod>2019-01-10T13:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-plugin-for-eclipse/</loc>
+    <lastmod>2019-01-10T12:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/google-app-engine/</loc>
+    <lastmod>2019-01-10T12:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-database/</loc>
+    <lastmod>2019-01-10T12:28:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-dao/</loc>
+    <lastmod>2019-01-10T12:11:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-tutorial-content/</loc>
+    <lastmod>2019-01-10T12:01:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-eventbus/</loc>
+    <lastmod>2019-01-10T11:54:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-anchor/</loc>
+    <lastmod>2019-01-10T11:37:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-logging/</loc>
+    <lastmod>2019-01-10T11:22:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-tablayoutpanel/</loc>
+    <lastmod>2019-01-10T11:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/gwt-uibinder-and-custom-widget/</loc>
+    <lastmod>2019-01-10T10:57:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/apache-ivy/</loc>
+    <lastmod>2019-01-10T10:47:00+05:30</lastmod>
   </url>
   
   <url>
@@ -1338,1207 +2303,21 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/ajax/</loc>
-    <lastmod>2019-01-12T07:03:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy/</loc>
-    <lastmod>2019-01-10T10:47:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-ant-tasks/</loc>
-    <lastmod>2019-01-10T22:51:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-beginners-guide/</loc>
-    <lastmod>2019-01-10T23:15:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-cachepath/</loc>
-    <lastmod>2019-01-10T22:18:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-install/</loc>
-    <lastmod>2019-01-10T21:29:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-installation/</loc>
-    <lastmod>2019-01-10T21:17:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-pattern/</loc>
-    <lastmod>2019-01-10T21:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-publish/</loc>
-    <lastmod>2019-01-10T22:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-resolve/</loc>
-    <lastmod>2019-01-10T22:06:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-resolver/</loc>
-    <lastmod>2019-01-10T23:45:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-shared-repository/</loc>
-    <lastmod>2019-01-10T23:32:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-ivy-tutorial/</loc>
-    <lastmod>2019-01-11T23:03:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/apache-maven-tutorial/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/app-engine-backends/</loc>
-    <lastmod>2019-01-10T16:02:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/app-engine-cache/</loc>
-    <lastmod>2019-01-10T16:38:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/app-engine-data-upload/</loc>
-    <lastmod>2019-01-10T13:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/app-engine-deploy/</loc>
-    <lastmod>2019-01-10T17:26:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/app-engine-task-queue/</loc>
-    <lastmod>2019-01-10T19:33:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/appender/</loc>
-    <lastmod>2019-01-12T02:11:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/appenders/</loc>
-    <lastmod>2019-01-11T21:17:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/borg-backup-automate-python-script/</loc>
-    <lastmod>2019-08-27T11:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/borg-backup-features-basics/</loc>
-    <lastmod>2019-08-27T10:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/converters/</loc>
-    <lastmod>2019-01-11T20:56:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/create-facebook-google-plus-apps/</loc>
-    <lastmod>2019-01-11T06:39:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/create-locators-from-links/</loc>
-    <lastmod>2019-01-12T05:16:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/dashboard/</loc>
-    <lastmod>2019-01-12T02:35:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/data-items/</loc>
-    <lastmod>2019-01-12T05:57:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/datadef/</loc>
-    <lastmod>2019-01-11T22:47:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/db-setup/</loc>
-    <lastmod>2019-01-12T03:02:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/definition-file/</loc>
-    <lastmod>2019-01-11T22:37:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.codetab.org/tags/demo/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/dimensions/</loc>
-    <lastmod>2019-01-12T05:41:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/dom-loader/</loc>
-    <lastmod>2019-01-12T06:47:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/downloads/</loc>
-    <lastmod>2019-02-13T23:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/eclipse-maven-multi-module/</loc>
-    <lastmod>2019-06-21T22:12:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/enable-wordpress-multisite/</loc>
-    <lastmod>2019-01-11T12:29:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/factpanel/</loc>
-    <lastmod>2019-01-10T18:22:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/filters/</loc>
-    <lastmod>2019-01-11T23:40:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/google-analytics/</loc>
-    <lastmod>2019-01-11T02:07:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/google-app-engine/</loc>
-    <lastmod>2019-01-10T12:45:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/google-chart/</loc>
-    <lastmod>2019-01-10T16:51:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/google-web-toolkit/</loc>
-    <lastmod>2019-01-11T23:03:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/google-web-toolkit-tutorial/</loc>
-    <lastmod>2019-01-10T14:46:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/google-webmaster-tools/</loc>
-    <lastmod>2019-01-11T02:28:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gotz/</loc>
-    <lastmod>2019-01-11T18:51:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gotz-etl/</loc>
-    <lastmod>2019-01-11T18:43:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gotz-installation/</loc>
-    <lastmod>2019-01-11T19:02:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-anchor/</loc>
-    <lastmod>2019-01-10T11:37:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-celltable/</loc>
-    <lastmod>2019-01-10T18:36:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-clientbundle/</loc>
-    <lastmod>2019-01-10T13:17:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-close-tab/</loc>
-    <lastmod>2019-01-10T17:03:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-dao/</loc>
-    <lastmod>2019-01-10T12:11:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-database/</loc>
-    <lastmod>2019-01-10T12:28:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-datagrid/</loc>
-    <lastmod>2019-01-10T18:06:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-disclosurepanel/</loc>
-    <lastmod>2019-01-10T17:51:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-eventbus/</loc>
-    <lastmod>2019-01-10T11:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-eventbus-example/</loc>
-    <lastmod>2019-01-11T00:05:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-logging/</loc>
-    <lastmod>2019-01-10T11:22:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-model-tutorial/</loc>
-    <lastmod>2019-01-10T13:35:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-openshift/</loc>
-    <lastmod>2019-01-10T18:55:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-plugin-for-eclipse/</loc>
-    <lastmod>2019-01-10T12:51:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-project/</loc>
-    <lastmod>2019-01-10T14:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-rpc/</loc>
-    <lastmod>2019-01-10T14:09:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-suggestbox/</loc>
-    <lastmod>2019-01-10T15:56:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-tablayoutpanel/</loc>
-    <lastmod>2019-01-10T11:14:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-tutorial/</loc>
-    <lastmod>2019-01-10T10:14:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-tutorial-content/</loc>
-    <lastmod>2019-01-10T12:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-tutorial-demo/</loc>
-    <lastmod>2019-01-10T20:25:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-uibinder-and-custom-widget/</loc>
-    <lastmod>2019-01-10T10:57:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/gwt-uifactory/</loc>
-    <lastmod>2019-01-10T20:11:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/hierarchical-multi-module-project/</loc>
-    <lastmod>2019-01-11T21:49:00+05:30</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.codetab.org/home/</loc>
     <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/indexrange/</loc>
-    <lastmod>2019-01-11T23:34:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/install-apache-maven/</loc>
-    <lastmod>2019-01-11T15:08:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/ivyde-plugin/</loc>
-    <lastmod>2019-01-10T21:41:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/ivyde-settings/</loc>
-    <lastmod>2019-01-10T21:50:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generic-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics/</loc>
-    <lastmod>2019-07-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics-bounded-wildcards-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics-design-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics-inheritance-subtype-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-generics-unbounded-wildcards-tutorial/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/java-unicode-encode-decode-transcode-linux/</loc>
-    <lastmod>2019-09-29T11:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/jdo-hibernate/</loc>
-    <lastmod>2019-01-10T19:22:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/jdo-persistence/</loc>
-    <lastmod>2019-01-10T18:45:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/logs/</loc>
-    <lastmod>2019-01-12T03:34:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/manage-eclipse-maven-project/</loc>
-    <lastmod>2019-01-11T18:15:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/manage-maven-directories/</loc>
-    <lastmod>2019-01-11T15:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-archetype-plugin/</loc>
-    <lastmod>2019-01-11T14:42:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-assembly-plugin/</loc>
-    <lastmod>2019-01-11T17:27:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-dependency-management/</loc>
-    <lastmod>2019-01-11T14:48:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-eclipse-plugin/</loc>
-    <lastmod>2019-01-11T18:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-lifecycle-phases/</loc>
-    <lastmod>2019-01-11T15:15:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-lifecycle-and-goals/</loc>
-    <lastmod>2019-01-11T16:21:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-multi-module-project/</loc>
-    <lastmod>2019-01-11T17:45:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-plugin-configuration/</loc>
-    <lastmod>2019-01-11T16:13:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-plugin-execution/</loc>
-    <lastmod>2019-01-11T16:48:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-plugin-goals/</loc>
-    <lastmod>2019-01-11T16:39:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-plugins/</loc>
-    <lastmod>2019-01-11T15:25:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-profile/</loc>
-    <lastmod>2019-01-11T17:53:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-project-distribution/</loc>
-    <lastmod>2019-01-11T17:10:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-project-object-model/</loc>
-    <lastmod>2019-01-11T17:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/maven-resources-plugin/</loc>
-    <lastmod>2019-01-11T15:41:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/members/</loc>
-    <lastmod>2019-01-11T19:44:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multi-dimensions/</loc>
-    <lastmod>2019-01-12T06:14:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multi-module-dependency-management/</loc>
-    <lastmod>2019-01-11T22:12:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multi-module-inheritance/</loc>
-    <lastmod>2019-01-11T21:55:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multiple-task/</loc>
-    <lastmod>2019-01-11T20:43:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multiple-tasks/</loc>
-    <lastmod>2019-01-12T03:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/namespace/</loc>
-    <lastmod>2019-01-11T20:22:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-configure/</loc>
-    <lastmod>2019-01-10T17:20:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-deployment/</loc>
-    <lastmod>2019-01-10T16:20:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-development/</loc>
-    <lastmod>2019-01-10T17:41:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-dns-setup/</loc>
-    <lastmod>2019-01-11T00:40:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-linux/</loc>
-    <lastmod>2019-01-11T01:11:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-online-v3-deployment/</loc>
-    <lastmod>2019-01-11T18:33:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-rhc/</loc>
-    <lastmod>2019-01-11T00:53:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-setup/</loc>
-    <lastmod>2019-01-10T13:47:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-wordpress-install/</loc>
-    <lastmod>2019-01-11T02:52:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/openshift-wordpress-tutorial/</loc>
-    <lastmod>2019-01-11T01:46:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/pagination/</loc>
-    <lastmod>2019-01-12T06:40:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/persistence/</loc>
-    <lastmod>2019-01-11T21:10:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/privacy-policy/</loc>
-    <lastmod>2019-01-10T23:54:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/projects/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/query/</loc>
-    <lastmod>2019-01-11T19:27:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/rpc/</loc>
-    <lastmod>2019-01-10T19:05:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/scoopi-installation/</loc>
-    <lastmod>2019-01-11T22:25:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/scoopi-web-scraper/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/scripter/</loc>
-    <lastmod>2019-01-12T06:29:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/selector/</loc>
-    <lastmod>2019-01-12T04:34:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/share-on-social/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/share-on-social-usage/</loc>
-    <lastmod>2019-01-11T06:55:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/share-on-social-wordpress-plugin/</loc>
-    <lastmod>2019-01-11T06:11:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/simple-maven-project/</loc>
-    <lastmod>2019-01-11T15:53:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/split-definitions/</loc>
-    <lastmod>2019-01-11T21:31:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/steps/</loc>
-    <lastmod>2019-01-12T05:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/</loc>
-    <lastmod>2019-01-12T07:03:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/tasks/</loc>
-    <lastmod>2019-01-11T20:30:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/test-internationalization-functions/</loc>
-    <lastmod>2019-01-11T13:50:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/titlepanel/</loc>
-    <lastmod>2019-01-10T19:48:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/toolbar/</loc>
-    <lastmod>2019-01-10T20:03:00+05:30</lastmod>
-    <priority>0</priority>
+    <loc>https://www.codetab.org/categories/</loc>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tutorial/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tutorials/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/unit-test-scripts-actions-filters/</loc>
-    <lastmod>2019-01-11T13:30:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/useful-maven-help-commands/</loc>
-    <lastmod>2019-01-11T14:20:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/w3-total-cache-browser-cache/</loc>
-    <lastmod>2019-01-11T05:39:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/w3-total-cache-minify/</loc>
-    <lastmod>2019-01-11T05:53:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/w3-total-cache-settings/</loc>
-    <lastmod>2019-01-11T01:55:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress/</loc>
-    <lastmod>2019-01-11T00:29:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-add-menu/</loc>
-    <lastmod>2019-01-11T08:41:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-advanced-unit-tests/</loc>
-    <lastmod>2019-01-11T13:36:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-ajax/</loc>
-    <lastmod>2019-01-11T11:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-backup/</loc>
-    <lastmod>2019-01-11T03:53:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-chart-page/</loc>
-    <lastmod>2019-01-11T11:09:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-child-theme/</loc>
-    <lastmod>2019-01-11T04:37:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-custom-post-type/</loc>
-    <lastmod>2019-01-11T09:36:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-debug-info/</loc>
-    <lastmod>2019-01-11T10:32:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-dropbox-backup/</loc>
-    <lastmod>2019-01-11T04:44:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-dynamic-stylesheets/</loc>
-    <lastmod>2019-01-11T05:28:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-google-charts/</loc>
-    <lastmod>2019-01-11T11:22:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-hooks-actions-filters/</loc>
-    <lastmod>2019-01-11T08:33:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-import-static-html/</loc>
-    <lastmod>2019-01-11T01:28:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-install-locally/</loc>
-    <lastmod>2019-01-11T08:22:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-installation/</loc>
-    <lastmod>2019-01-11T03:06:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-meta-box/</loc>
-    <lastmod>2019-01-11T09:52:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-multisite-activation/</loc>
-    <lastmod>2019-01-11T12:18:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-multisite-plugin-unit-tests/</loc>
-    <lastmod>2019-01-11T14:12:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-options-page/</loc>
-    <lastmod>2019-01-11T09:13:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-pass-data-to-javascript/</loc>
-    <lastmod>2019-01-11T10:48:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-performance/</loc>
-    <lastmod>2019-01-11T04:20:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-activation/</loc>
-    <lastmod>2019-01-11T11:53:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-ajax-unit-test/</loc>
-    <lastmod>2019-01-11T13:44:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-deactivation/</loc>
-    <lastmod>2019-01-11T12:01:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-development/</loc>
-    <lastmod>2019-01-11T07:12:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-development-tutorial/</loc>
-    <lastmod>2019-01-11T23:03:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-enqueue-script/</loc>
-    <lastmod>2019-01-11T10:19:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-internationalization/</loc>
-    <lastmod>2019-01-11T11:33:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-localization/</loc>
-    <lastmod>2019-01-11T11:44:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-main-file/</loc>
-    <lastmod>2019-01-11T08:56:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-simple-unit-tests/</loc>
-    <lastmod>2019-01-11T13:07:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-structure/</loc>
-    <lastmod>2019-01-11T07:30:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-uninstall/</loc>
-    <lastmod>2019-01-11T12:42:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugin-unit-testing/</loc>
-    <lastmod>2019-01-11T12:56:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-plugins/</loc>
-    <lastmod>2019-01-11T03:13:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-posts/</loc>
-    <lastmod>2019-01-11T03:20:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-restore/</loc>
-    <lastmod>2019-01-11T04:57:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-save-post/</loc>
-    <lastmod>2019-01-11T10:10:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-seo-plugin/</loc>
-    <lastmod>2019-01-11T05:14:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-seo-tips/</loc>
-    <lastmod>2019-01-11T04:08:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-settings/</loc>
-    <lastmod>2019-01-11T03:29:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-settings-api/</loc>
-    <lastmod>2019-01-11T09:27:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-shortcode/</loc>
-    <lastmod>2019-01-11T07:46:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-simple-plugin/</loc>
-    <lastmod>2019-01-11T08:04:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-test-setup/</loc>
-    <lastmod>2019-01-11T13:24:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-themes/</loc>
-    <lastmod>2019-01-11T03:45:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/wordpress-tutorial/</loc>
-    <lastmod>2019-01-11T23:03:00+05:30</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

@@ -23,7 +23,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://www.codetab.org/"
+             "@id": "https:\/\/www.codetab.org\/"
         },
         "articleSection" : "post",
         "name" : "Fun with Unicode in Java",
@@ -35,10 +35,10 @@
         "publisher": "Maithilish",
         "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2019",
-        "datePublished": "2019-09-29 11:00:00 +0000 UTC",
-        "dateModified" : "2019-09-29 11:00:00 +0000 UTC",
-        "url" : "/post/java-unicode-basics/",
-        "wordCount" : "1842",
+        "datePublished": "2019-09-29 11:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-09-29 11:00:00 \x2b0000 UTC",
+        "url" : "\/post\/java-unicode-basics\/",
+        "wordCount" : "1843",
         "keywords" : [ "java unicode encode decode transcode linux","Blog" ]
     }
 </script>
@@ -49,7 +49,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.06af1451a3c5b3b70a0c0bd7be26092e20e9c31251c08d44dbe1486a9a2a414c.css" integrity="sha256-Bq8UUaPFs7cKDAvXviYJLiDpwxJRwI1E2&#43;FIapoqQUw=">
+<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
 
 <title>Fun with Unicode in Java</title></head>
 
@@ -253,7 +253,7 @@
 
 <h1 id="fun-with-unicode-in-java">Fun with Unicode in Java</h1>
 
-<p>Normally we don&rsquo;t pay much attention character encoding in Java. However, when we crisscross byte and char streams, things can get confusing unless we know the charset basics. Many tutorials and posts about character encoding are heavy in theory with little real examples. In this post, we try to demystify Unicode with easy to grasp examples.</p>
+<p>Normally we don&rsquo;t pay much attention to character encoding in Java. However, when we crisscross byte and char streams, things can get confusing unless we know the charset basics. Many tutorials and posts about character encoding are heavy in theory with little real examples. In this post, we try to demystify Unicode with easy to grasp examples.</p>
 
 <h2 id="encode-and-decode">Encode and Decode</h2>
 
@@ -264,33 +264,33 @@
 <h2 id="encode-and-decode-java-string">Encode and Decode Java String</h2>
 
 <p>Let&rsquo;s go ahead and encode some strings in Java.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StringEncoder</span> <span class="o">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">StringEncoder</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="o">;</span>
-        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">US_ASCII</span><span class="o">);</span>
-        <span class="n">printBytes</span><span class="o">(</span><span class="n">bytes</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+        <span class="kt">byte</span><span class="p">[]</span> <span class="nf">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">US_ASCII</span><span class="p">);</span>
+        <span class="n">printBytes</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printBytes</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">byte</span> <span class="n">b</span> <span class="o">:</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;x%02x &#34;</span><span class="o">,</span> <span class="n">b</span><span class="o">));</span>
-        <span class="o">}</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">printBytes</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="nf">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">StringBuilder</span> <span class="nf">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">byte</span> <span class="nf">b</span> <span class="o">:</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;x%02x &#34;</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 <p>The <code>String.getBytes()</code> method encodes the string as bytes (binary) using US_ASCII charset and <code>printBytes()</code> method outputs bytes in hex format. The hex output <code>0x48 0x65 0x6c 0x6c 0x6f</code> is binary of form string <code>Hello</code> in ASCII.</p>
 
 <p>Next, let&rsquo;s see how to decode the bytes back as string.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StringDecoder</span> <span class="o">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">StringDecoder</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="o">{</span><span class="n">0x48</span><span class="o">,</span> <span class="n">0x65</span><span class="o">,</span> <span class="n">0x6c</span><span class="o">,</span> <span class="n">0x6c</span><span class="o">,</span> <span class="n">0x6f</span><span class="o">};</span>
-        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">bytes</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">US_ASCII</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
-    <span class="o">}</span>    
-<span class="o">}</span>    
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">byte</span><span class="p">[]</span> <span class="nf">bytes</span> <span class="o">=</span> <span class="p">{</span><span class="n">0x48</span><span class="p">,</span> <span class="n">0x65</span><span class="p">,</span> <span class="n">0x6c</span><span class="p">,</span> <span class="n">0x6c</span><span class="p">,</span> <span class="n">0x6f</span><span class="p">};</span>
+        <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">US_ASCII</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="p">}</span>    
+<span class="p">}</span>    
     </code></pre></div>
 <p>Here we decode byte array filled with <code>0x48 0x65 0x6c 0x6c 0x6f</code> as a new string. The String class decodes the bytes with US_ASCII charset which is displayed as <code>Hello</code>.</p>
 
@@ -302,24 +302,24 @@
 
 <p>Hello in Mandarin is nĭ hăo. It is written using two characters 你 (nĭ) and 好 (hăo). Let&rsquo;s encode and decode single character 你 (nĭ).</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// encode
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;你&#34;</span><span class="o">;</span>
-    <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
-    <span class="n">printBytes</span><span class="o">(</span><span class="n">bytes</span><span class="o">);</span>      <span class="c1">// xe4 xbd xa0  (3 bytes)
+</span><span class="c1"></span>    <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="s">&#34;你&#34;</span><span class="p">;</span>
+    <span class="kt">byte</span><span class="p">[]</span> <span class="nf">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">);</span>
+    <span class="n">printBytes</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>      <span class="c1">// xe4 xbd xa0  (3 bytes)
 </span><span class="c1"></span>
     <span class="c1">// decode
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">decodedStr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">bytes</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">decodedStr</span><span class="o">);</span>    <span class="o">//</span> <span class="n">你</span>  </code></pre></div>
+</span><span class="c1"></span>    <span class="n">String</span> <span class="nf">decodedStr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">decodedStr</span><span class="p">);</span>    <span class="o">//</span> <span class="n">你</span>  </code></pre></div>
 <p>Encoding the character 你 with UTF-8 character set returns an array of 3 bytes <code>xe4 xbd xa0</code>, which on decode, returns 你.</p>
 
 <p>Let&rsquo;s do the same with another standard character set UTF_16.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// encode
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;你&#34;</span><span class="o">;</span>
-    <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16</span><span class="o">);</span>
-    <span class="n">printBytes</span><span class="o">(</span><span class="n">bytes</span><span class="o">);</span>      <span class="c1">// xfe xff x4f x60  (4 bytes)
+</span><span class="c1"></span>    <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="s">&#34;你&#34;</span><span class="p">;</span>
+    <span class="kt">byte</span><span class="p">[]</span> <span class="nf">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_16</span><span class="p">);</span>
+    <span class="n">printBytes</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>      <span class="c1">// xfe xff x4f x60  (4 bytes)
 </span><span class="c1"></span>
     <span class="c1">// decode
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">decodedStr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">bytes</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">decodedStr</span><span class="o">);</span>    <span class="o">//</span> <span class="n">你</span>  </code></pre></div>
+</span><span class="c1"></span>    <span class="n">String</span> <span class="nf">decodedStr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_16</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">decodedStr</span><span class="p">);</span>    <span class="o">//</span> <span class="n">你</span>  </code></pre></div>
 <p>Character set UTF_16 encodes 你 into 4 bytes - <code>xfe xff x4f x60</code> while UTF_8 manages it with 3 bytes.</p>
 
 <p>Just for heck of it, try to encode 你 with US_ASCII and it returns single byte <code>x3f</code> which decodes to ? character. This is because ASCII is single byte encoding scheme which can&rsquo;t handle characters other than English alphabets.</p>
@@ -415,11 +415,11 @@
 </table>
 
 <p>Each character or symbol is represented by an unique Code point. Unicode has 1,112,064 code points out of which around 138,000 are presently defined. Unicode code point is represented as U+xxxx where U signifies it as Unicode. The <code>String.codePointAt(int index)</code> method returns code point for character.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;你&#34;</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">codePoint</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">codePointAt</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>    
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;U+%04X&#34;</span><span class="o">,</span> <span class="n">codePoint</span><span class="o">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="s">&#34;你&#34;</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">codePoint</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="na">codePointAt</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>    
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;U+%04X&#34;</span><span class="p">,</span> <span class="n">codePoint</span><span class="p">);</span>
 
-    <span class="o">//</span> <span class="n">outputs</span> <span class="n">the</span> <span class="n">code</span> <span class="n">point</span> <span class="o">-</span> <span class="n">U</span><span class="o">+</span><span class="n">4F60</span> </code></pre></div>
+    <span class="o">//</span> <span class="n">outputs</span> <span class="nf">the</span> <span class="n">code</span> <span class="nf">point</span> <span class="o">-</span> <span class="n">U</span><span class="o">+</span><span class="n">4F60</span> </code></pre></div>
 <p>A charset can have one or more encoding schemes and Unicode has multiple encoding schemes such as  UTF_8, UTF_16, UTF_16LE and UTF_16BE that maps code point to bytes.</p>
 
 <h3 id="utf-8">UTF-8</h3>
@@ -454,53 +454,53 @@
 <p>Use char stream IO classes <code>Reader</code> and <code>Writer</code> while dealing with text and text files. As already explained, the default charset of Java platform is UTF-8 and text written using Writer class is encoded in UTF-8 and Reader class reads the text in UTF-8.</p>
 
 <p>Using java.io package, we can write and read a text file in default charset as below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;a Z â Δ 你 好 ಡ ತ ع&#34;</span><span class="o">;</span>
-    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;x-utf8.txt&#34;</span><span class="o">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="s">&#34;a Z â Δ 你 好 ಡ ತ ع&#34;</span><span class="p">;</span>
+    <span class="n">File</span> <span class="nf">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&#34;x-utf8.txt&#34;</span><span class="p">);</span>
 
     <span class="c1">// write file in default charset (UTF-8)
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="n">file</span><span class="o">)))</span> <span class="o">{</span>
-        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
-    <span class="o">}</span>
+</span><span class="c1"></span>    <span class="k">try</span> <span class="p">(</span><span class="n">BufferedWriter</span> <span class="nf">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="p">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="p">(</span><span class="n">file</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">out</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="c1">// read file in default charset (UTF-8)
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">file</span><span class="o">)))</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+</span><span class="c1"></span>    <span class="k">try</span> <span class="p">(</span><span class="n">BufferedReader</span> <span class="nf">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="n">file</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="nf">line</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">in</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     </code></pre></div>
 <p>The above example, uses char stream classes - Writer and Reader - directly   that uses default character set (UTF-8).</p>
 
 <p>To encode/decode in non-default charset use byte oriented classes and use a bridge class to convert it char oriented class. For example, to read file as raw bytes use <code>FileInputStream</code> and wrap it with <code>InputStreamReader</code>, a bridge that can encode the bytes to chars in specified charset. Similarly for output, use <code>OutputStreamWriter</code> (bridge) and <code>FileOutputWriter</code> (byte output)</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// read in UTF_16LE
-</span><span class="c1"></span>    <span class="n">InputStream</span> <span class="n">byteInStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-    <span class="n">Reader</span> <span class="n">encodedCharStream</span> <span class="o">=</span> 
-        <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">byteInStream</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16LE</span><span class="o">);</span>
+</span><span class="c1"></span>    <span class="n">InputStream</span> <span class="nf">byteInStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+    <span class="n">Reader</span> <span class="nf">encodedCharStream</span> <span class="o">=</span> 
+        <span class="k">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">byteInStream</span><span class="p">,</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_16LE</span><span class="p">);</span>
 
     <span class="c1">// write in UTF_16LE
-</span><span class="c1"></span>    <span class="n">OutputStream</span> <span class="n">byteOutStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-    <span class="n">Writer</span> <span class="n">decodedCharStream</span> <span class="o">=</span> 
-        <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">byteOutStream</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16LE</span><span class="o">);</span></code></pre></div>
+</span><span class="c1"></span>    <span class="n">OutputStream</span> <span class="nf">byteOutStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+    <span class="n">Writer</span> <span class="nf">decodedCharStream</span> <span class="o">=</span> 
+        <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="p">(</span><span class="n">byteOutStream</span><span class="p">,</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_16LE</span><span class="p">);</span></code></pre></div>
 <p>Following example, writes a file in UTF_16BE charset and reads it back.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;a Z â Δ 你 好 ಡ ತ ع&#34;</span><span class="o">;</span>
-    <span class="n">Charset</span> <span class="n">charset</span> <span class="o">=</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16BE</span><span class="o">;</span>
-    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;x-utf16be.txt&#34;</span><span class="o">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="s">&#34;a Z â Δ 你 好 ಡ ತ ع&#34;</span><span class="p">;</span>
+    <span class="n">Charset</span> <span class="nf">charset</span> <span class="o">=</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_16BE</span><span class="p">;</span>
+    <span class="n">File</span> <span class="nf">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&#34;x-utf16be.txt&#34;</span><span class="p">);</span>
 
     <span class="c1">// write file in non default charset
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span>
-        <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">charset</span><span class="o">)))</span> <span class="o">{</span>
-      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
-    <span class="o">}</span>
+</span><span class="c1"></span>    <span class="k">try</span> <span class="p">(</span><span class="n">BufferedWriter</span> <span class="nf">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="p">(</span>
+        <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="p">(</span><span class="k">new</span> <span class="n">FileOutputStream</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="n">charset</span><span class="p">)))</span> <span class="p">{</span>
+      <span class="n">out</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="c1">// read file in non default charset
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-            <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">charset</span><span class="o">)))</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
-        <span class="o">}</span>      
-    <span class="o">}</span></code></pre></div>
+</span><span class="c1"></span>    <span class="k">try</span> <span class="p">(</span><span class="n">BufferedReader</span> <span class="nf">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span>
+            <span class="k">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="n">charset</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="nf">line</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">in</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+        <span class="p">}</span>      
+    <span class="p">}</span></code></pre></div>
 <h2 id="transcoding">Transcoding</h2>
 
 <p>Transcoding is the direct digital-to-digital conversion from an encoding to another, such as UTF-8 to UTF-16. We regularly encounter transcoding in video, audio and image files but rarely with text files.</p>
@@ -508,8 +508,8 @@
 <p>Imagine, we receive a stream of bytes over the network encoded in CP-1252 (Windows-1252) or ISO 8859-1 and want to save it to text file in UTF 8.</p>
 
 <p>There are couple of options to transcode from one charset to another. The easiest way to transcode it to use String class.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">bytes</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">ISO_8859_1</span><span class="o">);</span>
-    <span class="kt">byte</span><span class="o">[]</span> <span class="n">toBytes</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span> <span class="nf">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">StandardCharsets</span><span class="p">.</span><span class="na">ISO_8859_1</span><span class="p">);</span>
+    <span class="kt">byte</span><span class="p">[]</span> <span class="nf">toBytes</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">);</span></code></pre></div>
 <p>While this quite fast, it suffers when we deal with large set of byte as heap memory gets allocated to multiple large strings. Better option is to use java.io classes as shown below:</p>
 
 <figure class="text-center" >
@@ -522,36 +522,36 @@
 <h2 id="play-with-unicode-in-linux-terminal">Play with Unicode in Linux terminal</h2>
 
 <p>We can work with text encoding in Linux terminal with some simple commands. Note that Linux terminal can display ASCII and UTF-8 files but not UTF-16.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    <span class="c1"># create a text file from encoded bytes
-</span><span class="c1"></span>    $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xce\x94&#39;</span> &gt; delta-8.txt
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    <span class="c1"># create a text file from encoded bytes</span>
+    $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xce\x94&#39;</span> &gt; delta-8.txt
     $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xfe\xff\x03\x94&#39;</span> &gt; delta-16.txt
     $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xe4\xbd\xa0\x20\xe5\xa5\xbd&#39;</span> &gt; nihou-8.txt
     $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xfe\xff\x4f\x60\xfe\xff\x20\x59\x7d&#39;</span> &gt; nihou-16.txt
 
-    <span class="c1"># debug a text file as hex
-</span><span class="c1"></span>    $ hd nihou-16.txt
+    <span class="c1"># debug a text file as hex</span>
+    $ hd nihou-16.txt
 
     <span class="m">00000000</span>  fe ff 4f <span class="m">60</span> fe ff <span class="m">20</span> <span class="m">59</span> 7d  <span class="p">|</span>..O<span class="sb">`</span>.. Y<span class="o">}</span><span class="p">|</span>
     <span class="m">00000009</span>
 
-    <span class="c1"># know file encoding scheme
-</span><span class="c1"></span>    $ file -i *.txt
+    <span class="c1"># know file encoding scheme</span>
+    $ file -i *.txt
 
     delta-16.txt: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-16be
     delta-8.txt:  text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
     nihou-16.txt: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-16be
     nihou-8.txt:  text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 
-    <span class="c1"># transcode from UTF 8 to UTF 16LE
-</span><span class="c1"></span>    $ iconv -f UTF8 -t UTF16LE &lt; nihou-8.txt &gt; nihou-16le.txt
+    <span class="c1"># transcode from UTF 8 to UTF 16LE</span>
+    $ iconv -f UTF8 -t UTF16LE &lt; nihou-8.txt &gt; nihou-16le.txt
 
-    <span class="c1"># list encoding schemes 
-</span><span class="c1"></span>    $ iconv -l
+    <span class="c1"># list encoding schemes</span> 
+    $ iconv -l
 
-    <span class="c1"># read a file in default charset
-</span><span class="c1"></span>    $ gedit nihou-8.txt     
-    <span class="c1"># non-default
-</span><span class="c1"></span>    $ gedit --encoding UTF-16LE nihou-16le.txt</code></pre></div>
+    <span class="c1"># read a file in default charset</span>
+    $ gedit nihou-8.txt     
+    <span class="c1"># non-default</span>
+    $ gedit --encoding UTF-16LE nihou-16le.txt</code></pre></div>
 <h2 id="further-reading">Further Reading</h2>
 
 <p>Some good posts about Unicode usage in Java.</p>
@@ -603,7 +603,7 @@
 
 
 
-<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
 </body>
 
 </html>

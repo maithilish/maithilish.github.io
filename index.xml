@@ -46,7 +46,7 @@ If you are new to generics, we suggest you to go through Java Tutorial Trail - G
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/apache-maven/</guid>
-      <description></description>
+      <description>Dive into project management with Apache Maven</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ If you are new to generics, we suggest you to go through Java Tutorial Trail - G
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/projects/scoopi-web-scraper/</guid>
-      <description></description>
+      <description>Scrape web without any coding</description>
     </item>
     
     <item>
@@ -228,7 +228,7 @@ public class Food { public void foodMethod(){ } } public class Snack extends Foo
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/scoopi-web-scraper/</guid>
-      <description></description>
+      <description>Extract tons of data from web without any coding</description>
     </item>
     
     <item>
@@ -237,7 +237,7 @@ public class Food { public void foodMethod(){ } } public class Snack extends Foo
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/projects/share-on-social/</guid>
-      <description></description>
+      <description>WordPress plugin to share on FB wall</description>
     </item>
     
     <item>
@@ -336,7 +336,7 @@ We require Apache Ant and Apache Ivy to work through the tutorial.</description>
       <pubDate>Sun, 29 Sep 2019 11:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/post/java-unicode-basics/</guid>
-      <description>Fun with Unicode in Java Normally we don&amp;rsquo;t pay much attention character encoding in Java. However, when we crisscross byte and char streams, things can get confusing unless we know the charset basics. Many tutorials and posts about character encoding are heavy in theory with little real examples. In this post, we try to demystify Unicode with easy to grasp examples.
+      <description>Fun with Unicode in Java Normally we don&amp;rsquo;t pay much attention to character encoding in Java. However, when we crisscross byte and char streams, things can get confusing unless we know the charset basics. Many tutorials and posts about character encoding are heavy in theory with little real examples. In this post, we try to demystify Unicode with easy to grasp examples.
 Encode and Decode Before diving into Unicode, first let&amp;rsquo;s understand terms - encode and decode.</description>
     </item>
     
@@ -346,7 +346,7 @@ Encode and Decode Before diving into Unicode, first let&amp;rsquo;s understand t
       <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/java-generics/</guid>
-      <description></description>
+      <description>Easy to follow tutorial to learn Java Generics</description>
     </item>
     
     <item>
@@ -454,7 +454,7 @@ Software used in the book are
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/projects/gwt/</guid>
-      <description></description>
+      <description>GWT app hosted on Google Cloud</description>
     </item>
     
     <item>
@@ -473,7 +473,7 @@ Unbounded Wildcard Consider a method to display the elements of a List.</descrip
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/wordpress/</guid>
-      <description></description>
+      <description>Setup High Performance WordPress site</description>
     </item>
     
     <item>
@@ -596,7 +596,7 @@ public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the li
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/wordpress-plugin-development/</guid>
-      <description></description>
+      <description>Build a real-life WordPress Plugin</description>
     </item>
     
     <item>
@@ -696,7 +696,7 @@ public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element)
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/apache-ivy/</guid>
-      <description></description>
+      <description>Beginners Guide to Apache Ivy</description>
     </item>
     
     <item>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Datadef on Codetab</title>
+    <title>DataDef on Codetab</title>
     <link>https://www.codetab.org/tags/datadef/</link>
-    <description>Recent content in Datadef on Codetab</description>
+    <description>Recent content in DataDef on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 22:47:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jan 2019 02:47:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/datadef/index.xml" rel="self" type="application/rss+xml" />
     

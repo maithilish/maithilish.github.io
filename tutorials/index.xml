@@ -6,7 +6,7 @@
     <description>Recent content in Tutorials on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/apache-maven/</guid>
-      <description></description>
+      <description>Dive into project management with Apache Maven</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/scoopi-web-scraper/</guid>
-      <description></description>
+      <description>Extract tons of data from web without any coding</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/java-generics/</guid>
-      <description></description>
+      <description>Easy to follow tutorial to learn Java Generics</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/wordpress/</guid>
-      <description></description>
+      <description>Setup High Performance WordPress site</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/wordpress-plugin-development/</guid>
-      <description></description>
+      <description>Build a real-life WordPress Plugin</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tutorials/apache-ivy/</guid>
-      <description></description>
+      <description>Beginners Guide to Apache Ivy</description>
     </item>
     
   </channel>

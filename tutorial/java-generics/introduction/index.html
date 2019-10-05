@@ -23,7 +23,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://www.codetab.org/"
+             "@id": "https:\/\/www.codetab.org\/"
         },
         "articleSection" : "tutorial",
         "name" : "Java Generics - CodeTab",
@@ -35,9 +35,9 @@
         "publisher": "Maithilish",
         "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2019",
-        "datePublished": "2019-07-23 13:54:00 +0530 IST",
-        "dateModified" : "2019-07-23 13:54:00 +0530 IST",
-        "url" : "/tutorial/java-generics/introduction/",
+        "datePublished": "2019-07-23 13:54:00 \x2b0530 IST",
+        "dateModified" : "2019-07-23 13:54:00 \x2b0530 IST",
+        "url" : "\/tutorial\/java-generics\/introduction\/",
         "wordCount" : "994",
         "keywords" : [ "java generics tutorial","Blog" ]
     }
@@ -49,7 +49,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.06af1451a3c5b3b70a0c0bd7be26092e20e9c31251c08d44dbe1486a9a2a414c.css" integrity="sha256-Bq8UUaPFs7cKDAvXviYJLiDpwxJRwI1E2&#43;FIapoqQUw=">
+<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
 
 <title>Java Generics - CodeTab</title></head>
 
@@ -157,7 +157,7 @@
   <div class="row">
     <aside id="sidebar" class="col-md-4">
       <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-        
+
     
     
 
@@ -193,37 +193,43 @@
 <div id="Java Generics Tutorial - CodeTab">
     
     <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/introduction/" class="toc-page text-danger ">
+        <a href="https://www.codetab.org/tutorial/java-generics/introduction/"
+            class="toc-page text-danger ">
             Introduction
         </a>
     </div>
     
     <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/subtype/" class="toc-page text-muted ">
+        <a href="https://www.codetab.org/tutorial/java-generics/subtype/"
+            class="toc-page text-muted ">
             Subtypes
         </a>
     </div>
     
     <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/wildcards/" class="toc-page text-muted ">
+        <a href="https://www.codetab.org/tutorial/java-generics/wildcards/"
+            class="toc-page text-muted ">
             Wildcards
         </a>
     </div>
     
     <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/bounded-wildcards/" class="toc-page text-muted ">
+        <a href="https://www.codetab.org/tutorial/java-generics/bounded-wildcards/"
+            class="toc-page text-muted ">
             Bounded Wildcards
         </a>
     </div>
     
     <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/" class="toc-page text-muted ">
+        <a href="https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/"
+            class="toc-page text-muted ">
             Type Parameter Bounds
         </a>
     </div>
     
     <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/design/" class="toc-page text-muted ">
+        <a href="https://www.codetab.org/tutorial/java-generics/design/"
+            class="toc-page text-muted ">
             Guidelines
         </a>
     </div>
@@ -344,29 +350,29 @@
 <h2 id="define-a-generic-type">Define a Generic Type</h2>
 
 <p>A generic type is a type with formal type parameters.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;{</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span><span class="o">);</span>
-        <span class="kd">public</span> <span class="n">E</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
-    <span class="o">}</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="nf">interface</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">{</span>
+        <span class="kd">public</span> <span class="nf">void</span> <span class="n">add</span><span class="p">(</span><span class="n">E</span> <span class="nf">element</span><span class="p">);</span>
+        <span class="kd">public</span> <span class="nf">E</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="nf">index</span><span class="p">);</span>
+    <span class="p">}</span></code></pre></div>
 <p>The interface List is a <strong>generic type</strong> with single <strong>type parameter</strong> - E. Type parameters can be more than one. The class Pair, shown below, is a <strong>generic type</strong> with two <strong>type parameters</strong> - T, U.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pair</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="nf">class</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="p">{</span>
 
-        <span class="kd">private</span> <span class="n">T</span> <span class="n">first</span><span class="o">;</span>
-        <span class="kd">private</span> <span class="n">U</span> <span class="n">second</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="nf">T</span> <span class="n">first</span><span class="p">;</span>
+        <span class="kd">private</span> <span class="nf">U</span> <span class="n">second</span><span class="p">;</span>
 
-        <span class="kd">public</span> <span class="nf">Pair</span><span class="o">(</span><span class="n">T</span> <span class="n">first</span><span class="o">,</span> <span class="n">U</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="n">second</span><span class="o">;</span>
-        <span class="o">}</span>
+        <span class="kd">public</span> <span class="nf">Pair</span><span class="p">(</span><span class="n">T</span> <span class="nf">first</span><span class="p">,</span> <span class="n">U</span> <span class="nf">second</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">first</span> <span class="o">=</span> <span class="n">first</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="n">second</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="kd">public</span> <span class="n">T</span> <span class="nf">getFirst</span><span class="o">()</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">first</span><span class="o">;</span>
-        <span class="o">}</span>
+        <span class="kd">public</span> <span class="nf">T</span> <span class="n">getFirst</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">first</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="kd">public</span> <span class="n">U</span> <span class="nf">getSecond</span><span class="o">()</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">second</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>  </code></pre></div>
+        <span class="kd">public</span> <span class="nf">U</span> <span class="n">getSecond</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">second</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>  </code></pre></div>
 <p>The syntax to define Generic class is:</p>
 
 <p><code>modifiers class className&lt;T1, T2, ..., Tn&gt; { }</code></p>
@@ -379,19 +385,19 @@
 
 <p>To create an instance of ArrayList<E>, we use parameterized type ArrayList<String></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// for generic type List&lt;E&gt;, the parameterized type is
-</span><span class="c1"></span>    <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>  </code></pre></div>
+</span><span class="c1"></span>    <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>  </code></pre></div>
 <p>To refer the instance of a generic type, we need variable with parameterized type</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
 
     <span class="c1">// or short form
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span></code></pre></div>
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span></code></pre></div>
 <p>From Java 1.7 onwards, we can skip actual type argument and short it as <code>new ArrayList&lt;&gt;()</code> as compiler can infer it from the parameterized type on the left side.</p>
 
 <p>Let&rsquo;s create some objects of generic type Pair<T,U>,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">oddPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pairs</span><span class="o">&lt;&gt;(</span><span class="s">&#34;hello&#34;</span><span class="o">,</span><span class="n">10</span><span class="o">);</span>  
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">oddPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pairs</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">,</span><span class="n">10</span><span class="p">);</span>  
 
-    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="n">1</span><span class="o">,</span><span class="n">7</span><span class="o">);</span> 
+    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">intPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">1</span><span class="p">,</span><span class="n">7</span><span class="p">);</span> 
     </code></pre></div>
 <p>In first example, to instantiate generic type <code>Pair&lt;T, U&gt;</code>, we use parameterized type <code>Pair&lt;String, Integer&gt;</code>. It replaces <strong>type parameter</strong> (T and U) with actual <strong>type arguments</strong> (String and Integer). In second example, we use Integer as actual type argument for both T and U.</p>
 
@@ -443,18 +449,18 @@
 <p>Just like generic type declaration, type parameters can be used in method declarations, but its scope is limited to the method where it is declared.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// add elements of array of a type to collection of same type
 </span><span class="c1"></span>    <span class="c1">// &lt;T&gt; is type parameter 
-</span><span class="c1"></span>    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">addAll</span><span class="o">(</span><span class="n">T</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">coll</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">element</span> <span class="o">:</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">coll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">element</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span></code></pre></div>
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">void</span> <span class="n">addAll</span><span class="p">(</span><span class="n">T</span><span class="p">[]</span> <span class="nf">elements</span><span class="p">,</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">coll</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="nf">element</span> <span class="o">:</span> <span class="n">elements</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">coll</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span></code></pre></div>
 <p>The addAll() method adds all elements of array to the collection. It defines type parameter <code>&lt;T&gt;</code> and uses it in methods&rsquo; formal parameters - <code>T[] elements</code> and <code>Collection&lt;T&gt; coll</code>. In for loop, all the items of elements array are added to Collection coll. The method is called as below,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span><span class="o">[]</span> <span class="n">alphabets</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;b&#34;</span><span class="o">};</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span><span class="n">stringList</span><span class="o">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span><span class="p">[]</span> <span class="nf">alphabets</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">};</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">stringList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">addAll</span><span class="p">(</span><span class="n">alphabets</span><span class="p">,</span><span class="n">stringList</span><span class="p">);</span>
 
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span><span class="n">intList</span><span class="o">);</span>      <span class="o">//</span> <span class="n">error</span></code></pre></div>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">intList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">addAll</span><span class="p">(</span><span class="n">alphabets</span><span class="p">,</span><span class="n">intList</span><span class="p">);</span>      <span class="o">//</span> <span class="n">error</span></code></pre></div>
 <p>Both the parameters - elements and coll is of same type T, and to invoke the method, we should use array and List of same type otherwise compiler throws error. For example, when try to pass array of String and list of integer code will not compile.</p>
 
 <p>Syntax to define generic method is:</p>
@@ -519,7 +525,7 @@
 
 
 
-<script src="/js/vendor.min.d5750c855207aebcf4fdb7568961a27500008ef4a4f40b63a7b028f80a9221d3.js"></script>
+<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
 </body>
 
 </html>

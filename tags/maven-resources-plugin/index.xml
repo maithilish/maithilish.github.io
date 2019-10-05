@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Maven Resources Plugin on Codetab</title>
+    <title>maven resources plugin on Codetab</title>
     <link>https://www.codetab.org/tags/maven-resources-plugin/</link>
-    <description>Recent content in Maven Resources Plugin on Codetab</description>
+    <description>Recent content in maven resources plugin on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 15:41:00 +0530</lastBuildDate>
