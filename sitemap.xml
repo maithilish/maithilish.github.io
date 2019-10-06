@@ -348,6 +348,11 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/post/hugo-webfont/</loc>
+    <lastmod>2019-10-05T10:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/java-generics/wildcards/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
@@ -1328,12 +1333,17 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/java-unicode-encode-decode-transcode-linux/</loc>
-    <lastmod>2019-09-29T11:00:00+00:00</lastmod>
+    <loc>https://www.codetab.org/tags/hugo-static-site-generator-webfont-font-awesome/</loc>
+    <lastmod>2019-10-05T10:20:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tags/</loc>
+    <lastmod>2019-10-05T10:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/java-unicode-encode-decode-transcode-linux/</loc>
     <lastmod>2019-09-29T11:00:00+00:00</lastmod>
   </url>
   
