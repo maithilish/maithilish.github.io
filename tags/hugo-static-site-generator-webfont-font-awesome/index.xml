@@ -17,8 +17,8 @@
       <pubDate>Sat, 05 Oct 2019 10:20:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/post/hugo-webfont/</guid>
-      <description>Hugo Webfont The share icons rendered above are not images, instead they are font icons. Font icons, also called webfont, are scalable vector icons that can be controlled with CSS; the size, color, shadow, etc.
-Font Awesome is extensively used webfont, with more than 650 icons. The downside is that the size of Font Awesome is around 130kb and we end up downloading many unused icons. To reduce the size and speedup page loading time, we can pick and choose few icons and create a custom pack; codetab.</description>
+      <description>Hugo Webfont The share icons rendered above are not images, instead they are font icons. Font icons, also called webfont, are scalable vector icons that can be styled with css; the size, color, shadow, etc.
+Font Awesome is the top choice for font icons, with more than 650 icons with minimum download size of 130KB. In case we use few icons, better option is to pick and choose icons and create a custom pack; codetab.</description>
     </item>
     
   </channel>

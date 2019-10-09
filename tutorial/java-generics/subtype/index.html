@@ -346,7 +346,7 @@
 <p>To explain Generic inheritance, subtypes and wildcards, we use following class hierarchy:</p>
 
 <figure class="text-center" >
-  <img class="lazy" data-src="/tutorial/java-generics/media/generics-class-hierarchy.png" alt="Java Generics Example Class Hierarchy" />
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-class-hierarchy.png" alt="Java Generics Example Class Hierarchy" />
 </figure>
 
 
@@ -385,7 +385,7 @@
 <p>A generic class or interface can have subtype by extending or implementing it. Best example of generic subtype is Collection classes.</p>
 
 <figure class="text-center" >
-  <img class="lazy" data-src="/tutorial/java-generics/media/generics-subtype-collection.png" alt="Java Generics Collection Rawtype" />
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection.png" alt="Java Generics Collection Rawtype" />
 </figure>
 
 
@@ -394,7 +394,7 @@
 <p>As long as type arguments are same, the inheritance is allowed.</p>
 
 <figure class="text-center" >
-  <img class="lazy" data-src="/tutorial/java-generics/media/generics-subtype-collection-parameterized.png" alt="Java Generics Collection Subtype" />
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection-parameterized.png" alt="Java Generics Collection Subtype" />
 </figure>
 
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// list
@@ -434,7 +434,7 @@
 <p>Why <code>List&lt;Cookie&gt;</code> is not assignable to <code>List&lt;Snack&gt;</code>? The original intent with <code>List&lt;Cookie&gt;</code> is that it should hold only the Cookie and nothing else. However, when it is assigned to <code>List&lt;Snack&gt;</code>, Java has to allow it to hold both Cookie and Snack objects which messes the list. Hence, they are not compatible.</p>
 
 <figure class="text-center" >
-  <img class="lazy" data-src="/tutorial/java-generics/media/generics-subtype-collection-error.png" alt="Java Generics Collection Subtype" />
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection-error.png" alt="Java Generics Collection Subtype" />
 </figure>
 
 
