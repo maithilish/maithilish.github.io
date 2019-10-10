@@ -23,21 +23,32 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/www.codetab.org\/"
+             "@id": "https://google.com/article"
         },
-        "articleSection" : "tutorial",
+        "articleSection" : "tutorial",        
         "name" : "Pattern - Apache Ivy Tutorial - CodeTab",
         "headline" : "Pattern - Apache Ivy Tutorial - CodeTab",
-        "description" : "Apache Ivy Pattern is used in many of the tasks and settings, to define a directory structure or the artifact file name. Pattern is composed of tokens",
+        "url" : "https://www.codetab.org/tutorial/apache-ivy/pattern/",
+        "description" : "Apache Ivy Pattern is used in many of the tasks and settings, to define a directory structure or the artifact file name. Pattern is composed of tokens",        
         "inLanguage" : "en",
+        "image": "https://www.codetab.org/logo.jpg",
         "author" : "Maithilish",
         "creator" : "Maithilish",
-        "publisher": "Maithilish",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Maithilish",
+            "url": "https://www.codetab.org/",            
+            "logo": {
+               "@type": "ImageObject",
+               "url": "https://www.codetab.org/logo.jpg",
+               "width":"100",
+               "height":"100"
+            } 
+        },
         "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T21:01:00+0530",
-        "dateModified" : "2019-01-10T21:01:00+0530",
-        "url" : "\/tutorial\/apache-ivy\/pattern\/",
+        "dateModified" : "2019-01-10T21:01:00+0530",        
         "wordCount" : "568",
         "keywords" : [ "apache ivy pattern","Blog" ]
     }
@@ -154,8 +165,10 @@
 
 <div class="container-fluid">
   <div class="row">&nbsp;</div>
+
   <div class="row">
-    <aside id="sidebar" class="col-md-4">
+    
+    <aside id="sidebar" class="col-md-3">
       <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
 
     
@@ -194,70 +207,70 @@
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/introduction/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Introduction
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/installation/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Installation
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/ant-tasks/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Ant Tasks
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/resolve/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Resolve
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Cachepath and Retrieve
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/pattern/"
-            class="toc-page text-danger ">
+            class="toc-page text-wrap text-danger ">
             Pattern
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/repository-resolvers/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Resolvers and Repository
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Install Task and Local Repositories
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/shared-repository/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Shared Repository
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/publish/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Publish
         </a>
     </div>
@@ -280,13 +293,13 @@
         
         
         <a href="https://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             IvyDE Plugin for Eclipse
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             IvyDE Settings and Retrieve
         </a>
         
@@ -306,23 +319,10 @@
 </nav>
 
 </div>
-      <div class="row my-5 justify-content-center">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
     </aside>
-    <div id="contentbar" class="col-md-8">
-      <div id="share" class="row justify-content-end">
+
+    <div id="contentbar" class="col-md-7">
+        <div id="share" class="row justify-content-end">
 
 
 
@@ -392,9 +392,9 @@
 
 
 <i class="icon-blank ctab-transparent"></i></div>
-      <div class="row">
-        <main id="content" class="col-md-11 post-basic">
-          
+        <div class="row">
+          <main id="content" class="col-md-11 post-basic">
+            
 
 <p>Before going further, it&rsquo;s important to understand some of the core
 concepts of Apache Ivy.</p>
@@ -626,12 +626,29 @@ myfolder/pigo/pigoapp-1.1.jar</code></pre></div>
 layouts.</p></li>
 </ul>
 
-        </main>
-        <aside id="sidebar-right" class="col-md-1">
-        </aside>
+          </main>
+        </div>
       </div>
-    </div>
+  
+    <aside id="sidebar-right" class="col-md-2">
+      <div class="row my-5 justify-content-center border">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+
   </div>
+
 </div>
 
 <footer class="container-fluid mt-5">

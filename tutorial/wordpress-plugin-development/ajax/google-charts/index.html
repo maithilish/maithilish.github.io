@@ -23,21 +23,32 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/www.codetab.org\/"
+             "@id": "https://google.com/article"
         },
-        "articleSection" : "tutorial",
+        "articleSection" : "tutorial",        
         "name" : "Google Charts - WordPress Plugin Development - CodeTab",
         "headline" : "Google Charts - WordPress Plugin Development - CodeTab",
-        "description" : "WordPress Google Charts tutorial explains the steps to load Google Chart API, fetch chart data with Ajax and draw Google Charts.",
+        "url" : "https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/",
+        "description" : "WordPress Google Charts tutorial explains the steps to load Google Chart API, fetch chart data with Ajax and draw Google Charts.",        
         "inLanguage" : "en",
+        "image": "https://www.codetab.org/logo.jpg",
         "author" : "Maithilish",
         "creator" : "Maithilish",
-        "publisher": "Maithilish",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Maithilish",
+            "url": "https://www.codetab.org/",            
+            "logo": {
+               "@type": "ImageObject",
+               "url": "https://www.codetab.org/logo.jpg",
+               "width":"100",
+               "height":"100"
+            } 
+        },
         "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T11:22:00+0530",
-        "dateModified" : "2019-01-11T11:22:00+0530",
-        "url" : "\/tutorial\/wordpress-plugin-development\/ajax\/google-charts\/",
+        "dateModified" : "2019-01-11T11:22:00+0530",        
         "wordCount" : "834",
         "keywords" : [ "wordpress google charts","Blog" ]
     }
@@ -154,8 +165,10 @@
 
 <div class="container-fluid">
   <div class="row">&nbsp;</div>
+
   <div class="row">
-    <aside id="sidebar" class="col-md-4">
+    
+    <aside id="sidebar" class="col-md-3">
       <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
 
     
@@ -194,49 +207,49 @@
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Introduction
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Install Locally
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Simple Plugin
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Shortcode
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Plugin Structure
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Main File
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/"
-            class="toc-page text-muted ">
+            class="toc-page text-wrap text-muted ">
             Hooks, Actions, Filters
         </a>
     </div>
@@ -259,19 +272,19 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Add Menu
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Settings API
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Options Page
         </a>
         
@@ -294,19 +307,19 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Custom Post Type
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Meta Box
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Save Post
         </a>
         
@@ -329,19 +342,19 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Plugin Enqueue Scripts
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Pass Data to JavaScript
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Debug Info
         </a>
         
@@ -364,19 +377,19 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Ajax
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Chart Page
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/"
-            class="toc-page dropdown-item text-danger">
+            class="toc-page dropdown-item text-wrap text-danger">
             Google Charts
         </a>
         
@@ -399,13 +412,13 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Internationalization
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Localization
         </a>
         
@@ -428,31 +441,31 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Activation
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Multi site
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Multi site Activation
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Deactivation
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Uninstall
         </a>
         
@@ -475,49 +488,49 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Unit Test
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Test Setup
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Simple Unit Tests
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Unit Test Scripts, Actions, Filters
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Advanced Unit Tests
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Test Internationalization Functions
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Ajax Unit Tests
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/"
-            class="toc-page dropdown-item text-muted">
+            class="toc-page dropdown-item text-wrap text-muted">
             Multi site Plugin Unit Tests
         </a>
         
@@ -537,23 +550,10 @@
 </nav>
 
 </div>
-      <div class="row my-5 justify-content-center">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
     </aside>
-    <div id="contentbar" class="col-md-8">
-      <div id="share" class="row justify-content-end">
+
+    <div id="contentbar" class="col-md-7">
+        <div id="share" class="row justify-content-end">
 
 
 
@@ -623,9 +623,9 @@
 
 
 <i class="icon-blank ctab-transparent"></i></div>
-      <div class="row">
-        <main id="content" class="col-md-11 post-basic">
-          
+        <div class="row">
+          <main id="content" class="col-md-11 post-basic">
+            
 
 <h2 id="9-3-wordpress-google-charts">9.3. WordPress Google Charts</h2>
 
@@ -858,12 +858,29 @@ Chart to present the Shares by date.</p>
 
 <p>The next chapter explains the steps to internationalize the plugin.</p>
 
-        </main>
-        <aside id="sidebar-right" class="col-md-1">
-        </aside>
+          </main>
+        </div>
       </div>
-    </div>
+  
+    <aside id="sidebar-right" class="col-md-2">
+      <div class="row my-5 justify-content-center border">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+
   </div>
+
 </div>
 
 <footer class="container-fluid mt-5">
