@@ -6,7 +6,7 @@
     <description>Recent content in Java Generics Tutorial - CodeTab on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml" />
     
@@ -52,6 +52,17 @@ Unbounded Wildcard Consider a method to display the elements of a List.</descrip
       <description>Bounded Wildcards We can use wildcard ? with either upper or lower bound.
 Extends The &amp;lt;? extends Type&amp;gt; is a wildcard with upper bound. Extends allows us to restrict the unbounded List&amp;lt;?&amp;gt; to some type and its subtypes. For example, we want restrict display method only to Food and its subclasses and for change list parameter as below.
 public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the list elements  } display(new ArrayList&amp;lt;Food&amp;gt;()); display(new ArrayList&amp;lt;Snack&amp;gt;()); display(new ArrayList&amp;lt;Cookie&amp;gt;()); display(new ArrayList&amp;lt;Fruit&amp;gt;()); display(new ArrayList&amp;lt;Apple&amp;gt;()); display(new ArrayList&amp;lt;String&amp;gt;()); // error  display(new ArrayList&amp;lt;Integer&amp;gt;()); // error  Now display() accepts only the list of Food and its subtypes - Snack, Cookie, Fruit, Apple and nothing else.</description>
+    </item>
+    
+    <item>
+      <title>Java Generics Wildcards in API - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link>
+      <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
+      <description>Wildcard bounds in Java API The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.
+Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze java.util.Stream.map() method which is normally used along with lambda expression as follows:
+List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList());  At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
     </item>
     
     <item>

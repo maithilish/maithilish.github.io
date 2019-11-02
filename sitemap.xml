@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.codetab.org/tutorial/java-generics/</loc>
+    <lastmod>2019-11-01T12:32:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/post/borg-backup/</loc>
     <lastmod>2019-08-27T10:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tutorial/java-generics/introduction/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tutorial/java-generics/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
   
@@ -493,8 +493,8 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</loc>
-    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
+    <loc>https://www.codetab.org/tutorial/java-generics/wildcards-api/</loc>
+    <lastmod>2019-11-01T12:32:00+05:30</lastmod>
   </url>
   
   <url>
@@ -548,7 +548,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/java-generics/design/</loc>
+    <loc>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
   
@@ -595,6 +595,11 @@
   <url>
     <loc>https://www.codetab.org/tutorial/gwt/shell/finsshell/</loc>
     <lastmod>2019-01-10T10:57:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/java-generics/design/</loc>
+    <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
   
   <url>
@@ -1333,12 +1338,17 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/hugo-static-site-generator-webfont-font-awesome/</loc>
-    <lastmod>2019-10-05T10:20:00+00:00</lastmod>
+    <loc>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</loc>
+    <lastmod>2019-11-01T12:32:00+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tags/</loc>
+    <lastmod>2019-11-01T12:32:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/hugo-static-site-generator-webfont-font-awesome/</loc>
     <lastmod>2019-10-05T10:20:00+00:00</lastmod>
   </url>
   

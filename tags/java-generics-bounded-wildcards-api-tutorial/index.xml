@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java generics bounded wildcards api tutorial on Codetab</title>
+    <link>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</link>
+    <description>Recent content in java generics bounded wildcards api tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Generics Wildcards in API - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link>
+      <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
+      <description>Wildcard bounds in Java API The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.
+Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze java.util.Stream.map() method which is normally used along with lambda expression as follows:
+List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList());  At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
+    </item>
+    
+  </channel>
+</rss>

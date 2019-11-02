@@ -32,11 +32,11 @@
         "description" : "Bounded wildcards restricts the wildcard domain to specific hierarchy",
         "inLanguage" : "en",
         "image": "https://www.codetab.org/logo.jpg",
-        "author" : "[\\logo.svg$]Maithilish",
-        "creator" : "[\\logo.svg$]Maithilish",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
         "publisher": {
             "@type": "Organization",
-            "name": "[\\logo.svg$]Maithilish",
+            "name": "Maithilish",
             "url": "https://www.codetab.org/",
             "logo": {
                "@type": "ImageObject",
@@ -45,11 +45,11 @@
                "height":"200"
             }
         },
-        "copyrightHolder" : "[\\logo.svg$]Maithilish",
+        "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2019",
         "datePublished": "2019-07-23T13:54:00+0530",
         "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "1144",
+        "wordCount" : "1173",
         "keywords" : [ "java generics bounded wildcards tutorial","Blog" ]
     }
 </script>
@@ -230,6 +230,13 @@
         <a href="https://www.codetab.org/tutorial/java-generics/bounded-wildcards/"
             class="toc-page text-wrap text-danger ">
             Bounded Wildcards
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://www.codetab.org/tutorial/java-generics/wildcards-api/"
+            class="toc-page text-wrap text-muted ">
+            Wildcards in API
         </a>
     </div>
     
@@ -417,7 +424,21 @@
 
 <h2 id="producer-and-consumer">Producer and Consumer</h2>
 
-<p>So far, we saw how wildcards affects types, sub types and super types. Wildcards also impacts the methods; and to understand it, we group methods into two groups.</p>
+<p>So far, we saw how wildcards affects types, sub types and super types. Wildcards also dictates what type of methods can be invoked and to understand that, we categorize parameterized types based on their behavior - producers and consumers.</p>
+
+<p>When we get an item from list then list acts as producer and when an item is added then it acts as consumer. Let&rsquo;s see how a list changes its nature when assigned to unbounded, upper bounded or lower bounded wildcards variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="nf">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>          <span class="c1">// acts both as producer and consumer    
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>                   <span class="c1">// acts as producer 
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Snacks</span><span class="o">&gt;</span> <span class="n">upperBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span> <span class="c1">// acts as producer
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Snacks</span><span class="o">&gt;</span> <span class="n">lowerBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>   <span class="o">//</span> <span class="n">acts</span> <span class="nf">both</span> <span class="n">as</span> <span class="nf">producer</span> <span class="n">and</span> <span class="nf">consumer</span></code></pre></div>
+<p>There is an acronym <strong>PECS</strong> to remember this, which is abbreviation for <strong>Producer extends, Consumer super</strong>.</p>
+
+<ul>
+<li>assign list to <code>List&lt;? extends Snack&gt;</code>; it becomes producer.</li>
+<li>assign the list to <code>List&lt;? super Snack&gt;</code>; it becomes consumer.</li>
+</ul>
+
+<p>There are some rules about invoking methods on consumers and producers and to understand it, we divide methods into two groups - get and add methods.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="nf">E</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="nf">index</span><span class="p">);</span>        <span class="c1">// method without formal type parameter
@@ -506,19 +527,7 @@
 </tbody>
 </table>
 
-<p>Next, we can group parameterized type into two groups - producer and consumer. When we get an item from list then list acts as producer and when an item is added then it acts as consumer. Let&rsquo;s see how a list changes its nature when assigned to unbounded, upper bounded or lower bounded wildcards variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="nf">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>          <span class="c1">// acts both as producer and consumer    
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>                   <span class="c1">// acts as producer 
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Snacks</span><span class="o">&gt;</span> <span class="n">upperBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span> <span class="c1">// acts as producer
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Snacks</span><span class="o">&gt;</span> <span class="n">lowerBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>   <span class="o">//</span> <span class="n">acts</span> <span class="nf">both</span> <span class="n">as</span> <span class="nf">producer</span> <span class="n">and</span> <span class="nf">consumer</span></code></pre></div>
-<p>There is an acronym <strong>PECS</strong> to remember this, which is abbreviation for <strong>Producer extends, Consumer super</strong>.</p>
-
-<ul>
-<li>assign list to <code>List&lt;? extends Snack&gt;</code>; it becomes producer.</li>
-<li>assign the list to <code>List&lt;? super Snack&gt;</code>; it becomes consumer.</li>
-</ul>
-
-<p>There are some rules about invoking add and get groups of methods on generic variables.</p>
+<p>Finally, let&rsquo;s know the rules about invoking methods (get and add) on regular, unbounded, and bounded types (consumers and producers).</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
     <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="nf">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>         <span class="c1">// can call add and get methods
 </span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>                    <span class="c1">// can call get methods
@@ -533,10 +542,10 @@
 
     <span class="c1">// can call add group of methods only on consumers
 </span><span class="c1"></span>    <span class="n">snacks</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>
-    <span class="n">lowerboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>
-    <span class="n">unboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>        <span class="c1">// error
+    <span class="n">unboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>        <span class="c1">// error    
 </span><span class="c1"></span>    <span class="n">upperboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>     <span class="c1">// error
-</span><span class="c1"></span>    </code></pre></div>
+</span><span class="c1"></span>    <span class="n">lowerboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>    
+    </code></pre></div>
 <p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?&gt;</code> and <code>List&lt;? extends Snacks&gt;</code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>add</strong> group of methods (methods with one or more type parameters) on them.</p>
 
 <p>Yet another way to remember is</p>

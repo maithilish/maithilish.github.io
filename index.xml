@@ -691,13 +691,14 @@ WordPress Posts Open Dashboard → Posts to display the list of posts from the s
     </item>
     
     <item>
-      <title>Java Generics Type Parameter Bounds - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      <title>Java Generics Wildcards in API - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link>
+      <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
-      <description>Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
-public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
+      <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
+      <description>Wildcard bounds in Java API The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.
+Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze java.util.Stream.map() method which is normally used along with lambda expression as follows:
+List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList());  At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
     </item>
     
     <item>
@@ -782,14 +783,13 @@ WordPress theme customizes the look and feel of the site. WordPress, being one o
     </item>
     
     <item>
-      <title>Java Generics Design - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/design/</link>
+      <title>Java Generics Type Parameter Bounds - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/java-generics/design/</guid>
-      <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
-Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
-The union method, for example, takes two sets and returns a new set which is union of two.</description>
+      <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
+      <description>Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
+public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
     </item>
     
     <item>
@@ -868,6 +868,17 @@ Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and se
       
       <guid>https://www.codetab.org/tutorial/gwt/shell/finsshell/</guid>
       <description>Part I of the GWT Tutorial explains the GWT UI design aspects and covers client side coding. It explains a menu driven multi tabbed front end and in doing so, it covers the use of essential GWT Panels, widgets,custom widgets, and a simple but effective way of handling GWT Events, and using EventBus architecture introduced in GWT ™2.x, and the benefits of @UIFactory to create the widgets. GWT Tutorial extensively uses UIBinder concept introduced in Google Web Toolkit 2.</description>
+    </item>
+    
+    <item>
+      <title>Java Generics Design - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/java-generics/design/</link>
+      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/java-generics/design/</guid>
+      <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
+Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
+The union method, for example, takes two sets and returns a new set which is union of two.</description>
     </item>
     
     <item>

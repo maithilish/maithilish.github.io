@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Oct 2019 10:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>java generics bounded wildcards api tutorial</title>
+      <link>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</link>
+      <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hugo Static site generator webfont font awesome</title>
