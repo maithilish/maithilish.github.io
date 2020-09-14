@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,11 +561,8 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In the OpenShift WordPress Tutorial, we cover the steps to create a free
+            <p>In the OpenShift WordPress Tutorial, we cover the steps to create a free
 OpenShift account and a WordPress application.</p>
-
 <p>OpenShift is a cloud computing <strong>Platform as a Service</strong> (PaaS) from Red
 Hat, which, in simple terms, means it offers a virtual server with all
 the server components we need to run an application. In other words,
@@ -575,52 +572,45 @@ various types of application written in supported languages. OpenShift
 engineers and system administrators take care of OS upgradation,
 security patch management, network management and other Sys admin tasks
 and frees us to focus on application development.</p>
-
 <p>To understand OpenShift better, let us go ahead and create an OpenShift
 WordPress application.</p>
-
 <h2 id="openshift-wordpress-tutorial">OpenShift WordPress Tutorial</h2>
-
 <p>Create OpenShift account</p>
-
 <p>To start using OpenShift, we need to create an account:</p>
-
 <ol>
-<li><p>Open <a href="https://www.openshift.com/" target="_blank">OpenShift</a> and choose Sign up for
+<li>
+<p>Open <a href="https://www.openshift.com/" target="_blank">OpenShift</a> and choose Sign up for
 Free. In the <strong>Sign Up</strong> page, enter your e-mail. After filling
 other details, sign up to OpenShift. It sends a verification mail to
 your e-mail account. Check the mailbox for the mail from OpenShift
-and use it to complete the verification process.</p></li>
-
-<li><p>After completing the verification, go back to <strong>OpenShift</strong> and
-login using <strong>Sign In</strong> link on the top right.</p></li>
-
-<li><p>Accept the Legal Terms to complete the account creation. OpenShift
+and use it to complete the verification process.</p>
+</li>
+<li>
+<p>After completing the verification, go back to <strong>OpenShift</strong> and
+login using <strong>Sign In</strong> link on the top right.</p>
+</li>
+<li>
+<p>Accept the Legal Terms to complete the account creation. OpenShift
 displays the Management Console with the welcome message. In the
 rest of the tutorial, we refer to this console as <strong>OpenShift Web
 Console</strong>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-console.png" alt="OpenShift WordPress Tutorial - OpenShift Management     Console" />
 </figure>
+
 </li>
 </ol>
-
 <p>Create Namespace</p>
-
 <p>URL of any application hosted in OpenShift ends with <strong>rhcloud.com</strong>.
 Then how to distinguish our applications from others? For that,
 OpenShift uses a concept called <strong>namespace</strong>, which is also known as
 <strong>domain</strong>.</p>
-
 <p>Before doing anything else, we need to configure namespace for the
 account. To configure namespace, click on <strong>Settings</strong> tab and web
 console displays the Namespace screen.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-createnamespace.png" alt="OpenShift WordPress Tutorial - OpenShift Namespace Settings screen." />
 </figure>
-
 
 <p>In the above screenshot, we have chosen <strong>wordpressguide</strong> as the
 namespace. Namespace is unique to the account and in case, if you try to
@@ -630,10 +620,8 @@ already allotted to our OpenShift account. So, you have to choose some
 other name, which is not already taken by others. After filling
 namespace, click Save. OpenShift creates the namespace and attaches it
 to the account.</p>
-
 <p>OpenShift uses domain name as a suffix to the base URL - rhcloud.com and
 URL for our account becomes <strong>wordpressguide.rhcloud.com</strong>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -651,26 +639,20 @@ URL for our account becomes <strong>wordpressguide.rhcloud.com</strong>.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Create Application</p>
-
 <p>Next, we are going to create an application. In the OpenShift web
 console, select <strong>Applications</strong> Tab. In the Applications screen, click
 <strong>Create your first application now</strong>. In the next screen - Choose a
 type of application - scroll down to Instant App section and select
 <strong>WordPress 3.x</strong></p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-instantapps.png" alt="OpenShift WordPress Tutorial - OpenShift Instant Apps" />
 </figure>
 
-
 <p>It takes us to the next screen - Configure the application.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-configureapp.png" alt="OpenShift WordPress Tutorial - OpenShift Configure App screen" />
 </figure>
-
 
 <p>In screen, enter the application name in Public URL field. We have
 chosen <strong>quickstart</strong> as the application name, but it may be anything.
@@ -679,148 +661,125 @@ such restriction for the application name, and you are free to use
 <strong>quickstart</strong> as name of your application. Leave all other fields as it
 is and click <strong>Create Application</strong>. OpenShift gets into application
 creation, which may take up to a couple of minutes.</p>
-
 <p><strong>Note</strong></p>
-
 <p>Throughout the tutorial, we use <strong>wordpressguide</strong> as the example domain
 name and <strong>quickstart</strong> as the application name. When you try out
 examples in OpenShift, remember to replace them with your domain and
 application name.</p>
-
 <p>Once application is created, web console displays  <strong>Next Steps</strong>
 screen.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-appcreated.png" alt="OpenShift WordPress Tutorial - OpenShift Application Next Steps Screen" />
 </figure>
-
 
 <p>This screen shows info about MySQL database and also the various things
 that we can do with the application. There is no need to note down the
 database user and password as they are always available from the web
 console. Similarly, we may ignore other details in this screen for the
 time being.</p>
-
 <p>Go back to <strong>Applications</strong> tab, which now shows the newly created
 application. OpenShift free plan allows us to create three applications
 and <strong>1 of 3</strong> at the top right indicates that we have created one
 application out of the allowed three. Our domain <strong>wordpressguide</strong> has
 one application, <strong>quickstart</strong>, which uses two server components -
 MySQL 5.1 and PHP 5.3.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-apps.png" alt="OpenShift WordPress Tutorial - OpenShift Applications Screen" />
 </figure>
 
-
 <p>Click the application <strong>quickstart</strong> to view the <strong>Application
 Overview</strong> page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-app-overview.png" alt="OpenShift WordPress Tutorial - OpenShift Application Overview screen" />
 </figure>
-
 
 <p>Application Overview screen shows the details about the cartridges
 (server components) used by the application and on what Gear cartridges
 are running and how much storage is allotted to them. We explain
 <strong>Cartridges</strong> and <strong>Gears</strong> in a moment.</p>
-
 <p>Another important piece of information in the Overview page is the
 application&rsquo;s <strong>Public URL</strong>. For the example application, it is
 <strong>quickstart-wordpressguide.rhcloud.com</strong>.</p>
-
 <p><strong>App URL</strong></p>
-
 <p>URL starts with the application name, then a - (dash), followed by the
 Namespace then a . (dot) and ends with rhcloud.com.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-publicurl.png" alt="OpenShift WordPress Tutorial - OpenShift Application Public URL components" />
 </figure>
-
 
 <p>At any time if you wish to delete an application and start fresh, use
 <strong>Delete this application..</strong>. button of this page. There is no limit on
 the number of times we recreate applications, which is a good thing when
 we try out OpenShift.</p>
-
 <p>Now WordPress Instant App is ready for access. Click the <strong>Public URL</strong>
 or open the Public URL in a new browser tab and we land in the WordPress
 Welcome page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-welcome.png" alt="OpenShift WordPress Tutorial - WordPress Welcome Screen" />
 </figure>
 
-
 <p><strong>Page not found - 404 error</strong></p>
-
 <p>Sometimes, when we first access the app, we may get <strong>404 Page Not found
 error</strong>. That happens when the app&rsquo;s Public URL is not yet propagated to
 DNS (Domain Name Servers) which may take up to a minute or two, or it
 may also happen when browser cache is not refreshed. When we get 404
 error, close the browser wait for some time and then access the app
 again.</p>
-
 <p>In case problem persists, then we may have to restart the application.
 Go to <strong>Application Overview</strong> page of the app and click  <strong>App
 Restart</strong>, which is at top right corner.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/os-apprestart.png" alt="OpenShift WordPress Tutorial - OpenShift Application Restart button" />
 </figure>
 
-
 <p>After the restart, wait for a while and then access the app from a newly
 opened browser, and this should resolve the 404 issue.</p>
-
 <p>We go through the WordPress - famous five minute - installation and
 settings in the next chapter.</p>
-
 <p>Let&rsquo;s pause for a moment and recap what we have done so far. First, we
 setup domain name for the OpenShift account and then add an instant
 application. When we hit Create Application button, OpenShift took
 fairly long time to complete the operation and it is because, behind the
 scene, OpenShift has setup many things for us:</p>
-
 <ul>
-<li><p>Carved out a virtual Linux server for us.</p></li>
-
-<li><p>Setup the networking configuration.</p></li>
-
-<li><p>Propagate server&rsquo;s IP address and domain name to Domain Name Servers
-(DNS)</p></li>
-
-<li><p>Install and configure Apache Web Server with PHP module.</p></li>
-
-<li><p>Install and configure a MySQL database.</p></li>
-
-<li><p>Install WordPress in Apache Web Server.</p></li>
-
-<li><p>Setup GIT repository to enable development environment.</p></li>
-
-<li><p>Setup permission and secure the whole setup.</p></li>
+<li>
+<p>Carved out a virtual Linux server for us.</p>
+</li>
+<li>
+<p>Setup the networking configuration.</p>
+</li>
+<li>
+<p>Propagate server&rsquo;s IP address and domain name to Domain Name Servers
+(DNS)</p>
+</li>
+<li>
+<p>Install and configure Apache Web Server with PHP module.</p>
+</li>
+<li>
+<p>Install and configure a MySQL database.</p>
+</li>
+<li>
+<p>Install WordPress in Apache Web Server.</p>
+</li>
+<li>
+<p>Setup GIT repository to enable development environment.</p>
+</li>
+<li>
+<p>Setup permission and secure the whole setup.</p>
+</li>
 </ul>
-
 <p>It requires a great deal of efforts and tons of knowledge to accomplish
 this on our own. That is the magic of OpenShift, which spun off a
 secured, fully functional, public facing, application development
 hosting environment in a matter of minutes. Having worked in a couple of
 cloud platforms, we would like say, without any hesitation, that
 OpenShift is one of the best out there and by far the easiest.</p>
-
 <p> </p>
-
 <p> </p>
-
 <p> </p>
-
 <p> </p>
-
 <p>Before concluding the OpenShift WordPress Tutorial, let us understand
 some of the core OpenShift concepts.</p>
-
 
 
 <div>&nbsp;</div>
@@ -839,9 +798,7 @@ some of the core OpenShift concepts.</p>
 
 
 
-
 <p>OpenShift Gears and Cartridges</p>
-
 <p>Gear is a resource-constrained container or virtual host that runs one
 or more user-specified software stacks (cartridges) and application
 code. Free plan comes with 3 small gears. Small gear comes with 512MB of
@@ -849,7 +806,6 @@ RAM and 1GB storage while Medium gear has 1GB RAM and 1GB storage. To
 make the concept easy, you may think Small Gear as a PC (or server) with
 512MB RAM, 1GB Disk Storage and a Single Core CPU, while Medium Gear is
 bit powerful, a PC with 1GB RAM, 1GB Storage and a Dual Core CPU.</p>
-
 <p>Cartridges are pluggable software components that can be added to an
 application to extend its functionality. OpenShift comes with several
 built-in cartridges based on the popular languages, servers, frameworks
@@ -857,7 +813,6 @@ and databases. Our WordPress App uses two cartridges - PHP 5.3 and MySQL
 5.1 and these two cartridges run on a small gear. In a later chapter, we
 add one more cartridge Cron 1.4 to add additional functionality of auto
 backup to the app.</p>
-
 <p>Last thing to explain here is Instant App. As you would have noticed
 there is no WordPress cartridge and this is because, WordPress is not a
 programming environment but a PHP application. OpenShift WordPress comes
@@ -868,12 +823,9 @@ and to help beginners, OpenShift has bundled WordPress as an Instant
 App. In a later chapter, we also show how to install WordPress directly
 from the source code without depending on the OpenShift bundled Instant
 App.</p>
-
 <p><strong>Important</strong></p>
-
 <p>OpenShift documents also call Instant Apps as quickstarts. Do not
 confuse it with our example app - <strong>quickstart</strong>.</p>
-
 <p>With that, we are ready to move onto WordPress and in the next chapter,
 we start with WordPress setup and basic administration.</p>
 

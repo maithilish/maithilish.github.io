@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Deactivation - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,33 +625,27 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-4-wordpress-plugin-deactivation">11.4. WordPress Plugin Deactivation</h2>
-
+            <h2 id="114wordpress-plugin-deactivation">11.4. WordPress Plugin Deactivation</h2>
 <p>In the previous blogs, we installed WordPress Multisite and learned to
 code plugin multisite activation. WordPress Plugin Deactivation follows
 similar pattern but in Share on Social Plugin it has some minor twists.</p>
-
 <p>Share on Social Plugin uses the same class file <code>class-activator.php</code>
 for deactivation too. In <code>Sos_Activator::setup()</code> method we register
 <code>Sos_Activator::deactivate()</code> as the deactivation method using WordPress
 function
 <a href="http://codex.wordpress.org/Function_Reference/register_deactivation_hook" target="_blank">register_deactivation_hook()</a>.</p>
-
 <p><code>share-on-social/admin/class-activator.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Activator {
 
     public function setup () {
         register_deactivation_hook( SOS_PLUGIN_FILE, 
                 array( $this,&#39;deactivate&#39; ) );
-    }</code></pre></div>
-<p>In the deactivation method, we use WordPress function is_multisite()
+    }
+</code></pre></div><p>In the deactivation method, we use WordPress function is_multisite()
 and parameter $networkwide to call
 <code>Sos_Activator::deactivate_for_blog()</code> method, which deletes the default
 basic locker, for site level deactivation either in multisite or in
 single site installation.</p>
-
 <p><code>share-on-social/admin/class-activator.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function deactivate ( $networkwide ) {
         if ( function_exists( &#39;is_multisite&#39; ) <span class="err">&amp;&amp;</span> is_multisite() ) {
@@ -671,20 +665,16 @@ single site installation.</p>
 
     public function deactivate_for_blog () {
         $this-&gt;delete_basic_locker();
-    }</code></pre></div>
-<p>For multsite network wide deactivation, we don&rsquo;t wish to delete the
+    }
+</code></pre></div><p>For multsite network wide deactivation, we don&rsquo;t wish to delete the
 basic locker and hence, Sos_Activator::deactivate_for_blog() is not
 called.</p>
-
 <p><strong>Purge</strong></p>
-
 <p>During deactivation, customs lockers created by the admins, plugins&rsquo;
 settings and stats are not deleted. These plugin entities are purged
 from database only when plugin is uninstalled.</p>
-
 <p>Purge is deferred till the last stage so that plugin entities are
 available in case admin chooses to re-activate the plugin.</p>
-
 
 
 <div>&nbsp;</div>
@@ -703,9 +693,7 @@ available in case admin chooses to re-activate the plugin.</p>
 
 
 
-
 <p> </p>
-
 <p>In the next section, we explain the steps to properly uninstall the
 plugin.</p>
 

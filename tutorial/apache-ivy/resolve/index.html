@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Resolve - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -396,28 +396,24 @@
           <main id="content" class="col-md-11 post-basic">
             <p>Resolve task, resolve dependencies described in ivy.xml and places the
 resolved dependencies in the Apache Ivy cache.</p>
-
 <p>Let&rsquo;s go through a sample project to understand this important concept.
 First, create a directory tree for package <code>in.ex.ivy</code> in the work dir</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">mkdir -p src/in/ex/ivy</code></pre></div>
-<p>Add following class file to <code>src/in/ex/ivy</code>.</p>
-
+<pre><code class="language-screen" data-lang="screen">mkdir -p src/in/ex/ivy
+</code></pre><p>Add following class file to <code>src/in/ex/ivy</code>.</p>
 <p><code>Example.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">ex</span><span class="p">.</span><span class="na">ivy</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.ex.ivy</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">org</span><span class="p">.</span><span class="na">apache</span><span class="p">.</span><span class="na">commons</span><span class="p">.</span><span class="na">lang</span><span class="p">.</span><span class="na">StringUtils</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.commons.lang.StringUtils</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">Example</span> <span class="p">{</span>
-      <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">String</span> <span class="nf">string</span> <span class="o">=</span> <span class="n">StringUtils</span><span class="p">.</span><span class="na">upperCase</span><span class="p">(</span><span class="s">&#34;Ivy Beginner Guide&#34;</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">string</span><span class="p">);</span>
-      <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>Example class depends on Apache Commons module <strong>commons-lang</strong> and
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">string</span> <span class="o">=</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">upperCase</span><span class="o">(</span><span class="s">&#34;Ivy Beginner Guide&#34;</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>
+      <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>Example class depends on Apache Commons module <strong>commons-lang</strong> and
 let&rsquo;s delegate the Dependency management to Apache Ivy.</p>
-
 <p>Add a file named <code>ivy.xml</code> to the work dir.</p>
-
 <p><code>ivy.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&gt;</span>
 <span class="nt">&lt;ivy-module</span> <span class="na">version=</span><span class="s">&#34;2.0&#34;</span>
@@ -428,87 +424,92 @@ let&rsquo;s delegate the Dependency management to Apache Ivy.</p>
  <span class="nt">&lt;dependencies&gt;</span>
   <span class="nt">&lt;dependency</span> <span class="na">org=</span><span class="s">&#34;commons-lang&#34;</span> <span class="na">name=</span><span class="s">&#34;commons-lang&#34;</span> <span class="na">rev=</span><span class="s">&#34;2.6&#34;</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/dependencies&gt;</span>
-<span class="nt">&lt;/ivy-module&gt;</span></code></pre></div>
-<p>Ivy reads this file and manage the dependencies. It provides info about
+<span class="nt">&lt;/ivy-module&gt;</span>
+</code></pre></div><p>Ivy reads this file and manage the dependencies. It provides info about
 the sample project and its dependencies and has 3 sections</p>
-
 <ol>
-<li><p>ivy-module : this is a standard root element with version,schema
-etc.</p></li>
-
-<li><p>info : this section is information about the project.</p>
-
+<li>
+<p>ivy-module : this is a standard root element with version,schema
+etc.</p>
+</li>
+<li>
+<p>info : this section is information about the project.</p>
 <ul>
-<li><p>organisation : organisation or company.</p></li>
-
-<li><p>module : name of the project</p></li>
-
-<li><p>status : release status – milestone, integration or release.</p></li>
-</ul></li>
-
-<li><p>dependencies : one or more dependencies for this project.</p>
-
+<li>
+<p>organisation : organisation or company.</p>
+</li>
+<li>
+<p>module : name of the project</p>
+</li>
+<li>
+<p>status : release status – milestone, integration or release.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>dependencies : one or more dependencies for this project.</p>
 <ul>
-<li><p>dependency :</p>
-
+<li>
+<p>dependency :</p>
 <ul>
-<li><p>org : organisation which provides the module</p></li>
-
-<li><p>name : module name</p></li>
-
-<li><p>rev : revision or version of the module</p></li>
-</ul></li>
-</ul></li>
+<li>
+<p>org : organisation which provides the module</p>
+</li>
+<li>
+<p>name : module name</p>
+</li>
+<li>
+<p>rev : revision or version of the module</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-
 <p>To sum up, in ivy.xml we are indicating that our project is dependent on
 commons-lang revision 2.6.</p>
-
 <p>To run the Apache Ivy in command line mode, we depend on Apache Ant. Add
 Ant build file <code>build.xml</code> to the work
 dir.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;ivy example&#34;</span> <span class="na">default=</span><span class="s">&#34;resolve&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;resolve&#34;</span> <span class="na">description=</span><span class="s">&#34;resolve dependencies with ivy&#34;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;ivy:resolve</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>In the project element we add Ivy namespace, so that Apache Ivy Ant
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>In the project element we add Ivy namespace, so that Apache Ivy Ant
 Tasks are visible to Ant during the build. Resolve task is defined
 through &lt;ivy:resolve /&gt; within target element. When Ant encounters
 this element, it calls Apache Ivy Resolve task which resolves the
 dependencies described in <code>ivy.xml</code> and places the resolved dependencies
 in its cache.</p>
-
 <p>That completes the Apache Ivy and Ant configuration. Next, run Ant from
 work directory.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">ant</code></pre></div>
-<p>Apache Ivy gets into the job of resolving the dependencies we mentioned
+<pre><code class="language-screen" data-lang="screen">ant
+</code></pre><p>Apache Ivy gets into the job of resolving the dependencies we mentioned
 in ivy.xml. If you are connected to the Internet, Ivy fetches the
 commons-lang 2.6 from a public repository in Internet and places them in
 the cache.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/console.png" alt="Ivy Resolve Task" />
 </figure>
 
-
 <p><strong>Figure 3.1. Resolve output</strong></p>
-
 <p>Console output shows the status of Resolve.</p>
-
 <ul>
-<li><p>conf - ivy is using default configuration</p></li>
-
-<li><p>module - as indicated by number and dwnlded columns, one module is
-resolved and downloaded.</p></li>
-
-<li><p>artifacts - as indicated by the columns under artifacts, module
+<li>
+<p>conf - ivy is using default configuration</p>
+</li>
+<li>
+<p>module - as indicated by number and dwnlded columns, one module is
+resolved and downloaded.</p>
+</li>
+<li>
+<p>artifacts - as indicated by the columns under artifacts, module
 contains 3 artifacts, i.e. jar, source and javadoc and Ivy has
-downloaded those three artifacts.</p></li>
+downloaded those three artifacts.</p>
+</li>
 </ul>
-
 <p>In this example, we have not specified the location where Ivy has to
 look for the modules. But how come Ivy is able to complete the task. In
 the absence of specific settings, Apache Ivy falls back on default
@@ -516,17 +517,15 @@ settings that comes bundled with it. For a repository location, it uses
 a concept known as Resolver and <strong>default public resolver</strong> points to
 <strong><a href="http://repo1.maven.org/maven2">http://repo1.maven.org/maven2</a></strong>. This default setting enabled Ivy to
 resolve and fetch the module.</p>
-
 <p>In case a module itself has other dependencies, then Ivy will fetch all
 required dependencies. These are known as transitive dependencies. For
 example, log4j depends on other modules like javax.mail, junit,
-jermanio.spec and oro etc., Dependency line &lt;dependency org=&ldquo;log4j&rdquo;
-name=&ldquo;log4j&rdquo; rev=&ldquo;1.2.16&rdquo;/&gt; will download log4j plus four dependent
-modules. By adding <strong>transitive=&ldquo;false&rdquo;</strong> to dependency line, we can
+jermanio.spec and oro etc., Dependency line &lt;dependency org=&quot;log4j&rdquo;
+name=&quot;log4j&rdquo; rev=&quot;1.2.16&rdquo;/&gt; will download log4j plus four dependent
+modules. By adding <strong>transitive=&quot;false&rdquo;</strong> to dependency line, we can
 force the Ivy not to download the other transitive dependencies.
-Dependency line &lt;dependency org=&ldquo;log4j&rdquo; name=&ldquo;log4j&rdquo; rev=&ldquo;1.2.16&rdquo;
-transitive=&ldquo;false&rdquo; /&gt; downloads just log4j.</p>
-
+Dependency line &lt;dependency org=&quot;log4j&rdquo; name=&quot;log4j&rdquo; rev=&quot;1.2.16&rdquo;
+transitive=&quot;false&rdquo; /&gt; downloads just log4j.</p>
 
 
 <div>&nbsp;</div>
@@ -545,40 +544,31 @@ transitive=&ldquo;false&rdquo; /&gt; downloads just log4j.</p>
 
 
 
-
 <p>Ivy dependency line</p>
-
-<p>The dependency line &lt;dependency org=&ldquo;commons-lang&rdquo; name=&ldquo;commons-lang&rdquo;
-rev=&ldquo;2.6&rdquo; /&gt; in ivy.xml requires some explanation. First is how to
+<p>The dependency line &lt;dependency org=&quot;commons-lang&rdquo; name=&quot;commons-lang&rdquo;
+rev=&quot;2.6&rdquo; /&gt; in ivy.xml requires some explanation. First is how to
 construct this line. When module developers publish the modules to
 public repositories they define these values and from these repositories
 we can easily get the details. As an example, let&rsquo;s find out the
 dependency line for the module, commons-lang, from the repository.</p>
-
 <p>Go to MVN Repository at <a href="http://mvnrepository.com/">http://mvnrepository.com/</a> and search for
 commons-lang which yields all matching commons module. From the list,
 select commons-lang which displays the commons-lang versions available
 in the repository.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/mvn1.png" alt="Ivy Resolve Task - Dependency element" />
 </figure>
 
-
 <p><strong>Figure 3.2. Module versions</strong></p>
-
 <p>Click on 2.5 or whatever version you are interested. Repositories hosts
 modules for Ivy and also other build systems like maven, grape etc.
 Select Ivy tab and there you will have the exact dependency line for
 Apache Ivy. Cut and paste this line to ivy.xml</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/mvn2.png" alt="Ivy Resolve Task - dependency element" />
 </figure>
 
-
 <p><strong>Figure 3.3. Ivy Dependency element</strong></p>
-
 <p>Another thing about this particular dependency line is that the <strong>org</strong>
 is mentioned as commons-lang whereas it should have been <strong>apache.org</strong>.
 For some reasons, while publishing the module to the repository,
@@ -586,14 +576,11 @@ developer (or build guy) has mentioned it as commons-lang instead of
 apache.org and so it is continuing like that. Instead of guessing, it is
 always easy to do a search in maven repository and copy the dependency
 line as provided there.</p>
-
 <p><strong>Clean the Work Dir</strong></p>
-
 <p>Before trying out the next example, delete all files from work dir,
 except src dir, to avoid errors and confusion. We require src dir which
 contains the example class to run some examples and so, don&rsquo;t delete
 that.</p>
-
 
 
 <div>&nbsp;</div>
@@ -611,9 +598,7 @@ that.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Apache Ivy Cache</p>
-
 <p>On first run, &lt;ivy:resolve&gt; fetches the artifacts from the public
 repository and place them in the cache. During subsequent calls to
 &lt;ivy:resolve&gt; either from this project or any other project, Ivy finds
@@ -621,7 +606,6 @@ the module in cache and will not download it from public repository.
 Through the cache, Ivy speeds up the time required for resolve and also
 saves bandwidth usage. By default, Apache Ivy cache is at <code>$HOME/.ivy2</code>.
 Beyond that, we need not bother much about the internals of the cache.</p>
-
 <p>With the &lt;ivy:resolve&gt;, we are able to resolve the dependencies and
 place them in the cache and the next chapter covers tasks to expose the
 resolved artifacts to the project.</p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Internationalization on Codetab</title>
@@ -18,7 +18,8 @@
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/</guid>
       <description>Even though we used many WordPress Plugin Internationalization functions in the tutorial so far, we didn&amp;rsquo;t explain what they really do. In this chapter, we explore WordPress Plugin Internationalization and Localization techniques.
-WordPress Plugin Handbook chapter - WordPress Plugin Internationalization explains the topic well, but for new developers it may be difficult to comprehend all that in one go and, more often than not, internationalization moves to TODO list.</description>
+WordPress Plugin Handbook chapter - WordPress Plugin Internationalization explains the topic well, but for new developers it may be difficult to comprehend all that in one go and, more often than not, internationalization moves to TODO list.
+Rather than the later refactoring, it is easy to internationalize the plugin from the start .</description>
     </item>
     
     <item>
@@ -28,10 +29,10 @@ WordPress Plugin Handbook chapter - WordPress Plugin Internationalization explai
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/</guid>
       <description>10.2. WordPress Plugin Localization After internationalization of the plugin, next step is to prepare language files. This process is known as Localization which consists of following steps.
- generate Portable Object Template (POT) file.
- generate Portable Object (PO) file for each language.
- get PO file translated by a translator.
- generate Machine Object (MO) file from each PO file.
+  generate Portable Object Template (POT) file.
+  generate Portable Object (PO) file for each language.
+  get PO file translated by a translator.
+  generate Machine Object (MO) file from each PO file.
   Install Software To generate POT file, install WordPress Tools with following commands.</description>
     </item>
     

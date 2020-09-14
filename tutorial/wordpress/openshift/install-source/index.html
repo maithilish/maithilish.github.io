@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift Install WordPress - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,13 +561,10 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Through out the WordPress Tutorial, we stick with the WordPress
+            <p>Through out the WordPress Tutorial, we stick with the WordPress
 installed from OpenShift Instant App bundled by OpenShift team. While,
 OpenShift Instant Apps are stable and updated frequently, we still
 prefer to do a OpenShift WordPress install from its source.</p>
-
 <p>Consider this scenario. We have a site with WordPress 3.8.3 and every
 week, on Sunday, we take the backup. Meanwhile, WordPress releases
 version 3.9 and next Wednesday, OpenShift updates the Instant App to
@@ -575,40 +572,29 @@ version 3.9 and next Wednesday, OpenShift updates the Instant App to
 create a new OpenShift WordPress Application and because of an update,
 its version is 3.9. However, the backup set contains data for WordPress
 3.8.3.</p>
-
 <p>Restore goes through, but we end up with a WordPress version 3.9 with
 WordPress 3.8.3 database. Usually, it is not a good practice jumping
 versions during restore as it may subtly break something inside without
 our notice.</p>
-
 <p>We prefer to install WordPress from source to have finer control over
 the WordPress installation.</p>
-
 <p><strong>Note</strong></p>
-
 <p>When we start with OpenShift and WordPress, it is advisable to use
 OpenShift Instant App. After we gain sufficient expertise in managing
 the OpenShift and WordPress migrate the site to WordPress source
 installation.</p>
-
 <h2 id="openshift-wordpress-install-from-source">OpenShift WordPress Install from Source</h2>
-
 <p>In WordPress source installation process, instead of the Instant App
 bundled by OpenShift, we use WordPress release from WordPress.org.
 Latest WordPress source bundle is available from <a href="https://wordpress.org/" target="_blank">WordPress Org</a>, and earlier versions of WordPress are available in <a href="https://wordpress.org/download/release-archive/" target="_blank">Release Archive</a>.</p>
-
 <p><strong>CLI</strong></p>
-
 <p>While Instant App installation was entirely using OpenShift Web Console,
 OpenShift WordPress Install Source method uses not only OpenShift Web
 Console but also RHC Client Tools.</p>
-
 <p>To carry out tasks explained in this chapter, we require to install and
 setup RHC and PuTTY (Windows users). To install RHC and PuTTY, refer <a href="/tutorial/wordpress/openshift/rhc-client-tools/">OpenShift RHC Client Tools</a></p>
-
 <p>To start with, we create an application in OpenShift. We assume that we
 already have an OpenShift account with a namespace as explained in <a href="/tutorial/wordpress/openshift-wordpress/">OpenShift WordPress Tutorial</a>.</p>
-
 <p>To create a new application, open OpenShift Web Console and choose
 <strong>Application</strong> tab and click <strong>Add Application</strong>. In the <strong>Choose a
 type of application</strong> screen, scroll down to PHP section and select PHP
@@ -618,16 +604,13 @@ the name of the application and hit <strong>Create Application</strong> button. 
 chose PHP 5.3 cartridge, which bundles Apache Web Server with PHP 5.3
 module, because to run WordPress software requires the PHP enabled web
 server.</p>
-
 <p>Next we need to add MySQL database cartridge to the application. To do
 that, go to <strong>Application Overview</strong> screen and click  <strong>see the entire
 list of cartridges you can add</strong> link. In the  <strong>Choose a cartridge
 type</strong> screen choose MySQL 5.1 cartridge.</p>
-
 <p>That completes the creation of a new OpenShift application with two
 cartridges - PHP 5.3 and MySQL 5.1. Now, if we access the public URL of
 the application, it displays the PHP Welcome page.</p>
-
 
 
 <div>&nbsp;</div>
@@ -646,45 +629,38 @@ the application, it displays the PHP Welcome page.</p>
 
 
 
-
 <p>Deploy WordPress</p>
-
 <p>OpenShift uses Git, software configuration management tool, to manage
 the application development and deployment. We use Git to download the
 OpenShift application repository, add WordPress to the repository and
 deploy back the application to the OpenShift.</p>
-
 <p>To download the application repository, we require its Git URL. Find out
 Git URL from <strong>OpenShift Web Console</strong> → <strong>Applications</strong> →
 <strong>Application Overview</strong> → <strong>Source Code</strong>. Copy Source code field to
 the clipboard.</p>
-
 <p>In the PC, open the command prompt and change to some directory where we
 can download the source and work on it. Open command prompt and run git
 clone. Replace &lt;Git URL&gt; with the Source Code field copied earlier.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Window and Linux
+<pre><code class="language-screen" data-lang="screen">Window and Linux
 
-C:&gt; git clone &lt;Git URL&gt;</code></pre></div>
-<p>Git downloads (clone) the application repository from OpenShift server
+C:&gt; git clone &lt;Git URL&gt;
+</code></pre><p>Git downloads (clone) the application repository from OpenShift server
 and places it in a directory named same as the application name. For
 example, if our application name is <strong>quickstart</strong>, then Git downloads
 the source to a folder named <code>quickstart</code>.</p>
-
 <p>For newly created PHP application, source contains a single <code>index.php</code>.
 However, remember that this is not a plain directory but a Git
-Repository. It contains a hidden directory <code>.git</code> which holds
+Repository. It contains a hidden directory <code> .git</code> which holds
 repository objects to keep track of changes as we go forward.</p>
-
 <p>Next step is to add WordPress software to the repository. Download the
 required WordPress release from <a href="https://wordpress.org/download/release-archive/" target="_blank">Release
 Archive</a> or the latest
 version from the front page. Extract the downloaded zip and we get a
 directory named <code>wordpress</code> that contains WordPress software. Copy the
 <code>wordpress</code> directory to the application repository.</p>
-
-<p>Change to application repository and rename the directory <code>wordpress</code>
+<p>Change to application repository and rename the directory <code> wordpress</code>
 as <code>php</code> with the move command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Windows
+<pre><code class="language-screen" data-lang="screen">Windows
 
 C:&gt; cd quickstart
 C:&gt; move &lt;path-to&gt;\wordpress .
@@ -694,12 +670,12 @@ Linux
 
 $ cd quickstart
 $ mv &lt;path-to&gt;/wordpress .
-$ mv wordpress php</code></pre></div>
-<p>WordPress uses a file named <code>wp-config.php</code> to store the WordPress
+$ mv wordpress php
+</code></pre><p>WordPress uses a file named <code>wp-config.php</code> to store the WordPress
 configurations like database connection properties, etc. To create this
 file, change to <code>php</code> directory and copy the WordPress supplied
 <code>wp-config-sample.php</code> to <code>wp-config.php</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Windows
+<pre><code class="language-screen" data-lang="screen">Windows
 
 C:&gt; cd php
 C:&gt; copy  wp-config-sample.php  wp-config.php
@@ -707,10 +683,9 @@ C:&gt; copy  wp-config-sample.php  wp-config.php
 Linux
 
 $ cd php
-$ cp wp-config-sample.php  wp-config.php</code></pre></div>
-<p>We need to make some changes to the Sample Config file. Edit the
+$ cp wp-config-sample.php  wp-config.php
+</code></pre><p>We need to make some changes to the Sample Config file. Edit the
 <code>wp-config.php</code> and modify MySQL settings as shown in next snippet.</p>
-
 <p><code>quickstart/php/wp-config.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">// ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -723,11 +698,10 @@ define(&#39;DB_USER&#39;, getenv(&#39;OPENSHIFT_MYSQL_DB_USERNAME&#39;));
 define(&#39;DB_PASSWORD&#39;, getenv(&#39;OPENSHIFT_MYSQL_DB_PASSWORD&#39;));
 
 /** MySQL hostname */
-define(&#39;DB_HOST&#39;, getenv(&#39;OPENSHIFT_MYSQL_DB_HOST&#39;) . &#39;:&#39; . getenv(&#39;OPENSHIFT_MYSQL_DB_PORT&#39;));</code></pre></div>
-<p>In the WP Config file, we also need to enter some unique phrases for the
+define(&#39;DB_HOST&#39;, getenv(&#39;OPENSHIFT_MYSQL_DB_HOST&#39;) . &#39;:&#39; . getenv(&#39;OPENSHIFT_MYSQL_DB_PORT&#39;));
+</code></pre></div><p>In the WP Config file, we also need to enter some unique phrases for the
 items in Authentication Keys and Salts section. Remove the lines shown
 in the next screenshot from the WP Config file.</p>
-
 <p><code>quickstart/php/wp-config.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">define(&#39;AUTH_KEY&#39;,         &#39;put your unique phrase here&#39;);
 define(&#39;SECURE_AUTH_KEY&#39;,  &#39;put your unique phrase here&#39;);
@@ -736,44 +710,46 @@ define(&#39;NONCE_KEY&#39;,        &#39;put your unique phrase here&#39;);
 define(&#39;AUTH_SALT&#39;,        &#39;put your unique phrase here&#39;);
 define(&#39;SECURE_AUTH_SALT&#39;, &#39;put your unique phrase here&#39;);
 define(&#39;LOGGED_IN_SALT&#39;,   &#39;put your unique phrase here&#39;);
-define(&#39;NONCE_SALT&#39;,       &#39;put your unique phrase here&#39;);</code></pre></div>
-<p>We can get random unique keys and salts from WordPress Org. Open
+define(&#39;NONCE_SALT&#39;,       &#39;put your unique phrase here&#39;);
+</code></pre></div><p>We can get random unique keys and salts from WordPress Org. Open
 <a href="https://api.wordpress.org/secret-key/1.1/salt/" target="_blank">WordPress API</a> in a
 browser tab, which generates and displays random keys and salts. Copy
 the contents, paste it to the WP Config file&rsquo;s and save the changes.</p>
-
 <p>Use <code>git status</code> to check the pending changes and then add the php
 directory and its content to the Git repository.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Window and Linux
+<pre><code class="language-screen" data-lang="screen">Window and Linux
 
 C:&gt; cd quickstart        // change to application source dir created by Git clone
 C:&gt; git status
-C:&gt; git add php</code></pre></div>
-<p>Finally, we need to commit the changes to the repository.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Window and Linux
+C:&gt; git add php
+</code></pre><p>Finally, we need to commit the changes to the repository.</p>
+<pre><code class="language-screen" data-lang="screen">Window and Linux
 
-C:&gt; git commit -am &#34;WordPress software added&#34;</code></pre></div>
-<p>For a better understanding, let&rsquo;s recap the items we did so far.</p>
-
+C:&gt; git commit -am &quot;WordPress software added&quot;
+</code></pre><p>For a better understanding, let&rsquo;s recap the items we did so far.</p>
 <ul>
-<li><p>With Git, we clone the OpenShift PHP application repository to a
-local repository in our PC.</p></li>
-
-<li><p>Download the WordPress Software and copy the extracted wordpress
+<li>
+<p>With Git, we clone the OpenShift PHP application repository to a
+local repository in our PC.</p>
+</li>
+<li>
+<p>Download the WordPress Software and copy the extracted wordpress
 directory to the application repository and renamed the directory as
-php.</p></li>
-
-<li><p>Create wp-config.php file and modify its parameters for OpenShift.</p></li>
-
-<li><p>Finally, we add all the changes to Git and commit the changes.</p></li>
+php.</p>
+</li>
+<li>
+<p>Create wp-config.php file and modify its parameters for OpenShift.</p>
+</li>
+<li>
+<p>Finally, we add all the changes to Git and commit the changes.</p>
+</li>
 </ul>
-
 <p>So far, all the changes are made in the local repository. Next, we need
 to push the changes back to the remote repository that is in OpenShift.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Window and Linux
+<pre><code class="language-screen" data-lang="screen">Window and Linux
 
-C:&gt; git push</code></pre></div>
-<p>Git compresses and pushes the change objects - new php directory and its
+C:&gt; git push
+</code></pre><p>Git compresses and pushes the change objects - new php directory and its
 content - to the application repository in the OpenShift application.
 Git push takes some time to complete as it has to transfer about 35 MB.
 After updating the OpenShift repository, Git also restarts the OpenShift
@@ -781,19 +757,15 @@ application and MySQL database as part of the deployment cycle. Our new
 WordPress application is ready, but before proceeding to WordPress
 installation, we need to make one crucial change to WordPress structure
 that is specific to OpenShift.</p>
-
 <p>Move wp-content directories</p>
-
 <p>WordPress places themes, plugins and upload files in three separate
 directories under its <code>wp-content</code> directory. In OpenShift, Git deploys
 the application in directory <code>app-root/repo</code>. The php directory that
 contains WordPress software goes into this directory. The WordPress
 directory structure in OpenShift is shown in the screenshot.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-source-wordpressdir.png" alt="OpenShift WordPress Install Source - WordPress Directory Structure" />
 </figure>
-
 
 <p>By default, whenever we install a new theme it installs in
 <code>app-root/repo/php/wp-content/themes</code>. Plugins and uploads are treated
@@ -801,15 +773,13 @@ similarly. That leads to a problem in OpenShift. When we make some
 changes to the application repository and push the changes to OpenShift,
 Git overwrites the php directory with the new version. Obviously the
 items that WordPress installs under <code>wp-content</code> are lost.</p>
-
 <p>To overcome this problem, we have to move wp-content directories to
 <code>app-root/data</code> so that they are not overwritten during deployment.</p>
-
 <p>We use <strong>Git action hook</strong> feature to link wp-content directories to
 app-root/data directories. Open command prompt and change to the local
 Git repository. Delete plugins, themes and uploads directory from
 <code>php/wp-content</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Windows
+<pre><code class="language-screen" data-lang="screen">Windows
 
 C:&gt; cd quickstart
 C:&gt; cd php\wp-content
@@ -820,51 +790,47 @@ Linux
 
 $ cd quickstart
 $ cd php/wp-content
-$ rm -rf plugins themes uploads</code></pre></div>
-<p>Next add a file named <code>build</code> to <code>quickstart/.openshift/action_hooks</code>
+$ rm -rf plugins themes uploads
+</code></pre><p>Next add a file named <code>build</code> to <code>quickstart/.openshift/action_hooks</code>
 with following
 contents.</p>
-
 <p><code>quickstart/.openshift/action_hooks/build</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/php/wp-content/uploads
 ln -sf $OPENSHIFT_DATA_DIR/plugins $OPENSHIFT_REPO_DIR/php/wp-content/plugins
-ln -sf $OPENSHIFT_DATA_DIR/themes $OPENSHIFT_REPO_DIR/php/wp-content/themes</code></pre></div>
-<p>Commit the change to Git local repository with following commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"> Windows 
+ln -sf $OPENSHIFT_DATA_DIR/themes $OPENSHIFT_REPO_DIR/php/wp-content/themes
+</code></pre></div><p>Commit the change to Git local repository with following commands.</p>
+<pre><code class="language-screen" data-lang="screen"> Windows 
 
 C:&gt; cd quickstart
 C:&gt; git add .openshift\action_hooks\build
 C:&gt; git update-index --chmod=+x .openshift\action_hooks\build
-C:&gt; git commit -am &#34;Build script added&#34;
+C:&gt; git commit -am &quot;Build script added&quot;
 
  Linux
 
 $ cd quickstart
 $ chmod 755 .openshift/action_hooks/build
 $ git add .openshift/action_hooks/build
-$ git commit -am &#34;Build script added&#34;</code></pre></div>
-<p> </p>
-
+$ git commit -am &quot;Build script added&quot;
+</code></pre><p> </p>
 <p>Finally, push the changes back to OpenShift repository.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Windows and Linux
+<pre><code class="language-screen" data-lang="screen">Windows and Linux
 
-C:&gt; git push</code></pre></div>
-<p>Git executes build file after it deploys the new version of the
+C:&gt; git push
+</code></pre><p>Git executes build file after it deploys the new version of the
 application. In the build script, we create three links in
 php/wp-content which points to directories in app-root/data so that
 themes, plugins and uploads files lands in app-root/data instead of
 repo/php/wp-content.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Next we need to create three directories in <code>app-root/data</code>. To create
 the directories, log in to OpenShift Shell and execute the following
 commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data
-&gt; mkdir plugins themes uploads</code></pre></div>
-<p>With that WordPress source deployment is over, and WordPress is ready
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data
+&gt; mkdir plugins themes uploads
+</code></pre><p>With that WordPress source deployment is over, and WordPress is ready
 for installation. Complete the installation and settings explained in <a href="/tutorial/wordpress/wordpress-installation/">WordPress Installation</a>.</p>
 
           </main>

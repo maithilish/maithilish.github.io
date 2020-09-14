@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>UIBinder – Custom Widgets - GWT Tutorial - CodeTab</title></head>
 
@@ -711,28 +711,23 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Part I of the GWT Tutorial explains the GWT UI design aspects and covers
+            <p>Part I of the GWT Tutorial explains the GWT UI design aspects and covers
 client side coding. It explains a menu driven multi tabbed front
 end and in doing so, it covers the use of essential GWT Panels,
 widgets,custom widgets, and a simple but effective way of handling GWT
 Events, and using EventBus architecture introduced in GWT ™2.x, and the
 benefits of @UIFactory to create the widgets. GWT Tutorial extensively uses UIBinder concept introduced in Google Web Toolkit 2.x for declarative definition the UI structure of the application.</p>
-
 <h5 id="finsshell">FinsShell</h5>
-
 <p>In this section, we explorer two import concepts - GWT UiBinder and
 Custom Widgets and use them to compose FinsShell, which holds other
 layout components of our application The most effective way to create
 new widgets is to extend the Composite class as explained in <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideUiCustomWidgets" target="_blank">Creating
 Custom
 Widgets</a>
-section of GWT Developer&rsquo;s Guide. <code>FinsShell</code> is a custom widget which
+section of GWT Developer&rsquo;s Guide. <code> FinsShell</code> is a custom widget which
 extends <code>Composite</code> and is the container for other parts of the layout.
 FinsShell is added to RootPanel in <code>onLoadModule()</code> method of Entry
 Point instead of adding individual parts directly to the EntryPoint.</p>
-
 <p>Out of various Panels provided by GWT, <code>DockLayoutPanel</code> is most
 suitable as we can dock Logo to the north, Status to the south, Menu bar
 to the west and contents to the center. Dimensions of menu and content
@@ -741,7 +736,6 @@ To make them adjustable, menu is added to the west and contents to the
 center of a <code>SplitLayoutPanel</code> which is added to the center of the
 <code>DockLayoutPanel</code>. With this design, we have fixed top and bottom
 sections and flexible middle section.</p>
-
 <p>FinsShell and various content pages which goes into content area are
 placed in a separate package and for this create a new package
 <figure class="text-center" >
@@ -750,7 +744,6 @@ placed in a separate package and for this create a new package
  <code>in.fins.client.content</code>. Add <code>FinsShell.java</code>
 and corresponding UIBinder file <code>FinsShell.ui.xml</code> with following
 contents to the newly created package <code>in.fins.client.content</code>.</p>
-
 <p><code>in.fins.client.content/FinsShell.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;!DOCTYPE ui:UiBinder SYSTEM &#34;http://dl.google.com/gwt/DTD/xhtml.ent&#34;&gt;</span>
 <span class="nt">&lt;ui:UiBinder</span> <span class="na">xmlns:ui=</span><span class="s">&#34;urn:ui:com.google.gwt.uibinder&#34;</span>
@@ -784,40 +777,38 @@ contents to the newly created package <code>in.fins.client.content</code>.</p>
         <span class="nt">&lt;/g:center&gt;</span>
     <span class="nt">&lt;/g:DockLayoutPanel&gt;</span>
 
-<span class="nt">&lt;/ui:UiBinder&gt;</span> </code></pre></div>
-<p><code>in.fins.client.content/FinsShell.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">content</span><span class="p">;</span>
+<span class="nt">&lt;/ui:UiBinder&gt;</span> 
+</code></pre></div><p><code>in.fins.client.content/FinsShell.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.fins.client.content</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">core</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">GWT</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiBinder</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiField</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Label</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">ResizeComposite</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Widget</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.core.client.GWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiBinder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiField</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Label</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.ResizeComposite</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Widget</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">FinsShell</span> <span class="nf">extends</span> <span class="n">ResizeComposite</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinsShell</span> <span class="kd">extends</span> <span class="n">ResizeComposite</span> <span class="o">{</span>
 
-    <span class="kd">interface</span> <span class="nf">FinsShellBinder</span> <span class="kd">extends</span> <span class="nf">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="p">}</span>
+    <span class="kd">interface</span> <span class="nc">FinsShellBinder</span> <span class="kd">extends</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="nf">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="nf">binder</span> <span class="o">=</span> <span class="n">GWT</span>
-            <span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">FinsShellBinder</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="n">binder</span> <span class="o">=</span> <span class="n">GWT</span>
+            <span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">FinsShellBinder</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="nd">@UiField</span>
-    <span class="n">Label</span> <span class="nf">logoLabel</span><span class="p">;</span>
+    <span class="n">Label</span> <span class="n">logoLabel</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">FinsShell</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>We have placed Logo and Status label in a <code>LayoutPanel</code> as we want them
+    <span class="kd">public</span> <span class="nf">FinsShell</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>We have placed Logo and Status label in a <code>LayoutPanel</code> as we want them
 at certain positions within their docks. LayoutPanel allows its children
-to be positioned using arbitrary constraints, almost like <code>
-AbsolutePanel.</code> As far as possible, it is good to avoid fixed or
+to be positioned using arbitrary constraints, almost like <code>AbsolutePanel.</code> As far as possible, it is good to avoid fixed or
 absolute constraints to position the widgets as such constraints are
 specified in percentage which ensures that widgets are adjusted when
 browser is resized.</p>
-
 
 
 <div>&nbsp;</div>
@@ -835,43 +826,37 @@ browser is resized.</p>
 <div>&nbsp;</div>
 
 
-
 <p><code>SplitLayoutPanel</code> is added to the center of dock. <code>HTML</code> widgets are
 added to west and center of this split panel as placeholders, for
 MenuBar and ContentPanel, which are replaced by actual widgets later.</p>
-
 <p>We are using <code>fins-Logo-Label</code> style to decorate the logo text. Create a
 new folder in in.fins package and name it as public. It has to be a
 folder as it is not possible to create a package named public. Add
 <code>Fins.css</code> to <code>in/fins/public</code> directory with following contents.</p>
-
 <p><code>in.fins.public/Fins.css</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS"><span class="p">.</span><span class="nc">fins-Logo-Label</span> <span class="p">{</span>
  <span class="k">color</span><span class="p">:</span> <span class="kc">cornflowerblue</span><span class="p">;</span>
  <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-<p>To add css to module use stylesheet element in fins.gwt.xml which
+<span class="p">}</span>
+</code></pre></div><p>To add css to module use stylesheet element in fins.gwt.xml which
 includes css through Automatic Resource Inclusion mechanism.</p>
-
 <p><code>in.fins/fins.gwt.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;stylesheet</span> <span class="na">src=</span><span class="s">&#34;Fins.css&#34;</span><span class="nt">/&gt;</span></code></pre></div>
-<p>Add FinsShell to EntryPoint with the following modifications to <code>
-Fins.java</code></p>
-
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;stylesheet</span> <span class="na">src=</span><span class="s">&#34;Fins.css&#34;</span><span class="nt">/&gt;</span>
+</code></pre></div><p>Add FinsShell to EntryPoint with the following modifications to <code>Fins.java</code></p>
 <p><code>in.fins.client.content/Fins.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">content</span><span class="p">.</span><span class="na">FinsShell</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">RootLayoutPanel</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">in.fins.client.content.FinsShell</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.RootLayoutPanel</span><span class="o">;</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="nf">void</span> <span class="n">onModuleLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">RootLayoutPanel</span> <span class="nf">rp</span> <span class="o">=</span> <span class="n">RootLayoutPanel</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
-    <span class="n">FinsShell</span> <span class="nf">finsShell</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FinsShell</span><span class="p">();</span>
-    <span class="n">rp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">finsShell</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-<p>GWT offers two types of panel, Basic Panels and Layout Panels. Layout
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onModuleLoad</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">RootLayoutPanel</span> <span class="n">rp</span> <span class="o">=</span> <span class="n">RootLayoutPanel</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+    <span class="n">FinsShell</span> <span class="n">finsShell</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FinsShell</span><span class="o">();</span>
+    <span class="n">rp</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">finsShell</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>GWT offers two types of panel, Basic Panels and Layout Panels. Layout
 Panels were introduced in GWT 2.0 for fast and predictable
 application-level layout and ideally they preferred over Basic Panels.
 In entry point class <code>Fins</code> we have used <code>RootLayoutPanel</code> instead of
@@ -883,74 +868,68 @@ entirely with Layout Panels, we have to mix and match Basic Panels and
 Layout panels. For now, you may ignore these subtle differences. To know
 more about Panels refer <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideUiPanels" target="_blank">Developer&rsquo;s Guide - Layout Using
 Panels</a>.</p>
-
 <p>In FinsShell constructor we have called <code>initWidget</code> method of
 <code>Composite</code>. This method sets the widget to be wrapped by the Composite.
 Let us explain this with following code snippet.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">WrapperWidget</span> <span class="nf">extends</span> <span class="n">Composite</span><span class="p">{</span>
-      <span class="kd">public</span> <span class="nf">WrapperWidget</span><span class="p">(){</span>
-          <span class="n">initWidget</span><span class="p">(</span><span class="k">new</span> <span class="n">Label</span><span class="p">(</span><span class="s">&#34;I will getting wrapped&#34;</span><span class="p">);</span>
-      <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>In the above example, the Composite WrapperWidget wraps the Label. With
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WrapperWidget</span> <span class="kd">extends</span> <span class="n">Composite</span><span class="o">{</span>
+      <span class="kd">public</span> <span class="nf">WrapperWidget</span><span class="o">(){</span>
+          <span class="n">initWidget</span><span class="o">(</span><span class="k">new</span> <span class="n">Label</span><span class="o">(</span><span class="s">&#34;I will getting wrapped&#34;</span><span class="o">);</span>
+      <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>In the above example, the Composite WrapperWidget wraps the Label. With
 this, we can place WrapperWidget in any panel or even wrap it by other
 composites. Let us extend the example bit further.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">WrapperWidget</span> <span class="nf">extends</span> <span class="n">Composite</span><span class="p">{</span>
-      <span class="kd">public</span> <span class="nf">WrapperWidget</span><span class="p">(){</span>
-          <span class="n">VerticalPanel</span> <span class="nf">vPanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VerticalPanel</span><span class="p">();</span>
-          <span class="n">TextField</span> <span class="nf">field</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextField</span><span class="p">();</span>
-          <span class="n">Button</span> <span class="nf">button</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Button</span><span class="p">(</span><span class="s">&#34;Finish&#34;</span><span class="p">);</span>
-          <span class="n">vPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">field</span><span class="p">);</span>
-          <span class="n">vPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
-          <span class="n">initWidget</span><span class="p">(</span><span class="n">vPanel</span><span class="p">);</span>
-      <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>TextField and Button are added to <code>VerticalPanel</code> and initWidget call
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WrapperWidget</span> <span class="kd">extends</span> <span class="n">Composite</span><span class="o">{</span>
+      <span class="kd">public</span> <span class="nf">WrapperWidget</span><span class="o">(){</span>
+          <span class="n">VerticalPanel</span> <span class="n">vPanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VerticalPanel</span><span class="o">();</span>
+          <span class="n">TextField</span> <span class="n">field</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextField</span><span class="o">();</span>
+          <span class="n">Button</span> <span class="n">button</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Button</span><span class="o">(</span><span class="s">&#34;Finish&#34;</span><span class="o">);</span>
+          <span class="n">vPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">field</span><span class="o">);</span>
+          <span class="n">vPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">button</span><span class="o">);</span>
+          <span class="n">initWidget</span><span class="o">(</span><span class="n">vPanel</span><span class="o">);</span>
+      <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>TextField and Button are added to <code>VerticalPanel</code> and initWidget call
 wraps <code>VerticalPanel</code>. Widgets may be added to VerticalPanel either
 before or after calling initWidget, but <code>initWidget</code> has to be called
 before calling any other method of the Composite or using it with other
 composite or panels.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Coming back to our code, can you guess which widget is getting wrapped
 by <code>FinsShell</code>. The right answer is <code>DockLayoutPanel</code> and to get that we
 have to understand the logic behind UIBinder.</p>
-
 <p>UiBinder involves two files, template file and its owner class. Template
 file is a xml file with extension ui.xml where UI objects are laid out,
 and an Owner class owns a template file. UiBinder generates objects
 declared in the template file and binds them to fields in owner class.
 In the owner class, following code initializes the UiBinder.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">interface</span> <span class="nf">FinsShellBinder</span> <span class="kd">extends</span> <span class="nf">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="p">{}</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">interface</span> <span class="nc">FinsShellBinder</span> <span class="kd">extends</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="o">{}</span>
 
-<span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="nf">binder</span> <span class="o">=</span> <span class="n">GWT</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">FinsShellBinder</span><span class="p">.</span><span class="na">class</span><span class="p">);</span></code></pre></div>
-<p>UiBinder instances are factories that generate a UI structure and binds
+<span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">FinsShell</span><span class="o">&gt;</span> <span class="n">binder</span> <span class="o">=</span> <span class="n">GWT</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">FinsShellBinder</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</code></pre></div><p>UiBinder instances are factories that generate a UI structure and binds
 it to an owning Java class. The UiBinder&lt;U, O&gt; interface declares two
 parameter types:</p>
-
 <ul>
-<li><p>U is the type of root element declared in the ui.xml file, returned
-by the createAndBindUi call</p></li>
-
-<li><p>O is the owner type whose @UiFields are to be filled in.</p></li>
+<li>
+<p>U is the type of root element declared in the ui.xml file, returned
+by the createAndBindUi call</p>
+</li>
+<li>
+<p>O is the owner type whose @UiFields are to be filled in.</p>
+</li>
 </ul>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/uibinderwrap.png" alt="Ui create and wrap" />
 </figure>
 
-
-<h6 id="figure-3-2-ui-create-and-wrap">Figure 3.2. Ui create and wrap</h6>
-
+<h6 id="figure32ui-create-and-wrap">Figure 3.2. Ui create and wrap</h6>
 <p>When <code>Binder.createAndBindUi</code> is called, FinsShellBinder parses
 FinsShell.ui.xml and creates an UI structure as shown in dotted area in
 the figure. Binder injects the widgets to @UiFields defined in owner
 class FinsShell. Then <code>createAndBindUi</code> returns the root widget which is
 DockLayoutPanel in this case.</p>
-
 <p>With this, Fins is ready to display the broad contours of the
 application.</p>
 

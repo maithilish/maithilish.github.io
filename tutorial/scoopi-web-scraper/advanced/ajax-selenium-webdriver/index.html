@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Ajax - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,29 +491,22 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="browser-interaction-with-webdriver">Browser interaction with WebDriver</h1>
-
+            <h1 id="browser-interaction-with-webdriver">Browser interaction with WebDriver</h1>
 <p>In this previous chapter, we scrape data from page with JavaScript
 created contents. In this chapter, we extend it further and show how to
 interact with WebDriver to emulate browser automation.</p>
-
 <h2 id="browser-scrolling-and-ajax">Browser Scrolling and Ajax</h2>
-
 <p>The <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/quote/jsoup/ex-2/job.yml" target="_blank">Quote
 Example 2</a>
 scrape quotations from <a href="http://quotes.toscrape.com/scroll" target="_blank">Scroll - infinite scrolling
 pagination</a> page loads next set of
 quotes through Ajax call when we scroll to the bottom of browser.</p>
-
 <p>The locator and task snippet from this example is as below.</p>
-
 <p><code>defs/examples/quote/jsoup/ex-1/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
   quoteGroup:
-    locators: &lt;a href=&#34;https://www.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example&#34; target=&#34;_blank&#34;&gt;
-       { name: quotes, url: &#34;http://quotes.toscrape.com/scroll&#34; }  
+    locators: &lt;a href=&quot;https://www.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example&quot; target=&quot;_blank&quot;&gt;
+       { name: quotes, url: &quot;http://quotes.toscrape.com/scroll&quot; }  
     ]
 
 taskGroups:
@@ -523,29 +516,27 @@ taskGroups:
       steps: 
         jsoupDefault:
           loader:
-            class: &#34;org.codetab.scoopi.step.extract.DomLoader&#34;
+            class: &quot;org.codetab.scoopi.step.extract.DomLoader&quot;
             previous: seeder 
             next: parser
             plugins: [
               plugin: { 
                 name: script, 
-                class: &#34;org.codetab.scoopi.plugin.script.BasicScript&#34;,
-                script: &#34;/defs/examples/quote/jsoup/ex-2/script.js&#34;,
-                entryPoint: &#34;execute&#34;, }                            
-            ]</code></pre></div>
-<p>The quoteTask uses jsoupDefault steps and override its loader step to
+                class: &quot;org.codetab.scoopi.plugin.script.BasicScript&quot;,
+                script: &quot;/defs/examples/quote/jsoup/ex-2/script.js&quot;,
+                entryPoint: &quot;execute&quot;, }                            
+            ]
+</code></pre><p>The quoteTask uses jsoupDefault steps and override its loader step to
 use DomLoader class as we saw in the last chapter. However, in this
 example we add a script plugin which calls execute function defined in
 file <code>defs/examples/quote/jsoup/ex-2/script.js</code>.</p>
-
 <p>In this script we place the Selenium WebDriver and JavaScript code to
 scroll the window as shown below.</p>
-
 <p><code>defs/examples/quote/jsoup/ex-2/script.js</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">function execute(webDriver) {
+<pre><code class="language-raw" data-lang="raw">function execute(webDriver) {
 
-    var Select = Java.type(&#39;org.openqa.selenium.support.ui.Select&#39;);
-    var By = Java.type(&#39;org.openqa.selenium.By&#39;);
+    var Select = Java.type('org.openqa.selenium.support.ui.Select');
+    var By = Java.type('org.openqa.selenium.By');
 
     var pagesToScroll = 4;
 
@@ -553,20 +544,20 @@ scroll the window as shown below.</p>
 
        // scroll
        webDriver
-          .executeScript(&#34;window.scrollTo(0, document.body.scrollHeight)&#34;);
+          .executeScript(&quot;window.scrollTo(0, document.body.scrollHeight)&quot;);
 
        // wait
        webDriver
-          .executeAsyncScript(&#34;window.setTimeout(arguments[arguments.length - 1], 500);&#34;);
+          .executeAsyncScript(&quot;window.setTimeout(arguments[arguments.length - 1], 500);&quot;);
 
-       var eles = webDriver.findElements(By.className(&#34;quote&#34;));
+       var eles = webDriver.findElements(By.className(&quot;quote&quot;));
        if (eles.size() &gt;= pagesToScroll * 10) {
           break;
        }
     }
 
-  }</code></pre></div>
-<p>When DomLoader step calls the script execute() function, it passes
+  }
+</code></pre><p>When DomLoader step calls the script execute() function, it passes
 instance of WebDriver. In while loop, the webdriver method
 executeScript() scrolls the browser window down which triggers page&rsquo;s
 ajax call to fetch quotes for next page and then the
@@ -574,17 +565,14 @@ executeAsyncScript() method wait for 500ms so that DOM is loaded. After
 that, findElements() method selects and returns list of HTML elements
 with class name quote. The while loop breaks when list size is more than
 40.</p>
-
 <p>Script Engine can execute any Java method of WebDriver class, but to
 execute method any other class of Selenium such as Select class or By
 class we need to map those class to JavaScript variables using
 Java.type() calls as done at the start of script.</p>
-
 <p>WebDriver has easy to explore and understand API to select elements,
 navigate pages and execute page script. Refer [Selenium WebDriver
 Documentation</a>
 to learn more about it.</p>
-
 <p>In the next section, we explain features to manage Scoopi.</p>
 
           </main>

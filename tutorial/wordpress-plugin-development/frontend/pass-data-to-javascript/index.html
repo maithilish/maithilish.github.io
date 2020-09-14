@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Pass Data to JavaScript - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,27 +625,21 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="8-2-wordpress-pass-data-to-javascript">8.2. WordPress Pass Data to JavaScript</h2>
-
+            <h2 id="82wordpress-pass-data-to-javascript">8.2. WordPress Pass Data to JavaScript</h2>
 <p>In the previous blog, we saw how to enqueue plugin scripts and
 stylesheets. We also enqueued an external JavaScript - Twitter API
 script. In this tutorial, we explain the steps to pass data to
 JavaScript.</p>
-
 <h3 id="wordpress-pass-data-to-scripts">WordPress Pass Data to Scripts</h3>
-
 <p>Share on Social Plugin can share the blogs to Facebook, Google Plus and
 Twitter. Out of the three, Twitter API is the easiest as it doesn&rsquo;t
 require an App, while Facebook SDK requries an APP ID and Google Plus
 SDK expects a Client ID to share the blogs.</p>
-
 <p>For Facebook, we can add the APP ID as a query string directly to the
 script URL as shown in the next code snippet.</p>
-
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">
+    function add_sos_scripts () {
 
         ....
         
@@ -661,15 +655,15 @@ script URL as shown in the next code snippet.</p>
         
             ....
         }
-    }</code></pre></div>
-<p>However, for Google Plus we have to pass the Client ID to the Google
+    }
+</code></pre></div><p>However, for Google Plus we have to pass the Client ID to the Google
 Plus API function and to do that, we have to pass the Client ID to the
 plugin script share.js. To pass data to client and attach it to the
 enqueued JavaScript, WordPress provides function -
 [wp_localize_script()</a>.</p>
-
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">
+    function add_sos_scripts () {
 
         ....
         
@@ -691,8 +685,8 @@ enqueued JavaScript, WordPress provides function -
                             &#39;gplus_client_id&#39; =&gt; $gplus_client_id
                     ) );
         }
-    }</code></pre></div>
-<p>Google Plus SDK doesn&rsquo;t accept Client ID in the script URL. So, we use
+    }
+</code></pre></div><p>Google Plus SDK doesn&rsquo;t accept Client ID in the script URL. So, we use
 wp_localize_script() and pass data with it. The first parameter is
 script handle name to which the data belongs to and we attach data to
 sos_script which we enqueued in previous chapter. The second parameter
@@ -701,7 +695,6 @@ data. We use array to pass to three data items - <strong>ajax_url</strong>,
 <strong>nonce</strong> and <strong>gplus_client_id</strong>. Out of them, the first two -
 ajax_url and nonce - are related to ajax, which we cover in a later
 chapter.</p>
-
 
 
 <div>&nbsp;</div>
@@ -720,20 +713,16 @@ chapter.</p>
 
 
 
-
 <p>The function creates a JavaScript block and converts the data array as
 JSON and assigns it to a variable named sos_data. WordPress adds the
 script block to the generated page and places the block just before the
 enqueue script as shown in the screenshot.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-localizedata.png" alt="WordPress Pass Data to JavaScript - data passed as CDATA" />
 </figure>
 
-
 <p>In the script, we can refer the passed data as shown in the next
 snippet.</p>
-
 <p><code>share-on-social/js/share.js</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">getGPlusShareOptions</span><span class="p">(</span><span class="nx">shareName</span><span class="p">,</span> <span class="nx">shareTarget</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">shareOptions</span> <span class="o">=</span> <span class="p">{</span>
@@ -748,16 +737,12 @@ snippet.</p>
     <span class="p">};</span>
     <span class="k">return</span> <span class="nx">shareOptions</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>In the script, we obtain Google Plus Client ID from the passed data with
+</code></pre></div><p>In the script, we obtain Google Plus Client ID from the passed data with
 <code>sos_data.gplus_client_id</code>.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p> </p>
-
 <p>In the next section, we show how to collect debug info and output it, as
 comments, to the browser.</p>
 

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift Linux Primer - WordPress Tutorial - CodeTab</title></head>
 
@@ -565,44 +565,36 @@
 Windows users feel comfortable working with the OpenShift Linux Shell.
 After that, we show how to copy files from the PC to OpenShift Linux
 server using secure copy feature of SSH.</p>
-
 <p><strong>Note</strong></p>
-
 <p>To go through this Appendix, we have to complete the RHC (OpenShift
 Client Tools) installation. To work from a Windows system, we also
 require PuTTY. Refer <a href="/tutorial/wordpress/openshift/rhc-client-tools/">OpenShift RHC Client Tools</a> to know about RHC, PuTTY and OpenShift Shell.</p>
-
 <p>To run the commands, Windows users have to use the command prompt. Open
 command prompt using <strong>Start</strong> → <strong>Run</strong> and enter <strong>cmd</strong> and click OK.
 Linux users have to use console.</p>
-
 <p>Create Directory in OpenShift</p>
-
 <p>For some tasks, we may a new directory in OpenShift. To create a
 directory, log in to OpenShift Shell using RHC (Linux users) or PuTTY
 (Windows users).</p>
-
-<p>In OpenShift Shell, <code>app-root/data</code> is the designated directory for
+<p>In OpenShift Shell, <code> app-root/data</code> is the designated directory for
 application data and create directories under it. For example, to create
 a directory called test execute the following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; mkdir app-root/data/test</code></pre></div>
-<p>Change directories</p>
-
+<pre><code class="language-screen" data-lang="screen">&gt; mkdir app-root/data/test
+</code></pre><p>Change directories</p>
 <p>In Linux, we use the  <strong>cd</strong>  command to change directories. To change
 to a directory use:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data/test</code></pre></div>
-<p>To come backup to our home directory use:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd</code></pre></div>
-<p>To view our current location in the server use:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; pwd</code></pre></div>
-<p>Listing a directory</p>
-
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data/test
+</code></pre><p>To come backup to our home directory use:</p>
+<pre><code class="language-screen" data-lang="screen">&gt; cd
+</code></pre><p>To view our current location in the server use:</p>
+<pre><code class="language-screen" data-lang="screen">&gt; pwd
+</code></pre><p>Listing a directory</p>
 <p>In Linux, we use <strong>ls</strong> command to list files in a directory.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; ls</code></pre></div>
-<p>Following ls command lists files in <code>app-root/data</code> directory in long
+<pre><code class="language-screen" data-lang="screen">&gt; ls
+</code></pre><p>Following ls command lists files in <code>app-root/data</code> directory in long
 form (l), in reverse chronological order(rt).</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; ls -lrt app-root/data</code></pre></div>
-
+<pre><code class="language-screen" data-lang="screen">&gt; ls -lrt app-root/data
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -620,60 +612,52 @@ form (l), in reverse chronological order(rt).</p>
 
 
 
-
 <p>Copy files to OpenShift Linux</p>
-
 <p>OpenShift does not support FTP file transfers. To copy files, we need to
 use SSH copy also known as secured copy. In WordPress Tutorial - Backup
 chapter, we need to copy backup files to OpenShift.</p>
-
 <p>For SSH copy, we require SSH string of our OpenShift application. To
 know SSH string, run following command <strong>from the command prompt (in
 PC)</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc apps</code></pre></div>
-<figure class="text-center" >
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc apps
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-rhc-apps.png" alt="OpenShift Linux Primer - RHC apps output" />
 </figure>
-
 
 <p>RHC contacts and authenticates with OpenShift and shows details about
 applications configured in our account. In the output, <strong>SSH:</strong> line
 shows the SSH string of the app. Components of SSH line are:</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-scp-sshstring.png" alt="OpenShift Linux Primer - OpenShift SSH String example" />
 </figure>
 
-
 <p>Copy SSH line to the clipboard and we need that in the next step. To
 securely copy files to OpenShift server, use the following commands.</p>
-
 <p>Replace &lt;file to copy&gt; and &lt;directory name&gt; with the filename or
 directory we wish to copy to the server. Replace example SSH string with
 the real SSH string !!!</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>To copy single file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">---- Windows users ----
+<pre><code class="language-screen" data-lang="screen">---- Windows users ----
 
 C:sample dir&gt; pscp &lt;file to copy&gt; 5482222abca4620007e8@quickstart-wordpressguide.rhcloud.com:app-root/data/
 
 
 ---- Linux users ----
 
-$ scp &lt;file to copy&gt; 5482222abca4620007e8@quickstart-wordpressguide.rhcloud.com:app-root/data/</code></pre></div>
-<p>To recursively copy a directory, use -r switch.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">---- Windows users ----
+$ scp &lt;file to copy&gt; 5482222abca4620007e8@quickstart-wordpressguide.rhcloud.com:app-root/data/
+</code></pre><p>To recursively copy a directory, use -r switch.</p>
+<pre><code class="language-screen" data-lang="screen">---- Windows users ----
 
 C:sample dir&gt; pscp -r &lt;directory name&gt; 5482222abca4620007e8@quickstart-wordpressguide.rhcloud.com:app-root/data/
 
 
 ---- Linux users ----
 
-$ scp -r &lt;directory name&gt; 5482222abca4620007e8@quickstart-wordpressguide.rhcloud.com:app-root/data/</code></pre></div>
+$ scp -r &lt;directory name&gt; 5482222abca4620007e8@quickstart-wordpressguide.rhcloud.com:app-root/data/
+</code></pre>
           </main>
         </div>
       </div>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>DisclosurePanel - GWT Tutorial - CodeTab</title></head>
 
@@ -711,49 +711,39 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-6-factdisclosepanel">6.6. FactDisclosePanel</h2>
-
+            <h2 id="66factdisclosepanel">6.6. FactDisclosePanel</h2>
 <p>FactDisclosePanel shows or hide the Price, PB and PE graphs.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/factdisclosepanel.png" alt="FactDisclosePanel" />
 </figure>
 
-
-<h6 id="figure-6-6-factdisclosepanel">Figure 6.6. FactDisclosePanel</h6>
-
+<h6 id="figure66factdisclosepanel">Figure 6.6. FactDisclosePanel</h6>
 <p><code>FactDisclosePanel</code> (FDP) uses two GWT widgets, GWT <code>DisclosurePanel</code>
 and inner <code>CaptionPanel</code>. <code>DisclosurePanel</code>, contains header and a
 content panel, that discloses the underlying content when a user clicks
 the header, and <code>CaptionPanel</code> encloses its contents with border and a
 caption on upper left corner.</p>
-
 <p><code>in.fins.client.widget/FactDisclosePanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiField</span><span class="p">(</span><span class="n">provided</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-        <span class="n">DisclosurePanel</span> <span class="nf">dPanel</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiField</span><span class="o">(</span><span class="n">provided</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+        <span class="n">DisclosurePanel</span> <span class="n">dPanel</span><span class="o">;</span>
         <span class="nd">@UiField</span>
-        <span class="n">CaptionPanel</span> <span class="nf">cPanel</span><span class="p">;</span>
+        <span class="n">CaptionPanel</span> <span class="n">cPanel</span><span class="o">;</span>
 
         <span class="nd">@UiConstructor</span>
-        <span class="kd">public</span> <span class="nf">FactDisclosePanel</span><span class="p">(</span><span class="n">String</span> <span class="nf">header</span><span class="p">,</span> <span class="n">String</span> <span class="nf">caption</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">FinsResources</span> <span class="nf">images</span> <span class="o">=</span> <span class="n">FinsResources</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
-                <span class="n">dPanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DisclosurePanel</span><span class="p">(</span><span class="n">images</span><span class="p">.</span><span class="na">barChart</span><span class="p">(),</span> <span class="n">images</span><span class="p">.</span><span class="na">chart</span><span class="p">(),</span> <span class="n">header</span><span class="p">);</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-                <span class="n">cPanel</span><span class="p">.</span><span class="na">setCaptionText</span><span class="p">(</span><span class="n">caption</span><span class="p">);</span>
-                <span class="n">dPanel</span><span class="p">.</span><span class="na">setContent</span><span class="p">(</span><span class="n">cPanel</span><span class="p">);</span>
-                <span class="n">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>Instead of stock header, we want custom header for <code>DisclosurePanel</code>,
-and for this we use <code>@UiField(provided = true)</code> annotation for
+        <span class="kd">public</span> <span class="nf">FactDisclosePanel</span><span class="o">(</span><span class="n">String</span> <span class="n">header</span><span class="o">,</span> <span class="n">String</span> <span class="n">caption</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">FinsResources</span> <span class="n">images</span> <span class="o">=</span> <span class="n">FinsResources</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">;</span>
+                <span class="n">dPanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DisclosurePanel</span><span class="o">(</span><span class="n">images</span><span class="o">.</span><span class="na">barChart</span><span class="o">(),</span> <span class="n">images</span><span class="o">.</span><span class="na">chart</span><span class="o">(),</span> <span class="n">header</span><span class="o">);</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+                <span class="n">cPanel</span><span class="o">.</span><span class="na">setCaptionText</span><span class="o">(</span><span class="n">caption</span><span class="o">);</span>
+                <span class="n">dPanel</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="n">cPanel</span><span class="o">);</span>
+                <span class="n">setVisible</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>Instead of stock header, we want custom header for <code>DisclosurePanel</code>,
+and for this we use <code> @UiField(provided = true)</code> annotation for
 <code>disclosurePanel</code> field and instantiate it before calling UiBinder.</p>
-
 <p><code>CaptionPanel</code> is set as content of DisclosurePanel to which child
 widgets are added by implementing the HasWidget interface.</p>
-
 <p>Following Ui declaration adds FDP to Snapshot.</p>
-
 <p><code>in.fins.client.content/Snapshot.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;g:row&gt;</span>
            <span class="nt">&lt;g:customCell&gt;</span>
@@ -765,11 +755,10 @@ widgets are added by implementing the HasWidget interface.</p>
 
            <span class="c">&lt;!-- likewise for PE and PB --&gt;</span>
 
-        <span class="nt">&lt;/g:row&gt;</span></code></pre></div>
-<p>This UI declaration adds FDP to Snapshot and a ChartPanel to FDP and
+        <span class="nt">&lt;/g:row&gt;</span>
+</code></pre></div><p>This UI declaration adds FDP to Snapshot and a ChartPanel to FDP and
 ChartPanel uses attributes width, rangeSelector etc to customize the
 chart.</p>
-
 
 
 <div>&nbsp;</div>
@@ -787,69 +776,65 @@ chart.</p>
 <div>&nbsp;</div>
 
 
-
 <h5 id="haswidgets">HasWidgets</h5>
-
 <p>To enable custom widget to hold other widgets, we have to implement
 <code>HasWidget</code> interface, and FDP has to hold ChartPanel and for this it
 implements <code>HasWidget</code>. This interface enables the widget to add or
 remove child widgets and to enumerate the widgets it contains. It
 defines following methods.</p>
-
 <ul>
-<li><p><code>add(Widget w)</code> - adds a child widget.</p></li>
-
-<li><p><code>clear()</code> - removes all child widgets.</p></li>
-
-<li><p><code>iterator()</code> - returns iterator for the contained widgets.</p></li>
-
-<li><p><code>remove(Widget w)</code> - removes a child widget.</p></li>
+<li>
+<p><code>add(Widget w)</code> - adds a child widget.</p>
+</li>
+<li>
+<p><code>clear()</code> - removes all child widgets.</p>
+</li>
+<li>
+<p><code>iterator()</code> - returns iterator for the contained widgets.</p>
+</li>
+<li>
+<p><code>remove(Widget w)</code> - removes a child widget.</p>
+</li>
 </ul>
-
 <p><code>in.fins.client.widget/FactDisclosePanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">add</span><span class="p">(</span><span class="n">Widget</span> <span class="nf">w</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">cPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">w</span><span class="p">);</span> 
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">Widget</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">w</span><span class="o">);</span> 
 
                 <span class="c1">// additional logic explained later              
-</span><span class="c1"></span>        <span class="p">}</span>
+</span><span class="c1"></span>        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">clear</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">cPanel</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clear</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">cPanel</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">Iterator</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">cPanel</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">cPanel</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">boolean</span> <span class="n">remove</span><span class="p">(</span><span class="n">Widget</span> <span class="nf">w</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">cPanel</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>In these methods, we add (as well as remove and clear) ChartPanel widget
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">remove</span><span class="o">(</span><span class="n">Widget</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">cPanel</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">w</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>In these methods, we add (as well as remove and clear) ChartPanel widget
 to CaptionPanel.</p>
-
 <h5 id="datagroupevent-and-datagroupaction">DataGroupEvent and DataGroupAction</h5>
-
 <p><code>SymbolEvent</code> that was used earlier provides data typically for a date
 for the entire symbol, but to plot the graph we require data for all
 dates between two periods for specific Fact. For example, to plot Price
 graph we require Facts which has key Price for a range of dates.</p>
-
 <p><code>DataGroupEvent</code> holds a DataGroup for a specific category with data for
 all dates. For price graph, it holds <code>DataGroup</code> for Quote category, and
 from DataGroup we can get <code>List&lt;Data&gt;</code> and each Data contains
 List&lt;Fact&gt; which has Price Fact.</p>
-
 <p><code>DataGroupAction</code> fetches <code>DataGroup</code> of a category and fires
 <code>DataGroupEvent</code>. Like SymbolAction, which was covered earlier,
 DataGroupAction is a mediator between two widgets and is responsible to
 fetch DataGroup from datastore.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -866,18 +851,13 @@ fetch DataGroup from datastore.</p>
 
 
 
-
 <h5 id="flow-of-events">Flow of events</h5>
-
 <p>Flow of event is as shown in next figure.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/fdp-events.png" alt="Flow of Events" />
 </figure>
 
-
-<h6 id="figure-6-7-flow-of-events">Figure 6.7. Flow of Events</h6>
-
+<h6 id="figure67flow-of-events">Figure 6.7. Flow of Events</h6>
 <p>Event flow happens in two stages. Initially, when user selects a name,
 <code>SymbolAction</code> fires a <code>SymbolEvent</code> which is handled by
 <code>DataGroupAction</code> and assigns this symbol to a field for later use. This
@@ -887,116 +867,102 @@ actions as well. Later when user expands FDP, it generates an
 <code>DataGroup</code> for the symbol held by its field and fires <code>DataGroupEvent</code>.
 This event is propagated to FDP and then to its child widget
 <code>ChartPanel</code> which uses DataGroup&rsquo;s Data and Facts to plot the graph.</p>
-
 <p>DataGroupAction fetches DataGroup when user expands the FDP, and with
 the help of boolean flag, <code>symbolChanged</code>, reuses the DataGroup on
 subsequent clicks until user selects another symbol.</p>
-
 <p><code>in.fins.client.action/DataGroupAction.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">symbolChanged</span> <span class="o">==</span> <span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="n">dataGroup</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;No Symbol change. Using existing dataGroup&#34;</span><span class="p">);</span>
-                        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fireEventFromSource</span><span class="p">(</span><span class="k">new</span> <span class="n">DataGroupEvent</span><span class="p">(</span><span class="n">dataGroup</span><span class="p">),</span>
-                                        <span class="n">eventSource</span><span class="p">);</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                        <span class="n">DataGroup</span> <span class="nf">newDataGroup</span> <span class="o">=</span> <span class="n">SymbolDatabase</span><span class="p">.</span><span class="na">getDataGroup</span><span class="p">(</span>
-                                        <span class="n">symbol</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span> <span class="n">category</span><span class="p">,</span> <span class="n">filter</span><span class="p">);</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Symbol Changed. Fetching dataGroup&#34;</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">symbolChanged</span> <span class="o">==</span> <span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="n">dataGroup</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;No Symbol change. Using existing dataGroup&#34;</span><span class="o">);</span>
+                        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">fireEventFromSource</span><span class="o">(</span><span class="k">new</span> <span class="n">DataGroupEvent</span><span class="o">(</span><span class="n">dataGroup</span><span class="o">),</span>
+                                        <span class="n">eventSource</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                        <span class="n">DataGroup</span> <span class="n">newDataGroup</span> <span class="o">=</span> <span class="n">SymbolDatabase</span><span class="o">.</span><span class="na">getDataGroup</span><span class="o">(</span>
+                                        <span class="n">symbol</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">category</span><span class="o">,</span> <span class="n">filter</span><span class="o">);</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Symbol Changed. Fetching dataGroup&#34;</span><span class="o">);</span>
 
-          <span class="p">....</span></code></pre></div>
-<h5 id="wiring-all-of-them">Wiring all of them</h5>
-
+          <span class="o">....</span>
+</code></pre></div><h5 id="wiring-all-of-them">Wiring all of them</h5>
 <p>UiFactory of FDP and ChartPanel wire them with <code>DataGroupAction</code>.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">FactDisclosePanel</span> <span class="n">factDisclosePanelFactory</span><span class="p">(</span><span class="n">String</span> <span class="nf">header</span><span class="p">,</span>
-                        <span class="n">String</span> <span class="nf">caption</span><span class="p">,</span> <span class="n">String</span> <span class="nf">category</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">DisclosurePanel</span><span class="o">&gt;</span> <span class="nf">dataGroupAction</span> <span class="o">=</span> 
-                      <span class="k">new</span> <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">DisclosurePanel</span><span class="o">&gt;</span><span class="p">(</span>
-                                <span class="n">category</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="n">category</span><span class="p">));</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">SymbolEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span>
-                                <span class="n">dataGroupAction</span><span class="p">);</span>
+        <span class="kd">public</span> <span class="n">FactDisclosePanel</span> <span class="nf">factDisclosePanelFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">header</span><span class="o">,</span>
+                        <span class="n">String</span> <span class="n">caption</span><span class="o">,</span> <span class="n">String</span> <span class="n">category</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">DisclosurePanel</span><span class="o">&gt;</span> <span class="n">dataGroupAction</span> <span class="o">=</span> 
+                      <span class="k">new</span> <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">DisclosurePanel</span><span class="o">&gt;(</span>
+                                <span class="n">category</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="n">category</span><span class="o">));</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">SymbolEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span>
+                                <span class="n">dataGroupAction</span><span class="o">);</span>
 
-                <span class="n">FactDisclosePanel</span> <span class="nf">fdp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactDisclosePanel</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">caption</span><span class="p">);</span>
+                <span class="n">FactDisclosePanel</span> <span class="n">fdp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactDisclosePanel</span><span class="o">(</span><span class="n">header</span><span class="o">,</span> <span class="n">caption</span><span class="o">);</span>
                 <span class="c1">// required to make fdp visible after symbol is loaded
-</span><span class="c1"></span>                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">SymbolEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">fdp</span><span class="p">);</span>
-                <span class="n">fdp</span><span class="p">.</span><span class="na">addOpenHandler</span><span class="p">(</span><span class="n">dataGroupAction</span><span class="p">);</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">DataGroupEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">dataGroupAction</span><span class="p">,</span>
-                                <span class="n">fdp</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">fdp</span><span class="p">;</span>
-        <span class="p">}</span>
+</span><span class="c1"></span>                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">SymbolEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">fdp</span><span class="o">);</span>
+                <span class="n">fdp</span><span class="o">.</span><span class="na">addOpenHandler</span><span class="o">(</span><span class="n">dataGroupAction</span><span class="o">);</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">DataGroupEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">dataGroupAction</span><span class="o">,</span>
+                                <span class="n">fdp</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">fdp</span><span class="o">;</span>
+        <span class="o">}</span>
 
         <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">ChartPanel</span> <span class="n">chartPanelFactory</span><span class="p">(</span><span class="n">String</span> <span class="nf">title</span><span class="p">,</span> <span class="n">String</span> <span class="nf">key</span><span class="p">,</span> <span class="n">String</span> <span class="nf">width</span><span class="p">,</span>
-                        <span class="n">String</span> <span class="nf">height</span><span class="p">,</span> <span class="kt">boolean</span> <span class="nf">rangeSelector</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">ChartPanel</span> <span class="nf">cp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ChartPanel</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">rangeSelector</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">cp</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p>FDP also listens to <code>SymbolEvent</code> make itself visible on name selection.
+        <span class="kd">public</span> <span class="n">ChartPanel</span> <span class="nf">chartPanelFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">,</span> <span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">width</span><span class="o">,</span>
+                        <span class="n">String</span> <span class="n">height</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">rangeSelector</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ChartPanel</span> <span class="n">cp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ChartPanel</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="n">rangeSelector</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">cp</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p>FDP also listens to <code>SymbolEvent</code> make itself visible on name selection.
 This makes FDP visible only after symbol is loaded whereas use of
 <code>NameEvent</code> makes visible slightly before, which may look odd. Other
 widgets of Snapshot share the SymbolEvent and hence its use doesn&rsquo;t
 affect the performance.</p>
-
 <p>It is essential to understand that, FDP attaches open handler to
 <code>DataGroupAction</code> and in turn listens for <code>DataGroupEvent</code> fired by
 DataGroupAction.</p>
-
 <p>In factory method, we are able to make FDP as a handler for the
 DataGroupEvent fired by the DataGroupAction, but FDP has to send it down
 to ChartPanel and following code accomplishes this.</p>
-
 <p><code>in.fins.client.widget/FactDisclosePanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">add</span><span class="p">(</span><span class="n">Widget</span> <span class="nf">w</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">cPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">w</span> <span class="nf">instanceof</span> <span class="n">DataGroupHandler</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">DataGroupEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span>
-                                        <span class="p">(</span><span class="n">DataGroupHandler</span><span class="p">)</span> <span class="n">w</span><span class="p">);</span>
-                <span class="p">}</span>
-        <span class="p">}</span></code></pre></div>
-<p>In FDP, <code>add()</code> method registers all child widgets, which are instances
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">Widget</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">w</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">w</span> <span class="k">instanceof</span> <span class="n">DataGroupHandler</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">DataGroupEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span>
+                                        <span class="o">(</span><span class="n">DataGroupHandler</span><span class="o">)</span> <span class="n">w</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div><p>In FDP, <code>add()</code> method registers all child widgets, which are instances
 of <code>DataGroupHandler</code>, as handlers of <code>DataGroupEvent</code>. Once FDP
 receives DataGroupEvent, it propagates the event to child widgets. To do
 so, it creates a new DataGroupEvent because it is not a good idea to
 handle the existing event outside this method.</p>
-
 <h2 id="event-boundary">Event boundary</h2>
-
 <p>Never refer the event received from EventBus outside its handler.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/fdp-events2.png" alt="DataGroupEvent propagation" />
 </figure>
 
-
-<h6 id="figure-6-8-datagroupevent-propagation">Figure 6.8. DataGroupEvent propagation</h6>
-
+<h6 id="figure68datagroupevent-propagation">Figure 6.8. DataGroupEvent propagation</h6>
 <p>We will cover Google Chart Tools in a later chapter, and for the moment
 <code>ChartPanel</code> uses a basic <code>VerticalPanel</code> to display the chart data in
 textual format. In handler method, we traverse through List&lt;Data&gt; of
 DataGroup and add Facts with matching keys to VerticalPanel as <code>HTML</code>
 widget.</p>
-
 <p><code>in.fins.client.widget/ChartPanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onDataGroupChange</span><span class="p">(</span><span class="n">DataGroupEvent</span> <span class="nf">dataGroupEvent</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">vPanel</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-                <span class="n">dataGroup</span> <span class="o">=</span> <span class="n">dataGroupEvent</span><span class="p">.</span><span class="na">getDataGroup</span><span class="p">();</span>
-                <span class="n">List</span><span class="o">&lt;</span><span class="n">Data</span><span class="o">&gt;</span> <span class="nf">dataList</span> <span class="o">=</span> <span class="n">dataGroup</span><span class="p">.</span><span class="na">getDataList</span><span class="p">();</span>
-                <span class="n">vPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">HTML</span><span class="p">(</span><span class="n">dataGroup</span><span class="p">.</span><span class="na">getCategory</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#34; : &#34;</span> <span class="o">+</span> <span class="n">key</span><span class="p">));</span>
-                <span class="k">for</span> <span class="p">(</span><span class="n">Data</span> <span class="nf">data</span> <span class="o">:</span> <span class="n">dataList</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="k">for</span> <span class="p">(</span><span class="n">Fact</span> <span class="nf">fact</span> <span class="o">:</span> <span class="n">data</span><span class="p">.</span><span class="na">getFacts</span><span class="p">())</span> <span class="p">{</span>
-                                <span class="k">if</span> <span class="p">(</span><span class="n">fact</span><span class="p">.</span><span class="na">getKey</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
-                                        <span class="n">vPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">HTML</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#34; - &#34;</span>
-                                                        <span class="o">+</span> <span class="n">fact</span><span class="p">.</span><span class="na">getValue</span><span class="p">()));</span>
-                                <span class="p">}</span>
-                        <span class="p">}</span>
-                <span class="p">}</span>
-        <span class="p">}</span></code></pre></div>
-<h2 id="symbolevent-vs-datagroupevent">SymbolEvent vs DataGroupEvent</h2>
-
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDataGroupChange</span><span class="o">(</span><span class="n">DataGroupEvent</span> <span class="n">dataGroupEvent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">vPanel</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+                <span class="n">dataGroup</span> <span class="o">=</span> <span class="n">dataGroupEvent</span><span class="o">.</span><span class="na">getDataGroup</span><span class="o">();</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Data</span><span class="o">&gt;</span> <span class="n">dataList</span> <span class="o">=</span> <span class="n">dataGroup</span><span class="o">.</span><span class="na">getDataList</span><span class="o">();</span>
+                <span class="n">vPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">HTML</span><span class="o">(</span><span class="n">dataGroup</span><span class="o">.</span><span class="na">getCategory</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; : &#34;</span> <span class="o">+</span> <span class="n">key</span><span class="o">));</span>
+                <span class="k">for</span> <span class="o">(</span><span class="n">Data</span> <span class="n">data</span> <span class="o">:</span> <span class="n">dataList</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">for</span> <span class="o">(</span><span class="n">Fact</span> <span class="n">fact</span> <span class="o">:</span> <span class="n">data</span><span class="o">.</span><span class="na">getFacts</span><span class="o">())</span> <span class="o">{</span>
+                                <span class="k">if</span> <span class="o">(</span><span class="n">fact</span><span class="o">.</span><span class="na">getKey</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">key</span><span class="o">))</span> <span class="o">{</span>
+                                        <span class="n">vPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">HTML</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">getDate</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; - &#34;</span>
+                                                        <span class="o">+</span> <span class="n">fact</span><span class="o">.</span><span class="na">getValue</span><span class="o">()));</span>
+                                <span class="o">}</span>
+                        <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div><h2 id="symbolevent-vs-datagroupevent">SymbolEvent vs DataGroupEvent</h2>
 <p>FactPanel designed in the previous chapter could have used
 DataGroupEvent. But it uses SymbolEvent by taking datasource access and
 RPC calls into consideration. On name selection, widgets in Snapshot
@@ -1004,7 +970,6 @@ display data from multiple DataGroup in one go, and if each of these
 widgets use DataGroupEvent, then it involves multiple request to the
 server. With SymbolEvent, we will be able to get data for multiple
 DataGroups in single RPC.</p>
-
 <p>As we progress, widgets are getting more and more sophisticated and next
 in line is FactTable which uses widgets from Cell Widgets group.</p>
 

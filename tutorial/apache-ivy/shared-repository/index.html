@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Shared Repository - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -394,39 +394,34 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-2-apache-ivy-shared-repository">6.2. Apache Ivy Shared Repository</h2>
-
+            <h2 id="62apache-ivy-shared-repository">6.2. Apache Ivy Shared Repository</h2>
 <p>Apache Ivy Shared Repository</p>
-
 <p>Shared repository is similar to a local repository in almost all aspects
 except that all users can access a shared repository and whereas local
 repository is private to the user who owns it.</p>
-
 <p>Default configuration comes with a resolver named <strong>shared</strong> which
 points to <code>$HOME/.ivy2/shared</code> directory. If you don&rsquo;t like a shared
 repository in your home directory, then it may be moved to any other
 locations. Best practice would be to place the it in a directory to
 which all users or a group of users have read and write access.</p>
-
-<p>Let&rsquo;s create a shared repository at <code>/opt/ivy/repository/shared</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">mkdir -p /opt/ivy/repository/shared
+<p>Let&rsquo;s create a shared repository at <code> /opt/ivy/repository/shared</code></p>
+<pre><code class="language-screen" data-lang="screen">mkdir -p /opt/ivy/repository/shared
 chown -R ivy.ivy /opt/ivy
-chmod -R 777 /opt/ivy</code></pre></div>
-<p>Repository directory is accessible by all users.</p>
-
+chmod -R 777 /opt/ivy
+</code></pre><p>Repository directory is accessible by all users.</p>
 <p>Use following variables to override the default values of shared
 resolver.</p>
-
 <ul>
-<li><p>ivy.shared.default.root</p></li>
-
-<li><p>ivy.shared.default.ivy.pattern</p></li>
-
-<li><p>ivy.shared.default.artifact.pattern</p></li>
+<li>
+<p>ivy.shared.default.root</p>
+</li>
+<li>
+<p>ivy.shared.default.ivy.pattern</p>
+</li>
+<li>
+<p>ivy.shared.default.artifact.pattern</p>
+</li>
 </ul>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;shared repository&#34;</span> <span class="na">default=</span><span class="s">&#34;install&#34;</span> 
  <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
@@ -437,14 +432,12 @@ resolver.</p>
             <span class="na">revision=</span><span class="s">&#34;2.6&#34;</span> <span class="na">transitive=</span><span class="s">&#34;true&#34;</span> <span class="na">overwrite=</span><span class="s">&#34;false&#34;</span> 
             <span class="na">from=</span><span class="s">&#34;public&#34;</span> <span class="na">to=</span><span class="s">&#34;shared&#34;</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Shared repository default root is set through variable
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Shared repository default root is set through variable
 <code>ivy.shared.default.root</code> and we set it to <code>/opt/ivy/repository/shared</code>.</p>
-
 <p>To access the shared repository, users have to override
 <code>ivy.shared.default.root</code> variable in their build files before calling
 &lt;ivy:resolve&gt;.</p>
-
 
 
 <div>&nbsp;</div>
@@ -463,27 +456,23 @@ resolver.</p>
 
 
 
-
 <p>Apache Ivy Shared Repository on a Web Server</p>
-
 <p>The above strategy for a shared repository works well when developers
 have access to the server through telnet. But typically in an enterprise
 set up, developers work from the desktop and in such a scenario set up a
 repository accessible over the network .</p>
-
 <p>To serve the shared repository over the network, locate the repository
 on a web server which runs the http daemon. Create a directory for the
 repository under <strong>Document Root</strong> folder of the httpd.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">mkdir /var/www/html/ivyrepo
+<pre><code class="language-screen" data-lang="screen">mkdir /var/www/html/ivyrepo
 chown apache.apache /var/www/html/ivyrepo
 chmod 775 /var/www/html/ivyrepo
 usermod -aG apache m # m is username
-service httpd start # start the apache web server</code></pre></div>
-<p>In this example, we use Apache HTTP server with its default Document
+service httpd start # start the apache web server
+</code></pre><p>In this example, we use Apache HTTP server with its default Document
 root at /var/www/html. Users who are allowed to install modules are
 added to apache group and they have to use following build.xml to
 install the modules.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;shared repository&#34;</span> <span class="na">default=</span><span class="s">&#34;install&#34;</span> 
       <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
@@ -493,10 +482,9 @@ install the modules.</p>
             <span class="na">revision=</span><span class="s">&#34;2.6&#34;</span> <span class="na">transitive=</span><span class="s">&#34;true&#34;</span> <span class="na">overwrite=</span><span class="s">&#34;false&#34;</span> 
             <span class="na">from=</span><span class="s">&#34;public&#34;</span> <span class="na">to=</span><span class="s">&#34;shared&#34;</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Developers have to use following ivysettings.xml to access the
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Developers have to use following ivysettings.xml to access the
 repository from their Desktops.</p>
-
 <p><code>ivysettings.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;ivysettings&gt;</span>
  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;web.ivy.pattern&#34;</span> 
@@ -515,10 +503,9 @@ repository from their Desktops.</p>
    <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;public&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/chain&gt;</span>
  <span class="nt">&lt;/resolvers&gt;</span>
-<span class="nt">&lt;/ivysettings&gt;</span></code></pre></div>
-<p>Here we use the URL resolver. Change <a href="http://localhost">http://localhost</a> in &lt;ivy&gt; and
+<span class="nt">&lt;/ivysettings&gt;</span>
+</code></pre></div><p>Here we use the URL resolver. Change http://localhost in &lt;ivy&gt; and
 &lt;artifact&gt; pattern to the URL of the server.</p>
-
 
 
 <div>&nbsp;</div>
@@ -536,9 +523,7 @@ repository from their Desktops.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Apache Ivy Repository Managers</p>
-
 <p>To make your shared repository setup more robust, use web based Ivy
 Repository Managers like Archiva, Artifactory or Nexus. These front ends
 come with a fine grained security model for repository access by the

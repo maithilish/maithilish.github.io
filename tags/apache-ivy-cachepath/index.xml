@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>apache ivy cachepath on Codetab</title>
@@ -18,8 +18,8 @@
       
       <guid>https://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/</guid>
       <description>In the last chapter we worked with &amp;lt;ivy:resolve&amp;gt;, which resolves the dependencies indicated in ivy.xml file and places the resolved modules in the cache. But it does not link the dependencies to the project build path. To expose the dependencies to the Java build path, Apache Ivy provides two Ant tasks .
- &amp;lt;ivy:cachepath&amp;gt; task
- &amp;lt;ivy:retrieve&amp;gt; task
+  &amp;lt;ivy:cachepath&amp;gt; task
+  &amp;lt;ivy:retrieve&amp;gt; task
   Apache Ivy Cachepath Task
 &amp;lt;ivy:cachepath&amp;gt; constructs an Ant classpath consisting of resolved artifacts in the cache.</description>
     </item>

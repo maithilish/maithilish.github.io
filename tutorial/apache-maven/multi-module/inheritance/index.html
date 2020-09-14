@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multi Module Inheritance - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,33 +535,25 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="multi-module-inheritance">Multi Module Inheritance</h1>
-
+            <h1 id="multi-module-inheritance">Multi Module Inheritance</h1>
 <p>The previous tutorials explained the structure of simple and hierarchical multi module project. This tutorial explain the use of inheritance feature to compact and streamline the module POMs.</p>
-
 <p>The example code <code>extended-multi</code>, used in this tutorial, is available at GitHub <a href="https://github.com/maithilish/maven-examples" target="_blank">Maven Examples</a>. Download the examples as zip and extract it to some location or clone it with git.</p>
-
 <p>Most elements from the parent POM are inherited by its children. Out of these, properties and dependencies comes handy in multi module projects. Let&rsquo;s see how we can use them.</p>
-
 <p>In extend-multi project, we set sourceEncoding and compiler source and target levels in multiple POM.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;properties&gt;</span>
         <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
         <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
         <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
-<span class="nt">&lt;/properties&gt;</span></code></pre></div>
-<p>Edit <code>app/pom.xml</code>, <code>shared/util/pom.xml</code> and <code>shared/config/pom.xml</code> and remove the properties block.</p>
-
+<span class="nt">&lt;/properties&gt;</span>
+</code></pre></div><p>Edit <code>app/pom.xml</code>, <code>shared/util/pom.xml</code> and <code>shared/config/pom.xml</code> and remove the properties block.</p>
 <p>Similarly, junit dependency is specified in multiple locations</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dependency&gt;</span>
         <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
         <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
         <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span></code></pre></div>
-<p>Edit <code>app/pom.xml</code>, <code>shared/util/pom.xml</code> and <code>shared/config/pom.xml</code> and remove the junit dependency.</p>
-
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div><p>Edit <code>app/pom.xml</code>, <code>shared/util/pom.xml</code> and <code>shared/config/pom.xml</code> and remove the junit dependency.</p>
 
 
 <div>&nbsp;</div>
@@ -579,14 +571,10 @@
 <div>&nbsp;</div>
 
 
-
 <p>Now execute <code>mvn test</code> from the top level folder and as expected, Maven build fails because of missing junit library. It also displays a warning that build is platform dependent as sourceEncoding is not    set.</p>
-
 <pre><code>&lt;a href=&quot;https://maven.apache.org/pom.html#Inheritance&quot; target=&quot;_blank&quot;&gt;WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 </code></pre>
-
 <p>To overcome these errors, modify top-level POM i.e. <code>extended-multi/pom.xml</code> and add properties and junit dependency to it. The file content after modification is as follows</p>
-
 <p><code>extended-multi/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
@@ -617,9 +605,8 @@
         <span class="nt">&lt;module&gt;</span>shared<span class="nt">&lt;/module&gt;</span>
     <span class="nt">&lt;/modules&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Now, execute <code>mvn test</code> and project builds successfully without any warning.</p>
-
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Now, execute <code>mvn test</code> and project builds successfully without any warning.</p>
 
 
 <div>&nbsp;</div>
@@ -638,14 +625,10 @@
 
 
 
-
 <p>To sum up, we removed properties and junit dependency from all the module pom.xml and moved it to the top level pom.xml. Maven inheritance feature ensures that all child pom.xml inherits these items from the parent.</p>
-
 <p>However, be careful while adding the dependencies to the top-level pom.xml as they are inherited by all child POM. Add only those dependencies which are required by each and every module. Good examples
 of such libraries are JUnit, Log4j or Sl4j etc., and these are normally required by all modules.</p>
-
 <p>When a dependency is required by some, but not by all the modules, then use <strong>Dependency Management</strong> feature which is explained in the next chapter.</p>
-
 <p>To know more about inheritable and non inheritable elements refer <a href="https://maven.apache.org/pom.html#Inheritance"  target="_blank">POM Reference - Inheritance</a></p>
 
           </main>

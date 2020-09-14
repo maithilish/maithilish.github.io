@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T15:56:00+0530",
         "dateModified" : "2019-01-10T15:56:00+0530",
-        "wordCount" : "374",
+        "wordCount" : "375",
         "keywords" : [ "gwt suggestbox","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>SuggestBox - GWT Tutorial - CodeTab</title></head>
 
@@ -711,28 +711,21 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-2-autosuggest">6.2. AutoSuggest</h2>
-
+            <h2 id="62autosuggest">6.2. AutoSuggest</h2>
 <p><code>AutoSuggest</code> accepts user input and displays matching list of Symbols
 for selection. It uses GWT <code>SuggestBox</code> to display suggestions those
 matches input.</p>
-
 <p>Default <code>SuggestOracle</code> of <code>SuggestBox</code> is <code>MultiWordSuggestOracle</code>
 which displays sorted drop down list of matches. List of names comes
 from <code>SymbolDatabase.getSymbolNames()</code>, which returns names of four
-symbols, and method <code>MultiWordSuggestOracle.setSymbolNames()</code> adds list
+symbols, and method <code> MultiWordSuggestOracle.setSymbolNames()</code> adds list
 to the oracle.</p>
-
 <p><code>in.fins.client.widget/AutoSuggest.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="nf">void</span> <span class="n">setSymbolNames</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">list</span> <span class="o">=</span> <span class="n">SymbolDatabase</span><span class="p">.</span><span class="na">getSymbolNames</span><span class="p">();</span>
-                <span class="p">((</span><span class="n">MultiWordSuggestOracle</span><span class="p">)</span> <span class="n">suggestBox</span><span class="p">.</span><span class="na">getSuggestOracle</span><span class="p">()).</span><span class="na">addAll</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>In Part 2 of the book, RPS calls to the server replaces <code>
-SymbolDatabase</code> calls.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setSymbolNames</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">SymbolDatabase</span><span class="o">.</span><span class="na">getSymbolNames</span><span class="o">();</span>
+                <span class="o">((</span><span class="n">MultiWordSuggestOracle</span><span class="o">)</span> <span class="n">suggestBox</span><span class="o">.</span><span class="na">getSuggestOracle</span><span class="o">()).</span><span class="na">addAll</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>In Part 2 of the book, RPS calls to the server replaces <code>SymbolDatabase</code> calls.</p>
 <p>To handle the text, <code>SuggestBox</code> provides two handlers
 <code>ValueChangeHandler</code> and <code>SelectionHandler</code>. We may either of them to
 handle selection, but <code>ValueChangeHandler</code> may not work seamlessly
@@ -741,52 +734,47 @@ browsers. @UiHandler annotated <code>handlSelection()</code> method handles
 SelectionEvent. On selection, name is cleared from SuggestBox so that it
 is ready for the next input. We are going use the selected name in the
 next section, and for the time being handler just logs log tab.</p>
-
 <p><code>in.fins.client.widget/AutoSuggest.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiHandler</span><span class="p">(</span><span class="s">&#34;suggestBox&#34;</span><span class="p">)</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">handleSelection</span><span class="p">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="p">.</span><span class="na">Suggestion</span><span class="o">&gt;</span> <span class="nf">s</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
-                <span class="n">suggestBox</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>It is also possible to code the Handler as anonymous inner class as
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiHandler</span><span class="o">(</span><span class="s">&#34;suggestBox&#34;</span><span class="o">)</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleSelection</span><span class="o">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="o">.</span><span class="na">Suggestion</span><span class="o">&gt;</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="o">.</span><span class="na">getText</span><span class="o">());</span>
+                <span class="n">suggestBox</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>It is also possible to code the Handler as anonymous inner class as
 shown in following snippet but @UiHandler method is clear and easy to
 read.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">         <span class="n">suggestBox</span><span class="p">.</span><span class="na">addSelectionHandler</span><span class="p">(</span><span class="k">new</span>
-          <span class="n">SelectionHandler</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="p">.</span><span class="na">Suggestion</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">         <span class="n">suggestBox</span><span class="o">.</span><span class="na">addSelectionHandler</span><span class="o">(</span><span class="k">new</span>
+          <span class="n">SelectionHandler</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="o">.</span><span class="na">Suggestion</span><span class="o">&gt;()</span> <span class="o">{</span>
                  <span class="nd">@Override</span>
-                 <span class="kd">public</span> <span class="nf">void</span> <span class="n">onSelection</span><span class="p">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">Suggestion</span><span class="o">&gt;</span> <span class="nf">event</span><span class="p">)</span> <span class="p">{</span>
-                     <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
-                     <span class="n">suggestBox</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
-                  <span class="p">}</span>
-         <span class="p">});</span></code></pre></div>
-<p>On page load, we have to focus the <code>AutoSuggest</code> for user input. <code>
-SuggestionBox.setFocus()</code>call will not set focus as widgets are still
+                 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSelection</span><span class="o">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">Suggestion</span><span class="o">&gt;</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                     <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="o">.</span><span class="na">getText</span><span class="o">());</span>
+                     <span class="n">suggestBox</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+                  <span class="o">}</span>
+         <span class="o">});</span>
+</code></pre></div><p>On page load, we have to focus the <code>AutoSuggest</code> for user input. <code>SuggestionBox.setFocus() </code>call will not set focus as widgets are still
 being constructed and we have to call <code>setFocus()</code> method once the page
 loads the entire widget tree into browser. To do this, defer its
 execution by delegating the command to a <code>Scheduler</code> which executes
 <code>setFocus()</code> method once page loads the widgets tree.</p>
-
 <p><code>in.fins.client.widget/AutoSuggest.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">void</span> <span class="n">requestFocus</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">Scheduler</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">scheduleDeferred</span><span class="p">(</span><span class="k">new</span> <span class="n">Scheduler</span><span class="p">.</span><span class="na">ScheduledCommand</span><span class="p">()</span> <span class="p">{</span>
-                        <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">()</span> <span class="p">{</span>
-                                <span class="n">suggestBox</span><span class="p">.</span><span class="na">setFocus</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-                        <span class="p">}</span>
-                <span class="p">});</span>
-        <span class="p">}</span></code></pre></div>
-<p>Once UiBinder creates and binds the UI, constructor calls
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">requestFocus</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Scheduler</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">scheduleDeferred</span><span class="o">(</span><span class="k">new</span> <span class="n">Scheduler</span><span class="o">.</span><span class="na">ScheduledCommand</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">()</span> <span class="o">{</span>
+                                <span class="n">suggestBox</span><span class="o">.</span><span class="na">setFocus</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+                        <span class="o">}</span>
+                <span class="o">});</span>
+        <span class="o">}</span>
+</code></pre></div><p>Once UiBinder creates and binds the UI, constructor calls
 <code>requestFocus()</code> method.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-                <span class="n">autoSuggest</span><span class="p">.</span><span class="na">requestFocus</span><span class="p">();</span></code></pre></div>
-<h2 id="note">Note</h2>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">Snapshot</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+                <span class="n">autoSuggest</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
 
+</code></pre></div><h2 id="note">Note</h2>
 <p><code>SymbolDatabase</code> returns four symbol names A Sys, B Max, C World and D
 Dummy, and use A, B, C or D in AutoSuggest as input to get drop down
 list.</p>
-
 <p><code>AutoSuggest</code> is ready to accept the user input, but it just logs the
 Symbol name, and in the next section we design a widget to display the
 symbol name.</p>

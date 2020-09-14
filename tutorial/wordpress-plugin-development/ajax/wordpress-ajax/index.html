@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Ajax - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,22 +625,16 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In Share on Social Plugin, we use WordPress Ajax to save and view the
+            <p>In Share on Social Plugin, we use WordPress Ajax to save and view the
 share statistics. In this chapter, we use WordPress Ajax to send share
 details from client to server and save it as WordPress options and then
 add a menu page to display the statistics in Google Charts.</p>
-
-<h2 id="9-1-wordpress-ajax">9.1. WordPress Ajax</h2>
-
+<h2 id="91wordpress-ajax">9.1. WordPress Ajax</h2>
 <p>When user shares a blog, functions in js/share.js use Social Network API
 to share and on success, send the share details to the server.</p>
-
 <p>WordPress centralizes and routes Ajax calls to its file
 <code>wp-admin/admin-ajax.php</code>. To initiate Ajax, JavaScript require URL of
 this file and we use <code>wp_localize_script()</code> function, explained in <a href="/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/">Pass Data to JavaScript</a> to pass URL and other data from the server to client.</p>
-
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
         ....          
@@ -649,18 +643,15 @@ this file and we use <code>wp_localize_script()</code> function, explained in <a
                         &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
                         &#39;nonce&#39; =&gt; wp_create_nonce( &#39;sos-save-stat&#39; ),
                         &#39;gplus_client_id&#39; =&gt; $gplus_client_id ) );
-    }</code></pre></div>
-<p>WordPress function <a href="http://codex.wordpress.org/Function_Reference/admin_url" target="_blank">admin_url()</a> returns the URL of admin-ajax.php. WordPress function <a href="http://codex.wordpress.org/Function_Reference/wp_create_nonce" target="_blank">wp_create_nonce()</a> creates one time security token called nonce that can be only used for <strong>sos-save-stat</strong> request. The screenshot shows passed data in the browsers&rsquo; <strong>View Source</strong> screen.</p>
-
+    }
+</code></pre></div><p>WordPress function <a href="http://codex.wordpress.org/Function_Reference/admin_url" target="_blank">admin_url()</a> returns the URL of admin-ajax.php. WordPress function <a href="http://codex.wordpress.org/Function_Reference/wp_create_nonce" target="_blank">wp_create_nonce()</a> creates one time security token called nonce that can be only used for <strong>sos-save-stat</strong> request. The screenshot shows passed data in the browsers&rsquo; <strong>View Source</strong> screen.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-localizedata1.png" alt="WordPress Ajax - ajax URL." />
 </figure>
 
-
 <p>When a share is completed, JavaScript calls handleResponse() with the
 response received from the Social Network and in the function, we use
 JQuery Ajax to communicate with the server.</p>
-
 <p><code>share-on-social/js/share.js</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">handleResponse</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">shareName</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
 
@@ -683,32 +674,26 @@ JQuery Ajax to communicate with the server.</p>
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>In jQuery.ajax(), we use POST method to pass the data. The Ajax URL
+</code></pre></div><p>In jQuery.ajax(), we use POST method to pass the data. The Ajax URL
 passed by the WordPress is retrieved with <code>sos_data.ajax_url</code> and
 assigned to <code>url</code> parameter. The <code>data</code> parameter passes the share
 details, nonce, share name, share type and the JSON string of the
 response received from the social network.</p>
-
 <p><strong>WordPress jQuery</strong></p>
-
 <p>jQuery library included with WordPress is set to <strong>noConflict</strong> mode and
 in that mode, we are allowed to use jQuery(#somefunction) and not the
 shorthand $(#somefunction). For more information refer <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#jQuery_noConflict_Wrappers" target="_blank">jQuery
 noConflict
 Wrappers</a></p>
-
 <p>JQuery.ajax() call with type: POST and url :
 <a href="http://example.org/wp-admin/admin-ajax.php">http://example.org/wp-admin/admin-ajax.php</a> invokes the WordPress Ajax
 script wp-admin/admin-ajax.php.</p>
-
 <p>But, how admin-ajax.php is able to determine the actual Ajax handler
 method for a specific request. In <code>data</code> parameter we also provide
 another bit of information to the server in <code>action: 'save-stats'</code>,
 which tells admin-ajax.php that it has to invoke method or function
 attached to the action hooks <strong>wp_ajax_save-stats</strong> or
 <strong>wp_ajax_nopriv_save-stats</strong>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -726,10 +711,8 @@ attached to the action hooks <strong>wp_ajax_save-stats</strong> or
 <div>&nbsp;</div>
 
 
-
 <p>So, we have to add action method to these two hooks and that is done in
 plugins&rsquo; Ajax file<code>- admin/class-ajax.php</code>.</p>
-
 <p><code>share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Ajax {
 
@@ -738,28 +721,23 @@ plugins&rsquo; Ajax file<code>- admin/class-ajax.php</code>.</p>
         add_action( &#39;wp_ajax_nopriv_save-stats&#39;, array( $this,&#39;save_stats&#39; ) );
         add_action( &#39;wp_ajax_save-stats&#39;, array( $this,&#39;save_stats&#39; ) );
 
-    }</code></pre></div>
-<p>In <code>Sos_Ajax::setup()</code> method. we add <code>Sos_Ajax::save_stats()</code> as
+    }
+</code></pre></div><p>In <code> Sos_Ajax::setup()</code> method. we add <code>Sos_Ajax::save_stats()</code> as
 action method to hooks <strong>wp_ajax_save-stats</strong> and
 <strong>wp_ajax_nopriv_save-stats.</strong></p>
-
 <p>When client <code>js/share.js</code> makes the Ajax call, WordPress receives the
 request and passes it on to <code>wp-admin/admin-ajax.php</code>, which do the
 action wp_ajax_save-stats and invokes the Sos_Ajax::save_stats().
 The Ajax handler method processes the request and returns the response
 back to client.</p>
-
 <p><strong>Ajax - Admin and Regular Users</strong></p>
-
 <p>The only difference between action hooks <strong>wp_ajax_</strong> and
 <strong>wp_ajax_nopriv_</strong> is that wp_ajax triggers when user is logged in
 as admin and wp_ajax_nopriv triggers for regular user. In other words,
 wp_ajax_save-stats invokes save_stats() method only admins but not
 for regular users. The second one, wp_ajax_nopriv_save-stats invokes
 the method when regular user shares.</p>
-
 <p>Let&rsquo;s see what goes on in the Ajax method <code>Sos_Ajax::save_stats()</code>.</p>
-
 <p><code>share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function save_stats () {
         $valid_req = check_ajax_referer( &#39;sos-save-stat&#39;, false, false );
@@ -777,8 +755,8 @@ the method when regular user shares.</p>
         $this-&gt;update_sos_stats_summary( $share_on, $share_name );
         
         wp_die( &#39;1&#39; );
-    }</code></pre></div>
-<p>The method, first do a security check and ascertains whether it is a
+    }
+</code></pre></div><p>The method, first do a security check and ascertains whether it is a
 valid Ajax request originated from indented page with the help of
 WordPress function
 [check_ajax_referer()</a>
@@ -786,30 +764,22 @@ which uses _ajax_nonce sent by jQuery.ajax() call. If security check
 fails, then
 <a href="http://codex.wordpress.org/Function_Reference/wp_die" target="_blank">wp_die()</a>
 function gracefully terminate the Ajax call and return -1 to client.</p>
-
 <p>Next, verify whether required data - type and share_name are set in
 $_POST and if not, terminate the Ajax call with wp_die().</p>
-
 <p>After those checks, call <code>Sos_Ajax::update_sos_stats()</code> and
 <code>Sos_Ajax::update_sos_stats_summary()</code> methods to save the stats in the
 database.</p>
-
 <p>Finally, terminate the Ajax call again with wp_die(), but return 1
 which indicates successful call.</p>
-
 <p><strong>Ajax Termination</strong></p>
-
 <p>In both cases, success or failure, we use wp_die() to terminate the
 Ajax call and based on the return value, 1 or -1, client determines the
 status - success or failure.</p>
-
 <p>We will explain the importance of wp_die() in a later chapter on Ajax
 Unit Testing.</p>
-
 <p>Let&rsquo;s see how data is saved to WordPress database by the
 Sos_Ajax::update_sos_stats() method.</p>
-
-<p><code>share-on-social/admin/class-ajax.php</code></p>
+<p><code> share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function update_sos_stats ( $share_on, $share_name ) {
 
         $stats = get_option( &#39;sos_stats&#39; );
@@ -825,12 +795,11 @@ Sos_Ajax::update_sos_stats() method.</p>
         
         $stats[] = $stat;
         update_option( &#39;sos_stats&#39;, $stats );
-    }</code></pre></div>
-<p>It uses <code>get_option()</code> function to check whether option <strong>sos_stats</strong>
+    }
+</code></pre></div><p>It uses <code>get_option()</code> function to check whether option <strong>sos_stats</strong>
 exists in the database else creates a new one. Next, it creates an array
 from the data sent by the client and update it as WordPress Option
 <strong>sos_stats</strong> using <code>update_option()</code> function.</p>
-
 
 
 <div>&nbsp;</div>
@@ -846,7 +815,6 @@ from the data sent by the client and update it as WordPress Option
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

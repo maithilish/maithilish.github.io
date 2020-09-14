@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backup on Codetab</title>
@@ -39,8 +39,8 @@ OpenShift to Dropbox It makes sense to move the backup files out of OpenShift to
       <guid>https://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/</guid>
       <description>11.3. WordPress Restore, Clone In the previous section, we saw how to offload the backup files to the Dropbox. In this section, we use the backup for a full WordPress restore and also to clone it to a new site and use it cloned site as testing or staging area.
 WordPress Restore WordPress Restore procedure involves following steps:
- Create a new WordPress application on OpenShift.
- Import MySQL dump to database.</description>
+  Create a new WordPress application on OpenShift.
+  Import MySQL dump to database.</description>
     </item>
     
   </channel>

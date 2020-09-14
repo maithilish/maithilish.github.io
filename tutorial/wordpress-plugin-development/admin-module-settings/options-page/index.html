@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T09:13:00+0530",
         "dateModified" : "2019-01-11T09:13:00+0530",
-        "wordCount" : "461",
+        "wordCount" : "462",
         "keywords" : [ "wordpress options page","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Options Page - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,19 +625,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-3-wordpress-options-page">6.3. WordPress Options Page</h2>
-
+            <h2 id="63wordpress-options-page">6.3. WordPress Options Page</h2>
 <p>In previous two blogs, we created a sub menu and saw how to add fields
 with WordPress Settings API. In this blog, as the final step, we explore
 WordPress Settings functions to render the WordPress Options Page.</p>
-
-<p>While adding the sub menu, we passed <code>render_settings_page()</code>method as
+<p>While adding the sub menu, we passed <code>render_settings_page() </code>method as
 callback function to add_submenu_page() function . The callback method
 has to echo the HTML required to display the page and also, use
 WordPress Settings API functions to output the registered fields.</p>
-
 <p><code>share-on-social/admin/class-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_settings_page () {
 
@@ -659,81 +654,88 @@ EOD;
         submit_button();
         echo &#34;<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>&#34;;
 
-    }</code></pre></div>
-<p>In rendering function, we do the following.</p>
-
+    }
+</code></pre></div><p>In rendering function, we do the following.</p>
 <ol>
-<li><p>echo heading and descriptions.</p></li>
-
-<li><p>echo the top &lt;form&gt; element and we set form action as options.php.</p></li>
-
-<li><p>call Settings API function
+<li>
+<p>echo heading and descriptions.</p>
+</li>
+<li>
+<p>echo the top &lt;form&gt; element and we set form action as options.php.</p>
+</li>
+<li>
+<p>call Settings API function
 <a href="http://codex.wordpress.org/Function_Reference/settings_fields" target="_blank">settings_fields()</a>
 which outputs registered fields and a security token called
-<strong>nonce</strong>.</p></li>
-
-<li><p>call Settings API function
+<strong>nonce</strong>.</p>
+</li>
+<li>
+<p>call Settings API function
 <a href="http://codex.wordpress.org/Function_Reference/do_settings_sections" target="_blank">do_settings_sections()</a>
-to output the setting sections.</p></li>
-
-<li><p>call
+to output the setting sections.</p>
+</li>
+<li>
+<p>call
 <a href="http://codex.wordpress.org/Function_Reference/submit_button" target="_blank">submit_button()</a>
-to render the submit button.</p></li>
-
-<li><p>finally echo the closing &lt;/form&gt;</p></li>
+to render the submit button.</p>
+</li>
+<li>
+<p>finally echo the closing &lt;/form&gt;</p>
+</li>
 </ol>
-
 <p>When form is submitted by user it calls wp-admin/options.php which
 manages the persistence of options.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <h3 id="putting-it-all-together">Putting It All Together</h3>
-
 <p>We saw how to use WordPress Settings API to put together a simple
 options page to accept user inputs for common settings and save it to
 WordPress database. Let&rsquo;s walk through the entire sequence to have a
 clear understanding of WordPress Settings API framework.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-option-page-flow.png" alt="WordPress Options Page - callback flow" />
 </figure>
 
-
 <ul>
-<li><p>when we open Admin screen, WordPress calls action method
+<li>
+<p>when we open Admin screen, WordPress calls action method
 register_settings_page() hooked to admin_menu hook. This method
 adds sub menu and attaches render_settings_page() method as
-callback to render the menu page.</p></li>
-
-<li><p>next, WordPress encounters admin_init hook and calls attached
+callback to render the menu page.</p>
+</li>
+<li>
+<p>next, WordPress encounters admin_init hook and calls attached
 action method init_common_options(). This method loads
 sos_common_options from WordPress options table. It also registers
 fields required to handle the options values and the callback to
-display each field such as textinput() or checkbox() methods.</p></li>
-
-<li><p>at this point setup is complete and WordPress, after completing
+display each field such as textinput() or checkbox() methods.</p>
+</li>
+<li>
+<p>at this point setup is complete and WordPress, after completing
 other initializations, displays the Admin screen with our new menu
-item.</p></li>
-
-<li><p>when we click the menu item, WordPress calls the callback method
+item.</p>
+</li>
+<li>
+<p>when we click the menu item, WordPress calls the callback method
 render_settings_page() which outputs the form, fields and submit
-button.</p></li>
-
-<li><p>on form submission, request is posted to options.php which is
+button.</p>
+</li>
+<li>
+<p>on form submission, request is posted to options.php which is
 WordPress file in wp-admin directory as &lt;form&gt; action is set to
-options.php.</p></li>
-
-<li><p>functions in wp-admin/options.php fetches input fields from POST
-data and add or update them to database.</p></li>
-
-<li><p>options functions use callback method sanitize_options() to remove
+options.php.</p>
+</li>
+<li>
+<p>functions in wp-admin/options.php fetches input fields from POST
+data and add or update them to database.</p>
+</li>
+<li>
+<p>options functions use callback method sanitize_options() to remove
 HTML tags and other scripts from the user inputs and save the data
-in wp_options tables.</p></li>
+in wp_options tables.</p>
+</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -749,7 +751,6 @@ in wp_options tables.</p></li>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

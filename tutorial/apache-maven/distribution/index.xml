@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project Distribution on Codetab</title>
@@ -19,7 +19,7 @@
       <guid>https://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/</guid>
       <description>Project Distribution Let&amp;rsquo;s go through various ways to distribute Maven projects.
 As Package To manually distribute the project we can use mvn package command. Based on project type, Maven binds different goals to package phase which packages the code and resources as an archive file such as Jar, War etc., The built-in packaging types and the goal used for each of them is as follows:
- JAR - it is the default packaging type and Maven binds jar:jar goal to package phase.</description>
+  JAR - it is the default packaging type and Maven binds jar:jar goal to package phase.</description>
     </item>
     
     <item>

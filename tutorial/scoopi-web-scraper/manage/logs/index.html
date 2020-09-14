@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,37 +491,28 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="logs">Logs</h1>
-
+            <h1 id="logs">Logs</h1>
 <p>Scoopi uses Logback library for logging. By default, it logs info
 message to console and log errors to <code>logs/error.log</code> file.</p>
-
 <h2 id="debug-and-trace-logs">Debug and Trace logs</h2>
-
 <p>The logback configuration file
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/logback.xml" target="_blank">logback.xml</a>
 is located in <code>conf</code> folder. By default root log level is <em>info</em> which
 outputs error, warn and info logs.</p>
-
 <p>To output debug logs, change root level to debug and un-comment
-<em>appender-ref ref=&ldquo;debuglog&rdquo;</em> element. and similarly, for trace logs.
+<em>appender-ref ref=&quot;debuglog&rdquo;</em> element. and similarly, for trace logs.
 The trace logs output query and parsed html nodes which is helpful to
 construct query strings.</p>
-
 <h2 id="task-logs">Task logs</h2>
-
 <p>The trace log is of little use when multiple tasks concurrently executes
 and it is very difficult to analyze. To overcome this limitation, Scoopi
 provides task based logs which can output debug or trace logs of
 selected task or tasks end to end.</p>
-
 <p>Suppose, we want to output trace of task acme-price and nothing else. To
 do this, edit <code>conf/logback.xml</code> and set root level as</p>
-
 <p><code>conf/logback.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&#34;trace&#34;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">
+<span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&#34;trace&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;console&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&#34;errorlog&#34;</span> <span class="nt">/&gt;</span>
 
@@ -529,11 +520,11 @@ do this, edit <code>conf/logback.xml</code> and set root level as</p>
 
     <span class="c">&lt;!-- &lt;appender-ref ref=&#34;debuglog&#34; /&gt; --&gt;</span>
     <span class="c">&lt;!-- &lt;appender-ref ref=&#34;tracelog&#34; /&gt; --&gt;</span>
-<span class="nt">&lt;/root&gt;</span></code></pre></div>
-<p>next, alter filter element of tasklog appender as follows</p>
-
+<span class="nt">&lt;/root&gt;</span>
+</code></pre></div><p>next, alter filter element of tasklog appender as follows</p>
 <p><code>conf/logback.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&#34;tasklog&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">
+<span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&#34;tasklog&#34;</span>
 
     <span class="err">...</span>
 
@@ -546,18 +537,17 @@ do this, edit <code>conf/logback.xml</code> and set root level as</p>
         <span class="nt">&lt;onMismatch&gt;</span>DENY<span class="nt">&lt;/onMismatch&gt;</span>
         <span class="nt">&lt;onMatch&gt;</span>NEUTRAL<span class="nt">&lt;/onMatch&gt;</span>
     <span class="nt">&lt;/filter&gt;</span>
-<span class="nt">&lt;/appender&gt;</span></code></pre></div>
-<p>Now run Scoopi Example 10 and you should have trace logs of price task
+<span class="nt">&lt;/appender&gt;</span>
+</code></pre></div><p>Now run Scoopi Example 10 and you should have trace logs of price task
 in logs/task.log.</p>
-
 <p>Now, let&rsquo;s take example where linkTask scrapes bs link from
 acme-snapshot.html which in turn executes bsTask to scrape acme-bs.html.
 Suppose, we want to log both linkTask and bsTask and also, want to log
 related dataDef details. To accomplish that, change the filter element
 as below</p>
-
 <p><code>conf/logback.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&#34;tasklog&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">
+<span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&#34;tasklog&#34;</span>
 
     <span class="err">...</span>
 
@@ -573,11 +563,10 @@ as below</p>
         <span class="nt">&lt;onMismatch&gt;</span>DENY<span class="nt">&lt;/onMismatch&gt;</span>
         <span class="nt">&lt;onMatch&gt;</span>NEUTRAL<span class="nt">&lt;/onMatch&gt;</span>
     <span class="nt">&lt;/filter&gt;</span>
-<span class="nt">&lt;/appender&gt;</span></code></pre></div>
-<p>The marker syntax is for task is
+<span class="nt">&lt;/appender&gt;</span>
+</code></pre></div><p>The marker syntax is for task is
 <em>task-&lt;locatorName&gt;-&lt;taskGroupName&gt;-&lt;taskName&gt;</em> and for dataDef it
 is <em>dataDef-&lt;datadefName&gt;</em>.</p>
-
 <p>The next chapter describes Scoopi Dashboard which helps to fine tune
 thread pools.</p>
 

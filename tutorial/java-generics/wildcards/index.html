@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Java Generics Wildcards - CodeTab</title></head>
 
@@ -344,115 +344,108 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="wildcards">Wildcards</h1>
-
+            <h1 id="wildcards">Wildcards</h1>
 <p>The previous tutorial explained that there is <strong>no relationship</strong>, what so ever, between <code>List&lt;Food&gt;</code>, <code>List&lt;Snack&gt;</code> and <code>List&lt;Cookie&gt;</code>,even though <a href="/tutorial/java-generics/subtyping#example-hierarchy" target="_blank">Food, Snack and Cookie</a> belongs to same family. Each of these list is distinct and doesn&rsquo;t belongs to any single group or family; moreover, we can&rsquo;t assign one to another. The wildcards helps us to overcome this restriction.</p>
-
 <h2 id="unbounded-wildcard">Unbounded Wildcard</h2>
-
 <p>Consider a method to display the elements of a List.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="nf">void</span> <span class="n">display</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="nf">list</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
        <span class="c1">// display the list elements       
-</span><span class="c1"></span>    <span class="p">}</span>
+</span><span class="c1"></span>    <span class="o">}</span>
     
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span><span class="p">());</span>         
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;());</span>         
 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span><span class="p">());</span>         <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span><span class="p">());</span>        <span class="c1">// error
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;());</span>         <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;());</span>        <span class="c1">// error
 </span><span class="c1"></span>
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span><span class="p">());</span>         <span class="c1">// error 
-</span><span class="c1"></span>    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span><span class="p">());</span>         <span class="c1">// error
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;());</span>         <span class="c1">// error 
+</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;());</span>         <span class="c1">// error
 </span><span class="c1"></span>
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">());</span>        <span class="c1">// error
-</span><span class="c1"></span>    </code></pre></div>
-<p>The method can display only the list of Food and nothing else. As explained in the previous tutorial,
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>        <span class="c1">// error
+</span><span class="c1"></span>    
+</code></pre></div><p>The method can display only the list of Food and nothing else. As explained in the previous tutorial,
 the variable of generic type can&rsquo;t be assigned to another. This rule is also applicable to parameters of methods i.e parameter <code>List&lt;Food&gt;</code> can accept only list of Food and nothing else. Because of this restriction, the display method is quite useless. We can overcome this restriction using wildcard - ?. Replace <code>List&lt;Food&gt;</code> with <code>List&lt;?&gt;</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="nf">void</span> <span class="n">display</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// display the list elements
-</span><span class="c1"></span>    <span class="p">}</span>
+</span><span class="c1"></span>    <span class="o">}</span>
 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span><span class="p">());</span>         
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span><span class="p">());</span>        
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span><span class="p">());</span>
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span><span class="p">());</span>        
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span><span class="p">());</span> 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">());</span>       </code></pre></div>
-<p>The <code>List&lt;?&gt;</code> means list of unknown type. We can pass list of any type; even the <code>List&lt;String&gt;</code>, <code>List&lt;Integer&gt;</code> etc.,</p>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;());</span>         
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;());</span>        
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;());</span>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;());</span>        
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;());</span> 
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>       
 
+</code></pre></div><p>The <code>List&lt;?&gt;</code> means list of unknown type. We can pass list of any type; even the <code>List&lt;String&gt;</code>, <code>List&lt;Integer&gt;</code> etc.,</p>
 <p>We can do the same thing with variables.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="nf">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="nf">snacks</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">;</span>              <span class="c1">// error    
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              <span class="c1">// error    
 </span><span class="c1"></span>
-    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">;</span>              </code></pre></div>
-<p>Even though Cookie is subtype of Snack, there is no relationship between <code>List&lt;Cookie&gt;</code> and <code>List&lt;Snack&gt;</code> and compiler doesn&rsquo;t allow to assign one to another. But the variable <code>List&lt;?&gt;</code> accepts list of any type.</p>
+    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              
 
+</code></pre></div><p>Even though Cookie is subtype of Snack, there is no relationship between <code>List&lt;Cookie&gt;</code> and <code>List&lt;Snack&gt;</code> and compiler doesn&rsquo;t allow to assign one to another. But the variable <code>List&lt;?&gt;</code> accepts list of any type.</p>
 <p>In essence, the wildcard ? clubs the lists of any type into a single group or family.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-wildcard-family.png" alt="Java Generics wildcard family" />
 </figure>
 
-
 <h2 id="wildcard-restrictions">Wildcard Restrictions</h2>
-
 <p>Can we reassign <code>List&lt;?&gt; any</code> to variable of specific type? Answer is no.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-   <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">strings</span><span class="p">;</span>              
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+   <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>              
       
-   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">stringsCopy</span> <span class="o">=</span> <span class="n">any</span><span class="p">;</span>  <span class="c1">// error
-</span><span class="c1"></span>   <span class="n">strings</span> <span class="o">=</span> <span class="n">any</span><span class="p">;</span>                   <span class="c1">// error
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringsCopy</span> <span class="o">=</span> <span class="n">any</span><span class="o">;</span>  <span class="c1">// error
+</span><span class="c1"></span>   <span class="n">strings</span> <span class="o">=</span> <span class="n">any</span><span class="o">;</span>                   <span class="c1">// error
 </span><span class="c1"></span>
-   <span class="n">stringsCopy</span> <span class="o">=</span> <span class="n">strings</span><span class="p">;</span>           <span class="o">//</span> <span class="n">allowed</span></code></pre></div>
-<p>Can we call any method on <code>List&lt;?&gt;</code>? No, there are some restrictions.</p>
+   <span class="n">stringsCopy</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>           <span class="c1">// allowed
+</span><span class="c1"></span>
+</code></pre></div><p>Can we call any method on <code>List&lt;?&gt;</code>? No, there are some restrictions.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-   <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="nf">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-   <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">;</span>              
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+   <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">any</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              
    
-   <span class="n">any</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Cookie</span><span class="p">());</span>  <span class="c1">// error
-</span><span class="c1"></span>   <span class="n">any</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>   <span class="c1">// error
+   <span class="n">any</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cookie</span><span class="o">());</span>  <span class="c1">// error
+</span><span class="c1"></span>   <span class="n">any</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Snack</span><span class="o">());</span>   <span class="c1">// error
 </span><span class="c1"></span>
-   <span class="n">Object</span> <span class="nf">o</span> <span class="o">=</span> <span class="n">any</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">1</span><span class="p">);</span>   <span class="o">//</span> <span class="n">allowed</span></code></pre></div>
-<p>Once we assign a list to List&lt;?&gt;, then we can&rsquo;t call <code>add(E element)</code> method as compiler doesn&rsquo;t know the type of <code>List&lt;?&gt;</code>. Only thing we can add to such list is a <strong>null</strong>. In general, calling any method that uses type parameter triggers compilation error.</p>
-
+   <span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">any</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>   <span class="c1">// allowed
+</span><span class="c1"></span>
+</code></pre></div><p>Once we assign a list to List<?>, then we can't call `add(E element)` method as compiler doesn't know the type of `List<?>`. Only thing we can add to such list is a <strong>null</strong>. In general, calling any method that uses type parameter triggers compilation error.</p>
 <p>However, we are free to call methods such as <code>boolean remove​(Object o)</code> or <code>int size()</code> or <code>clear()</code> etc., on <code>List&lt;?&gt;</code> as there is no type parameter in their parameters.</p>
-
 <p>Can we call a method whose return type is type parameter? Yes, we can.</p>
-
 <p>We can call method such as <code>E get(int index)</code> or <code>E remove​(int index)</code> that has type parameter in return type.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="nf">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="n">foods</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Food</span><span class="p">());</span>        
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">foods</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>        
         
-    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="n">foods</span><span class="p">;</span>  
-    <span class="n">Object</span> <span class="nf">obj</span> <span class="o">=</span> <span class="n">wildList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>    
-    <span class="n">Object</span> <span class="nf">removedObj</span> <span class="o">=</span> <span class="n">wildList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>    </code></pre></div>
-<p>But, note that the type of object returned by such methods is <strong>Object</strong> as type E is unknown for <code>List&lt;?&gt;</code>.</p>
+    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="n">foods</span><span class="o">;</span>  
+    <span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">wildList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>    
+    <span class="n">Object</span> <span class="n">removedObj</span> <span class="o">=</span> <span class="n">wildList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>    
 
+</code></pre></div><p>But, note that the type of object returned by such methods is <strong>Object</strong> as type E is unknown for <code>List&lt;?&gt;</code>.</p>
 <p>Let&rsquo;s go through some methods <code>List&lt;E&gt;</code> which are allowed on variable <code>List&lt;?&gt;</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="nf">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>        
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>        
         
-    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="n">foods</span><span class="p">;</span>
+    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="n">foods</span><span class="o">;</span>
         
-    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="nf">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
             
     <span class="c1">// not allowed
-</span><span class="c1"></span>    <span class="n">wildList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">1</span><span class="p">,</span><span class="k">new</span> <span class="n">Food</span><span class="p">());</span>         <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">wildList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Food</span><span class="p">());</span>           <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">wildList</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>                 <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">wildList</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">Food</span><span class="p">());</span>        <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">,</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>         <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>           <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>                 <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">Food</span><span class="o">());</span>        <span class="c1">// error
 </span><span class="c1"></span>        
     <span class="c1">// allowed    
-</span><span class="c1"></span>    <span class="n">wildList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">1</span><span class="p">);</span>
-    <span class="n">wildList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="k">new</span> <span class="n">Food</span><span class="p">());</span>        
-    <span class="n">wildList</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
-    <span class="n">wildList</span><span class="p">.</span><span class="na">retainAll</span><span class="p">(</span><span class="n">c</span><span class="p">);</span></code></pre></div>
-<p>Reason why they are allowed or not is as follows:</p>
+</span><span class="c1"></span>    <span class="n">wildList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+    <span class="n">wildList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="k">new</span> <span class="n">Food</span><span class="o">());</span>        
+    <span class="n">wildList</span><span class="o">.</span><span class="na">removeAll</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+    <span class="n">wildList</span><span class="o">.</span><span class="na">retainAll</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
 
+</code></pre></div><p>Reason why they are allowed or not is as follows:</p>
 <table>
 <thead>
 <tr>
@@ -461,50 +454,42 @@ the variable of generic type can&rsquo;t be assigned to another. This rule is al
 <th>Reason</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>void add​(int index, E element)</td>
 <td>No</td>
 <td>parameter has E (type parameter)</td>
 </tr>
-
 <tr>
 <td>boolean add(​E element)</td>
 <td>No</td>
 <td>parameter has E</td>
 </tr>
-
 <tr>
 <td>boolean addAll​(Collection&lt;? extends E&gt; c)</td>
 <td>No</td>
 <td>parameter has E</td>
 </tr>
-
 <tr>
 <td>E set​(int index, E element)</td>
 <td>No</td>
 <td>parameter has E</td>
 </tr>
-
 <tr>
 <td>E remove​(int index)</td>
 <td>Yes</td>
 <td>no E in parameter, even though return type is E</td>
 </tr>
-
 <tr>
 <td>boolean remove​(Object o)</td>
 <td>Yes</td>
 <td>no E in parameter</td>
 </tr>
-
 <tr>
 <td>boolean removeAll​(Collection&lt;?&gt; c)</td>
 <td>Yes</td>
 <td>no E in parameter</td>
 </tr>
-
 <tr>
 <td>boolean retainAll​(Collection&lt;?&gt; c)</td>
 <td>Yes</td>
@@ -512,20 +497,14 @@ the variable of generic type can&rsquo;t be assigned to another. This rule is al
 </tr>
 </tbody>
 </table>
-
 <p>The above restrictions are true for all generic types that uses wildcard ?; not just the <code>List&lt;?&gt;</code>.</p>
-
-<h2 id="list-lt-gt-vs-list-lt-object-gt">List&lt;?&gt; vs List&lt;Object&gt;</h2>
-
+<h2 id="listltgt-vs-listltobjectgt">List&lt;?&gt; vs List&lt;Object&gt;</h2>
 <p>Remember that <code>List&lt;Object&gt;</code> and <code>List&lt;?&gt;</code> are not the same.</p>
-
 <ul>
 <li>we can assign only a list of Object to <code>List&lt;Object&gt;</code>, but we can assign list of any type to <code>List&lt;?&gt;</code></li>
-<li>we can insert an Object or its subtype, into a <code>List&lt;Object&gt;</code>, but we can only insert <strong>null</strong> into a List&lt;?&gt;.<br /></li>
+<li>we can insert an Object or its subtype, into a <code>List&lt;Object&gt;</code>, but we can only insert <strong>null</strong> into a List&lt;?&gt;.</li>
 </ul>
-
 <h2 id="summary">Summary</h2>
-
 <ul>
 <li>the <code>List&lt;?&gt;</code> means list of unknown type.</li>
 <li>we can assign or pass list of any type to <code>List&lt;?&gt;</code>.</li>
@@ -534,7 +513,6 @@ the variable of generic type can&rsquo;t be assigned to another. This rule is al
 <li>we are free to call methods such as <code>boolean remove​(Object o)</code> or <code>int size()</code> etc., on <code>List&lt;?&gt;</code> as there is no type parameter in their parameters.</li>
 <li>we can also call methods such as <code>E get(int index)</code> or <code>E remove​(int index)</code> that has type parameter in return type. The object returned by such methods is of type <strong>Object</strong>.</li>
 </ul>
-
 <p>If we think <code>List&lt;Snack&gt;</code>, <code>List&lt;String&gt;</code> etc., as one extreme (which can accept list of a specific type), the List&lt;?&gt; is the other extreme (which can accept list of any type). Can we define something in between? Yes, Generics use <strong>extends</strong> and <strong>super</strong> keywords to fine tune the variable and parameter declarations. With them we can place upper or lower bound on wildcards and next chapter explains it.</p>
 
           </main>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Maven Hierarchical Multi Module Project - CodeTab</title></head>
 
@@ -535,53 +535,37 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="hierarchical-multi-module-project">Hierarchical Multi Module Project</h1>
-
+            <h1 id="hierarchical-multi-module-project">Hierarchical Multi Module Project</h1>
 <p>The previous tutorial explained the structure of a simple multi module project. Let&rsquo;s extend it further to learn advanced features of Maven multi module project.</p>
-
 <p>The example code is available at GitHub <a href="https://github.com/maithilish/maven-examples" target="_blank">Maven Examples</a>. Download the examples as zip and extract it to some location or clone it with git.</p>
-
 <h2 id="flat-vs-hierarchical-layout">Flat vs Hierarchical Layout</h2>
-
 <p>In extended-multi project, we add one more module to simple-multi and
 the new module, <code>config</code>, has one class ConfigService that uses Apache
 Commons Configuration library to manage configurations of the app.</p>
-
 <p>We can keep on adding new modules to the top-level directory as we have
 done with app and util modules in simple-multi. But, with this flat
 layout, we soon end up with lots of module in the top-level directory.</p>
-
 <p>Instead we can structure the project hierarchically, and group <code>util</code>
 and <code>config</code> modules under another module (for example named as shared)
 and add the <code>shared</code> module to top-level parent POM.</p>
-
 <p>The flat and hierarchical layout is shown below (parent POM are
 highlighted with yellow)</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/maven-multi-flat-hierachical-layout.png" alt="maven multi module flat and hierachical layout" />
 </figure>
 
-
 <p>To build extended-multi, go to the extracted directory and run</p>
-
 <pre><code>$ cd extended-multi
 $ mvn test
 </code></pre>
-
 <p>which builds <code>shared</code>, <code>util</code>, <code>config</code> and <code>app</code> modules in that order.</p>
-
 <h2 id="commons-configurations">Commons Configurations</h2>
-
 <p>By the way, Apache Commons Configuration is quite useful to manage
 configurations from multiple sources such as XML, property file or
 system. But, for simplicity, in extended-multi we just hardcoded a
 config value and retrieve it via getter. In case, you like to use it any
 of your projects, then see our Gotz Project <a href="https://github.com/maithilish/gotz/blob/master/src/main/java/org/codetab/gotz/shared/ConfigService.java" target="_blank">ConfigService class</a>
 for complete example.</p>
-
 
 
 <div>&nbsp;</div>
@@ -600,16 +584,12 @@ for complete example.</p>
 
 
 
-
 <h2 id="example">Example</h2>
-
 <p>Let&rsquo;s go through the structure of <code>extended-multi</code> project. The top
 level directory contains parent POM and two module directories - app and
 shared.</p>
-
 <p>The parent POM specifies maven coordinates and packaging type as pom.
 The <code>modules/module</code> element adds app and shared modules.</p>
-
 <p><code>extended-multi/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 <span class="nt">&lt;groupId&gt;</span>org.codetab<span class="nt">&lt;/groupId&gt;</span>
@@ -621,10 +601,9 @@ The <code>modules/module</code> element adds app and shared modules.</p>
     <span class="nt">&lt;module&gt;</span>app<span class="nt">&lt;/module&gt;</span>
     <span class="nt">&lt;module&gt;</span>shared<span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/modules&gt;</span>
-....</code></pre></div>
-<p>There is no much change in app module which we saw in the previous
+....
+</code></pre></div><p>There is no much change in app module which we saw in the previous
 tutorial expect that it specifies extended-multi as its parent.</p>
-
 <p>The <code>shared</code> module folder contains two module directories - util and
 config and a parent POM. The contents of <code>shared/pom.xml</code> is as below</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
@@ -641,14 +620,12 @@ config and a parent POM. The contents of <code>shared/pom.xml</code> is as below
     <span class="nt">&lt;module&gt;</span>util<span class="nt">&lt;/module&gt;</span>
     <span class="nt">&lt;module&gt;</span>config<span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/modules&gt;</span>
-....</code></pre></div>
-<p>It specifies that <code>extended-multi</code> as its parent and adds two modules -
+....
+</code></pre></div><p>It specifies that <code>extended-multi</code> as its parent and adds two modules -
 <code>util</code> and <code>config</code>. The packaging type is set as <code>pom</code> as there is no
 source directory in it.</p>
-
 <p>The config module pom.xml specifies that shared module is its parent and
 uses commons configurations as dependency.</p>
-
 <p><code>shared/config/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 <span class="nt">&lt;parent&gt;</span>
@@ -667,10 +644,9 @@ uses commons configurations as dependency.</p>
         <span class="nt">&lt;artifactId&gt;</span>commons-lang3<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;/dependency&gt;</span>
 <span class="nt">&lt;/dependencies&gt;</span>
-....</code></pre></div>
-<p>Similarly, the <code>shared/util/pom.xml</code> specifies that shared module is its
+....
+</code></pre></div><p>Similarly, the <code>shared/util/pom.xml</code> specifies that shared module is its
 parent.</p>
-
 
 
 <div>&nbsp;</div>
@@ -688,26 +664,20 @@ parent.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="build">Build</h2>
-
 <p>To build maven multi module project, we have to run maven commands from
 the top level folder of the project. Maven processes top level POM and
 the module POMs and after all POMs are processed, the reactor properly
 sequences the modules and then builds each module.</p>
-
 <p>When <code>mvn test</code> command is run, Maven first runs test phase for
 extended-multi but as there are no source files in top level project,
 phase executes without doing anything and then it complies and tests
 shared and finally, the app module.</p>
-
 <p>For command <code>mvn clean</code>, maven cleans all modules one by one.</p>
-
 <p>When command <code>mvn clean install</code> is run from the top level folder, maven
 compiles, tests and installs all modules - extended-multi (just the
 pom.xml), shared (just the pom.xml), util, config and app - to the local
 repository.</p>
-
 <p>In the next tutorial, we explain inheritance which is useful to compact
 the multi module POM.</p>
 

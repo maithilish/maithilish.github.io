@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Unit Test - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,10 +625,7 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="plugin-unit-test">Plugin Unit Test</h1>
-
+            <h1 id="plugin-unit-test">Plugin Unit Test</h1>
 <p>One of the challenges that we faced while developing the Share on Social
 Plugin was to setup unit tests. Many tutorials and blogs on the subject
 and even the official WordPress documentation couldn&rsquo;t help us much to
@@ -636,7 +633,6 @@ overcome the initial hurdles. Knowing well the difficulties faced by the
 beginners, some developers have packaged and hosted the testing
 frameworks for WordPress on GitHub to ease the setup but they are unable
 to reduce the overall confusion.</p>
-
 <p>For us, it took some time to figure out how WordPress itself tests its
 core. Once we understood the WordPress testing setup and methodology,
 plugin tests became quite smooth. This tutorial series - WordPress
@@ -646,7 +642,6 @@ beginners can easily setup unit test for their projects. The blogs in
 this cookbook covers important aspects of plugin unit test; setup and
 configure WordPress Testing Library, plugin basic and advanced tests
 such as tests for action and filter, i18n, Ajax and Multisite.</p>
-
 <p>We will try to make the tutorial as easy as possible considering the
 size of test suit.. While there are about 2000 plus lines of code in our
 plugin, the code to test them crosses 5000 lines. It would be quite
@@ -655,38 +650,31 @@ repeats throughout the test suit. Instead, we group the test cases into
 categories and take a couple of typical test cases from each category
 and explain their pattern so that you can easily adapt them for your
 project.</p>
-
 <p>However, we will not dwell too much on unit test per se - it&rsquo;s
 importance and the best practices - as there are enough blogs on the
 subject and so, we avoid repeating those things all over again.</p>
-
-<h2 id="12-1-wordpress-phpunit-setup">12.1. WordPress PHPUnit Setup</h2>
-
+<h2 id="121wordpress-phpunit-setup">12.1. WordPress PHPUnit Setup</h2>
 <p>In this tutorial, we install the modules and then do the configurations
 required to run Plugin unit tests. Most confusing part of WordPress
 testing is its configuration and keeping this in mind, tutorial provides
 step by step instructions with an example of Simple WordPress Plugin.
 Once you understand the configuration and able to run tests against
 Simple Plugin, it is easy to map it for any plugin you plan to develop.</p>
-
 <h3 id="install-phpunit">Install PHPUnit</h3>
-
 <p>WordPress uses <a href="https://phpunit.de/" target="_blank">PHPUnit</a> unit test framework for
 PHP. The latest release of PHPUnit is bundled as a PHAR file (PHP
 Archive) which is quite easy to install and use.</p>
-
 <p>For Linux, install PHPUnit with following commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ wget https://phar.phpunit.de/phpunit.phar
+<pre><code class="language-screen" data-lang="screen">$ wget https://phar.phpunit.de/phpunit.phar
 $ chmod +x phpunit.phar
-$ mv phpunit.phar /usr/local/bin/phpunit</code></pre></div>
-<p>Verify the installation, with following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ phpunit --version
-PHPUnit x.y.z by Sebastian Bergmann and contributors.</code></pre></div>
-<p>For Windows, refer <a href="https://phpunit.de/manual/current/en/installation.html#installation.phar.windows" target="_blank">PHPUnit Installation for
+$ mv phpunit.phar /usr/local/bin/phpunit
+</code></pre><p>Verify the installation, with following command.</p>
+<pre><code class="language-screen" data-lang="screen">$ phpunit --version
+PHPUnit x.y.z by Sebastian Bergmann and contributors.
+</code></pre><p>For Windows, refer <a href="https://phpunit.de/manual/current/en/installation.html#installation.phar.windows" target="_blank">PHPUnit Installation for
 Windows</a>.
 PHPUnit requires PHP 5.3.3 or above, and Windows users also have to
 install PHP, if not installed.</p>
-
 
 
 <div>&nbsp;</div>
@@ -704,15 +692,11 @@ install PHP, if not installed.</p>
 <div>&nbsp;</div>
 
 
-
 <h3 id="create-simple-plugin">Create Simple Plugin</h3>
-
 <p>To understand the unit test setup, we require a simple plugin. If you
 have already created the simple plugin explained in <a href="/tutorial/wordpress-plugin-development/simple-plugin/">WordPress Simple Plugin</a> then you can reuse it, otherwise create a new one as explained here.</p>
-
 <p>Create a directory named <code>wp-simple-plugin</code> in some location and add
 plugin main file <code>wp-simple-plugin.php</code> to it with following contents.</p>
-
 <p><code>wp-simple-plugin/wp-simple-plugin.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -731,59 +715,55 @@ plugin main file <code>wp-simple-plugin.php</code> to it with following contents
 <span class="nx">define</span><span class="p">(</span><span class="s1">&#39;WPSP_NAME&#39;</span><span class="p">,</span><span class="s1">&#39;wp-simple-plugin&#39;</span><span class="p">);</span>
 
 <span class="nx">define</span><span class="p">(</span> <span class="s2">&#34;WPSP_URL&#34;</span><span class="p">,</span> <span class="nx">trailingslashit</span><span class="p">(</span> <span class="nx">plugin_dir_url</span><span class="p">(</span> <span class="no">__FILE__</span> <span class="p">)</span> <span class="p">)</span> <span class="p">);</span>
-</code></pre></div>
-<p>As we not going to install or use the simple plugin in WordPress, there
+</code></pre></div><p>As we not going to install or use the simple plugin in WordPress, there
 is nothing functional in it apart from the usual plugin header and a
 couple of define statements.</p>
-
 <p>Next, we require a directory to hold configuration files and the test
 cases. Create following directories under <code>wp-simple-plugin</code> folder with
 following commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd wp-simple-plugin
+<pre><code class="language-screen" data-lang="screen">$ cd wp-simple-plugin
 $ mkdir tests
 $ mkdir tests/phpunit
 $ mkdir tests/phpunit/tests
 
 // or create all directories recursively
 
-$ mkdir -p tests/phpunit/tests  </code></pre></div>
-<h3 id="install-wordpress-tests-library">Install WordPress Tests Library</h3>
-
+$ mkdir -p tests/phpunit/tests  
+</code></pre><h3 id="install-wordpress-tests-library">Install WordPress Tests Library</h3>
 <p>To run unit test against WordPress, we require <strong>WordPress Tests
 Library</strong>. Install the library under <code>tests/phpunit</code> directory with
 following commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd wp-simple-plugin
+<pre><code class="language-screen" data-lang="screen">$ cd wp-simple-plugin
 $ cd tests/phpunit
-$ svn co https://develop.svn.wordpress.org/trunk/tests/phpunit/includes/</code></pre></div>
-<figure class="text-center" >
+$ svn co https://develop.svn.wordpress.org/trunk/tests/phpunit/includes/
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-lib-files.png" alt="WordPress PHPUnit Setup - WordPress Test Library files" />
 </figure>
 
-
 <p>SVN pulls the latest version of WordPress Test Library from WordPress
 repository and saves it under <code>tests/phpunit/includes</code> .</p>
-
 <p>When we run tests, WordPress Test Library ( i.e. files of includes
 directory ) integrates PHPUnit with WordPress to handle following tasks.</p>
-
 <ul>
-<li><p>creates a new instance of WordPress.</p></li>
-
-<li><p>creates WP tables in test database.</p></li>
-
-<li><p>runs test cases against test instance of WP including special test
-cases such as Ajax calls and Multisite tests cases.</p></li>
-
-<li><p>when tests are through, deletes the tables to clean up the test
-database.</p></li>
+<li>
+<p>creates a new instance of WordPress.</p>
+</li>
+<li>
+<p>creates WP tables in test database.</p>
+</li>
+<li>
+<p>runs test cases against test instance of WP including special test
+cases such as Ajax calls and Multisite tests cases.</p>
+</li>
+<li>
+<p>when tests are through, deletes the tables to clean up the test
+database.</p>
+</li>
 </ul>
-
 <h3 id="setup-configuration-files">Setup Configuration Files</h3>
-
 <p>The first configuration file is <code>phpunit.xml</code>, which as name suggests is
 a PHPUnit file and it defines the test suit and test files. Add
 phpunit.xml with following contents to the top directory of the plugin.</p>
-
 <p><code>wp-simple-plugin/phpunit.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;phpunit</span> <span class="na">bootstrap=</span><span class="s">&#34;tests/phpunit/bootstrap.php&#34;</span> <span class="na">backupGlobals=</span><span class="s">&#34;false&#34;</span>
         <span class="na">colors=</span><span class="s">&#34;false&#34;</span> <span class="na">convertErrorsToExceptions=</span><span class="s">&#34;true&#34;</span>
@@ -793,14 +773,12 @@ phpunit.xml with following contents to the top directory of the plugin.</p>
                         <span class="nt">&lt;file&gt;</span>tests/phpunit/tests/test-wp-simple-plugin.php<span class="nt">&lt;/file&gt;</span>
                 <span class="nt">&lt;/testsuite&gt;</span>
         <span class="nt">&lt;/testsuites&gt;</span>
-<span class="nt">&lt;/phpunit&gt;</span></code></pre></div>
-<p>PHPUnit configuration defines single <strong>testsuite</strong> with one test file.
+<span class="nt">&lt;/phpunit&gt;</span>
+</code></pre></div><p>PHPUnit configuration defines single <strong>testsuite</strong> with one test file.
 Later we add more test files to the <strong>testsuit</strong> element.</p>
-
 <p>In <strong>phpunit</strong> element we indicate that PHPUnit has to use
 <code>tests/phpunit/bootstrap.php</code> to bootstrap the tests. Add the
 <code>bootstrap.php</code> to <code>wp-simple-plugin/tests/phpunit</code> directory.</p>
-
 <p><code>wp-simple-plugin/tests/phpunit/bootstrap.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -829,31 +807,26 @@ Later we add more test files to the <strong>testsuit</strong> element.</p>
 <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 <span class="k">echo</span> <span class="s1">&#39;Using Wordpress core : &#39;</span> <span class="o">.</span> <span class="nx">ABSPATH</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
-</code></pre></div>
-<p>In bootstrap.php, we first check whether WordPress Tests Libs&rsquo;
+</code></pre></div><p>In bootstrap.php, we first check whether WordPress Tests Libs&rsquo;
 bootstrap.php exists in includes directory else exit from the test run.
 Next, we create an array which holds details of Simple Plugin as active
 plugins and add the array to  <strong>$GLOBALS[&lsquo;wp_tests_options&rsquo;]</strong>.
 WordPress Tests Lib activates and loads the plugin using these details.
 We will explain the significance of the second item of the array,
 <strong>wpsp_test,</strong>  in the next blog.</p>
-
 <p>After defining the plugin details, we call <code>includes/bootstrap.php</code>
 using require_once statement. The <code>includes/bootstrap.php</code> which is
 actually the bootstrap file that comes with WordPress Tests Lib loads
 new WordPress instance, activates and loads the Simple Plugin.</p>
-
 <p>Next, we create the default user for test by using WordPress class
 <a href="http://codex.wordpress.org/Class_Reference/WP_User" target="_blank">WP_User</a> and set
 administrator role to it.</p>
-
 <p>Earlier, we explained that includes/bootstrap.php creates a new instance
 of WordPress, but from where it gets the configurations for WordPress.
 The third and last configuration file is the <code>wp-tests-config.php</code> which
 provides the configurations to WordPress test instance. Add the
 <code>wp-tests-config.php</code> to <code>tests/phpunit</code> directory with following
 contents.</p>
-
 <p><code>wp-simple-plugin/tests/phpunit/wp-tests-config.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -881,31 +854,26 @@ contents.</p>
 <span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;WP_PHP_BINARY&#39;</span><span class="p">,</span> <span class="s1">&#39;php&#39;</span> <span class="p">);</span>
 
 <span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;WPLANG&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
-</code></pre></div>
-<p>It defines the location of WordPress software using which instance has
+</code></pre></div><p>It defines the location of WordPress software using which instance has
 to be created and the name of the test database.</p>
-
 <p>At this point, your <code>wp-simple-plugin</code> directory structure should be
 similar to the one shown in the screenshot.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-dir-structure.png" alt="WordPress Plugin Unit Testing - unit test directory structure" />
 </figure>
 
-
 <h3 id="create-test-database">Create Test Database</h3>
-
 <p>In <code>wp-tests-config.php</code> we defined MySQL connection properties pointing
 to a test database. We need to create the database and user, and grant
 permissions so that WordPress can create tables and run tests. Use
 following commands to accomplish that.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp
 $ bin/mysql -u root
 mysql&gt; create database wptest;
-mysql&gt; GRANT ALL PRIVILEGES ON wptest.* TO wptest@localhost IDENTIFIED BY &#39;wptest&#39;;
+mysql&gt; GRANT ALL PRIVILEGES ON wptest.* TO wptest@localhost IDENTIFIED BY 'wptest';
 mysql&gt; flush privileges;
-mysql&gt; exit</code></pre></div>
-
+mysql&gt; exit
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -923,34 +891,28 @@ mysql&gt; exit</code></pre></div>
 
 
 
-
 <h3 id="install-wordpress">Install WordPress</h3>
-
 <p>WordPress Tests Library requires WordPress software to create an test
 instance. In <code>wp-tests-config.php</code>, we defined ABSPATH pointing it the
 location of WordPress at <code>/opt/lampp/wptest/wordpress/</code>, but you are
 free to install WordPress in any other location. While defining ABSPATH
 ensure that path ends with a trailing slash as in
 <code>/opt/lampp/wptest/wordpress/</code> otherwise WordPress fails to load.</p>
-
 <p>Download the latest archive of WordPress and extract it with following
 commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp/
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/
 $ mkdir wptest
 $ cd wptest
 $ unzip wordpress-4.1.zip
 $ chown -R xyz.xyz wordpress   // xyz is the user who runs test
-$ chmod -R 775 wordpress</code></pre></div>
-<p>User who runs test should have write access to wordpress/wp-content
+$ chmod -R 775 wordpress
+</code></pre><p>User who runs test should have write access to wordpress/wp-content
 directory and last two commands chown and chmod are used to set the
 permission to wordpress and its subdirectories.</p>
-
 <p>No further installation is required as WordPress as Tests Library will
 use <code>wp-tests-config.php</code> to configure the WordPress Instance it
 creates.</p>
-
 <p><strong>Production WordPress</strong></p>
-
 <p>We can point ABSPATH to any existing WordPress folder and run tests but
 there is a downside. For some reason, if <code>wp-tests-config.php</code> is
 missing from <code>tests/phpunit</code> directory, then WordPress Test Library will
@@ -958,34 +920,28 @@ use <code>wp-config.php</code> of the WordPress folder and drops the WP tables
 defined by it. Keep this in mind, while pointing ABSPATH to a WordPress
 folder of production site as you may end up loosing the production
 database.</p>
-
 <p>Since space required of WordPress software is very small it is much safe
 to place WordPress in a dedicated test folder such as
 <code>/opt/lampp/wptest</code> and keep it exclusively for testing. It also allows
 us to place multiple WordPress version in wptest folder and run tests
 against multiple versions.</p>
-
 <p><a name="create-plugin-link"></a></p>
-
 <h3 id="create-link-to-plugin">Create Link to Plugin</h3>
-
 <p>We had defined Simple Plugin as active plugin in
 <code>tests/phpunit/bootstrap.php</code>, but Test Library loads only the plugins
 present in <code>wordpress/wp-content/plugins</code> directory. If we develop the
 plugin directly from the plugins directory then Test Library finds and
 activates the plugin without any problem.</p>
-
 <p>Normally, it is much more convenient to develop the plugin from IDE
 workspace or some other location and in such case, we have to create a
 symbolic link to plugins&rsquo; actual location in
 <code>wordpress/wp-content/plugins/</code> directory.</p>
-
 <p>For example, if Simple Plugin is at <code>/home/xyz/work/wp-simple-plugin</code>
 and WordPress package is at <code>/opt/lampp/wptest/wordpress</code>, then create
 symbolic with following commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp/wptest/wordpress/wp-content/plugins
-$ ln -s /home/xyz/work/wp-simple-plugin wp-simple-plugin</code></pre></div>
-<p>That completes the WordPress PHPUnit Setup. In the next blog, we write a
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/wptest/wordpress/wp-content/plugins
+$ ln -s /home/xyz/work/wp-simple-plugin wp-simple-plugin
+</code></pre><p>That completes the WordPress PHPUnit Setup. In the next blog, we write a
 couple of simple unit tests and check whether the setup is working as
 expected.</p>
 

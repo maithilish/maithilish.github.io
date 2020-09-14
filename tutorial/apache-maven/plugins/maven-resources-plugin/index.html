@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Resources Plugin - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,18 +535,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-resource-plugin">Maven Resource Plugin</h1>
-
+            <h1 id="maven-resource-plugin">Maven Resource Plugin</h1>
 <p>The previous chapter of the guide covered basics of Maven Plugins. This
 chapter explains Maven Resources Plugin which Maven uses to handle the
 project resources.</p>
-
 <p>Resources are non source files of the project such as properties files,
 XML configuration files, shell scripts files and also, binary files like
 images etc., <a href="http://maven.apache.org/plugins/maven-resources-plugin/" target="_blank">Maven Resources Plugin</a> (plugin prefix resources) copies resource files from source directories to output directory. Apart from the standard resources:help goal, the plugin has three goals:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">    resources:resources  
+<pre><code class="language-screen" data-lang="screen">    resources:resources  
       Copy resources for the main source code to the main output directory.  
       Always uses the project.build.resources element to specify the
       resources to copy.  
@@ -557,53 +553,46 @@ images etc., <a href="http://maven.apache.org/plugins/maven-resources-plugin/" t
       resources to copy.  
   
     resources:copy-resources  
-      Copy resources of the configured plugin attribute resources</code></pre></div>
-<p>The goal resources:resources binds to process-resources phase and
+      Copy resources of the configured plugin attribute resources
+</code></pre><p>The goal resources:resources binds to process-resources phase and
 resources:testResources to process-test-resources.</p>
-
 <h2 id="process-resources">Process Resources</h2>
-
 <p>By default, the standard location of the source resources is
 <code>src/main/resources</code> and test resources is <code>src/test/resources</code>. Let&rsquo;s
 add a database configuration file to the Simple App project and see how
 it is processed by Maven. To hold resources, create directories.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
+<pre><code class="language-screen" data-lang="screen">$ cd simple-app
 $ mkdir -p src/main/resources
-$ mkdir -p src/test/resources</code></pre></div>
-<p>Next, add configuration file <code>config.xml</code> to <code>src/main/resources</code> and
+$ mkdir -p src/test/resources
+</code></pre><p>Next, add configuration file <code>config.xml</code> to <code>src/main/resources</code> and
 add test resource file <code>test-config.xml</code> to <code>src/test/resources</code> with
 following contents.</p>
-
 <p><code>simple-app/src/main/resources/config.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;url&gt;</span>jdbc:hsqldb:mem:simpledb<span class="nt">&lt;/url&gt;</span>
     <span class="nt">&lt;user&gt;</span>admin<span class="nt">&lt;/user&gt;</span>
     <span class="nt">&lt;password&gt;</span>secret123<span class="nt">&lt;/password&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
-<p><code>simple-app/src/test/resources/test-config.xml</code></p>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div><p><code>simple-app/src/test/resources/test-config.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;url&gt;</span>jdbc:hsqldb:mem:testdb<span class="nt">&lt;/url&gt;</span>
     <span class="nt">&lt;user&gt;</span>sa<span class="nt">&lt;/user&gt;</span>
     <span class="nt">&lt;password&gt;&lt;/password&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
-<figure class="text-center" >
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-res-process.png" alt="Maven Resources Plugin - process resources" />
 </figure>
 
-
 <p>Finally, run <code>mvn package</code>.</p>
-
 <p>The directory structure after the build the shown in the screenshot.
 Lifecycle phase process-resources executes resources:resources goal and
 it copies src/main/resources/config.xml to output folder target/classes.
 Similarly, lifecycle phase process-test-resources executes
 resources:testResources goal and it copies
 src/test/resources/test-config.xml to output folder target/test-classes.</p>
-
 <p>In package phase, the goal jar:jar includes the <code>classes/config.xml</code> in
 the <code>simple-app-1.0.jar</code>. By default, the test resources are used only
 to run tests and not added to the Jar.</p>
-
 
 
 <div>&nbsp;</div>
@@ -622,46 +611,41 @@ to run tests and not added to the Jar.</p>
 
 
 
-
 <h2 id="filters">Filters</h2>
-
 <p>The Maven Resources Plugin also has features to apply filters to the
 resource files. Filters replaces the variables denoted by <strong>${&hellip;}</strong> in
 resource files with the actual value.</p>
-
 <p>To illustrate resource filtering, assume that, for manageability you
 want to centralize the database setting in a properties file. Modify the
 <code>config.xml</code> and <code>test-config.xml</code> and replace the properties with
 variables as follows:</p>
-
 <p><code>simple-app/src/main/resources/config.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;url&gt;</span>${db.url}<span class="nt">&lt;/url&gt;</span>
     <span class="nt">&lt;user&gt;</span>${db.user}<span class="nt">&lt;/user&gt;</span>
     <span class="nt">&lt;password&gt;</span>${db.password}<span class="nt">&lt;/password&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
-<p><code>simple-app/src/test/resources/test-config.xml</code></p>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div><p><code>simple-app/src/test/resources/test-config.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;url&gt;</span>${db.test.url}<span class="nt">&lt;/url&gt;</span>
     <span class="nt">&lt;user&gt;</span>${db.test.user}<span class="nt">&lt;/user&gt;</span>
     <span class="nt">&lt;password&gt;</span>${db.test.password}<span class="nt">&lt;/password&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
-<p>To place the filter files, create a new directory <code>src/main/filters</code> and
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div><p>To place the filter files, create a new directory <code>src/main/filters</code> and
 to it, add a properties file <code>default.properties</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
-$ mkdir -p src/main/filters</code></pre></div>
-<p><code>simple-app/src/main/filters/default.properties</code></p>
+<pre><code class="language-screen" data-lang="screen">$ cd simple-app
+$ mkdir -p src/main/filters
+</code></pre><p><code>simple-app/src/main/filters/default.properties</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">db.url=jdbc:hsqldb:mem:mydb
 db.username=admin
 db.password=secret123
 
 db.test.url=jdbc:hsqldb:mem:testdb
 db.test.username=testuser
-db.test.password=</code></pre></div>
-<p>The <code>default.properties</code> contains main and test database properties as
+db.test.password=
+</code></pre></div><p>The <code>default.properties</code> contains main and test database properties as
 key-value pairs. We need to tell Maven about the filter file and to do
 that, use &lt;build&gt;/&lt;filter&gt; element in pom.xml</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ....
   <span class="c">&lt;!-- project build --&gt;</span>
@@ -670,11 +654,10 @@ that, use &lt;build&gt;/&lt;filter&gt; element in pom.xml</p>
         <span class="nt">&lt;filter&gt;</span>src/main/filters/default.properties<span class="nt">&lt;/filter&gt;</span>
     <span class="nt">&lt;/filters&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ....</code></pre></div>
-<p>If we run <code>mvn clean package</code>, goal copies config.xml as it is without
+  ....
+</code></pre></div><p>If we run <code>mvn clean package</code>, goal copies config.xml as it is without
 applying any filters. Because, by default, filtering is disabled. To
 apply filter, we have to explicitly turn on the filtering in pom.xml.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ....
   <span class="c">&lt;!-- project build --&gt;</span>
@@ -689,17 +672,14 @@ apply filter, we have to explicitly turn on the filtering in pom.xml.</p>
         <span class="nt">&lt;/resource&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ....</code></pre></div>
-<p>This turns on the filtering for all resources in the <code>src/main/resources</code> folder.</p>
-
+  ....
+</code></pre></div><p>This turns on the filtering for all resources in the <code>src/main/resources</code> folder.</p>
 <p>Now run <code>mvn clean package</code> and it, while copying the config.xml to
 output directory, replaces the variables denoted by ${&hellip;} with the
 values from <code>default.properties</code>.</p>
-
 <p>Since we have not turned on filtering for test resources, the copied
 test-config.xml still retains the ${..} variables. Modify pom.xml to
 enable filtering for it too.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ....
   <span class="c">&lt;!-- project build --&gt;</span>
@@ -718,12 +698,11 @@ enable filtering for it too.</p>
         <span class="nt">&lt;/resource&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
    <span class="nt">&lt;/build&gt;</span>
-   ....</code></pre></div>
-<p>Surprisingly, in output folder, now you will find two test-config.xml
+   ....
+</code></pre></div><p>Surprisingly, in output folder, now you will find two test-config.xml
 instead of one - target/classes/test-config.xml and
 target/test-classes/test-config.xml. Something is wrong with the
 configuration!</p>
-
 
 
 <div>&nbsp;</div>
@@ -741,30 +720,23 @@ configuration!</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="troubleshoot-with-effective-pom">Troubleshoot with Effective POM</h2>
-
 <p>To explain troubleshooting, we intentionally showed wrong configuration
 and when something is wrong, first check effective POM.</p>
-
 <p>Generate effective POM as explained in <a href="/tutorial/apache-maven/plugins/maven-project-object-model/#effective-pom">the section called “Effective
 POM”</a>
 and there, we get a hint that Maven uses &lt;resources&gt;/&lt;resource&gt; for
 source resources and &lt;testResources&gt;/&lt;testResource&gt; for test
 resources.</p>
-
 <p>With the above configuration, both main/resources and test/resources
 folders are treated as resources while the second one should be treated
 as test resources. Because of that, the resources:resources goal handles
 not only the config.xml but also test-config.xml and both lands in
 target/classes properly filtered.</p>
-
 <p>Because of default definition, the other goal resources:testResources
 copies test-config.xml to target/test-classes without applying the
 filters (as by default filtering is disabled).</p>
-
 <p>The proper configuration is in the next listing:</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ....
   <span class="c">&lt;!-- project build --&gt;</span>
@@ -785,12 +757,10 @@ filters (as by default filtering is disabled).</p>
         <span class="nt">&lt;/testResource&gt;</span>
     <span class="nt">&lt;/testResources&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ....</code></pre></div>
-<p>Now filtering is turned on for both the resources and test resources,
+  ....
+</code></pre></div><p>Now filtering is turned on for both the resources and test resources,
 and the outcome is as expected.</p>
-
 <p>Refer <a href="http://maven.apache.org/plugins/maven-resources-plugin/" target="_blank">Maven Resources Plugin Documentation</a> for more examples on managing the project resources.</p>
-
 <p>In the next chapter, we see how to override Maven enforced directory
 structure.</p>
 

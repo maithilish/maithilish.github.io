@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Project Distribution - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,59 +535,53 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="project-distribution">Project Distribution</h1>
-
+            <h1 id="project-distribution">Project Distribution</h1>
 <p>Let&rsquo;s go through various ways to distribute Maven projects.</p>
-
 <h2 id="as-package">As Package</h2>
-
 <p>To manually distribute the project we can use <code>mvn package</code> command.
 Based on project type, Maven binds different goals to package phase
 which packages the code and resources as an archive file such as Jar,
 War etc., The built-in packaging types and the goal used for each of
 them is as follows:</p>
-
 <ul>
-<li><p><strong>JAR</strong> - it is the default packaging type and Maven binds jar:jar
-goal to package phase.</p></li>
-
-<li><p><strong>POM</strong> - it is the simplest packaging type and the artifact that it
+<li>
+<p><strong>JAR</strong> - it is the default packaging type and Maven binds jar:jar
+goal to package phase.</p>
+</li>
+<li>
+<p><strong>POM</strong> - it is the simplest packaging type and the artifact that it
 generates contains the pom.xml. Maven binds site:attach-descriptor
-goal to package phase.</p></li>
-
-<li><p><strong>EJB</strong> - Maven binds ejb:ejb goal to package phase.</p></li>
-
-<li><p><strong>WAR</strong> - packages a web app and binds war:war goal to package
-phase.</p></li>
-
-<li><p><strong>Maven Plugin</strong> - binds jar:jar and
+goal to package phase.</p>
+</li>
+<li>
+<p><strong>EJB</strong> - Maven binds ejb:ejb goal to package phase.</p>
+</li>
+<li>
+<p><strong>WAR</strong> - packages a web app and binds war:war goal to package
+phase.</p>
+</li>
+<li>
+<p><strong>Maven Plugin</strong> - binds jar:jar and
 plugin:addPluginArtifactMetadata goals to package phase to package a
-Maven Plugin project.</p></li>
+Maven Plugin project.</p>
+</li>
 </ul>
-
 <p>All the above packaging plugins uses a share component called <a href="http://maven.apache.org/shared/maven-archiver/" target="_blank">Maven
 Archiver Plugin</a>.</p>
-
 <p>Maven Assembly Plugin is the preferred way to manually distribute the
 project instead of <code>mvn package</code>. It allows to aggregate the project
 output along with its dependencies, modules, site documentation, and
 other files into a single distributable archive. Also, it can create
 distribution in various formats such as tar, zip, tar.gz etc., We will
 cover assembly in the next chapter.</p>
-
 <h2 id="install-in-local-repository">Install in Local Repository</h2>
-
 <p>When you are a lone developer, you can use Maven local repository to
 share artifacts with your other projects. For example, suppose you have
 a utility library which is used by your other projects. Then, you can
 install the util library in local repository and add it as dependency,
 just like any other Maven dependency, in other projects .</p>
-
 <p>The default location of the local repository is <code>$HOME/.m2/repository</code>.
 The command <code>mvn install</code> publishes the project to local repository.</p>
-
 
 
 <div>&nbsp;</div>
@@ -606,26 +600,20 @@ The command <code>mvn install</code> publishes the project to local repository.<
 
 
 
-
 <h2 id="deploy-to-shared-repository">Deploy to Shared Repository</h2>
-
 <p>Remote repository is handy to share artifacts with other developers.
 Maven Central Repository is an example of public remote repository.
 However, we can also setup a private shared repository to share
 artifacts among a small group developers on local network.</p>
-
 <p>Maven phase deploy uses deploy:deploy goal of <a href="https://maven.apache.org/plugins/maven-deploy-plugin/" target="_blank">Maven Deploy Plugin</a> to deploy
 the projects to remote repository. In this section, we explain the steps
 to setup a shared repository and access it through SSH.</p>
-
 <p>Imagine a local area network with a server with hostname <strong>maven-repo</strong>
 and two clients - <strong>sue</strong> and <strong>ron</strong>. Sue wants to deploy her Simple
 Maven Project to shared repository at maven-repo so that Ron can use it
 as dependency in his project.</p>
-
 <p>To push the artifacts to the repository, Sue has to add following lines
 to her pom.xml.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ...
   <span class="c">&lt;!-- project build --&gt;</span>
@@ -646,43 +634,41 @@ to her pom.xml.</p>
           <span class="nt">&lt;/extension&gt;</span>
       <span class="nt">&lt;/extensions&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ...</code></pre></div>
-<p>The distributionManagement defines repository located at
+  ...
+</code></pre></div><p>The distributionManagement defines repository located at
 <code>/var/maven/shared-repo</code> in server with hostname  <strong>maven-repo</strong> and it
 uses SSH protocol. To enable the use of SSH, it adds Maven extension
 library Apache Wagon.</p>
-
 <p>Now, if Sue tries <code>mvn deploy</code> she will get an error that Maven is
 unable to create directory on the server. SSH requires public/private
 key pair to authenticate and she has to generate the key pair with
 following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ ssh-keygen -t rsa</code></pre></div>
-<p>Accept default at all prompts by pressing Enter key to generate RSA
+<pre><code class="language-screen" data-lang="screen">$ ssh-keygen -t rsa
+</code></pre><p>Accept default at all prompts by pressing Enter key to generate RSA
 public/private key pair. The keys files id_rsa (private key) and
 id_rsa.pub (public key) are stored in $HOME/.ssh directory. Next, she
 has to send the public key file <code>id_rsa.pub</code> to the server admin. The
 admin of maven-repo has to create a user for Maven repository, create a
 directory for shared-repository and enable permissions with following
 commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ useradd maven
+<pre><code class="language-screen" data-lang="screen">$ useradd maven
 $ mkdir /var/maven
 $ chown maven.maven /var/maven
-$ chmod 755 /var/maven</code></pre></div>
-<p>Here, admin is creating a user named maven but any other name would do.
+$ chmod 755 /var/maven
+</code></pre><p>Here, admin is creating a user named maven but any other name would do.
 Next, admin has to add Sue&rsquo;s public key as an authorized key with
 following commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /home/maven
+<pre><code class="language-screen" data-lang="screen">$ cd /home/maven
 $ mkdir .ssh 
 $ cat id_rsa.pub &gt;&gt; .ssh/authorized_keys
-$ chmod -R 700 .ssh</code></pre></div>
-<p>This authorizes Sue to ssh to server as user maven without any further
+$ chmod -R 700 .ssh
+</code></pre><p>This authorizes Sue to ssh to server as user maven without any further
 authorization (password less ssh). She has to login to maven-repo once
 using following command to add the maven-repo as known host.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ ssh maven@maven-repo</code></pre></div>
-<p>As a last step, Sue has to tell about remote user name and location of
+<pre><code class="language-screen" data-lang="screen">$ ssh maven@maven-repo
+</code></pre><p>As a last step, Sue has to tell about remote user name and location of
 her private key by adding settings.xml, the Maven Settings file to
 $HOME/.m2.</p>
-
 <p><code>$HOME/.m2/settings.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;settings</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/SETTINGS/1.0.0&#34;</span>
       <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
@@ -697,25 +683,21 @@ $HOME/.m2.</p>
         <span class="nt">&lt;/server&gt;</span>
      <span class="nt">&lt;/servers&gt;</span>
 
-<span class="nt">&lt;/settings&gt;</span></code></pre></div>
-<p>In this file Sue telling that for a remote repository with id
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div><p>In this file Sue telling that for a remote repository with id
 ssh-repository, Maven has to use user maven and the private key file
 <code>/home/sue/.ssh/id_rsa</code>.</p>
-
 <p>Now, Sue can deploy the project with <code>mvn deploy</code> command and it will
 push the Simple Maven Project artifacts to server maven-repo and stores
 them in shared repository at <code>/var/maven/shared-repo</code>. SSH uses the
 Sue&rsquo;s private key and user name maven to authenticate with maven-repo.
 On deploy, the shared repository contents is as shown in the screenshot.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/maven-plugins-deploy-sharedrepo.png" alt="Maven Project Distribution - ssh, scp shared repository" />
 </figure>
 
-
 <p>To use the artifacts of shared repository as dependencies in the
 projects, Ron has to add following to his pom.xml.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ...
   <span class="nt">&lt;repositories&gt;</span>
@@ -751,17 +733,15 @@ projects, Ron has to add following to his pom.xml.</p>
         <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
       <span class="nt">&lt;/dependency&gt;</span>
   <span class="nt">&lt;/dependencies&gt;</span>
-  ...</code></pre></div>
-<p>He, too, has to generate the public/private key and share the public key
+  ...
+</code></pre></div><p>He, too, has to generate the public/private key and share the public key
 with maven-repo admin who has to add it to the authorized_keys file as
 done for Sue. Also, Ron has to add settings.xml file (same contents as
 Sue) to his $HOME/.m2 directory and login to maven-repo once through ssh
 to add the server as known host.</p>
-
 <p>When Ron runs Maven build command such as <code>mvn compile</code>, it will trigger
 the download simple-app artifacts deployed by Sue from the shared
 repository to Ron&rsquo;s local repository.</p>
-
 
 
 <div>&nbsp;</div>
@@ -779,27 +759,21 @@ repository to Ron&rsquo;s local repository.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="try-out-locally">Try out locally</h2>
-
 <p>If you don&rsquo;t have local area network, you can try out the shared
 repository on your system by creating three users - <strong>maven</strong>, <strong>sue</strong>
 and <strong>ron</strong>.</p>
-
 <p>In Sue&rsquo;s and Ron&rsquo;s pom.xml, for repository URL, instead of maven-repo,
 use localhost as hostname (or localhost.localdomain depending on your
 setup). The URL will be
 <code>&lt;url&gt;scpexe://localhost/var/maven/shared-repo&lt;/url&gt;</code>.</p>
-
 <p>We can also place the shared repository behind a FTP server and to configure FTP repository refer <a href="https://maven.apache.org/plugins/maven-deploy-plugin/examples/deploy-ftp.html" target="_blank">Deployment of artifacts with FTP</a>.</p>
-
 <p>The above method is fine as long as development team is small, but when
 team is large managing the users access to the repository becomes an
 issue. For enterprise level repository, it is suggested to use <a href="https://maven.apache.org/repository-management.html" target="_blank">Maven Repository Managers</a> such as
 <a href="http://archiva.apache.org/" target="_blank">Apache Archiva</a>,
 <a href="http://www.jfrog.com/" target="_blank">Artifactory</a> or <a href="http://nexus.sonatype.org/" target="_blank">Sonatype
 Nexus</a>.</p>
-
 <p>In the next chapter, we look at Maven Assemblies.</p>
 
           </main>

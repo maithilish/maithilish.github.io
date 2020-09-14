@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gwt uifactory on Codetab</title>
@@ -18,8 +18,8 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/</guid>
       <description>6.4. UiFactory UiBinder constructs a widget in multiple ways, and they fall into two categories.
- UiBinder creates the widget and insert it to UI structure.
- Application code creates the widget and hand it over to UiBinder to insert it to UI structure.
+  UiBinder creates the widget and insert it to UI structure.
+  Application code creates the widget and hand it over to UiBinder to insert it to UI structure.
   Widget creation delegated to UiBinder This is of two types - without value attributes and with value attributes.
 Without value attributes - For &amp;lt;f:TitlePanel ui:field=”titlePanel” /&amp;gt;, UiBinder uses default constructor of TitlePanel to create the widget.</description>
     </item>

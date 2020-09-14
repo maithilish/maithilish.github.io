@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Publish - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -397,48 +397,38 @@
             <p>Occasionally we may want to add modules developed by us to the
 repository. This chapter explains the Apache Ivy Publish Task which
 publishes modules to Ivy Repository.</p>
-
 <p>Apache Ivy Publish Task</p>
-
 <p>&lt;ivy:publish&gt; task publishes module&rsquo;s artifacts and resolved
 descriptor to a repository. It is used to publish our own modules or
 even modules developed by others which are not available in any
 repository.</p>
-
 <p><strong>Install v/s Publish</strong></p>
-
 <p>&lt;ivy:install&gt; copies modules from a source repository to a destination
 repository. For &lt;ivy:install&gt; to work, module should exist in some
 repository. In other words, somebody has already published that module
 to a repository and we use &lt;ivy:install&gt; to copy it from there to
 another repository.</p>
-
 <p>&lt;ivy:publish&gt; publishes a new module to a repository. It pushes
 artifacts and ivy file from an external area (like a folder in your
 file-system) to an Ivy Repository.</p>
-
 <p>To publish a module we require its artifacts and Ivy Descriptor File
 ivy.xml. It is important to note that, Apache Ivy Publish task never
 creates the artifacts or ivy files for you. To create the artifacts, we
 have to use the project&rsquo;s build system like Ant which creates and
 packages artifacts into module, source and javadoc jars.</p>
-
 <p>Apache Ivy Publish Example</p>
-
 <p>Let&rsquo;s go through a step-by-step example to understand Apache Ivy Publish
 task, In the example, instead of live artifacts, we use some <strong>dummy
 files</strong> as artifacts. Go ahead and create some dummy artifacts in work
 dir.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">touch simpleivy-jar.jar simpleivy-javadoc.jar simpleivy-source.jar</code></pre></div>
-<p>Command, touch, creates three <strong>zero byte</strong> files simpleivy-jar.jar
+<pre><code class="language-screen" data-lang="screen">touch simpleivy-jar.jar simpleivy-javadoc.jar simpleivy-source.jar
+</code></pre><p>Command, touch, creates three <strong>zero byte</strong> files simpleivy-jar.jar
 simpleivy-javadoc.jar simpleivy-source.jar as module, javadoc and source
 artifacts.</p>
-
 <p>Next, Ivy requires some info, description or metadata, to manage the
 module in the repository. We provide this info about the module in an
 <code>ivy.xml</code> also known as  <strong>Ivy Descriptor file.</strong> Add the following
 <code>ivy.xml</code> to work dir.</p>
-
 <p><code>ivy.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;ivy-module</span> <span class="na">version=</span><span class="s">&#34;2.0&#34;</span><span class="nt">&gt;</span>
  <span class="nt">&lt;info</span> <span class="na">organisation=</span><span class="s">&#34;com.xyz&#34;</span> <span class="na">module=</span><span class="s">&#34;simpleivy&#34;</span> <span class="nt">/&gt;</span>
@@ -450,20 +440,23 @@ module in the repository. We provide this info about the module in an
  <span class="nt">&lt;dependencies&gt;</span>
   <span class="nt">&lt;dependency</span> <span class="na">org=</span><span class="s">&#34;commons-lang&#34;</span> <span class="na">name=</span><span class="s">&#34;commons-lang&#34;</span> <span class="na">rev=</span><span class="s">&#34;2.6&#34;</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/dependencies&gt;</span>
-<span class="nt">&lt;/ivy-module&gt;</span></code></pre></div>
-<p>In the descriptor file we provide</p>
-
+<span class="nt">&lt;/ivy-module&gt;</span>
+</code></pre></div><p>In the descriptor file we provide</p>
 <ul>
-<li><p><strong>&lt;info&gt;</strong> - organisation and module name.</p></li>
-
-<li><p><strong>&lt;publications&gt;</strong> - artifacts of the publish</p></li>
-
-<li><p><strong>&lt;artifact&gt;</strong> - name, type and ext of the artifact.</p></li>
-
-<li><p><strong>&lt;dependencies&gt;</strong> - list of dependencies of our module. So, our
-module requires common-lang 2.6.</p></li>
+<li>
+<p><strong>&lt;info&gt;</strong> - organisation and module name.</p>
+</li>
+<li>
+<p><strong>&lt;publications&gt;</strong> - artifacts of the publish</p>
+</li>
+<li>
+<p><strong>&lt;artifact&gt;</strong> - name, type and ext of the artifact.</p>
+</li>
+<li>
+<p><strong>&lt;dependencies&gt;</strong> - list of dependencies of our module. So, our
+module requires common-lang 2.6.</p>
+</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -482,10 +475,8 @@ module requires common-lang 2.6.</p></li>
 
 
 
-
 <p>Next add Ant <code>build.xml</code>, with a &lt;ivy:publish&gt; task, to work
 dir.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;localrepository&#34;</span> <span class="na">default=</span><span class="s">&#34;publish&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;publish&#34;</span> <span class="na">description=</span><span class="s">&#34;Publish this build into repository&#34;</span><span class="nt">&gt;</span>
@@ -494,49 +485,53 @@ dir.</p>
        <span class="nt">&lt;artifacts</span> <span class="na">pattern=</span><span class="s">&#34;[artifact]-[type].[ext]&#34;</span><span class="nt">/&gt;</span>
    <span class="nt">&lt;/ivy:publish&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Attributes and elements of &lt;ivy:publish&gt; are</p>
-
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Attributes and elements of &lt;ivy:publish&gt; are</p>
 <ul>
-<li><p><strong>pubrevision</strong> – publication revision. 1.0</p></li>
-
-<li><p><strong>status</strong> – revision status which may be one of these: integration,
-milestone and release .</p></li>
-
-<li><p><strong>resolver</strong> – name of resolver for the publish</p></li>
-
-<li><p><strong>artifacts</strong> <strong>pattern</strong> – the pattern to use when search for
-artifacts mentioned in ivy.xml. Dummy artifacts have simple pattern</p>
-
+<li>
+<p><strong>pubrevision</strong> – publication revision. 1.0</p>
+</li>
+<li>
+<p><strong>status</strong> – revision status which may be one of these: integration,
+milestone and release .</p>
+</li>
+<li>
+<p><strong>resolver</strong> – name of resolver for the publish</p>
+</li>
+<li>
 <dl>
-<dd><code>[artifact]-[type].[ext]</code> like <code>simpleivy-javadoc.jar</code>. It is
+<dt><strong>artifacts</strong> <strong>pattern</strong> – the pattern to use when search for</dt>
+<dt>artifacts mentioned in ivy.xml. Dummy artifacts have simple pattern</dt>
+<dd><code> [artifact]-[type].[ext]</code> like <code>simpleivy-javadoc.jar</code>. It is
 important to note that, Ivy uses this pattern only to search the
 artifacts defined in ivy.xml, but not for placing them in the
 repository. While placing the artifacts in the repository, Ivy uses
 the pattern provided in the resolver definition for naming the
 directories and artifacts.</dd>
-</dl></li>
+</dl>
+</li>
 </ul>
-
 <p>To recap the steps,</p>
-
 <ul>
-<li><p>place the module artifacts in the work dir</p></li>
-
-<li><p>add <code>ivy.xml</code> which provides module info to Ivy.</p></li>
-
-<li><p>add <code>build.xml</code> that contains the &lt;ivy:publish&gt; task</p></li>
+<li>
+<p>place the module artifacts in the work dir</p>
+</li>
+<li>
+<p>add <code>ivy.xml</code> which provides module info to Ivy.</p>
+</li>
+<li>
+<p>add <code>build.xml</code> that contains the &lt;ivy:publish&gt; task</p>
+</li>
 </ul>
-
 <p>We are ready to publish our simpleivy module to local repository. Run
 Ant to publish. The console output of Publish is shown in next the
 screen-shot.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">[ivy:publish] :: publishing :: com.xyz#simpleivy
+<pre><code class="language-screen" data-lang="screen">[ivy:publish] :: publishing :: com.xyz#simpleivy
 [ivy:publish] published simpleivy to /home/m/.ivy2/local/com.xyz/simpleivy/1.0/jars/simpleivy.jar
 [ivy:publish] published simpleivy to /home/m/.ivy2/local/com.xyz/simpleivy/1.0/javadocs/simpleivy.jar
 [ivy:publish] published simpleivy to /home/m/.ivy2/local/com.xyz/simpleivy/1.0/sources/simpleivy.jar
-[ivy:publish] published ivy to /home/m/.ivy2/local/com.xyz/simpleivy/1.0/ivys/ivy.xml</code></pre></div>
-<p>In <code>$HOME/.ivy2/local</code>, Publish task creates a directory structure
+[ivy:publish] published ivy to /home/m/.ivy2/local/com.xyz/simpleivy/1.0/ivys/ivy.xml
+</code></pre><p>In <code>$HOME/.ivy2/local</code>, Publish task creates a directory structure
 <code>com.xyz/simpleivy/1.0</code> and under this, it has created four sub-folders:
 <strong>jars</strong>, <strong>javadocs</strong>, <strong>sources</strong> and <strong>ivys</strong>. Artifacts lands in
 first three sub-folders and descriptor file goes into ivys sub-folder.
@@ -544,34 +539,29 @@ If you analyze the repository layout pattern, it is clear that Ivy has
 used following patterns, from <strong>default local resolver</strong> definitions in
 <code>/org/apache/ivy/core/settings/ivysettingslocal.xml</code> , to place the
 files in the local repository.</p>
-
 <p><code>[organisation]/[module]/[revision]/[type]s/[artifact].[ext]</code> to place
 ivy.xml</p>
-
 <p><code>[organisation]/[module]/[revision]/[type]s/[artifact].[ext]</code> to place
 artifacts</p>
-
 <p><strong>Delivered Ivy Descriptor File</strong></p>
-
 <p>After a publish, if you check the work dir, you find two Ivy descriptor
 files.</p>
-
 <ul>
-<li><p>orginal ivy.xml provided by you</p></li>
-
-<li><p>ivy-ivy.xml generated by the &lt;ivy:publish&gt;</p></li>
+<li>
+<p>orginal ivy.xml provided by you</p>
+</li>
+<li>
+<p>ivy-ivy.xml generated by the &lt;ivy:publish&gt;</p>
+</li>
 </ul>
-
 <p>Descriptor file, <code>ivy-ivy.xml</code> generated by &lt;ivy:publish&gt; is the
 resolved descriptor which is also known as <strong>delivered ivy file</strong>.</p>
-
 <p>Before the actual publish, &lt;ivy:publish&gt; task internally calls
 &lt;ivy:deliver&gt; task which generates a resolved descriptor of the module
 based upon the last resolve done. The resolved ivy file contains updated
 information about the delivered module, such as revision and status. The
 original ivy.xml never gets into the repository and the new ivy-ivy.xml
 is the descriptor file that lands in the repository.</p>
-
 
 
 <div>&nbsp;</div>
@@ -589,9 +579,7 @@ is the descriptor file that lands in the repository.</p>
 <div>&nbsp;</div>
 
 
-
 <p> </p>
-
 <p>Once a module is published, developers are free to use the new module as
 a dependency like any other modules in the repository.</p>
 

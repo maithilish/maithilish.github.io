@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Eclipse Maven Project - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,23 +535,16 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="manage-eclipse-maven-project">Manage Eclipse Maven Project</h1>
-
+            <h1 id="manage-eclipse-maven-project">Manage Eclipse Maven Project</h1>
 <p>In the previous tutorial we installed M2E Plugin and created Maven
 Project with it. In this tutorial, we describe the features of M2E that
 are useful to manage Eclipse Maven Project.</p>
-
 <h2 id="pom-editor">POM Editor</h2>
-
 <p>When we open pom.xml in Eclipse, M2E opens it in GUI POM Editor shown in
 the screenshot.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-pomeditor.png" alt="Manage Eclipse Maven Project - POM Editor" />
 </figure>
-
 
 <p>The Overview tab is useful to manage project coordinates, parent or
 modules of the project and properties. With the Dependencies tab, we can
@@ -559,31 +552,24 @@ manage project dependencies. While the Dependency Hierarchy tab shows
 how project dependencies are organized, the Effective POM tab displays
 the effective POM of the project. The last tab, pom.xml. is the source
 editor.</p>
-
 <h2 id="add-dependency">Add Dependency</h2>
-
 <p>To add dependencies, go to <strong>Dependency Tab</strong> of the POM Editor and
 click <strong>Add</strong> button to open the Add Dependency window.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-dependencies.png" alt="Manage Eclipse Maven Project - POM Editor Dependency Tab" />
 </figure>
 
-
 <p>Alternatively, select the pom.xml in Project Explorer and right click to
 open the context menu where we can select <strong>Maven</strong> → <strong>Add Dependency</strong>
 to open the Select Dependency window.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-selectdependency.png" alt="Manage Eclipse Maven Project - Select Dependency Window" />
 </figure>
-
 
 <p>In the Select Dependency window, enter a search string to display
 matching artifacts from the local or global repository. On selecting an
 item from the search results, the artifact coordinates are populated.
 Click <strong>OK</strong> button to add it as dependency to the project.</p>
-
 
 
 <div>&nbsp;</div>
@@ -601,42 +587,31 @@ Click <strong>OK</strong> button to add it as dependency to the project.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="repository-index">Repository Index</h2>
-
 <p>Search works only when repositories are properly indexed. Please refer
 <a href="/tutorial/apache-maven/eclipse/maven-eclipse-plugin/#maven-repo-view">Maven Repository View</a> to rebuild the index.</p>
-
 <h2 id="add-plugin">Add Plugin</h2>
-
 <p>To add a Maven Plugin to the project, select the pom.xml in the Project
 Explorer view and right click to open its context menu. Then, select
 <strong>Maven</strong> → <strong>Add Plugin</strong> to open the Add Plugin window.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-addpluginmenu.png" alt="Manage Eclipse Maven Project - Add Plugin Context Menu" />
 </figure>
-
 
 <p>In the Add Plugin window, enter a search string to display matching
 Maven Plugins in local or global repository. On selecting an item from
 the search results, the plugin coordinates are populated. Click <strong>OK</strong>
 button to add plugin to the project.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-selectplugin.png" alt="Manage Eclipse Maven Project - Select Plugin Window" />
 </figure>
 
-
 <h2 id="edit-pom">Edit POM</h2>
-
 <p>The last tab of the POM Editor, pom.xml, is useful to view and edit the
 source of pom.xml.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-configureplugin.png" alt="Manage Eclipse Maven Project - edit pom context help" />
 </figure>
-
 
 <p>In the source editor, we can use <strong>Alt</strong>+<strong>Space</strong> at any location to
 know the allowed Maven elements at that level. We can scroll through the
@@ -645,7 +620,6 @@ will be inserted to the pom.xml. The screenshot shows the allowed
 elements within a plugin element and its help message.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -662,23 +636,18 @@ elements within a plugin element and its help message.</p>
 
 
 
-
 <h2 id="build-maven-project">Build Maven Project</h2>
-
 <p>To build a Maven Project, select the project or its pom.xml in Project
 Explorer and right click to open the context menu and select <strong>Run As</strong>
 to show the available build options.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-build.png" alt="Manage Eclipse Maven Project - Run As Maven Build menu items" />
 </figure>
-
 
 <p>Among others, the drop down menu shows six Maven build options. The last
 four build options - <strong>Maven clean</strong>, <strong>Maven generate-sources</strong>,
 <strong>Maven install</strong> and <strong>Maven test</strong> executes respective lifecycle
 phases.</p>
-
 <p>The  <strong>Maven build&hellip;</strong> opens the Eclipse&rsquo;s Edit Configuration dialog,
 where we can enter Goal or lifecycle phase in <strong>Goals</strong> field and run
 the build. When you have multiple run configurations, use <strong>Maven

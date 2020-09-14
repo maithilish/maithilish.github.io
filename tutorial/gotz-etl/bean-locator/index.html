@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Bean Locator - Gotz ETL - CodeTab</title></head>
 
@@ -400,57 +400,44 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Gotz uses set of definition files to extract data from HTML pages. As
+            <p>Gotz uses set of definition files to extract data from HTML pages. As
 HTML pages are unstructured in nature, the definition to extract and
 handle data can become quite complex. To learn the XML elements used by
 the definition files, Gotz distribution comes with a set of examples
 which are under <strong>def/examples</strong> folder. Examples are named as ex-1,
 ex-2 and so on, each with increasing complexity.</p>
-
 <h2 id="gotz-definition-files">Gotz Definition Files</h2>
-
 <p>Gotz creates the data model based on XML definition files. For now, we
 define two files - <strong>bean.xml and job.xml</strong>.</p>
-
 <p>Bean file</p>
-
 <p>The basic definition file in Gotz is bean.xml, which wires together all
 classes required by GotzEngine. We can specify the bean file using
 <strong>gotz.beanFile</strong> configuration property, which is normally set in
 <strong>gotz.properties</strong> file located in <strong>conf</strong> folder. By default, it is
 set to <strong>defs/examples/jsoup/ex-1/bean.xml</strong> which loads the example 1.</p>
-
 <p>The bean.xml specified in <strong>defs/examples/jsoup/ex-1</strong> is shown below</p>
-
 <p><code>defs/examples/jsoup/ex-1/bean.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz</span> <span class="na">xmlns=</span><span class="s">&#34;http://codetab.org/gotz&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;job.xml&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p>The element &lt;bean&gt; is used to specify the <strong>xmlFile</strong> to load. In the
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p>The element &lt;bean&gt; is used to specify the <strong>xmlFile</strong> to load. In the
 example, we are indicating that Gotz should load <strong>job.xml</strong> which is
 located in same folder as bean.xml.</p>
-
 <p>Job file</p>
-
 <p>The job file defines the model objects required to run Gotz. The broad
 outline of the job file is :</p>
-
 <ul>
 <li>&lt;gotz&gt;
-
 <ul>
 <li>&lt;locators&gt;</li>
 <li>&lt;dataDefs&gt;</li>
 <li>&lt;fields&gt;</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>The root element &lt;gotz&gt;, its XML Namespace and &lt;fields&gt; are
 explained in the later chapters. For now, we focus on locators and
 datadefs.</p>
-
 
 
 <div>&nbsp;</div>
@@ -468,31 +455,23 @@ datadefs.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="locators">Locators</h2>
-
 <p>In Gotz, locator is used to specify the HTML page either to fetch from
 the Internet or to load from local file system.</p>
-
 <p>The element <strong>&lt;locators&gt;</strong> specifies the list of locator and the its
 group.</p>
-
 <p>In the example job.xml, the locators are defined as</p>
-
 <p><code>defs/examples/jsoup/ex-1/job.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;locators</span> <span class="na">group=</span><span class="s">&#34;quote&#34;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;locator</span> <span class="na">name=</span><span class="s">&#34;acme&#34;</span> <span class="na">url=</span><span class="s">&#34;/defs/examples/page/acme-quote.html&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/locators&gt;</span></code></pre></div>
-<p>Here we are defining single locator named acme. The attribute <strong>url</strong>
+<span class="nt">&lt;/locators&gt;</span>
+</code></pre></div><p>Here we are defining single locator named acme. The attribute <strong>url</strong>
 points to local HTML file <strong>acme-quote.html</strong> which is in
 <strong>defs/examples/page</strong> folder.</p>
-
 <p>To scrape pages from website, we need to specify the actual address of
 the page such as <a href="http://example.org">http://example.org</a>.</p>
-
 <p>The group attribute is used to group a set of locators. Here the locator
 <strong>acme</strong> belongs to group <strong>quote</strong>.</p>
-
 <p>In the next chapter, we describe DataDef and its components.</p>
 
           </main>

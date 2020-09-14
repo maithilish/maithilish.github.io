@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Simple Unit Test - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,45 +625,33 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-3-wordpress-plugin-simple-unit-tests">12.3. WordPress Plugin Simple Unit Tests</h2>
-
+            <h2 id="123wordpress-plugin-simple-unit-tests">12.3. WordPress Plugin Simple Unit Tests</h2>
 <p>In the previous blog, we setup PHPUnit for WordPress Plugin and verified
 the setup with a Simple Plugin. The rest of the blog explains various
 types of unit tests we used to test the Share on Social Plugin.</p>
-
 <p>The real hurdle in testing a plugin is to understand the WordPress
 architecture and write the appropriate tests for it. For better
 understanding, we selected various types of methods that are typical to
 a plugin and explain how to test them. The complete set of tests of
 Share on Social Plugin is available for download from <a href="https://github.com/maithilish/codefs/tree/master/share-on-social" target="_blank">GitHub</a>.</p>
-
 <p>In this blog, we start with PHPUnit Test Case, Setup, Tear down and then
 explain a couple of basic types of plugin tests.</p>
-
 <h3 id="test-case-setup-tear-down">Test Case, Setup, Tear Down</h3>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-test-files.png" alt="WordPress Plugin Simple Unit Tests - test files" />
 </figure>
-
 
 <p>In Share on Social Plugin, for each class file there is corresponding
 test class file in <code>tests/phpunit/tests</code> directory. The test file is a
 regular PHP class which extends WordPress Tests Librarys&rsquo;
 <code>WP_UnitTestCase</code> which itself extends <code>PHPUnit_Framework_TestCase</code>.</p>
-
 <p>The test method names are prefixed with <strong>test_</strong> as PHPUnit requires
 that to distinguish the test methods from others in the test case.</p>
-
 <p>In all test classes, we define a variable with class scope that holds
 the instance of class under test. In the next snippet, the var <code>$sos</code>
 will hold an instance of class <code>Sos</code> which is the class under test.</p>
-
 <p>The instance of the class under test is normally created in <code>setup()</code>
 method.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos extends WP_UnitTestCase {
 
@@ -676,19 +664,17 @@ method.</p>
         $this-&gt;sos = new Sos();
     }
     ....
-}</code></pre></div>
-<p>In the <code>setup()</code> method, we need to call <code>parent::setup()</code> before doing
+}
+</code></pre></div><p>In the <code>setup()</code> method, we need to call <code>parent::setup()</code> before doing
 any other thing. Next, we include the class file of class under test
 with require_once(). In the above test case, we include
 <code>admin/class-sos.php</code> which defines the class <code>Sos</code>. Finally, we create
 an instance of Sos and assign it to the variable $sos. PHPUnit calls
 setup() before running each test and so, for each test we get a fresh
 instance of class Sos.</p>
-
 <p>After completion of each test, PHPUnit calls <code>teardown()</code>, where we call
 <code>parent::teardown()</code> and then any clean up required to run subsequent
 tests.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos extends WP_UnitTestCase {
 
@@ -702,16 +688,14 @@ tests.</p>
         Util::set_activate_plugins_cap( false );
     }
     ....
-}</code></pre></div>
-<p>In majority of test cases, in <code>teardown()</code> method, we unload the text
+}
+</code></pre></div><p>In majority of test cases, in <code>teardown()</code> method, we unload the text
 domain which we explain in a later blog when we cover the WordPress
 Internationalization testing. In the above test case, we also remove a
 user capability which is enabled by some test in this particular test
 case.</p>
-
 <p>The things we do in setup() and teardown() methods varies for each test
 case, but they are easy to understand once you go through test class.</p>
-
 
 
 <div>&nbsp;</div>
@@ -730,14 +714,11 @@ case, but they are easy to understand once you go through test class.</p>
 
 
 
-
 <h3 id="methods-with-return-value">Methods with Return Value</h3>
-
 <p>The simplest type of plugin tests are of the methods that return some
 value. For example, the <code>Sos_Options::sanitize_options()</code> method takes
 an array as input which hold key, value pairs and the method sanitize
 the values using WP function <a href="http://codex.wordpress.org/Function_Reference/wp_filter_nohtml_kses" target="_blank">wp_filter_nohtml_kses()</a> and add the sanitized value to an output array. The method returns the output array which holds the sanitized values.</p>
-
 <p><code>share-on-social/admin/class-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function sanitize_options ( $input ) {
         $output = array();
@@ -748,10 +729,9 @@ the values using WP function <a href="http://codex.wordpress.org/Function_Refere
             }
         }
         return apply_filters( &#39;sanitize_options&#39;, $output, $input );
-    }</code></pre></div>
-<p>We test this type of methods by asserting whether the returned object
+    }
+</code></pre></div><p>We test this type of methods by asserting whether the returned object
 contains the expected values.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_sanitize_options_scripts () {
         $input = array(
@@ -761,8 +741,7 @@ contains the expected values.</p>
         $this-&gt;assertCount( 1, $output );
         $this-&gt;assertSame( &#39;test id&#39;, $output[ &#39;id&#39; ] );
     }
-</code></pre></div>
-<p>In the test method, first we construct an input array and add an option
+</code></pre></div><p>In the test method, first we construct an input array and add an option
 value which contains some PHP script tags. Next, we call method under
 test <code>Sos_Options::sanitize_options()</code> by passing input array as
 parameter. Then, we test whether the returned output has only one
@@ -770,12 +749,9 @@ element and whether the method has sanitized the value by removing the
 PHP tags from the input value. The instance of class <code>Sos_Options</code> is
 instantiated in test case setup() method and assigned to the variable
 $this-&gt;sos_options.</p>
-
 <p><strong>Always Count</strong></p>
-
 <p>When testing an array, always assert the size of the array with
 <a href="https://phpunit.de/manual/current/en/appendixes.assertions.html" target="_blank">assertCount()</a>. It ensures that test fails whenever you make changes to the code that affects the size of the array, and failure alerts you to write additional assertions to test the changes.</p>
-
 
 
 <div>&nbsp;</div>
@@ -793,16 +769,12 @@ $this-&gt;sos_options.</p>
 <div>&nbsp;</div>
 
 
-
 <h3 id="methods-that-echo-output">Methods that Echo Output</h3>
-
 <p>One more type of frequently used methods are those which echo output
 without return value. Plugin uses such methods as callbacks to render
 pages, menu etc.,</p>
-
 <p>One such example is <code>Sos_Stats::render_stats_page()</code> method from
 <code>admin/class-stats.php</code>.</p>
-
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_stats_page () {
         $heading = __( &#39;Share Stats&#39;, &#39;sos-domain&#39; );
@@ -813,10 +785,9 @@ pages, menu etc.,</p>
         <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>        
 EOD;
-    }</code></pre></div>
-<p>In Share on Social, we test such methods by capturing the echoed output
+    }
+</code></pre></div><p>In Share on Social, we test such methods by capturing the echoed output
 with PHP output buffer functions.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_render_stats_page () {
         ob_start();
@@ -831,8 +802,8 @@ with PHP output buffer functions.</p>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>    
 EOD;
         $this-&gt;assertSame( trim( $expected ), trim( $result ) );
-    }</code></pre></div>
-<p>PHP output buffer functions are used to capture the output. After
+    }
+</code></pre></div><p>PHP output buffer functions are used to capture the output. After
 turning on the output buffer with PHP function
 <a href="http://php.net/manual/en/function.ob-start.php" target="_blank">ob_start()</a>, we call
 the method under test. The echoed output is obtained with
@@ -840,23 +811,18 @@ the method under test. The echoed output is obtained with
 and after that, buffer is turned off with
 <a href="http://php.net/manual/en/function.ob-end-clean.php" target="_blank">ob_end_clean()</a>.
 The result is asserted for desired value.</p>
-
 <p><strong>Multiple Assertions</strong></p>
-
 <p>Unit Test best practice recommends to have single assertion per test
 which ensures that tests are concise and readable. When test fails,
 developers can easily pinpoint the error and refactor the code.</p>
-
 <p>But in Share on Social Plugin test cases we have not followed this
 recommendation. Single assert per test rule results in too many tests
 and it is bit difficult to browse the test code and comprehend. Instead,
 we use single test to test single condition by making multiple
 assertions to test that condition.</p>
-
 <p>If you don&rsquo;t mind too many test methods and have knack to meaningfully
 name them, then it is better to stick with the single assertion per test
 rule.</p>
-
 <p>In the next blog, we explain some of the advanced types of tests that
 are unique to WordPress Plugin.</p>
 

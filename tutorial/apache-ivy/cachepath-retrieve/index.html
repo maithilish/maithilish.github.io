@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Cachepath – Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -399,27 +399,24 @@ dependencies indicated in ivy.xml file and places the resolved modules
 in the cache. But it does not link the dependencies to the project build
 path. To expose the dependencies to the Java build path, Apache Ivy
 provides two Ant tasks .</p>
-
 <ul>
-<li><p>&lt;ivy:cachepath&gt; task</p></li>
-
-<li><p>&lt;ivy:retrieve&gt; task</p></li>
+<li>
+<p>&lt;ivy:cachepath&gt; task</p>
+</li>
+<li>
+<p>&lt;ivy:retrieve&gt; task</p>
+</li>
 </ul>
-
 <p>Apache Ivy Cachepath Task</p>
-
 <p>&lt;ivy:cachepath&gt; constructs an Ant classpath consisting of resolved
 artifacts in the cache.</p>
-
 <p>In the sample project from the last chapter, Ant executed
 &lt;ivy:resolve&gt; which resolved commons-langs 2.6 module and placed the
 artifacts in the cache. To compile Java class files, Ant require a
 classpath that refers to the artifacts in the cache, and Ivy Cachepath
 task constructs the required classpath.</p>
-
 <p>Modify build.xml as
 follows</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;ivy example&#34;</span> <span class="na">default=</span><span class="s">&#34;compile&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;resolve&#34;</span> <span class="na">description=</span><span class="s">&#34;resolve dependencies with ivy&#34;</span><span class="nt">&gt;</span>
@@ -432,27 +429,23 @@ follows</p>
    <span class="nt">&lt;classpath</span> <span class="na">refid=</span><span class="s">&#34;default.classpath&#34;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/javac&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>In the resolve target, we have added &lt;ivy:cachepath
-pathid=&ldquo;default.classpath&rdquo; /&gt; after &lt;ivy:resolve&gt;. After a successful
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>In the resolve target, we have added &lt;ivy:cachepath
+pathid=&quot;default.classpath&rdquo; /&gt; after &lt;ivy:resolve&gt;. After a successful
 resolve, Ivy constructs Ant classpath named <strong>default.classpath</strong>. This
 classpath points to the resolved artifacts in the cache and in sample
 project it points commons-lang.jar in cache. Next in &lt;javac&gt; task, we
 refer default.classpath through attribute refid. When Ant executes
 &lt;javac&gt; task it finds resolved artifacts in the classpath and compile
 goes through.</p>
-
 <p><strong>Artifacts location</strong></p>
-
 <p>It is important to note that, neither &lt;ivy:cachepath&gt; nor
 &lt;ivy:resolve&gt; copy the artifacts from cache to the project workspace.
 Artifacts continue to be in the cache. and &lt;ivy:cachepath&gt; simply
 constructs a classpath that points to artifacts in the cache.</p>
-
 <p>In case, task &lt;ivy:cachepath&gt; is called directly without a
 &lt;ivy:resolve&gt; then &lt;ivy:resolve&gt; is internally called before
 executing &lt;ivy:cachepath&gt;</p>
-
 
 
 <div>&nbsp;</div>
@@ -470,57 +463,48 @@ executing &lt;ivy:cachepath&gt;</p>
 <div>&nbsp;</div>
 
 
-
 <p>Apache Ivy Retrieve Task</p>
-
 <p>Instead of &lt;ivy:cachepath&gt; task, better approach is to copy the
 dependencies to the project workspace and use the standard Ant classpath
 mechanism to build the project. Apache Ivy Retrieve task comes handy to
 do that.</p>
-
 <p>Task &lt;ivy:retrieve&gt; copies resolved dependencies to a specified
 location in the project workspace.</p>
-
 <p>Modify <code>build.xml</code> as
 follows</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;ivy example&#34;</span> <span class="na">default=</span><span class="s">&#34;retrieve&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;retrieve&#34;</span> <span class="na">description=</span><span class="s">&#34;Resolve and Retrieve with ivy&#34;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;ivy:resolve</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;ivy:retrieve</span> <span class="na">sync=</span><span class="s">&#34;true&#34;</span> <span class="na">type=</span><span class="s">&#34;jar&#34;</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>We have added &lt;ivy:retrieve sync=&ldquo;true&rdquo; type=&ldquo;jar&rdquo; /&gt; after
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>We have added &lt;ivy:retrieve sync=&quot;true&rdquo; type=&quot;jar&rdquo; /&gt; after
 &lt;ivy:resolve&gt; which instructs Ivy to copy the resolved artifacts from
 cache to lib directory within the project workspace. Ivy will create the
 lib directory if it is not there.</p>
-
 <p>Important attributes that are used in this task are</p>
-
 <ul>
-<li><p><strong>Sync</strong> set to true will ensure that any extra files in the lib
-directory is deleted.</p></li>
-
-<li><p><strong>Type</strong> set to jar tells ivy to copy only jar artifacts. Source and
-javadoc artifacts are ignored.</p></li>
+<li>
+<p><strong>Sync</strong> set to true will ensure that any extra files in the lib
+directory is deleted.</p>
+</li>
+<li>
+<p><strong>Type</strong> set to jar tells ivy to copy only jar artifacts. Source and
+javadoc artifacts are ignored.</p>
+</li>
 </ul>
-
 <p><strong>Types</strong></p>
-
 <p>Frequently used types are <strong>jar</strong> for jar artifact, <strong>src</strong> or
 <strong>source</strong> for Java source artifact and <strong>doc</strong> for javadoc artifact.
 But some modules like log4j, refer jar artifacts as <strong>bundle</strong> instead
 of <strong>jar</strong>. To include log4j artifacts, you need to change the type
 attribute to <code>&lt;ivy:retrieve sync=&quot;true&quot; type=&quot;jar,bundle&quot; /&gt;</code></p>
-
 <p>In case &lt;ivy:retrieve&gt; is called directly without a &lt;ivy:resolve&gt;,
 then &lt;ivy:resolve&gt; is internally called before retrieving the
 artifacts.</p>
-
 <p>Once the dependencies are in project workspace, use standard ant path
 creation to build the project.</p>
-
 
 
 <div>&nbsp;</div>
@@ -539,16 +523,11 @@ creation to build the project.</p>
 
 
 
-
 <p>Ivy Retrieve Pattern</p>
-
 <p>By default &lt;ivy:retrieve&gt; places the retrieved artifacts in lib
 directory of the project and may change this by using <strong>Ivy Retrieve
 pattern</strong> attribute.</p>
-
-<p><code>&lt;ivy:retrieve sync=&quot;true&quot; type=&quot;jar&quot;
-pattern=&quot;myfolder/[artifact]-[revision].[ext]&quot; /&gt;</code></p>
-
+<p><code>&lt;ivy:retrieve sync=&quot;true&quot; type=&quot;jar&quot; pattern=&quot;myfolder/[artifact]-[revision].[ext]&quot; /&gt;</code></p>
 <p>Attribute pattern tells Ivy Retrieve to copy the artifacts to myfolder
 directory. The next chapter covers other aspects of the pattern.</p>
 

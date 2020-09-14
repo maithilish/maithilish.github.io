@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T13:30:00+0530",
         "dateModified" : "2019-01-11T13:30:00+0530",
-        "wordCount" : "1184",
+        "wordCount" : "1185",
         "keywords" : [ "unit test scripts, actions, filters","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Unit Test Scripts Action Filter - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,77 +625,75 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-4-unit-test-scripts-actions-filters">12.4. Unit Test Scripts, Actions, Filters</h2>
-
+            <h2 id="124unit-test-scripts-actions-filters">12.4. Unit Test Scripts, Actions, Filters</h2>
 <p>In the previous blog, we saw how to write tests for plugin methods that
 returns value or echo output. In this blog, we explore third category of
 plugin methods where outcome is tested using corresponding WordPress API
 functions.</p>
-
 <p>For example, add_action() which registers an action hook is tested
 using WordPress function has_action().</p>
-
 <p>But, before exploring such tests, we briefly explain an utility class
 used by Share on Social Plugin test cases to reduce boilerplate code in
 tests and also, learn to toggle user capability to test methods which
 depends on user capability.</p>
-
 <h3 id="utility-methods-for-tests">Utility Methods for Tests</h3>
-
 <p>To investigate the arrays, fetch object from database and change user
 role or capability etc., tests require multiple lines of code. The class
 <code>Util</code> defined by <code>share-on-social/tests/phpunit/util/class-util.php</code>,
 extracts such redundant boilerplate code into utility methods.</p>
-
 <p>Methods to investigate the multidimensional arrays and check whether
 action exists.</p>
-
 <ul>
-<li><p>has_value() - whether multidimensional array contains a value.</p></li>
-
-<li><p>has_obj() - whether multidimensional array contains an object of a
-class.</p></li>
-
-<li><p>has_action() - wrapper for WordPress
+<li>
+<p>has_value() - whether multidimensional array contains a value.</p>
+</li>
+<li>
+<p>has_obj() - whether multidimensional array contains an object of a
+class.</p>
+</li>
+<li>
+<p>has_action() - wrapper for WordPress
 <a href="http://codex.wordpress.org/Function_Reference/has_action" target="_blank">has_action()</a>
-function.</p></li>
-
-<li><p>has_filter() - wrapper for WordPress
+function.</p>
+</li>
+<li>
+<p>has_filter() - wrapper for WordPress
 <a href="http://codex.wordpress.org/Function_Reference/has_filter" target="_blank">has_filter()</a>
-function.</p></li>
-
-<li><p>get_action() - returns action array from global array.</p></li>
+function.</p>
+</li>
+<li>
+<p>get_action() - returns action array from global array.</p>
+</li>
 </ul>
-
 <p>Methods to fetch posts and change locale.</p>
-
 <ul>
-<li><p>get_post_id() - get post id for matching meta key and value.</p></li>
-
-<li><p>count_posts() - get number of posts of a post type.</p></li>
-
-<li><p>change_locale() - changes locale for the tests.</p></li>
+<li>
+<p>get_post_id() - get post id for matching meta key and value.</p>
+</li>
+<li>
+<p>count_posts() - get number of posts of a post type.</p>
+</li>
+<li>
+<p>change_locale() - changes locale for the tests.</p>
+</li>
 </ul>
-
 <h3 id="toggle-capability">Toggle Capability</h3>
-
 <p><code>Util</code> class also defines methods to manage users and capabilities
 within tests.</p>
-
 <ul>
-<li><p><strong>set_cap()</strong> - enable or disable a capability.</p></li>
-
-<li><p><strong>set_activate_plugins_cap()</strong> - enable or disable
-activate_plugins capability.</p></li>
-
-<li><p><strong>set_admin_role()</strong> - enable or disable admin role to an user.</p></li>
+<li>
+<p><strong>set_cap()</strong> - enable or disable a capability.</p>
+</li>
+<li>
+<p><strong>set_activate_plugins_cap()</strong> - enable or disable
+activate_plugins capability.</p>
+</li>
+<li>
+<p><strong>set_admin_role()</strong> - enable or disable admin role to an user.</p>
+</li>
 </ul>
-
 <p>In many of the tests, setUp() method uses following constructs to set
 the user and capability to run the tests.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos_Options extends WP_UnitTestCase {
 
@@ -704,11 +702,10 @@ the user and capability to run the tests.</p>
         ....
         wp_set_current_user( 1 );
         Util::set_admin_role( true );
-    }</code></pre></div>
-<p>Having gone through the utility class and its methods, let&rsquo;s get back to
+    }
+</code></pre></div><p>Having gone through the utility class and its methods, let&rsquo;s get back to
 the tests that uses WordPress API functions to assert the outcome of
 method under test.</p>
-
 
 
 <div>&nbsp;</div>
@@ -727,15 +724,11 @@ method under test.</p>
 
 
 
-
 <h3 id="test-actions-and-filters">Test Actions and Filters</h3>
-
 <p>In Share on Social Plugin classes we use setup() method to add actions
 and filters.</p>
-
 <p>For example, <code>Sos_Options::setup()</code> method adds actions for
 <strong>admin_init</strong> and <strong>admin_menu</strong> hooks.</p>
-
 <p><code>share-on-social/admin/class-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Options {
 
@@ -744,10 +737,9 @@ and filters.</p>
                 array( $this,&#39;init_common_options&#39; ) );
         add_action( &#39;admin_menu&#39;, 
                 array( $this,&#39;register_settings_page&#39; ) );
-    }</code></pre></div>
-<p>We test actions in <code>Test_Sos_Options</code> using utility method
+    }
+</code></pre></div><p>We test actions in <code>Test_Sos_Options</code> using utility method
 <code>Util::has_action()</code>.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos_Options extends WP_UnitTestCase {
 
@@ -763,8 +755,8 @@ and filters.</p>
            Util::has_action( &#39;admin_init&#39;, $this-&gt;sos_options, &#39;init_common_options&#39; ) );
         $this-&gt;assertTrue( 
            Util::has_action( &#39;admin_menu&#39;, $this-&gt;sos_options, &#39;register_settings_page&#39; ) );
-    }</code></pre></div>
-<p>In <code>Test_Sos_Options::test_setup()</code>, we first test that admin_init and
+    }
+</code></pre></div><p>In <code>Test_Sos_Options::test_setup()</code>, we first test that admin_init and
 admin_menu hooks&rsquo; actions are not set. Next, we call method under test
 with $this-&gt;sos_options-&gt;setup(). Finally, we test whether
 admin_init has action pointing to <code>Sos_Option::init_common_options()</code>
@@ -772,24 +764,18 @@ method. For this, we use <code>Util::has_action()</code> which is wrapper for
 WordPress function
 <a href="http://codex.wordpress.org/Function_Reference/has_action" target="_blank">has_action()</a>.
 Similarly we test admin_menu action.</p>
-
 <p>Filters are tested, in same fashion, using <code>Util::has_filter()</code> method
 which is wrapper for WordPress function
 <a href="http://codex.wordpress.org/Function_Reference/has_filter" target="_blank">has_filter()</a>.</p>
-
 <p><strong>Demarcate Unit Tests</strong></p>
-
 <p>Is it necessary to test the outcome of action or filter. No, remember
 that we unit test the plugin and not the WordPress core. It is
 sufficient to test whether action is registered for the hook and
 thereafter, it is responsibility of WordPress core to handle the action.</p>
-
 <h3 id="test-enqueue-scripts">Test Enqueue Scripts</h3>
-
 <p>Next type of tests are related to enqueue of plugin scripts and styles.
 Share on Social Plugin enqueues couple of scripts and a style sheet in
 <code>Sos_Frontend::add_sos_scripts()</code> method.</p>
-
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
         ....
@@ -802,15 +788,14 @@ Share on Social Plugin enqueues couple of scripts and a style sheet in
             wp_enqueue_script( &#39;sos_script&#39; );
             ....
         }
-     }</code></pre></div>
-<p>The method, registers the script and stylesheets and if, share-on-social
+     }
+</code></pre></div><p>The method, registers the script and stylesheets and if, share-on-social
 shortcode exists in the post, then it enqueue them. WordPress functions
 <a href="http://codex.wordpress.org/Function_Reference/wp_script_is" target="_blank">wp_script_is()</a>
 and
 <a href="http://codex.wordpress.org/Function_Reference/wp_style_is" target="_blank">wp_style_is()</a>
 are useful to check whether scripts and stylesheets are registered or
 enqueued.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_add_sos_scripts () {
         // if no shortcode 
@@ -828,18 +813,16 @@ enqueued.</p>
         
         $this-&gt;assertTrue( wp_style_is( &#39;sos_style&#39;, &#39;enqueued&#39; ) );
         $this-&gt;assertTrue( wp_script_is( &#39;sos_script&#39;, &#39;enqueued&#39; ) );
-    }</code></pre></div>
-<p>The test calls method under test <code>Sos_Frontend::add_sos_scripts()</code> and
+    }
+</code></pre></div><p>The test calls method under test <code>Sos_Frontend::add_sos_scripts()</code> and
 then, assert that script and stylesheet are registered but not enqueued.
 Next, it calls <code>Sos_Frontend::setup()</code> to register the shortcode and
 assert script and stylesheet are enqueued.</p>
-
 <p><code>Sos_Frontend::add_sos_scripts()</code> enqueues scripts only if post contains
 share-on-social shortcode. It is important to understand, from where it
 obtains the post, within tests, that has the shortcode. For that, we
-need to look at <code>Test_Frontend::setUp()</code>method where the global post is
+need to look at <code>Test_Frontend::setUp() </code>method where the global post is
 set.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Frontend extends WP_UnitTestCase {
     ....
@@ -874,13 +857,12 @@ set.</p>
         );
         $post_id = $this-&gt;factory-&gt;post-&gt;create( $args );
         $this-&gt;child_post_id = $post_id;
-    }</code></pre></div>
-<p>In <code>Test_Frontend::setUp()</code> we call a private method
+    }
+</code></pre></div><p>In <code>Test_Frontend::setUp()</code> we call a private method
 <code>Test_Frontend::create_posts()</code> to create two posts - actually two pages
 and one of which is the parent of other. The args[&lsquo;post_content&rsquo;] of
 these pages holds the <strong>share-on-social</strong> shortcode. We use factory
 method of <code>WP_UnitTestCase</code> to create the posts.</p>
-
 <p>WordPress holds the current post in the global variable $post. We set
 the child page as current post by assigning it to the global $post and
 then, update other global variables related to current post, by calling
@@ -889,7 +871,6 @@ WordPress function
 . In the test, when add_sos_scripts() is called, it obtains the
 current post from global $post and checks whether it has the shortcode
 or not and enqueue scripts accordingly.</p>
-
 
 
 <div>&nbsp;</div>
@@ -907,41 +888,38 @@ or not and enqueue scripts accordingly.</p>
 <div>&nbsp;</div>
 
 
-
 <p><strong>Factory Methods</strong></p>
-
 <p>WordPress Test Library class <code>WP_UnitTestCase</code> comes with a set of
 factory methods to create WordPress objects such as Post, Attachment,
 Comment, User, Term, Category and Tag.</p>
-
 <p>For example, in a test case, we use following construct to create a post
 object using factory method..</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">        $args = array(
-                &#39;post_name&#39; =&gt; &#39;parent test page&#39;,
-                &#39;post_title&#39; =&gt; &#39;parent test page title&#39;,
-                &#39;post_status&#39; =&gt; &#39;publish&#39;,
-                &#39;post_type&#39; =&gt; &#39;page&#39;,
-                &#39;post_content&#39; =&gt; &#39;[[share-on-social][/share-on-social]]&#39;
+<pre><code class="language-screen" data-lang="screen">        $args = array(
+                'post_name' =&gt; 'parent test page',
+                'post_title' =&gt; 'parent test page title',
+                'post_status' =&gt; 'publish',
+                'post_type' =&gt; 'page',
+                'post_content' =&gt; '[[share-on-social][/share-on-social]]'
         );
-        $post_id = $this-&gt;factory-&gt;post-&gt;create( $args );</code></pre></div>
-<p>Similarly, comments can be created through
+        $post_id = $this-&gt;factory-&gt;post-&gt;create( $args );
+</code></pre><p>Similarly, comments can be created through
 $this-&gt;factory-&gt;comment-&gt;create( $args ) with appropriate values in
 args array.</p>
-
 <p>Factory offers following methods for each type.</p>
-
 <ul>
-<li><p>create_object ( $args ) - creates an object.</p></li>
-
-<li><p>update_object ( $user_id, $fields ) - updates an object.</p></li>
-
-<li><p>get_object_by_id ( $user_id ) - fetch an object.</p></li>
+<li>
+<p>create_object ( $args ) - creates an object.</p>
+</li>
+<li>
+<p>update_object ( $user_id, $fields ) - updates an object.</p>
+</li>
+<li>
+<p>get_object_by_id ( $user_id ) - fetch an object.</p>
+</li>
 </ul>
-
 <p>Apart from these common methods, factory also has additional methods for
 some of the types. To know more about the factory, browse the source
 file <code>share-on-social/tests/phpunit/includes/factory.php</code></p>
-
 <p>The next blog explains the unit tests for methods which uses WordPress
 global variables and also, simulate WordPress admin screens to carry out
 tests related to admin modules.</p>

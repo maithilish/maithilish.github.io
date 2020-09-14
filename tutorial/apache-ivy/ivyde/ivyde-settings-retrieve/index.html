@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>IvyDE Settings - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -263,7 +263,7 @@
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-ivy/shared-repository/"
-            class="toc-page text-wrap text-muted ">
+            class="toc-page text-wrap text-danger ">
             Shared Repository
         </a>
     </div>
@@ -289,7 +289,7 @@
         Eclipse Ivy Plugin
     </a>
     
-    <div id="tutorial-apache-ivy-ivyde" class="">
+    <div id="tutorial-apache-ivy-ivyde" class="collapse">
         
         
         <a href="https://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/"
@@ -299,7 +299,7 @@
         
         
         <a href="https://www.codetab.org/tutorial/apache-ivy/ivyde/ivyde-settings-retrieve/"
-            class="toc-page dropdown-item text-wrap text-danger">
+            class="toc-page dropdown-item text-wrap text-muted">
             IvyDE Settings and Retrieve
         </a>
         
@@ -397,81 +397,67 @@
             <p>This chapter explains the IvyDE Settings which are useful to enable
 project specific behavior. Settings are managed through IvyDE Managed
 Libraries window that has tabs for Settings, Retrieve and Advanced.</p>
-
 <p>IvyDE Managed Libraries</p>
-
 <p>To manage Ivy settings in Eclipse, you need to open IvyDE Managed
 Libraries window and to open that, there should be an Ivy Library in the
 project build path which is added using Add Ivy Library, as explained in
 the last chapter.</p>
-
 <p>To open the IvyDE Managed Libraries window, select project in the
 Project Explorer and right click to get the context menu and then choose
 <strong>Build Path</strong> →  <strong>Configure Build Path</strong> which shows the Java Build
 Path window. Select the Libraries tab which shows the <strong>ivy.xml[*]</strong>
 library among others. There select ivy.xml[*] library and click Edit
 which pops up the IvyDE Managed Libraries window.</p>
-
 <p>Let&rsquo;s try out some of the IvyDE Settings.</p>
-
 <p>IvyDE Settings</p>
-
 <p>In <a href="/tutorial/apache-ivy/shared-repository/#sec-shared-web">Apache Ivy Shared Repository</a>, we used ivysettings.xml to access a shared web respository through a custom resolver named web. We use Settings tab of IvyDE to override the default settings with an ivysettings.xml. This may be either done at workspace level or at project level. Place the ivysettings.xml in root folder of workspace to enable custom settings at workspace level or in root folder of the project for custom settings at project level.</p>
-
 <p>For project level settings, select <strong>Enable project specific settings</strong>
 checkbox and set <strong>Ivy settings path</strong> field to ivysettings.xml file.
 For workspace level settings, use <strong>Configure Workspace Settings</strong> link
 which takes you to Eclipse Preferences window where you may set the
 ivysettings.xml. (for workspace level setting you may also use
 <strong>Window</strong> → <strong>Preferences</strong> → <strong>Ivy</strong> → <strong>Settings</strong>).</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/ivydesettingstab.png" alt="IvyDE Settings and IvyDE Settings file" />
 </figure>
 
-
 <p><strong>Figure 9.1. IvyDE Settings Tab</strong></p>
-
 <p>IvyDE Retrieve</p>
-
 <p>Apache Ivy Retrieve task copies the resolved dependencies to the project
 workspace. In IvyDE, we can enable retrieve at two levels either at the
 workspace level or at the project level.</p>
-
 <p>Enable IvyDE Retrieve at project level</p>
-
 <p>To set retrieve at project level, open Ivy Managed Libraries window and
 select Retrieve tab. Make changes as shown in the screenshot and save
 the settings.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/retrievesettings2.png" alt="IvyDE Settings and IvyDE Retrieve" />
 </figure>
 
-
 <p><strong>Figure 9.2. IvyDE Retrieve Tab</strong></p>
-
 <p>These settings indicate that</p>
-
 <ul>
-<li><p>IvyDE has to retrieve after resolve.</p></li>
-
-<li><p>Retrieve pattern <code>lib/[artifact]-[revision]-[type].[ext]</code> places the
-retrieved modules in lib directory.</p></li>
-
-<li><p>delete stale artifacts which are no longer in dependencies list and
-lying in lib directory.</p></li>
-
-<li><p>Types - jar means we want only actual library jar files and not
+<li>
+<p>IvyDE has to retrieve after resolve.</p>
+</li>
+<li>
+<p>Retrieve pattern <code>lib/[artifact]-[revision]-[type].[ext]</code> places the
+retrieved modules in lib directory.</p>
+</li>
+<li>
+<p>delete stale artifacts which are no longer in dependencies list and
+lying in lib directory.</p>
+</li>
+<li>
+<p>Types - jar means we want only actual library jar files and not
 javadoc, source jar, etc. Multiple comma separated types are allowed
-like jar, bundle, etc.</p></li>
+like jar, bundle, etc.</p>
+</li>
 </ul>
-
 <p>Refresh the project with F5 and Ivy creates lib directory in root
 folders of the project and copies the resolved artifacts to it.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -487,56 +473,45 @@ folders of the project and copies the resolved artifacts to it.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Enable IvyDE Retrieve at workspace level</p>
-
 <p>Go to <strong>Window</strong> → <strong>Preferences</strong> → <strong>Ivy</strong> → <strong>Retrieve</strong></p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/ivyderetrieve.png" alt="IvyDE Settings and IvyDE Retrieve" />
 </figure>
 
-
 <p><strong>Figure 9.3. IvyDE Retrieve Tab</strong></p>
-
 <p>Make changes as shown in next the screenshot and save settings</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/retrievesettings1.png" alt="IvyDE Settings and IvyDE Retrieve" />
 </figure>
 
-
 <p><strong>Figure 9.4. IvyDE Retrieve Tab</strong></p>
-
 <p>Refresh the project with F5. Ivy creates a lib directory in root folders
 of the project (only in those projects which have ivy.xml[*] library
 in their build path and there is no project specific settings) and
 copies the resolved jars to it.</p>
-
 <p>In our opinion, out of the two, project level setting is the better
 option.</p>
-
 <p>Advanced Tab</p>
-
 <p>This tab is used to</p>
-
 <ul>
-<li><p>define accepted types</p></li>
-
-<li><p>define source types and suffixes</p></li>
-
-<li><p>defines javadoc types and suffixes</p></li>
-
-<li><p>change ordering of classpath entries</p></li>
+<li>
+<p>define accepted types</p>
+</li>
+<li>
+<p>define source types and suffixes</p>
+</li>
+<li>
+<p>defines javadoc types and suffixes</p>
+</li>
+<li>
+<p>change ordering of classpath entries</p>
+</li>
 </ul>
-
 <p>Again, these things can be set at the workspace level or at the project
 level.</p>
-
 <p> </p>
-
 <p> </p>
-
 
 
 <div>&nbsp;</div>
@@ -555,37 +530,34 @@ level.</p>
 
 
 
-
 <p>Going Further</p>
-
 <p>That brings us to the end of the <strong>Apache Ivy Beginners Guide</strong>. In this
 guide, we have covered some of the essential concepts and usage of
 Apache Ivy which assists developers to start using Apache Ivy in their
 projects.</p>
-
 <p>But it&rsquo;s just the start: Apache Ivy comes with many additional features
 to meet the rigorous needs of an enterprise dependency management
 system. Below, we provide some of the pointers for users to gain further
 insight into Apache Ivy and help them to convert their build system into
 a professional one.</p>
-
 <p><strong>Tutorials</strong> - Official documentation contains set of tutorials which
 explains some of the advanced features. These tutorials walk through the
 examples provided in src/example directory of Apache Ivy distribution.</p>
-
 <p><strong>Reference Documentation</strong> - Official documentation also contains
 detailed Reference documentation which covers following areas</p>
-
 <ul>
-<li><p>Setting Files – defines the structure of ivysettings.xml and the
-allowed tags.</p></li>
-
-<li><p>Ivy Files - defines the structure of ivy.xml and the allowed tags.</p></li>
-
-<li><p>Ant Tasks – provides reference about the various Apache Ivy Ant
-tasks.</p></li>
+<li>
+<p>Setting Files – defines the structure of ivysettings.xml and the
+allowed tags.</p>
+</li>
+<li>
+<p>Ivy Files - defines the structure of ivy.xml and the allowed tags.</p>
+</li>
+<li>
+<p>Ant Tasks – provides reference about the various Apache Ivy Ant
+tasks.</p>
+</li>
 </ul>
-
 <p><strong>Ivy Module Configuration</strong> - In this guide, we used the default
 configuration named <strong>default</strong>. Apache Ivy comes with a powerful
 feature known as Module Configurations which groups a set of artifacts

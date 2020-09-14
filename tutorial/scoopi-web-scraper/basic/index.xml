@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Basics on Codetab</title>
@@ -40,7 +40,7 @@ Scoopi Definition Files Scoopi creates the data model based on YML definition fi
       <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
 The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
-dataDefs: price: query: block: &amp;#34;div#price_tick&amp;#34; selector: &amp;#34;*&amp;#34; items: [ item: { name: &amp;#34;Price&amp;#34;, value: &amp;#34;Price&amp;#34; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
+dataDefs: price: query: block: &amp;quot;div#price_tick&amp;quot; selector: &amp;quot;*&amp;quot; items: [ item: { name: &amp;quot;Price&amp;quot;, value: &amp;quot;Price&amp;quot; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
     </item>
     
     <item>
@@ -86,7 +86,7 @@ The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html pa
       <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml
-dataDefs: bs: query: block: &amp;#34;table:contains(Sources Of Funds)&amp;#34; selector: &amp;#34;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;#34; items: - item: name: item selector: &amp;#34;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;#34; index: 5 breakAfter: - &amp;#34;Book Value (Rs)&amp;#34; filters: - filter: { type: value, pattern: &amp;#34;&amp;#34; } - filter: { type: value, pattern: &amp;#34;Sources Of Funds&amp;#34; } - filter: { type: value, pattern: &amp;#34;Application Of Funds&amp;#34; } dims: - item: name: year selector: &amp;#34;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;#34; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
     </item>
     
     <item>

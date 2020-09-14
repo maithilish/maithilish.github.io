@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>RHC Client Tools - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,71 +561,55 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and
+            <p>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and
 place WordPress Tutorial scripts and sample pages in OpenShift server.
 OpenShift RHC Client Tools is useful to manage OpenShift applications
 and to access OpenShift Shell. We have to access OpenShift Shell for a
 couple of tasks: to backup the site and to place the sample HTML in the
 server.</p>
-
 <h2 id="openshift-rhc-client-tools">OpenShift RHC Client Tools</h2>
-
 <p>OpenShift Client tools also called as RHC is a command line tool used to
 create and manage the OpenShift applications. We require RHC to log in
 to OpenShift Shell using SSH. RHC is built in Ruby.</p>
-
 <p>Windows</p>
-
 <p>To install OpenShift RHC Client Tools on Windows, we have to install
 three items - RubyInstaller, Git and OpenShift RHC.</p>
-
 <p>Install RubyInstaller</p>
-
 <p>RubyInstaller is a self-contained Windows-based installer that includes
 the Ruby language and execution environment. Download the stable release
 from <a href="http://rubyinstaller.org/downloads/" target="_blank">RubyInstaller Org</a> and
 install. During the installation accept all of the defaults, but it is
 mandatory to select the <strong>Add Ruby executables to your PATH</strong> check box
 in order to run Ruby from the command line.</p>
-
 <p>After the installation, verify the installation. Open <strong>command prompt</strong>
 using <strong>Start</strong> → <strong>Run</strong> and enter <strong>cmd</strong> and click OK. In the command
 prompt, execute the following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; ruby -e &#39;puts &#34;Welcome to Ruby&#34;&#39;
-Welcome to Ruby</code></pre></div>
-<p>Install Git</p>
-
+<pre><code class="language-screen" data-lang="screen">C:&gt; ruby -e 'puts &quot;Welcome to Ruby&quot;'
+Welcome to Ruby
+</code></pre><p>Install Git</p>
 <p>Git is a software configuration management (SCM) that keeps track of
 changes to software source code. With Git, we can manage the OpenShift
 application source repository. Download latest release from <a href="http://msysgit.github.io/" target="_blank">Git
 Hub</a> and install with all defaults. Open
 command prompt and verify Git installation.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; git --version
-git version 1.9.2</code></pre></div>
-<p>Install RHC</p>
-
+<pre><code class="language-screen" data-lang="screen">C:&gt; git --version
+git version 1.9.2
+</code></pre><p>Install RHC</p>
 <p>To install OpenShift RHC Client Tools, open command prompt and run the
 following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; gem install rhc</code></pre></div>
-<p>Next we have to setup RHC and to do that, proceed to <a href="#setup-rhc">Setup RHC</a></p>
-
+<pre><code class="language-screen" data-lang="screen">C:&gt; gem install rhc
+</code></pre><p>Next we have to setup RHC and to do that, proceed to <a href="#setup-rhc">Setup RHC</a></p>
 <h2 id="linux">Linux</h2>
-
 <p>Here we explain the installation of RHC on Fedora. For other
 distributions, install Ruby (full), Ruby Gems, GIT and RHC as explained
 for Windows.</p>
-
 <p>Install RHC</p>
-
 <p>On Fedora Linux, we have to install <strong>rubygem-rhc</strong>, which installs
 Ruby, GIT and other dependencies required to run OpenShift RHC client
 tools.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ sudo yum install rubygem-rhc</code></pre></div>
-<p>It installs Ruby, Git, and the other dependencies. Next we have to setup
+<pre><code class="language-screen" data-lang="screen">$ sudo yum install rubygem-rhc
+</code></pre><p>It installs Ruby, Git, and the other dependencies. Next we have to setup
 RHC.</p>
-
 
 
 <div>&nbsp;</div>
@@ -644,158 +628,144 @@ RHC.</p>
 
 
 
-
 <p><a name="setup-rhc"></a></p>
-
 <h2 id="setup-openshift-rhc">Setup OpenShift RHC</h2>
-
 <p>We have to configure OpenShift RHC to work with the OpenShift account.
 RHC setup goes through following steps:</p>
-
 <ul>
-<li><p>Prompts for the OpenShift account User ID and password. For User ID,
+<li>
+<p>Prompts for the OpenShift account User ID and password. For User ID,
 we have to enter the e-mail ID we used to create the OpenShift
-account.</p></li>
-
-<li><p>RHC creates and stores a token on disk, which allows us to carry out
+account.</p>
+</li>
+<li>
+<p>RHC creates and stores a token on disk, which allows us to carry out
 application management and access the OpenShift Shell without using
 a password. Authentication tokens last for a month and after the
 expiry of tokens, we are forced to re-authenticate again with the
-e-mail id and password to generate fresh tokens.</p></li>
-
-<li><p>Checks whether there are any SSH Public-Private key pairs in the
+e-mail id and password to generate fresh tokens.</p>
+</li>
+<li>
+<p>Checks whether there are any SSH Public-Private key pairs in the
 <code>.ssh</code> folder. If a key pair exists, then rhc uploads the public key
 to the OpenShift server else rhc creates a new pair and uploads the
 newly created public key. SSH keys are used encrypt the traffic
-between PC and OpenShift server.</p></li>
+between PC and OpenShift server.</p>
+</li>
 </ul>
-
 <p>To setup RHC, execute the following command from the command prompt.
 Even though we show commands for Windows, Linux users have to run the
 same setup commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc setup</code></pre></div>
-<p>RHC interactive setup wizard displays and prompts us to complete the
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc setup
+</code></pre><p>RHC interactive setup wizard displays and prompts us to complete the
 rest of the process. When prompted for OpenShift User ID and password,
 we have to enter the e-mail ID and password used to create the OpenShift
 account.</p>
-
 <p><strong>Note</strong></p>
-
 <p>It is safe to run rhc setup any number of times. During reruns, setup
 reads existing configuration and completes the setup. To do a fresh
 setup; delete openshift (or .openshift) directory from the user&rsquo;s home
 directory and run rhc setup again.</p>
-
 <p>Test the RHC setup by running following command, which connects to
 OpenShift server and displays the apps configured in our account.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc apps</code></pre></div>
-<figure class="text-center" >
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc apps
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-rhc-apps.png" alt="OpenShift RHC Client Tools - apps output" />
 </figure>
 
-
 <h2 id="install-putty-ssh-client-for-windows">Install PuTTY SSH Client for Windows</h2>
-
 <p>Windows users require an additional tool - <strong>PuTTY</strong>. To access to
 OpenShift Shell and also to copy files over SSH, windows user have to
 install PuTTY.</p>
-
 <h2 id="openshift-shell">OpenShift Shell</h2>
-
 <p>OpenShift provides access to the terminal of the virtual host (gear) on
 which our application is running. OpenShift terminal is also known as
 OpenShift Shell.</p>
-
 <p>Linux users can log in to OpenShift Shell using the following command
 from the command prompt. Replace &lt;your app name&gt; with the name of the
 OpenShift WordPress application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc ssh &lt;app name&gt;</code></pre></div>
-<p>Windows user have two options to login to shell. They can either use RHC
+<pre><code class="language-screen" data-lang="screen">$ rhc ssh &lt;app name&gt;
+</code></pre><p>Windows user have two options to login to shell. They can either use RHC
 or PuTTY. To use rhc, we need to know the path to SSH executable file in
 our PC and use RHC as follows. Replace &lt;path_to_ssh_executable&gt;
 with the actual path to SSH executable file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc ssh --ssh &lt;path_to_ssh_executable&gt; &lt;app name&gt;</code></pre></div>
-<p>Use Putty to login and OpenShift Shell displays welcome message and the prompt
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc ssh --ssh &lt;path_to_ssh_executable&gt; &lt;app name&gt;
+</code></pre><p>Use Putty to login and OpenShift Shell displays welcome message and the prompt
 as shown in the screenshot.</p>
-
 <p><strong>Warning</strong></p>
-
 <p>Shell access is quite powerful, so be extra careful while we are in the
 shell. If something goes wrong, then only option is to <strong>delete and
 create a new application</strong>.</p>
-
 <p>!OpenShift RHC Client Tools - OpenShift Shell.](../media/rhc-console.png)</p>
-
 <p><strong>OpenShift IDs.</strong></p>
-
 <p>At this point, let&rsquo;s clarify the various frequently encountered items
 when we work with OpenShift. It is important understand their meaning
 and usage.</p>
-
 <ul>
-<li><p><strong>OpenShift Account</strong>: we use an e-mail ID to create an OpenShift
+<li>
+<p><strong>OpenShift Account</strong>: we use an e-mail ID to create an OpenShift
 account, and we use it to login to OpenShift server.</p>
-
 <ul>
-<li><p>We use the e-mail id to log in to OpenShift Web Console.</p></li>
-
-<li><p>RHC uses our e-mail id and tokens (created during RHC setup)
-when we log in to OpenShift Shell.</p></li>
-</ul></li>
-
-<li><p><strong>Application Public URL</strong>: when we create an application, OpenShift
+<li>
+<p>We use the e-mail id to log in to OpenShift Web Console.</p>
+</li>
+<li>
+<p>RHC uses our e-mail id and tokens (created during RHC setup)
+when we log in to OpenShift Shell.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Application Public URL</strong>: when we create an application, OpenShift
 allots a public URL to like
 <code>http://quickstart-wordpressguide.rhcloud.com</code>, and we use this to
-access the application.</p></li>
-
-<li><p><strong>Application User ID</strong>: For each application, OpenShift creates a
+access the application.</p>
+</li>
+<li>
+<p><strong>Application User ID</strong>: For each application, OpenShift creates a
 virtual Linux server, and we need a User ID to access this virtual
 server. UUID, a 24 chars hex decimal string, is a unique ID allotted
 to our virtual server, which is also the User ID. When we see a long
 hex string, we know that its is our unique user id in OpenShift
-cloud.</p></li>
+cloud.</p>
+</li>
 </ul>
-
 <p><strong>a word about Prompts</strong></p>
-
 <p>In the tutorial, we run commands from a Windows Prompt or Linux Console
 or OpenShift Shell. We use following prompts to distinguish between the
 three systems.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-rhc-prompts.png" alt="OpenShift RHC Client Tools - WordPress Tutorial Prompts" />
 </figure>
 
-
 <h2 id="download-tutorial-code-to-openshift">Download Tutorial Code to OpenShift</h2>
-
 <p>To complete the tasks in some of the chapters, we need scripts and
 sample pages from the <code>wordpress tutorial sample zip</code>, which is
 available at <a href="https://github.com/maithilish/codefs/tree/master/wordpress" target="_blank">GitHub</a>.</p>
-
 <p>We can directly download the file to OpenShift server and for that, log
 in to OpenShift Shell using RHC (Linux users) or PuTTY (Windows users).
 In the OpenShift Shell, change the directory to <code>app-root/data</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data</code></pre></div>
-<p>In OpenShift, we can use the <strong>Wget</strong> to download the
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data
+</code></pre><p>In OpenShift, we can use the <strong>Wget</strong> to download the
 <code>wordpress-tutorial-sample.zip</code> from CodeTab.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; wget ../media/wordpress-tutorial-sample.zip</code></pre></div>
-<p>Curl downloads the wordpress-tutorial-sample.zip from CodeTab and save
+<pre><code class="language-screen" data-lang="screen">&gt; wget ../media/wordpress-tutorial-sample.zip
+</code></pre><p>Curl downloads the wordpress-tutorial-sample.zip from CodeTab and save
 it. Next, use unzip command to extract the wordpress-tutorials.zip.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; unzip wordpress-tutorial-sample.zip</code></pre></div>
-<script>
+<pre><code class="language-screen" data-lang="screen">&gt; unzip wordpress-tutorial-sample.zip
+</code></pre><script>
     console.log("slot C"); 
 </script>
-
 <p>The zip file contains two folders:</p>
-
 <ul>
-<li><p><strong>htmlimport</strong> folder contains sample HTML files with distinct
+<li>
+<p><strong>htmlimport</strong> folder contains sample HTML files with distinct
 stylesheets and images, which we use to describe WordPress static
-page import.</p></li>
-
-<li><p><strong>backup</strong> folder contains WordPress Backup and Dropbox setup
-scripts.</p></li>
+page import.</p>
+</li>
+<li>
+<p><strong>backup</strong> folder contains WordPress Backup and Dropbox setup
+scripts.</p>
+</li>
 </ul>
 
           </main>

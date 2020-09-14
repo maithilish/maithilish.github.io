@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Content on Codetab</title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/content/content/</guid>
       <description>Content GWT project contains three content pages.
- Snapshot – displays financial details like Balance Sheet (BS), Profit and Loss A/c (PL), Quarterly data (Qtr), Cash Flow (CF) and Holding details of a Symbol with forward or backward navigation capability to view other periods. It has collapsible graphs of Price, Price to Earnings (PE) and Price to Book (PB) movements. For each category a Pop up displays data for the entire period.</description>
+  Snapshot – displays financial details like Balance Sheet (BS), Profit and Loss A/c (PL), Quarterly data (Qtr), Cash Flow (CF) and Holding details of a Symbol with forward or backward navigation capability to view other periods. It has collapsible graphs of Price, Price to Earnings (PE) and Price to Book (PB) movements. For each category a Pop up displays data for the entire period.</description>
     </item>
     
     <item>
@@ -37,9 +37,9 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/</guid>
       <description>6.2. AutoSuggest AutoSuggest accepts user input and displays matching list of Symbols for selection. It uses GWT SuggestBox to display suggestions those matches input.
-Default SuggestOracle of SuggestBox is MultiWordSuggestOracle which displays sorted drop down list of matches. List of names comes from SymbolDatabase.getSymbolNames(), which returns names of four symbols, and method MultiWordSuggestOracle.setSymbolNames() adds list to the oracle.
+Default SuggestOracle of SuggestBox is MultiWordSuggestOracle which displays sorted drop down list of matches. List of names comes from SymbolDatabase.getSymbolNames(), which returns names of four symbols, and method  MultiWordSuggestOracle.setSymbolNames() adds list to the oracle.
 in.fins.client.widget/AutoSuggest.java
-private void setSymbolNames() { List&amp;lt;String&amp;gt; list = SymbolDatabase.getSymbolNames(); ((MultiWordSuggestOracle) suggestBox.getSuggestOracle()).addAll(list); } In Part 2 of the book, RPS calls to the server replaces  SymbolDatabase calls.</description>
+private void setSymbolNames() { List&amp;lt;String&amp;gt; list = SymbolDatabase.getSymbolNames(); ((MultiWordSuggestOracle) suggestBox.getSuggestOracle()).addAll(list); } In Part 2 of the book, RPS calls to the server replaces SymbolDatabase calls.</description>
     </item>
     
     <item>
@@ -49,7 +49,8 @@ private void setSymbolNames() { List&amp;lt;String&amp;gt; list = SymbolDatabase
       
       <guid>https://www.codetab.org/tutorial/gwt/content/titlepanel/</guid>
       <description>6.3. TitlePanel TitlePanel displays the symbol name on selection by the user and uses a SimplePanel and Label.
-Why a separate widget when a Label is suffice, and reason for this is with more and more widgets added to Snapshot events handling becomes complicated and with a separate widget we can wire events much more elegantly. Hence TitlePanel is pulled out as a separate widget with TitlePanel.ui.xml and TitlePanel.java.</description>
+Why a separate widget when a Label is suffice, and reason for this is with more and more widgets added to Snapshot events handling becomes complicated and with a separate widget we can wire events much more elegantly. Hence TitlePanel is pulled out as a separate widget with TitlePanel.ui.xml and TitlePanel.java.
+Snapshot uses TitlePanel in Snapshot.</description>
     </item>
     
     <item>
@@ -59,8 +60,8 @@ Why a separate widget when a Label is suffice, and reason for this is with more 
       
       <guid>https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/</guid>
       <description>6.4. UiFactory UiBinder constructs a widget in multiple ways, and they fall into two categories.
- UiBinder creates the widget and insert it to UI structure.
- Application code creates the widget and hand it over to UiBinder to insert it to UI structure.
+  UiBinder creates the widget and insert it to UI structure.
+  Application code creates the widget and hand it over to UiBinder to insert it to UI structure.
   Widget creation delegated to UiBinder This is of two types - without value attributes and with value attributes.
 Without value attributes - For &amp;lt;f:TitlePanel ui:field=”titlePanel” /&amp;gt;, UiBinder uses default constructor of TitlePanel to create the widget.</description>
     </item>
@@ -96,7 +97,7 @@ in.fins.client.widget/FactDisclosePanel.java
       
       <guid>https://www.codetab.org/tutorial/gwt/content/toolbar/</guid>
       <description>6.8. Toolbar FactTable displays the latest available data for a category, but the user may also like to view data for previous periods, and through ToolbarItem user may navigate Forward or Backward.
- Figure 6.11. Toolbar Following UI declaration adds ToolbarItem to FactTable.
+ Figure 6.11. Toolbar Following UI declaration adds ToolbarItem to  FactTable.
 in.fins.client.content/Snapshot.ui.xml
 &amp;lt;g:customCell&amp;gt; &amp;lt;f:FactTable captionText=&amp;#34;BS&amp;#34; category=&amp;#34;BS&amp;#34;&amp;gt; &amp;lt;f:FactTable captionText=&amp;#34;Holding&amp;#34; category=&amp;#34;Shareholding&amp;#34;&amp;gt; &amp;lt;f:ToolbarItem type=&amp;#34;previous&amp;#34; category=&amp;#34;Shareholding&amp;#34; /&amp;gt; &amp;lt;f:ToolbarItem type=&amp;#34;next&amp;#34; category=&amp;#34;Shareholding&amp;#34; /&amp;gt; &amp;lt;/f:FactTable&amp;gt; &amp;lt;f:ToolbarItem type=&amp;#34;previous&amp;#34; category=&amp;#34;BS&amp;#34; /&amp;gt; &amp;lt;f:ToolbarItem type=&amp;#34;next&amp;#34; category=&amp;#34;BS&amp;#34; /&amp;gt; &amp;lt;/f:FactTable&amp;gt; &amp;lt;/g:customCell&amp;gt; This UI snippet adds ToolbarItem, forward and backward, to outer as well as to inner FactTables.</description>
     </item>

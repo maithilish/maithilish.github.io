@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Members - Scoopi Web Scraper - CodeTab</title></head>
 
@@ -421,19 +421,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="members">Members</h1>
-
+            <h1 id="members">Members</h1>
 <p>This chapter explores extracting multiple values with members, match
 property and dynamic query.</p>
-
 <p>The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-2/job.yml" target="_blank">Example 2</a>
 extracts ten data points shown below from
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/page/acme-quote.html" target="_blank">defs/examples/page/acme-quote.html</a>
 page.</p>
-
 <ul>
 <li>MARKET CAP</li>
 <li>EPS (TTM)</li>
@@ -446,7 +441,6 @@ page.</p>
 <li>FACE VALUE</li>
 <li>INDUSTRY P/E</li>
 </ul>
-
 <p>The snippet of HTML from the page is</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;snapshot&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -465,89 +459,83 @@ page.</p>
             <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>27.89<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   ....</code></pre></div>
-<p>The datadef used to extract data from this page is</p>
-
+   ....
+</code></pre></div><p>The datadef used to extract data from this page is</p>
 <p><code>defs/examples/jsoup/ex-2/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
 
   snapshot:
     axis:
       fact:
         query:
-          region: &#34;div#snapshot&#34;  
-          field: &#34;div:matchesOwn(^%{row.match}) + div&#34;
+          region: &quot;div#snapshot&quot;  
+          field: &quot;div:matchesOwn(^%{row.match}) + div&quot;
       col:
         query:
-          script: &#34;document.getFromDate()&#34;        
+          script: &quot;document.getFromDate()&quot;        
         members: [ 
           member: {name: date},
         ]  
       row:
         query:
-          region: &#34;div#snapshot&#34;
-          field: &#34;div:matchesOwn(^%{row.match})&#34;      
+          region: &quot;div#snapshot&quot;
+          field: &quot;div:matchesOwn(^%{row.match})&quot;      
         members: [ 
-          member: { name: &#34;MC&#34;, match: &#34;MARKET CAP&#34; },
-          member: { name: &#34;EPS&#34;, match: &#34;EPS \\(TTM\\)&#34; },
-          member: { name: &#34;PE&#34;, match: &#34;P/E&#34; },
-          member: { name: &#34;PC&#34;, match: &#34;P/C&#34; },
-          member: { name: &#34;BV&#34;, match: &#34;BOOK VALUE&#34; },
-          member: { name: &#34;PB&#34;, match: &#34;PRICE/BOOK&#34; },
-          member: { name: &#34;DIV&#34;, match: &#34;DIV \\(%\\)&#34; },
-          member: { name: &#34;DY&#34;, match: &#34;DIV YIELD&#34; },
-          member: { name: &#34;FV&#34;, match: &#34;FACE VALUE&#34; },
-          member: { name: &#34;IND PE&#34;, match: &#34;INDUSTRY P/E&#34; },
-        ]</code></pre></div>
-<p>Here, row axis defines multiple members elements with <em>name</em> and <em>match</em>
+          member: { name: &quot;MC&quot;, match: &quot;MARKET CAP&quot; },
+          member: { name: &quot;EPS&quot;, match: &quot;EPS \\(TTM\\)&quot; },
+          member: { name: &quot;PE&quot;, match: &quot;P/E&quot; },
+          member: { name: &quot;PC&quot;, match: &quot;P/C&quot; },
+          member: { name: &quot;BV&quot;, match: &quot;BOOK VALUE&quot; },
+          member: { name: &quot;PB&quot;, match: &quot;PRICE/BOOK&quot; },
+          member: { name: &quot;DIV&quot;, match: &quot;DIV \\(%\\)&quot; },
+          member: { name: &quot;DY&quot;, match: &quot;DIV YIELD&quot; },
+          member: { name: &quot;FV&quot;, match: &quot;FACE VALUE&quot; },
+          member: { name: &quot;IND PE&quot;, match: &quot;INDUSTRY P/E&quot; },
+        ]
+</code></pre><p>Here, row axis defines multiple members elements with <em>name</em> and <em>match</em>
 properties.</p>
-
 <p>The previous example defined price as <em>member: {name: &ldquo;Price&rdquo;, value:
 &ldquo;Price&rdquo;}</em> with value property. The <em>value</em> property assigns the value
 directly to the member without any query. But, the above dataDef uses
 match property</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">member: { name: &#34;FV&#34;, match: &#34;FACE VALUE&#34; }</code></pre></div>
-<p>When <em>match</em> property is defined it can be accessed through substitution
+<pre><code class="language-raw" data-lang="raw">member: { name: &quot;FV&quot;, match: &quot;FACE VALUE&quot; }
+</code></pre><p>When <em>match</em> property is defined it can be accessed through substitution
 variable <em>%{&lt;axisName&gt;.match}</em> and in the <em>row</em> query, we are using
 the match as substitution variable in the selector.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">row:
+<pre><code class="language-raw" data-lang="raw">row:
   query:
-    region: &#34;div#snapshot&#34;
-    field: &#34;div:matchesOwn(^%{row.match})&#34;</code></pre></div>
-<p>When Scoopi process row axis, for each member defined in the axis it
+    region: &quot;div#snapshot&quot;
+    field: &quot;div:matchesOwn(^%{row.match})&quot;
+</code></pre><p>When Scoopi process row axis, for each member defined in the axis it
 gets the raw query and replaces its %{row.match} with the value of
 member&rsquo;s match property and then dispatches the query to JSoup and once
 JSoup returns the content of selected item, it assigns the value to
 member&rsquo;s value field.</p>
-
-<p>Let&rsquo;s see how match=&ldquo;BOOK VALUE&rdquo; is handled by each axis. For, HTML
+<p>Let&rsquo;s see how match=&quot;BOOK VALUE&rdquo; is handled by each axis. For, HTML
 snippet</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>BOOK VALUE<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>27.89<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
-<p>when axis <em>row</em> axis is processed, selector selects the element
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>when axis <em>row</em> axis is processed, selector selects the element
 &lt;div&gt;BOOK VALUE&lt;/div&gt; as it contains matching text and returns its
 content which is nothing but &ldquo;BOOK VALUE&rdquo;</p>
-
 <p>The <em>fact</em> axis uses slightly modified selector which is as below</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">fact:
+<pre><code class="language-raw" data-lang="raw">fact:
   query:
-    region: &#34;div#snapshot&#34;  
-    field: &#34;div:matchesOwn(^%{row.match}) + div&#34;</code></pre></div>
-<p>The fact selector is same as row selector but with the trailing <em>+ div</em>.
+    region: &quot;div#snapshot&quot;  
+    field: &quot;div:matchesOwn(^%{row.match}) + div&quot;
+</code></pre><p>The fact selector is same as row selector but with the trailing <em>+ div</em>.
 This <em>+ div</em> selects next sibling of the matched element which is
 &lt;div&gt;27.89&lt;/div&gt; and returns its content i.e. 27.89. The match
 property comes handy when we need to pick fact and its attribute from
 different elements.</p>
-
 <p>When we scrape limited number of items as in this example then it is
 convenient to use members directly either with value or match property.
 But, when we scrape large number of items then dataDef definition
 becomes lengthy and to overcome that, Scoopi comes with two more
 features <strong>indexRange</strong> and <strong>breakAfter</strong>.</p>
-
 <p>The next chapter describe indexRange and how to define dataDef with it.</p>
 
           </main>

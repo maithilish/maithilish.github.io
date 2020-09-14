@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Settings - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,45 +561,34 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In the previous chapter, we completed the WordPress Installation. In
+            <p>In the previous chapter, we completed the WordPress Installation. In
 this chapter, we go through some of the important WordPress Settings
 that affect the site and some of them may become difficult to change in
 the future.</p>
-
 <h2 id="wordpress-settings">WordPress Settings</h2>
-
 <p>As objective of this tutorial is to guide beginners quickly to build a
 high performance WordPress site, we avoid discussion on each and every
 setting. WordPress Settings are well documented in WordPress official
 Codex - <a href="http://codex.wordpress.org/Administration_Screens" target="_blank">WordPress Administration
 Screen</a>.</p>
-
 <p>We leave majority of the WordPress Settings to their default value and
 change only a few. For the time being, it is enough if we go through the
 items discussed in this chapter, and when need arises, refer the
 settings document.</p>
-
 <p>General Settings</p>
-
 <p>Click on Settings to expand the menu and select General from the list.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-general.png" alt="WordPress Tutorial - WordPress Settings - General Settings" />
 </figure>
-
 
 <p>In General Settings, enter suitable <strong>Site Title</strong>, <strong>Tagline</strong>. These
 are displayed in the header of the site. Leave both <strong>URL</strong> and
 <strong>E-Mail</strong> fields to the default value populated by WordPress. If you
 wish to allow users to register, then check <strong>Membership</strong> field.</p>
-
 <p>General Settings screen is bit lengthy, so next four fields - <strong>Time
 Zone</strong>, <strong>Date Format</strong>, <strong>Time Format</strong>, <strong>Week starts on</strong> - are not
 shown in the screenshot. Select the time zone of your country and also,
 choose proper Date and Time formats and save the changes.</p>
-
 
 
 <div>&nbsp;</div>
@@ -617,72 +606,54 @@ choose proper Date and Time formats and save the changes.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Reading Settings</p>
-
 <p>We leave settings in Writing to defaults. In Reading, we are interested
 in one item.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-reading.png" alt="WordPress Tutorial - WordPress Settings - Reading Settings" />
 </figure>
 
-
 <p>When the site is ready to go live, and then we have to uncheck the
 <strong>Search Engine Visibility</strong> so that search engines can start indexing
 the site.</p>
-
 <p>Discussion Settings</p>
-
 <p>These settings are related to user comments.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-discussion.png" alt="WordPress Tutorial - WordPress Settings - Discussion Settings" />
 </figure>
 
-
 <p>To disable comments by the user, uncheck <strong>Allow people to post comments
 on new articles</strong>. To disable comments from anonymous users, check
 <strong>Users must be registered and logged in to comment</strong>.</p>
-
 <p>Media Settings</p>
-
 <p>WordPress stores media files like image files, video, audio and also
 other uploads in its Media Library. Media settings are settings related
 to Media Library.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-media1.png" alt="WordPress Tutorial - WordPress Settings - Media Settings" />
 </figure>
-
 
 <p>When we upload images to Media Library, WordPress saves the file in
 <code>wp-content/uploads</code> directory. It also generates three additional
 images - thumbnail, medium, large - from the uploaded one and saves them
 in uploads directory. <strong>Images Size</strong> defines the size of these images,
 and we leave them to their defaults.</p>
-
 <p>WordPress by default saves uploaded files in month and year based
 folders. For example, if we upload a media file on 10 June 2014, then it
 lands in a sub folder <code>2014/june/</code> within WordPress Media Library. For
 image or video oriented sites, this hierarchical scheme is useful.</p>
-
 <p>However, for Post oriented sites, media link management becomes
 cumbersome when they land into year-month based folders. If we uncheck
 <strong>Organize my uploads into month and year based folder</strong>, then uploads
 land in Media Library folder. This flat organization of media files is
 easy to manage, and for <strong>codetab.org</strong> we have unchecked this field.
 Choose between the two based on your requirements.</p>
-
 <p>Permalinks Settings</p>
-
 <p>Permalink structure of the site is one of the important aspects that
 should be set before we add contents to the site.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-permalink.png" alt="WordPress Tutorial - WordPress Settings - Permalinks Settings" />
 </figure>
-
 
 <p>By default, WordPress uses URL with page ID in them; something like
 <code>http://quickstart-wordpressguide.rhcloud.com/?p=123</code>. URL like these has
@@ -692,20 +663,18 @@ rather than numbers in the URL. WordPress allows us to create a custom
 URL structure for the permalinks and archives, which not only improves
 the aesthetics and usability, but also forward-compatibility of the
 links.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>In <strong>codetab.org</strong>, we use a Custom Structure <code>/%category%/%postname%/</code>
 which takes care of Page Ranking and other things. This permalink
 structure uses category name and post title to build links and some
 examples from codetab.org are:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">http://www.codetab.org/gwt-tutorial/gwt-create-project/
+<pre><code class="language-screen" data-lang="screen">http://www.codetab.org/gwt-tutorial/gwt-create-project/
 http://www.codetab.org/gwt-tutorial/google-app-engine/
 http://www.codetab.org/apache-ivy-tutorial/
-http://www.codetab.org/apache-ivy-tutorial/apache-ivy-shared-repository/</code></pre></div>
-<p>With these changes, we have completed the essential settings, and ready
+http://www.codetab.org/apache-ivy-tutorial/apache-ivy-shared-repository/
+</code></pre><p>With these changes, we have completed the essential settings, and ready
 to add contents to the site. In the next chapter, we cover WordPress
 contents - Posts, Pages and Media Library.</p>
 

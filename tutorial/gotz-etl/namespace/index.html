@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Namespace - Gotz ETL - CodeTab</title></head>
 
@@ -400,31 +400,25 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Gotz defines two XML Namespaces.</p>
-
+            <p>Gotz defines two XML Namespaces.</p>
 <ul>
 <li><a href="http://codetab.org/gotz">http://codetab.org/gotz</a></li>
 <li><a href="http://codetab.org/xfields">http://codetab.org/xfields</a></li>
 </ul>
-
 <p>They are required in root element &lt;gotz&gt; in the definition files
 bean.xml and job.xml files</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz</span> <span class="na">xmlns=</span><span class="s">&#34;http://codetab.org/gotz&#34;</span>
       <span class="na">xmlns:xf=</span><span class="s">&#34;http://codetab.org/xfields&#34;</span><span class="nt">&gt;</span>
 
       ....
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p>The namespace <a href="http://codetab.org/gotz">http://codetab.org/gotz</a> is default namespace and it is set
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p>The namespace <a href="http://codetab.org/gotz">http://codetab.org/gotz</a> is default namespace and it is set
 with xmlns attribute.</p>
-
 <p>Gotz uses extensible fields (xfields) to pass user defined values to the
 classes and these fields uses namespace <a href="http://codetab.org/xfields">http://codetab.org/xfields</a> and
 it is set in root element using xml:xf attribute with <strong>xf</strong> prefix. The
 root element of xfields is <strong>&lt;fields&gt;</strong> and now onward, we refer
 xfields as fields.</p>
-
 
 
 <div>&nbsp;</div>
@@ -442,9 +436,7 @@ xfields as fields.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="embedded-fields">Embedded Fields</h2>
-
 <p>The <strong>&lt;fields&gt;</strong> defined within dataDef should always prefixed with
 xf:</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dateDef&gt;</span>
@@ -453,9 +445,8 @@ xf:</p>
       <span class="nt">&lt;xf:fields&gt;</span>
          <span class="nt">&lt;xf:indexRange</span> <span class="na">value=</span><span class="s">&#34;2-6&#34;</span> <span class="nt">/&gt;</span>
       <span class="nt">&lt;/xf:fields&gt;</span>
-  <span class="nt">&lt;/member&gt;</span></code></pre></div>
-<h2 id="standalone-fields">Standalone Fields</h2>
-
+  <span class="nt">&lt;/member&gt;</span>
+</code></pre></div><h2 id="standalone-fields">Standalone Fields</h2>
 <p>The job.xml defines <strong>tasks</strong> using fields element and when tasks
 definition is lengthy it may be cumbersome to prefix, each and every
 fields, with xf: and to make it easy, for standalone fields such as
@@ -484,8 +475,8 @@ below</p>
           <span class="nt">&lt;/xf:fields&gt;</span>
     <span class="nt">&lt;/dataDef&gt;</span>
 
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<ul>
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><ul>
 <li>It starts with standard &lt;gotz&gt; with default NS (gotz) and xf: NS
 (xfields)</li>
 <li>The first child, locators, belongs to default NS (gotz) and any
@@ -498,7 +489,6 @@ after that, original NS become effective So, &lt;dataDef belongs
 default NS (gotz) and any fields embedded in it should be prefixed
 with xf:</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -514,7 +504,6 @@ with xf:</li>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

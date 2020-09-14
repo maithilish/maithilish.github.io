@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T10:32:00+0530",
         "dateModified" : "2019-01-11T10:32:00+0530",
-        "wordCount" : "517",
+        "wordCount" : "518",
         "keywords" : [ "Wordpress debug info","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Debug Info - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,14 +625,10 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="8-3-wordpress-debug-info">8.3. WordPress Debug Info</h2>
-
+            <h2 id="83wordpress-debug-info">8.3. WordPress Debug Info</h2>
 <p>To support Share on Social Plugin developed in the tutorial, plugin need
 to collect debug info. In this tutorial, we describe the steps to dump
 debug info.</p>
-
 <p>After the release, sooner or later, plugin developer has to face bug
 reports and support requests. To troubleshoot, developer requires inputs
 from the user as well as debug info to understand the plugin usage by
@@ -641,20 +637,15 @@ Settings page, plugin collects info about Share Lockers used in a page
 and dump the debug info as comments at the end of the pages. To assist
 plugin developer to resolve the issue, user may be asked to e-mail the
 debug info along with the support request or bug report.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-debuginfo.png" alt="WordPress Debug Info - collect and add debug info as comments" />
 </figure>
 
-
 <h3 id="collect-debug-info">Collect Debug Info</h3>
-
-<p>For each Share Locker shortcode, WordPress calls <code>
-Sos_Frontend::enable_sos_shortcode()</code> method where, as soon as share
+<p>For each Share Locker shortcode, WordPress calls <code>Sos_Frontend::enable_sos_shortcode()</code> method where, as soon as share
 locker details are fetched, we call <code>Sos_Frontend::collect_debug_data()</code>
 method. This method adds input details into an array and in turn, calls
 <code>Sos_Helper::collect_debug_data()</code>.</p>
-
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    
     function enable_sos_shortcode ( $atts, $content ) {
@@ -672,11 +663,10 @@ method. This method adds input details into an array and in turn, calls
         ....
 
         Sos_Helper::collect_debug_data( $debug_data );
-    }</code></pre></div>
-<p>The static method Sos_Helper::collect_debug_data() is called whenever
+    }
+</code></pre></div><p>The static method Sos_Helper::collect_debug_data() is called whenever
 WordPress processes <strong>share-on-social</strong> shortcode and it merges the
 debug data array with a global array $sos_debug_data.</p>
-
 <p><code>share-on-social/include/class-helper.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    static function collect_debug_data ( $debug_data ) {
         global $sos_debug_data;
@@ -685,8 +675,8 @@ debug data array with a global array $sos_debug_data.</p>
         }
         $sos_debug_data = array_merge( $sos_debug_data, 
                 array($debug_data ) );
-    }</code></pre></div>
-
+    }
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -704,13 +694,11 @@ debug data array with a global array $sos_debug_data.</p>
 
 
 
-
 <p>Once page is fully generated, WordPress has to dump the debug info
 collected in global $sos_debug_data. To do that, at the start in the
-plugin main file, we hook <code>Sos_Helper::output_debug_data()</code>method to
+plugin main file, we hook <code>Sos_Helper::output_debug_data() </code>method to
 <strong>shutdown</strong> action hook. WordPress executes shutdown hook when it
 finishes or shuts down the page generation.</p>
-
 <p><code>share-on-social/share-on-social.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function setup_sos_plugin () {
 
@@ -718,10 +706,9 @@ finishes or shuts down the page generation.</p>
     
     add_action( &#39;shutdown&#39;, &#39;Sos_Helper::output_debug_data&#39; 
     ....
-);</code></pre></div>
-<p>In <code>Sos_Helper::output_debug_data()</code> method, we echo the debug info
+);
+</code></pre></div><p>In <code>Sos_Helper::output_debug_data()</code> method, we echo the debug info
 collected during the page generation.</p>
-
 <p><code>share-on-social/include/class-helper.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    static function output_debug_data () {
         global $sos_debug_data;
@@ -743,21 +730,17 @@ collected during the page generation.</p>
 </span><span class="c">        echo PHP_EOL;
 </span><span class="c">        echo &#39;]]&gt;&#39; . PHP_EOL;
 </span><span class="c">        echo &#39; --&gt;</span>&#39; . PHP_EOL;
-    }</code></pre></div>
-<script>
+    }
+</code></pre></div><script>
     console.log("slot C"); 
 </script>
-
 <p>We use <code>Sos_Helper::is_debug_enabled()</code> method to check whether debug is
 enabled in Share on Social - Settings.</p>
-
 <p><strong>CDATA Comments</strong></p>
-
 <p>If site uses HTML minify, it removes line breaks and white spaces from
 the page as well as the debug info. To bypass this, it is recommended to
 enclose debug info as CDATA as HTML minify doesn&rsquo;t affect the text
 inside the CDATA block.</p>
-
 <p>In the next chapter, we explain WordPress Ajax and use it to send and
 receive share statistics with the server.</p>
 

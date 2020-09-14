@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>CellTable - GWT Tutorial - CodeTab</title></head>
 
@@ -711,10 +711,7 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-7-facttable">6.7. FactTable</h2>
-
+            <h2 id="67facttable">6.7. FactTable</h2>
 <p>This section uses GWT CellTable to display the data in a table.
 FactTable displays facts of a category for a specific date. FactTable
 may be nested within another FactTable, and inner FactTable can display
@@ -722,16 +719,12 @@ facts of another category. Figure shows a nested FactTable where outer
 FactTable shows Facts as on Mar 2012 for category PL and inner FactTable
 displays Facts for category Cash Flow. On load, Snapshot displays Facts
 for the latest available date for each category.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/facttable.png" alt="FactTable" />
 </figure>
 
-
-<h6 id="figure-6-9-facttable">Figure 6.9. FactTable</h6>
-
+<h6 id="figure69facttable">Figure 6.9. FactTable</h6>
 <p>Following UI declaration adds <code>FactTable</code> to Snapshot.</p>
-
 <p><code>in.fins.client.content/Snapshot.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;g:customCell&gt;</span>
                 <span class="nt">&lt;f:FactTable</span> <span class="na">captionText=</span><span class="s">&#34;BS&#34;</span> <span class="na">category=</span><span class="s">&#34;BS&#34;</span><span class="nt">&gt;</span>
@@ -746,17 +739,15 @@ for the latest available date for each category.</p>
         <span class="nt">&lt;g:customCell&gt;</span>
                 <span class="nt">&lt;f:FactTable</span> <span class="na">captionText=</span><span class="s">&#34;Q&#34;</span> <span class="na">category=</span><span class="s">&#34;Quarterly&#34;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;/f:FactTable&gt;</span>
-        <span class="nt">&lt;/g:customCell&gt;</span></code></pre></div>
-<p>So far, we were adding GWT widgets to custom widgets, but here we are
-adding a <code>FactTable</code> to another FactTable.</p>
-
+        <span class="nt">&lt;/g:customCell&gt;</span>
+</code></pre></div><p>So far, we were adding GWT widgets to custom widgets, but here we are
+adding a <code> FactTable</code> to another FactTable.</p>
 <p><code>FactTable</code> uses <code>CaptionPanel</code>, to displays category name with a
 stylish border, and a <code>VerticalPanel</code> to hold other widgets.
 <code>VerticalPanel</code> has a <code>HorizontalPanel</code> for header <code>Label</code> and a tool
 bar, a <code>CellTable</code> to display Facts in two column rows and a blank label
 at the bottom to have some gap to separate the child FactTable if there
 is one. FactTable dimensions are dynamic as all size are in PCT.</p>
-
 <p><code>in.fins.client.widget/FactTable.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;g:CaptionPanel</span> <span class="na">ui:field=</span><span class="s">&#34;captionPanel&#34;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;g:VerticalPanel</span> <span class="na">ui:field=</span><span class="s">&#34;vPanel&#34;</span> <span class="na">width=</span><span class="s">&#34;100%&#34;</span><span class="nt">&gt;</span>
@@ -771,12 +762,11 @@ is one. FactTable dimensions are dynamic as all size are in PCT.</p>
                         <span class="nt">&lt;/g:cell&gt;</span>
                         <span class="nt">&lt;g:Label</span> <span class="na">height=</span><span class="s">&#34;4px&#34;</span> <span class="na">styleName=</span><span class="s">&#34;fins-Spacer-Label&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;/g:VerticalPanel&gt;</span>
-        <span class="nt">&lt;/g:CaptionPanel&gt;</span></code></pre></div>
-<p>Next section adds a <code>Toolbar</code> to <code>HorizontalPanel</code>, and at present it
+        <span class="nt">&lt;/g:CaptionPanel&gt;</span>
+</code></pre></div><p>Next section adds a <code>Toolbar</code> to <code>HorizontalPanel</code>, and at present it
 contains just a <code>Label</code> to display the date. Cell attribute,
 <code>horizontalAlignment</code> aligns <code>HorizontalPanel</code> to right and <code>CellTable</code>
 to left.</p>
-
 
 
 <div>&nbsp;</div>
@@ -792,95 +782,90 @@ to left.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 <p><code>CellTable</code> displays the facts through a couple of <code>TextColumn&lt;Fact&gt;</code>,
 first one shows <code>Fact.key</code> and the second one, <code>Fact.value</code>. GWT
 <code>TextColumn</code> displays its contents in a <code>TextCell</code>, and all we have to
 do is to override its abstract <code>getValue()</code> method to display the Fact.</p>
-
 <p><code>in.fins.client.widget/FactTable.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">void</span> <span class="n">addColumns</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">labelColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addColumns</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">labelColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;()</span> <span class="o">{</span>
                         <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="nf">String</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Fact</span> <span class="nf">fact</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="k">return</span> <span class="n">fact</span><span class="p">.</span><span class="na">getKey</span><span class="p">();</span>
-                        <span class="p">}</span>
-                <span class="p">};</span>
-                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">valueColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getValue</span><span class="o">(</span><span class="n">Fact</span> <span class="n">fact</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="n">fact</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
+                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">valueColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;()</span> <span class="o">{</span>
                         <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="nf">String</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Fact</span> <span class="nf">fact</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="k">return</span> <span class="n">fact</span><span class="p">.</span><span class="na">getRoundoff</span><span class="p">();</span>
-                        <span class="p">}</span>
-                <span class="p">};</span>
-                <span class="n">cellTable</span><span class="p">.</span><span class="na">addColumn</span><span class="p">(</span><span class="n">labelColumn</span><span class="p">);</span>
-                <span class="n">cellTable</span><span class="p">.</span><span class="na">addColumn</span><span class="p">(</span><span class="n">valueColumn</span><span class="p">);</span>
+                        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getValue</span><span class="o">(</span><span class="n">Fact</span> <span class="n">fact</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="n">fact</span><span class="o">.</span><span class="na">getRoundoff</span><span class="o">();</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
+                <span class="n">cellTable</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="n">labelColumn</span><span class="o">);</span>
+                <span class="n">cellTable</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="n">valueColumn</span><span class="o">);</span>
 
-                <span class="n">valueColumn</span><span class="p">.</span><span class="na">setHorizontalAlignment</span><span class="p">(</span><span class="n">HasHorizontalAlignment</span><span class="p">.</span><span class="na">ALIGN_RIGHT</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>FactTable implements <code>HasWidgets</code> interface to manage the inner
+                <span class="n">valueColumn</span><span class="o">.</span><span class="na">setHorizontalAlignment</span><span class="o">(</span><span class="n">HasHorizontalAlignment</span><span class="o">.</span><span class="na">ALIGN_RIGHT</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>FactTable implements <code>HasWidgets</code> interface to manage the inner
 FactTable. Overridden <code>add()</code> method adds the inner FactTable if it is
 an instance of FactTable.</p>
-
 <p><code>in.fins.client.widget/FactTable.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">add</span><span class="p">(</span><span class="n">Widget</span> <span class="nf">w</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">w</span> <span class="nf">instanceof</span> <span class="n">FactTable</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">vPanel</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
-                <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">Widget</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">w</span> <span class="k">instanceof</span> <span class="n">FactTable</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">vPanel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">w</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">clear</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">vPanel</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clear</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">vPanel</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">Iterator</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">vPanel</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">vPanel</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">boolean</span> <span class="n">remove</span><span class="p">(</span><span class="n">Widget</span> <span class="nf">w</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">vPanel</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>FactTable displays facts of a category and hence we can reuse the
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">remove</span><span class="o">(</span><span class="n">Widget</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">vPanel</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">w</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>FactTable displays facts of a category and hence we can reuse the
 <code>SymbolEvent</code> fired by <code>SymbolAction</code> by implementing <code>SymbolHandler</code>.</p>
-
 <p><code>in.fins.client.widget/FactTable.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onSymbolChange</span><span class="p">(</span><span class="n">SymbolEvent</span> <span class="nf">symbolEvent</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;SymbolEvent received. &#34;</span> <span class="o">+</span> <span class="n">symbolEvent</span><span class="p">.</span><span class="na">getSymbol</span><span class="p">());</span>
-                <span class="n">Symbol</span> <span class="nf">symbol</span> <span class="o">=</span> <span class="n">symbolEvent</span><span class="p">.</span><span class="na">getSymbol</span><span class="p">();</span>
-                <span class="n">Date</span> <span class="nf">date</span> <span class="o">=</span> <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">getPositionDate</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">category</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">date</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">DateTimeFormat</span> <span class="nf">fmt</span> <span class="o">=</span> <span class="n">DateTimeFormat</span><span class="p">.</span><span class="na">getFormat</span><span class="p">(</span><span class="s">&#34;MMM yy&#34;</span><span class="p">);</span>
-                        <span class="n">setHeaderText</span><span class="p">(</span><span class="n">fmt</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">date</span><span class="p">));</span>
-                        <span class="n">dataProvider</span><span class="p">.</span><span class="na">setList</span><span class="p">(</span><span class="n">SymbolHelper</span><span class="p">.</span><span class="na">getFacts</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> 
-                                              <span class="n">category</span><span class="p">,</span><span class="n">date</span><span class="p">));</span>
-                <span class="p">}</span>
-                <span class="n">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>Instead of changing the data in <code>CellTable</code> directly, we are adding
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSymbolChange</span><span class="o">(</span><span class="n">SymbolEvent</span> <span class="n">symbolEvent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;SymbolEvent received. &#34;</span> <span class="o">+</span> <span class="n">symbolEvent</span><span class="o">.</span><span class="na">getSymbol</span><span class="o">());</span>
+                <span class="n">Symbol</span> <span class="n">symbol</span> <span class="o">=</span> <span class="n">symbolEvent</span><span class="o">.</span><span class="na">getSymbol</span><span class="o">();</span>
+                <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">getPositionDate</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span> <span class="n">category</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">date</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">DateTimeFormat</span> <span class="n">fmt</span> <span class="o">=</span> <span class="n">DateTimeFormat</span><span class="o">.</span><span class="na">getFormat</span><span class="o">(</span><span class="s">&#34;MMM yy&#34;</span><span class="o">);</span>
+                        <span class="n">setHeaderText</span><span class="o">(</span><span class="n">fmt</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">));</span>
+                        <span class="n">dataProvider</span><span class="o">.</span><span class="na">setList</span><span class="o">(</span><span class="n">SymbolHelper</span><span class="o">.</span><span class="na">getFacts</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span> 
+                                              <span class="n">category</span><span class="o">,</span><span class="n">date</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">setVisible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>Instead of changing the data in <code>CellTable</code> directly, we are adding
 <code>CellTable</code> as data display to a <code>ListDataProvider</code> which is an adapter.
 In <code>onSymbolChange()</code> method, we call <code>ListDataProvider.setList()</code> to
 add list of required facts.</p>
-
 <p><code>in.fins.client.widget/FactTable.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="nf">ListDataProvider</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">dataProvider</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="n">ListDataProvider</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">dataProvider</span><span class="o">;</span>
 
         <span class="nd">@UiConstructor</span>
-        <span class="kd">public</span> <span class="nf">FactTable</span><span class="p">(</span><span class="n">String</span> <span class="nf">captionText</span><span class="p">,</span> <span class="n">String</span> <span class="nf">category</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+        <span class="kd">public</span> <span class="nf">FactTable</span><span class="o">(</span><span class="n">String</span> <span class="n">captionText</span><span class="o">,</span> <span class="n">String</span> <span class="n">category</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
 
-               <span class="p">....</span>
+               <span class="o">....</span>
 
-                <span class="n">dataProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListDataProvider</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span><span class="p">();</span>
-                <span class="n">dataProvider</span><span class="p">.</span><span class="na">addDataDisplay</span><span class="p">(</span><span class="n">cellTable</span><span class="p">);</span>
-                <span class="n">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-
+                <span class="n">dataProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListDataProvider</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;();</span>
+                <span class="n">dataProvider</span><span class="o">.</span><span class="na">addDataDisplay</span><span class="o">(</span><span class="n">cellTable</span><span class="o">);</span>
+                <span class="n">setVisible</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -895,7 +880,6 @@ add list of required facts.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
@@ -904,42 +888,39 @@ add list of required facts.</p>
 <code>SymbolAction</code>. Methods <code>getFilterMap()</code> and <code>getFilter()</code> are modified
 to add other categories like BS, PL,Shareholding, Cash Flow and
 Quarterly.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">FactTable</span> <span class="n">factTableFactory</span><span class="p">(</span><span class="n">String</span> <span class="nf">captionText</span><span class="p">,</span> <span class="n">String</span> <span class="nf">category</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">FactTable</span> <span class="nf">ft</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactTable</span><span class="p">(</span><span class="n">captionText</span><span class="p">,</span> <span class="n">category</span><span class="p">);</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">SymbolEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">ft</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">ft</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="n">FactTable</span> <span class="nf">factTableFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">captionText</span><span class="o">,</span> <span class="n">String</span> <span class="n">category</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">FactTable</span> <span class="n">ft</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactTable</span><span class="o">(</span><span class="n">captionText</span><span class="o">,</span> <span class="n">category</span><span class="o">);</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">SymbolEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">ft</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">ft</span><span class="o">;</span>
+        <span class="o">}</span>
 
-       <span class="kd">private</span> <span class="nf">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span> <span class="nf">getFilterMap</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span> <span class="nf">filterMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">();</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;Quote&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;Quote&#34;</span><span class="p">));</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;BS&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;BS&#34;</span><span class="p">));</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;PL&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;PL&#34;</span><span class="p">));</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;Shareholding&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;Shareholding&#34;</span><span class="p">));</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;Cash Flow&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;Cash Flow&#34;</span><span class="p">));</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;Quarterly&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;Quarterly&#34;</span><span class="p">));</span>
-                <span class="k">return</span> <span class="n">filterMap</span><span class="p">;</span>
-        <span class="p">}</span>
+       <span class="kd">private</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;</span> <span class="nf">getFilterMap</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;</span> <span class="n">filterMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;();</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Quote&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;Quote&#34;</span><span class="o">));</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;BS&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;BS&#34;</span><span class="o">));</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;PL&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;PL&#34;</span><span class="o">));</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Shareholding&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;Shareholding&#34;</span><span class="o">));</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Cash Flow&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;Cash Flow&#34;</span><span class="o">));</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Quarterly&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;Quarterly&#34;</span><span class="o">));</span>
+                <span class="k">return</span> <span class="n">filterMap</span><span class="o">;</span>
+        <span class="o">}</span>
 
-        <span class="kd">private</span> <span class="nf">static</span> <span class="n">String</span><span class="p">[]</span> <span class="nf">getFilter</span><span class="p">(</span><span class="n">String</span> <span class="nf">cat</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">....</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">cat</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&#34;BS&#34;</span><span class="p">))</span> <span class="p">{</span>
-                        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="p">[]</span> <span class="p">{</span> <span class="s">&#34;Capital&#34;</span><span class="p">,</span> <span class="s">&#34;Reserves&#34;</span><span class="p">,</span> <span class="s">&#34;Debt&#34;</span><span class="p">,</span> <span class="s">&#34;Cash&#34;</span><span class="p">,</span> <span class="s">&#34;FD&#34;</span><span class="p">,</span>
-                                        <span class="s">&#34;Investment&#34;</span><span class="p">,</span> <span class="s">&#34;Gross Block&#34;</span><span class="p">,</span> <span class="s">&#34;Net Block&#34;</span><span class="p">,</span> 
-                                        <span class="s">&#34;Cap. WIP&#34;</span> <span class="p">};</span>
-                <span class="p">}</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getFilter</span><span class="o">(</span><span class="n">String</span> <span class="n">cat</span><span class="o">)</span> <span class="o">{</span>
+<span class="o">....</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">cat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;BS&#34;</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span> <span class="s">&#34;Capital&#34;</span><span class="o">,</span> <span class="s">&#34;Reserves&#34;</span><span class="o">,</span> <span class="s">&#34;Debt&#34;</span><span class="o">,</span> <span class="s">&#34;Cash&#34;</span><span class="o">,</span> <span class="s">&#34;FD&#34;</span><span class="o">,</span>
+                                        <span class="s">&#34;Investment&#34;</span><span class="o">,</span> <span class="s">&#34;Gross Block&#34;</span><span class="o">,</span> <span class="s">&#34;Net Block&#34;</span><span class="o">,</span> 
+                                        <span class="s">&#34;Cap. WIP&#34;</span> <span class="o">};</span>
+                <span class="o">}</span>
 
-                <span class="o">//</span> <span class="n">other</span> <span class="nf">cats</span> <span class="n">like</span> <span class="nf">PL</span><span class="p">,</span> <span class="n">Shareholding</span> <span class="nf">etc</span></code></pre></div>
-<figure class="text-center" >
+                <span class="c1">// other cats like PL, Shareholding etc
+</span></code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/ft-events.png" alt="Events" />
 </figure>
 
-
-<h6 id="figure-6-10-events">Figure 6.10. Events</h6>
-
+<h6 id="figure610events">Figure 6.10. Events</h6>
 <p>FactTable is bit simple when compared to the previous widget
 FactDisclosePanel, but things are going to get complicated when we add a
 Toolbar with click-able icons to navigate the Data in the next section.</p>

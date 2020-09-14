@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Google Webmaster Tools - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,82 +561,75 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="9-2-google-webmaster-tools">9.2. Google Webmaster Tools</h2>
-
+            <h2 id="92google-webmaster-tools">9.2. Google Webmaster Tools</h2>
 <p>In the previous section, we linked WordPress to Google Analytics to
 analyze the traffic. Earlier we also configured WordPress SEO for search
 engine optimization. While, these two tools greatly help us to optimize
 and analyze the site performance still there are many areas that are not
 covered by them. In this section, we use Google Webmaster Tools to
 analyze the site further.</p>
-
 <p>Google Webmaster Tools cover following aspects:</p>
-
 <ul>
-<li><p>Submit Sitemap to Google.</p></li>
-
-<li><p>Know the indexing status and stats.</p></li>
-
-<li><p>Analyze search traffic - queries and top pages.</p></li>
-
-<li><p>Keywords indexed by Google.</p></li>
-
-<li><p>External links and internal links of the site.</p></li>
-
-<li><p>Issues with Structured Data.</p></li>
-
-<li><p>Author stats.</p></li>
-
-<li><p>Crawl errors and Crawl stats.</p></li>
-
-<li><p>Security issues.</p></li>
+<li>
+<p>Submit Sitemap to Google.</p>
+</li>
+<li>
+<p>Know the indexing status and stats.</p>
+</li>
+<li>
+<p>Analyze search traffic - queries and top pages.</p>
+</li>
+<li>
+<p>Keywords indexed by Google.</p>
+</li>
+<li>
+<p>External links and internal links of the site.</p>
+</li>
+<li>
+<p>Issues with Structured Data.</p>
+</li>
+<li>
+<p>Author stats.</p>
+</li>
+<li>
+<p>Crawl errors and Crawl stats.</p>
+</li>
+<li>
+<p>Security issues.</p>
+</li>
 </ul>
-
 <p>Login to <a href="https://www.google.com/webmasters/tools/" target="_blank">Google Webmaster Tools</a>, using a Google account and then to get started, enter the site URL and click Add Site.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-gwmt-verifysite.png" alt="Google Webmaster Tools WordPress - Verify Site Ownership" />
 </figure>
 
-
 <p>It takes us to <strong>Verify</strong> screen where we need to choose <strong>Alternate
 Method</strong> tab. Out of the four choices, select HTML tag method. Copy the
 displayed meta tag to the clipboard.</p>
-
 <p>In a new browser tab, open WordPress Admin Dashboard and go to WordPress
 SEO Dashboard. Scroll down to Webmaster Tools and paste the meta tag
 into Google Webmaster Tools field and save the changes.</p>
-
 <p>After that, switchback to Google Webmaster Tools tab and click Verify.
 Webmaster Tools verifies the site and outputs a success message. After
 verification, when we open Webmaster Tools, it lists the added sites.
 Select a site to open the dashboard.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-gwmt-dashboard.png" alt="Google Webmaster Tools WordPress - Site Dashboard" />
 </figure>
 
-
 <p><strong>Time Lag</strong></p>
-
 <p>In Google Analytics, we are able to view real-time data immediately and
 historical data after a few hours. It is a different matter when it
 comes Webmaster Tools; update may take days, weeks, or even months for
 certain items as Google goes through billion of web pages on a daily
 basis, collate data and then publish the data to Webmaster Tools.</p>
-
 <p>As usual, we do not get into a detailed discussion on each and every
 feature offered by Google Webmaster Tools. Refer <a href="https://support.google.com/webmasters/?hl=en#topic=3309469" target="_blank">Webmaster Tools Help Center</a> to
 learn more about it. However, we cover a couple of important feature to
 get started.</p>
-
 <p>Sitemap</p>
-
 <p>When the site is production ready or it is live, then the first task is
 to submit Sitemap to the Google so that it can start indexing the site.</p>
-
 
 
 <div>&nbsp;</div>
@@ -654,64 +647,48 @@ to submit Sitemap to the Google so that it can start indexing the site.</p>
 <div>&nbsp;</div>
 
 
-
 <p>When activated, WordPress SEO Plugin generates the sitemap, and it also
 updates the sitemap whenever we publish a new post or page. To submit
 the Sitemap, we require its filename and for that, go to <strong>Dashboard</strong> →
 <strong>SEO</strong> → <strong>XML Sitemaps</strong> and click on <strong>XML Sitemap</strong> button to open
 the sitemap and note down the Sitemap filename.</p>
-
 <p>After that, go to Google Webmaster Tools and expand <strong>Crawl</strong> in the
 left menu bar and select Sitemaps. Click <strong>Add/Test Sitemap</strong> and enter
 sitemap filename and click <strong>Submit Sitemap</strong>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-gwmt-sitemap.png" alt="Google Webmaster Tools WordPress - Sitemaps" />
 </figure>
 
-
 <p>To get indexed, for new sites it may take up to a week. Sitemap page and
 Index Status page shows the number of pages and images indexed by
 Google.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Structured Data</p>
-
 <p>Another item to check is whether there are any errors in Structured Data
 of pages. Go to <strong>Search Appearance</strong> → <strong>Structure Data</strong> to view stats
 about pages with structured data and errors.</p>
-
 <p>If there are errors, use <a href="http://www.google.com/webmasters/tools/richsnippets" target="_blank">Structured Data Testing Tool</a> to understand the problem and rectify.</p>
-
 <p>Crawl Stats and Errors</p>
-
 <p>Search engine bots frequently crawl the site. Crawl Stats shows stats
 about the bot&rsquo;s activity - No. of Pages crawled, Kilobyte downloaded,
 and Time taken to download a page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-gwmt-crawlstats.png" alt="Google Webmaster Tools WordPress - Crawl stats." />
 </figure>
-
 
 <p>We need to go through these stats regularly and take appropriate
 corrective measure when Time taken to download a page shoots up beyond a
 level. Due to issues either with the server or W3 cache setup, response
 time may increase. When unresolved for a long time then it may impact
 the search ranking.</p>
-
 <p>Crawl Errors displays DNS errors and missing pages. Drill down through
 the missing page to understand the core issue. After resolving the
 problem, mark it as fixed in Google Webmaster Tools.</p>
-
 <p><strong>Important</strong></p>
-
 <p>Go through Google Webmaster Tools regularly and in case of errors, take
 corrective action as soon as possible to avoid ranking downgrade.</p>
-
 <p>All the improvements suggested in last few chapters should help us to
 get more traffic. In the next chapter, we describe the procedure to
 import static pages to the WordPress.</p>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Plugin Goals - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,27 +535,20 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-plugin-goals">Maven Plugin Goals</h1>
-
+            <h1 id="maven-plugin-goals">Maven Plugin Goals</h1>
 <p>Maven plugin is a collection of one or more goals which do some task or
 job. It is also known as Mojo - Maven Plain Old Java Object.</p>
-
 <p>For example, Maven uses  <strong>maven-surefire-plugin</strong> to run tests and it
 comes with two goals.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-surefire-goals.png" alt="Maven Plugin Goals - maven-surefire-plugin goals" />
 </figure>
-
 
 <p>Similarly, Maven uses <strong>maven-compiler-plugin</strong> to compile the source
 and test files and it provides three goals - compiler:compile,
 compiler:testCompile and compiler:help.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -569,49 +562,43 @@ compiler:testCompile and compiler:help.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
 <h2 id="list-plugin-goals">List Plugin Goals</h2>
-
 <p>We can use help goal to list the plugin goals. To list goals of
 maven-compiler-plugin use following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn compiler:help</code></pre></div>
-<p>We can also refer Plugin Reference documentation to know more about
+<pre><code class="language-screen" data-lang="screen">$ mvn compiler:help
+</code></pre><p>We can also refer Plugin Reference documentation to know more about
 plugin goals and usage. Go to <a href="http://maven.apache.org/plugins/index.html" target="_blank">Maven Plugin Directory</a> and select the plugin to visit its documentation page.</p>
-
 <h2 id="run-plugin-goal">Run Plugin Goal</h2>
-
 <p>Normally, we use lifecycle phase with <code>mvn</code> command, but it can also
 execute plugin goals. The usage description of <code>mvn</code> is</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">mvn [options] [&lt;goal(s)&gt;] [&lt;phase(s)&gt;]</code></pre></div>
-<p>For example, we can directly compile the source with the following
+<pre><code class="language-screen" data-lang="screen">mvn [options] [&lt;goal(s)&gt;] [&lt;phase(s)&gt;]
+</code></pre><p>For example, we can directly compile the source with the following
 command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
-$ mvn compiler:compile</code></pre></div>
-<p>To run a goal with mvn, use the format &lt;plugin prefix&gt;:&lt;goal&gt;. In
+<pre><code class="language-screen" data-lang="screen">$ cd simple-app
+$ mvn compiler:compile
+</code></pre><p>To run a goal with mvn, use the format &lt;plugin prefix&gt;:&lt;goal&gt;. In
 the above example, compiler:compile, the compiler is plugin prefix of
 maven-compiler-plugin and compile is the goal name. We can get the
 prefix of all plugins from <a href="http://maven.apache.org/plugins/index.html" target="_blank">Maven Plugin Directory</a>.</p>
-
 <p>When we invoke a goal directly, Maven executes just that goal, whereas
 when we invoke a lifecycle phase all the phases up to that phase are
 executed. We can see this in action with following example.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
+<pre><code class="language-screen" data-lang="screen">$ cd simple-app
 $ mvn clean
-$ mvn surefire:test</code></pre></div>
-<p>Here, after cleaning the project, we try to run tests with
+$ mvn surefire:test
+</code></pre><p>Here, after cleaning the project, we try to run tests with
 maven-surefire-plugin test goal. It reports that there are no tests to
 run as Surefire plugin is unable to find any compiled test cases. So, we
 have to compile source files and test cases before hand.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn compiler:compile
+<pre><code class="language-screen" data-lang="screen">$ mvn compiler:compile
 $ mvn compiler:testCompile
-$ mvn surefire:test</code></pre></div>
-<p>Here we execute goals - compiler:compile and  compiler:testCompile to
+$ mvn surefire:test
+</code></pre><p>Here we execute goals - compiler:compile and  compiler:testCompile to
 compile source files and test cases and once class files are in place we
 can run surefire:test and tests goes through successfully.</p>
-
 
 
 <div>&nbsp;</div>
@@ -627,7 +614,6 @@ can run surefire:test and tests goes through successfully.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 <p>We showed the above example just to demonstrate the difference between
@@ -635,13 +621,11 @@ running lifecycle phase and plugins goal. But, in real-life we never do
 that, instead we invoke lifecycle phase test as <code>mvn test</code>, which
 executes all the dependent goals for us as explained in <a href="/tutorial/apache-maven/lifecycle-phases/">Maven Lifecycle
 Phases</a></p>
-
 <p>Only in some specific cases, it make sense to invoke plugin goal
 directly. For example, help goal of plugin is always invoked directly.
 Apart from help goal, there are some specific plugins whose goals are
 invoked directly and two such examples are: maven-archetype-plugin and
 maven-help-plugin. We cover these two plugins bit later.</p>
-
 <p>In the next tutorial, we explain how plugin goals bind to lifecycle
 phases.</p>
 

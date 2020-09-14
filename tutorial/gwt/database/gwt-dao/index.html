@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T12:11:00+0530",
         "dateModified" : "2019-01-10T12:11:00+0530",
-        "wordCount" : "1917",
+        "wordCount" : "1918",
         "keywords" : [ "gwt dao","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>DAO - GWT Tutorial - CodeTab</title></head>
 
@@ -711,44 +711,36 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="chapter-9-dao">Chapter 9. DAO</h2>
-
+            <h2 id="chapter9dao">Chapter 9. DAO</h2>
 <p>This chapter explores the design of GWT Dao. Data Access Object (DAO)
 layer allows the app flip between ORM effortlessly. In the last chapter,
 we introduced three ORM, and now they help us to verify the design of
 GWT DAO layer.</p>
-
 <h5 id="dao-design">DAO design</h5>
-
 <p>Service layer of the application interacts with the database through DAO
 layer. To accomodate multiple ORM, DAO layer consists of an Abstract
 Factory and an Interface to access data.</p>
-
 <p>DAO layer is split into following packages</p>
-
 <ul>
-<li><p>abstract classes and interfaces are in package <code>in.fins.server.dao</code>.</p></li>
-
-<li><p>implementation are in ORM wise packages <code>in.fins.server.dao.jdo</code>,
-<code>in.fins.server.dao.hibernate</code> and <code>in.fins.server.dao.mybatis</code>,</p></li>
+<li>
+<p>abstract classes and interfaces are in package <code>in.fins.server.dao</code>.</p>
+</li>
+<li>
+<p>implementation are in ORM wise packages <code>in.fins.server.dao.jdo</code>,
+<code>in.fins.server.dao.hibernate</code> and <code>in.fins.server.dao.mybatis</code>,</p>
+</li>
 </ul>
-
 <p>Following figure shows the SymbolService interactions with DAO layer.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/daodesign.png" alt="DAO design" />
 </figure>
 
-
-<h6 id="figure-9-1-dao-design">Figure 9.1. DAO design</h6>
-
+<h6 id="figure91dao-design">Figure 9.1. DAO design</h6>
 <ol>
-<li><p><code>SymbolService</code> requests abstract factory,
+<li>
+<p><code>SymbolService</code> requests abstract factory,
 <code>in.fins.server.dao.DaoFactory</code>, for an instance of DaoFactory
 specific to an ORM.</p>
-
 <ul>
 <li>When ORM is set to JDO, abstract factory
 <code>in.fins.server.dao.DaoFactory</code> returns JDO DaoFactory which is
@@ -756,92 +748,90 @@ specific to an ORM.</p>
 DaoFactory is <code>in in.fins.server.dao</code> package, and JDO
 DaoFactory which extends abstract DaoFactory is in
 <code>in.fins.server.dao.jdo</code> package.</li>
-</ul></li>
-
-<li><p>Interaction between service layer and data layer happens through an
+</ul>
+</li>
+<li>
+<p>Interaction between service layer and data layer happens through an
 Interface <code>IDao&lt;T&gt;</code>. ORM specific Dao, like
-<code>in.fins.server.dao.jdo.Dao&lt;T&gt;</code> and <code>
-in.fins.server.dao.hibernate.Dao&lt;T&gt;</code> etc., implements the <code>IDao</code>
+<code>in.fins.server.dao.jdo.Dao&lt;T&gt;</code> and <code>in.fins.server.dao.hibernate.Dao&lt;T&gt;</code> etc., implements the <code>IDao</code>
 interface. These Dao classes use ORM specific constructs to interact
 with the database.</p>
-
 <ul>
-<li><p>When ORM is set to JDO, SymbolService gets the JDO DaoFactory,
+<li>
+<p>When ORM is set to JDO, SymbolService gets the JDO DaoFactory,
 it calls <code>DaoFactory.getDao&lt;T&gt;()</code> method which returns
 <code>in.fins.server.dao.jdo.Dao&lt;T&gt;</code> which implements IDao&lt;T&gt; and
-uses JDO to interact with database.</p></li>
-
-<li><p>When ORM is set to Hibernate, then Step 2 returns
+uses JDO to interact with database.</p>
+</li>
+<li>
+<p>When ORM is set to Hibernate, then Step 2 returns
 <code>in.fins.server.dao.hibernate.DaoFactory</code>, and in Step 3, when
 SymbolService calls its <code>getDao()</code> method, it returns
 <code>in.fins.server.dao.hibernate.Dao&lt;T&gt;</code> which uses Hibernate to
-interact with the database.</p></li>
-</ul></li>
-
-<li><p>Based on Type &lt;T&gt;, method <code>DaoFactory.getDao()</code> returns following
-variants of Dao ( when ORM is set to JDO )</p>
-
-<ul>
-<li><p><code>getDao&lt;Symbol&gt;()</code> returns <code>in.fins.server.dao.jdo.SymbolDao</code>.</p></li>
-
-<li><p><code>getDao&lt;DataGroup&gt;()</code> returns
-<code>in.fins.server.dao.jdo.DataGroupDao</code>.</p></li>
-
-<li><p><code>getDao&lt;Data&gt;()</code> returns <code>in.fins.server.dao.jdo.DataDao</code>.</p></li>
-
-<li><p>for any other types, <code>getDao()</code> returns
-<code>in.fins.server.dao.jdo.Dao</code> which is generic Dao capable of
-handling any type.</p></li>
+interact with the database.</p>
+</li>
 </ul>
-
+</li>
+<li>
+<p>Based on Type &lt;T&gt;, method <code>DaoFactory.getDao()</code> returns following
+variants of Dao ( when ORM is set to JDO )</p>
+<ul>
+<li>
+<p><code>getDao&lt;Symbol&gt;()</code> returns <code>in.fins.server.dao.jdo.SymbolDao</code>.</p>
+</li>
+<li>
+<p><code>getDao&lt;DataGroup&gt;()</code> returns
+<code>in.fins.server.dao.jdo.DataGroupDao</code>.</p>
+</li>
+<li>
+<p><code>getDao&lt;Data&gt;()</code> returns <code>in.fins.server.dao.jdo.DataDao</code>.</p>
+</li>
+<li>
+<p>for any other types, <code>getDao()</code> returns
+<code>in.fins.server.dao.jdo.Dao</code> which is generic Dao capable of
+handling any type.</p>
+</li>
+</ul>
 <p>They all implements <code>IDao</code> interface. Even though generic Dao is
 able to handle any type, including Symbol,DataGroup and Data types,
 we require type specific Dao as we do some post processing for
-Symbol, DataGroup and Data.</p></li>
-
-<li><p>SymbolService call <code>Dao&lt;T&gt;</code> methods to access database.</p></li>
+Symbol, DataGroup and Data.</p>
+</li>
+<li>
+<p>SymbolService call <code> Dao&lt;T&gt;</code> methods to access database.</p>
+</li>
 </ol>
-
 <h2 id="datanucleus-plugin">DataNucleus Plugin</h2>
-
 <p>In the last chapter, we enhanced persistence classes through an Ant
 target. DataNucleus has a plugin for this. Install the plugin using
-update site <a href="http://www.datanucleus.org/downloads/eclipse-update/">http://www.datanucleus.org/downloads/eclipse-update/</a>, before
+update site <a href="http://www.datanucleus.org/downloads/eclipse-update/,">http://www.datanucleus.org/downloads/eclipse-update/,</a> before
 running the example code.</p>
-
 <p>To enable DataNucleus support, invoke project context menu and select
 <strong>DataNucleus</strong> → <strong>Add DataNucleus Support</strong> . To run enhancer, invoke
 project context menu and select DataNucleus and choose Run Enhancer Tool
 or Enable Auto-Enhancement</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/plugin.png" alt="" />
 </figure>
 
-
 <p>When persistence classes are not enhanced, Dao throws
 NucleusUserException.</p>
-
 <p>Let&rsquo;s explore the actual implementation of the design by taking JDO as
 ORM.</p>
-
 <h5 id="orm-selection">ORM selection</h5>
-
 <p>ORM type is set in the application configuration file
 <code>META-INF/fins.properties</code>.</p>
-
 <p><code>src/META-INF/fins.properties</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"># allowed values JDO|MyBatis|Hibernate
 
-orm=JDO</code></pre></div>
-<p>Fins uses <code>in.fins.server.listener/FinsContextListener</code>, which
+orm=JDO
+</code></pre></div><p>Fins uses <code>in.fins.server.listener/FinsContextListener</code>, which
 implements <code>ServletContextListener</code>, to read the property file at
 application startup and set the ORM name as a global attribute in
 <code>ServletContext</code>. SymbolService, which is also a servlet, retrieves ORM
-name through <code>ServletContext.getAttribute()</code>method and initializes the
+name through <code>ServletContext.getAttribute() </code>method and initializes the
 appropriate appropriate DaoFactory. Listener entry in <code>web.xml</code> enables
 <code>FinsContextListener</code>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -859,165 +849,152 @@ appropriate appropriate DaoFactory. Listener entry in <code>web.xml</code> enabl
 <div>&nbsp;</div>
 
 
-
 <h5 id="configuration-files">Configuration files</h5>
-
 <p>ORM configuration files are placed in <code>src/META-INF</code> directory which is
 standard place for web application conf files. Hibernate and MyBatis
 configuration files are same ones from RStore.</p>
-
 <p>But for JDO, instead of <code>datanucleus.properties</code>, we use <code>jdoconfig.xml</code>
 which is xml version of property file which defines
 persistence-manager-factory named &ldquo;datastore&rdquo;. This feature, known as
 Named PMF, is the preferred way to configure JDO for web applications.
 <code>JDOHelper.getPersistenceManagerFactory()</code> constructs the factory by
 using properties set in <code>jdoconfig.xml</code> file.</p>
-
 <p><code>in.fins.server.dao.jdo/PMF.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">final</span> <span class="kd">class</span> <span class="nf">PMF</span> <span class="p">{</span>
-        <span class="kd">private</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">PersistenceManagerFactory</span> <span class="n">pmfInstance</span> <span class="o">=</span> <span class="n">JDOHelper</span>
-                        <span class="p">.</span><span class="na">getPersistenceManagerFactory</span><span class="p">(</span><span class="s">&#34;datastore&#34;</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">PMF</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">PersistenceManagerFactory</span> <span class="n">pmfInstance</span> <span class="o">=</span> <span class="n">JDOHelper</span>
+                        <span class="o">.</span><span class="na">getPersistenceManagerFactory</span><span class="o">(</span><span class="s">&#34;datastore&#34;</span><span class="o">);</span>
 
-        <span class="kd">public</span> <span class="nf">static</span> <span class="n">PersistenceManagerFactory</span> <span class="nf">get</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">pmfInstance</span><span class="p">;</span>
-        <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h5 id="mapping-files">Mapping files</h5>
-
+        <span class="kd">public</span> <span class="kd">static</span> <span class="n">PersistenceManagerFactory</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">pmfInstance</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h5 id="mapping-files">Mapping files</h5>
 <p>Mapping files are placed along with domain class in package
 <code>in.fins.shared</code> and are the same as ones from RStore.</p>
-
 <h5 id="dao-layer">DAO Layer</h5>
-
 <p>Abstract classes and interfaces are in package <code>in.fins.server.dao</code>.
 Service layer interact through the classes and interfaces of this
 package to ensure portability between various. ORM. This package
 contains three class/interface.</p>
-
 <ul>
-<li><p><code>DaoFactory</code> - is an abstract class with two methods,
+<li>
+<p><code>DaoFactory</code> - is an abstract class with two methods,
 <code>getDaoFactory()</code> and <code>getDao()</code>. The method <code>getDaoFactory()</code>
 creates and returns appropriate DaoFactory based on ORM
 type.</p>
-
 <p><code>in.fins.server.dao/DaoFactory.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">static</span> <span class="n">DaoFactory</span> <span class="nf">getDaoFactory</span><span class="p">(</span><span class="n">ORM</span> <span class="nf">orm</span><span class="p">)</span> <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="k">switch</span> <span class="p">(</span><span class="n">orm</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoFactory</span> <span class="nf">getDaoFactory</span><span class="o">(</span><span class="n">ORM</span> <span class="n">orm</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">switch</span> <span class="o">(</span><span class="n">orm</span><span class="o">)</span> <span class="o">{</span>
                         <span class="k">case</span> <span class="n">JDO</span><span class="o">:</span>
-                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">server</span><span class="p">.</span><span class="na">dao</span><span class="p">.</span><span class="na">jdo</span><span class="p">.</span><span class="na">DaoFactory</span><span class="p">();</span>
-                                <span class="k">break</span><span class="p">;</span>
+                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">in</span><span class="o">.</span><span class="na">fins</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">dao</span><span class="o">.</span><span class="na">jdo</span><span class="o">.</span><span class="na">DaoFactory</span><span class="o">();</span>
+                                <span class="k">break</span><span class="o">;</span>
                         <span class="k">case</span> <span class="n">MyBatis</span><span class="o">:</span>
-                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">server</span><span class="p">.</span><span class="na">dao</span><span class="p">.</span><span class="na">mybatis</span><span class="p">.</span><span class="na">DaoFactory</span><span class="p">();</span>
-                                <span class="k">break</span><span class="p">;</span>
+                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">in</span><span class="o">.</span><span class="na">fins</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">dao</span><span class="o">.</span><span class="na">mybatis</span><span class="o">.</span><span class="na">DaoFactory</span><span class="o">();</span>
+                                <span class="k">break</span><span class="o">;</span>
                         <span class="k">case</span> <span class="n">Hibernate</span><span class="o">:</span>
                                 <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span>
-                                    <span class="n">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">server</span><span class="p">.</span><span class="na">dao</span><span class="p">.</span><span class="na">hibernate</span><span class="p">.</span><span class="na">DaoFactory</span><span class="p">();</span>
-                                <span class="k">break</span><span class="p">;</span>
-                        <span class="p">}</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="n">INSTANCE</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>DaoFactory.getDao()</code> is an abstract method and it&rsquo;s implementation
-is delegated to subclasses like <code>in.fins.server.dao.jdo.DaoFactory</code>.</p></li>
-
-<li><p><code>IDao&lt;T&gt;</code> - service layer uses IDao&lt;T&gt; interface, which defines
+                                    <span class="n">in</span><span class="o">.</span><span class="na">fins</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">dao</span><span class="o">.</span><span class="na">hibernate</span><span class="o">.</span><span class="na">DaoFactory</span><span class="o">();</span>
+                                <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>DaoFactory.getDao()</code> is an abstract method and it&rsquo;s implementation
+is delegated to subclasses like <code>in.fins.server.dao.jdo.DaoFactory</code>.</p>
+</li>
+<li>
+<p><code>IDao&lt;T&gt;</code> - service layer uses IDao&lt;T&gt; interface, which defines
 two methods, to interact with DAO layer.</p>
-
 <ul>
-<li><p><code>selectById()</code> - selects object like Symbol, DataGroup and Data
-by its ID (primary key)</p></li>
-
-<li><p><code>select()</code> - selects using some statement or query, for example,
-to select a list of symbol names.</p></li>
+<li>
+<p><code>selectById()</code> - selects object like Symbol, DataGroup and Data
+by its ID (primary key)</p>
+</li>
+<li>
+<p><code>select()</code> - selects using some statement or query, for example,
+to select a list of symbol names.</p>
+</li>
 </ul>
-
 <p>Generally, this interface also defines methods like create, insert,
 delete and other varieties of select etc., but at this juncture
 these two methods are sufficient for Fins, and we add insert method
 in a later chapter. Readers may add and implement other methods as
-an exercise.</p></li>
-
-<li><p><code>DaoHelper</code> - Dao uses this utility class which has methods, to
+an exercise.</p>
+</li>
+<li>
+<p><code>DaoHelper</code> - Dao uses this utility class which has methods, to
 filter the object contents based on FilterMap sent by the client. We
-will explain this concept shortly.</p></li>
+will explain this concept shortly.</p>
+</li>
 </ul>
-
 <h5 id="jdo-dao">JDO DAO</h5>
-
 <p>JDO specific DAO implementation are in <code>in.fins.server.dao.jdo</code> package.
 Hibernate and MyBatis are in <code>in.fins.server.dao.hibernate</code> and
 <code>in.fins.server.dao.mybatis</code> respectively and their classes are similar
 to JDO except that they make use Hibernate and MyBatis constructs.</p>
-
 <p>Package <code>in.fins.server.dao.jdo</code> contains following classes.</p>
-
 <p><code>DaoFactory</code> - extends abstract <code>DaoFactory</code> and implements the abstract
 method <code>getDao()</code></p>
-
 <p><code>in.fins.server.dao/DaoFactory.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="nf">PersistenceManagerFactory</span> <span class="n">pmf</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="n">PersistenceManagerFactory</span> <span class="n">pmf</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="nf">DaoFactory</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">pmf</span> <span class="o">=</span> <span class="n">PMF</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="nf">DaoFactory</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">pmf</span> <span class="o">=</span> <span class="n">PMF</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getDao</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">clz</span><span class="p">)</span> <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;JDO SymbolDao returned&#34;</span><span class="p">);</span>
-                        <span class="k">return</span> <span class="p">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">new</span> <span class="n">SymbolDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pmf</span><span class="p">);</span>
-                <span class="p">}</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">Data</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;JDO DataDao returned&#34;</span><span class="p">);</span>
-                        <span class="k">return</span> <span class="p">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">new</span> <span class="n">DataDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pmf</span><span class="p">);</span>
-                <span class="p">}</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">DataGroup</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;JDO DataGroupDao returned&#34;</span><span class="p">);</span>
-                        <span class="k">return</span> <span class="p">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">new</span> <span class="n">DataGroupDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pmf</span><span class="p">);</span>
-                <span class="p">}</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;JDO Generic Dao returned&#34;</span><span class="p">);</span>
-                <span class="k">return</span> <span class="p">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">new</span> <span class="n">Dao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pmf</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>JDO DaoFactory constructor creates JDO <code>PersistenceManagerFactory</code> and
+        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getDao</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">clz</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO SymbolDao returned&#34;</span><span class="o">);</span>
+                        <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">SymbolDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">Data</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO DataDao returned&#34;</span><span class="o">);</span>
+                        <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">DataDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">DataGroup</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO DataGroupDao returned&#34;</span><span class="o">);</span>
+                        <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">DataGroupDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO Generic Dao returned&#34;</span><span class="o">);</span>
+                <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">Dao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>JDO DaoFactory constructor creates JDO <code>PersistenceManagerFactory</code> and
 assigns it to a field. Method <code>getDao()</code> returns type specific Dao or
 generic Dao depending on the clz parameter. PersistenceManagerFactory is
 passed to Dao, so that, Dao can obtain PersistenceManager from it to
 interact with the database.</p>
-
 <p><code>Dao</code> - Dao class, which implements <code>IDao&lt;T&gt;</code>, is a generic Dao. It is
 generally used select objects like String, Date etc. from the database.</p>
-
 <p><code>SymbolDao</code>, <code>DataGroupDao</code> and <code>DataDao</code> - even though, generic Dao is
 capable of handling any object, we use type specific Dao SymbolDao,
 DataGroupDao and DataDao for Symbol, DataGroup and Data as we do some
 post processing like filtering.</p>
-
 <p>Let&rsquo;s go through <code>SymbolDao</code> to understand the reasons for type specific
 Dao.</p>
-
 <p><code>in.fins.server.dao.jdo/SymbolDao.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">       
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">T</span> <span class="n">selectById</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">clz</span><span class="p">,</span> <span class="n">Map</span><span class="o">&lt;?</span><span class="p">,</span> <span class="o">?&gt;</span> <span class="n">parameters</span><span class="p">)</span>
-                        <span class="kd">throws</span> <span class="nf">PersistenceException</span> <span class="p">{</span>
-                <span class="n">PersistenceManager</span> <span class="nf">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="p">.</span><span class="na">getPersistenceManager</span><span class="p">();</span>                
-                <span class="n">Symbol</span> <span class="nf">symbol</span><span class="p">;</span>
-                <span class="k">try</span> <span class="p">{</span>
-                        <span class="n">String</span> <span class="nf">id</span> <span class="o">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">parameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;symbolName&#34;</span><span class="p">);</span>          
-                        <span class="n">Symbol</span> <span class="nf">sym</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="na">getObjectById</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="n">id</span><span class="p">);</span>             
-                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&lt;</span><span class="n">a</span> <span class="nf">href</span><span class="o">=</span><span class="s">&#34;http://www.datanucleus.org/products/accessplatform_3_2/jdo/pmf_named.html&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">filterMap</span> <span class="o">=</span> 
-                            <span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">parameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&#34;filterMap&#34;</span><span class="p">);</span>    
-                        <span class="n">symbol</span> <span class="o">=</span> <span class="n">DaoHelper</span><span class="p">.</span><span class="na">applyFilter</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">filterMap</span><span class="p">);</span>             
-                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">PersistenceException</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">severe</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-                        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-                        <span class="n">pm</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">symbol</span><span class="p">;</span>                                                  
-        <span class="p">}</span></code></pre></div>
-<table>
+        <span class="kd">public</span> <span class="n">T</span> <span class="nf">selectById</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">clz</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;?,</span> <span class="o">?&gt;</span> <span class="n">parameters</span><span class="o">)</span>
+                        <span class="kd">throws</span> <span class="n">PersistenceException</span> <span class="o">{</span>
+                <span class="n">PersistenceManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="na">getPersistenceManager</span><span class="o">();</span>                
+                <span class="n">Symbol</span> <span class="n">symbol</span><span class="o">;</span>
+                <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">parameters</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;symbolName&#34;</span><span class="o">);</span>          
+                        <span class="n">Symbol</span> <span class="n">sym</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">getObjectById</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span><span class="n">id</span><span class="o">);</span>             
+                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&#34;http://www.datanucleus.org/products/accessplatform_3_2/jdo/pmf_named.html&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="o">&gt;]&gt;</span> <span class="n">filterMap</span> <span class="o">=</span> 
+                            <span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;)</span> <span class="n">parameters</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;filterMap&#34;</span><span class="o">);</span>    
+                        <span class="n">symbol</span> <span class="o">=</span> <span class="n">DaoHelper</span><span class="o">.</span><span class="na">applyFilter</span><span class="o">(</span><span class="n">sym</span><span class="o">,</span> <span class="n">filterMap</span><span class="o">);</span>             
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">PersistenceException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">severe</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+                        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+                        <span class="n">pm</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">symbol</span><span class="o">;</span>                                                  
+        <span class="o">}</span>
+</code></pre></div><table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1070,51 +1047,43 @@ close PM and return the copy of symbol to caller.
 </tr>
 </tbody>
 </table>
-
 <p>Method <code>applyFilter()</code> accomplishes three things; detaches the object,
 optimizes the database access and trims down the symbol size. This sort
 of post processing is not possible with the generic Dao. DataGroupDao
 and DataDao follow a similar pattern and focus on much smaller set of
 data.</p>
-
 <h2 id="detach-and-rpc">Detach and RPC</h2>
-
 <p>While making copy of persistence objects, we should bear in mind that we
 are dealing with the enhanced classes where many java types are changed
 to DataNucleus types. For example, <code>java.util.Date</code> is enhanced to
 <code>org.datanucleus.sco.simple.Date</code> and in case, we assign the Date from
 persistence object to the copy, then GWT RPC throws <code>Serialization</code>
 exception as GWT doesn&rsquo;t know about DataNucleus date types. Way out is
-to create a new Date object with <code>copyOfData.setDate(new
-Date(data.getDate().getTime()))</code> and assign it the copy.</p>
-
+to create a new Date object with <code>copyOfData.setDate(new Date(data.getDate().getTime()))</code> and assign it the copy.</p>
 <p><code>DaoHelper</code> - the last class of <code>in.fins.server.dao.jdo</code> contains post
 processing static helper methods.</p>
-
 <h5 id="service">Service</h5>
-
 <p>Classes from service layer like SymbolService interacts with DAO layer
 using abstract DaoFactory and IDao and thus they are totally isolated
 from underlying ORM layer. Following code snippet from SymbolService
 shows a typical interaction with DAO.</p>
-
 <p><code>in.fins.server.dao.jdo/SymbolDao.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">Symbol</span> <span class="n">getSymbol</span><span class="p">(</span><span class="n">String</span> <span class="nf">symbolName</span><span class="p">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span> <span class="nf">filterMap</span><span class="p">)</span>
-                        <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
-                <span class="k">try</span> <span class="p">{</span>
-                        <span class="n">initDaoFactory</span><span class="p">();</span>                                              
-                        <span class="n">IDao</span><span class="o">&lt;</span><span class="n">Symbol</span><span class="o">&gt;</span> <span class="nf">dao</span> <span class="o">=</span> <span class="n">daoFactory</span><span class="p">.</span><span class="na">getDao</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>            
-                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">parameters</span> <span class="o">=</span> 
-                                            <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span><span class="p">();</span>
-                        <span class="n">parameters</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;symbolName&#34;</span><span class="p">,</span> <span class="n">symbolName</span><span class="p">);</span>
-                        <span class="n">parameters</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;filterMap&#34;</span><span class="p">,</span> <span class="n">filterMap</span><span class="p">);</span>                        <span class="k">return</span> <span class="n">dao</span><span class="p">.</span><span class="na">selectById</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">parameters</span><span class="p">);</span>               
-                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">log</span><span class="p">.</span><span class="na">warning</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-                        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
-                <span class="p">}</span>
-        <span class="p">}</span></code></pre></div>
-<table>
+        <span class="kd">public</span> <span class="n">Symbol</span> <span class="nf">getSymbol</span><span class="o">(</span><span class="n">String</span> <span class="n">symbolName</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;</span> <span class="n">filterMap</span><span class="o">)</span>
+                        <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">initDaoFactory</span><span class="o">();</span>                                              
+                        <span class="n">IDao</span><span class="o">&lt;</span><span class="n">Symbol</span><span class="o">&gt;</span> <span class="n">dao</span> <span class="o">=</span> <span class="n">daoFactory</span><span class="o">.</span><span class="na">getDao</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>            
+                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">parameters</span> <span class="o">=</span> 
+                                            <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
+                        <span class="n">parameters</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;symbolName&#34;</span><span class="o">,</span> <span class="n">symbolName</span><span class="o">);</span>
+                        <span class="n">parameters</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;filterMap&#34;</span><span class="o">,</span> <span class="n">filterMap</span><span class="o">);</span>                        <span class="k">return</span> <span class="n">dao</span><span class="o">.</span><span class="na">selectById</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">parameters</span><span class="o">);</span>               
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">log</span><span class="o">.</span><span class="na">warning</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+                        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div><table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1148,7 +1117,6 @@ call selectById() method IDao to get the result.
 </table>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -1165,24 +1133,18 @@ call selectById() method IDao to get the result.
 
 
 
-
 <h5 id="logging">Logging</h5>
-
 <p>In server side classes we are using java.util.logging framework as we
 used the same framework on client side and GAE supports this logging
 framework.</p>
-
 <p>To output log messages of DataNucleus, Hibernate and MyBatis we find
 configuring Log4J is much easier than java.util.logging. For that we
 have to place the log4j.properties in src directory and add log4j jar to
 war/WEB-INF/lib directory. With all these ORM packages output messages
 to file dao.log in war/logs dir.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>Named PMF</em> - refer [JDO : Named
 PersistenceManagerFactory</a></p>
-
 <p><em>Detach</em> - refer <a href="http://www.datanucleus.org/products/accessplatform_5_1/jdo/persistence.html#pm_detach" target="_blank">JDO :
 Attach/Detach</a></p>
 

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Usage - Share on Social WordPress Plugin - CodeTab</title></head>
 
@@ -323,40 +323,29 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="usage">Usage</h1>
-
+            <h1 id="usage">Usage</h1>
 <p>In this blog, we  explain <a href="https://wordpress.org/plugins/share-on-social/" target="_blank">Share on Social WordPress Plugin</a>
 usage through examples. Share on Social lockers can be placed on
 <strong>WordPress Posts</strong> and <strong>Pages</strong>. For ease of explanation, we refer
 WordPress Posts and Pages as <strong>page</strong>.  </p>
-
 <h2 id="basic-locker">Basic Locker</h2>
-
-<p>Simply by placing the content between shortcode <code>[[share-on-social]
-[/share-on-social]]</code>  we can activate lockers. It uses default locker
+<p>Simply by placing the content between shortcode <code>[[share-on-social] [/share-on-social]]</code>  we can activate lockers. It uses default locker
 named <strong>Basic</strong> and shares the URL of the page (post or page) where
 locker is placed. We can place multiple Basic lockers on a page and when
 user shares any one, all of them unlocks together and shows hidden
 content. However, basic lockers placed in other pages are not opened.  </p>
-
 <h2 id="add-custom-lockers">Add custom Lockers</h2>
-
 <p>Share on Social Plugin allows you create your own lockers. Use <strong>Share
 on Social</strong> menu in <strong>Admin Panel</strong> to add and edit lockers. In <strong>Add
 New</strong> page, <strong>Context Help</strong> at the top right explains the various
 fields of a locker. While adding a new locker enter a unique name as 
 <strong>Locker ID</strong> otherwise locker is not activated. Use Visual Editor to
 customize the <strong>Display Text</strong> of the locker.  </p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/share-on-social-wordpress-plugin/media/sos-usage-add-new-300x207.png" alt="Share on Social Usage - Add New Locker" />
 </figure>
 
-
 <p>To set which URL to share for each locker, use <strong>Share [which URL]</strong> radio button.</p>
-
 <ul>
 <li><strong>Page</strong> -  shares the Post/Page URL where locker shortcode is
 placed.</li>
@@ -365,17 +354,13 @@ locker shortcode is placed. For WordPress Post there is no parent so
 this shares site URL.</li>
 <li><strong>Site</strong> -  shares the URL of the site.</li>
 </ul>
-
 <h2 id="use-custom-lockers">Use custom Lockers</h2>
-
 <p>In shortcode, use <strong>id</strong> attribute to indicate the locker to use. For
-example, <code>[[share-on-social id='my locker'] some content
-[/share-on-social]]</code>   will use a locker whose id is <strong>my locker</strong>. We
+example, <code>[[share-on-social id='my locker'] some content [/share-on-social]]</code>   will use a locker whose id is <strong>my locker</strong>. We
 can place multiple lockers with same or different id on a page. When
 user shares any one, all of them opens together. But, lockers placed in
 other pages are not affected. In the next section, we explain how to
 control this behavior.  </p>
-
 
 
 <div>&nbsp;</div>
@@ -394,31 +379,20 @@ control this behavior.  </p>
 
 
 
-
 <h1 id="grouping-of-lockers">Grouping of Lockers</h1>
-
 <p>When we place multiple lockers (basic or using id attribute) in a page
 they all get unlocked when user share any one of them. By using
 <strong>Grouping</strong> we can take control of this. In shortcode, use <strong>name</strong>
 attribute to group lockers. For example, place following two lockers in
-a page.   <code>[[share-on-social name='Share A'] some content
-[/share-on-social]]</code> <code>[[share-on-social name='Share B'] some other
-content [/share-on-social]]</code>   First locker is grouped as <strong>Share A</strong>,
+a page.   <code>[[share-on-social name='Share A'] some content [/share-on-social]]</code> <code>[[share-on-social name='Share B'] some other content [/share-on-social]]</code>   First locker is grouped as <strong>Share A</strong>,
 while second one is in group <strong>Share B</strong>. When user shares the first
 locker only it is unlocked and second locker continues as it is. In the
 next example, we place two lockers of name <strong>Share A</strong> and a third
-locker with name <strong>Share B.</strong>   <code>[[share-on-social name='Share A'] some
-content [/share-on-social]]</code> <code>[[share-on-social name='Share A'] some
-more content [/share-on-social]]</code> <code>[[share-on-social name='Share B']
-some other content [/share-on-social]]</code>   When user shares the first
+locker with name <strong>Share B.</strong>   <code>[[share-on-social name='Share A'] some content [/share-on-social]]</code> <code>[[share-on-social name='Share A'] some more content [/share-on-social]]</code> <code>[[share-on-social name='Share B'] some other content [/share-on-social]]</code>   When user shares the first
 locker, it unlocks first as well as the second lockers. However, the
 third locker continues as it is. In the next example, we place lockers
-in multiple pages.   <strong>Page 1</strong> <code>[[share-on-social name='Drupal
-Tutorial'] some content [/share-on-social]]</code> <code>[[share-on-social
-name='WordPress Tutorial'] some other content [/share-on-social]]</code>  
-<strong>Page 2</strong> <code>[[share-on-social name='WordPress Tutorial'] WordPress
-content [/share-on-social]]</code>   <strong>Page 3</strong> <code>[[share-on-social
-name='Drupal Tutorial'] Drupal content [/share-on-social]]</code>   When user
+in multiple pages.   <strong>Page 1</strong> <code>[[share-on-social name='Drupal Tutorial'] some content [/share-on-social]]</code> <code>[[share-on-social name='WordPress Tutorial'] some other content [/share-on-social]]</code>  
+<strong>Page 2</strong> <code>[[share-on-social name='WordPress Tutorial'] WordPress content [/share-on-social]]</code>   <strong>Page 3</strong> <code>[[share-on-social name='Drupal Tutorial'] Drupal content [/share-on-social]]</code>   When user
 open WordPress Tutorial share in Page 1, it unlocks that locker as well
 as the locker in Page 2. Likewise, when user opens the Drupal Tutorial
 share in Page 3 it unlocks itself and also the Drupal share in Page 1.
@@ -426,26 +400,19 @@ With Grouping, we can link lockers in a page and also the lockers
 spanned across many pages. All linked lockers, lock or unlock in unison.
 In these examples, we use Basic locker, but we can also use Grouping
 with custom lockers in the same manner.    </p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>   </p>
-
 <h2 id="change-target">Change Target</h2>
-
 <p>By default, Share on Social shares the URL of <strong>Page</strong>, <strong>Parent</strong> or
 <strong>Site</strong> as specified in Locker – <strong>Share [which URL]</strong> radio button.
 At times, we may wish to override this behavior. In shortcode, use
 <strong>link</strong> attribute to override the target. The following example, uses
-<strong>Basic</strong> locker but shares [<a href="http://example.org">http://example.org</a></a>
-instead of the <strong>Page</strong> URL.   <code>[[share-on-social
-link='http://example.org'] some content [/share-on-social]]</code>   As shown
+<strong>Basic</strong> locker but shares [http://example.org</a>
+instead of the <strong>Page</strong> URL.   <code>[[share-on-social link='http://example.org'] some content [/share-on-social]]</code>   As shown
 in the following example, we can use <strong>link</strong> attribute with other
-attributes – <strong>id</strong> and <strong>name</strong>.   <code>[[share-on-social id='Demo C'
-name='Example Share' link='http://example.org'] some content
-[/share-on-social]]</code>   This share uses <strong>Demo C</strong> locker and groups
+attributes – <strong>id</strong> and <strong>name</strong>.   <code>[[share-on-social id='Demo C' name='Example Share' link='http://example.org'] some content [/share-on-social]]</code>   This share uses <strong>Demo C</strong> locker and groups
 itself as <strong>Example Share</strong> and shares <strong>example.org</strong>.</p>
 
           </main>

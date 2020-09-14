@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>W3 Total Browser Cache - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,101 +561,93 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-2-w3-total-cache-browser-cache">7.2. W3 Total Cache Browser Cache</h2>
-
+            <h2 id="72w3-total-cache-browser-cache">7.2. W3 Total Cache Browser Cache</h2>
 <p>In the previous section, we installed W3 Total Cache and enabled its
 Page Cache module. This section shows the best W3 Total Cache Browser
 Cache Settings to boost the WordPress performance and page speed.</p>
-
 <h3 id="w3-total-cache-browser-cache">W3 Total Cache Browser Cache</h3>
-
 <p>Browser can cache the pages, JavaScript, CSS and media when user views a
 web page and on subsequent visits to the page or site, reuse the cached
 objects instead of repeated fetches from the site. Browser cache
 improves page load time by reducing server and network access.</p>
-
 <p>Idea behind the browser cache is simple. On every page, server sets an
 expiry header and some other tags when they sent to the browser. On
 subsequent requests, browser, with the help of these header tags,
 decides whether cached object is expired or not. If expired, then
 browser sends request for the fresh objects else reuses the cached
 objects.</p>
-
 <p>In addition to the expiry headers and tags, server can also compress the
 objects to reduce the load on the network and to improve the response
 time.</p>
-
 <p>To enable W3 Total Cache Browser Cache, go to <strong>Dashboard</strong> →
 <strong>Performance</strong> → <strong>General Settings</strong> and scroll down to Browser Cache
 section. After enabling Browser Cache, save the settings.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Next, we need to set expiry and tags to these items:</p>
-
 <ul>
-<li><p>CSS and JS</p></li>
-
-<li><p>HTML and XML</p></li>
-
-<li><p>Media</p></li>
+<li>
+<p>CSS and JS</p>
+</li>
+<li>
+<p>HTML and XML</p>
+</li>
+<li>
+<p>Media</p>
+</li>
 </ul>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-w3-browsercache.png" alt="W3 Total Cache Browser Cache Settings" />
 </figure>
 
-
 <p>Go to <strong>Dashboard</strong> → <strong>Performance</strong> → <strong>Browser Cache</strong> and then in
 <strong>General</strong> section set the following:</p>
-
 <ul>
-<li><p>Set Last-Modified header - select</p></li>
-
-<li><p>Set Expires Header - select</p></li>
-
-<li><p>Set Cache Control Header - select</p></li>
-
-<li><p>Set entity tag (eTag) - select</p></li>
-
-<li><p>Set W3 Total Cache header - select</p></li>
-
-<li><p>Enable HTTP (gzip) compression - select</p></li>
+<li>
+<p>Set Last-Modified header - select</p>
+</li>
+<li>
+<p>Set Expires Header - select</p>
+</li>
+<li>
+<p>Set Cache Control Header - select</p>
+</li>
+<li>
+<p>Set entity tag (eTag) - select</p>
+</li>
+<li>
+<p>Set W3 Total Cache header - select</p>
+</li>
+<li>
+<p>Enable HTTP (gzip) compression - select</p>
+</li>
 </ul>
-
 <p>Save the settings. This global browser cache policy is now set for all
 the three groups - JS, CSS and HTML, XML and Media.</p>
-
 <p>Expires Header Life time defines for what period browser should cache
 the object. Default Expires Header Life time for CSS, JS is 31536000
 seconds (365 days) and HTML,XML is 3600 seconds ( 1 hour) and Media
 31536000 seconds (365 days).</p>
-
 <p>TTL of Page Cache</p>
-
 <p>Default <strong>Expires Header Life time</strong> for CSS, JS, and Media are good
 enough, however for HTML and XML, the expiry header of one hour is too
 short especially for sites where contents are not frequently modified.</p>
-
 <p>While Expires Header is primarily meant to encourage the browser to
 cache the files on the PC, W3 Total Cache also use it to determine the
 Time To Live (TTL) of the Page Cache.</p>
-
 <p>In other words, <strong>Expires Header Life time</strong> is used by two caches:</p>
-
 <ul>
-<li><p>In PC, by the Browser to determine for how long it has to keep pages
-in its cache and when to request for fresh objects.</p></li>
-
-<li><p>In Server, by the W3 Total Cache to determine for how long it has to
+<li>
+<p>In PC, by the Browser to determine for how long it has to keep pages
+in its cache and when to request for fresh objects.</p>
+</li>
+<li>
+<p>In Server, by the W3 Total Cache to determine for how long it has to
 keep pages in its cache and when to purge the pages and build new
-ones.</p></li>
+ones.</p>
+</li>
 </ul>
-
 <p>Default value for HTML and XML is too low, because after one hour W3
 purges the pages from the cache and rebuilds the cache, which puts extra
 load on the server. It may also adversely affect the search engines
@@ -663,7 +655,6 @@ crawls. Crawl bots spends a fixed amount of time in one site and collect
 whatever pages it gets within that time. If pages are purged by W3
 frequently then crawl face a slow response and parse fewer pages, which
 ultimately reflects in lower Page Ranking.</p>
-
 
 
 <div>&nbsp;</div>
@@ -682,11 +673,9 @@ ultimately reflects in lower Page Ranking.</p>
 
 
 
-
 <p>In codetab.org, we increased the Expires Header Life time for HTML and
 XML to 604800 seconds (7 days), and we see a decent Crawl Stats. We
 cover Crawl Stats in Google Webmaster Tools chapter.</p>
-
 <p>In the next section, we use Minify module of W3 Total Cache.</p>
 
           </main>

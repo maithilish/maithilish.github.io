@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T01:28:00+0530",
         "dateModified" : "2019-01-11T01:28:00+0530",
-        "wordCount" : "882",
+        "wordCount" : "883",
         "keywords" : [ "wordpress import static html","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Import Static Site - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,83 +561,68 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="10-1-wordpress-import-static-html-site">10.1. WordPress Import Static HTML site</h2>
-
+            <h2 id="101wordpress-import-static-html-site">10.1. WordPress Import Static HTML site</h2>
 <p>In the previous chapters, we saw WordPress installation and
 optimization. In this chapter, we cover importing Static HTML site and
 pages as WordPress Posts or Pages and managing dynamic stylesheets of
 web pages in WordPress.</p>
-
 <p><strong>Sample HTML Files</strong></p>
-
 <p>To import static HTML site or pages, we need to access OpenShift Shell
 through RHC or PuTTY (for Windows users). <a href="/tutorial/wordpress/openshift/rhc-client-tools/">OpenShift RHC Client Tools</a> explains RHC and PuTTY setup. Before continuing, setup these tools and download and extract HTML sample files to OpenShift server as explained in the Appendix.</p>
-
 <h3 id="html-import-2-plugin">HTML Import 2 Plugin</h3>
-
 <p>To import static HTML site or pages to WordPress, we use <a href="http://wordpress.org/plugins/import-html-pages/" target="_blank">HTML
 Import 2</a> by Stephanie
 Leary. Install the Plugin as explained in <a href="/tutorial/wordpress/wordpress-plugins/">WordPress Plugins</a>.</p>
-
 <p>Setup HTML Import</p>
-
 <p>Before importing the pages, we need to setup the Plugin to adjust its
 behavior during import.</p>
-
 <p>Go to the HTML Import Settings page using <strong>Settings</strong> → <strong>HTML
 Import</strong>. In the settings page, select <strong>Files</strong> tab. Set <strong>Directory to
 import</strong> to the directory, which contains the sample HTML pages.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-hi-settings-files.png" alt="WordPress import static HTML site - WordPress HTML Import 2 Plugin Settings" />
 </figure>
 
-
-<p>Plugin defaults this field to<code>/var/lib/openshift/&lt;app
-UUID&gt;/app-root/data/current/html-files-to-import</code>. Leave the path till
+<p>Plugin defaults this field to<code> /var/lib/openshift/&lt;app UUID&gt;/app-root/data/current/html-files-to-import</code>. Leave the path till
 <strong>data</strong> as it is and change <strong>current/html-files-to-import</strong> as
 <strong>htmlimport</strong> so that the final path looks something like -
 <strong>/var/lib/openshift/&lt;app UUID&gt;/app-root/data/htmlimport</strong>. Screenshot
 shows an example UUID, replace it with the real UUID of the OpenShift
 application. Save the settings.</p>
-
 <p>Next we need to setup how the Plugin should treat the contents. In HTML
 Import Settings, choose <strong>Content</strong> tab.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-hi-settingscontent.png" alt="WordPress import static HTML site - WordPress HTML Import 2 Plugin Settings Content Tab" />
 </figure>
-
 
 <p>To import contents between the body tags, from the HTML files, set
 <strong>Select content by</strong> to HTML tag and enter body in the Tag field. Leave
 attribute and value to blank. There is also an option to import the
 entire file including the header, but this may affect the WordPress
 header.</p>
-
 <p>In  <strong>More Content Options</strong>, we need to check following items.</p>
-
 <ul>
-<li><p><strong>Import Linked Images</strong> - to import linked images to the Media
-Library.</p></li>
-
-<li><p><strong>Import Linked Documents</strong> - to import linked documents the Media
-Library.</p></li>
-
-<li><p><strong>Update internal links</strong> - to suffix internal links with the site
-URL.</p></li>
-
-<li><p><strong>Use Meta Description as excerpts.</strong></p></li>
-
-<li><p><strong>Convert Special Characters.</strong></p></li>
+<li>
+<p><strong>Import Linked Images</strong> - to import linked images to the Media
+Library.</p>
+</li>
+<li>
+<p><strong>Import Linked Documents</strong> - to import linked documents the Media
+Library.</p>
+</li>
+<li>
+<p><strong>Update internal links</strong> - to suffix internal links with the site
+URL.</p>
+</li>
+<li>
+<p><strong>Use Meta Description as excerpts.</strong></p>
+</li>
+<li>
+<p><strong>Convert Special Characters.</strong></p>
+</li>
 </ul>
-
 <p>When importing Word or Frontpage HTML pages, check the <strong>Clean up bad</strong>.</p>
-
 <p>Save the settings.</p>
-
 
 
 <div>&nbsp;</div>
@@ -655,47 +640,37 @@ URL.</p></li>
 <div>&nbsp;</div>
 
 
-
 <h3 id="import-posts">Import Posts</h3>
-
 <p>With HTML Import Plugin, we can import HTML pages either as WordPress
 Posts or Pages. To start with, let&rsquo;s import sample pages as WordPress
 Posts.</p>
-
 <p>Open HTML Import Settings and select <strong>Titles &amp; Metadata</strong> tab and set
 <strong>Import Files as</strong> to Posts. We may also set publish status, timestamp
 and author fields. Save the settings.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-hi-settings-post.png" alt="WordPress import static HTML site - WordPress HTML Import 2 Settings - Titles and Metadata Tab" />
 </figure>
-
 
 <p>HTML Import Plugin by default uses the page title tag to set the
 permalink of the post. For example, when a page with title  <strong>WordPress
 Tutorial</strong> is imported to codetab.org, permalink is set as
 <code>http://www.codetab.org/wordpress-tutorial/</code>. Before importing, set proper
 title for the pages as the keywords in URL is essential for SEO.</p>
-
 <p>Finally, to import files go to <strong>Tools</strong> → <strong>Import</strong> and select
 <strong>HTML</strong> option from the Import list to open the HTML Import screen.
 Select <strong>a directory of files</strong> and click Submit to import the files in
 <code>app-root/data/htmlimport</code> directory.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-importfile.png" alt="WordPress import static HTML site - WordPress HTML Import 2 - Import a directory of files" />
 </figure>
 
-
 <p>Alternatively, we can also import a single file from the PC, but this
 option does not import the linked media files. In codetab.org we usually
 use the first option.</p>
-
 <p>Before the import, we can set categories and tags to posts in
 <strong>Categories and Tags</strong>  tab. We can also attach categories and tags
 after the import. Imported Posts are available in <strong>Posts</strong> → <strong>All
 Posts</strong> and select the posts and do a Bulk Edit.</p>
-
 
 
 <div>&nbsp;</div>
@@ -714,49 +689,41 @@ Posts</strong> and select the posts and do a Bulk Edit.</p>
 
 
 
-
 <h3 id="import-pages">Import Pages</h3>
-
 <p>HTML Import 2 Plugin can also import static HTML pages as WordPress
 Pages. To import as WordPress Pages, before the import, go to HTML
 Import Settings and select <strong>Titles &amp; Metadata</strong> tab and set <strong>Import
 Files as</strong> to Pages.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-hi-settings-page.png" alt="WordPress import static HTML site - WordPress HTML Import 2 settings to import pages" />
 </figure>
-
 
 <p>WordPress Page can not have categories and tags, however, it can have a
 parent page. Parent page is set in <strong>Import pages as children of</strong>
 option, where we can select another page from the dropdown list as the
 parent for the imported pages. If this field is set to None(top level)
 then imported pages becomes top level pages.</p>
-
 <p>We can also set the parent after the import. Select pages from <strong>Pages</strong>
 → <strong>All Pages</strong> and do a bulk edit to attach parent page.</p>
-
 <p>In codetab.org, we use the top level page  <strong>wordpress-tutorial</strong>, as
 the parent page for the other pages of this tutorial. As already
 explained this parent page is known as corner page in SEO parlance.</p>
-
 <p><strong>Sample HTML Pages</strong></p>
-
 <p>In the <code>htmlimport</code> directory contains sample HTML pages in two
 directories:</p>
-
 <ul>
-<li><p>directory <code>tea</code> contains HTML page - History of Tea in China</p></li>
-
-<li><p>directory <code>coffee</code> contains HTML page - History of Coffee</p></li>
+<li>
+<p>directory <code>tea</code> contains HTML page - History of Tea in China</p>
+</li>
+<li>
+<p>directory <code>coffee</code> contains HTML page - History of Coffee</p>
+</li>
 </ul>
-
 <p>When HTML Import 2 Plugin import them as WordPress Posts it attaches
 them to the default category - Uncategorized. However, when we import
 them as WordPress Pages, Plugin attaches them to a parent page named
 after the directory. For example, it creates a blank page with name
 Coffee and attaches the History of Coffee as its child page!</p>
-
 <p>Each set of imported Static HTML pages may have come with a separate
 stylesheet and managing them is crucial to preserve the page style. In
 the next section, we learn about WordPress Child theme to manage the

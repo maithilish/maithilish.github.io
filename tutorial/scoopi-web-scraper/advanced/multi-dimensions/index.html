@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,19 +491,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="multiple-dimensions">Multiple Dimensions</h1>
-
+            <h1 id="multiple-dimensions">Multiple Dimensions</h1>
 <p>In this chapter, we use an example of a Book Store listing page to
 explain multiple dimensions.</p>
-
 <p>The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/page/page-1.html" target="_blank">defs/examples/book/page/page-1.html</a>
 page lists details of 20 books similar to an e-commerce site. The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-1/job.yml" target="_blank">Example 1</a>
 extracts one book and its related data.</p>
-
 <p>The snippet of HTML of a book item is</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;product_pod&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;image_container&#34;</span><span class="p">&gt;</span>
@@ -523,26 +518,24 @@ extracts one book and its related data.</p>
        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>          
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-   ....</code></pre></div>
-<p>The datadef used to extract data from this page is</p>
-
+   ....
+</code></pre></div><p>The datadef used to extract data from this page is</p>
 <p><code>defs/examples/book/jsoup/ex-1/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
   bookData:
     query:
-      block: &#34;section ol &gt; li:nth-child(%{item.index}) &gt; article&#34;
-      selector: &#34;h3 &gt; a attribute: title&#34;
-    items: &lt;a href=&#34;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-2/job.yml&#34; target=&#34;_blank&#34;&gt;
-      item: { name: &#34;book&#34;, index: 1, value: &#34;book&#34;},      
+      block: &quot;section ol &gt; li:nth-child(%{item.index}) &gt; article&quot;
+      selector: &quot;h3 &gt; a attribute: title&quot;
+    items: &lt;a href=&quot;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-2/job.yml&quot; target=&quot;_blank&quot;&gt;
+      item: { name: &quot;book&quot;, index: 1, value: &quot;book&quot;},      
     ]
     dims: [         
-      item: { name: &#34;url&#34;, selector: &#34;h3 &gt; a attribute: href&#34; },      
-      item: { name: &#34;price&#34;, selector: &#34;p[class=&#39;price_color&#39;]&#34; },
-    ]</code></pre></div>
-<p>It defines one item (book) with two dims - url and price. The data item
+      item: { name: &quot;url&quot;, selector: &quot;h3 &gt; a attribute: href&quot; },      
+      item: { name: &quot;price&quot;, selector: &quot;p[class='price_color']&quot; },
+    ]
+</code></pre><p>It defines one item (book) with two dims - url and price. The data item
 with its axis is as shown
 below</p>
-
 <table>
 <thead>
 <tr>
@@ -552,29 +545,25 @@ below</p>
 <th>value</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>dim</td>
 <td>price</td>
-<td>p[class=&lsquo;price_color&rsquo;]</td>
+<td>p[class='price_color&rsquo;]</td>
 <td>£51.77</td>
 </tr>
-
 <tr>
 <td>dim</td>
 <td>url</td>
 <td>h3 &gt; a attribute: href</td>
 <td>catalogue/a-light-in-the-attic_1000/index.html</td>
 </tr>
-
 <tr>
 <td>item</td>
 <td>book</td>
 <td></td>
 <td>book</td>
 </tr>
-
 <tr>
 <td>fact</td>
 <td>fact</td>
@@ -583,49 +572,45 @@ below</p>
 </tr>
 </tbody>
 </table>
-
 <p>The index=1 in items/item selects one book and instead use indexRange to
 select multiple books. The
 [Example 2</a>
 extracts 20 books and related information.</p>
-
 <p><code>defs/examples/book/jsoup/ex-2/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
       bookData:
         query:
-          block: &#34;section ol &gt; li:nth-child(%{item.index}) &gt; article&#34;
-          selector: &#34;h3 &gt; a attribute: title&#34;
-        items: &lt;a href=&#34;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-3/job.yml&#34; target=&#34;_blank&#34;&gt;
-          item: { name: &#34;book&#34;, indexRange: 1-20, value: &#34;book&#34;}, 
+          block: &quot;section ol &gt; li:nth-child(%{item.index}) &gt; article&quot;
+          selector: &quot;h3 &gt; a attribute: title&quot;
+        items: &lt;a href=&quot;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-3/job.yml&quot; target=&quot;_blank&quot;&gt;
+          item: { name: &quot;book&quot;, indexRange: 1-20, value: &quot;book&quot;}, 
 
         ]
         dims: [ 
 
-          item: { name: &#34;url&#34;, selector: &#34;h3 &gt; a attribute: href&#34; }, 
+          item: { name: &quot;url&quot;, selector: &quot;h3 &gt; a attribute: href&quot; }, 
 
-          item: { name: &#34;price&#34;, selector: &#34;p[class=&#39;price_color&#39;]&#34; },
-        ]</code></pre></div>
-<p>The examples in earlier chapters used variables in selectors and never
+          item: { name: &quot;price&quot;, selector: &quot;p[class='price_color']&quot; },
+        ]
+</code></pre><p>The examples in earlier chapters used variables in selectors and never
 in block and because of that, one block was selected for the page and
 selectors are fired against that block. However, in the bookstore
 example we use %{item.index} variable in block. As item&rsquo;s defines
 indexRange 1-20 and as index increments the query/block selects new sub
 tree of nodes (nothing but a book item) and caches it and then, other
 selectors are fired against it.</p>
-
 <p>The
 [Example 3</a>
 adds some more dimensions such as image url, availability and date etc.,</p>
-
 <p><code>defs/examples/book/jsoup/ex-3/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dims: [
-     item: { name: &#34;url&#34;, selector: &#34;h3 &gt; a attribute: href&#34; },
-     item: { name: &#34;imgUrl&#34;, selector: &#34;img attribute: src&#34; },
-     item: { name: &#34;price&#34;, selector: &#34;p[class=&#39;price_color&#39;]&#34; },
-     item: { name: &#34;avail&#34;, selector: &#34;p[class=&#39;instock availability&#39;]&#34; },
-     item: { name: &#34;date&#34;, script: &#34;document.getFromDate()&#34; },
-    ]</code></pre></div>
-<p>Apart from multiple dimensions, the important takeaway from bookstore
+<pre><code class="language-raw" data-lang="raw">dims: [
+     item: { name: &quot;url&quot;, selector: &quot;h3 &gt; a attribute: href&quot; },
+     item: { name: &quot;imgUrl&quot;, selector: &quot;img attribute: src&quot; },
+     item: { name: &quot;price&quot;, selector: &quot;p[class='price_color']&quot; },
+     item: { name: &quot;avail&quot;, selector: &quot;p[class='instock availability']&quot; },
+     item: { name: &quot;date&quot;, script: &quot;document.getFromDate()&quot; },
+    ]
+</code></pre><p>Apart from multiple dimensions, the important takeaway from bookstore
 example is that using variables in query/block we can select multiple
 blocks in a page and select and associate data within each block as
 separate items.</p>

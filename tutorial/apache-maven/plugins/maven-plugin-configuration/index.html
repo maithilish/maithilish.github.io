@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Plugin Configuration - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,17 +535,12 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-plugin-configuration">Maven Plugin Configuration</h1>
-
+            <h1 id="maven-plugin-configuration">Maven Plugin Configuration</h1>
 <p>Till now we used a basic POM that has only the project coordinates, and
 explored the out-of-the-box behavior of Maven core and plugins. In this
 tutorial, we cover the plugin configuration.</p>
-
 <p>To configure plugins, we use project build element in pom.xml. The next
 listing shows the top level elements used to configure a plugin.</p>
-
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project&gt;</span>
 ...
@@ -563,37 +558,40 @@ listing shows the top level elements used to configure a plugin.</p>
       <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>The elements are</p>
-
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>The elements are</p>
 <ul>
-<li><p>build : defines the project build.</p></li>
-
-<li><p>plugins : parent element for one or more &lt;plugin&gt; elements.</p></li>
-
-<li><p>plugin : the plugin to configure.</p></li>
-
-<li><p>groupId, artifactId, version : coordinates of the plugin to
-configure.</p></li>
-
-<li><p>configuration : holds the parameters and properties to be passed to
-the plugin.</p></li>
-
-<li><p>executions : parent element for one or more &lt;execution&gt; element.</p></li>
-
-<li><p>execution : configures the execution of a goal of the plugin.</p></li>
+<li>
+<p>build : defines the project build.</p>
+</li>
+<li>
+<p>plugins : parent element for one or more &lt;plugin&gt; elements.</p>
+</li>
+<li>
+<p>plugin : the plugin to configure.</p>
+</li>
+<li>
+<p>groupId, artifactId, version : coordinates of the plugin to
+configure.</p>
+</li>
+<li>
+<p>configuration : holds the parameters and properties to be passed to
+the plugin.</p>
+</li>
+<li>
+<p>executions : parent element for one or more &lt;execution&gt; element.</p>
+</li>
+<li>
+<p>execution : configures the execution of a goal of the plugin.</p>
+</li>
 </ul>
-
 <h2 id="configure-plugin-parameters">Configure Plugin Parameters</h2>
-
 <p>With &lt;configuration&gt; we can set plugin parameters. For example, by
 default <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" target="_blank">maven-compiler-plugin</a> set <em><code>-source</code></em> and <em><code>-target</code></em> arguments of Java compiler to 1.5. We can use <em><code>source</code></em> and <em><code>target</code></em> parameters of the compiler plugin to modify this behavior.</p>
-
 <p>Modify the pom.xml of Simple App Project as shown in the next listing.
 To recap the structure of pom.xml, we are presenting the complete file.
 Normally, the &lt;build&gt; block is placed after the project coordinates
 block and before the dependencies block.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class="nt">&gt;</span>
@@ -639,13 +637,12 @@ block and before the dependencies block.</p>
                         <span class="nt">&lt;version&gt;</span>2.4<span class="nt">&lt;/version&gt;</span>
                 <span class="nt">&lt;/dependency&gt;</span>
         <span class="nt">&lt;/dependencies&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>The above listing configures the compiler plugin to use 1.6 for source
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>The above listing configures the compiler plugin to use 1.6 for source
 and target. The configuration defined in &lt;plugin&gt; element is applied
 to all goals of the plugin. In other words, their scope is plugin and
 Maven applies it to both  compiler:compile and compiler:testCompile
 goals.</p>
-
 
 
 <div>&nbsp;</div>
@@ -663,25 +660,20 @@ goals.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="list-plugin-parameters">List Plugin Parameters</h2>
-
 <p>Easiest way to know the available parameters for a goal is to run plugin
 help goal.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn compiler:help -Dgoal=compile -Ddetail</code></pre></div>
-<p>It will list the available parameters for compile goal of compiler.</p>
-
+<pre><code class="language-screen" data-lang="screen">$ mvn compiler:help -Dgoal=compile -Ddetail
+</code></pre><p>It will list the available parameters for compile goal of compiler.</p>
 <p>But it will not show the default value of the parameters and to know the
 available parameters and also, the default value for each parameter, run
 help:describe goal of Maven Help plugin (maven-help-plugin).</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn help:describe -Dplugin=compiler -Dmojo=compile -Ddetail</code></pre></div>
-<p>Note that maven-help-plugins uses -Dmojo for goal, instead of -Dgoal,</p>
-
+<pre><code class="language-screen" data-lang="screen">$ mvn help:describe -Dplugin=compiler -Dmojo=compile -Ddetail
+</code></pre><p>Note that maven-help-plugins uses -Dmojo for goal, instead of -Dgoal,</p>
 <p>Below, we present some more examples of plugin configuration. To include
 or exclude certain files or directories in the project Jar, configure
 <a href="http://maven.apache.org/plugins/maven-jar-plugin/" target="_blank">Maven Jar Plugin</a>
 with &lt;include&gt; and &lt;exclude&gt; parameters.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ...
   <span class="nt">&lt;build&gt;</span>
@@ -697,12 +689,11 @@ with &lt;include&gt; and &lt;exclude&gt; parameters.</p>
       <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ...</code></pre></div>
-<p>Next one is, <a href="http://maven.apache.org/plugins/maven-clean-plugin/" target="_blank">Maven Clean
+  ...
+</code></pre></div><p>Next one is, <a href="http://maven.apache.org/plugins/maven-clean-plugin/" target="_blank">Maven Clean
 Plugin</a> deletes the
 target directory by default and we may configure it to delete additional
 directories and files.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ...
   <span class="nt">&lt;build&gt;</span>
@@ -728,10 +719,9 @@ directories and files.</p>
     <span class="nt">&lt;/plugin&gt;</span>
    <span class="nt">&lt;/plugins&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ...</code></pre></div>
-<p>The above configuration forces the clean plugin to delete *.java files
+  ...
+</code></pre></div><p>The above configuration forces the clean plugin to delete *.java files
 in <code>src/main/generated</code> directory, but excludes the Template*.</p>
-
 
 
 <div>&nbsp;</div>
@@ -750,13 +740,10 @@ in <code>src/main/generated</code> directory, but excludes the Template*.</p>
 
 
 
-
 <h2 id="more-examples">More Examples</h2>
-
 <p>Plugin Documentation contains many configuration and usage examples and
 you can find links to the documentation in <a href="http://maven.apache.org/plugins/index.html" target="_blank">Maven Plugin
 Directory</a>.</p>
-
 <p>In the next section, we cover the configuration of plugin goal
 execution.</p>
 

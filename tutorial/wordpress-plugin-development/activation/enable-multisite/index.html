@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T12:29:00+0530",
         "dateModified" : "2019-01-11T12:29:00+0530",
-        "wordCount" : "1215",
+        "wordCount" : "1214",
         "keywords" : [ "enable wordpress multisite","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multisite - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,61 +625,58 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-2-enable-wordpress-multisite">11.2. Enable WordPress Multisite</h2>
-
+            <h2 id="112enable-wordpress-multisite">11.2. Enable WordPress Multisite</h2>
 <p>To understand plugin multisite activation, we require a WordPress
 Multisite installation. In this blog, we install a new instance and
 enable WordPress Multisite.</p>
-
 <h3 id="install-wordpress">Install WordPress</h3>
-
 <p>So far in the tutorial, we used WordPress Single Site installation and
 it is possible to convert it to Multisite installation. Still, better
 approach is to install a new instance of WordPress and use it for
 multisite testing so as to leave the existing installation free for
 single site testing.</p>
-
 <p>Install a new instance of WordPress as explained in <a href="/tutorial/wordpress-plugin-development/install-locally/#sect-install-wordpress">WordPress Installation</a>. Steps to install the new instance are summarized below.</p>
-
 <ul>
-<li><p>unzip <code>wordpress.zip</code> to <code>/opt/lampp/htdocs</code> and rename the
+<li>
+<p>unzip <code>wordpress.zip</code> to <code>/opt/lampp/htdocs</code> and rename the
 wordpress directory as <code>wordpress-ms</code> where ms stands for multisite.
-Any other name would also do.</p></li>
-
-<li><p>edit <code>/opt/lampp/htdocs/index.php</code> and change all references to
+Any other name would also do.</p>
+</li>
+<li>
+<p>edit <code>/opt/lampp/htdocs/index.php</code> and change all references to
 directory wordpress-4.0.1 to wordpress-ms. If index.php doesn&rsquo;t
-exist, create it as explained in Chapter 1.</p></li>
-
-<li><p>edit <code>/opt/lampp/htdocs/.htaccess</code> and change all references to
+exist, create it as explained in Chapter 1.</p>
+</li>
+<li>
+<p>edit <code>/opt/lampp/htdocs/.htaccess</code> and change all references to
 directory wordpress-4.0.1 to wordpress-ms. If .htaccess doesn&rsquo;t
-exist, create it as explained in Chapter 1.</p></li>
-
-<li><p>add <code>wp-config.php</code> file to new wordpress directory i.e.
+exist, create it as explained in Chapter 1.</p>
+</li>
+<li>
+<p>add <code>wp-config.php</code> file to new wordpress directory i.e.
 <code>/opt/lampp/htdocs/wordpress-ms/</code> and in wp-config.php file define
 the database name as wordpress_ms instead of wordpress. Use _
 (underscore) in database name and not - (dash).</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">/** The name of the database for WordPress */
-define(&#39;DB_NAME&#39;, &#39;wordpress_ms&#39;);</code></pre></div>
-<p>All other configurations are same as the earlier one. If you have
+<pre><code class="language-screen" data-lang="screen">/** The name of the database for WordPress */
+define('DB_NAME', 'wordpress_ms');
+</code></pre><p>All other configurations are same as the earlier one. If you have
 already installed WordPress as explained in Chapter 1, then you can
 copy the wp-config.php from the existing WordPress directory to
 wordpress-ms directory and then change database name as
-wordpress_ms.</p></li>
-
-<li><p>login to MySQL and create new database wordpress_ms and grant
+wordpress_ms.</p>
+</li>
+<li>
+<p>login to MySQL and create new database wordpress_ms and grant
 privileges.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp
 $ bin/mysql -u root
 mysql&gt; create database wordpress_ms;
-mysql&gt; GRANT ALL PRIVILEGES ON wordpress_ms.* TO wp@localhost IDENTIFIED BY &#39;wp&#39;;
+mysql&gt; GRANT ALL PRIVILEGES ON wordpress_ms.* TO wp@localhost IDENTIFIED BY 'wp';
 mysql&gt; flush privileges;
-mysql&gt; exit</code></pre></div></li>
+mysql&gt; exit
+</code></pre></li>
 </ul>
-
 <p>To install multiple instances the installation process require some minor changes. Before proceeding with the usual WordPress installation, go through the next section which explain how to add default site when you use multiple instances of WordPress.</p>
-
 
 
 <div>&nbsp;</div>
@@ -697,66 +694,54 @@ mysql&gt; exit</code></pre></div></li>
 <div>&nbsp;</div>
 
 
-
 <h3 id="add-default-site">Add Default Site</h3>
-
 <p>With everything in place, open browser and access <code>http://localhost</code> to
 bring up the WordPress Installation screen.</p>
-
 <p>In the Installation Screen, give site name as WP 1. It becomes the first
-site (default site) under the WordPress Multisite, so we name it as WP
-1. But, you are free to choose any other name. Complete the installation
-process after entering other fields.</p>
-
+site (default site) under the WordPress Multisite, so we name it as WP</p>
+<ol>
+<li>But, you are free to choose any other name. Complete the installation
+process after entering other fields.</li>
+</ol>
 <p>Now, we can use URL <code>http://localhost/wordpress-ms/wp-admin/</code> to login to
 admin module. However, when we use URL <code>http://localhost/wp-admin/</code> login
 will not happen even though redirects are provided in the .htaccess. We
 need to correct this inconsistency before moving forward otherwise
 multisite installation misbehaves.</p>
-
 <p>To rectify the inconsistency, login to WordPress Admin Dashboard by
 using URL <code>http://localhost/wordpress-ms/wp-admin/</code> and in the admin menu,
 go to <strong>Settings</strong> → <strong>General</strong> to open the <strong>General Settings</strong> Page.
 At this point, WordPress Address (URL) and Site Address (URL) fields
 points to <code>http://localhost/wordpress-ms</code>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-site-url-before.png" alt="Enable WordPress Multisite" />
 </figure>
 
-
 <p>Modify both these fields and change URL to <code>http://localhost</code> and save
 changes. After the save, logout from WordPress.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-site-url-after.png" alt="Enable WordPress Multisite" />
 </figure>
 
-
 <p>Next, login using URL <code>http://localhost/wp-admin/</code> and you should be able
 to login to Admin Dashboard without any trouble.</p>
-
 <p><strong>Warning</strong></p>
-
 <p>Setting these two URL properly is very important for proper working of
 WordPress multisite. Hence do it correctly and verify that you are able
 to login to Admin Dashboard with URL <code>http://localhost/wp-admin/</code> and to
 WordPress site WP 1 using URL <code>http://localhost</code>.</p>
-
 <h3 id="enable-multisite">Enable Multisite</h3>
-
 <p>To configure and setup multisite, first we need to allow multisite. To
 do that, logout from admin screen, if logged in and edit
 <code>wordpress-ms/wp-config.php</code> and add following line just before the line
 that reads /* That&rsquo;s all, stop editing! Happy blogging. */</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">   ....
+<pre><code class="language-screen" data-lang="screen">   ....
 
-define(&#39;WP_ALLOW_MULTISITE&#39;,true);
+define('WP_ALLOW_MULTISITE',true);
 
-/* That&#39;s all, stop editing! Happy blogging. */
-   ....</code></pre></div>
-<p>This config will add a new sub menu <strong>Network Setup</strong> to <strong>Tools</strong> menu.</p>
-
+/* That's all, stop editing! Happy blogging. */
+   ....
+</code></pre><p>This config will add a new sub menu <strong>Network Setup</strong> to <strong>Tools</strong> menu.</p>
 
 
 <div>&nbsp;</div>
@@ -775,50 +760,37 @@ define(&#39;WP_ALLOW_MULTISITE&#39;,true);
 
 
 
-
 <h3 id="setup-network">Setup Network</h3>
-
 <p>Next step is to setup a network of WordPress sites.</p>
-
 <p>To do that, do a fresh login as admin and in admin menu select <strong>Tools</strong>
 → <strong>Network Setup</strong> to open the <strong>Create a Network of WordPress Sites</strong>
 page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-network-setup.png" alt="Enable WordPress Multisite" />
 </figure>
 
-
 <p>In Network Title field, enter the network title as WP Multi Sites and
 click <strong>Create Network</strong> to create the network.</p>
-
 <p><strong>Network Types</strong></p>
-
 <p>WordPress supports two types of network installation - <strong>Sub-directory
 Install</strong> and <strong>Sub-domain Install</strong>. In the first type, WordPress sites
 will have addresses such as xyz.com/wp1, xyz.com/wp2 etc., while under
 the second type, sites will have addresses such as wp1.xyz.com,
 wp2.xyz.com.</p>
-
 <p>When we use localhost as the server, WordPress supports only the
 sub-directory install. To use sub-domain install in local server, we
 need to setup the server host name as localhost.localdomain.</p>
-
 <p>For plugin development, Sub-Directory install is sufficient and so, we
 stick with the default.</p>
-
 <p>After creating the network, WordPress generates the configurations that
 has to be added to wp-config.php and .htaccess file.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-network-config.png" alt="Enable WordPress Multisite" />
 </figure>
 
-
 <p>Copy the first part of the configuration and paste it to
 <code>wordpress-ms/wp-config.php</code>, as usually just above the Happy blogging
 line.</p>
-
 <p><code>/opt/lampp/htdocs/wordpress-ms/wp-config.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ....
 define(&#39;WP_ALLOW_MULTISITE&#39;,true);
@@ -831,10 +803,9 @@ define(&#39;SITE_ID_CURRENT_SITE&#39;, 1);
 define(&#39;BLOG_ID_CURRENT_SITE&#39;, 1);
 
 /* That&#39;s all, stop editing! Happy blogging. */
-  ....</code></pre></div>
-<p>Copy the second part of the configuration and paste it the
+  ....
+</code></pre></div><p>Copy the second part of the configuration and paste it the
 <code>htdocs/.htaccess</code>. The file, after changes, should look as follows.</p>
-
 <p><code>/opt/lampp/htdocs/.htaccess</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"># BEGIN WordPress
 <span class="p">&lt;</span><span class="nt">IfModule</span> <span class="na">mod_rewrite</span><span class="err">.</span><span class="na">c</span><span class="p">&gt;</span>
@@ -855,67 +826,51 @@ RewriteRule . index.php [L]
 
 <span class="p">&lt;/</span><span class="nt">IfModule</span><span class="p">&gt;</span>
 
-# END WordPress</code></pre></div>
-<p>Once changes are completed, logout from WordPress and login again. Now,
+# END WordPress
+</code></pre></div><p>Once changes are completed, logout from WordPress and login again. Now,
 admin screen will have a new menu item <strong>My Sites</strong> in the top bar.</p>
-
 <h3 id="multisite-admin-menu">Multisite Admin Menu</h3>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-nw-admin-menu.png" alt="Enable WordPress Multisite" />
 </figure>
 
-
 <p>The multisite admin menu <strong>My Sites</strong> is a drop down menu which at this
 point contains two sub menu items - <strong>Network Admin</strong> and <strong>WP 1</strong>.</p>
-
 <p><strong>Network Admin</strong> menu is used manage network wide functions such as add
 and manage sites, users, themes and plugins. To shift to Multisite
 Network Dashboard and its menu panel, use <strong>My Sites</strong> → <strong>Network
 Admin</strong> → <strong>Dashboard.</strong></p>
-
 <p>The home icon next to My Sites indicates the active dashboard which in
 the screenshot is Network Admin.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-default-site-admin-menu.png" alt="Enable WordPress Multisite" />
 </figure>
-
 
 <p>Below the Network Admin menu, WordPress lists menu for the sites in the
 network. At this point, our multisite network has only one site, WP 1.
 To open its admin dashboard and the admin menu panel use <strong>My Sites</strong> →
 <strong>WP 1</strong> → <strong>Dashboard.</strong></p>
-
 <p>The Home icon next My Sites indicates that active dashboard is WP 1.</p>
-
 <h3 id="add-sites">Add Sites</h3>
-
 <p>To test plugin multisite activation, we require at least two sites.
 Let&rsquo;s add one more site to the network.</p>
-
 <p>Open Network Admin Dashboard with <strong>My Sites</strong> → <strong>Network Admin</strong> →
 <strong>Dashboard.</strong> Then select <strong>Sites</strong> → <strong>Add New</strong> from the left side
 menu panel to open the <strong>Add New Site</strong> page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-add-site.png" alt="Enable WordPress Multisite" />
 </figure>
-
 
 <p>In the <strong>Site Address</strong> field enter wp2 (only lowercase letters and
 numbers are allowed) and in <strong>Site Title</strong> enter the name of the site as
 WP 2. Add the site, after entering other fields. The address of the new
 site will be <code>http://localhost/wp2/</code>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-sites-admin-menu.png" alt="Enable WordPress Multisite" />
 </figure>
 
-
 <p>Now WP 2 sub menu is listed under My Sites and we can use <strong>My Sites</strong> →
 <strong>WP 2</strong> → <strong>Dashboard</strong> to open the WP 2 Admin dashboard.</p>
-
 <p>In the next section, we learn about plugin activation in WordPress
 Multisite Installations.</p>
 

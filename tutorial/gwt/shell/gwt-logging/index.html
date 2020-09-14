@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Logging - GWT Tutorial - CodeTab</title></head>
 
@@ -711,19 +711,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="3-4-logtab">3.4. LogTab</h2>
-
+            <h2 id="34logtab">3.4. LogTab</h2>
 <p>In GWT, client side log messages may be sent to the server or log them
 in the client itself. <code>LogTab</code> composite displays log messages on the
 client side.</p>
-
 <p>Add <code>LogTab.java</code> and <code>LogTab.ui.xml</code> to <code>in.fins.client.content</code>
 package. Please note that content related classes are placed in
 <code>in.fins.client.content</code> whereas custom widgets are placed in
 <code>in.fins.client.widget</code>.</p>
-
 <p><code>in.fins.client.content/LogTab.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;!DOCTYPE ui:UiBinder SYSTEM &#34;http://dl.google.com/gwt/DTD/xhtml.ent&#34;&gt;</span>
 <span class="nt">&lt;ui:UiBinder</span> <span class="na">xmlns:ui=</span><span class="s">&#34;urn:ui:com.google.gwt.uibinder&#34;</span>
@@ -735,40 +730,40 @@ package. Please note that content related classes are placed in
         <span class="nt">&lt;/g:VerticalPanel&gt;</span>
     <span class="nt">&lt;/g:ScrollPanel&gt;</span>
 
-<span class="nt">&lt;/ui:UiBinder&gt;</span></code></pre></div>
-<p><code>in.fins.client.content/LogTab.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">content</span><span class="p">;</span>
+<span class="nt">&lt;/ui:UiBinder&gt;</span>
+</code></pre></div><p><code>in.fins.client.content/LogTab.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.fins.client.content</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">logging</span><span class="p">.</span><span class="na">Logger</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">core</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">GWT</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">logging</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">HasWidgetsLogHandler</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiBinder</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiField</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Composite</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">VerticalPanel</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Widget</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.core.client.GWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.logging.client.HasWidgetsLogHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiBinder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiField</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Composite</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.VerticalPanel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Widget</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">LogTab</span> <span class="nf">extends</span> <span class="n">Composite</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LogTab</span> <span class="kd">extends</span> <span class="n">Composite</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
 
-    <span class="kd">interface</span> <span class="nf">LogTabBinder</span> <span class="kd">extends</span> <span class="nf">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">LogTab</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="p">}</span>
+    <span class="kd">interface</span> <span class="nc">LogTabBinder</span> <span class="kd">extends</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">LogTab</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="nf">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">LogTab</span><span class="o">&gt;</span> <span class="nf">binder</span> <span class="o">=</span> <span class="n">GWT</span>
-            <span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">LogTabBinder</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">LogTab</span><span class="o">&gt;</span> <span class="n">binder</span> <span class="o">=</span> <span class="n">GWT</span>
+            <span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">LogTabBinder</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="nd">@UiField</span>
-    <span class="n">VerticalPanel</span> <span class="nf">logArea</span><span class="p">;</span>
+    <span class="n">VerticalPanel</span> <span class="n">logArea</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">LogTab</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-        <span class="n">log</span><span class="p">.</span><span class="na">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="n">HasWidgetsLogHandler</span><span class="p">(</span><span class="n">logArea</span><span class="p">));</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">LogTab</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">addHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">HasWidgetsLogHandler</span><span class="o">(</span><span class="n">logArea</span><span class="o">));</span>
+    <span class="o">}</span>
 
-<span class="p">}</span></code></pre></div>
-
+<span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -785,20 +780,15 @@ package. Please note that content related classes are placed in
 <div>&nbsp;</div>
 
 
-
 <p> </p>
-
 <p>UiBinder returns a <code>VerticalPanel</code> which is used to create
 <code>HasWidgetLogHandler</code> which is a handler that can send log to any widget
 that extends the <code>HasWidgets</code> interface. Handler is attached to the root
-logger returned by Logger.getLogger(&ldquo;&rdquo;). With this, VerticalPanel
+logger returned by Logger.getLogger(&quot;&quot;). With this, VerticalPanel
 displays all log messages.</p>
-
 <p>Add style <code>fins-ContentHeader-Label</code>, used for header label, to
 <code>Fins.css</code></p>
-
 <p> </p>
-
 <p><code>in.fins.public/Fins.css</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS"><span class="p">.</span><span class="nc">fins-ContentHeader-Label</span> <span class="p">{</span>
  <span class="k">color</span><span class="p">:</span> <span class="kc">cornflowerblue</span><span class="p">;</span>
@@ -808,34 +798,30 @@ displays all log messages.</p>
  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
  <span class="k">vertical-align</span><span class="p">:</span> <span class="kc">middle</span><span class="p">;</span>
  <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-<h2 id="visual-css-editor">Visual CSS Editor</h2>
-
+<span class="p">}</span>
+</code></pre></div><h2 id="visual-css-editor">Visual CSS Editor</h2>
 <p>So far, we have not used GWT Designer. It is a good tool to play around
 with panels and widgets while learning GWT but, once we get on with
 actual development its utility wane off as we like to tweak the widgets
 either through their methods or declaratively in ui template files.
 However, Designer&rsquo;s Visual CSS Editor is quite useful to add stylesheet
 items visually.</p>
-
 <p>Now add the LogTab to content area of FinsShell.</p>
-
 <p><code>in.fins.client.content/FinsShell.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="p">....</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="o">....</span>
 
-<span class="kd">public</span> <span class="nf">FinsShell</span><span class="p">()</span> <span class="p">{</span>
- <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<span class="kd">public</span> <span class="nf">FinsShell</span><span class="o">()</span> <span class="o">{</span>
+ <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
 
- <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">GWT</span><span class="p">.</span><span class="na">isProdMode</span><span class="p">())</span> <span class="p">{</span>
-   <span class="n">contentPanel</span><span class="p">.</span><span class="na">addTab</span><span class="p">(</span><span class="s">&#34;Log&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="n">LogTab</span><span class="p">());</span>
- <span class="p">}</span>
+ <span class="k">if</span> <span class="o">(!</span><span class="n">GWT</span><span class="o">.</span><span class="na">isProdMode</span><span class="o">())</span> <span class="o">{</span>
+   <span class="n">contentPanel</span><span class="o">.</span><span class="na">addTab</span><span class="o">(</span><span class="s">&#34;Log&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">LogTab</span><span class="o">());</span>
+ <span class="o">}</span>
 
-<span class="p">....</span></code></pre></div>
-<p><code>GWT.isProdMode()</code> method checks whether app is running in production or
+<span class="o">....</span>
+</code></pre></div><p><code>GWT.isProdMode()</code> method checks whether app is running in production or
 development mode and LogTab is added if it is development mode. We have
 to inherit logging module in gwt.xml to enable logging. Modify
 <code>Fins.gwt.xml</code>.</p>
-
 <p><code>in.fins.client/fins.gwt.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 
@@ -846,35 +832,33 @@ to inherit logging module in gwt.xml to enable logging. Modify
 <span class="nt">&lt;set-property</span> <span class="na">name=</span><span class="s">&#34;gwt.logging.enabled&#34;</span> <span class="na">value=</span><span class="s">&#34;TRUE&#34;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;set-property</span> <span class="na">name=</span><span class="s">&#34;gwt.logging.popupHandler&#34;</span> <span class="na">value=</span><span class="s">&#34;DISABLED&#34;</span> <span class="nt">/&gt;</span>
 
-....</code></pre></div>
-<p><code>Inherits</code> element adds <code>com.google.gwt.logging.Logging</code> module and
+....
+</code></pre></div><p><code>Inherits</code> element adds <code>com.google.gwt.logging.Logging</code> module and
 <code>set-property</code> enables logging and set log level. By default
 <code>PopupHandler</code>, pops up a window to show logs and it has to be disabled
 as we are using <code>HasWidgetLogHandler</code>.</p>
-
 <p>Add a log statement in <code>onModuleLoad()</code> method in <code>Fins.java</code> to test
 LogTab.</p>
-
 <p><code>in.fins.client/Fins.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="p">....</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="o">....</span>
 
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">logging</span><span class="p">.</span><span class="na">Logger</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="o">;</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
-<span class="kd">private</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">Fins</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Fins</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
 
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="nf">void</span> <span class="n">onModuleLoad</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">RootLayoutPanel</span> <span class="nf">rp</span> <span class="o">=</span> <span class="n">RootLayoutPanel</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
-  <span class="n">FinsShell</span> <span class="nf">finsShell</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FinsShell</span><span class="p">();</span>
-  <span class="n">rp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">finsShell</span><span class="p">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onModuleLoad</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">RootLayoutPanel</span> <span class="n">rp</span> <span class="o">=</span> <span class="n">RootLayoutPanel</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+  <span class="n">FinsShell</span> <span class="n">finsShell</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FinsShell</span><span class="o">();</span>
+  <span class="n">rp</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">finsShell</span><span class="o">);</span>
 
-  <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Module loaded. BaseURL - &#34;</span> <span class="o">+</span> <span class="n">GWT</span><span class="p">.</span><span class="na">getModuleBaseURL</span><span class="p">());</span>
-<span class="p">}</span>
+  <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Module loaded. BaseURL - &#34;</span> <span class="o">+</span> <span class="n">GWT</span><span class="o">.</span><span class="na">getModuleBaseURL</span><span class="o">());</span>
+<span class="o">}</span>
 
-<span class="p">....</span></code></pre></div>
-
+<span class="o">....</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -892,23 +876,18 @@ LogTab.</p>
 
 
 
-
 <p>Now, in addition to Home tab, content area has a tab to show log
 messages. With basic content area in place, we move on to design menu
 bar in the next chapter.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>Custom Widgets</em> - To know more about custom widgets refer <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideUiCustomWidgets" target="_blank">Creating
 Custom
 Widgets</a>
 .</p>
-
 <p><em>UiBinder</em> - To know more about UiBinder refer <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideUiBinder" target="_blank">Developer&rsquo;s Guide -
 Declarative Layout with
 UiBinder</a>
 .</p>
-
 <p><em>Logging</em> - To get know the GWT logging framework refer <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideLogging" target="_blank">Developer&rsquo;s
 Guide -
 Logging</a>

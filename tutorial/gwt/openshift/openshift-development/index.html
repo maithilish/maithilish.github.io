@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift Development - GWT Tutorial - CodeTab</title></head>
 
@@ -711,49 +711,41 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-5-openshift-development">12.5. OpenShift Development</h2>
-
+            <h2 id="125openshift-development">12.5. OpenShift Development</h2>
 <p>Without any changes to the code, we are able to deploy Fins to
 OpenShift. But, you may require a local setup to develop your app before
 moving it to OpenShift, and this section shows how to develop GWT
 applications with Tomcat.</p>
-
 <h5 id="setup-tomcat">Setup Tomcat</h5>
-
 <p>Extract Tomcat archive to some location on your system and we refer this
 folder as CATALINA_HOME.</p>
-
 <p>Officially suggested method to run GWT on external server is to copy
 static, image files and gwt dir to <code>tomcat/webapps</code> and on any changes
 in server side classes (like rcp etc.,) or static files, we need to copy
 them again to tomcat.</p>
-
 <p>Instead, we may point tomcat to project&rsquo;s war directory so that tomcat
 runs the app directly from Eclipse workspace and on any changes, reloads
 the application.</p>
-
 <p>To begin with, point Tomcat to war dir of GWT project. To do this, add
 <code>&lt;appname&gt;.xml</code> to <code>$CATALINA_HOME/conf/Catalina/localhost</code>. Change
 <strong>docBase</strong> attribute to absolute path of the project war
 directory.</p>
-
 <p><code>$CATALINA_HOME/conf/Catalina/localhost/fins.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;Context</span> <span class="na">path=</span><span class="s">&#34;/fins&#34;</span> <span class="na">docBase=</span><span class="s">&#34;/home/m/workspace/fins/war&#34;</span> <span class="na">reloadable=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/Context&gt;</span></code></pre></div>
-<ul>
-<li><p><strong>docBase</strong> attribute points to project&rsquo;s war dir in eclipse and
+<span class="nt">&lt;/Context&gt;</span>
+</code></pre></div><ul>
+<li>
+<p><strong>docBase</strong> attribute points to project&rsquo;s war dir in eclipse and
 with this tomcat is able to run the web app directly from eclipse
-workspace without copying files to tomcat/webapps dir.</p></li>
-
-<li><p><strong>reloadable</strong> attribute ensures that tomcat reloads the app
-whenever files are modified in workspace.</p></li>
+workspace without copying files to tomcat/webapps dir.</p>
+</li>
+<li>
+<p><strong>reloadable</strong> attribute ensures that tomcat reloads the app
+whenever files are modified in workspace.</p>
+</li>
 </ul>
-
 <p>There are two options to define database connection. Set Connection URL,
 user name and password directly in <code>jdoconfig.xml</code></p>
-
 <p><code>src/META-INF/jdoconfig.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
@@ -765,17 +757,14 @@ user name and password directly in <code>jdoconfig.xml</code></p>
               <span class="na">value=</span><span class="s">&#34;jdbc:hsqldb:hsql://localhost/finsdb&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionUserName&#34;</span> <span class="na">value=</span><span class="s">&#34;sa&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionPassword&#34;</span> <span class="na">value=</span><span class="s">&#34;&#34;</span> <span class="nt">/&gt;</span>
-....</code></pre></div>
-<script>
+....
+</code></pre></div><script>
     console.log("slot C"); 
 </script>
-
 <p> </p>
-
 <p>Other option is to define JNDI resource within <strong>Context</strong> element in
 context file <code>fins.xml</code> and add it as <strong>resource-ref</strong> in
 <code>web.xml</code>.</p>
-
 <p><code>$CATALINA_HOME/conf/Catalina/localhost/fins.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;Context</span> <span class="na">path=</span><span class="s">&#34;/fins&#34;</span> <span class="na">docBase=</span><span class="s">&#34;/home/m/workspace/fins/war&#34;</span> <span class="na">reloadable=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;Resource</span> <span class="na">name=</span><span class="s">&#34;jdbc/datastore&#34;</span> 
@@ -784,8 +773,8 @@ context file <code>fins.xml</code> and add it as <strong>resource-ref</strong> i
           <span class="na">username=</span><span class="s">&#34;sa&#34;</span> <span class="na">password=</span><span class="s">&#34;&#34;</span> 
           <span class="na">auth=</span><span class="s">&#34;Container&#34;</span> <span class="na">type=</span><span class="s">&#34;javax.sql.DataSource&#34;</span>
           <span class="na">maxActive=</span><span class="s">&#34;20&#34;</span> <span class="na">maxIdle=</span><span class="s">&#34;5&#34;</span> <span class="na">maxWait=</span><span class="s">&#34;10000&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/Context&gt;</span></code></pre></div>
-<p><code>war/WEB-INF/web.xml</code></p>
+<span class="nt">&lt;/Context&gt;</span>
+</code></pre></div><p><code>war/WEB-INF/web.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 <span class="nt">&lt;resource-ref&gt;</span>
   <span class="nt">&lt;description&gt;</span>DataSource<span class="nt">&lt;/description&gt;</span>
@@ -793,21 +782,20 @@ context file <code>fins.xml</code> and add it as <strong>resource-ref</strong> i
   <span class="nt">&lt;res-type&gt;</span>javax.sql.DataSource<span class="nt">&lt;/res-type&gt;</span>
   <span class="nt">&lt;res-auth&gt;</span>Container<span class="nt">&lt;/res-auth&gt;</span>
 <span class="nt">&lt;/resource-ref&gt;</span>
-....</code></pre></div>
-<p><code>src/META-INF/jdoconfig.xml</code></p>
+....
+</code></pre></div><p><code> src/META-INF/jdoconfig.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.PersistenceManagerFactoryClass&#34;</span>
               <span class="na">value=</span><span class="s">&#34;org.datanucleus.api.jdo.JDOPersistenceManagerFactory&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionFactoryName&#34;</span>
               <span class="na">value=</span><span class="s">&#34;java:comp/env/jdbc/datastore&#34;</span> <span class="nt">/&gt;</span>
-....</code></pre></div>
-<p>Enhance the classes with DataNucleus Enhancer and start HSQLDB database.
+....
+</code></pre></div><p>Enhance the classes with DataNucleus Enhancer and start HSQLDB database.
 Then start tomcat with <code>$CATALINA_HOME/bin/startup.sh</code>. Fins should be
 accessible at <code>http://localhost:8080/fins</code>. Make some changes to
 application in Eclipse and check whether tomcat reloads the app (view
 <code>$CATALINA_HOME/logs/catalina.out</code> for reload logs).</p>
-
 
 
 <div>&nbsp;</div>
@@ -826,34 +814,25 @@ application in Eclipse and check whether tomcat reloads the app (view
 
 
 
-
 <h5 id="gwt-development-mode">GWT Development Mode</h5>
-
 <p>To run the app in GWT Dev mode, go to &ldquo;Run As&rdquo; option in project context
 menu and select &ldquo;Web Application (Running on external server)&rdquo;. Enter
 external server root as fins and give html page as Fins.html. This will
 run the GWT app in development mode without running embedded Jetty
 server.</p>
-
 <p>But, app URL still points to <code>http://localhost:8888/fins/Fins.html</code>. To
 change this, modify Run configuration. Go to run configurations and
 select Fin.html (external). Change Browsers URL field in GWT tab to
 <code>http://localhost:8080/Fins/Fins.html</code></p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/runconfig.png" alt="Run Configuration" />
 </figure>
 
-
-<h6 id="figure-12-4-run-configuration">Figure 12.4. Run Configuration</h6>
-
+<h6 id="figure124run-configuration">Figure 12.4. Run Configuration</h6>
 <p>Run the app again and access the app at <code>http://localhost:8080/fins/Fins.html?gwt.codesvr=127.0.0.1:9997</code>. Now, you will be able to use GWT Dev mode to run and debug GWT app.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>OpenShift User Guide</em> - <a href="https://access.redhat.com/site/documentation/en-US/OpenShift_Online/2.0/html/User_Guide/" target="_blank">User
 Guide</a></p>
-
 <p><em>OpenShift System Architecture</em> - <a href="http://openshift.github.io/documentation/oo_system_architecture_guide.html" target="_blank">OpenShift
 Architecture</a></p>
 

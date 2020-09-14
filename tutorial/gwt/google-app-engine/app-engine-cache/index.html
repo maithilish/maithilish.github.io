@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T16:38:00+0530",
         "dateModified" : "2019-01-10T16:38:00+0530",
-        "wordCount" : "924",
+        "wordCount" : "925",
         "keywords" : [ "app engine cache","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>GAE Cache - GWT Tutorial - CodeTab</title></head>
 
@@ -711,34 +711,24 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-2-cache">11.2. Cache</h2>
-
+            <h2 id="112cache">11.2. Cache</h2>
 <p>The next task is to cache the symbols in App Engine MemCache. By moving
 the symbols from List&lt;Symbol&gt; in <code>UploadService</code> servlet to MemCache,
 they become accessible to App Engine services like Queue, Tasks etc.</p>
-
 <h5 id="cachepanel">CachePanel</h5>
-
 <p>This widget has two Buttons - Cache Symbols and Clear cache, with
 obvious functionality.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/cachepanel.png" alt="CachePanel" />
 </figure>
 
-
-<h6 id="figure-11-3-cachepanel">Figure 11.3. CachePanel</h6>
-
+<h6 id="figure113cachepanel">Figure 11.3. CachePanel</h6>
 <p>Its design is similar to the <code>UploadPanel</code> described in the previous
 section, and it uses <code>FormPanel</code> to submit data to the server and
 invokes <code>UploadService</code> servlet, through regular HTML form submission
 rather than GWT RPC.</p>
-
 <p><code>CachePanel</code> is added to <code>DataStore</code> content page, in its UI declaration
 file.</p>
-
 <p><code>in.fins.client.content/DataStore.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
          <span class="nt">&lt;g:VerticalPanel</span> <span class="na">spacing=</span><span class="s">&#34;40&#34;</span><span class="nt">&gt;</span>
@@ -747,9 +737,8 @@ file.</p>
           <span class="nt">&lt;/g:VerticalPanel&gt;</span>
       <span class="nt">&lt;/g:layer&gt;</span>
    <span class="nt">&lt;/g:LayoutPanel&gt;</span>
-<span class="nt">&lt;/ui:UiBinder&gt;</span></code></pre></div>
-<h5 id="cache">Cache</h5>
-
+<span class="nt">&lt;/ui:UiBinder&gt;</span>
+</code></pre></div><h5 id="cache">Cache</h5>
 <p>App Engine provides distributed in-memory data cache service known as
 MemCache, and high performance web applications ofter use them to reduce
 datastore access. App Engine Cache API comes in two flavors - JCache and
@@ -759,7 +748,6 @@ or class. Low Level API is richer and provides MemcacheService and
 AsyncMemcacheService. By default, data is retained by cache as long as
 possible and evicted only when it is low on memory. Maximum size of each
 cached object is l MB.</p>
-
 <p>We use cache to hold Symbols and for this, JCache API is sufficient.
 But, Fins should be able to use the cache even when it runs on a regular
 app server like JBoss. JCache is based on, yet to be official, JSR 107
@@ -771,36 +759,29 @@ out of App Engine. For non App Engine setup, we have the option to use
 industry standard cache modules like Ehcache etc., but for our limited
 use of cache, it is a overkill and hence, we are going to use a simple
 custom cache.</p>
-
 <p>Following figure shows the cache interaction by <code>UploadService</code>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/cache.png" alt="Cache interface" />
 </figure>
 
-
-<h6 id="figure-11-4-cache-interface">Figure 11.4. Cache interface</h6>
-
+<h6 id="figure114cache-interface">Figure 11.4. Cache interface</h6>
 <p>Interactions between <code>UploadService</code> and cache happens through interface
-<code>ICache</code>, which defines the methods to interact with the cache. Both; <code>
-GaeCache</code> used in App Engine, and <code>SimpleCache</code> used in regular app
+<code>ICache</code>, which defines the methods to interact with the cache. Both; <code>GaeCache</code> used in App Engine, and <code>SimpleCache</code> used in regular app
 server, implements <code>ICache</code>.</p>
-
 <p><code>in.fins.server.cache/ICache.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">ICache</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ICache</span> <span class="o">{</span>
 
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">createCache</span><span class="p">()</span> <span class="kd">throws</span> <span class="nf">Exception</span><span class="p">;</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createCache</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">put</span><span class="p">(</span><span class="n">String</span> <span class="nf">key</span><span class="p">,</span> <span class="n">Object</span> <span class="nf">value</span><span class="p">);</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">put</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Object</span> <span class="n">value</span><span class="o">);</span>
 
-        <span class="kd">public</span> <span class="nf">Object</span> <span class="n">get</span><span class="p">(</span><span class="n">String</span> <span class="nf">key</span><span class="p">);</span>
+        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">get</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">);</span>
 
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">clear</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<p>ICache provide access to cache through a map-like interface, where
-method <code>put()</code> stores key and value in the cache, and method <code>get()</code>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clear</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div><p>ICache provide access to cache through a map-like interface, where
+method <code>put()</code> stores key and value in the cache, and method <code>get() </code>
 retrieves the value object for a key.</p>
-
 
 
 <div>&nbsp;</div>
@@ -818,131 +799,125 @@ retrieves the value object for a key.</p>
 <div>&nbsp;</div>
 
 
-
 <p><code>GaeCache</code> obtains reference to MemCache through, <code>CacheManager</code> and
 <code>CacheFactory</code>.</p>
-
 <p><code>in.fins.server.cache/GaeCache.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">GaeCache</span> <span class="nf">implements</span> <span class="n">ICache</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GaeCache</span> <span class="kd">implements</span> <span class="n">ICache</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="nf">Cache</span> <span class="n">cache</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Cache</span> <span class="n">cache</span><span class="o">;</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">createCache</span><span class="p">()</span> <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="p">(</span><span class="n">cache</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-              <span class="n">CacheFactory</span> <span class="nf">cacheFactory</span> <span class="o">=</span> 
-                    <span class="n">CacheManager</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span> <span class="p">.</span><span class="na">getCacheFactory</span><span class="p">();</span>
-              <span class="n">cache</span> <span class="o">=</span> <span class="n">cacheFactory</span><span class="p">.</span><span class="na">createCache</span><span class="p">(</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyMap</span><span class="p">());</span>
-          <span class="p">}</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">CacheException</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-              <span class="n">log</span><span class="p">.</span><span class="na">warning</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-              <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span></code></pre></div>
-<p><code>SimpleCache</code>, which used in regular app server setup, uses a singleton
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createCache</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">cache</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">CacheFactory</span> <span class="n">cacheFactory</span> <span class="o">=</span> 
+                    <span class="n">CacheManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span> <span class="o">.</span><span class="na">getCacheFactory</span><span class="o">();</span>
+              <span class="n">cache</span> <span class="o">=</span> <span class="n">cacheFactory</span><span class="o">.</span><span class="na">createCache</span><span class="o">(</span><span class="n">Collections</span><span class="o">.</span><span class="na">emptyMap</span><span class="o">());</span>
+          <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">CacheException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">log</span><span class="o">.</span><span class="na">warning</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+              <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div><p><code>SimpleCache</code>, which used in regular app server setup, uses a singleton
 class <code>Cache</code> which internally uses a HashMap&lt;String,Object&gt; to hold
 cache data. Cache is is a non public class of SimpleCache.</p>
-
 <p><code>in.fins.server.cache/GaeCache.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">SimpleCache</span> <span class="nf">implements</span> <span class="n">ICache</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleCache</span> <span class="kd">implements</span> <span class="n">ICache</span> <span class="o">{</span>
 
-        <span class="kd">private</span> <span class="nf">Cache</span> <span class="n">cache</span><span class="p">;</span>
-
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">createCache</span><span class="p">()</span> <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
-                <span class="n">cache</span> <span class="o">=</span> <span class="n">Cache</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="kd">private</span> <span class="n">Cache</span> <span class="n">cache</span><span class="o">;</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">put</span><span class="p">(</span><span class="n">String</span> <span class="nf">key</span><span class="p">,</span> <span class="n">Object</span> <span class="nf">value</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">cache</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="p">....</span>
-<span class="p">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createCache</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                <span class="n">cache</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">put</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Object</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="o">....</span>
+<span class="o">}</span>
 
 <span class="c1">// Singleton Cache
 </span><span class="c1"></span>
-<span class="kd">class</span> <span class="nf">Cache</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">Cache</span> <span class="o">{</span>
 
-        <span class="kd">public</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Cache</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cache</span><span class="p">();</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Cache</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cache</span><span class="o">();</span>
 
-        <span class="kd">private</span> <span class="nf">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">cache</span><span class="p">;</span>
+        <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">cache</span><span class="o">;</span>
 
-        <span class="kd">private</span> <span class="nf">Cache</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="kd">private</span> <span class="nf">Cache</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
+        <span class="o">}</span>
 
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">put</span><span class="p">(</span><span class="n">String</span> <span class="nf">key</span><span class="p">,</span> <span class="n">Object</span> <span class="nf">value</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">cache</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">put</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Object</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
         
-        <span class="p">....</span>
-<span class="p">}</span></code></pre></div>
-<p><code>UploadService</code> uses <code>cacheSymbols()</code> and <code>clearSymbols()</code> methods to
+        <span class="o">....</span>
+<span class="o">}</span>
+</code></pre></div><p><code>UploadService</code> uses <code>cacheSymbols()</code> and <code>clearSymbols()</code> methods to
 handle user requests on form submission. These methods create
 appropriate cache based on the platform on which app is running.</p>
-
 <p><code>in.fins.server.cache/GaeCache.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="p">....</span>
- <span class="kd">private</span> <span class="nf">String</span> <span class="n">cacheSymbols</span><span class="p">()</span> <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="o">....</span>
+ <span class="kd">private</span> <span class="n">String</span> <span class="nf">cacheSymbols</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
  
-        <span class="n">String</span> <span class="nf">serverName</span> <span class="o">=</span> <span class="n">getServerName</span><span class="p">();</span>
-        <span class="n">ICache</span> <span class="nf">cache</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> 
-        <span class="k">if</span> <span class="p">(</span><span class="n">serverName</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&#34;GAE&#34;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">cache</span> <span class="o">=</span> <span class="n">Utils</span><span class="p">.</span><span class="na">createInstance</span><span class="p">(</span><span class="n">ICache</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
-                                <span class="s">&#34;in.fins.server.cache.GaeCache&#34;</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="n">cache</span> <span class="o">=</span> <span class="n">Utils</span><span class="p">.</span><span class="na">createInstance</span><span class="p">(</span><span class="n">ICache</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
-                                <span class="s">&#34;in.fins.server.cache.SimpleCache&#34;</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">cache</span><span class="p">.</span><span class="na">createCache</span><span class="p">();</span>
-                  <span class="p">....</span>
-  <span class="p">}</span>
+        <span class="n">String</span> <span class="n">serverName</span> <span class="o">=</span> <span class="n">getServerName</span><span class="o">();</span>
+        <span class="n">ICache</span> <span class="n">cache</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> 
+        <span class="k">if</span> <span class="o">(</span><span class="n">serverName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;GAE&#34;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">cache</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="na">createInstance</span><span class="o">(</span><span class="n">ICache</span><span class="o">.</span><span class="na">class</span><span class="o">,</span>
+                                <span class="s">&#34;in.fins.server.cache.GaeCache&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">cache</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="na">createInstance</span><span class="o">(</span><span class="n">ICache</span><span class="o">.</span><span class="na">class</span><span class="o">,</span>
+                                <span class="s">&#34;in.fins.server.cache.SimpleCache&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">cache</span><span class="o">.</span><span class="na">createCache</span><span class="o">();</span>
+                  <span class="o">....</span>
+  <span class="o">}</span>
  
-  <span class="kd">private</span> <span class="nf">String</span> <span class="n">getServerName</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="nf">serverName</span> <span class="o">=</span> <span class="n">getServletContext</span><span class="p">().</span><span class="na">getServerInfo</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">serverName</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&#34;Google App Engine&#34;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="s">&#34;GAE&#34;</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">serverName</span><span class="p">;</span>
-        <span class="p">}</span>
-  <span class="p">}</span></code></pre></div>
-<p>Depending on the platform name returned by <code>getServerName()</code>method,
+  <span class="kd">private</span> <span class="n">String</span> <span class="nf">getServerName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">serverName</span> <span class="o">=</span> <span class="n">getServletContext</span><span class="o">().</span><span class="na">getServerInfo</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">serverName</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;Google App Engine&#34;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="s">&#34;GAE&#34;</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">serverName</span><span class="o">;</span>
+        <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div><p>Depending on the platform name returned by <code>getServerName() </code>method,
 <code>cacheSymbols()</code> obtains an instance of either <code>GaeCache</code> or
 <code>SimpleCache</code>, through helper method <code>Utils.createInstance()</code> . The util
 method creates an instance based on the class name string, and this
 ensures that UploadService compiles, even when App Engine related
 libraries are not available in project class path, which is normally the
 case when we use the Fins in regular app server setup.</p>
-
 <p>Once cache is obtained, <code>cacheSymbols()</code> method iterates through
 List&lt;Symbol&gt; and cache the symbol with symbol name as key. While doing
 so, it also creates and cache a list of symbol names, which is later
 used as key set.</p>
-
 <p><code>in.fins.server.cache/GaeCache.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">symbolNames</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">Symbol</span> <span class="nf">symbol</span> <span class="o">:</span> <span class="n">symbols</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">cache</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">symbol</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span> <span class="n">symbol</span><span class="p">);</span>
-                <span class="n">symbolNames</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">symbol</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-        <span class="p">}</span>
-        <span class="n">cache</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;symbolNames&#34;</span><span class="p">,</span> <span class="n">symbolNames</span><span class="p">);</span>
-        <span class="kt">int</span> <span class="nf">cacheCount</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">symbolNames</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Symbol</span> <span class="n">symbol</span> <span class="o">:</span> <span class="n">symbols</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">symbol</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">symbol</span><span class="o">);</span>
+                <span class="n">symbolNames</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">symbol</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="n">cache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;symbolNames&#34;</span><span class="o">,</span> <span class="n">symbolNames</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">cacheCount</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
 
         <span class="c1">// check cache consistency
-</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="nf">name</span> <span class="o">:</span> <span class="n">symbolNames</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">Object</span> <span class="nf">o</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">o</span> <span class="nf">instanceof</span> <span class="n">Symbol</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">cacheCount</span><span class="o">++</span><span class="p">;</span>
-                <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">cacheCount</span> <span class="o">!=</span> <span class="n">symbolNames</span><span class="p">.</span><span class="na">size</span><span class="p">())</span> <span class="p">{</span>
+</span><span class="c1"></span>        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">name</span> <span class="o">:</span> <span class="n">symbolNames</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Symbol</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">cacheCount</span><span class="o">++;</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cacheCount</span> <span class="o">!=</span> <span class="n">symbolNames</span><span class="o">.</span><span class="na">size</span><span class="o">())</span> <span class="o">{</span>
                 <span class="n">status</span> <span class="o">+=</span> 
-                  <span class="s">&#34;Cache inconsistency. Try this option again to rectify.&#34;</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">status</span><span class="p">;</span></code></pre></div>
-
+                  <span class="s">&#34;Cache inconsistency. Try this option again to rectify.&#34;</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">status</span><span class="o">;</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -957,7 +932,6 @@ used as key set.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
@@ -965,7 +939,6 @@ used as key set.</p>
 the symbols in cache even though they were handed over to the cache. In
 such cases, inconsistency is reported back to the user and invoking the
 option again usually rectify the inconsistency.</p>
-
 <p>Once symbols are in cache, we can go ahead with the task of persisting
 them to App Engine&rsquo;s datastore.</p>
 

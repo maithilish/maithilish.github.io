@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift DNS Setup - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,15 +561,11 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In this appendix OpenShift DNS Setup, we describe the steps to setup a
+            <p>In this appendix OpenShift DNS Setup, we describe the steps to setup a
 Domain name or DNS name for an OpenShift WordPress application.</p>
-
 <p>WordPress site that is behind a custom domain name is easy to migrate to
 another hosting platform without affecting the search ranking and
 traffic.</p>
-
 <p>Take the case of codetab.org and its real URL
 tuts-codedrops.rhcloud.com. To popularize the site we publish its link
 in various popular forums like Redit, DZone, Serverside, etc. If we
@@ -580,9 +576,7 @@ though possible. To overcome these limitations, we use the domain name
 codetab.org for the site. With the use of domain name, we are free to
 migrate the application to another name in OpenShift or to other hosting
 platforms, without worrying about the search results and traffic.</p>
-
 <p>Get a Domain Name</p>
-
 <p>To use a custom domain, we have to purchase a domain name from a domain
 registrar like GoDaddy, Domains.com, Name.com. For codetab.org, we
 purchase the domain from GoDaddy. However, any leading registrar is
@@ -590,81 +584,67 @@ fine. Usually, domain names are offered for 1 to 5 years and also for 10
 years. For codetab.org, for the first year we paid US$ 4 (after
 discount) and second year onwards it is about US$ 10 per year. Rate
 depends on the name we choose.</p>
-
 <p>Before the purchase, spend some time to think about catchy and trendy
 names. To check their availability, go to the domain registrar&rsquo;s site
 and search. When the desired name is available, we need to make online
 payment and block the name. On the payment, they block the DNS name and
 redirect us to create an account by furnishing the essential details
 such as owner name, address, e-mail id, password, etc.</p>
-
 <p>To explain the OpenShift DNS Setup steps, we take GoDaddy as an example,
 but procedure is more or less similar with other leading domain name
 providers. Example setup uses codetab.org as the DNS name and
 tuts-codedrops.rhcloud.com as the OpenShift application. Obviously, you
 have to replace them with your domain names.</p>
-
 <p><strong>Note</strong></p>
-
 <p>OpenShift DNS Setup is more or less same for all domain providers, but
 menu options and setup screens may differ. Overall, we have to setup two
 items - <strong>Add CNAME Record</strong> and <strong>Forwarding</strong>. Go through this
 appendix and understand the OpenShift DNS Setup procedure and then refer
 the domain provider&rsquo;s documentation to setup CNAME and Forwarding in
 their portal.</p>
-
 <h2 id="setup-dns-cname">Setup DNS CNAME</h2>
-
 <p>When we host WordPress on a dedicated server with a static IP then we
 can point the domain name directly to the IP. However, when WordPress is
 on a shared or cloud platforms, we get a public URL instead of a static
 IP and in such cases, we can not directly point the domain name to the
 public URL. In other words, we cannot point codetab.org (domain name) to
 tuts-codedrops.rhcloud.com (OpenShift application URL).</p>
-
 <p>Way out is to add a DNS CNAME Record. CNAME is the short form for
 canonical name (real name) is a DNS record that maps an alias name to a
 real name. CNAME records are typically used to map a subdomain such as
 <strong>www</strong> or <strong>mail</strong> to the domain hosting.</p>
-
 <p>Let&rsquo;s add a CNAME record to understand the concept. Go to the DNS
 account and select the Domains to list out the domains allotted to the
 account. Click on a domain to make changes to its zone file.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dns-domains.png" alt="OpenShift DNS Setup - Zone file tab" />
 </figure>
 
-
 <p>It opens the Domain Details screen for the selected domain. In GoDaddy,
 Domain Details screen has three tabs - <strong>Settings</strong>, <strong>DNS Zone File</strong>
 and <strong>Contacts</strong>. Select DNS Zone File tab.</p>
-
 <p>DNS Zone file tab displays various records already there in the DNS Zone
 file of the domain. Click on <strong>Add Record</strong> to open <strong>Add Zone Record</strong>
 dialog and choose CNAME as Record type in the dialog.</p>
-
 <p>In <strong>Edit Zone Record</strong> dialog enter the fields and save the record.</p>
-
 <ul>
-<li><p>Host - www</p></li>
-
-<li><p>Points to - tuts-codedrops.rhcloud.com</p></li>
+<li>
+<p>Host - www</p>
+</li>
+<li>
+<p>Points to - tuts-codedrops.rhcloud.com</p>
+</li>
 </ul>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dns-addcname.png" alt="OpenShift DNS Setup - add CNAME record" />
 </figure>
 
-
 <p>The record says that a host www (alias) in codetab.org domain points to
-tuts-codedrops.rhcloud.com (real name). In other words, www.codetab.org
+tuts-codedrops.rhcloud.com (real name). In other words, <a href="http://www.codetab.org">www.codetab.org</a>
 points to tuts-codedrops.rhcloud.com.</p>
-
 <p>After the save, DNS propagates the changes to all root name servers.
 Domain dashboard displays a message that it may take 24 or 48 hours to
 changes to take effect. Normally, we see changes in minutes.</p>
-
 
 
 <div>&nbsp;</div>
@@ -682,27 +662,21 @@ changes to take effect. Normally, we see changes in minutes.</p>
 <div>&nbsp;</div>
 
 
-
 <p>OpenShift Alias</p>
-
 <p>Next, we have to set alias to our OpenShift application. Aliases allow
 us to use custom domain names for the applications on OpenShift. Log in
 to OpenShift Web Console and select <strong>Applications</strong> tab. Select the
 WordPress application and click <strong>Change</strong> link in the top bar (next to
 the public URL of the application). OpenShift displays the <strong>New Alias</strong>
 screen.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dns-newalias.png" alt="OpenShift DNS Setup - Alias screen" />
 </figure>
 
-
-<p>Enter domain name as www.codetab.org, the CNAME we set in DNS Zone file
+<p>Enter domain name as <a href="http://www.codetab.org">www.codetab.org</a>, the CNAME we set in DNS Zone file
 and save the new alias.</p>
-
 <p>After the DNS changes take effect, we should be able to see the
-WordPress site when we open www.codetab.org in the browser.</p>
-
+WordPress site when we open <a href="http://www.codetab.org">www.codetab.org</a> in the browser.</p>
 
 
 <div>&nbsp;</div>
@@ -721,14 +695,11 @@ WordPress site when we open www.codetab.org in the browser.</p>
 
 
 
-
 <h2 id="domain-name-forwarding">Domain Name Forwarding</h2>
-
 <p>When we access the plain domain name - codetab.org, we get a page from
 the domain provider site. Visitors, who use the plain URL, leave the
 site thinking that it is under construction. To overcome this, use
 <strong>Domain Forwarding</strong>.</p>
-
 <p>The plain domain name without a suffix or subdomain name is called
 <strong>Naked Domain</strong>. Some domain providers allow to point naked domain to
 another URL. With that feature, we can add a <strong>Host Record</strong> (formally
@@ -741,31 +712,30 @@ codetab.org to tuts-codedrops.rhcloud.com. It is not helpful to us as
 OpenShift application like any other hosting solutions does not come
 with a static IP. Fortunately, domain providers allow to forward the
 naked domain to another URL.</p>
-
 <p>To setup Forwarding, open <strong>Domain settings</strong> page and click on
 <strong>Manage</strong> link in <strong>Forwarding - Domain</strong> section to open the <strong>Edit
 Forwarding</strong> screen.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dns-editforwarding.png" alt="OpenShift DNS Setup - Forwarding" />
 </figure>
 
-
 <p>Fill the fields as:</p>
-
 <ul>
-<li><p>Forward to: <strong>www.codetab.org</strong></p></li>
-
-<li><p>Redirect Type: 301 (Permanent)</p></li>
-
-<li><p>Forward Settings : Forward Only</p></li>
-
-<li><p>Update my name server &hellip; : Select</p></li>
+<li>
+<p>Forward to: <strong><a href="http://www.codetab.org">www.codetab.org</a></strong></p>
+</li>
+<li>
+<p>Redirect Type: 301 (Permanent)</p>
+</li>
+<li>
+<p>Forward Settings : Forward Only</p>
+</li>
+<li>
+<p>Update my name server &hellip; : Select</p>
+</li>
 </ul>
-
 <p>Be careful about the <strong>Forward to</strong> field, where we need to enter the
 CNAME we set earlier.</p>
-
 <p>After DNS changes take effect, the naked domain name - codetab.org
 resolves to the OpenShift WordPress site.</p>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jdo persistence on Codetab</title>
@@ -18,10 +18,10 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/database/persist/</guid>
       <description>8.2. Persist To load data, we use RStore which has following features,
- enhance java classes for persistence
- create database schema
- delete database schema
- persist and retrieve objects from database
+  enhance java classes for persistence
+  create database schema
+  delete database schema
+  persist and retrieve objects from database
   Prepare RStore project Download RStore.zip from the book site. Create a regular Java project named rstore with default settings. Select the project in Project Explorer and choose File → Import. In Import dialog, expand general and choose Archive File and import RStore.</description>
     </item>
     

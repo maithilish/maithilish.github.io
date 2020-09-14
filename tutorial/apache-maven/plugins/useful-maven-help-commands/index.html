@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Useful Help Commands - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,54 +535,44 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-help-command">Maven Help Command</h1>
-
+            <h1 id="maven-help-command">Maven Help Command</h1>
 <p>When we are struck with some aspect of Maven, Plugin&rsquo;s Help goal and
 Maven Help Plugin comes handy to navigate output of the situation.</p>
-
 <p>Here we present some the useful Maven help commands as reference.</p>
-
 <h2 id="find-plugin-prefix">Find Plugin Prefix</h2>
-
 <p>In almost all Maven plugin related commands we need to use Plugin
 Prefix. We can find plugin prefixes in <a href="http://maven.apache.org/plugins/index.html" target="_blank">Maven Plugin
 Directory</a>. The first column of the table contains the Plugin Prefixes.</p>
-
 <p>For plugins not listed there, use help:describe to show the prefix.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn help:describe -DgroupId=&lt;group-id&gt; -DartifactId=&lt;artifact-id&gt;
+<pre><code class="language-screen" data-lang="screen">$ mvn help:describe -DgroupId=&lt;group-id&gt; -DartifactId=&lt;artifact-id&gt;
 
 ## examples
 
 $ mvn help:describe -DgroupId=org.mortbay.jetty -DartifactId=jetty-maven-plugin
-$ mvn help:describe -DgroupId=org.codehaus.mojo -DartifactId=aspectj-maven-plugin</code></pre></div>
-<figure class="text-center" >
+$ mvn help:describe -DgroupId=org.codehaus.mojo -DartifactId=aspectj-maven-plugin
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/maven-help-prefix.png" alt="Useful Maven Help Commands - show goal prefix" />
 </figure>
 
-
 <h2 id="list-plugin-goals">List Plugin Goals</h2>
-
 <p>The easiest way to list the plugin goal is plugins help goal.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn &lt;plugin-prefix&gt;:help
+<pre><code class="language-screen" data-lang="screen">$ mvn &lt;plugin-prefix&gt;:help
 
 ## examples
 
 $ mvn compiler:help
 $ mvn surefire:help
-$ mvn jar:help</code></pre></div>
-<h2 id="list-parameters-of-a-goal">List Parameters of a Goal</h2>
-
+$ mvn jar:help
+</code></pre><h2 id="list-parameters-of-a-goal">List Parameters of a Goal</h2>
 <p>To list parameters of a goal, invoke plugin&rsquo;s help goal with
 -Dgoal=&lt;goal name&gt; and -Ddetail.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn &lt;plugin-prefix&gt;:help -Dgoal=&lt;goal name&gt; -Ddetail
+<pre><code class="language-screen" data-lang="screen">$ mvn &lt;plugin-prefix&gt;:help -Dgoal=&lt;goal name&gt; -Ddetail
 
 ## examples
 
 $ mvn compiler:help -Dgoal=compile -Ddetail
-$ mvn surefire:help -Dgoal=test -Ddetail</code></pre></div>
-
+$ mvn surefire:help -Dgoal=test -Ddetail
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -597,40 +587,35 @@ $ mvn surefire:help -Dgoal=test -Ddetail</code></pre></div>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
 <h2 id="list-parameters-with-default-values">List Parameters with default values</h2>
-
 <p>Some of the plugins, show default values for the parameter with plugins
 help.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn &lt;plugin-prefix&gt;:help -Dgoal=&lt;goal-name&gt; -Ddetail
+<pre><code class="language-screen" data-lang="screen">$ mvn &lt;plugin-prefix&gt;:help -Dgoal=&lt;goal-name&gt; -Ddetail
 
 ## examples
 
-$ mvn jar:help -Dgoal=jar -Ddetail</code></pre></div>
-<p>However, help:describe shows default parameter values for all plugins.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">mvn help:describe -Dplugin=&lt;plugin-prefix&gt; -Dmojo=&lt;goal-name&gt; -Ddetail
+$ mvn jar:help -Dgoal=jar -Ddetail
+</code></pre><p>However, help:describe shows default parameter values for all plugins.</p>
+<pre><code class="language-screen" data-lang="screen">mvn help:describe -Dplugin=&lt;plugin-prefix&gt; -Dmojo=&lt;goal-name&gt; -Ddetail
 
 ## examples
 
-mvn help:describe -Dplugin=jar -Dmojo=jar -Ddetail</code></pre></div>
-<h3 id="important">Important</h3>
-
+mvn help:describe -Dplugin=jar -Dmojo=jar -Ddetail
+</code></pre><h3 id="important">Important</h3>
 <p>To pass goal name as parameter, in plugin&rsquo;s help use <strong>-Dgoal</strong> and in
 help:describe use <strong>-Dmojo</strong>.</p>
-
 <h2 id="list-lifecycle-phases">List Lifecycle Phases</h2>
-
 <p>To know the lifecycle phases and the binded goals use following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn help:describe -Dcmd=&lt;lifecycle-phase-name&gt;
+<pre><code class="language-screen" data-lang="screen">$ mvn help:describe -Dcmd=&lt;lifecycle-phase-name&gt;
 
 ## examples
 
 $ mvn help:describe -Dcmd=compile
-$ mvn help:describe -Dcmd=clean</code></pre></div>
-
+$ mvn help:describe -Dcmd=clean
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -647,15 +632,14 @@ $ mvn help:describe -Dcmd=clean</code></pre></div>
 <div>&nbsp;</div>
 
 
-
 <h2 id="effective-pom">Effective POM</h2>
-
 <p>To output effective POM, use following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn help:effective-pom
+<pre><code class="language-screen" data-lang="screen">$ mvn help:effective-pom
 
 ## to output to file
 
-$ mvn help:effective-pom -Doutput=&lt;file-name&gt;</code></pre></div>
+$ mvn help:effective-pom -Doutput=&lt;file-name&gt;
+</code></pre>
           </main>
         </div>
       </div>

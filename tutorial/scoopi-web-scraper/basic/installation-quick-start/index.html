@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,36 +491,27 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="scoopi-installation-and-quick-start">Scoopi Installation and Quick Start</h1>
-
+            <h1 id="scoopi-installation-and-quick-start">Scoopi Installation and Quick Start</h1>
 <p>The easiest way to get start with Scoopi is to pull the image from
 DockerHub and run it straight away. Scoopi docker image comes
 pre-configured with JRE 8 and Maria DB. In case, you are not using
 Docker then download the release from GitHub. We explain both the
 options here.</p>
-
 <h2 id="install-scoopi-from-docker-image">Install Scoopi from Docker Image</h2>
-
 <p>Scoopi releases are available as docker image from
 <a href="https://hub.docker.com/r/codetab/scoopi/" target="_blank">DockerHub</a>. To run the image
 you need <a href="https://docs.docker.com/install/" target="_blank">Docker</a> installed in the
 system and additionally, to run it with MariaDB database, you also need
 <a href="https://docs.docker.com/compose/install" target="_blank">Docker Compose</a>. The total
 download size of Scoopi docker image is about 120MB and Mariadb 130MB.</p>
-
 <p>The following command downloads Scoopi image, creates and run container
 named scoopi.</p>
-
 <pre><code>docker run --name scoopi codetab/scoopi
 </code></pre>
-
 <p>It executes quick-start example which outputs single record to an output
 file. However, we will not be able to view the output file nor modify
 the conf files as they are within the container. We need to externalize
 these folders with following commands.</p>
-
 <pre><code>mkdir scoopi
 cd scoopi
 docker cp scoopi:/scoopi/conf .
@@ -529,106 +520,78 @@ docker cp scoopi:/scoopi/docker .
 docker cp scoopi:/scoopi/defs .
 docker cp scoopi:/scoopi/logs .
 </code></pre>
-
 <p>Here, we make a folder named scoopi and then copy conf, output, docker,
 defs and logs folders from the container to the scoopi folder. Now, we
 can modify conf, def files and also, view the output file without login
 into the container. Next, remove the container as we are going to
 recreate it with a new set of parameters.</p>
-
 <pre><code>docker rm scoopi
 </code></pre>
-
 <p>Let’s run example 10 to output more data. To do that, edit
 <code>conf/scoopi.properties</code> file and change defs directory property as
 <em>scoopi.defs.dir=/defs/examples/fin/jsoup/ex-10</em> and run scoopi with
 following docker
-    command.</p>
-
+command.</p>
 <pre><code>docker run --name scoopi --rm -p 9010:9010 -v &quot;$PWD&quot;/defs:/scoopi/defs -v &quot;$PWD&quot;/conf:/scoopi/conf -v &quot;$PWD&quot;/output:/scoopi/output codetab/scoopi
 </code></pre>
-
 <p>Above command mounts externalized folders using -v option. When
 container run, it uses definitions from jsoup/ex-10. On completion, we
 should have a new <code>data.txt</code> file in the <code>output</code> folder with 281 lines
 of data.</p>
-
 <p>Scoopi comes with a nice Angular dashboard which displays internal
 metrics of the app and it can be accessed via <code>http://localhost:9010</code>
 while Scoopi is running.</p>
-
 <h3 id="scoopi-with-mariadb">Scoopi with MariaDB</h3>
-
 <p>To use MariaDB as datastore, we need Docker Compose which runs Scoopi
 and MariaDB in two separate containers. To do that, first move the
 <code>docker/docker-compose.yml</code> to scoopi folder</p>
-
 <pre><code>cd scoopi
 mv docker/docker-compose.yml .
 </code></pre>
-
 <p>Next, edit <code>conf/scoopi.properties</code> and modify property
 <em>scoopi.useDatastore=false</em> as <em>scoopi.useDatastore=true</em>. Once
 configuration is ready, start database.</p>
-
 <pre><code>docker-compose up scoopi-db
 </code></pre>
-
 <p>Docker downloads the latest MariaDB image and run it as container. On
 first run, it creates and initializes the database and adds users and
 privileges. It creates new folder named <code>data</code> which contains the
 MariaDB data files.</p>
-
 <p>If MySQL client are installed in your system then you can log into
 database with</p>
-
 <pre><code>mysql -pbar -u foo -h 127.0.0.1 -P 3306 scoopi
 </code></pre>
-
 <p>Now kill the database container with Ctrl+C. With that, one time setup
 is complete and from now on, we start using Scoopi with MariaDB with the
 following command.</p>
-
 <pre><code>docker-compose up --abort-on-container-exit
 </code></pre>
-
 <p>The above command brings up MariaDB and then Scoopi in separate
 containers. Scoopi stores locators, documents and parsed data in
 database.</p>
-
 <h2 id="install-scoopi-from-github">Install Scoopi from GitHub</h2>
-
 <p>In case your are not using docker, then install Scoopi either by
 downloading the release package which contains all dependencies or by
 building the source code with Maven. To run Scoopi, you need to install
 JRE 8 or above. For persistence, if enabled, you also need to install
 and setup database such as MariaDB or HSQLDB and configure it. We
 explain the HSQLDB installation in a later chapter on persistence.</p>
-
 <h3 id="download-and-install-the-release-package">Download and install the Release package</h3>
-
 <p>Download the latest release zip file <code>scoopi-x.x.x-production.zip</code> from
 <a href="https://github.com/maithilish/scoopi/releases" target="_blank">GitHub Scoopi Releases</a>
 and extract the zip file to some location.</p>
-
 <h3 id="download-and-build-the-source">Download and build the Source</h3>
-
 <p>Alternatively, you can download the Scoopi source code zip from
 <a href="https://github.com/maithilish/scoopi" target="_blank">GitHub</a>. To build it, extract it
 somewhere and from the project root folder run</p>
-
 <pre><code>mvn package -DskipTests
 </code></pre>
-
 <p>Maven compiles the source, downloads the dependencies and package the
 app as scoopi-x.x.x-production.zip in target folder. Extract
 <code>target/scoopi-x.x.x-production.zip</code> to some location.</p>
-
 <h3 id="quick-start">Quick start</h3>
-
 <p>Go to the extracted folder of scoopi-x.x.x-production.zip. The directory
 structure is as below.</p>
-
 <pre><code>scoopi-x.x.x/
 ├── conf
 │   ├── scoopi.properties
@@ -646,67 +609,51 @@ structure is as below.</p>
     └── scoopi-x.x.x.jar
     └── ....
 </code></pre>
-
 <p>Application jar file scoopi-x.x.x.jar is in lib folder along with other
 dependencies. The conf folder holds the configuration files and the main
 configuration file is <code>conf/scoopi.properties</code>. By default, following
 two properties are defined.</p>
-
 <pre><code>scoopi.defs.dir=/defs/examples/fin/jsoup/quickstart
 scoopi.useDatastore=false
 </code></pre>
-
 <p>The property <em>scoopi.defs.dir</em> points to jsoup/quickstart which is
 loaded when we run Scoopi. The other property <em>scoopi.useDatastore</em> is
 set to false which allows us to run Scoopi without setting up database.
 In a later chapter, we show how to setup database and use it to persist
 Scoopi objects. Till then, set it to false.</p>
-
 <p>Let’s run Scoopi and check the installation.</p>
-
 <pre><code>cd scoopi-x.x.x
 scoopi.sh               // scoopi.bat for windows
 </code></pre>
-
 <p>It starts ScoopiEngine and loads files defined in
 <code>defs/examples/fin/jsoup/quickstart</code> folder and outputs data to
 <code>output/data.txt</code> file.</p>
-
 <h2 id="examples">Examples</h2>
-
 <p>Now a word about the examples. Scoopi comes with a set of example
 definition files which are located at <code>defs/examples</code> directory. The
 examples cover all aspects of definition files in a step-by-step
 approach.</p>
-
 <p>Examples directory contains three folders - fin, book, quote</p>
-
 <p>The <code>defs/examples/fin</code> folder contains examples which scrapes financial
 data such as Balance Sheet, Profit and Loss Account and Share price
 etc., of a company from HTML pages located in <code>fin/page</code> folder.</p>
-
 <p>The <code>defs/examples/book</code> folder contains examples which scrapes book
 details from a Bookstore.</p>
-
 <p>The <code>defs/examples/quote</code> folder contains examples which scrapes quotes
 by famous personalities from a website which use JavaScript and Ajax to
 load the pages.</p>
-
 <p>Examples come in two flavors – JSoup which uses Selectors to query data
 and HtmlUnit which uses XPath as query. This guide focus on JSoup
 examples, as JSoup is easy to use and light on memory. HtmlUnit examples
 are same as JSoup ones but uses XPath for queries.</p>
-
 <p>As we progress through the guide, we cover examples one by one. To load
 and run a particular example, modify the <em>scoopi.defs.dir</em> property in
 <code>conf/scoopi.properties</code> and point to required example folder.</p>
-
 <p>While running example you can disable persistence by setting
 <em>scoopi.useDatastore=false</em> in <code>conf/scoopi.properties</code> file. However,
 there is no harm in running examples with useDatastore as true but
 ensure that database is up and running else it Scoopi throws database
 not found error.</p>
-
 <p>In the next chapter, we start with the QuickStart example.</p>
 
           </main>

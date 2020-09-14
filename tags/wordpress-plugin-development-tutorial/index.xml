@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WordPress plugin development tutorial on Codetab</title>
+    <link>https://www.codetab.org/tags/wordpress-plugin-development-tutorial/</link>
+    <description>Recent content in WordPress plugin development tutorial on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://www.codetab.org/tags/wordpress-plugin-development-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Admin Module - Settings</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Admin Module - Posts</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frontend</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ajax</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internationalization</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Activation</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

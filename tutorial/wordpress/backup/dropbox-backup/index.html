@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Dropbox Backup - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,94 +561,84 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-2-wordpress-dropbox-backup">11.2. WordPress Dropbox Backup</h2>
-
+            <h2 id="112wordpress-dropbox-backup">11.2. WordPress Dropbox Backup</h2>
 <p>In the previous section, we backup the WordPress installation. In this
 section, we setup Dropbox to receive files from OpenShift and then
 automate the WordPress Dropbox Backup process.</p>
-
 <h3 id="openshift-to-dropbox">OpenShift to Dropbox</h3>
-
 <p>It makes sense to move the backup files out of OpenShift to Dropbox as
 it serves two purposes - conserves storage space and in the unlikely
 event of application corruption, we have a safe set in Dropbox.</p>
-
 <p>The steps to connect WordPress to Dropbox are:</p>
-
 <ul>
-<li><p><strong>Create Dropbox App</strong>: Dropbox does not accept files sent directly,
-and it only accept files handed over by a Dropbox App.</p></li>
-
-<li><p><strong>Allow access to App</strong>: Allow access to the Dropbox App to receive
+<li>
+<p><strong>Create Dropbox App</strong>: Dropbox does not accept files sent directly,
+and it only accept files handed over by a Dropbox App.</p>
+</li>
+<li>
+<p><strong>Allow access to App</strong>: Allow access to the Dropbox App to receive
 files from other systems. When access is allowed, App provides
-authentication tokens and secrets.</p></li>
-
-<li><p><strong>Send files to App</strong>: Using the authentication tokens, OpenShift
+authentication tokens and secrets.</p>
+</li>
+<li>
+<p><strong>Send files to App</strong>: Using the authentication tokens, OpenShift
 can send files to Dropbox App, which in turn puts the files in
-Dropbox.</p></li>
+Dropbox.</p>
+</li>
 </ul>
-
 <p>Let&rsquo;s start with Dropbox App creation. Don&rsquo;t worry, it&rsquo;s quiet easy!
 Log in to the Dropbox account and open the <a href="https://www.dropbox.com/developers/apps" target="_blank">Dropbox App
 Console</a>. In App console, click
 <strong>Create app</strong>. Select following options:</p>
-
 <ul>
-<li><p>What type of app do you want to create -  <strong>Dropbox API App</strong>.</p></li>
-
-<li><p>What type of data does your app need to store on Dropbox - <strong>Files
-and Datastore</strong>.</p></li>
-
-<li><p>Can your app be limited to its own folder - <strong>Yes</strong></p></li>
+<li>
+<p>What type of app do you want to create -  <strong>Dropbox API App</strong>.</p>
+</li>
+<li>
+<p>What type of data does your app need to store on Dropbox - <strong>Files
+and Datastore</strong>.</p>
+</li>
+<li>
+<p>Can your app be limited to its own folder - <strong>Yes</strong></p>
+</li>
 </ul>
-
 <p>In <strong>App Name</strong> field, enter a name for the app and click <strong>Create
 app</strong>. Dropbox creates the app and displays the app details, where we
 need to note down <strong>App Key</strong> and <strong>App Secret</strong>. We require these
 values to authenticate from OpenShift in the next step. We can always
 get these values from Dropbox App Console.</p>
-
 <p>We need to run setup to link OpenShift to Dropbox. To setup, log in to
 the OpenShift Shell through RHC or PuTTY (Windows users).</p>
-
 <p>In OpenShift Shell, change directory to <code>app-root/data/backup</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data/backup</code></pre></div>
-<p>Run <code>dropbox-setup.sh</code> script.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; ./dropbox-setup.sh</code></pre></div>
-<p>Setup prompts for App Key and App Secret and on authentication, it
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data/backup
+</code></pre><p>Run <code>dropbox-setup.sh</code> script.</p>
+<pre><code class="language-screen" data-lang="screen">&gt; ./dropbox-setup.sh
+</code></pre><p>Setup prompts for App Key and App Secret and on authentication, it
 displays a Dropbox URL. Open the URL in the browser, which shows Dropbox
 App Authorization screen. Click Allow access to complete the
 authorization from Dropbox end.</p>
-
 <p>Switch back to OpenShift Shell and press Enter to complete the setup.
 Script saves the authorization tokens received from the Dropbox in a
 file named .dropbox_auths. It is hidden file in backup directory and we
 can use <code>cat .dropbox_auths</code> to display its contents. Setup is one time
 affair and it allows us to send files to Dropbox without use of
 passwords.</p>
-
 <p>With the setup, OpenShift is ready to push files to Dropbox. For the
 WordPress Dropbox backup, use the backup-to-dropbox.sh script.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; ./backup-to-dropbox.sh</code></pre></div>
-<p>Dropbox script is extended version of the previous script. It creates
+<pre><code class="language-screen" data-lang="screen">&gt; ./backup-to-dropbox.sh
+</code></pre><p>Dropbox script is extended version of the previous script. It creates
 the backup gzip file and pushes it to our Dropbox account. Dropbox App
 creates a folder - Apps/&lt;dropbox-app-name&gt; and save the file under it.
 After uploading, script deletes the backup set from OpenShift to
 conserve storage. In the screenshot, backup gzip file is in folder named
 <code>WordPress Tutorial Backup</code> (Dropbox app name) under the <code>Apps</code> folder.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dropbox-folder.png" alt="WordPress Dropbox Backup - Dropbox Apps folder" />
 </figure>
 
-
 <h3 id="automate-wordpress-dropbox-backup">Automate WordPress Dropbox Backup</h3>
-
 <p>To automate WordPress Dropbox Backup, we have to add Cron cartridge to
 OpenShift and then add the backup script to the Cron folder.</p>
-
 
 
 <div>&nbsp;</div>
@@ -666,72 +656,65 @@ OpenShift and then add the backup script to the Cron folder.</p>
 <div>&nbsp;</div>
 
 
-
 <p>We can use RHC or OpenShift Web Console to add a new cartridge to our
 application. First, we need to know the full name of the Cron cartridge.
 To list the available cartridges run:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc cartridges</code></pre></div>
-<p>From the list, we know name of the cartridge is cron-1.4. To add the
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc cartridges
+</code></pre><p>From the list, we know name of the cartridge is cron-1.4. To add the
 cartridge to the OpenShift application run:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc cartridge-add cron-1.4 --app quickstart</code></pre></div>
-<figure class="text-center" >
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc cartridge-add cron-1.4 --app quickstart
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-rhc-addcart.png" alt="WordPress Dropbox Backup - RHC Add Cartridge - Cron" />
 </figure>
-
 
 <p>For monthly backup, we have to copy <code>backup-to-dropbox.sh</code> script to
 <code>.openshift/cron/monthly</code> directory, which is in application deployment
 directory usually <code>app-root/repo</code>. However, a direct copy to the
 repository has a drawback.</p>
-
 <p>OpenShift use Git software configuration management tool for application
 deployment. Git keeps track of the deployments and allows us revert to
 any previous versions. However, Git does not track the files copied
 directly to the repository. To properly place the script file in Cron
 folder, we have to go through following procedure.</p>
-
 <p>In the command prompt, run following RHC command to find out the Git
 repository URL.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; rhc apps</code></pre></div>
-<p>From the output, copy the <strong>Git URL</strong> to clipboard. Next, we need to use
+<pre><code class="language-screen" data-lang="screen">C:&gt; rhc apps
+</code></pre><p>From the output, copy the <strong>Git URL</strong> to clipboard. Next, we need to use
 Git to download the application. We can also find out Git URL in
 <strong>OpenShift Web Console</strong> → <strong>Applications</strong> → <strong>Application Overview</strong>
 → <strong>Source Code</strong>
 field.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; git clone ssh://xxeca20e8@quickstart-wordpressguide.rhcloud.com/~/git/quickstart.git/</code></pre></div>
-<p>Change the example URL to the real Git URL of the application. Git
+<pre><code class="language-screen" data-lang="screen">C:&gt; git clone ssh://xxeca20e8@quickstart-wordpressguide.rhcloud.com/~/git/quickstart.git/
+</code></pre><p>Change the example URL to the real Git URL of the application. Git
 clones (downloads) the WordPress application source code and save it to
 a directory with the same name as the application. For application
 <strong>quickstart</strong>, it clones the source to directory named <code>quickstart</code>. We
 call this directory as cloned source directory.</p>
-
 <p>Next we need to copy <code>backup-to-dropbox.sh</code> to <code>.openshift/cron/monthly</code>
 in cloned directory. We need to download wordpress-tutorial-sample.zip
 from <a href="../media/wordpress-tutorial-sample.zip">CodeTab Downloads</a> and
 extract backup-to-dropbox.sh from it. and copy it to
 .openshift/cron/monthly directory in cloned source directory.</p>
-
 <p>Change to cloned source directory and run following commands. Replace
 &lt;path-to&gt; in copy command to the actual path of backup-to-dropbox.sh
 script file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"> Windows
+<pre><code class="language-screen" data-lang="screen"> Windows
 
 C:&gt; copy &lt;path-to&gt;backup-to-dropbox.sh .openshiftcronmonthly
 
 
  Linux 
 
-$ cp &lt;path-to&gt;/backup-to-dropbox.sh .openshift/cron/monthly</code></pre></div>
-<p>Next from the source directory, run</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:&gt; git status</code></pre></div>
-<figure class="text-center" >
+$ cp &lt;path-to&gt;/backup-to-dropbox.sh .openshift/cron/monthly
+</code></pre><p>Next from the source directory, run</p>
+<pre><code class="language-screen" data-lang="screen">C:&gt; git status
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dropbox-gitstatus.png" alt="WordPress Dropbox Backup - WordPress application source git status" />
 </figure>
 
-
 <p>Git output indicates that it is yet to track the new file. Use Git add
 action to add a file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"> Windows 
+<pre><code class="language-screen" data-lang="screen"> Windows 
 
 C:&gt; git add .openshift/cron/monthly/backup-to-dropbox.sh
 C:&gt; git update-index --chmod=+x .openshift/cron/monthly/backup-to-dropbox.sh
@@ -739,30 +722,29 @@ C:&gt; git update-index --chmod=+x .openshift/cron/monthly/backup-to-dropbox.sh
  Linux
 
 $ chmod 755 .openshift/cron/monthly/backup-to-dropbox.sh
-$ git add .openshift/cron/monthly/backup-to-dropbox.sh</code></pre></div>
-<p>Again check the <code>git status</code>, and it should show the file as added.
+$ git add .openshift/cron/monthly/backup-to-dropbox.sh
+</code></pre><p>Again check the <code>git status</code>, and it should show the file as added.
 Next, commit the changes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Windows
+<pre><code class="language-screen" data-lang="screen">Windows
 
-C:&gt; git commit -m &#34;Cron job - backup to dropbox added&#34;
+C:&gt; git commit -m &quot;Cron job - backup to dropbox added&quot;
 
 Linux
 
-$ git commit -m &#34;Cron job - backup to dropbox added&#34;</code></pre></div>
-<p>So far, the changes are applied to local repository that exists in our
+$ git commit -m &quot;Cron job - backup to dropbox added&quot;
+</code></pre><p>So far, the changes are applied to local repository that exists in our
 PC. We need to send these changes to the Git Repository in OpenShift. To
 do that,</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Windows
+<pre><code class="language-screen" data-lang="screen">Windows
 
 C:&gt; git push
 
 Linux
 
-$ git push</code></pre></div>
-<p>Git pushes all the changes back to the repository in the server. As part
+$ git push
+</code></pre><p>Git pushes all the changes back to the repository in the server. As part
 of deployment, Git also restarts our application and cartridges so that
 changes becomes effective.</p>
-
 
 
 <div>&nbsp;</div>
@@ -781,12 +763,10 @@ changes becomes effective.</p>
 
 
 
-
 <p>From hereon, Cron takes over and runs the backup script every month. For
 CodeTab, we have set monthly backup as changes are less frequent.
 Additionally, we run manual backup in the OpenShift shell whenever we
 create new pages.</p>
-
 <p>In the next section, we do a full WordPress restore from the backup set.</p>
 
           </main>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multisite Activation - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,43 +625,32 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-3-wordpress-multisite-activation">11.3. WordPress Multisite Activation</h2>
-
+            <h2 id="113wordpress-multisite-activation">11.3. WordPress Multisite Activation</h2>
 <p>In the previous blog, we installed and configured WordPress Multisite.
 In this blog, we explain the plugin activation in Multisite
 Installations.</p>
-
 <h3 id="multisite-super-admin-and-site-admins">Multisite Super Admin and Site Admins</h3>
-
 <p>WordPress Multisite Installation will have a Super Admin (SA) to manage
 the network and multiple admins to manage the sites in the network.</p>
-
 <p>In multisite, only SA can install (add) and update the plugins and site
 admins are not allowed to do so.</p>
-
 <p>SA can activate or deactivate the plugins network wide. When SA
 activates a plugin network wide, it will be activated in all the sites.
 Network wide activated plugins are not listed in the site admin
 <strong>Plugins</strong> menu.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-ms-plugin-network-activation.png/" alt="WordPress Multisite Activation" />
 </figure>
 
-
 <p>However, when a plugin is installed but not activated by SA then it is
 listed in site admin <strong>Plugins</strong> menu and they can activate/deactivate
 the plugin for their site.</p>
-
 <p>SA can also control whether <strong>Plugins</strong> menu is enabled for site admins.
 To enable Plugins menu for sites, open Network Admin Dashboard and go to
 <strong>Settings</strong> → <strong>Network Settings</strong> and scroll down to Menu Settings
 section at the end and check the <strong>Enable administration menus</strong>. When
 enabled, site admin menu panel will have the <strong>Plugins</strong> menu else it is
 not displayed.</p>
-
 
 
 <div>&nbsp;</div>
@@ -680,12 +669,9 @@ not displayed.</p>
 
 
 
-
 <h3 id="wordpress-multisite-plugin-activation">WordPress Multisite Plugin Activation</h3>
-
 <p>The plugin activation method uses WordPress function is_multisite() and
 parameter $networkwide to handle the multisite activation.</p>
-
 <p><code>share-on-social/admin/class-activator.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Activator {
 
@@ -716,17 +702,14 @@ parameter $networkwide to handle the multisite activation.</p>
             // single site stuff
             ....            
         }
-    }</code></pre></div>
-<p>The WordPress function is <a href="http://codex.wordpress.org/Function_Reference/is_multisite" target="_blank">_multisite()</a> doesn&rsquo;t exist in normal WordPress installation. Hence, we check whether the function exists and then call it to check whether the installation is multisite. If installation is not multisite enabled, then we activate the plugin for the single site as explained in <a href="/tutorial/wordpress-plugin-development/activation/plugin-activation/#sec-activation">Plugin Activation</a>.</p>
-
+    }
+</code></pre></div><p>The WordPress function is <a href="http://codex.wordpress.org/Function_Reference/is_multisite" target="_blank">_multisite()</a> doesn&rsquo;t exist in normal WordPress installation. Hence, we check whether the function exists and then call it to check whether the installation is multisite. If installation is not multisite enabled, then we activate the plugin for the single site as explained in <a href="/tutorial/wordpress-plugin-development/activation/plugin-activation/#sec-activation">Plugin Activation</a>.</p>
 <p>If is_multisite() is true, then we check, with the help of $networkwide
 parameter, whether it is a network wide activation by SA or site level
 activation by site admin.</p>
-
 <p>In network wide activation by SA, we first check whether the user is
 really a SA using WordPress function
 <a href="http://codex.wordpress.org/Function_Reference/is_super_admin" target="_blank">is_super_admin()</a>.</p>
-
 <p>Next, we fetch the list of all sites in the network using WordPress
 function
 <a href="http://codex.wordpress.org/Function_Reference/wp_get_sites" target="_blank">wp_get_sites()</a>.
@@ -734,7 +717,6 @@ Sites in multisite are also called as blogs. We loop through the list of
 blogs and for each blog (site), we fetch its id using <code>$blog['blog_id']</code> and then call WordPress function <a href="http://codex.wordpress.org/Function_Reference/switch_to_blog" target="_blank">switch_to_blog()</a>
 to switch to that site and the activate the plugin for the blog by
 calling <code>Sos_Activator::activate_for_blog()</code>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -752,38 +734,37 @@ calling <code>Sos_Activator::activate_for_blog()</code>.</p>
 <div>&nbsp;</div>
 
 
-
 <p>After activating the plugin for a blog, we need to call WordPress
 function
 <a href="http://codex.wordpress.org/WPMU_Functions/restore_current_blog" target="_blank">restore_current_blog()</a> so that internal pointers are reverted back to the site before switching
 the site.</p>
-
 <p>We continue the process for all sites of the network so that plugin gets
 activated in all sites.</p>
-
 <p><strong>Network Wide</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$blogs = wp_get_sites();
+<pre><code class="language-screen" data-lang="screen">$blogs = wp_get_sites();
 foreach ( $blogs as $blog ) {
-    switch_to_blog( $blog[ &#39;blog_id&#39; ] );      
+    switch_to_blog( $blog[ 'blog_id' ] );      
       .... do something
     restore_current_blog();
-}</code></pre></div>
-<p>We see this pattern in activation, deactivation and uninstall code which
+}
+</code></pre><p>We see this pattern in activation, deactivation and uninstall code which
 as follows.</p>
-
 <ul>
-<li><p>get the list of blogs (sites) in the network.</p></li>
-
-<li><p>for each site, call switch_to_blog() to switch to the site</p></li>
-
-<li><p>do something by calling appropriate method.</p></li>
-
-<li><p>revert back to the existing site using restore_current_blog().</p></li>
+<li>
+<p>get the list of blogs (sites) in the network.</p>
+</li>
+<li>
+<p>for each site, call switch_to_blog() to switch to the site</p>
+</li>
+<li>
+<p>do something by calling appropriate method.</p>
+</li>
+<li>
+<p>revert back to the existing site using restore_current_blog().</p>
+</li>
 </ul>
-
 <p>Remember to call restore_current_blog() before switching to the next
 blog within the loop and failure to do so may lead to inconsistency.</p>
-
 <p>In the next section, we go through the plugin deactivation code.</p>
 
           </main>

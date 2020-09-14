@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>W3 Cache Settings - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,14 +561,10 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="w3-total-cache-page-cache">W3 Total Cache - Page Cache</h1>
-
+            <h1 id="w3-total-cache---page-cache">W3 Total Cache - Page Cache</h1>
 <p>In the previous chapter, we installed essential plugins to extend the
 functionality of the WordPress. In this chapters, we optimize the site
 to boost the performance.</p>
-
 <p>Out of the box, WordPress performance is suboptimal. Performance penalty
 stems from the dynamic nature of the pages and the scripting language
 used to develop the WordPress. Unlike regular programming languages,
@@ -578,20 +574,16 @@ plugin files and also fetches contents from the database to compose the
 response. Wordpress repeats the entire sequence for each and every
 request, which not only impacts the response time, but also puts
 avoidable load on the server and database.</p>
-
 <p>To overcome this inherent performance issue, we need to use the caching
 solution. Caching, as the name suggests, caches the fully constructed
 page, and serves the future requests directly from the cache to avoid
 resource intensive interpret and composing. In other words, as long as
 page is not modified, all requests are handled at cache layer, and
 server recompiles the page only when page is modified.</p>
-
 <p>WordPress W3 Total Cache and W3 Super Cache are recommended caching
 plugins. We use W3 Total Cache for codetab.org, which greatly improves
 the performance of the site.</p>
-
 <h3 id="w3-total-cache-settings-for-openshift">W3 Total Cache Settings for OpenShift</h3>
-
 <p>W3 Total Cache settings are quite extensive and may overwhelm the
 beginners. Out these settings, we use the most recommended settings and
 leave some of the complicated or paid features. Some of the features
@@ -603,94 +595,91 @@ the settings, yet put down sufficient details so that beginners can
 easily follow the setup. W3 Total Cache Settings screens are quite
 lengthy and difficult to capture as regular screenshots, so we exhibit
 the settings as bullet points.</p>
-
 <p>Install and activate <a href="https://wordpress.org/plugins/w3-total-cache/" target="_blank">W3 Total Cache Plugin</a>. Plugin installation is explained in <a href="/tutorial/wordpress/wordpress-plugins/">WordPress Plugin</a>.</p>
-
 <h3 id="general-settings">General Settings</h3>
-
 <p>Plugin adds a menu item - <strong>Performance</strong> - to the WordPress Admin
 Dashboard. Click to expand the menu and select <strong>General Settings</strong>.</p>
-
 <p>In, General Settings we can enable or disable the various caching
 modules of W3 Total. Modules are also called as <strong>Cache Types</strong> and they
 are:</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-w3-general.png" alt="W3 Total Cache Settings - General Settings" />
 </figure>
 
-
 <ul>
-<li><p><strong>Page Cache</strong> - caching the pages reduce the response time of the
-site.</p></li>
-
-<li><p><strong>Minify</strong> - reduces load time by decreasing the size and number of
+<li>
+<p><strong>Page Cache</strong> - caching the pages reduce the response time of the
+site.</p>
+</li>
+<li>
+<p><strong>Minify</strong> - reduces load time by decreasing the size and number of
 CSS and JavaScript files and also removes extra characters from CSS,
-JavaScript and HTML files.</p></li>
-
-<li><p><strong>Database Cache</strong> - reduces post, page creation time.</p></li>
-
-<li><p><strong>Object Cache</strong> - reduces execution time for common operations.</p></li>
-
-<li><p><strong>Browser Cache</strong> - reduces response time by using the visitor&rsquo;s web
-browser cache.</p></li>
-
-<li><p><strong>CDN</strong> - uses Content Delivery Network to reduce the page load
-time.</p></li>
-
-<li><p><strong>Reverse Proxy</strong> - uses caching HTTP reverse proxy or varnish cache
-as web application accelerator.</p></li>
+JavaScript and HTML files.</p>
+</li>
+<li>
+<p><strong>Database Cache</strong> - reduces post, page creation time.</p>
+</li>
+<li>
+<p><strong>Object Cache</strong> - reduces execution time for common operations.</p>
+</li>
+<li>
+<p><strong>Browser Cache</strong> - reduces response time by using the visitor&rsquo;s web
+browser cache.</p>
+</li>
+<li>
+<p><strong>CDN</strong> - uses Content Delivery Network to reduce the page load
+time.</p>
+</li>
+<li>
+<p><strong>Reverse Proxy</strong> - uses caching HTTP reverse proxy or varnish cache
+as web application accelerator.</p>
+</li>
 </ul>
-
 <p>In General Settings screen, we can either scroll through or use the
 links at the top to visit a specific cache type. General Settings screen
 also a field to toggle the state of all caching type. Out of these
 caching types or modules, we use <strong>Page Cache</strong>, <strong>Minify</strong> and
 <strong>Browser Cache</strong>.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
-<h3 id="w3-total-cache-page-cache-1">W3 Total Cache - Page Cache</h3>
-
+<h3 id="w3-total-cache---page-cache-1">W3 Total Cache - Page Cache</h3>
 <p>Page Cache, as the name suggests, cache the posts and pages to avoid
 repeated parsing and database access.</p>
-
 <p>To enable Page Cache, go to the  <strong>Page Cache</strong>  section with
 <strong>Dashboard</strong> → <strong>Performance</strong> → <strong>General Settings</strong> → <strong>Page Cache</strong>.
 Enable Page cache and set <strong>Page Cache Method</strong> to <strong>Disk: Enhanced</strong>
 and save settings.</p>
-
 <p>Next, we need to configure the Page Cache module settings. Open Page
 Cache Settings screen with <strong>Dashboard</strong> → <strong>Performance</strong> → <strong>Page
 Cache</strong>. We leave majority of settings here to their defaults and change
 only following items.</p>
-
 <ul>
-<li><p>Cache SSL (https) requests - enable</p></li>
-
-<li><p>Don&rsquo;t cache pages for following user roles - enable.</p>
-
-<p>select Administrator.</p></li>
+<li>
+<p>Cache SSL (https) requests - enable</p>
+</li>
+<li>
+<p>Don&rsquo;t cache pages for following user roles - enable.</p>
+<p>select Administrator.</p>
+</li>
 </ul>
-
 <p>Cache Preload</p>
-
 <p>On the first request of a page, server constructs the page and hand over
 the finished page to W3, which caches it for the future requests.
 Obviously, response is slow for the first request. W3 has a feature to
 automatically prime the cache by preloading the pages. To enable Cache
 Preload, set the following items.</p>
-
 <ul>
-<li><p>Automatically prime the page cache: enable.</p></li>
-
-<li><p>Update interval: 900 seconds.</p></li>
-
-<li><p>Pages per interval: 5 or lesser.</p></li>
+<li>
+<p>Automatically prime the page cache: enable.</p>
+</li>
+<li>
+<p>Update interval: 900 seconds.</p>
+</li>
+<li>
+<p>Pages per interval: 5 or lesser.</p>
+</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -708,7 +697,6 @@ Preload, set the following items.</p>
 <div>&nbsp;</div>
 
 
-
 <p>In OpenShift, we observed a slight increase in the server load after
 enabling this feature. So we have disabled it. Instead, we manually
 prime the cache by accessing all the pages, whenever we purge the cache.
@@ -716,7 +704,6 @@ If you are using Linux, then you may consider this option. Prepare a
 list of URL of all your pages and posts and run <code>wget -i urllist.txt</code>.
 Easy way to get the URL list is to download the sitemap.xml of the site
 and grep for loc (location) elements. We cover Sitemap in SEO chapter.</p>
-
 <p>In the next section, we look at Browser Cache module of W3 Total Cache
 to further improve the user experience.</p>
 

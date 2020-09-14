@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>maven eclipse plugin on Codetab</title>
@@ -19,8 +19,8 @@
       <guid>https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/</guid>
       <description>Maven Eclipse Plugin So far, we worked with Maven CLI. In this chapter, we install Eclipse Maven Plugin and learn to manage Maven Project in Eclipse IDE.
 Eclipse Maven Plugin, M2Eclipse or simply M2E, provides integration between Eclipse IDE and Maven. Among other things, it assists in the following aspects of Maven.
- view contents of local and remote Maven repositories.
- provides wizards to create single module project or multi module Maven Projects.</description>
+  view contents of local and remote Maven repositories.
+  provides wizards to create single module project or multi module Maven Projects.</description>
     </item>
     
   </channel>

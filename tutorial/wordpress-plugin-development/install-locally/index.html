@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Local Install - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,15 +625,11 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="install-wordpress-locally">Install WordPress locally</h2>
-
+            <h2 id="install-wordpress-locally">Install WordPress locally</h2>
 <p>While it is possible to develop WordPress Plugin on a WordPress
 installation hosted on server or cloud, it is much more convenient to do
 that on local machine.In this section, we explain the steps to install
 WordPress on local system.</p>
-
 <p>XAMPP is probably the easiest way to install WordPress locally.
 <a href="http://www.apachefriends.org/index.html" target="_blank">XAMPP</a> by Apache Friends
 bundles Apache, MySQL, PHP and Pearl as an installer. XAMPP comes as
@@ -641,104 +637,78 @@ separate package for Linux, Windows and Mac. Download the appropriate
 package for your system from <a href="http://www.apachefriends.org/download.html" target="_blank">XAMPP Download
 page</a>. We explain how to
 install it on Linux and Windows.</p>
-
 <h3 id="install-xampp-on-linux">Install XAMPP on Linux.</h3>
-
 <p>Download XAMPP version 5.5.19 as it contains PHP 5.5 and MySQL 5.6
 instead of the latest 5.6.3 with PHP 5.6. We need root access to run the
 XAMPP installer.</p>
-
 <p>Change mode of the downloaded file and run XAMPP installer.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># chmod 755 xampp-linux-5.5.19-0-installer.run
+<pre><code class="language-screen" data-lang="screen"># chmod 755 xampp-linux-5.5.19-0-installer.run
 
-# ./xampp-linux-5.5.19-0-installer.run</code></pre></div>
-<p>In the Setup screen, select both core and dev components.</p>
-
+# ./xampp-linux-5.5.19-0-installer.run
+</code></pre><p>In the Setup screen, select both core and dev components.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-comps.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP setup" />
 </figure>
 
-
 <p>XAMPP installer unpack all components under <code>/opt/lampp</code> directory.</p>
-
 <p>After installation, use following commands to start and stop the
 servers.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">[root@m m]# /opt/lampp/lampp start
+<pre><code class="language-screen" data-lang="screen">[root@m m]# /opt/lampp/lampp start
 
 Starting XAMPP for Linux 5.5.19...
 XAMPP: Starting Apache...ok.
 XAMPP: Starting MySQL...ok.
-XAMPP: Starting ProFTPD...ok.</code></pre></div>
-<p>To stop servers, use <code>/opt/lampp/lampp stop</code></p>
-
+XAMPP: Starting ProFTPD...ok.
+</code></pre><p>To stop servers, use <code>/opt/lampp/lampp stop</code></p>
 <p><strong>libc.so error.</strong></p>
-
 <p>In Fedora 19, when we start the XAMPP we got lib.c not found
 error.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory.</code></pre></div>
-<p>To resolve this, we need to edit <code>/opt/lampp/lampp</code> file and change line
+<pre><code class="language-screen" data-lang="screen">error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory.
+</code></pre><p>To resolve this, we need to edit <code>/opt/lampp/lampp</code> file and change line
 436 and pass proper kernel version of our system.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">    export LD_ASSUME_KERNEL=3.9.5</code></pre></div>
-<h3 id="install-xampp-on-windows">Install XAMPP on Windows.</h3>
-
+<pre><code class="language-screen" data-lang="screen">    export LD_ASSUME_KERNEL=3.9.5
+</code></pre><h3 id="install-xampp-on-windows">Install XAMPP on Windows.</h3>
 <p>Download XAMPP Windows version xampp-win32-5.5.19-0-VC11-installer.exe,
 which bundles PHP 5.5 and MySQL 5.6.</p>
-
 <p>Run downloaded installer and in the Setup screen select all components.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-win-comps.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP Windows components" />
 </figure>
 
-
 <p>In Windows, by default XAMPP installs under <code>C:xampp</code> directory. Go with
 the default path to avoid further setup.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-win-path.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP Windows default path." />
 </figure>
 
-
 <p>Run C:xampp/xampp-control.exe to bring up the XAMPP Control Panel. Start
 and stop the servers through the control panel.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-win-panel.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP Windows Control Panel." />
 </figure>
 
-
 <h3 id="test-xampp-setup">Test XAMPP Setup.</h3>
-
 <p>From here on steps are same for Linux and Windows. Before installing
 WordPress on XAMPP we need to test the setup. To do that, start MySQL
 and Apache servers and then open <code>http://localhost</code> in the browser and
 click <strong>Status</strong> in the left menu.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-status.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP check status." />
 </figure>
 
-
 <p>To run WordPress, we need components MySQL and PHP as activated.</p>
-
 <h3 id="install-wordpress">Install WordPress.</h3>
-
 <p>We are ready to install WordPress.</p>
-
 <p><strong>XAMPP Document Root</strong></p>
-
 <p>In XAMPP, <strong>Document Root,</strong> the directory that holds web site is
 directory named <code>htdocs</code>.</p>
-
 <p>In Linux, it defaults to <code>/opts/lampp/htdocs</code> and in Windows it is
 <code>c:xampphtdocs</code>.</p>
-
 <p>For sake of brevity, we explain the installation process on Linux. For
 Windows, we have to adjust the paths slightly. The Linux path
 <code>/opt/lampp</code> is <code>c:xampp</code> in Windows and likewise <code>/opt/lampp/htdocs</code> is
 <code>c:xampphtdocs</code>. Apart from this, development steps are same under Linux
 and Windows.</p>
-
 
 
 <div>&nbsp;</div>
@@ -757,7 +727,6 @@ and Windows.</p>
 
 
 
-
 <p>Normally WordPress is installed directly under <strong>Document Root</strong>
 directory. But document root, htdocs, already contains some XAMPP
 example files. Rather than deleting those files, we can install
@@ -765,21 +734,18 @@ WordPress under a subdirectory. This also allows us to install multiple
 versions of WordPress and switch version to test the plugin against
 different versions. With this strategy, we can even configure WordPress
 to run as Multi Site and switch between single or multi site.</p>
-
 <p>First rename the index.php that comes with XAMPP as xampp.php with a
 move or rename command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mv index.php xampp.php</code></pre></div>
-<p>Next, download the latest WordPress.zip from <a href="http://wordpress.org" target="_blank">WordPress</a> and install it in <code>/opt/lampp/htdocs</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs
+<pre><code class="language-screen" data-lang="screen">$ mv index.php xampp.php
+</code></pre><p>Next, download the latest WordPress.zip from <a href="http://wordpress.org" target="_blank">WordPress</a> and install it in <code>/opt/lampp/htdocs</code></p>
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs
 $ unzip wordpress-4.0.1.zip
-$ mv wordpress wordpress-4.0.1     // rename the dir</code></pre></div>
-<p>We rename the <code>wordpress</code> directory as <code>wordpress-4.0.1</code> so that we are
+$ mv wordpress wordpress-4.0.1     // rename the dir
+</code></pre><p>We rename the <code>wordpress</code> directory as <code>wordpress-4.0.1</code> so that we are
 free to install other versions later.</p>
-
 <p>Apache should redirect all access to <code>http://localhost/</code> to files in
 WordPress directory and for that add following files to
 <code>/opt/lampp/htdocs</code>.</p>
-
 <p><code>/opt/lampp/htdocs/index.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="err">&lt;</span>?php
 /**
@@ -797,9 +763,10 @@ WordPress directory and for that add following files to
 define(&#39;WP_USE_THEMES&#39;, true);
 
 /** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . &#39;/wordpress-4.0.1/wp-blog-header.php&#39; );</code></pre></div>
-<p><code>/opt/lampp/htdocs/.htaccess</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"># BEGIN WordPress
+require( dirname( __FILE__ ) . &#39;/wordpress-4.0.1/wp-blog-header.php&#39; );
+</code></pre></div><p><code>/opt/lampp/htdocs/.htaccess</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">
+# BEGIN WordPress
 <span class="nt">&lt;IfModule</span> <span class="err">mod_rewrite.c</span><span class="nt">&gt;</span>
 
 RewriteEngine On
@@ -818,17 +785,15 @@ RewriteRule . index.php [L]
 
 <span class="nt">&lt;/IfModule&gt;</span>
 
-# END WordPress</code></pre></div>
-<p>To switch to the another version, we have to replace the wordpress-4.0.1
+# END WordPress
+</code></pre></div><p>To switch to the another version, we have to replace the wordpress-4.0.1
 strings in these files to the new directory.</p>
-
 <p>Next add WordPress Configuration file <code>wp-config.php</code> to
 <code>/opt/lampp/htdocs/wordpress-4.0.1</code> by copying and editing the sample
 config file that comes with WordPress.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress-4.0.1
-$ cp wp-config-sample.php wp-config.php</code></pre></div>
-<p>Edit MySQL config section as follows.</p>
-
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress-4.0.1
+$ cp wp-config-sample.php wp-config.php
+</code></pre><p>Edit MySQL config section as follows.</p>
 <p><code>/opt/lampp/htdocs/wordpress-4.0.1/wp-config.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">/** The name of the database for WordPress */
 define(&#39;DB_NAME&#39;, &#39;wordpress&#39;);
@@ -840,11 +805,10 @@ define(&#39;DB_USER&#39;, &#39;wp&#39;);
 define(&#39;DB_PASSWORD&#39;, &#39;wp&#39;);
 
 /** MySQL hostname */
-define(&#39;DB_HOST&#39;, &#39;localhost&#39;);</code></pre></div>
-<p>In the WP Config file, we also need to enter some unique phrases for the
+define(&#39;DB_HOST&#39;, &#39;localhost&#39;);
+</code></pre></div><p>In the WP Config file, we also need to enter some unique phrases for the
 items in Authentication Keys and Salts section. From wp-config.php,
 remove the lines shown in the next screenshot.</p>
-
 <p><code>/opt/lampp/htdocs/wordpress-4.0.1/wp-config.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">define(&#39;AUTH_KEY&#39;,         &#39;put your unique phrase here&#39;);
 define(&#39;SECURE_AUTH_KEY&#39;,  &#39;put your unique phrase here&#39;);
@@ -853,54 +817,56 @@ define(&#39;NONCE_KEY&#39;,        &#39;put your unique phrase here&#39;);
 define(&#39;AUTH_SALT&#39;,        &#39;put your unique phrase here&#39;);
 define(&#39;SECURE_AUTH_SALT&#39;, &#39;put your unique phrase here&#39;);
 define(&#39;LOGGED_IN_SALT&#39;,   &#39;put your unique phrase here&#39;);
-define(&#39;NONCE_SALT&#39;,       &#39;put your unique phrase here&#39;);</code></pre></div>
-<p>We can get random unique keys and salts from WordPress Org. Open
+define(&#39;NONCE_SALT&#39;,       &#39;put your unique phrase here&#39;);
+</code></pre></div><p>We can get random unique keys and salts from WordPress Org. Open
 <a href="https://api.wordpress.org/secret-key/1.1/salt/" target="_blank">WordPress API</a> in a
 browser tab, which generates and displays random keys and salts. Copy
 the contents, paste it to the WP Config file&rsquo;s and save the changes.</p>
-
 <p>Final step is to create new database in MySQL to hold WordPress tables.
 Login to MySQL create a database named <strong>wordpress</strong> and grant
 privileges on the database to user named <strong>wp</strong> with password <strong>wp</strong> as
 shown below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp
 $ bin/mysql -u root
 mysql&gt; create database wordpress;
-mysql&gt; GRANT ALL PRIVILEGES ON wordpress.* TO wp@localhost IDENTIFIED BY &#39;wp&#39;;
+mysql&gt; GRANT ALL PRIVILEGES ON wordpress.* TO wp@localhost IDENTIFIED BY 'wp';
 mysql&gt; flush privileges;
-mysql&gt; exit</code></pre></div>
-<p>With everything in place, open <code>http://localhost</code> in the browser to get
+mysql&gt; exit
+</code></pre><p>With everything in place, open <code>http://localhost</code> in the browser to get
 WordPress installation screen. Complete the WordPress installation.</p>
-
 <p><strong>Multiple WordPress Versions</strong></p>
-
 <p>As we installed WordPress under a separate directory in htdoc, we can
 keep multiple versions of WordPress and switch between them. To install
 new version, follow these steps.</p>
-
 <ul>
-<li><p>Extract required version of wordpress zip in htdocs and rename the
+<li>
+<p>Extract required version of wordpress zip in htdocs and rename the
 wordpress directory with a version number such as wordpress-x.x.x
-where x.x.x is the version number.</p></li>
-
-<li><p>Edit <code>/opt/lampp/htdocs/index.php</code> and <code>/opt/lampp/htdocs/.htaccess</code>
-and change existing WordPress paths to new path.</p></li>
-
-<li><p>Copy the wp-config.php from a existing setup and change the line
+where x.x.x is the version number.</p>
+</li>
+<li>
+<p>Edit <code>/opt/lampp/htdocs/index.php</code> and <code>/opt/lampp/htdocs/.htaccess</code>
+and change existing WordPress paths to new path.</p>
+</li>
+<li>
+<p>Copy the wp-config.php from a existing setup and change the line
 <code>define('DB_NAME', 'wordpress-x.x.x')</code>with a new database name. This
 is essential else WordPress uses an existing database of an earlier
-version.</p></li>
-
-<li><p>In MySQL, create new a database and grant privileges as done
-earlier.</p></li>
-
-<li><p>In browser, access the site and complete WordPress installation.</p></li>
-
-<li><p>To switch back to an earlier version, edit
+version.</p>
+</li>
+<li>
+<p>In MySQL, create new a database and grant privileges as done
+earlier.</p>
+</li>
+<li>
+<p>In browser, access the site and complete WordPress installation.</p>
+</li>
+<li>
+<p>To switch back to an earlier version, edit
 <code>/opt/lampp/htdocs/index.php</code> and <code>/opt/lampp/htdocs/.htaccess</code> and
-change WordPress paths.</p></li>
+change WordPress paths.</p>
+</li>
 </ul>
-
 <p>In the next section, we start with WordPress plugin basics.</p>
 
           </main>

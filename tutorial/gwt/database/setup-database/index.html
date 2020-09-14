@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Database Setup - GWT Tutorial - CodeTab</title></head>
 
@@ -711,25 +711,19 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="setup-database">Setup Database</h1>
-
+            <h1 id="setup-database">Setup Database</h1>
 <p>It&rsquo;s time to say goodbye to mock datastore SymbolDatabase.</p>
-
 <p>This section explains the GWT Database setup. Any RDBMS accessible
 through JDBC should do, and we choose HSQLDB for its configuration
 simplicity. HSQLDB, a full fledged RDBMS, is easy to setup and requires
 almost zero configuration. Further, HSQLDB plugin for Eclipse makes the
 process even more simpler.</p>
-
 <p>Once database is up, we require to load it with data. For that, we are
 going to use a small java application, RStore. Instead of tinkering with
 Fins, a separate application makes it easier to understand database
 handling and Object Relational Mapping (ORM). In the next part, when we
 move on to Google App Engine(GAE), we merge RStore with Fins to push the
 data to App Engine&rsquo;s High Replication DataStore (HRD).</p>
-
 <p>RStore is a standalone Java application which parse an XML input file
 and constructs fully loaded Symbol objects. It uses Java Data Objects
 (JDO) to create database schema and persists the objects to database.
@@ -738,57 +732,42 @@ via JDO, Hibernate and MyBatis. Even though JDO is preferred ORM for
 Fins, we use Hibernate and MyBatis just to show the flexibility offered
 by ORM. For newbies, RStore serves as a gentle introduction to the world
 of ORM.</p>
-
-<h2 id="8-1-install-db">8.1. Install DB</h2>
-
+<h2 id="81install-db">8.1. Install DB</h2>
 <p>There is a couple of ways to install HSQLDB; as Eclipse plugin or as
 standalone database. Plugin makes it easy to install and setup. It also
 provides menu option to start/stop database and invoke Database Manager
 GUI. These features make ones life easy during development.</p>
-
 <h5 id="hsqldb-database-server-plugin">HSQLDB Database Server Plugin</h5>
-
 <p>Select <strong>Help</strong> → <strong>Eclipse MarketPlace&hellip;</strong> and in Eclipse Marketplace
 dialog, enter HSQLDB in Search tab to search for the plugin. Select
 HSQLDB Database Server Plugin from search result.</p>
-
 <p>After installation, choose <strong>Window</strong> → <strong>Show View</strong> → <strong>Others</strong> and
 in Show View dialog expand HSQL Database server and select HSQLDB Server
 to open the HSQLDB view. This view has menu options to set database
 preferences, start/stop database and invoke Database client to interact
 with the database.</p>
-
 <p>First, set preferences which is used later to configure JDBC driver.
 Click on <strong>View Menu</strong> and select <strong>Preferences</strong> from the drop down
 menu. Enter values shown in the Figure.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/hsqlprefs.png" alt="HSQLDB Preferences" />
 </figure>
 
-
-<h6 id="figure-8-1-hsqldb-preferences">Figure 8.1. HSQLDB Preferences</h6>
-
+<h6 id="figure81hsqldb-preferences">Figure 8.1. HSQLDB Preferences</h6>
 <p>With these preferences, HSQLDB creates database file named db and
-database alias finsdb and user sa. Ensure that <strong><code>Persist database
-between session</code></strong> check box is checked.</p>
-
+database alias finsdb and user sa. Ensure that <strong><code>Persist database between session</code></strong> check box is checked.</p>
 <p>After preferences is set, start the database with <strong>Start</strong> icon in the
 HSQLDB view. Once database is up and running, open database manager by
 selecting <strong>Show Database Client</strong> from drop down menu.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/hsqlmanager.png" alt="Database Client" />
 </figure>
 
-
-<h6 id="figure-8-2-database-client">Figure 8.2. Database Client</h6>
-
+<h6 id="figure82database-client">Figure 8.2. Database Client</h6>
 <p>The left pane shows database schema, right hand top pane to enter the
 SQL and right hand bottom pane shows the query result. Use <strong>Refresh</strong>
 option in View menu to refresh schema. Refer HSQLDB documentation to
 know more about Database Manager.</p>
-
 
 
 <div>&nbsp;</div>
@@ -807,31 +786,26 @@ know more about Database Manager.</p>
 
 
 
-
 <h5 id="manual-installation">Manual Installation</h5>
-
 <p>For whatever reasons, if you prefer to run HSQLDB outside the Eclipse
 then you may do so by downloading the HSQLDB package from
 <a href="http://sourceforge.net/projects/hsqldb/files/hsqldb/" target="_blank">SourceForge</a> .</p>
-
 <p>Extract the zip file to some location and use following commands to
 start the database.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd &lt;hsqldb install directory&gt;
+<pre><code class="language-screen" data-lang="screen">$ cd &lt;hsqldb install directory&gt;
 
 $ mkdir database     ## dir to hold data files
 
 $ java -cp lib/hsqldb.jar org.hsqldb.server.Server      /
        --database.0 file:database/db                    /
-       --dbname.0 finsdb</code></pre></div>
-<p>This command runs HSQLDB in server mode and options <code>--database.0
-file:database/db</code> indicates that for database instance 0, use
+       --dbname.0 finsdb
+</code></pre><p>This command runs HSQLDB in server mode and options <code> --database.0 file:database/db</code> indicates that for database instance 0, use
 <code>database/db</code> as datafile and <code>--dbname.0 finsdb</code> indicates that for
 database instance 0, use alias finsdb to access database.</p>
-
 <p>Use following command to invoke Database Manger GUI.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd &lt;hsqldb install directory&gt;
-$ java -cp lib/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing</code></pre></div>
-<p>With HSQLDB up and running, we are ready to load it with the data.</p>
+<pre><code class="language-screen" data-lang="screen">$ cd &lt;hsqldb install directory&gt;
+$ java -cp lib/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
+</code></pre><p>With HSQLDB up and running, we are ready to load it with the data.</p>
 
           </main>
         </div>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Plugin Execution - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,38 +535,33 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-plugin-execution">Maven Plugin Execution</h1>
-
+            <h1 id="maven-plugin-execution">Maven Plugin Execution</h1>
 <p>In the previous tutorial, we saw plugin configuration. In this tutorial,
 we cover the Maven Plugin execution configuration.</p>
-
 <h2 id="configure-plugin-execution">Configure Plugin Execution</h2>
-
 <p>The element &lt;executions&gt;/&lt;execution&gt; allows you to configure the
 execution of a plugin goal. With it, you can accomplish the following
 things.</p>
-
 <ul>
-<li><p>bind a plugin goal to a lifecycle phase.</p></li>
-
-<li><p>configure plugin parameters of a specific goal.</p></li>
-
-<li><p>configure plugin parameters of a specific goal such as
+<li>
+<p>bind a plugin goal to a lifecycle phase.</p>
+</li>
+<li>
+<p>configure plugin parameters of a specific goal.</p>
+</li>
+<li>
+<p>configure plugin parameters of a specific goal such as
 compiler:compile, surefire:test etc., that are by default binds to a
-lifecycle phase</p></li>
+lifecycle phase</p>
+</li>
 </ul>
-
 <p>Let&rsquo;s demonstrate plugin execution with an example. In Apache Ant, it&rsquo;s
 quite easy to output echo any property or message during the build and
 many of us frequently use it to understand the build flow or to debug.
 But, Maven comes with no such feature, and only way to echo any message
 is to use Ant within Maven. The <a href="http://maven.apache.org/plugins/maven-antrun-plugin/" target="_blank">Apache AntRun Plugin</a> provides
 the ability to run Ant tasks within Maven.</p>
-
 <p>Let&rsquo;s configure maven-antrun-plugin to output message to console.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">  ...
   <span class="nt">&lt;build&gt;</span>
@@ -589,14 +584,12 @@ the ability to run Ant tasks within Maven.</p>
       <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
   <span class="nt">&lt;/build&gt;</span>
-  ...</code></pre></div>
-<p>Build the project with <code>mvn package</code> and it echoes the build directory
+  ...
+</code></pre></div><p>Build the project with <code> mvn package</code> and it echoes the build directory
 name in compile phase.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-antrun-echo.png" alt="Maven Plugin Configuration - Plugin execution AntRun echo" />
 </figure>
-
 
 <p>Let&rsquo;s go through the above snippet to understand the execution. In the
 &lt;execution&gt; element, we indicate that it should be applied to
@@ -605,12 +598,10 @@ we bind the execution to compile lifecycle phase and the antrun:run goal
 binds to compile phase. Finally, we add &lt;configuration&gt; to the
 execution. In configuration, we set <em><code>task</code></em> and <em><code>echo</code></em> parameters of
 antrun:run goal to echo the build directory name.</p>
-
 <p>In the above execution, we attached antrun:run goal to compile phase.
 But it can be any other phase and during execution of that phase ant
 will echo the output. Change the phase to test or verify phase and
 observe the output.</p>
-
 
 
 <div>&nbsp;</div>
@@ -629,25 +620,20 @@ observe the output.</p>
 
 
 
-
 <h2 id="maven-properties">Maven Properties</h2>
-
 <p>In the configuration, we used a Maven property
 ${project.build.directory}. Maven properties are value placeholder, like
 properties in Ant and their values are accessible anywhere within a POM
 by using the notation ${X}, where X is the property.</p>
-
 <p>Maven allows five types of properties - Environment variables, Project
 properties, properties defined in Settings files, Java System Properties
 and properties defined in POM. To know more about properties, refer
 <a href="http://books.sonatype.com/mvnref-book/reference/resource-filtering-sect-properties.html" target="_blank">Maven: The Complete Reference - Properties</a> and <a href="http://maven.apache.org/pom.html#Properties" target="_blank">POM Reference - Properties</a>.</p>
-
 <p>In the previous example, we saw that we can apply one or more goals to
 an execution. It is also possible to use one goal in multiple
 executions. Suppose, in the default jar, we want to exclude certain
 packages and create a separate jar with those packages. We can use
 multiple execution declarations to achieve this.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">    ...
     <span class="nt">&lt;plugin&gt;</span>
@@ -676,8 +662,8 @@ multiple execution declarations to achieve this.</p>
             <span class="nt">&lt;/execution&gt;</span>
         <span class="nt">&lt;/executions&gt;</span>
     <span class="nt">&lt;/plugin&gt;</span>
-    ...</code></pre></div>
-
+    ...
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -694,13 +680,11 @@ multiple execution declarations to achieve this.</p>
 <div>&nbsp;</div>
 
 
-
 <p>In execution with id default-jar we exclude some package and then add
 one more execution where jar:jar is again binds to package phase and in
 its configuration we include some package. The classifier parameter of
 jar:jar appends the string to jar name. The above snippet, generates two
 jars - simple-app-1.0.jar and simple-app-1.0-extra.jar.</p>
-
 <p>In the next tutorial, we cover Project Object Model (POM) in detail.</p>
 
           </main>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>appender on Codetab</title>
@@ -19,7 +19,7 @@
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/appender-and-encoder-v094/</guid>
       <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
 FileAppender So far, all examples use FileAppender defined in default steps steps-default.yml packaged in scoopi distribution jar. The appender snippet from is as below
-appender: class: &amp;#34;org.codetab.scoopi.step.load.DataAppender&amp;#34; previous: converter next: end plugins: [ plugin: { name: file, class: &amp;#34;org.</description>
+appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: converter next: end plugins: [ plugin: { name: file, class: &amp;quot;org.codetab.scoopi.plugin.appender.FileAppender&amp;quot;, file: &amp;quot;output/data.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@ appender: class: &amp;#34;org.codetab.scoopi.step.load.DataAppender&amp;#34; pre
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</guid>
       <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
 FileAppender So far, examples use FileAppender of default steps defined in steps-default.yml which is packaged with scoopi distribution jar. The appender snippet is as below.
-appender: class: &amp;#34;org.codetab.scoopi.step.load.DataAppender&amp;#34; previous: filter next: end plugins: [ plugin: { name: dataFile, class: &amp;#34;org.</description>
+appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: filter next: end plugins: [ plugin: { name: dataFile, class: &amp;quot;org.</description>
     </item>
     
   </channel>

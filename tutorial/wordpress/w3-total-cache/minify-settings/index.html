@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>W3 Total Minify - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,58 +561,47 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-3-w3-total-cache-minify">7.3. W3 Total Cache - Minify</h2>
-
+            <h2 id="73w3-total-cache---minify">7.3. W3 Total Cache - Minify</h2>
 <p>In the previous sections, we installed W3 Total Cache Plugin and enabled
 its two cache modules - Page cache and Browser cache. In this section,
 we show how go about the W3 Total Cache Minify Settings.</p>
-
 <h3 id="w3-total-cache-minify">W3 Total Cache Minify</h3>
-
 <p>Usually, HTML pages contain links to JavaScript, Stylesheet and Media.
 When we view the source of a WordPress page, in the header section, we
 find links to a number of JavaScript and CSS files. W3 Total Cache
 Minify target these items and accomplish three things:</p>
-
 <ul>
-<li><p>Minifies all JS, CSS and HTML code by removing white spaces,
-comments, extra line breaks.</p></li>
-
-<li><p>Combines all JavaScript files into a single file and Stylesheets
-into a CSS file.</p></li>
-
-<li><p>Cache the minified and combined JS and CSS files.</p></li>
+<li>
+<p>Minifies all JS, CSS and HTML code by removing white spaces,
+comments, extra line breaks.</p>
+</li>
+<li>
+<p>Combines all JavaScript files into a single file and Stylesheets
+into a CSS file.</p>
+</li>
+<li>
+<p>Cache the minified and combined JS and CSS files.</p>
+</li>
 </ul>
-
 <p>Benefits are twofold; Cleanup of files reduces the overall size and the
 bandwidth usage, while combining of files reduces the number of requests
 made by the browser to the server.</p>
-
 <p><strong>Note</strong></p>
-
 <p>W3 Total cache Minify Settings is far more tedious than compared to the
 other two covered so far. So, have patience and go through slowly.</p>
-
 <p>There are two modes in Minify - Auto and Manual.</p>
-
 <p>Minify Auto Mode</p>
-
 <p>In Auto mode, W3 takes care to identify all the files that it can minify
 and combine. Whether this mode works or not, ultimately depends on the
 scripts and stylesheets used by the theme and plugins that active in the
 WordPress Installation. While many scripts and stylesheets work
 perfectly well on minify, some cause trouble. For example, stylesheets
 of Customizr theme go for a toss when minified by W3.</p>
-
 <p>To enable Minify Auto Mode, go to <strong>Dashboard</strong> → <strong>Performance</strong> →
 <strong>General Settings</strong> → <strong>Minify</strong> and enable the Minify. Set Minify Mode
 to Auto and Minify Cache method to Disk. Leave all other things to the
 defaults and save settings.</p>
-
 <p><strong>Filename Length Test</strong></p>
-
 <p>In Auto mode, W3 automatically attempt to determine the optimal file
 name length for the combined minified files. In OpenShift, W3 fails to
 enable Auto Mode as filename length test fails. In the case of error,
@@ -620,11 +609,9 @@ select <strong>Dashboard</strong> → <strong>Performance</strong> → <strong>M
 the last section <strong>Advanced</strong> and set <strong>Disable minify automatic file
 name length test</strong> to disable the test. Try to enable auto mode with
 various filename length values - 246 or less than 150.</p>
-
 <p>Once Minify is set to auto mode, view and navigate through the site and
 verify the appearance and behavior of the pages, menus, and links
 carefully.</p>
-
 
 
 <div>&nbsp;</div>
@@ -642,28 +629,21 @@ carefully.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Minify Manual Mode</p>
-
 <p>When minify auto mode adversely impacts the look and feel of the site,
 then only option is to switch to Minify Manual Mode.</p>
-
 <p>To switch to the manual mode, go back to <strong>Dashboard</strong> → <strong>Performance</strong>
 → <strong>General Settings</strong> → <strong>Minify</strong> and set Minify Mode to Manual and
 save the settings.</p>
-
 <p>Next we need to identify the scripts and stylesheets that are used by
 the page and add them to minify list one by one and leave out the
 problematic ones. Fortunately, W3 Total cache has a <strong>Help Wizard</strong> to
 add files to minify list.</p>
-
 <p>To use the wizard, open Minify settings screen with <strong>Dashboard</strong> →
 <strong>Performance</strong> → <strong>Minify</strong> and click on Help wizard.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-w3-helpwizard.png" alt="W3 Total Cache Minify Settings Help Wizard" />
 </figure>
-
 
 <p>Wizard shows the JavaScript and CSS files. Initially, select all
 JavaScript files and click Apply to add the file URL to JS file
@@ -674,33 +654,24 @@ list and try to add them one by one, excluding the problematic files. In
 certain cases, we may have to drag and drop the files listed in JS file
 management section and reorder them if a file depends on another. After
 the JavaScript, repeat the process for CSS files.</p>
-
 <p><strong>Customizr theme</strong></p>
-
 <p>In codetab.org which uses Customizr theme, we are unable to add jQuery
 related JS files, bootstrap.js and blue.min.css to minify list. Out of
 these some are already minified so we may not gain much by including
 them, though their inclusion would have reduced request counts.</p>
-
 <p>Non Blocking JS</p>
-
 <p>When Minify is in Manual Mode, we also need to set Embed Type.</p>
-
 <p>To do that, open <strong>Dashboard</strong> → <strong>Performance</strong> → <strong>Minify</strong> and scroll
 down to JS section and set Embed Type to <strong>Non-blocking using JS</strong>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-w3-embedtype.png" alt="W3 Total Cache Minify Settings JS Embed Type" />
 </figure>
 
-
 <p>Minfy HTML</p>
-
 <p>Next, we need to enable minify for HTML. Open <strong>Dashboard</strong> →
 <strong>Performance</strong> → <strong>Minify</strong> and scroll down to HTML &amp; XML section.
 Select <strong>Enable</strong>, <strong>Inline CSS minification</strong> and <strong>Inline JS
 minification</strong> checkboxes and save settings.</p>
-
 
 
 <div>&nbsp;</div>
@@ -716,7 +687,6 @@ minification</strong> checkboxes and save settings.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Localization - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,37 +625,35 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="10-2-wordpress-plugin-localization">10.2. WordPress Plugin Localization</h2>
-
+            <h2 id="102wordpress-plugin-localization">10.2. WordPress Plugin Localization</h2>
 <p>After internationalization of the plugin, next step is to prepare
 language files. This process is known as Localization which consists of
 following steps.</p>
-
 <ul>
-<li><p>generate Portable Object Template (POT) file.</p></li>
-
-<li><p>generate Portable Object (PO) file for each language.</p></li>
-
-<li><p>get PO file translated by a translator.</p></li>
-
-<li><p>generate Machine Object (MO) file from each PO file.</p></li>
+<li>
+<p>generate Portable Object Template (POT) file.</p>
+</li>
+<li>
+<p>generate Portable Object (PO) file for each language.</p>
+</li>
+<li>
+<p>get PO file translated by a translator.</p>
+</li>
+<li>
+<p>generate Machine Object (MO) file from each PO file.</p>
+</li>
 </ul>
-
 <h3 id="install-software">Install Software</h3>
-
 <p>To generate POT file, install <strong>WordPress Tools</strong> with following
 commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress
 $ svn co http://develop.svn.wordpress.org/trunk/tools/
-$ ln -s . src</code></pre></div>
-<p>First, change to the WordPress installation directory. Next, use SVN to
+$ ln -s . src
+</code></pre><p>First, change to the WordPress installation directory. Next, use SVN to
 download the tools. It will download tools from WordPress source
 repository and save it your local WordPress directory. We also create a
 symbolic link <code>src</code> pointing to <code>wordpress</code> directory, which is for the
 hard coded paths in tools php files.</p>
-
 
 
 <div>&nbsp;</div>
@@ -673,45 +671,38 @@ hard coded paths in tools php files.</p>
 <div>&nbsp;</div>
 
 
-
 <p>To generate PO and MO files, we require <a href="https://www.gnu.org/software/gettext/" target="_blank">GNU
 gettext</a>. Normally, GNU gettext
 is shipped with standard Linux distributions and you may check whether
 it is available in your system with <code>msginit -V</code> command. If not
 installed, then install it with following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># yum install gettext</code></pre></div>
-<p>To run gettext on Windows, download the Setup program from <a href="http://gnuwin32.sourceforge.net/packages/gettext.htm" target="_blank">GNUWin</a> and install.</p>
-
+<pre><code class="language-screen" data-lang="screen"># yum install gettext
+</code></pre><p>To run gettext on Windows, download the Setup program from <a href="http://gnuwin32.sourceforge.net/packages/gettext.htm" target="_blank">GNUWin</a> and install.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-gettext.png" alt="WordPress Plugin Localization - gettext" />
 </figure>
 
-
 <h3 id="wordpress-plugin-localization">WordPress Plugin Localization</h3>
-
 <p>Once required softwares are installed, we can start the localization
 process.</p>
-
 <p>The first task is to generate POT file, which is done with following
 commands.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress/wp-content/plugins/share-on-social/
-$ php /opt/lampp/htdocs/wordpress/tools/i18n/makepot.php wp-plugin .</code></pre></div>
-<p>Run makepot.php from the plugin directory. It pulls the translatable
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress/wp-content/plugins/share-on-social/
+$ php /opt/lampp/htdocs/wordpress/tools/i18n/makepot.php wp-plugin .
+</code></pre><p>Run makepot.php from the plugin directory. It pulls the translatable
 strings from all PHP files of the plugin and creates the POT file
 <code>share-on-social.pot</code>. Next, move the POT file to <code>langs</code> directory.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mkdir langs
-$ mv share-on-social.pot langs</code></pre></div>
-<p>Next task is to generate PO file for each language. As an example, let&rsquo;s
+<pre><code class="language-screen" data-lang="screen">$ mkdir langs
+$ mv share-on-social.pot langs
+</code></pre><p>Next task is to generate PO file for each language. As an example, let&rsquo;s
 generate PO file for Esperanto language whose locale code is <strong>eo</strong>. For
 other languages and locale code, refer <a href="https://codex.wordpress.org/WordPress_in_Your_Language" target="_blank">List of localizations</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd langs
-$ msginit -i share-on-social.pot -o sos-domain-eo.po -l eo</code></pre></div>
-<p>GetText&rsquo;s <strong>msginit</strong> generates PO file from the POT file. The output
+<pre><code class="language-screen" data-lang="screen">$ cd langs
+$ msginit -i share-on-social.pot -o sos-domain-eo.po -l eo
+</code></pre><p>GetText&rsquo;s <strong>msginit</strong> generates PO file from the POT file. The output
 file is named as  <strong>sos-domain-eo.po</strong> where <strong>sos-domain</strong> is the
 plugins&rsquo; text domain and <strong>eo</strong> is the locale code of Esperanto.</p>
-
 <p>Next, translate the strings in <code>langs/sos-domain-eo.po</code>.</p>
-
 <p><code>share-on-social/langs/sos-domain-eo.po</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"># Copyright (C) 2015 Share on Social
 # This file is distributed under the same license as the Share on Social package.
@@ -738,11 +729,10 @@ msgctxt &#34;admin menu&#34;
 msgid &#34;Share on Social&#34;
 msgstr &#34;&#34;
 
-....</code></pre></div>
-<p>For each translatable string, the <strong>msgid</strong> holds the original string
+....
+</code></pre></div><p>For each translatable string, the <strong>msgid</strong> holds the original string
 and <strong>msgstr</strong> will be empty string. Edit the file and enter translated
 string in msgstr as shown in next listing.</p>
-
 <p><code>share-on-social/langs/sos-domain-eo.po</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">#: admin/class-sos.php:110
 msgctxt &#34;post type singular name&#34;
@@ -752,16 +742,14 @@ msgstr &#34;Konigi Locker&#34;
 #: admin/class-sos.php:112
 msgctxt &#34;admin menu&#34;
 msgid &#34;Share on Social&#34;
-msgstr &#34;Dividi en Socia&#34;</code></pre></div>
-<p>Finally, generate MO file from PO using GetText&rsquo;s <strong>msgfmt</strong> command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ msgfmt -o sos-domain-eo.mo  sos-domain-eo.po</code></pre></div>
-<p>It generates <code>sos-domain-eo.mo</code> from <code>sos-domain-eo.po</code>. We have to do
+msgstr &#34;Dividi en Socia&#34;
+</code></pre></div><p>Finally, generate MO file from PO using GetText&rsquo;s <strong>msgfmt</strong> command.</p>
+<pre><code class="language-screen" data-lang="screen">$ msgfmt -o sos-domain-eo.mo  sos-domain-eo.po
+</code></pre><p>It generates <code>sos-domain-eo.mo</code> from <code>sos-domain-eo.po</code>. We have to do
 this for each language. When bundling the plugin for release, include
 langs directory and MO files. The POT and PO files are not required in
 the plugin zip file.</p>
-
 <p>With that, the plugin localization is complete.</p>
-
 
 
 <div>&nbsp;</div>
@@ -780,31 +768,23 @@ the plugin zip file.</p>
 
 
 
-
 <h3 id="validation">Validation</h3>
-
 <p>We would like to verify whether internationalization and localization of
 the plugin is done properly.</p>
-
 <p>Open WordPress Admin Screen and go to <strong>Settings</strong> → <strong>General</strong>  and
 select Esperanto in <strong>Site Language</strong> field.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-select-lang.png" alt="WordPress Plugin Localization - Validate Language" />
 </figure>
 
-
 <p>We can also change site language through <strong>WPLANG</strong> setting in
 <code>wp-settings.php</code></p>
-
 <p>WordPress Admin screen flips to Esperanto and Share on Social Plugin
 loads <code>langs/sos-domain-eo.mo</code> and displays the menu and other labels in
 Esperanto.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-esperanto.png" alt="WordPress Plugin Localization - Esperanto" />
 </figure>
-
 
 <p>In the next chapter, we cover the plugin activation, deactivation and
 uninstall topics.</p>

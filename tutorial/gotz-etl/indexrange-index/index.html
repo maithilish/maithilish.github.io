@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>IndexRange Index BreakAfter - Gotz ETL - CodeTab</title></head>
 
@@ -400,52 +400,30 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>This chapter explains the use of index, indexRange and dynamic query to
+            <p>This chapter explains the use of index, indexRange and dynamic query to
 extract set of data without using multiple queries.</p>
-
 <p>Example 3 extracts data from <strong>defs/examples/page/acme-bs.html</strong> page,
 which contains Balance Sheet data of Acme for past five years in a HTML
 table with 27 rows and 5 columns. The partial contents of the table is
 shown below.</p>
-
 <p>Dec &lsquo;16</p>
-
 <p>Dec &lsquo;15</p>
-
 <p>Dec &lsquo;14</p>
-
 <p>Dec &lsquo;13</p>
-
 <p>Dec &lsquo;12</p>
-
 <p>Equity</p>
-
 <p>804.72</p>
-
 <p>801.55</p>
-
 <p>795.32</p>
-
 <p>790.18</p>
-
 <p>781.84</p>
-
 <p>Reserves</p>
-
 <p>32,071.87</p>
-
 <p>29,881.73</p>
-
 <p>25,414.29</p>
-
 <p>21,444.92</p>
-
 <p>17,957.00</p>
-
 <p>&hellip;.</p>
-
 <p>The datadef to extract data from the table is specified in
 <strong>defs/examples/jsoup/ex-3/job.xml</strong> which extracts three rows of data
 for the first column (Dec 2016). DataDef is as below</p>
@@ -474,12 +452,11 @@ for the first column (Dec 2016). DataDef is as below</p>
                <span class="na">field=</span><span class="s">&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(%{col.index})&#34;</span> <span class="nt">/&gt;</span>
        <span class="nt">&lt;/xf:fields&gt;</span>
    <span class="nt">&lt;/axis&gt;</span>
-<span class="nt">&lt;/dataDef&gt;</span></code></pre></div>
-<p>Index can be specified in two ways - <strong>index</strong> or <strong>indexRange</strong>. The
+<span class="nt">&lt;/dataDef&gt;</span>
+</code></pre></div><p>Index can be specified in two ways - <strong>index</strong> or <strong>indexRange</strong>. The
 above dataDef uses index in col axis and indexRange in row axis. It is
 important to note that the <strong>index is attribute</strong> of the member whereas
 <strong>indexRange is &lt;xf:fields&gt;</strong>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -495,7 +472,6 @@ important to note that the <strong>index is attribute</strong> of the member whe
 </script>
 
 <div>&nbsp;</div>
-
 
 
 <p>The col axis uses index attribute in member element with the index value
@@ -503,44 +479,38 @@ of 2. The query selector td:nth-child(%{col.index}) uses substitution
 variable %{col.index} which is replaced by index value 2 and content of
 second &lt;td&gt; which is nothing but data for Dec &lsquo;16 is returned by the
 selector for each row.</p>
-
 <p>For axis row, we use indexRange</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;item&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xf:fields&gt;</span>
         <span class="nt">&lt;xf:indexRange</span> <span class="na">value=</span><span class="s">&#34;6-8&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/xf:fields&gt;</span>
-<span class="nt">&lt;/member&gt;</span></code></pre></div>
-<p>and for its selector, tr:nth-child(%{row.index}) &gt; td:nth-child(1),
+<span class="nt">&lt;/member&gt;</span>
+</code></pre></div><p>and for its selector, tr:nth-child(%{row.index}) &gt; td:nth-child(1),
 Gotz creates 3 members and allots index 6, 7 and 8 respectively.</p>
-
 <p>The Fact axis selector uses both the col and row indexes</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">tr:nth-child(%{row.index}) &gt;  td:nth-child(%{col.index})</code></pre></div>
-<p>The selector for three members after variables are substituted is as
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">tr:nth-child(%{row.index}) &gt;  td:nth-child(%{col.index})
+</code></pre></div><p>The selector for three members after variables are substituted is as
 follows (index value is shown inside the [ ])</p>
-
 <p>Member 1</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">col [2] : tr:nth-child(1) &gt; td:nth-child(2)
 row [6] : tr:nth-child(6) &gt; td:nth-child(1)
-fact [] :  tr:nth-child(6) &gt;  td:nth-child(2)</code></pre></div>
-<p>Member 2</p>
+fact [] :  tr:nth-child(6) &gt;  td:nth-child(2)
+</code></pre></div><p>Member 2</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">col [2] : tr:nth-child(1) &gt; td:nth-child(2)
 row [7] : tr:nth-child(7) &gt; td:nth-child(1)
-fact []:  tr:nth-child(7) &gt;  td:nth-child(2)</code></pre></div>
-<p>Member 3</p>
+fact []:  tr:nth-child(7) &gt;  td:nth-child(2)
+</code></pre></div><p>Member 3</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">col [2] : tr:nth-child(1) &gt; td:nth-child(2)
 row [8] : tr:nth-child(8) &gt; td:nth-child(1)
-fact []:  tr:nth-child(8) &gt;  td:nth-child(2)</code></pre></div>
-<p>Get all data from table</p>
-
+fact []:  tr:nth-child(8) &gt;  td:nth-child(2)
+</code></pre></div><p>Get all data from table</p>
 <p>To get all data for one year, change the indexRange of row axis from 6-8
 to 6-38 and run Gotz. The output data should have 33 rows of data for
 the one year i.e. Dec 2016.</p>
-
 <p>Next, in col axis, remove index attribute from member and copy the
 xf:fields which contains indexRange from row axis to col axis member and
 change its range to 2-7. Now, run Gotz and you should have about 198
 rows of data in output. We leave these as exercise.</p>
-
 
 
 <div>&nbsp;</div>
@@ -559,15 +529,11 @@ rows of data in output. We leave these as exercise.</p>
 
 
 
-
 <h2 id="breakafter">BreakAfter</h2>
-
 <p>In the previous example, finding indexRange for col was easy because of
 limited number of columns, but for row, it was tedious.</p>
-
 <p>The <strong>breakAfter</strong> feature comes handy when rows or columns are more or
 when in-between data grows or contracts.</p>
-
 <p>The job.xml file of Example-4 is same as the third example, but for row
 axis, it uses <strong>breakAfter</strong> along with index instead of IndexRange.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;row&#34;</span><span class="nt">&gt;</span>
@@ -580,15 +546,13 @@ axis, it uses <strong>breakAfter</strong> along with index instead of IndexRange
             <span class="nt">&lt;xf:breakAfter</span> <span class="na">value=</span><span class="s">&#34;Book Value&#34;</span> <span class="nt">/&gt;</span>
           <span class="nt">&lt;/xf:fields&gt;</span>
     <span class="nt">&lt;/member&gt;</span>
-<span class="nt">&lt;/axis&gt;</span></code></pre></div>
-<p>Member begins with index 5 and loops until selector returns &ldquo;Book Value&rdquo;
+<span class="nt">&lt;/axis&gt;</span>
+</code></pre></div><p>Member begins with index 5 and loops until selector returns &ldquo;Book Value&rdquo;
 and outputs full set of Balance sheet data. In case, index attribute is
 not set then index begins with 1.</p>
-
 <p>The breakAfter is also useful when first and last item is constant and
 in-between rows or cols shrinks or expands. Using breakAfter, we can
 consume all data between them without bothering about the index.</p>
-
 <p>If we go through the output of Example-4, we see a lot of unwanted data
 such as sub-headings, texts such as &ldquo;12 months&rdquo;, nulls and blanks etc.,
 and this is a common problem when dealing with unstructured sources. To

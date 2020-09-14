@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Goolge App Engine on Codetab</title>
@@ -28,9 +28,9 @@ App Engine supports applications written in Java, Python and Go.</description>
       
       <guid>https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/</guid>
       <description>10.2. Deploy Once app is ready, Google App Engine Deploy is a simple affair with following steps.
- login to http://appspot.com using your Google ID.
- in Google App Engine welcome screen, create an application using Create Application option.
- in project context menu, choose Google → App Engine Settings . In App Engine dialog, enter the Application ID field with Application ID created in previous step. Start with 1 for Version number and increment it whenever there is a major release of the app.</description>
+  login to http://appspot.com using your Google ID.
+  in Google App Engine welcome screen, create an application using Create Application option.
+  in project context menu, choose Google → App Engine Settings . In App Engine dialog, enter the Application ID field with Application ID created in previous step. Start with 1 for Version number and increment it whenever there is a major release of the app.</description>
     </item>
     
     <item>

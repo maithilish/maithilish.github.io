@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Close Tabs - GWT Tutorial - CodeTab</title></head>
 
@@ -711,60 +711,48 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-11-close-tabs">6.11. Close Tabs</h2>
-
+            <h2 id="611close-tabs">6.11. Close Tabs</h2>
 <p>Last thing we are going to do on the client side is to add a control to
 close the tabs.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/closepanel.png" alt="ClosePanel" />
 </figure>
 
-
-<h6 id="figure-6-17-closepanel">Figure 6.17. ClosePanel</h6>
-
+<h6 id="figure617closepanel">Figure 6.17. ClosePanel</h6>
 <p>Except the <code>remove()</code> method offered by <code>TabLayoutPanel</code>, there is no
 other well documented method to close the tab, but using this method to
 close tab is little cumbersome when there are multiple tabs. Hence, we
 are designing a custom widget to do the job.</p>
-
 <p>Earlier, we used a text as header when tabs are added in <code>addTab()</code>
 method.</p>
-
 <p><code>in.fins.client.widget/ContentPanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">void</span> <span class="n">addTab</span><span class="p">(</span><span class="n">String</span> <span class="nf">text</span><span class="p">,</span> <span class="n">Composite</span> <span class="nf">content</span><span class="p">)</span> <span class="p">{</span>
-             <span class="n">tab</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">Text</span><span class="p">);</span>
-             <span class="n">tab</span><span class="p">.</span><span class="na">selectTab</span><span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="na">getWidgetCount</span><span class="p">()</span> <span class="o">-</span> <span class="n">1</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>Instead of text, we can use <code>TabLayoutPanel.add(Widget child, Widget
-tab)</code> method to add a widget as header. When we remove this header
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addTab</span><span class="o">(</span><span class="n">String</span> <span class="n">text</span><span class="o">,</span> <span class="n">Composite</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+             <span class="n">tab</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">content</span><span class="o">,</span> <span class="n">Text</span><span class="o">);</span>
+             <span class="n">tab</span><span class="o">.</span><span class="na">selectTab</span><span class="o">(</span><span class="n">tab</span><span class="o">.</span><span class="na">getWidgetCount</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>Instead of text, we can use <code>TabLayoutPanel.add(Widget child, Widget tab)</code> method to add a widget as header. When we remove this header
 widget from the parent using <code>Widget.removeFromParent()</code> method,
 TabLayoutPanel removes the associated tab as well and we are going to
 use this feature to close the tab.</p>
-
 <p>ClosePanel is a <code>HorizontalPanel</code> with a <code>HTML</code> widget for text and an
 <code>Image</code> widget for close icon.</p>
-
 <p><code>in.fins.client.widget/ClosePanel.gwt.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;g:HorizontalPanel&gt;</span>
                 <span class="nt">&lt;g:HTML</span> <span class="na">ui:field=</span><span class="s">&#34;html&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;g:Image</span> <span class="na">resource=</span><span class="s">&#34;{resource.blank}&#34;</span> <span class="na">width=</span><span class="s">&#34;15px&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;g:Image</span> <span class="na">ui:field=</span><span class="s">&#34;close&#34;</span> <span class="na">resource=</span><span class="s">&#34;{resource.close}&#34;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/g:HorizontalPanel&gt;</span></code></pre></div>
-<p><code>ContentPanel.addTab()</code> method uses ClosePanel as header while adding
+        <span class="nt">&lt;/g:HorizontalPanel&gt;</span>
+</code></pre></div><p><code>ContentPanel.addTab()</code> method uses ClosePanel as header while adding
 tab to the TabLayoutPanel.</p>
-
 <p><code>in.fins.client.widget/ContentPanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">void</span> <span class="n">addTab</span><span class="p">(</span><span class="n">String</span> <span class="nf">text</span><span class="p">,</span> <span class="n">Composite</span> <span class="nf">content</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">ClosePanel</span> <span class="nf">closePanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClosePanel</span><span class="p">();</span>
-                <span class="n">closePanel</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-                <span class="n">closePanel</span><span class="p">.</span><span class="na">addCloseHandler</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-                <span class="n">tab</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">closePanel</span><span class="p">);</span>
-                <span class="n">tab</span><span class="p">.</span><span class="na">selectTab</span><span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="na">getWidgetCount</span><span class="p">()</span> <span class="o">-</span> <span class="n">1</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addTab</span><span class="o">(</span><span class="n">String</span> <span class="n">text</span><span class="o">,</span> <span class="n">Composite</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ClosePanel</span> <span class="n">closePanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClosePanel</span><span class="o">();</span>
+                <span class="n">closePanel</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
+                <span class="n">closePanel</span><span class="o">.</span><span class="na">addCloseHandler</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+                <span class="n">tab</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">content</span><span class="o">,</span> <span class="n">closePanel</span><span class="o">);</span>
+                <span class="n">tab</span><span class="o">.</span><span class="na">selectTab</span><span class="o">(</span><span class="n">tab</span><span class="o">.</span><span class="na">getWidgetCount</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -781,52 +769,47 @@ tab to the TabLayoutPanel.</p>
 <div>&nbsp;</div>
 
 
-
 <p> </p>
-
 <h5 id="closeevent">CloseEvent</h5>
-
 <p>We can not create a <code>CloseEvent</code> like we use to create the custom events
 as it has protected constructor. Hence it is not possible to use
 EventBus mechanism instead, we have to use the traditional way of
 handling the events. <code>ClickHandler</code> is attached to the Close Icon and
 handler fires CloseEvent with ClosePanel as source and also as target.</p>
-
 <p> </p>
-
 <p><code>in.fins.client.widget/ClosePanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiHandler</span><span class="p">(</span><span class="s">&#34;close&#34;</span><span class="p">)</span>
-        <span class="kt">void</span> <span class="nf">handleClick</span><span class="p">(</span><span class="n">ClickEvent</span> <span class="nf">event</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">CloseEvent</span><span class="p">.</span><span class="na">fire</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>ClosePanel has to implement <code>HasCloseHandlers</code> interface, which makes
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiHandler</span><span class="o">(</span><span class="s">&#34;close&#34;</span><span class="o">)</span>
+        <span class="kt">void</span> <span class="nf">handleClick</span><span class="o">(</span><span class="n">ClickEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">CloseEvent</span><span class="o">.</span><span class="na">fire</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>ClosePanel has to implement <code>HasCloseHandlers</code> interface, which makes
 ClosePanel as a public source of <code>CloseEvent</code> events.
 <code>HasCloseHandlers.addCloseHandle()</code> method adds ContentPanel as handler.</p>
-
 <p><code>in.fins.client.widget/ClosePanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">HandlerRegistration</span> <span class="n">addCloseHandler</span><span class="p">(</span><span class="n">CloseHandler</span><span class="o">&lt;</span><span class="n">ClosePanel</span><span class="o">&gt;</span> <span class="nf">handler</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">CloseEvent</span><span class="p">.</span><span class="na">getType</span><span class="p">());</span>
-        <span class="p">}</span></code></pre></div>
-<p>ContentPanel is set as a handler for CloseEvent, and
+        <span class="kd">public</span> <span class="n">HandlerRegistration</span> <span class="nf">addCloseHandler</span><span class="o">(</span><span class="n">CloseHandler</span><span class="o">&lt;</span><span class="n">ClosePanel</span><span class="o">&gt;</span> <span class="n">handler</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">addHandler</span><span class="o">(</span><span class="n">handler</span><span class="o">,</span> <span class="n">CloseEvent</span><span class="o">.</span><span class="na">getType</span><span class="o">());</span>
+        <span class="o">}</span>
+</code></pre></div><p>ContentPanel is set as a handler for CloseEvent, and
 <code>TabLayoutPanel.removeFromParent()</code> removes ClosePanel from tab in the
 handler which triggers removal of the tab.</p>
-
 <p><code>in.fins.client.widget/ContentPanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">void</span> <span class="n">addTab</span><span class="p">(</span><span class="n">String</span> <span class="nf">text</span><span class="p">,</span> <span class="n">Composite</span> <span class="nf">content</span><span class="p">)</span> <span class="p">{</span>
-                <span class="p">....</span>
-                <span class="n">closePanel</span><span class="p">.</span><span class="na">addCloseHandler</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-                <span class="n">tab</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">closePanel</span><span class="p">);</span>
-                <span class="n">tab</span><span class="p">.</span><span class="na">selectTab</span><span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="na">getWidgetCount</span><span class="p">()</span> <span class="o">-</span> <span class="n">1</span><span class="p">);</span>
-        <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addTab</span><span class="o">(</span><span class="n">String</span> <span class="n">text</span><span class="o">,</span> <span class="n">Composite</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+                <span class="o">....</span>
+                <span class="n">closePanel</span><span class="o">.</span><span class="na">addCloseHandler</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+                <span class="n">tab</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">content</span><span class="o">,</span> <span class="n">closePanel</span><span class="o">);</span>
+                <span class="n">tab</span><span class="o">.</span><span class="na">selectTab</span><span class="o">(</span><span class="n">tab</span><span class="o">.</span><span class="na">getWidgetCount</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onClose</span><span class="p">(</span><span class="n">CloseEvent</span><span class="o">&lt;</span><span class="n">ClosePanel</span><span class="o">&gt;</span> <span class="nf">event</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="na">getWidgetCount</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">event</span><span class="p">.</span><span class="na">getTarget</span><span class="p">().</span><span class="na">removeFromParent</span><span class="p">();</span>
-                <span class="p">}</span>
-        <span class="p">}</span></code></pre></div>
-
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClose</span><span class="o">(</span><span class="n">CloseEvent</span><span class="o">&lt;</span><span class="n">ClosePanel</span><span class="o">&gt;</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">tab</span><span class="o">.</span><span class="na">getWidgetCount</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">event</span><span class="o">.</span><span class="na">getTarget</span><span class="o">().</span><span class="na">removeFromParent</span><span class="o">();</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -841,7 +824,6 @@ handler which triggers removal of the tab.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
@@ -850,7 +832,6 @@ contains additional menu options and corresponding content pages to add
 and manage watch lists. These options are not covered in the book as
 they are similar in design, and readers may go through them after
 completing the server side concepts.</p>
-
 <p>Next part the book deals with server side coding.</p>
 
           </main>

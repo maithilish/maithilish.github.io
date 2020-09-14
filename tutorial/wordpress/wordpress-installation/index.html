@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Installation - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,73 +561,58 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In the previous chapter, we created a WordPress application on OpenShift
+            <p>In the previous chapter, we created a WordPress application on OpenShift
 platform. In this chapter, we go through WordPress installation and
 Admin Dashboard.</p>
-
 <h2 id="wordpress-installation">WordPress Installation</h2>
-
 <p>WordPress Installation is a simple affair. Open the app&rsquo;s Public URL in
 the browser. If you forget to note the URL, then you need to revisit the
 <strong>Application Overview Screen</strong> in OpenShift Web Console and find out
 the Public URL. On the first access, WordPress displays the Welcome
 screen where we have to fill site&rsquo;s title and also, information about an
 administrator user.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-install.png" alt="WordPress Tutorial - WordPress Installation - WordPress Install screen" />
 </figure>
 
-
 <p>Fill <strong>Site Title</strong>, <strong>Username</strong>, <strong>Password</strong> and your e-mail ID. The
 User ID gets administrator privileges and access to the Admin Dashboard.
 WordPress uses the e-mail to send password reset mail, etc.</p>
-
 <p><strong>Privacy</strong></p>
-
 <p>It is important to uncheck the last field <strong>Privacy - Allow search
 engine to index this site</strong>, else as soon as we create any post in
 WordPress, search engines bots (crawlers) may visit our unfinished site
 and start indexing them.</p>
-
 <p>After our site is ready, we may allow search engines to index the site.
 We show how to do that in the next section.</p>
-
 <p>After filling the details, click <strong>Install WordPress</strong>. Installation
 finishes in a couple of seconds and displays the success page. During
 the installation, WordPress creates required tables in a MySQL database,
 to store the data like User profile, Contents, Settings, etc.</p>
-
 <p>Now we can log in to WordPress. Click <strong>Log In</strong> and enter User ID and
 Password. On the log in, WordPress displays the Admin Dashboard.</p>
-
 <p><strong>Admin Dashboard URL</strong></p>
-
 <ul>
-<li><p>To access Admin Dashboard use :
-<code>http://quickstart-wordpressguide.rhcloud.com/wp-admin/</code></p></li>
-
-<li><p>To access WordPress site use :
-<code>http://quickstart-wordpressguide.rhcloud.com/</code></p></li>
+<li>
+<p>To access Admin Dashboard use :
+<code>http://quickstart-wordpressguide.rhcloud.com/wp-admin/</code></p>
+</li>
+<li>
+<p>To access WordPress site use :
+<code>http://quickstart-wordpressguide.rhcloud.com/</code></p>
+</li>
 </ul>
-
 <p>Admin dashboard contains menu options to manage Posts, Pages, Media
 items, Comments, Plugins, Themes, Users and Settings. It also shows site
 stats like number of Posts, latest comments and recent activity, etc.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dashboard.png" alt="WordPress Tutorial - WordPress Installation - WordPress Admin Dashboard" />
 </figure>
 
-
 <h2 id="wordpress-dashboard">WordPress Dashboard</h2>
-
 <p>Throughout the WordPress Tutorial, we go through the Dashboard menu one
 by one. Before closing this chapter, we quickly cover couple of basic
 options.</p>
-
 
 
 <div>&nbsp;</div>
@@ -645,49 +630,37 @@ options.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Dashboard Screen options</p>
-
 <p>On the top right side of the dashboard, there is a tab - Screen option
 which on click expands to display <strong>Show on screen</strong> options.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-screenoptions.png" alt="WordPress Tutorial - WordPress Installation -WordPress Dashboard Screen Options" />
 </figure>
-
 
 <p>Here, you may set the items that are to be displayed on your dashboard.
 Screen options varies from screen to screen. For example, for Media
 Library screen, it lets us set the number of media items in a screen and
 columns to display.</p>
-
 <p>Switch between Dashboard and Site</p>
-
 <p>To visit the site from the dashboard, we need to use Home icon (next to
 WordPress icon) in the left end of Admin bar, which shows <strong>Visit
 Site</strong>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-visitsite.png" alt="WordPress Tutorial - WordPress Installation -WordPress Dashboard Visit site" />
 </figure>
 
-
 <p>Click on Visit Site to visit the site.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-helloworld.png" alt="WordPress Tutorial - WordPress Installation -WordPress Hello World page" />
 </figure>
-
 
 <p>When we switch to the site from the dashboard, WordPress continue to
 display Admin bar at the top. To switch back, click on Home icon and
 select Dashboard from the drop down list. To avoid back and forth, open
 the site in another tab.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Before adding contents to our site, we need to complete the basic
 settings. In the next chapter, we go through some of the important
 settings.</p>

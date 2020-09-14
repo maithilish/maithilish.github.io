@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T15:08:00+0530",
         "dateModified" : "2019-01-11T15:08:00+0530",
-        "wordCount" : "229",
+        "wordCount" : "230",
         "keywords" : [ "install apache maven","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Installation - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -207,14 +207,14 @@
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-maven/introduction/"
-            class="toc-page text-wrap text-muted ">
+            class="toc-page text-wrap text-danger ">
             Introduction
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/apache-maven/install-apache-maven/"
-            class="toc-page text-wrap text-danger ">
+            class="toc-page text-wrap text-muted ">
             Installation
         </a>
     </div>
@@ -535,53 +535,41 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="install-apache-maven">Install Apache Maven</h1>
-
+            <h1 id="install-apache-maven">Install Apache Maven</h1>
 <p>Download latest release of the software from <a href="http://maven.apache.org/download.cgi" target="_blank">Apache Maven Download
 Page</a>.</p>
-
 <h2 id="installing-on-linux-and-mac">Installing on Linux and Mac</h2>
-
 <p>Extract the downloaded zip file to some folder. For the sake of
 explanation, we use <code>/opt/apache-maven</code> directory as the maven home.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ mkdir /opt/apache-maven
 $ <span class="nb">cd</span> /opt/apache-maven
 $ unzip apache-maven-3.3.1-bin.zip
-$ ln -s apache-maven-3.3.1 maven</code></pre></div>
-<p>Next, set and export <code>M2_HOME</code> and <code>PATH</code> environment variables.</p>
+$ ln -s apache-maven-3.3.1 maven
+</code></pre></div><p>Next, set and export <code>M2_HOME</code> and <code>PATH</code> environment variables.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">M2_HOME</span><span class="o">=</span>/opt/apache-maven/maven
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$M2_HOME</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span></code></pre></div>
-<p>To persist these variables across restarts, add the exports to
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$M2_HOME</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+</code></pre></div><p>To persist these variables across restarts, add the exports to
 <code>$HOME/.bash_profile</code>.</p>
-
 <h2 id="installing-on-windows">Installing on Windows</h2>
-
-<p>In Windows, extract the downloaded zip to <code>c:Program Files</code>directory
+<p>In Windows, extract the downloaded zip to <code>c:Program Files </code>directory
 and then set environment variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">C:Usersm &gt; set M2_HOME=c:Program Filesapache-maven-3.3.1
-C:Usersm &gt; set PATH=%PATH%;%M2_HOME%bin</code></pre></div>
-<p>To make these environment variables persistence across restarts, add
+<pre><code class="language-screen" data-lang="screen">C:Usersm &gt; set M2_HOME=c:Program Filesapache-maven-3.3.1
+C:Usersm &gt; set PATH=%PATH%;%M2_HOME%bin
+</code></pre><p>To make these environment variables persistence across restarts, add
 them to the System environment variables through the control panel. Go
 to <strong>Control Panel</strong> and select <strong>System</strong>. Go to <strong>Advanced</strong> tab and
 click <strong>Environment Variables</strong>. Use <strong>New</strong> to add <code>M2_HOME</code> variable.
 To modify the path, select Path from System Variables section and click
 <strong>Edit</strong> and add string <strong>%M2_HOME%bin;</strong> in the <strong>Variable</strong> value
 field to the front of the existing value and save changes.</p>
-
 <h2 id="verify-the-setup">Verify the setup</h2>
-
 <p>Verify the setup by running <code>mvn -- version</code>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-verify-setup.png" alt="Install Apache Maven - verify setup" />
 </figure>
 
-
 <p>In case of error, check whether <code>M2_HOME</code> and <code>PATH</code> are set properly
 and Java executable is available in the path.</p>
-
 
 
 <div>&nbsp;</div>
@@ -597,7 +585,6 @@ and Java executable is available in the path.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

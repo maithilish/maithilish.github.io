@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Uninstall - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,14 +625,10 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-5-wordpress-plugin-uninstall">11.5. WordPress Plugin Uninstall</h2>
-
+            <h2 id="115wordpress-plugin-uninstall">11.5. WordPress Plugin Uninstall</h2>
 <p>In the previous blogs, we customized activation and deactivation phases
 for the plugin. In this tutorial, we use uninstall phase to clean up the
 entities created by the plugin.</p>
-
 <p>When a plugin is uninstalled, it is already in deactivated state and it
 means that WordPress Action framework is no longer usable with in the
 plugin code. WordPress do provide a uninstall hook
@@ -643,26 +639,23 @@ uninstall is in progress, WordPress looks for a file named named
 uninstall.php in plugins&rsquo; top directory and if exists, it executes it as
 part of uninstall phase. In Share on Social Plugin, we use unistall.php
 instead of uninstall hook.</p>
-
 <p>When plugin uninstall is initiated by the admin, WordPress sets a
 constant <strong>WP_UNINSTALL_PLUGIN</strong> and share-on-social/uninstall.php
 checks whether this constant is defined and if so, then proceeds to call
 uninstall function <code>sos_uninstall_sos_plugin()</code>.</p>
-
 <p><code>share-on-social/uninstall.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">if ( ! defined( &#39;WP_UNINSTALL_PLUGIN&#39; ) ) {
     exit();
 }
 
-sos_uninstall_sos_plugin();</code></pre></div>
-<p>The uninstall function calls functions to delete custom posts of type
+sos_uninstall_sos_plugin();
+</code></pre></div><p>The uninstall function calls functions to delete custom posts of type
 sos and to delete plugin options. If site is multisite and user is super
 admin then it call these functions for all sites in the network
 otherwise it calls the functions for the site. There is no code to
 handle uninstall by non super admins in multisite installation, as site
 admins are any way not allowed to install and uninstall plugins at site
 level.</p>
-
 
 
 <div>&nbsp;</div>
@@ -678,7 +671,6 @@ level.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 <p><code>share-on-social/uninstall.php</code></p>
@@ -701,15 +693,14 @@ level.</p>
         sos_delete_sos_posts();
         sos_delete_sos_options();
     }
-}</code></pre></div>
-<p>Once Share on Social plugin is deactivated, its custom post type sos no
+}
+</code></pre></div><p>Once Share on Social plugin is deactivated, its custom post type sos no
 longer registered but posts of that type may still exist in
 <strong>wp_posts</strong> table. In <code>sos_delete_sos_posts()</code>, we use WordPress
 function
 [WP_Query()</a> to
 fetch all posts of type sos and delete them, one by one, using
 <a href="http://codex.wordpress.org/Function_Reference/wp_delete_post" target="_blank">wp_delete_post()</a>.</p>
-
 <p><code>share-on-social/uninstall.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function sos_delete_sos_posts () {
 
@@ -732,13 +723,12 @@ fetch all posts of type sos and delete them, one by one, using
         }
     }
     wp_reset_postdata();
-}</code></pre></div>
-<p>In multisite installation, wp_delete_post() internally uses
+}
+</code></pre></div><p>In multisite installation, wp_delete_post() internally uses
 <strong>post_type</strong> object and it will thrown an exception when it is unable
 to find sos custom type. To overcome this, we temporarily re-register
 <strong>sos</strong> custom post type and then proceed with deletion to avoid
 warnings in debug.log file.</p>
-
 
 
 <div>&nbsp;</div>
@@ -754,7 +744,6 @@ warnings in debug.log file.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

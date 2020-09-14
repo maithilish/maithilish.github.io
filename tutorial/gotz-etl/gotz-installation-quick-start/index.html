@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Installation - Gotz ETL - CodeTab</title></head>
 
@@ -400,22 +400,17 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>If you use Docker to run applications, then the easiest way install Gotz
+            <p>If you use Docker to run applications, then the easiest way install Gotz
 is to pull its image from DockerHub and run it straight away with an
 added convince that it comes MariaDB preconfigured. In case, you are not
 using Docker then you can also download its release from GitHub. We
 explain both the options here.</p>
-
 <h2 id="install-gotz-from-docker-image">Install Gotz from Docker Image</h2>
-
 <p>Gotz releases are available as docker image from <a href="https://hub.docker.com/r/codetab/gotz/" target="_blank">DockerHub</a>. To run Gotz container, we need<a href="https://docs.docker.com/install/" target="_blank">Docker</a> installed in the system and additionally, to run it with database, we also need <a href="https://docs.docker.com/compose/install" target="_blank">Docker Compose</a>. The total download size of Gotz is about 120MB and Mariadb 130MB.</p>
-
 <p>The following command downloads Gotz docker image, creates container
 named gotz and run it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker run --name gotz codetab/gotz</code></pre></div>
-<p>It executes example 1 and output one line of data to output/data.txt.
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker run --name gotz codetab/gotz
+</code></pre></div><p>It executes example 1 and output one line of data to output/data.txt.
 But, we will not be able to view the output file nor modify the conf
 files as they are within the container. To overcome this, we need to
 externalize these folders with following commands.</p>
@@ -425,84 +420,71 @@ docker cp gotz:/gotz/conf .
 docker cp gotz:/gotz/output .
 docker cp gotz:/gotz/docker .
 docker cp gotz:/gotz/defs .
-docker cp gotz:/gotz/logs .</code></pre></div>
-<p>First, we make a folder named gotz and then copy conf, output, docker,
+docker cp gotz:/gotz/logs .
+</code></pre></div><p>First, we make a folder named gotz and then copy conf, output, docker,
 defs and logs folders from the container to it. This allows us to modify
 conf, def files and also, view the output file without login into the
 container. We can now remove the container as we are going to recreate
 it with a new set of parameters.</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker rm gotz</code></pre></div>
-<p>Let&rsquo;s run example 11 to output more data. To do that, edit
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker rm gotz
+</code></pre></div><p>Let&rsquo;s run example 11 to output more data. To do that, edit
 <strong>conf/gotz.properties</strong> file and change beanFile property as
 <strong>gotz.beanFile=/defs/examples/jsoup/ex-11/bean.xml</strong> and run
 gotz</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker run --name gotz --rm -p 9010:9010 -v &#34;$PWD&#34;/defs:/gotz/defs -v &#34;$PWD&#34;/conf:/gotz/conf -v &#34;$PWD&#34;/output:/gotz/output codetab/gotz</code></pre></div>
-<p>Above, we mount externalized folders using -v option. When container
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker run --name gotz --rm -p 9010:9010 -v &#34;$PWD&#34;/defs:/gotz/defs -v &#34;$PWD&#34;/conf:/gotz/conf -v &#34;$PWD&#34;/output:/gotz/output codetab/gotz
+</code></pre></div><p>Above, we mount externalized folders using -v option. When container
 run, it uses definitions from jsoup/ex-11 and on completion, we should
 have a new data.txt file in output folder with 281 lines of data</p>
-
 <p>Gotz comes with a nice Angular dashboard which displays internal metrics
 of the app and it can be accessed via <a href="http://localhost:9010">http://localhost:9010</a> while Gotz
 is running.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gotz-etl/media/gotz-metrics.png" alt="Gotz install metrics dashboard" />
 </figure>
 
-
 <p>Gotz with MariaDB</p>
-
 <p>To use MariaDB as datastore, we need Docker Compose which runs Gotz and
 MariaDB in separate containers. First, move the <strong>docker-compose.yml</strong>
 to gotz folder</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">cd gotz
-mv docker/docker-compose.yml .</code></pre></div>
-<p>Next, edit <strong>conf/gotz.properties</strong> and modify useDataStore property as
+mv docker/docker-compose.yml .
+</code></pre></div><p>Next, edit <strong>conf/gotz.properties</strong> and modify useDataStore property as
 <strong>gotz.useDatastore=true</strong>. As Gotz need to connect database running on
 container we also need to change database connection url. Edit
 <strong>conf/jdoconfig.properties</strong> and change ConnectionURL as
 javax.jdo.option.ConnectionURL=jdbc:mariadb://db:3306/gotz. Once
 configuration is ready, start database.</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker-compose up db</code></pre></div>
-<p>Docker downloads the latest MariaDB image and run it as container. On
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker-compose up db
+</code></pre></div><p>Docker downloads the latest MariaDB image and run it as container. On
 first run, it also initializes the database, create users and grant
 required privileges. Once database is up and running, stop it with
 Ctrl-C. It creates new folder named <strong>data</strong> which houses the MariaDB
 data files.</p>
-
 <p>With that, one time setup is complete and from now on, we start using
 Gotz with MariaDB with the following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker-compose up --abort-on-container-exit</code></pre></div>
-<h2 id="install-gotz-from-github">Install Gotz from GitHub</h2>
-
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">docker-compose up --abort-on-container-exit
+</code></pre></div><h2 id="install-gotz-from-github">Install Gotz from GitHub</h2>
 <p>Alternatively, install Gotz either by downloading the release package
 which contains all dependencies or by building the source code with
 Maven. In this case, if we wish to run Gotz with datastore support, then
 we have to manually install database such as MariaDB or HSQLDB and
 configure it. We explain the HSQLDB installation in a later chapter on
 persistence.</p>
-
 <p>Download and install the Release package</p>
-
 <p>Download the latest release zip file <strong>gotz-x.x.x-production.zip</strong> from
 <a href="https://github.com/maithilish/gotz/releases" target="_blank">GitHub Releases</a> and
 extract the zip file to some location.</p>
-
 <p>Download and build the Source</p>
-
 <p>Alternatively, we can download the Gotz source code zip from
 <a href="https://github.com/maithilish/gotz" target="_blank">GitHub</a>. To build it, extract it
 somewhere and from the project root folder run</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">mvn package -DskipTests</code></pre></div>
-<p>Maven compiles the source, downloads the dependencies and package the
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">mvn package -DskipTests
+</code></pre></div><p>Maven compiles the source, downloads the dependencies and package the
 app as gotz-x.x.x-production.zip in <strong>target</strong> folder. Extract
 target/gotz-x.x.x-production.zip to some location.</p>
-
 <p>Download and install JRE 8 or above</p>
-
 <p>To run, Gotz requires JRE 8 or above. It is tested both with OpenJDK as
 well as Oracle Java SE.</p>
-
 
 
 <div>&nbsp;</div>
@@ -520,9 +502,7 @@ well as Oracle Java SE.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="quick-start">Quick start</h2>
-
 <p>Go to the extracted folder of <strong>gotz-x.x.x-production.zip</strong>. The
 directory structure is as below.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">gotz-0.9.0-beta/
@@ -540,31 +520,27 @@ directory structure is as below.</p>
 ├── gotz.sh
 └── lib
     └── gotz-0.9.0-beta.jar
-    └── ....</code></pre></div>
-<p>Application jar file gotz-x.x.x.jar is in <strong>lib</strong> folder along with
+    └── ....
+</code></pre></div><p>Application jar file gotz-x.x.x.jar is in <strong>lib</strong> folder along with
 other dependencies.</p>
-
 <p>The <strong>conf</strong> folder holds the configuration files and the main
 configuration file is <strong>gotz.properties</strong>. By default, following two
 properties are defined.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">gotz.beanFile=/defs/examples/jsoup/ex-1/bean.xml
-gotz.useDatastore=false</code></pre></div>
-<p>The property <strong>gotz.beanFile</strong> points to example 1 which is loaded when
+gotz.useDatastore=false
+</code></pre></div><p>The property <strong>gotz.beanFile</strong> points to example 1 which is loaded when
 we run Gotz. The other property <strong>gotz.useDatastore</strong> is set to false
 which allows us to run Gotz without setting up database. In a later
 chapter, we show how to setup database and use it to persist Gotz
 objects. Till then, set it to false.</p>
-
 <p>Let&rsquo;s run Gotz and check the installation.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">cd gotz-x.x.x
-gotz.sh               // gotz.bat for windows</code></pre></div>
-<p>It starts GotzEngine and loads files defined in defs/examples/jsoup/ex-1
+gotz.sh               // gotz.bat for windows
+</code></pre></div><p>It starts GotzEngine and loads files defined in defs/examples/jsoup/ex-1
 folder and outputs data to <strong>output/data.txt</strong> file.</p>
-
 <p>As we progress through the guide, we cover examples one by one. To load
 other examples, modify the <strong>gotz.beanFile</strong> property in
 <strong>conf/gotz.properties</strong> and run Gotz.</p>
-
 
 
 <div>&nbsp;</div>
@@ -583,24 +559,19 @@ other examples, modify the <strong>gotz.beanFile</strong> property in
 
 
 
-
 <h2 id="examples">Examples</h2>
-
 <p>Gotz comes with a set of example definition files : ex-1 to ex-14.
 Examples uses HTML pages from <strong>examples/page</strong> folder and extract data
 from it. The pages are financial data such as Balance Sheet, Profit and
 Loss Account and Share price etc., of a company. Each example builds on
 the previous one, so that major portion of definitions remains same
 throughout this guide for easy understanding of the concepts.</p>
-
 <p>Examples come in two flavors - <a href="https://jsoup.org/" target="_blank">JSoup</a> which uses
 selectors to query data and <a href="http://htmlunit.sourceforge.net/" target="_blank">HtmlUnit</a>
 which uses XPath as query.</p>
-
 <p>This guide focus on JSoup examples, as JSoup is easy to use and light on
 memory. HtmlUnit examples are same as JSoup ones but uses XPath for
 queries.</p>
-
 <p>In the next chapter, we start with Example 1.</p>
 
           </main>

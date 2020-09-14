@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Lifecycle Goals - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,49 +535,37 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-lifecycle-and-goals">Maven Lifecycle and Goals</h1>
-
+            <h1 id="maven-lifecycle-and-goals">Maven Lifecycle and Goals</h1>
 <p>The previous section covered plugin goals and how to run goals from
 command line. In very few situations we invoke plugin goals directly and
 more often than not, lifecycle phases are preferred. In this chapter, we
 describe the link between Maven Lifecycle and Goals.</p>
-
 <h2 id="lifecycle-phases-and-plugin-goals">Lifecycle Phases and Plugin Goals</h2>
-
 <p>When a lifecycle phase is run, depending on project type and packaging
 type, Maven binds plugin goals to lifecycle phases.</p>
-
 <p>When we run <code>mvn package</code> in a Java Project, Maven binds plugin goals to
 lifecycle phases as shown in the next figure.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-package-goals.png" alt="Maven Lifecycle and Goals - Package Goals" />
 </figure>
 
-
 <p>To process-resources phase, Maven binds resources goal of
 maven-resources-plugin and to test phase, it binds test goal of
 maven-surefire-plugin and so on.</p>
-
 <p>What&rsquo;s happens at package phase is bit interesting. In a Java Project,
 Maven binds jar goal of maven-jar-plugin. However, when we run the same
 command in a webapp project, up to test phase Maven binds same goals,
 but to the package phase Maven binds war goal of maven-war-plugin the
 war:war instead of jar:jar.</p>
-
 <p>The command <code>mvn help:describe -Dcmd=&lt;phase&gt;</code> is a very useful command
 not only to list the lifecycle phases but also to know the binded goal
 and plugin version. Run the following command from the project directory
 that contains the pom.xml.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn help:describe -Dcmd=clean</code></pre></div>
-<p>[INFO] &rsquo;clean&rsquo; is a lifecycle with the following phases: </p>
-
-<p>* pre-clean: Not defined<br />
-* clean: org.apache.maven.plugins:maven-clean-plugin:2.5:clean<br />
+<pre><code class="language-screen" data-lang="screen">$ mvn help:describe -Dcmd=clean
+</code></pre><p>[INFO] &lsquo;clean&rsquo; is a lifecycle with the following phases: </p>
+<p>* pre-clean: Not defined<br>
+* clean: org.apache.maven.plugins:maven-clean-plugin:2.5:clean<br>
 * post-clean: Not defined</p>
-
 
 
 <div>&nbsp;</div>
@@ -593,7 +581,6 @@ that contains the pom.xml.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
@@ -604,38 +591,35 @@ and plugin goals bounded to each phase. As we can see in the screenshot,
 no goals are bounded to pre-clean and post-clean phases and they are
 indicated as not defined and for clean phase, clean:clean goal of
 maven-clean-plugin (version 2.5) is attached.</p>
-
 <p>The following command outputs the sequence of phases and goals for
 default lifecycle The phase deploy belongs to default lifecycle so
 command output details of default
 lifecycle.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn help:describe -Dcmd=deploy</code></pre></div>
-<p>It is a part of the lifecycle for the POM packaging <code>jar</code>. This lifecycle includes the following phases:</p>
-
-<p>* validate: Not defined<br />
-* initialize: Not defined<br />
-* generate-sources: Not defined<br />
-* process-sources: Not defined<br />
-* generate-resources: Not defined<br />
-* process-resources: org.apache.maven.plugins:maven-resources-plugin:2.6:resources<br />
-* compile: org.apache.maven.plugins:maven-compiler-plugin:3.1:compile<br />
-* process-classes: Not defined<br />
-* generate-test-sources: Not defined<br />
-* process-test-sources: Not defined<br />
-* generate-test-resources: Not defined<br />
-* process-test-resources: org.apache.maven.plugins:maven-resources-plugin:2.6:testResources<br />
-* test-compile: org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile<br />
-* process-test-classes: Not defined<br />
-* test: org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test<br />
-* prepare-package: Not defined<br />
-* package: org.apache.maven.plugins:maven-jar-plugin:2.4:jar<br />
-* pre-integration-test: Not defined<br />
-* integration-test: Not defined<br />
-* post-integration-test: Not defined<br />
-* verify: Not defined<br />
-* install: org.apache.maven.plugins:maven-install-plugin:2.4:install<br />
+<pre><code class="language-screen" data-lang="screen">$ mvn help:describe -Dcmd=deploy
+</code></pre><p>It is a part of the lifecycle for the POM packaging <code>jar</code>. This lifecycle includes the following phases:</p>
+<p>* validate: Not defined<br>
+* initialize: Not defined<br>
+* generate-sources: Not defined<br>
+* process-sources: Not defined<br>
+* generate-resources: Not defined<br>
+* process-resources: org.apache.maven.plugins:maven-resources-plugin:2.6:resources<br>
+* compile: org.apache.maven.plugins:maven-compiler-plugin:3.1:compile<br>
+* process-classes: Not defined<br>
+* generate-test-sources: Not defined<br>
+* process-test-sources: Not defined<br>
+* generate-test-resources: Not defined<br>
+* process-test-resources: org.apache.maven.plugins:maven-resources-plugin:2.6:testResources<br>
+* test-compile: org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile<br>
+* process-test-classes: Not defined<br>
+* test: org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test<br>
+* prepare-package: Not defined<br>
+* package: org.apache.maven.plugins:maven-jar-plugin:2.4:jar<br>
+* pre-integration-test: Not defined<br>
+* integration-test: Not defined<br>
+* post-integration-test: Not defined<br>
+* verify: Not defined<br>
+* install: org.apache.maven.plugins:maven-install-plugin:2.4:install<br>
 * deploy: org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy</p>
-
 
 
 <div>&nbsp;</div>
@@ -653,29 +637,31 @@ lifecycle.</p>
 <div>&nbsp;</div>
 
 
-
-<h2 id="let-s-summarize">Let&rsquo;s Summarize</h2>
-
+<h2 id="lets-summarize">Let&rsquo;s Summarize</h2>
 <p>Lifecycles, Lifecycle Phases, Plugins and Plugin Goals are the core of
 Maven and lets&rsquo; go through the concepts learned so far:</p>
-
 <ul>
-<li><p>Maven comes with three lifecycles - <strong>default, clean and site.</strong></p></li>
-
-<li><p>each lifecycle is made up of lifecycle phases and in all, there are
-28 phases - default 21, clean 3 and site 4.</p></li>
-
-<li><p>when a lifecycle phase is invoked using mvn command, all preceding
-phases are executed sequentially one after another.</p></li>
-
-<li><p>lifecycle phases by themselves doesn&rsquo;t have any capabilities to
-accomplish some task and they rely on plugins to carryout the task.</p></li>
-
-<li><p>depending on project and packaging type, Maven binds various plugin
+<li>
+<p>Maven comes with three lifecycles - <strong>default, clean and site.</strong></p>
+</li>
+<li>
+<p>each lifecycle is made up of lifecycle phases and in all, there are
+28 phases - default 21, clean 3 and site 4.</p>
+</li>
+<li>
+<p>when a lifecycle phase is invoked using mvn command, all preceding
+phases are executed sequentially one after another.</p>
+</li>
+<li>
+<p>lifecycle phases by themselves doesn&rsquo;t have any capabilities to
+accomplish some task and they rely on plugins to carryout the task.</p>
+</li>
+<li>
+<p>depending on project and packaging type, Maven binds various plugin
 goals to lifecycle phases and goals carryout the task entrusted to
-them.</p></li>
+them.</p>
+</li>
 </ul>
-
 <p>So far, we depended upon the out-of-the-box functionality of Maven, but
 we can accomplish much more through the pom.xml (POM). In the next
 tutorial, we cover the plugin configuration.</p>

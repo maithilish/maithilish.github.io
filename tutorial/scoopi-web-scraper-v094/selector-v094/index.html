@@ -29,7 +29,7 @@
         "name" : "Selector - Scoopi Web Scraper - CodeTab",
         "headline" : "Selector - Scoopi Web Scraper - CodeTab",
         "url" : "https://www.codetab.org/tutorial/scoopi-web-scraper-v094/selector-v094/",
-        "description" : "Google Chrome can assist us to construct selector or xpath for specific element in the web page and let\x27s see how to get selector for Scoopi web scraper",
+        "description" : "Google Chrome can assist us to construct selector or xpath for specific element in the web page and let\u0027s see how to get selector for Scoopi web scraper",
         "inLanguage" : "en",
         "image": "https://www.codetab.org/logo.jpg",
         "author" : "Maithilish",
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Selector - Scoopi Web Scraper - CodeTab</title></head>
 
@@ -421,59 +421,42 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="query-region-and-field">Query, Region and Field</h1>
-
+            <h1 id="query-region-and-field">Query, Region and Field</h1>
 <p>In this chapter we describe how to build query using JSoup Selectors.</p>
-
 <h2 id="selectors">Selectors</h2>
-
 <p>In
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-1/job.yml" target="_blank">Example-1</a>, we query price data from <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/page/acme-quote.html" target="_blank">defs/examples/page/acme-quote.html</a> page. The price snippet from this page is</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;price_tick&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;price_tick_span&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>315.25<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
-<p>To access the value the JSoup selector is</p>
-
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>To access the value the JSoup selector is</p>
 <pre><code>div#price_tick/*
 </code></pre>
-
 <h3 id="use-chrome-to-get-selector">Use Chrome to get Selector</h3>
-
 <p>Chrome browser can assist you in constructing the Selector or XPath. To
 do that, open the HTML page in Chrome and select the item which we are
 interested. Next, right click to open the context menu and select
 <em>Inspect</em> from the list to open the Inspect panel. Then in Inspect
 panel, select the highlighted item and right click and select copy menu.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/scoopi-web-scraper-v094/media/scoopi-query-chrome.png" alt="Scoopi web scraper get JSoup selector from Chrome" />
 </figure>
 
-
 <p>The Copy have option, among other things, to copy the Selector or XPath
 to clipboard. Copy and paste the selector to editor. For price, selector
 provided by chrome is</p>
-
 <pre><code>#price_tick_span &gt; strong
 </code></pre>
-
 <p>We are using slightly different selector in the example as selectors can
 be constructed with different elements.</p>
-
 <h3 id="jsoup-selector-syntax">JSoup Selector Syntax</h3>
-
 <p>To access complex items, we may have to use functions to access specific
 item. Learn more about selector in <a href="https://jsoup.org/cookbook/extracting-data/selector-syntax" target="_blank">JSoup Selector Syntax</a> and <a href="https://jsoup.org/apidocs/org/jsoup/select/Selector.html" target="_blank">JSoup Selector API</a>.</p>
-
-<h2 id="query-region-and-field-1">Query - Region and Field</h2>
-
+<h2 id="query---region-and-field">Query - Region and Field</h2>
 <p>Selector has to be further split into region and field to optimize the
 query performance.</p>
-
 <p>For example, take the case of table</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">....
 ....
@@ -489,70 +472,59 @@ query performance.</p>
             <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>795.32<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>790.18<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>781.84<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span></code></pre></div>
-<p>The selector to access table data is</p>
-
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</code></pre></div><p>The selector to access table data is</p>
 <pre><code>table:contains(Sources Of Funds) &gt; tr:nth-child(2) &gt; td:nth-child(1)
 </code></pre>
-
 <p>In case we use the selector to get each and every &lt;td&gt; item in table,
 JSoup has to parse the entire page, build DOM and then zero in on
 particular node for each item and parse becomes quite expensive.</p>
-
 <p>To optimize the parse, split the selector into two components -
 <strong>region</strong> and <strong>field</strong>. The query, after the split, becomes</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
 
   bs:
     axis:
       row:
         query:
-          region: &#34;table:contains(Sources Of Funds)&#34;
-          field: &#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</code></pre></div>
-<p>Now, Scoopi fires the region query and parse the table and its child
+          region: &quot;table:contains(Sources Of Funds)&quot;
+          field: &quot;tr:nth-child(2) &gt; td:nth-child(1)&quot;
+</code></pre><p>Now, Scoopi fires the region query and parse the table and its child
 nodes and caches it in a HashMap. Next, it uses the field query on the
 cached node, instead of entire page, to get the target node. As cached
 region nodes are subset of entire page, fields selector query the subset
 instead of entire page.</p>
-
 <p>For each region query, Scoopi first consult the cache and if it finds it
 in cache then it is reused. Page is parsed only when region node is not
 found in cache.</p>
-
 <p>While splitting the selector, put the top most element of the area which
 we are interested in region and the selector to access its children in
 the field property. In the above example, it is quite natural to select
 and cache the table as it is top most element of the area we are
 interested in and subsequently, access its children repeatedly with
 field selector.</p>
-
 <h2 id="dynamic-query">Dynamic Query</h2>
-
 <p>When scraping single data point, we can hard code the selector as</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">query:
-  region: &#34;table:contains(Sources Of Funds)&#34;
-  field: &#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</code></pre></div>
-<p>But, to access next &lt;tr&gt; we need another query with field as
+<pre><code class="language-raw" data-lang="raw">query:
+  region: &quot;table:contains(Sources Of Funds)&quot;
+  field: &quot;tr:nth-child(2) &gt; td:nth-child(1)&quot;
+</code></pre><p>But, to access next &lt;tr&gt; we need another query with field as
 <strong>tr:nth-child(3) &gt; td:nth-child(1)</strong>. To access a table with 5 cols
 and 4 rows, we need to define 20 queries.</p>
-
 <p>Instead, we can use Scoopi dynamic query feature. The hard coded query
 can be converted into dynamic query with substitution variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">query:
-  region: &#34;table:contains(Sources Of Funds)&#34;
-  field: &#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</code></pre></div>
-<p>Scoopi dynamically substitute the variable <em>%{row.index}</em> with the index
+<pre><code class="language-raw" data-lang="raw">query:
+  region: &quot;table:contains(Sources Of Funds)&quot;
+  field: &quot;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&quot;
+</code></pre><p>Scoopi dynamically substitute the variable <em>%{row.index}</em> with the index
 value of the member and fires the query. With the dynamic query, we can
 scrape any number of rows or cols with single query.</p>
-
 <p>Allowed variables are</p>
-
 <pre><code>%{col.index}
 %{col.match}
 %{row.index}
 %{row.match}
 </code></pre>
-
 <p>The subsequent chapters covers dynamic queries extensively with more
 examples.</p>
 

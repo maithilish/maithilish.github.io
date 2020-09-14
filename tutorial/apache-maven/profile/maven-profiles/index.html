@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Profiles - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,36 +535,31 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-profiles">Maven Profiles</h1>
-
+            <h1 id="maven-profiles">Maven Profiles</h1>
 <p>Maven Profiles which allows to define multiple set of configurations and activate them based on certain conditions.</p>
-
 <p>Maven Profile is an alternative set of configurations which set or
 override default values. Profiles allow to customize a build for
 different environments. Profiles are configured in the pom.xml and each
 profile is identified with an identifier.</p>
-
 <p>Profiles customizes the build for different environments. Some of the
 examples of different environments are:</p>
-
 <ul>
-<li><p>production and development systems.</p></li>
-
-<li><p>platforms with different OS such as Linux, Window etc.,</p></li>
-
-<li><p>different versions of JDK.</p></li>
+<li>
+<p>production and development systems.</p>
+</li>
+<li>
+<p>platforms with different OS such as Linux, Window etc.,</p>
+</li>
+<li>
+<p>different versions of JDK.</p>
+</li>
 </ul>
-
 <p>Let&rsquo;s go through an example to learn Maven Profile. By default, Compiler
 Plugin sets Javac flags <strong>debug</strong> as true and <strong>optimize</strong> as false. For
 production code, we want to optimize the Java code and disable debugging
 info and to do that, we can use Maven profile.</p>
-
 <p>From the Simple App pom.xml, remove the build declaration and add the
 following snippet.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="c">&lt;!-- project build --&gt;</span>
   ...
@@ -585,15 +580,13 @@ following snippet.</p>
          <span class="nt">&lt;/build&gt;</span>
    <span class="nt">&lt;/profile&gt;</span>
  <span class="nt">&lt;/profiles&gt;</span>
-  ...</code></pre></div>
-<p>We are defining a profile named <strong>production</strong> and place the build and
+  ...
+</code></pre></div><p>We are defining a profile named <strong>production</strong> and place the build and
 plugin configuration within it. In the plugin configuration, we
 configure the Compiler Plugin&rsquo;s parameters debug and optimize.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-profile-default.png" alt="Maven Profiles - activation" />
 </figure>
-
 
 <p>Build the project with command <code>mvn compile -X</code>. The option <strong>-X</strong>
 outputs Maven debug info to console and from the lengthy debug output,
@@ -601,12 +594,9 @@ the relevant part is shown in the screenshot. From the output, it is
 clear that Javac <strong>debug</strong> is still true and <strong>optimize</strong> is false which
 means that the  <strong>production</strong> profile is not activated by Maven and it
 is still using default configurations.</p>
-
-<p>To activate the production profile use command <code>mvn compile -Pproduction
--X</code>. The option <strong>-P</strong> activates the profile. From the Maven debug
+<p>To activate the production profile use command <code>mvn compile -Pproduction -X</code>. The option <strong>-P</strong> activates the profile. From the Maven debug
 messages, we can confirm that profile is activated and Javac flags debug
 and optimize are set as configured in the profile.</p>
-
 
 
 <div>&nbsp;</div>
@@ -624,12 +614,9 @@ and optimize are set as configured in the profile.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="profile-elements">Profile Elements</h2>
-
 <p>By defining a profile we override the values defined by project&rsquo;s
 Effective POM. Maven allows following elements in an Profile.</p>
-
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project&gt;</span>
     <span class="nt">&lt;profiles&gt;</span>
@@ -651,14 +638,13 @@ Effective POM. Maven allows following elements in an Profile.</p>
             <span class="nt">&lt;properties&gt;</span>...<span class="nt">&lt;/properties&gt;</span>
         <span class="nt">&lt;/profile&gt;</span>
     <span class="nt">&lt;/profiles&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Virtually everything may be overridden by the profile. Maven Profile can
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Virtually everything may be overridden by the profile. Maven Profile can
 override dependencies and the behavior of a build via plugin
 configuration. It can also override the configuration of distribution
 settings; for example, we can define a staging profile and use
 distributionManagement element to publish the artifacts to a staging
 repository.</p>
-
 
 
 <div>&nbsp;</div>
@@ -677,28 +663,27 @@ repository.</p>
 
 
 
-
 <h2 id="profile-activation">Profile Activation</h2>
-
 <p>In the previous example, we activated the <strong>production</strong> profile by
 using option <strong>-P</strong>, but Maven provides other ways to activate the
 profiles.</p>
-
 <p>Maven Profile can also be activated through profile/activation element
 based on state of build environment such as</p>
-
 <ul>
-<li><p>JDK versions.</p></li>
-
-<li><p>environment variables.</p></li>
-
-<li><p>OS settings.</p></li>
-
-<li><p>present or missing files.</p></li>
+<li>
+<p>JDK versions.</p>
+</li>
+<li>
+<p>environment variables.</p>
+</li>
+<li>
+<p>OS settings.</p>
+</li>
+<li>
+<p>present or missing files.</p>
+</li>
 </ul>
-
 <p>Some of the profile activation examples are provided below.</p>
-
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"> <span class="nt">&lt;profiles&gt;</span>
    <span class="nt">&lt;profile&gt;</span>
@@ -708,9 +693,8 @@ based on state of build environment such as</p>
      <span class="nt">&lt;/activation&gt;</span>
     ...
    <span class="nt">&lt;/profile&gt;</span>
- <span class="nt">&lt;/profiles&gt;</span></code></pre></div>
-<p>The above snippet, activates the dev profile by default.</p>
-
+ <span class="nt">&lt;/profiles&gt;</span>
+</code></pre></div><p>The above snippet, activates the dev profile by default.</p>
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">   <span class="nt">&lt;profile&gt;</span>
      <span class="nt">&lt;id&gt;</span>include-script<span class="nt">&lt;/id&gt;</span>
@@ -718,9 +702,8 @@ based on state of build environment such as</p>
        <span class="nt">&lt;jdk&gt;</span>1.6<span class="nt">&lt;/jdk&gt;</span>
      <span class="nt">&lt;/activation&gt;</span>
     ...
-   <span class="nt">&lt;/profile&gt;</span></code></pre></div>
-<p>If JDK version is 1.6, then profile include-script is activated.</p>
-
+   <span class="nt">&lt;/profile&gt;</span>
+</code></pre></div><p>If JDK version is 1.6, then profile include-script is activated.</p>
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">   <span class="nt">&lt;profile&gt;</span>
      <span class="nt">&lt;id&gt;</span>win-build<span class="nt">&lt;/id&gt;</span>
@@ -732,9 +715,8 @@ based on state of build environment such as</p>
        <span class="nt">&lt;/os&gt;</span>
      <span class="nt">&lt;/activation&gt;</span>
     ...
-   <span class="nt">&lt;/profile&gt;</span></code></pre></div>
-<p>Profile win-build is activated when Maven builds on Windows XP system.</p>
-
+   <span class="nt">&lt;/profile&gt;</span>
+</code></pre></div><p>Profile win-build is activated when Maven builds on Windows XP system.</p>
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">   <span class="nt">&lt;profile&gt;</span>
      <span class="nt">&lt;id&gt;</span>debug<span class="nt">&lt;/id&gt;</span>
@@ -744,9 +726,8 @@ based on state of build environment such as</p>
         <span class="nt">&lt;/property&gt;</span>
      <span class="nt">&lt;/activation&gt;</span>
     ...
-   <span class="nt">&lt;/profile&gt;</span></code></pre></div>
-<p>If property ${debug} is defined, then profile is activated.</p>
-
+   <span class="nt">&lt;/profile&gt;</span>
+</code></pre></div><p>If property ${debug} is defined, then profile is activated.</p>
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">   <span class="nt">&lt;profile&gt;</span>
      <span class="nt">&lt;activation&gt;</span>
@@ -756,13 +737,11 @@ based on state of build environment such as</p>
         <span class="nt">&lt;/file&gt;</span>
      <span class="nt">&lt;/activation&gt;</span>
     ...
-   <span class="nt">&lt;/profile&gt;</span></code></pre></div>
-<p>Profile is activated if file foo exists and bar doesn&rsquo;t exists in
+   <span class="nt">&lt;/profile&gt;</span>
+</code></pre></div><p>Profile is activated if file foo exists and bar doesn&rsquo;t exists in
 <code>target/generated-sources</code> directory.</p>
-
 <p>For further information on Maven Profiles refer <a href="http://maven.apache.org/guides/introduction/introduction-to-profiles.html" target="_blank">Introduction to Build Profiles</a>
 and <a href="http://books.sonatype.com/mvnref-book/reference/profiles.html" target="_blank">Maven Reference Book - Build Profiles</a>.</p>
-
 <p>In the next chapter, we look at Maven Multi Module Projects.</p>
 
           </main>

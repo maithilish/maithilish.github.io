@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Internationalization - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,37 +625,28 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Even though we used many WordPress Plugin Internationalization functions
+            <p>Even though we used many WordPress Plugin Internationalization functions
 in the tutorial so far, we didn&rsquo;t explain what they really do. In this
 chapter, we explore WordPress Plugin Internationalization and
 Localization techniques.</p>
-
 <p>WordPress Plugin Handbook chapter - <a href="https://developer.wordpress.org/plugins/internationalization/" target="_blank">WordPress Plugin
 Internationalization</a>
 explains the topic well, but for new developers it may be difficult to
 comprehend all that in one go and, more often than not,
 internationalization moves to TODO list.</p>
-
 <p>Rather than the later refactoring, it is easy to internationalize the
 plugin from the start . In this chapter, we explain the essential
 concepts to kick start internationalization.</p>
-
 <p>Internationalization is also known by its short form <strong>i18n</strong> (means
 there are 18 characters between i and n in <strong>i</strong>nternationalizatio<strong>n</strong>)
 and similarly, Localization is abbreviated as <strong>l10n</strong>.</p>
-
-<h2 id="10-1-internationalization">10.1. Internationalization</h2>
-
+<h2 id="101internationalization">10.1. Internationalization</h2>
 <h3 id="text-domain">Text Domain</h3>
-
 <p>WordPress requires some mechanism to segregate the translations of your
 plugin when there are multiple plugins active. It uses <strong>Text Domain</strong>
 to distinguish between all loaded translations. Text Domain is unique
 string set in the header comment of the plugin main file and in the
 translation functions.</p>
-
 <p><code>share-on-social/share-on-social.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -669,13 +660,11 @@ translation functions.</p>
 </span><span class="sd"> * Author URI: http://www.codetab.org/about 
 </span><span class="sd"> * License: GPLv2
 </span><span class="sd"> */</span>
-</code></pre></div>
-<p>For Share on Social Plugin, we use <strong>sos-domain</strong> as the text domain.
+</code></pre></div><p>For Share on Social Plugin, we use <strong>sos-domain</strong> as the text domain.
 But, it is recommended to use slug of the plugin as the text domain. If
 your plugin main file is my-plugin.php or it is contained in a folder
 called my-plugin the text domain should be my-plugin. The text domain
 must use dashes and not underscores.</p>
-
 
 
 <div>&nbsp;</div>
@@ -694,30 +683,24 @@ must use dashes and not underscores.</p>
 
 
 
-
 <p>Next we have to load the text domain as soon as plugin is loaded and in
 Share on Social, we do that in <code>setup_sos_plugin()</code> function.</p>
-
 <p><code>share-on-social/share-on-social.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function setup_sos_plugin () {
    
-    load_plugin_textdomain( &#39;sos-domain&#39;, false, &#39;share-on-social/langs&#39; );</code></pre></div>
-<p>The third argument to
+    load_plugin_textdomain( &#39;sos-domain&#39;, false, &#39;share-on-social/langs&#39; );
+</code></pre></div><p>The third argument to
 <a href="https://developer.wordpress.org/reference/functions/load_plugin_textdomain/" target="_blank">load_plugin_textdomain()</a>
 is the path to dir that contains plugins language files. We will cover
 the language files later in Localization.</p>
-
 <h3 id="wordpress-internationalization-functions">WordPress Internationalization Functions</h3>
-
 <p>For WordPress Plugin Internationalization, the plugin strings are
 enclosed in functions that returns translated strings instead of the
 original. Share on Social Plugin uses two WordPress Internationalization
 functions __( ) and _x( ).</p>
-
 <p>The basic string translation function
 <a href="https://codex.wordpress.org/Function_Reference/_2" target="_blank">__()</a> returns a
 translated string for the text domain.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function get_table () {
         ....        
@@ -727,12 +710,11 @@ translated string for the text domain.</p>
         $page_label = __( &#39;Page&#39;, &#39;sos-domain&#39; );
         $parent_label = __( &#39;Parent Page&#39;, &#39;sos-domain&#39; );
         $site_label = __( &#39;Site&#39;, &#39;sos-domain&#39; );
-        $display_text_label = __( &#39;Display Text&#39;, &#39;sos-domain&#39; );</code></pre></div>
-<p>For example, __( &lsquo;Page&rsquo;, &lsquo;sos-domain&rsquo; ) returns string <strong>Página</strong> when
+        $display_text_label = __( &#39;Display Text&#39;, &#39;sos-domain&#39; );
+</code></pre></div><p>For example, __( &lsquo;Page&rsquo;, &lsquo;sos-domain&rsquo; ) returns string <strong>Página</strong> when
 Site language is set to Spanish provided language file for Spanish
 exists in share-on-social/langs directory. For default language or if,
 language file is not available then default string <strong>Page</strong> is returned.</p>
-
 
 
 <div>&nbsp;</div>
@@ -750,12 +732,10 @@ language file is not available then default string <strong>Page</strong> is retu
 <div>&nbsp;</div>
 
 
-
 <p>The next function [_x(
 )</a> same as the __(
 ), but provides additional information to translators to assist them in
 proper translation.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">public function create_post_type () {
    register_post_type( $this-&gt;post_type,
@@ -764,15 +744,13 @@ proper translation.</p>
                &#39;name&#39; =&gt; _x( &#39;Sos Lockers&#39;,&#39;post type general name&#39;, &#39;sos-domain&#39; ),
                &#39;singular_name&#39; =&gt; _x( &#39;Sos Locker&#39;,&#39;post type singular name&#39;, &#39;sos-domain&#39; ),
                &#39;menu_name&#39; =&gt; _x( &#39;Share on Social&#39;,&#39;admin menu&#39;, &#39;sos-domain&#39; ),
-     ....</code></pre></div>
-<p>For example, _x( &lsquo;Buffalo&rsquo;,&lsquo;sos-domain&rsquo; ) make it difficult know the
+     ....
+</code></pre></div><p>For example, _x( &lsquo;Buffalo&rsquo;,&lsquo;sos-domain&rsquo; ) make it difficult know the
 context of Buffalo; a city or an animal, whereas _x( &lsquo;Buffalo&rsquo;,&lsquo;city
 name&rsquo;, &lsquo;sos-domain&rsquo; ) tells translators that it is a city name.</p>
-
 <p>Refer <a href="https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/" target="_blank">How to Internationalize Your
 Plugin</a>
 for other i18n functions.</p>
-
 <p>In the next section, we explain the steps to prepare the language files
 for the plugin.</p>
 

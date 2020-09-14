@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>ClientBundle - GWT Tutorial - CodeTab</title></head>
 
@@ -711,82 +711,69 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="chapter-4-menu">Chapter 4. Menu</h2>
-
+            <h2 id="chapter4menu">Chapter 4. Menu</h2>
 <p>This Chapter covers design of Menu system used by Fins. Menu contains
 three widgets</p>
-
 <ol>
-<li><p>MenuItem</p></li>
-
-<li><p>MenuHeader</p></li>
-
-<li><p>MenuBar</p></li>
+<li>
+<p>MenuItem</p>
+</li>
+<li>
+<p>MenuHeader</p>
+</li>
+<li>
+<p>MenuBar</p>
+</li>
 </ol>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/menuparts.png" alt="Menu parts" />
 </figure>
 
-
-<h6 id="figure-4-1-menu-parts">Figure 4.1. Menu parts</h6>
-
+<h6 id="figure41menu-parts">Figure 4.1. Menu parts</h6>
 <p>MenuHeader is a stylish header that display menu categories. MenuItem is
 GWT Anchor widget and the user clicks them to invoke menu options.
 MenuBar is a StackLayoutPanel with MenuHeader as header and MenuItem as
 content.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
-<h2 id="4-1-clientbundle">4.1. ClientBundle</h2>
-
+<h2 id="41clientbundle">4.1. ClientBundle</h2>
 <p>MenuBar, MenuHeader and MenuItem widgets use icons for a stylish look.
 GWT streamlines the image management through GWT <code>ClientBundle</code>, which
 provides an unified way to create and manage the icons. Let&rsquo;s create
 <code>FinsResources</code>, a <code>ClientBundle</code>, to manage image resources used in the
 application.</p>
-
 <h5 id="finsresources">FinsResources</h5>
-
 <p>FinsResources is an interface that extends ClientBundle and define
-methods to access images as <code>ImageResource</code>. Client code access
+methods to access images as <code> ImageResource</code>. Client code access
 individual images through methods defined in the interface. With
 ClientBundle, GWT packages many images as a single large image file for
 download, instead of multiple smaller ones. This will improve the
 application performance by reducing the number of round trip to server
 to fetch images. Among other things, this feature makes Fins extremely
 light on network.</p>
-
 <p>To place all images, create a new package
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/package.png" alt="" />
 </figure>
 <code>in.fins.client.images</code> and copy images from
 sample code to this package.</p>
-
 <p>Select package <code>in.fins.client</code> and choose <strong>File</strong> → <strong>New</strong> → <strong>Client
 Bundle</strong> and in Client Bundle window, enter Name as <strong>FinsResources</strong>.
 Then in <strong>Bundled Resources</strong> click <strong>Add Multiples</strong> and select
 required images from <code>in.fins.client.images</code> package. This adds access
 methods for selected images, and you may use <strong>edit option</strong> to modify
 the auto generated method names.</p>
-
 <p>Add following lines to <code>FinsResources.java</code> to make it a singleton.</p>
-
 <p><code>in.fins.client/FinsResources.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="p">....</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="o">....</span>
 
-<span class="kd">public</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">FinsResources</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="n">GWT</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">FinsResources</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">FinsResources</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="n">GWT</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">FinsResources</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
-<span class="p">....</span></code></pre></div>
-<p>static final INSTANCE makes <code>FinsResources</code> as singleton to ensure that
+<span class="o">....</span>
+</code></pre></div><p>static final INSTANCE makes <code>FinsResources</code> as singleton to ensure that
 only one instance of FinsResources exists. For any new images, edit
 FinsResources directly and add access methods.</p>
-
 
 
 <div>&nbsp;</div>
@@ -804,26 +791,25 @@ FinsResources directly and add access methods.</p>
 <div>&nbsp;</div>
 
 
-
 <p>When GWT compiles the project, it packages all the images into a single
 large file for transmission to client. This file is hash based and it
 will not be downloaded again until hash is changed due addition or
 deletion of images.</p>
-
 <p>Access images with the interface methods. For example, if FinsResources
 has following method</p>
-<div class="highlight"><pre class="chroma"><code class="language-role" data-lang="role">@Source(&#34;in/fins/client/images/coffee.png&#34;)
-ImageResource coffee();</code></pre></div>
-<p>Access coffee.png as</p>
-<div class="highlight"><pre class="chroma"><code class="language-role" data-lang="role">// in java classes
+<pre><code class="language-role" data-lang="role">@Source(&quot;in/fins/client/images/coffee.png&quot;)
+ImageResource coffee();
+</code></pre><p>Access coffee.png as</p>
+<pre><code class="language-role" data-lang="role">// in java classes
 
 FinsResources.INSTANCE.coffee();
 
 // in ui.xml
 
-&lt;ui:with type=&#34;in.fins.client.FinsResources&#34; field=&#34;resource&#34; /&gt;
+&lt;ui:with type=&quot;in.fins.client.FinsResources&quot; field=&quot;resource&quot; /&gt;
 
-&lt;g:Image imageResource=&#34;{resource.coffee}&#34; /&gt;</code></pre></div>
+&lt;g:Image imageResource=&quot;{resource.coffee}&quot; /&gt;
+</code></pre>
           </main>
         </div>
       </div>

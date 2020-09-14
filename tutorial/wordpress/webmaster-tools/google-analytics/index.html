@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Google Analytics - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,48 +561,42 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="google-analytics-for-wordpress">Google Analytics for WordPress</h1>
-
+            <h1 id="google-analytics-for-wordpress">Google Analytics for WordPress</h1>
 <p>In the previous chapter, we finished Search Engine Optimization. In this
 chapter, we cover a related area, Webmaster Tools, that helps us tweak
 some of the left out areas. To start with, we try out Google Analytics
 and get insights into visitors who visit the site.</p>
-
 <p>There are many products and plugins to gather and present analytics
 about the traffic to a WordPress site. We choose Google Analytics for
 our site for the ease of setup, customizable dashboard and reports. Even
 with the basic setup, we are able to get good insights from Google
 Analytics in these areas:</p>
-
 <ul>
-<li><p>Real time view of visitors, their location, keywords, active pages.</p></li>
-
-<li><p>Historic dashboards of number of sessions, session duration, new or
+<li>
+<p>Real time view of visitors, their location, keywords, active pages.</p>
+</li>
+<li>
+<p>Historic dashboards of number of sessions, session duration, new or
 returning visitors, page views, top pages, bounce rate, location,
-referral sites, browser, OS and devices used, etc.</p></li>
-
-<li><p>Site and page speed, page timings and speed suggestions.</p></li>
+referral sites, browser, OS and devices used, etc.</p>
+</li>
+<li>
+<p>Site and page speed, page timings and speed suggestions.</p>
+</li>
 </ul>
-
 <p>To setup Google Analytics for the site, we need to sign up to a Google
 Analytics account and then add the tracking code to the site&rsquo;s pages.</p>
-
 <p>Google Analytics Sign up</p>
-
 <p>Open <a href="http://www.google.com/analytics/" target="_blank">Google Analytics</a> and click on
 Sign in, which takes us to the Google Accounts screen. If we have a
 Google Account then log in using the account else we have to create a
 new Google Account using <strong>Create an account</strong> link. After completion,
 it takes us to Google Analytics Sign Up page. Click <strong>Sign Up</strong> to open
 <strong>Google Analytics New Account</strong> screen.</p>
-
 <p>Select <strong>Website</strong> tab and enter <strong>Account Name</strong>, <strong>Website Name</strong>,
 <strong>Website URL</strong> and <strong>Reporting Time Zone</strong>. Leave <strong>Data Sharing</strong>
 options to defaults and save the account by clicking <strong>Get Tracking
 ID</strong>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -620,74 +614,60 @@ ID</strong>.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Google Analytics creates a new account and take us to the Administrator
 screen, which shows the Tracking ID and tracking code for the site. Note
 down the Tracking ID, but there is no need to copy the tracking code as
 we are going to use a Plugin to integrate WordPress site with Google
 Analytics.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-ga-trackcode.png" alt="WordPress Google Analytics Admin screen" />
 </figure>
 
-
 <p>Google Analytics for WordPress</p>
-
 <p>We can add the Tracking Code provided by Google Analytics to the header
 or footer of the theme so that code adds to all the pages, but this
 leaves a lot of powerful features of Google Analytics unused. Instead,
 we use <a href="https://yoast.com/wordpress/plugins/google-analytics/" target="_blank">Google Analytics for WordPress Plugin</a> by Joost de Valk.</p>
-
 <p>Install Google Analytics for WordPress. <a href="/tutorial/wordpress/wordpress-plugins/">WordPress Plugin</a> explains the Plugin installation.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-ga-plugin-setting.png" alt="WordPress Google Analytics for WordPress Configuration" />
 </figure>
 
-
 <p>To configure the Plugin, open the configuration page with <strong>Dashboard</strong>
 → <strong>Settings</strong> → <strong>Google Analytics.</strong></p>
-
 <p>Select <strong>Manually enter your UA code</strong> and enter the <strong>Tracking ID</strong>
 noted down in the previous section, in the <strong>Analytics Profile</strong> field.</p>
-
 <p>If you have not noted down the ID, go back to Google Analytics and go to
 <strong>Admin</strong> → <strong>Property</strong> → <strong>Property Settings</strong> to get the Tracking ID.</p>
-
 <p>Coming back to the Plugin configuration screen, we leave all other
 settings to defaults and save the configuration.</p>
-
 <p>By default, Google Analytics for WordPress Plugin adds the tracking code
 to the page header.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Once configured, login to Google Analytics and go to Home page. Select
 <strong>All Site Data</strong> listed under the site to open the default dashboard
 for the site. From the left hand side menu, select <strong>Real Time</strong> →
 <strong>Overview</strong> and in another browser tab open some page from the site.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-ga-realtime.png" alt="WordPress Google Analytics Real Time dashboard." />
 </figure>
 
-
 <p>Real Time dashboard displays the details of the page we access. After
 some time, real time data accumulates to the other data dimensions:</p>
-
 <ul>
-<li><p><strong>Audience</strong> - Visitor details dashboards.</p></li>
-
-<li><p><strong>Acquisition</strong> - Referral sites dashboards.</p></li>
-
-<li><p><strong>Behavior</strong> - Site and page speed dashboards.</p></li>
+<li>
+<p><strong>Audience</strong> - Visitor details dashboards.</p>
+</li>
+<li>
+<p><strong>Acquisition</strong> - Referral sites dashboards.</p>
+</li>
+<li>
+<p><strong>Behavior</strong> - Site and page speed dashboards.</p>
+</li>
 </ul>
-
 <p>Refer <a href="https://support.google.com/analytics/?hl=en#topic=3544906" target="_blank">Analytics Help Center</a> for exhaustive literature on the Google Analytics features, setup and customization.</p>
-
 <p>In the next section, we cover Google Webmaster Tools to gather some more
 information about the site.</p>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab on Codetab</title>
@@ -64,8 +64,8 @@ package in.ex.ivy; import org.apache.commons.lang.StringUtils; public class Exam
       
       <guid>https://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/</guid>
       <description>In the last chapter we worked with &amp;lt;ivy:resolve&amp;gt;, which resolves the dependencies indicated in ivy.xml file and places the resolved modules in the cache. But it does not link the dependencies to the project build path. To expose the dependencies to the Java build path, Apache Ivy provides two Ant tasks .
- &amp;lt;ivy:cachepath&amp;gt; task
- &amp;lt;ivy:retrieve&amp;gt; task
+  &amp;lt;ivy:cachepath&amp;gt; task
+  &amp;lt;ivy:retrieve&amp;gt; task
   Apache Ivy Cachepath Task
 &amp;lt;ivy:cachepath&amp;gt; constructs an Ant classpath consisting of resolved artifacts in the cache.</description>
     </item>
@@ -77,7 +77,7 @@ package in.ex.ivy; import org.apache.commons.lang.StringUtils; public class Exam
       
       <guid>https://www.codetab.org/tutorial/apache-ivy/pattern/</guid>
       <description>Before going further, it&amp;rsquo;s important to understand some of the core concepts of Apache Ivy.
-Apache Ivy Settings Files Till now we have used default settings to carry out the tasks. Apache Ivy allows to override the default settings through a settings file. Apache Ivy setting file is an XML file, usually named as  ivysettings.xml. In subsequent chapters, we use ivysettings.xml to override the default settings.
+Apache Ivy Settings Files Till now we have used default settings to carry out the tasks. Apache Ivy allows to override the default settings through a settings file. Apache Ivy setting file is an XML file, usually named as ivysettings.xml. In subsequent chapters, we use ivysettings.xml to override the default settings.
 Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and settings.</description>
     </item>
     
@@ -89,8 +89,8 @@ Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and se
       <guid>https://www.codetab.org/tutorial/apache-ivy/repository-resolvers/</guid>
       <description>5.2. Apache Ivy Resolvers and Repository Apache Ivy Repositories
 Until now, we used the public repository to resolve dependencies. But you may want to set up your own repository for reasons like
- restricted Internet access – your network may have Internet access or usage policy. This may limit or even restrict access to Internet. Setting up an enterprise repository helps to overcome this issue.
- reliability/accuracy – modules available in public repository may have quality issues.</description>
+  restricted Internet access – your network may have Internet access or usage policy. This may limit or even restrict access to Internet. Setting up an enterprise repository helps to overcome this issue.
+  reliability/accuracy – modules available in public repository may have quality issues.</description>
     </item>
     
     <item>
@@ -99,7 +99,8 @@ Until now, we used the public repository to resolve dependencies. But you may wa
       <pubDate>Thu, 10 Jan 2019 21:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</guid>
-      <description>To build private repository like local or shared repositories we have to copy the module&amp;rsquo;s files and artifacts from public repository to private repository and we have to use Apache Ivy Install task for this. It resolves a module and its dependencies from a repository and install them in another repository. Apache Ivy Install task copies module&amp;rsquo;s ivy file and artifacts from a source repository to a target repository.</description>
+      <description>To build private repository like local or shared repositories we have to copy the module&amp;rsquo;s files and artifacts from public repository to private repository and we have to use Apache Ivy Install task for this. It resolves a module and its dependencies from a repository and install them in another repository. Apache Ivy Install task copies module&amp;rsquo;s ivy file and artifacts from a source repository to a target repository.
+Let&amp;rsquo;s see Apache Ivy Install task in action by building some private repositories.</description>
     </item>
     
     <item>

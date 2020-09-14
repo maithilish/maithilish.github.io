@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>DOM Loader - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,21 +491,15 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="javascript-and-webdriver">JavaScript and WebDriver</h1>
-
+            <h1 id="javascript-and-webdriver">JavaScript and WebDriver</h1>
 <p>So far in the guide, the examples scrape data from regular HTML pages.
 But, we encounter many web pages that generates and renders pages with
 JavaScript or Ajax functions. In this and next chapter, we explore ways
 to seamlessly scrape such pages.</p>
-
 <h2 id="dynamically-generated-pages">Dynamically generated pages</h2>
-
 <p>The website <a href="http://toscrape.com" target="_blank">toscrape.com</a> has many endpoints
 showing the quotes in many different way that are generated through DOM
 manipulation.</p>
-
 <p>Open <a href="http://quotes.toscrape.com/js/" target="_blank">JavaScript - JavaScript generated
 contents</a> page and view its page source.
 It contains a script to load set of quotes held in an array to page&rsquo;s
@@ -514,20 +508,16 @@ script on user input like button clicks, selection of select field or on
 form input. JSoup simply can&rsquo;t scrape such pages as it lacks JavaScript
 processor while HtmlUnit can scrape them when JavaScript feature is
 enabled.</p>
-
 <p>To make things even more complex, the website hosts <a href="http://quotes.toscrape.com/scroll" target="_blank">Scroll - infinite
 scrolling pagination</a> where Ajax
 requests are made as we scroll down to fetch quotes and load them to DOM
 and even HtmlUnit fails to handle such complex browser behaviors.</p>
-
 <h2 id="selenium-webdriver">Selenium WebDriver</h2>
-
 <p>Scoopi can scrape any page without a hitch as long as page source
 contains all the elements as rendered by the browser. All we need is to
 catch hold of fully loaded page and pass its page source to parser step.
 However, task is not trivial and only the full fledged browser can do
 that.</p>
-
 <p>The <a href="https://www.seleniumhq.org/projects/webdriver/" target="_blank">Selenium WebDriver</a>
 is leading tool to test browser automation. It is used to control and
 interact with browsers such Google Chrome, FireFox, Safari etc., and can
@@ -535,27 +525,22 @@ to simulate user interactions in WebDriver and load pages as done by the
 browser. Scoopi has a robust and extensible work flow, script engine and
 plugin framework and it quite easy to plugin Selenium WebDriver to
 handle any sort of page.</p>
-
 <p>In earlier examples, the loader step which fetches web pages through
 <em>org.codetab.scoopi.step.extract.PageLoader</em> step class and pass its
 contents to parser step. The PageLoader class can handle only the
 regular pages and to process Js and Ajax pages loader step has to use
 <em>org.codetab.scoopi.step.extract.DomLoader</em> class which internally use
 Selenium WebDriver.</p>
-
 <h2 id="install-firefox-driver">Install FireFox Driver</h2>
-
 <p>Selenium WebDriver is an interface which allows programs to interact
 with browsers such as FireFox or Chrome etc., To use it, we need to
 install GeckoDriver which is proxy for clients to interact with
 Gecko-based browsers such as FireFox.</p>
-
 <p>Download appropriate GekoDriver for your system from <a href="https://github.com/mozilla/geckodriver/releases" target="_blank">GitHub GekoDriver
 Releases page</a>and
 extract it. Next, create a directory named .gecko in user home directory
 and copy geckodriver executable binary to it. In Linux, it is
-$HOME/.gecko and in Windows c:\Users\${current*user*name}.</p>
-
+$HOME/.gecko and in Windows c:\Users\${current<em>user</em>name}.</p>
 <pre><code># linux
 
 mkdir $HOME/.gecko
@@ -566,10 +551,8 @@ cp geckodriver $HOME/.gecko
 mkdir .gecko in C:\Users\${logged_in_user_name}\.gecko
 cp geckodriver.exe C:\Users\${logged_in_user_name}\.gecko
 </code></pre>
-
 <p>In case, driver binary is placed in any other folder then then set
 <em>scoopi.webDriver.driverPath</em> in <code>conf/scoopi.properties</code> file</p>
-
 <pre><code># linux
 
 scoopi.webDriver.driverPath=/some-folder/geckodriver
@@ -578,9 +561,7 @@ scoopi.webDriver.driverPath=/some-folder/geckodriver
 
 scoopi.webDriver.driverPath=C:\some-folder\geckodriver.exec
 </code></pre>
-
 <h2 id="javascript-generated-contents">JavaScript generated contents</h2>
-
 <p>The <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/quote/jsoup/ex-1/job.yml" target="_blank">Quote
 Example 1</a>
 scrape quotations from <a href="http://quotes.toscrape.com/js/" target="_blank">JavaScript generated
@@ -588,14 +569,12 @@ contents</a>. This site holds set of quotes
 in an array and adds them to page DOM on page load in the browser. It
 also has pagination link to navigate to next page which again uses
 JavaScript to generate contents.</p>
-
 <p>The locator and task snippet from this example is as below.</p>
-
 <p><code>defs/examples/quote/jsoup/ex-1/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
   quoteGroup:
     locators: [
-       { name: quotes, url: &#34;http://quotes.toscrape.com/js/&#34; }  
+       { name: quotes, url: &quot;http://quotes.toscrape.com/js/&quot; }  
     ]
 
 taskGroups:
@@ -605,41 +584,38 @@ taskGroups:
       steps: 
         jsoupDefault:
           loader:
-            class: &#34;org.codetab.scoopi.step.extract.DomLoader&#34;
+            class: &quot;org.codetab.scoopi.step.extract.DomLoader&quot;
             previous: seeder 
-            next: parser</code></pre></div>
-<p>The quoteTask uses jsoupDefault steps and override its loader step to
+            next: parser
+</code></pre><p>The quoteTask uses jsoupDefault steps and override its loader step to
 use DomLoader class.</p>
-
 <p>The datadef from the example is shown below.</p>
-
 <p><code>defs/examples/quote/jsoup/ex-1/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
   quoteLink:
     query:
-      block: &#34;li.next&#34;              
+      block: &quot;li.next&quot;              
     items: [ 
-      item: { name: &#34;link&#34;,  selector: &#34;a:nth-child(1) attribute: href&#34;, linkGroup: quoteGroup, 
-              prefix: [ &#34;http://quotes.toscrape.com&#34; ],  
-              linkBreakOn: [ &#34;http://quotes.toscrape.com/js/page/4/&#34; ] },
+      item: { name: &quot;link&quot;,  selector: &quot;a:nth-child(1) attribute: href&quot;, linkGroup: quoteGroup, 
+              prefix: [ &quot;http://quotes.toscrape.com&quot; ],  
+              linkBreakOn: [ &quot;http://quotes.toscrape.com/js/page/4/&quot; ] },
     ]
 
   quote:
     query:
-      block: &#34;body &gt; div div.quote:nth-child(%{item.index})&#34;
-      selector: &#34;span:nth-child(1)&#34;            
+      block: &quot;body &gt; div div.quote:nth-child(%{item.index})&quot;
+      selector: &quot;span:nth-child(1)&quot;            
     items: [
-      item: { name: &#34;quote&#34;, indexRange: 4-13, value: &#34;quote&#34;},      
+      item: { name: &quot;quote&quot;, indexRange: 4-13, value: &quot;quote&quot;},      
     ]
     dims: [
-      item: { name: &#34;by&#34;, selector: &#34;span:nth-child(2) &gt; small&#34; },
-      item: { name: &#34;tags&#34;, selector: &#34;div a&#34; },     
-    ]</code></pre></div>
-<p>There is nothing new in the dataDef and it is same as ones in earlier
+      item: { name: &quot;by&quot;, selector: &quot;span:nth-child(2) &gt; small&quot; },
+      item: { name: &quot;tags&quot;, selector: &quot;div a&quot; },     
+    ]
+</code></pre><p>There is nothing new in the dataDef and it is same as ones in earlier
 examples. It defines two dataDefs - quote to scrape quote from the page
 and quoteLink to paginate to next page. The pagination breaks when it
 encounters page 4 as linkBreakOn is set to url of page 4.</p>
-
 <p>In this next chapter, we explain the use of scripts to emulate browser
 interactions.</p>
 

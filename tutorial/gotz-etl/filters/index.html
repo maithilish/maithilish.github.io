@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Filters - Gotz ETL - CodeTab</title></head>
 
@@ -402,7 +402,6 @@
           <main id="content" class="col-md-11 post-basic">
             <p>In the previous example, which extracted balance sheet data there are
 some unwanted items and we use filter to remove them from output.</p>
-
 <p>The filter is normally applied after parse is over and members are
 constructed. The Example-5, which loads
 <strong>defs/examples/jsoup/ex-5/job.xml</strong> uses filter in row axis and the
@@ -418,15 +417,13 @@ filter snippet from the dataDef is as below</p>
         <span class="nt">&lt;/xf:filters&gt;</span>
     <span class="nt">&lt;/xf:fields&gt;</span>
   <span class="nt">&lt;/filter&gt;</span>
-<span class="nt">&lt;/axis&gt;</span></code></pre></div>
-<p>This filter definition remove the members whose row axis value is blank,
+<span class="nt">&lt;/axis&gt;</span>
+</code></pre></div><p>This filter definition remove the members whose row axis value is blank,
 null or &ldquo;Sources Of Funds&rdquo; or &ldquo;Application Of Funds&rdquo;. As type attribute
 is value, pattern is applied to member field.</p>
-
 <p>The attribute <strong>type</strong> can be <strong>value</strong> or <strong>match</strong>. When
-<strong>type=&ldquo;match&rdquo;</strong> then pattern is applied to member <strong>match</strong> field
+<strong>type=&quot;match&rdquo;</strong> then pattern is applied to member <strong>match</strong> field
 instead of <strong>value</strong>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -444,19 +441,16 @@ instead of <strong>value</strong>.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Pattern attribute can be plain text for direct comparison or regex for
 pattern matching.</p>
-
 <p>When filter is true for an axis then the enclosing member is removed
 from the output not just the axis.</p>
-
 <p>For example, for col filter pattern is &ldquo;Dec 16&rdquo; and member is</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">Member
 Col : Dec 16
 Row : Equity
-Fact : 20.00</code></pre></div>
-<p>The axis col matches with the pattern and the member is filtered even
+Fact : 20.00
+</code></pre></div><p>The axis col matches with the pattern and the member is filtered even
 though row and fact contains values.</p>
 
           </main>

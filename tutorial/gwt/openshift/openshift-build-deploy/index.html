@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Deploy on OpenShift - GWT Tutorial - CodeTab</title></head>
 
@@ -711,86 +711,78 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-4-openshift-deployment">12.4. OpenShift Deployment</h2>
-
+            <h2 id="124openshift-deployment">12.4. OpenShift Deployment</h2>
 <p>Even though, we developed a fairly complicated GWT application and
 deployed it to App Engine, surprisingly we never discussed about build
 cycle. Google Plugin for Eclipse (GPE) was building the application in
 background. But, when it comes to OpenShift, we have to build and
 deploy.</p>
-
 <p>Steps to build a GWT application with JDO are</p>
-
 <ul>
-<li><p>compile the java classes with javac.</p></li>
-
-<li><p>enhance persistence classes with JDO Enhancer.</p></li>
-
-<li><p>compile GWT module with GWT Compiler, which compiles java classes to
-JavaScript.</p></li>
-
-<li><p>pack everything as a war archive and deploy it to app server.</p></li>
+<li>
+<p>compile the java classes with javac.</p>
+</li>
+<li>
+<p>enhance persistence classes with JDO Enhancer.</p>
+</li>
+<li>
+<p>compile GWT module with GWT Compiler, which compiles java classes to
+JavaScript.</p>
+</li>
+<li>
+<p>pack everything as a war archive and deploy it to app server.</p>
+</li>
 </ul>
-
 <p>There are a couple of ways for OpenShift Deployment; push the
 application source to OpenShift and build the application on server or;
 build the application locally and push the war to OpenShift.</p>
-
 <h5 id="build-on-openshift">Build on OpenShift</h5>
-
 <p>Recommended way to deploy the application is to push the source to
 OpenShift and then build the war on server. Source is pushed to server
 with</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd &lt;app directory&gt;
-$ git commit -am &#34;some change log&#34;
-$ git push</code></pre></div>
-<p>Cloned application folder contains a <code>pom.xml</code>, which contains a profile
+<pre><code class="language-screen" data-lang="screen">$ cd &lt;app directory&gt;
+$ git commit -am &quot;some change log&quot;
+$ git push
+</code></pre><p>Cloned application folder contains a <code>pom.xml</code>, which contains a profile
 named openshift. When source is pushed to OpenShift, this profile is
 executed which builds the application and creates a war.</p>
-
 <p>There are some difficulties to implement this.</p>
-
 <ul>
-<li><p>profile in maven pom requires modifications to add JDO enhancer and
-GWT compile.</p></li>
-
-<li><p>requires GWT SDK jars on server to compile the GWT module.</p></li>
-
-<li><p>requires major changes to project directory structure to make it in
-line with maven project structure.</p></li>
-
-<li><p>GWT complier requires heavy resources and OpenShift Small Gear is
-unable to handle this requirement as reported in OpenShift forums.</p></li>
+<li>
+<p>profile in maven pom requires modifications to add JDO enhancer and
+GWT compile.</p>
+</li>
+<li>
+<p>requires GWT SDK jars on server to compile the GWT module.</p>
+</li>
+<li>
+<p>requires major changes to project directory structure to make it in
+line with maven project structure.</p>
+</li>
+<li>
+<p>GWT complier requires heavy resources and OpenShift Small Gear is
+unable to handle this requirement as reported in OpenShift forums.</p>
+</li>
 </ul>
-
 <p>While the first three issues are manageable, the last one is difficult
 to overcome.</p>
-
 <h5 id="build-locally">Build locally</h5>
-
 <p>Another way, which is easy to implement, is to build the project locally
 and then push the war to OpenShift.</p>
-
 <p>We use Ant to build the project. Add the project build file -
 <code>build.xml</code> to Ant View which shows the following targets.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/buildtargets.png" alt="" />
 </figure>
 
-
 <p>To compile classes, build requires GWT and GAE SDK and in <code>build.xml</code>,
 set the path to SDK on your system.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="c">&lt;!-- Configure path to GWT and GAE SDK - !! Change these !! --&gt;</span>
         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;gwt.sdk&#34;</span> <span class="na">location=</span><span class="s">&#34;/orange/apps/google/gwt/gwt-2.5.0&#34;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;gae.sdk&#34;</span> <span class="na">location=</span><span class="s">&#34;/orange/apps/google/gae/appengine-java-sdk-1.7.5&#34;</span> <span class="nt">/&gt;</span></code></pre></div>
-<p>Target <strong>enhance</strong> enhances the persistence
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;gae.sdk&#34;</span> <span class="na">location=</span><span class="s">&#34;/orange/apps/google/gae/appengine-java-sdk-1.7.5&#34;</span> <span class="nt">/&gt;</span>
+</code></pre></div><p>Target <strong>enhance</strong> enhances the persistence
 classes.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;enhance&#34;</span> <span class="na">depends=</span><span class="s">&#34;javac&#34;</span> <span class="na">description=</span><span class="s">&#34;Enhance JDO&#34;</span><span class="nt">&gt;</span>
 
@@ -806,10 +798,9 @@ classes.</p>
                 <span class="c">&lt;!-- enhance --&gt;</span>
                 <span class="nt">&lt;nucleusenhancer</span> <span class="na">classpathref=</span><span class="s">&#34;enhancer.classpath&#34;</span> <span class="nt">/&gt;</span>
 
-        <span class="nt">&lt;/target&gt;</span></code></pre></div>
-<p>Target <strong>gwtc</strong> compiles the GWT module using GWT
+        <span class="nt">&lt;/target&gt;</span>
+</code></pre></div><p>Target <strong>gwtc</strong> compiles the GWT module using GWT
 complier.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;gwtc&#34;</span> <span class="na">depends=</span><span class="s">&#34;javac,enhance&#34;</span> <span class="na">description=</span><span class="s">&#34;GWT compile to JavaScript&#34;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;java</span> <span class="na">failonerror=</span><span class="s">&#34;true&#34;</span> <span class="na">fork=</span><span class="s">&#34;true&#34;</span> <span class="na">classname=</span><span class="s">&#34;com.google.gwt.dev.Compiler&#34;</span><span class="nt">&gt;</span>
@@ -828,10 +819,9 @@ complier.</p>
                         <span class="c">&lt;!-- module --&gt;</span>
                         <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&#34;in.fins.fins&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;/java&gt;</span>
-        <span class="nt">&lt;/target&gt;</span></code></pre></div>
-<p>All you have to do is to run <strong>target war</strong>, which builds the project
+        <span class="nt">&lt;/target&gt;</span>
+</code></pre></div><p>All you have to do is to run <strong>target war</strong>, which builds the project
 and creates fins.war in project folder.</p>
-
 
 
 <div>&nbsp;</div>
@@ -850,36 +840,31 @@ and creates fins.war in project folder.</p>
 
 
 
-
 <p><strong>Deploy to OpenShift</strong>. To deploy the war to OpenShift execute
 following commands in cloned application folder - demo.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd &lt;cloned application folder - demo&gt;
+<pre><code class="language-screen" data-lang="screen">$ cd &lt;cloned application folder - demo&gt;
 $ cp &lt;workspace project dir&gt;/fins.war webapps
 $ git add webapps/fins.war
 $ rm pom.xml
 $ git rm pom.xml
-$ git commit -am &#34;project war added&#34;
-$ git push</code></pre></div>
-<p>From project directory fins.war is copied to webapps directory of demo
+$ git commit -am &quot;project war added&quot;
+$ git push
+</code></pre><p>From project directory fins.war is copied to webapps directory of demo
 folder (cloned application folder) and then a git add to update the git
 index. Next, we remove pom.xml to disable maven build on OpenShift. If
 this file exists, then OpenShift tries to build the application when
 code is pushed to server. Git commit updates the local repository with
 changes. Finally, git push uploads the changes and fins.war to OpenShift
 git repository.</p>
-
 <p>Now Fins is accessible from <code>http://demo-finsdemo.rhccloud.com/fins</code>. To
 access fins from <code>http://demo-finsdemo.rhccloud.com/</code> change the name of
 war to ROOT.war.</p>
-
 <h2 id="git-revisions">Git Revisions</h2>
-
 <p>Git Repository holds all revisions of war file, which may soon exhaust
 the 1GB storage limit. Clean up the Git repo, application&rsquo;s logs and tmp
 directories to free up the space with</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc app tidy demo</code></pre></div>
-<h5 id="scaled-applications">Scaled Applications</h5>
-
+<pre><code class="language-screen" data-lang="screen">$ rhc app tidy demo
+</code></pre><h5 id="scaled-applications">Scaled Applications</h5>
 <p>Fins demo application that we just created is a non-scaled application,
 to which OpenShift allots one Gear. When load increases, response may
 start to degrade. OpenShift allows application scaling, which provides
@@ -889,41 +874,35 @@ application, which listens to incoming requests and pass on the request
 to web cartridge. When HAProxy detects overload, it alerts OpenShift,
 which starts a new web cartridge on a additional gear to handle the
 request.</p>
-
 <p>Scaled application is created by passing -s to create action.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc app create demo jbossews-1.0 -s</code></pre></div>
-<p>Application type - Scaled or Non-Scaled, has to indicated at creation
+<pre><code class="language-screen" data-lang="screen">$ rhc app create demo jbossews-1.0 -s
+</code></pre><p>Application type - Scaled or Non-Scaled, has to indicated at creation
 and it is not possible to convert from one to another once app is
 created.</p>
-
 <p>MySQL cartridge is added to application as being done earlier. It is not
 possible to add phpMyAdmin to a scaled application. In scaled
 application, database cartridge gets it own dedicated gear.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc cartridge add mysql-5.1 -a demo</code></pre></div>
-<figure class="text-center" >
+<pre><code class="language-screen" data-lang="screen">$ rhc cartridge add mysql-5.1 -a demo
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/scaledapp.png" alt="Scaled Application" />
 </figure>
 
-
-<h6 id="figure-12-3-scaled-application">Figure 12.3. Scaled Application</h6>
-
+<h6 id="figure123scaled-application">Figure 12.3. Scaled Application</h6>
 <p>Initially, OpenShift allocates two gears to the scaled demo application.
 The first gear holds fins code, JBoss EWS cartridge and HAProxy
 cartridge, and the second gear holds MySQL cartridge. When load crosses
 certain threshold, it allots the third gear, which holds fins code and
 second instance of JBoss EWS and load is distributed between first and
 third gear.</p>
-
 <p>There is no change in build and deployment process. In case, the war is
 named as fins.war then you need to modify <code>haproxy.cfg</code> file as follows.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc app ssh demo
-&gt; vi haproxy/conf/haproxy.cfg      // edit with vi editor</code></pre></div>
-<p>search for line <strong>option httpchk GET /</strong> and change it to <strong>option
+<pre><code class="language-screen" data-lang="screen">$ rhc app ssh demo
+&gt; vi haproxy/conf/haproxy.cfg      // edit with vi editor
+</code></pre><p>search for line <strong>option httpchk GET /</strong> and change it to <strong>option
 httpchk GET /fins</strong> . HAProxy uses this option to check the health of
 http server. If this is not proper, then app shows HAProxy Statistics
 Report, with a down local-gear. This change is not required if war is
 named as ROOT.war.</p>
-
 
 
 <div>&nbsp;</div>
@@ -941,10 +920,9 @@ named as ROOT.war.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Restart the application with</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc app restart demo</code></pre></div>
-<p>Next we set up Tomcat and Eclipse to develop the application locally.</p>
+<pre><code class="language-screen" data-lang="screen">$ rhc app restart demo
+</code></pre><p>Next we set up Tomcat and Eclipse to develop the application locally.</p>
 
           </main>
         </div>

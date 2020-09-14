@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gwt model tutorial on Codetab</title>
@@ -18,10 +18,10 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/model/model/</guid>
       <description>Chapter 5. Model Domain Model Data model of the application consists of following classes
- Symbol – holds details about a symbol
- DataGroup – holds various categories of data like BS (Balance Sheet), PL (Profit and Loss), CF (Cash Flow) etc
- Data - segregates the data into different time periods.
- Fact - holds key and value for each item of financial indicator
+  Symbol – holds details about a symbol
+  DataGroup – holds various categories of data like BS (Balance Sheet), PL (Profit and Loss), CF (Cash Flow) etc
+  Data - segregates the data into different time periods.
+  Fact - holds key and value for each item of financial indicator
   UML diagram of the model is as shown in figure</description>
     </item>
     

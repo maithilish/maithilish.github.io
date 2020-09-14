@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scripter on Codetab</title>
@@ -19,7 +19,8 @@
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</guid>
       <description>Script Plugin The example in the previous chapter converts date field using built-in DateRoller plugin. However, it is not possible to handle all types of modification with built-in plugins. To cope with myriad possibilities, Scoopi provides Scripter step to which user can hook arbitrary JavaScript to modify data.
 Scripter Step The Example 8a adds process step to jsoupDefault steps in bs task. The relevant snippet is shown below
-defs/examples/fin/jsoup/ex-8a/job.yml</description>
+defs/examples/fin/jsoup/ex-8a/job.yml
+bsTask: dataDef: bs steps: jsoupDefault: process: class: &amp;quot;org.</description>
     </item>
     
   </channel>

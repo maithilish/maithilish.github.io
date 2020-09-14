@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Restore Clone Migrate - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,86 +561,71 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-3-wordpress-restore-clone">11.3. WordPress Restore, Clone</h2>
-
+            <h2 id="113wordpress-restore-clone">11.3. WordPress Restore, Clone</h2>
 <p>In the previous section, we saw how to offload the backup files to the
 Dropbox. In this section, we use the backup for a full WordPress restore
 and also to clone it to a new site and use it cloned site as testing or
 staging area.</p>
-
 <h3 id="wordpress-restore">WordPress Restore</h3>
-
 <p>WordPress Restore procedure involves following steps:</p>
-
 <ul>
-<li><p>Create a new WordPress application on OpenShift.</p></li>
-
-<li><p>Import MySQL dump to database.</p></li>
-
-<li><p>Extract wp-content directories.</p></li>
+<li>
+<p>Create a new WordPress application on OpenShift.</p>
+</li>
+<li>
+<p>Import MySQL dump to database.</p>
+</li>
+<li>
+<p>Extract wp-content directories.</p>
+</li>
 </ul>
-
 <p><strong>CLI</strong></p>
-
 <p>To step through WordPress Restore procedure, we have to access OpenShift
 Shell through RHC or PuTTY (for Windows users) and securely copy files
 using SSH. <a href="/tutorial/wordpress/openshift/rhc-client-tools/">OpenShift RHC Client Tools</a> and <a href="/tutorial/wordpress/openshift/linux-primer/">OpenShift Linux Primer</a> explains the secure copy.</p>
-
 <p>Create WordPress Application on OpenShift</p>
-
 <p>When we do a WordPress Restore, it means, we already have an OpenShift
 account with a WordPress application. To restore WordPress from the
 backup, we have to use the same Public URL for the new WordPress
 instance. WordPress Restore to a different URL is known as clone.</p>
-
 <p>Delete the existing WordPress application to free up the public URL for
 the new application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Window and Linux
+<pre><code class="language-screen" data-lang="screen">Window and Linux
 
-C:&gt; rhc app delete &lt;app-name&gt;</code></pre></div>
-<p>We can also delete the application through OpenShift Web Console. This
+C:&gt; rhc app delete &lt;app-name&gt;
+</code></pre><p>We can also delete the application through OpenShift Web Console. This
 step is irreversible so delete the application only when there is a full
 backup.</p>
-
 <p>Next, create a new WordPress application as explained in <a href="/tutorial/wordpress/openshift-wordpress/">OpenShift WordPress</a>.
 It is mandatory to use the same name as the deleted application. We
 should also complete the installation of WordPress as explained in <a href="/tutorial/wordpress/wordpress-installation/">WordPress Installation</a>.
 Once application creation and WordPress installation are complete, open
 the WordPress dashboard to check whether site is up properly.</p>
-
 <p>Usually for a fresh WordPress installation, we proceed to install themes
 and plugins. However, for WordPress Restore there is no need to install
 theme and plugins as these components comes from the backup.</p>
-
 <p>Download Backup file</p>
-
 <p>We can download the backup file from Dropbox directly to the OpenShift
 server. To do that, we need the URL of the backup file.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dropbox-sharelink.png" alt="WordPress Restore Clone Migrate - Dropbox Share Link" />
 </figure>
-
 
 <p>Log in to Dropbox and navigate to the folder which has the backup gzip
 file. Select the latest backup file and click on <strong>Share Link</strong> menu to
 open the sharing window in a new tab. In the popup, click <strong>Get Link</strong>
 to copy the file&rsquo;s URL to clipboard.</p>
-
 <p>Next, log in to OpenShift Shell. Windows users use PuTTY or RHC.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc ssh quickstart</code></pre></div>
-<p>In OpenShift Shell, change directory to <code>app-root/data</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data</code></pre></div>
-<p>Download the backup file from Dropbox using wget command. Replace the
+<pre><code class="language-screen" data-lang="screen">$ rhc ssh quickstart
+</code></pre><p>In OpenShift Shell, change directory to <code>app-root/data</code>.</p>
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data
+</code></pre><p>Download the backup file from Dropbox using wget command. Replace the
 URL shown in the command with the actual URL copied to
 clipboard.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; wget https://www.dropbox.com/s/5tpxxxxp2w/quickstart-wordpress-backup-2014-06-11.tar.gz</code></pre></div>
-<p>WGet downloads the backup file
+<pre><code class="language-screen" data-lang="screen">&gt; wget https://www.dropbox.com/s/5tpxxxxp2w/quickstart-wordpress-backup-2014-06-11.tar.gz
+</code></pre><p>WGet downloads the backup file
 quickstart-wordpress-backup-2014-06-11.tar.gz from the Dropbox and saves
 in <code>app-root/data</code> directory.</p>
-
 
 
 <div>&nbsp;</div>
@@ -659,45 +644,35 @@ in <code>app-root/data</code> directory.</p>
 
 
 
-
 <p>Extract WP-Content folders</p>
-
 <p>Using tar command, we extract the contents of the backup archive.
 Replace the example file name shown in command with the real file name.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; tar -xzvf quickstart-wordpress-backup-2014-06-11.tar.gz</code></pre></div>
-<p>Backup file extracts to three folders - themes, plugins and uploads and
+<pre><code class="language-screen" data-lang="screen">&gt; tar -xzvf quickstart-wordpress-backup-2014-06-11.tar.gz
+</code></pre><p>Backup file extracts to three folders - themes, plugins and uploads and
 one SQL file. Extracted folder contains the plugins, themes and media
 files from the backup WordPress installation.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-dropbox-extractedfiles.png" alt="WordPress Restore Clone Migrate - OpenShift - app-root/data files listing" />
 </figure>
-
 
 <p>At this point, when we open the dashboard, these items are yet to show
 up in the admin menu. Reason being; WordPress stores plugins, themes,
 and media file metadata in MySQL database table, and we are yet to
 import database.</p>
-
 <p>Import MySQL Tables</p>
-
 <p>Among the extracted files, we also find a SQL file that contains
 database of WordPress installation.</p>
-
 <p>To import SQL file, use <code>mysql</code>
 command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; mysql --password=$OPENSHIFT_MYSQL_DB_PASSWORD -u $OPENSHIFT_MYSQL_DB_USERNAME -S $OPENSHIFT_MYSQL_DB_SOCKET $OPENSHIFT_APP_NAME &lt; quickstart-2014-06-11.sql</code></pre></div>
-<p>Replace the example filename quickstart-2014-06-11.sql with the real SQL
+<pre><code class="language-screen" data-lang="screen">&gt; mysql --password=$OPENSHIFT_MYSQL_DB_PASSWORD -u $OPENSHIFT_MYSQL_DB_USERNAME -S $OPENSHIFT_MYSQL_DB_SOCKET $OPENSHIFT_APP_NAME &lt; quickstart-2014-06-11.sql
+</code></pre><p>Replace the example filename quickstart-2014-06-11.sql with the real SQL
 file name. SQL import drops all the tables in database and recreates
 tables with data from our old WordPress site.</p>
-
 <p>With that, we finished the WordPress Restore. Restart the application
 through OpenShift Web Console or RHC. Open the WordPress and check the
 contents. It should contain all posts, pages, themes, plugins and media
 from the old site.</p>
-
 <p><strong>W3 Total Cache</strong></p>
-
 <p>W3 Total Cache Plugin creates some files outside the standard
 <code>wp-content/plugins</code> directory. Moreover, it also hard codes WordPress
 installation&rsquo;s absolute path in some PHP files. In OpenShift, the
@@ -705,73 +680,67 @@ absolute path contains the application UUID and it changes when we
 restore the WordPress to a new application. Even though we can edit
 certain files and bring up W3, it is safer - and also easier - to delete
 the W3 Plugin, reinstall and setup as explained in <a href="/tutorial/wordpress/w3-total-cache/settings/">WordPress W3 Total Cache</a></p>
-
 <p><strong>Remove uploaded files</strong></p>
-
 <p>Once we are finished with the WordPress Restore, remember to delete
 backup files from the data directory to conserve storage space.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data
 &gt; rm *.gz 
-&gt; rm *.sql</code></pre></div>
-<h3 id="clone-wordpress-site">Clone WordPress Site</h3>
-
+&gt; rm *.sql
+</code></pre><h3 id="clone-wordpress-site">Clone WordPress Site</h3>
 <p>To try out new themes or plugins or troubleshoot some issues in a live
 site is always a risky proposition. We would rather prefer to do these
 activities in the testing site. Clone creates a new WordPress site with
 the same content as the original but with a different URL. Cloned site
 comes handy to test version upgrades.</p>
-
 <p>To clone WordPress, create a new WordPress application with a different
 name as explained in <a href="/tutorial/wordpress/openshift-wordpress/">OpenShift WordPress</a>. We should also complete the installation of WordPress as explained in <a href="/tutorial/wordpress/wordpress-installation/">WordPress Installation</a>.</p>
-
 <p>All other steps are same as that of Restore explained in the last
 section, except we need to modify site URL in SQL file before importing.
 To summarize, steps to clone are:</p>
-
 <ul>
-<li><p>Create a new WordPress application in OpenShift, with a different
-name. Complete the WordPress installation.</p></li>
-
-<li><p>Download backup archive file to OpenShift <code>app-root/data</code> directory
-and extract it.</p></li>
-
-<li><p>In the extracted SQL file, replace all occurrences of the original
+<li>
+<p>Create a new WordPress application in OpenShift, with a different
+name. Complete the WordPress installation.</p>
+</li>
+<li>
+<p>Download backup archive file to OpenShift <code>app-root/data</code> directory
+and extract it.</p>
+</li>
+<li>
+<p>In the extracted SQL file, replace all occurrences of the original
 site URL with clone site (new site) URL. We explain this in detail
-in the next para.</p></li>
-
-<li><p>Import modified SQL file to MySQL database.</p></li>
+in the next para.</p>
+</li>
+<li>
+<p>Import modified SQL file to MySQL database.</p>
+</li>
 </ul>
-
 <p>Modify SQL file</p>
-
 <p>We use a <code>Sed</code> command to replace matching strings in the file. Execute
 the following command to replace all occurrences of the original site
 URL with a new site (clone site) URL in extracted SQL file. In the next
 command, replace &lt;orginal url&gt; and &lt;new url&gt; with Public URL of your
 existing and new WordPress applications.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; sed -i &#39;#&lt;original url&gt;#&lt;new url&gt;#g&#39; &lt;SQL File Name&gt;</code></pre></div>
-<p>For example, if your original WordPress application is
+<pre><code class="language-screen" data-lang="screen">&gt; sed -i '#&lt;original url&gt;#&lt;new url&gt;#g' &lt;SQL File Name&gt;
+</code></pre><p>For example, if your original WordPress application is
 travel-xyz.rhcloud.com and URL of the new site is test-xyz.rhcloud.com,
 then command would be</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cat *.sql | grep -o &#34;http://travel-xyz.rhcloud.com&#34; | wc -l
+<pre><code class="language-screen" data-lang="screen">&gt; cat *.sql | grep -o &quot;http://travel-xyz.rhcloud.com&quot; | wc -l
 
-&gt; sed -i &#39;#http://travel-xyz.rhcloud.com#http://test-xyz.rhcloud.com#g&#39; quickstart-2014-06-11.sql
+&gt; sed -i '#http://travel-xyz.rhcloud.com#http://test-xyz.rhcloud.com#g' quickstart-2014-06-11.sql
 
-&gt; cat *.sql | grep -o &#34;http://test-xyz.rhcloud.com&#34; | wc -l</code></pre></div>
-<p>Import the SQL file to MySQL database as already explained in the
+&gt; cat *.sql | grep -o &quot;http://test-xyz.rhcloud.com&quot; | wc -l
+</code></pre><p>Import the SQL file to MySQL database as already explained in the
 Restore section. We check whether number of URL are same before and
 after modification with <code>cat</code> commands. URL modification is essential
 otherwise whenever we click an internal link in cloned site, it takes us
 to the original site!</p>
-
 <p>Next, open the General Settings of cloned site and change Site Name so
 that we know that we are working on cloned site. We also need to
 discourage search engines from indexing our cloned site, and we do this
 by changing settings in <strong>Settings</strong> → <strong>Reading</strong>.</p>
-
 <p>With that, our cloned WordPress site is ready for use as testing or
 staging site.</p>
-
 
 
 <div>&nbsp;</div>
@@ -789,41 +758,32 @@ staging site.</p>
 <div>&nbsp;</div>
 
 
-
 <h3 id="wordpress-version-upgrade">WordPress Version upgrade</h3>
-
 <p>Apart from trying out new Plugins and Themes, a WordPress testing site
 is also useful to test version upgrade of WordPress core, Plugins, and
 Themes.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-restore-updates.png" alt="WordPress Restore Clone Migrate - WordPress Updates Notification" />
 </figure>
 
-
 <p>WordPress periodically checks for updates to its core, plugins and
 themes. When there are updates available, WordPress Dashboard displays a
 notification in Updates menu and also in the Admin bar.</p>
-
 <p>When there are updates, open WordPress Updates screen using
 <strong>Dashboard</strong> → <strong>Updates</strong>, which shows updates in three blocks -
 WordPress Core, Plugins and Themes. Select items one by one and apply
 the update and verify the site functionality after each update. After
 some updates, we may have to restart WordPress application through
 OpenShift Web console.</p>
-
 <p><strong>Blank screens !</strong></p>
-
 <p>WordPress may display a blank screen after an update. Before trying out
 any other thing, always restart the OpenShift WordPress application
 through OpenShift Web Console.</p>
-
 <p>After a successful upgrade of the test site, we can go ahead and upgrade
 the live site. Usually, WordPress core and also the leading themes and
 plugins upgrades are stable and upgrade goes without any hitch. Still,
 we always prefer to test them rather than to face some nasty surprises
 in the live site.</p>
-
 <p>Though out the tutorial we used WordPress that is bundled as <strong>OpenShift
 Instant App</strong>. In the next chapter, we describe WordPress Installation
 from the source.</p>

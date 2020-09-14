@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>DB Setup - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,36 +491,26 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="setup-hsqldb-database-for-scoopi">Setup HSQLDB Database for Scoopi</h1>
-
+            <h1 id="setup-hsqldb-database-for-scoopi">Setup HSQLDB Database for Scoopi</h1>
 <p>To run examples with persistence we need HSQLDB up and running. Download
 <a href="https://sourceforge.net/projects/hsqldb/files/hsqldb/hsqldb_2_3" target="_blank">HSQLDB
 version 2.3</a>
 and extract it to some folder. To create database and start HSQLDB
 server, run</p>
-
 <pre><code>cd hsqldb-2.3.0/hsqldb
 java -cp lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:data/scoopi --dbname.0 scoopi
 </code></pre>
-
 <p>This creates database named scoopi and places database files in data
 directory.</p>
-
 <p>Use HSQLDB client to connect running database and to do that run
 following from another console</p>
-
 <pre><code>java -cp hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
 </code></pre>
-
 <p>To connect to HSQLDB server, enter connection details as shown in the
 figure and click OK.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/scoopi-web-scraper/media/scoopi-persistence-hsqldbclient.png" alt="HSQLDB client" />
 </figure>
-
 
 <p>Edit <code>conf/jdoconfig.properties</code> and disable mariadb and enable hsqldb
 properties.</p>

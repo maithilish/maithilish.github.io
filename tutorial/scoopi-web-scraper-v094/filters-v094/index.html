@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Filters - Scoopi Web Scraper - CodeTab</title></head>
 
@@ -421,67 +421,56 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="filters">Filters</h1>
-
+            <h1 id="filters">Filters</h1>
 <p>The extracted data of the previous example contains many unwanted items
 and Scoopi provides filters to remove them from output.</p>
-
 <p>The filter is normally applied after parse is over and members are
 created. The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-5/job.yml" target="_blank">Example 5</a>
 uses filter for row axis. The filter snippet is as below</p>
-
 <p><code>defs/examples/jsoup/ex-5/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">row:
+<pre><code class="language-raw" data-lang="raw">row:
   query:
-    region: &#34;table:contains(Sources Of Funds)&#34;
-    field: &#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;      
+    region: &quot;table:contains(Sources Of Funds)&quot;
+    field: &quot;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&quot;      
   members: [ 
-    member: {name: item, index: 5, breakAfter: [&#34;Book Value (Rs)&#34;] },
+    member: {name: item, index: 5, breakAfter: [&quot;Book Value (Rs)&quot;] },
   ]
   filters: [ 
-    filter: { type: value, pattern: &#34;&#34; },
-    filter: { type: value, pattern: &#34;Sources Of Funds&#34; },
-    filter: { type: value, pattern: &#34;Application Of Funds&#34; },                   
-  ]</code></pre></div>
-<p>The filter definition remove the members whose row axis value</p>
-
+    filter: { type: value, pattern: &quot;&quot; },
+    filter: { type: value, pattern: &quot;Sources Of Funds&quot; },
+    filter: { type: value, pattern: &quot;Application Of Funds&quot; },                   
+  ]
+</code></pre><p>The filter definition remove the members whose row axis value</p>
 <ul>
 <li>blank</li>
 <li>null</li>
 <li>Sources Of Funds</li>
 <li>Application Of Funds</li>
 </ul>
-
 <p>As the filter specifies <em>type: value</em>, pattern is applied to member
 value field. The filter property <em>type</em> can be <em>value</em> or <em>match</em>. When
 <em>type: match</em> pattern is compared with members&rsquo; <em>match</em> field instead of
 <em>value</em> field. Pattern property can be plain text simple comparison or
 regex for complex pattern matching.</p>
-
 <p>When filter is true for an axis, then the enclosing member is removed
 from the output. For example, when filter for col axis is</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">col:
+<pre><code class="language-raw" data-lang="raw">col:
 
   ...
 
   filters: [ 
-    filter: { type: value, pattern: &#34;Dec 16&#34; },
-  ]</code></pre></div>
-<p>and member and its axis are as below</p>
-
+    filter: { type: value, pattern: &quot;Dec 16&quot; },
+  ]
+</code></pre><p>and member and its axis are as below</p>
 <pre><code>Member
  Col : Dec 16
  Row : Equity
  Fact : 20.00
 </code></pre>
-
 <p>Then as col axis matches with the pattern and the whole member is
 removed from data even though filter is not specified for row and fact
 axis.</p>
-
 <p>The next chapter explains how define multiple tasks for a locator.</p>
 
           </main>

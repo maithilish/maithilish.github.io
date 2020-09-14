@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Ajax Unit Tests - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,29 +625,21 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-7-wordpress-plugin-ajax-unit-tests">12.7. WordPress Plugin Ajax Unit Tests</h2>
-
+            <h2 id="127wordpress-plugin-ajax-unit-tests">12.7. WordPress Plugin Ajax Unit Tests</h2>
 <p>In the previous six blogs, we gone through the unit tests for the
 WordPress plugin regular methods. In this blog, we explore WordPress
 Plugin Ajax unit tests.</p>
-
 <p>The normal test cases extend <code>WP_UnitTestCase</code>. For Ajax unit tests,
 WordPress Test Library comes with a separate class
 WP_Ajax_UnitTestCase. Moreover, the construction of the test methods
 are also bit different from the regular ones.</p>
-
 <h3 id="ajax-test-case-group-and-files">Ajax Test Case Group and Files</h3>
-
 <p>While normal test cases takes very little time to complete, WordPress
 Plugin Ajax tests are inherently very slow. Hence, it is not practical
 to run Ajax tests along with other tests.</p>
-
 <p>Taking this into account, WordPress Tests uses PHPUnit annotation @group
 to group the Ajax tests. In phpunit.xml, use &lt;exclude/&gt; to exclude the
 Ajax test group during normal test run.</p>
-
 <p><code>wp-simple-plugin/phpunit.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;phpunit</span> <span class="na">bootstrap=</span><span class="s">&#34;tests/phpunit/bootstrap.php&#34;</span>   <span class="na">backupGlobals=</span><span class="s">&#34;false&#34;</span>
     <span class="na">colors=</span><span class="s">&#34;false&#34;</span> <span class="na">convertErrorsToExceptions=</span><span class="s">&#34;true&#34;</span>
@@ -664,32 +656,30 @@ Ajax test group during normal test run.</p>
     <span class="nt">&lt;/exclude&gt;</span>
   <span class="nt">&lt;/groups&gt;</span>
 
-<span class="nt">&lt;/phpunit&gt;</span></code></pre></div>
-<figure class="text-center" >
+<span class="nt">&lt;/phpunit&gt;</span>
+</code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-ajax-files.png" alt="WordPress Plugin Ajax Unit Tests - ajax test files" />
 </figure>
-
 
 <p>In Share on Social Plugin, the Ajax methods are defined in <code>Sos_Ajax</code>
 class of <code>share-on-social/admin/class-ajax.php</code>. But, this class also
 contains some methods which are non Ajax and running them along with the
 Ajax methods slows the test run further. To overcome that, the tests for
 Sos_Ajax is split into two test files.</p>
-
 <ul>
-<li><p>test-ajax.php - defines class <code>Test_Sos_Ajax</code> class which extends
-<code>WP_Ajax_UnitTestCase</code> and contains tests for Ajax methods.</p></li>
-
-<li><p>test-ajax-others.php - defines class <code>Test_Sos_Ajax_others</code> class
+<li>
+<p>test-ajax.php - defines class <code>Test_Sos_Ajax</code> class which extends
+<code>WP_Ajax_UnitTestCase</code> and contains tests for Ajax methods.</p>
+</li>
+<li>
+<p>test-ajax-others.php - defines class <code>Test_Sos_Ajax_others</code> class
 which extends <code>WP_UnitTestCase</code> and contains tests for non Ajax
-methods of Sos_Ajax.</p></li>
+methods of Sos_Ajax.</p>
+</li>
 </ul>
-
 <h3 id="wordpress-ajax-test-case">WordPress Ajax Test Case</h3>
-
 <p>Let&rsquo;s go through <code>Test_Sos_Ajax</code> to understand how Ajax Test Case is
 defined.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -724,47 +714,38 @@ defined.</p>
     <span class="p">}</span>
     <span class="o">....</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>For Ajax test case, in the header comments, we add two annotations. The
+</code></pre></div><p>For Ajax test case, in the header comments, we add two annotations. The
 annotation, <strong>@group ajax</strong> adds the test methods of this class to a
 group named ajax. The second annotation,
 <strong>@runTestsInSeparateProcesses</strong> tells PHPUnit to run each test from
 this class in a separate process.</p>
-
 <p>The command to run normal and Ajax tests are as follows.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">To Run NORMAL Tests 
+<pre><code class="language-screen" data-lang="screen">To Run NORMAL Tests 
 
 $ phpunit
 
 
 To Run AJAX Tests
 
-$ phpunit --group ajax</code></pre></div>
-<p>During normal run, Test_Sos_Ajax_Others is included with other test
+$ phpunit --group ajax
+</code></pre><p>During normal run, Test_Sos_Ajax_Others is included with other test
 files of the plugin, however, in Ajax test run, only tests from
 Test_Sos_Ajax are executed as the class is annotated with <strong>@group
 ajax</strong>.</p>
-
 <p><strong>Risky Tests</strong></p>
-
 <p>PHPUnit marks some of the Ajax tests status as <strong>R</strong>. The tests are
 marked as Risky because they fail to close PHP buffer properly.</p>
-
 <p>We couldn&rsquo;t find out what exactly causes of this. Workaround to the
 buffer issue is to run Ajax tests in separate process. Tests are not
 marked as Risky when Ajax Test class is annotated with
 @runTestsInSeparateProcesses, though it drastically slows down the test
 run.</p>
-
 <h3 id="wordpress-ajax-tests">WordPress Ajax Tests</h3>
-
 <p>For Ajax, the test construction is quite different from the normal ones.
 Let&rsquo;s go through some Ajax tests to understand how it is done.</p>
-
 <p>The Ajax method <code>Sos_Ajax::save_stats()</code> obtains data from PHP global
 $_POST and saves the details in WordPress Option and returns 1 as
 success flag.</p>
-
 <p><code>share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function save_stats () {
         $valid_req = check_ajax_referer( &#39;sos-save-stat&#39;, false, false );
@@ -782,9 +763,8 @@ success flag.</p>
         $this-&gt;update_sos_stats_summary( $share_on, $share_name );
         
         wp_die( &#39;1&#39; );
-    }</code></pre></div>
-<p>To test it, we use test method <code>Test_Sos_Ajax::test_save_stat_stats()</code>.</p>
-
+    }
+</code></pre></div><p>To test it, we use test method <code>Test_Sos_Ajax::test_save_stat_stats()</code>.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_save_stat_stats () {
         global $_POST;
@@ -807,24 +787,21 @@ success flag.</p>
         
         $this-&gt;assertSame( &#39;fb&#39;, $stat[ &#39;type&#39; ] );
         $this-&gt;assertSame( &#39;test&#39;, $stat[ &#39;share_name&#39; ] );
-    }</code></pre></div>
-<p>After loading the data in $_POST, the test in a try-catch block, calls
+    }
+</code></pre></div><p>After loading the data in $_POST, the test in a try-catch block, calls
 <code>Sos_Ajax::setup()</code> method which wires Ajax on server side as explained
 in <a href="/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/">WordPress Ajax</a>. Next, Ajax call is made using <code>WP_Ajax_UnitTestCase::_handleAjax()</code> by passing
 Ajax handler <strong>save-stats</strong> as the parameter. The exception
 <code>WPAjaxDieStopException</code> catches the outcome of Ajax call which is
 assigned to variable <code>$e</code>.</p>
-
 <p>Ajax call return value is obtained from $e-&gt;getMessage() and tested
 whether call is successful. Since, Ajax method saves the stat in
 WordPress option, we obtain the data using WordPress function
 get_option() and test it.</p>
-
 <p>The above Ajax method sends 1 or -1 as return value. But, there are
 other types of Ajax method which returns data instead of a flag. One
 such method is <code>Sos_Ajax::get_stats()</code> which returns stats as JSON
 string to the client.</p>
-
 <p><code>share-on-social/tests/phpunit/tests/test-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_get_stats_single_stat () {
         global $_POST;
@@ -843,41 +820,41 @@ string to the client.</p>
         $result = $e-&gt;getMessage();
         $expected = &#39;{&#34;cols&#34;:[{&#34;label&#34;:&#34;Date&#34;,&#34;type&#34;:&#34;date&#34;},{&#34;label&#34;:&#34;FB&#34;,&#34;type&#34;:&#34;number&#34;}],&#34;rows&#34;:[{&#34;c&#34;:[{&#34;v&#34;:&#34;Date(2014,9,29)&#34;},{&#34;v&#34;:1}]}]}&#39;;
         $this-&gt;assertSame( $expected, $result );
-    }</code></pre></div>
-<p>The test is similar to previous one, but here <code>$e-&gt;getMessage()</code> returns
+    }
+</code></pre></div><p>The test is similar to previous one, but here <code>$e-&gt;getMessage()</code> returns
 the JSON string returned by the Ajax call.</p>
-
 <h3 id="exception-types-and-die">Exception Types and Die</h3>
-
 <p>To terminate Ajax methods, in Chapter <a href="/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/">WordPress Ajax</a>, we
 suggested to use <a href="http://codex.wordpress.org/Function_Reference/wp_die" target="_blank">wp_die()</a> instead of die() or exit(). Reason being, die() kills the test process even before the test completes, whereas wp_die() continues with test execution which allows WordPress to handle the output through a dedicated die handler.</p>
-
 <p>WordPress Ajax method can end with four states.</p>
-
 <ul>
-<li><p>Without output or return value.</p></li>
-
-<li><p>With output or return value.</p></li>
-
-<li><p>Error condition without return value.</p></li>
-
-<li><p>Error condition with return value.</p></li>
+<li>
+<p>Without output or return value.</p>
+</li>
+<li>
+<p>With output or return value.</p>
+</li>
+<li>
+<p>Error condition without return value.</p>
+</li>
+<li>
+<p>Error condition with return value.</p>
+</li>
 </ul>
-
 <p>To handle these states, WP_Ajax_UnitTestCase supports two types of
 exception.</p>
-
 <ul>
-<li><p><code>WPAjaxDieStopException</code> - for use with Ajax calls that returns or
-output data or status.</p></li>
-
-<li><p><code>WPAjaxDieContinueException</code> - for use with Ajax calls that never
-return data or status.</p></li>
+<li>
+<p><code>WPAjaxDieStopException</code> - for use with Ajax calls that returns or
+output data or status.</p>
+</li>
+<li>
+<p><code>WPAjaxDieContinueException</code> - for use with Ajax calls that never
+return data or status.</p>
+</li>
 </ul>
-
 <p>In Share on Social Plugin, we use <code>wp_die()</code> to return data or status
 and so, the plugins&rsquo; tests always use <code>WPAjaxDieStopException</code>.</p>
-
 <p>In the next blog, we explain the configuration and tests for WordPress
 Multisite.</p>
 

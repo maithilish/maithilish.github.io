@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gotz Installation on Codetab</title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/gotz-installation-quick-start/</guid>
       <description>If you use Docker to run applications, then the easiest way install Gotz is to pull its image from DockerHub and run it straight away with an added convince that it comes MariaDB preconfigured. In case, you are not using Docker then you can also download its release from GitHub. We explain both the options here.
-Install Gotz from Docker Image Gotz releases are available as docker image from DockerHub.</description>
+Install Gotz from Docker Image Gotz releases are available as docker image from DockerHub. To run Gotz container, we needDocker installed in the system and additionally, to run it with database, we also need Docker Compose.</description>
     </item>
     
   </channel>

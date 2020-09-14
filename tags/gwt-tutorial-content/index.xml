@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gwt tutorial content on Codetab</title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/content/content/</guid>
       <description>Content GWT project contains three content pages.
- Snapshot – displays financial details like Balance Sheet (BS), Profit and Loss A/c (PL), Quarterly data (Qtr), Cash Flow (CF) and Holding details of a Symbol with forward or backward navigation capability to view other periods. It has collapsible graphs of Price, Price to Earnings (PE) and Price to Book (PB) movements. For each category a Pop up displays data for the entire period.</description>
+  Snapshot – displays financial details like Balance Sheet (BS), Profit and Loss A/c (PL), Quarterly data (Qtr), Cash Flow (CF) and Holding details of a Symbol with forward or backward navigation capability to view other periods. It has collapsible graphs of Price, Price to Earnings (PE) and Price to Book (PB) movements. For each category a Pop up displays data for the entire period.</description>
     </item>
     
   </channel>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multiple Tasks - Gotz ETL - CodeTab</title></head>
 
@@ -400,19 +400,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>We can define multiple task for tasks and also, multiple tasks are
+            <p>We can define multiple task for tasks and also, multiple tasks are
 allowed in a job file.</p>
-
 <p>The Example-1 scrapes Price data from acme-quote.html page while
 Example-2 extracts Snapshot data from the same page. We can add these
 two task within tasks element.</p>
-
 <p>But before doing that let&rsquo;s introduce one more feature - <strong>steps
 reference</strong> - which extracts steps into separate entity which can be
 used by both tasks.</p>
-
 
 
 <div>&nbsp;</div>
@@ -430,9 +425,7 @@ used by both tasks.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="steps-reference">Steps Reference</h2>
-
 <p>In Example-6, steps is moved out of task element as a standalone element
 under &lt;fields&gt;</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;fields</span> <span class="na">name=</span><span class="s">&#34;locator&#34;</span> <span class="na">class=</span><span class="s">&#34;org.codetab.gotz.model.Locator&#34;</span>
@@ -444,11 +437,9 @@ under &lt;fields&gt;</p>
             <span class="nt">&lt;nextStep&gt;</span>loader<span class="nt">&lt;/nextStep&gt;</span>
     <span class="nt">&lt;/step&gt;</span>
     ....
-  <span class="nt">&lt;/steps&gt;</span></code></pre></div>
-<p>By doing so we can refer the steps definition from multiple task.</p>
-
+  <span class="nt">&lt;/steps&gt;</span>
+</code></pre></div><p>By doing so we can refer the steps definition from multiple task.</p>
 <h2 id="multiple-task">Multiple Task</h2>
-
 <p>Next, to run multiple task - price and snapshot - on acme-quote.html we
 define tasks as show below</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;fields</span> <span class="na">name=</span><span class="s">&#34;locator&#34;</span> <span class="na">class=</span><span class="s">&#34;org.codetab.gotz.model.Locator&#34;</span>
@@ -466,12 +457,11 @@ define tasks as show below</p>
             <span class="nt">&lt;steps</span> <span class="na">ref=</span><span class="s">&#34;commonSteps&#34;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/task&gt;</span>
     <span class="nt">&lt;/tasks&gt;</span>
-<span class="nt">&lt;/fields&gt;</span></code></pre></div>
-<p>The above snippet defines two task, first one applies snapshot dataDef
+<span class="nt">&lt;/fields&gt;</span>
+</code></pre></div><p>The above snippet defines two task, first one applies snapshot dataDef
 and second one price dataDef on locators of group quote i.e.
 acme-quote.html page and both task use commonSteps through <strong>&lt;steps
-ref=&ldquo;commonSteps&rdquo; /&gt;</strong></p>
-
+ref=&quot;commonSteps&rdquo; /&gt;</strong></p>
 
 
 <div>&nbsp;</div>
@@ -490,9 +480,7 @@ ref=&ldquo;commonSteps&rdquo; /&gt;</strong></p>
 
 
 
-
 <h2 id="multiple-tasks">Multiple tasks</h2>
-
 <p>The Example-7 extends on previous one which executes multiple tasks on
 multiple locators group. It scrapes price and snapshot data from
 acme-quote.html and bs data from acme-bs.html. Relevant snippet from the
@@ -526,25 +514,21 @@ example is show below.</p>
             <span class="nt">&lt;steps</span> <span class="na">ref=</span><span class="s">&#34;commonSteps&#34;</span> <span class="nt">/&gt;</span>                    
         <span class="nt">&lt;/task&gt;</span>
     <span class="nt">&lt;/tasks&gt;</span>
-<span class="nt">&lt;/fields&gt;</span></code></pre></div>
-<p>It defines two locators group quote and bs and with corresponding tasks
+<span class="nt">&lt;/fields&gt;</span>
+</code></pre></div><p>It defines two locators group quote and bs and with corresponding tasks
 one for group quote and another one for bs. The first tasks (group
 quote) has two task - price and snapshot and second tasks (group bs) has
 one tasks - bs.</p>
-
 <p>In all, Gotz executes three task</p>
-
 <ol>
 <li>price task parses locator acme-quote.html with price dateDef.</li>
 <li>snapshot task agian parses locator acme-quote.html with snapshot
 dateDef.</li>
 <li>bs task parses acme-bs.html with bs dateDef.</li>
 </ol>
-
 <p>Output of all the three tasks go to output/data.txt. But, there is a
 problem in output data - the date for bs data is in MMM &lsquo;YY format and
 database throws error when we try to push the data with DBAppender.</p>
-
 <p>We need to apply converters to change format or adjust value etc., and
 next chapter does exactly that.</p>
 

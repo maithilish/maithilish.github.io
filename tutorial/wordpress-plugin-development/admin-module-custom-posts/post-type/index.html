@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T09:36:00+0530",
         "dateModified" : "2019-01-11T09:36:00+0530",
-        "wordCount" : "1141",
+        "wordCount" : "1140",
         "keywords" : [ "wordpress custom post type","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Custom Post Type - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,57 +625,44 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-1-wordpress-custom-post-type">7.1. WordPress Custom Post Type</h2>
-
+            <h2 id="71wordpress-custom-post-type">7.1. WordPress Custom Post Type</h2>
 <p>With Share on Social Plugin, admins can create and configure multiple
 Social Lockers. While it is not impossible to use WordPress option to
 store locker settings, better approach would be to use WordPress Custom
 Post Type which provides much more robust and convenient framework to
 manage multiple items of a type.</p>
-
 <p>In this chapter, we explain how to add new WordPress Custom Post Type
 and manage custom posts and its meta data.</p>
-
 <h3 id="wordpress-custom-post-type">WordPress Custom Post Type</h3>
-
 <p>In WordPress, entities like Posts, Pages and Attachments are different
 versions of base type Posts. They all holds some contents and also,
 other attributes or values called as meta data. WordPress allows
 developers to add custom post types which enables them extend the
 functionality of the base post type.</p>
-
 <p>For each Social Locker we need to save additional settings such as id,
 share link, enabled social networks and display text. As WordPress
 Custom Post Type allows creation of multiple items of a custom post type
 and save meta data with each item, it is well suited for Social Lockers.</p>
-
 <p>WordPress custom post type integrates seamlessly with WordPress core.
 Each custom Post Type, just like Post and Pages, gets its own menu in
 Admin Menu and inherits WordPress Post management framework to list,
 add, delete, publish and edit items or entities.</p>
-
 <p>In Share on Social Plugin, we add new custom post type - <strong>sos</strong> - and
 extend it further to use it as Sos Lockers. The <strong>sos</strong> custom post type
 adds a new menu item <strong>Share on Social</strong> to admin
 menu.</p>
-
 <p><a href="http://codex.wordpress.org/Function_Reference/register_post_type" target="_blank"><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-menu.png" alt="wp-pd-sos-custom-post-menu](../media/wp-pd-sos-custom-post-menu-300x159.png)" />
 </figure>
 </p>
-
 <p>In Share on Social menu, WordPress by default adds first two sub menu
 items - Lockers and Add New - as part of its core post management
 framework. The last two items - Settings and Statistics - which are
 added by the plugin just to group them under the menu and they are not
 related to custom post.</p>
-
 <p>Class file <code>admin/class-sos.php</code> handles the <strong>sos</strong> custom post type.
 In the <code>setup()</code> method, we add <code>create_post_type()</code> method as action
 method to action hook <strong>init</strong>.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos {
 
@@ -684,11 +671,10 @@ method to action hook <strong>init</strong>.</p>
     public function setup () {
 
         add_action( &#39;init&#39;,array($this,&#39;create_post_type&#39; ) );
-    ....</code></pre></div>
-<p>In action method, we use WordPress API function
+    ....
+</code></pre></div><p>In action method, we use WordPress API function
 [register_post_type()</a>
 to register new custom type.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">public function create_post_type () {
 
@@ -723,29 +709,30 @@ to register new custom type.</p>
         $this-&gt;create_basic_locker();
     }   
 
-}</code></pre></div>
-<p>The first parameter is custom post type name which is set to <strong>sos</strong>.
+}
+</code></pre></div><p>The first parameter is custom post type name which is set to <strong>sos</strong>.
 The second parameter is an array of arguments. The function defines a
 large number of arguments and we use only some of them. Refer the
 <a href="http://codex.wordpress.org/Function_Reference/register_post_type" target="_blank">register_post_type()</a>
 for the complete list of parameters and arguments.</p>
-
 <p>The first arg is an array which holds the various labels used by the
 post type. Other important args are</p>
-
 <ul>
-<li><p><strong>public</strong> - set it as false so that only admin can manage sos
-custom post type (add new, delete etc.,).</p></li>
-
-<li><p><strong>show_ui</strong> - display a user-interface (admin panel) for this post
-type.</p></li>
-
-<li><p><strong>supports</strong> - WordPress post editor, by default, allows title field
+<li>
+<p><strong>public</strong> - set it as false so that only admin can manage sos
+custom post type (add new, delete etc.,).</p>
+</li>
+<li>
+<p><strong>show_ui</strong> - display a user-interface (admin panel) for this post
+type.</p>
+</li>
+<li>
+<p><strong>supports</strong> - WordPress post editor, by default, allows title field
 and content editor. Using arg, supports, we can enable or disable
 other fields like thumbnails, excerpts etc., Custom post type sos
-allows only the title field.</p></li>
+allows only the title field.</p>
+</li>
 </ul>
-
 <p>With this, sos post editor has a single field to enter title of the
 post. Other fields of Sos Lockers such as Locker ID, Share on, Share URL
 and Display Text have to be stored as meta data of the post. To input
@@ -753,7 +740,6 @@ meta data, we need meta boxes in post editor and for this use argument
 <strong>register_meta_box_cb</strong> to register callback function that setup
 meta boxes in the edit form. We cover meta box callback function in next
 blog.</p>
-
 
 
 <div>&nbsp;</div>
@@ -772,38 +758,37 @@ blog.</p>
 
 
 
-
 <p>All-in-one function, register_post_type(), accomplishes many things.</p>
-
 <ul>
-<li><p>registers the sos custom post type.</p></li>
-
-<li><p>sets labels for add new item, edit item, custom post admin menu and
-view items etc.,</p></li>
-
-<li><p>enables admin panel to manage custom post items - Sos Lockers.</p></li>
-
-<li><p>enable or disable fields in post editor.</p></li>
-
-<li><p>provides callback to customize meta boxes in post editor.</p></li>
+<li>
+<p>registers the sos custom post type.</p>
+</li>
+<li>
+<p>sets labels for add new item, edit item, custom post admin menu and
+view items etc.,</p>
+</li>
+<li>
+<p>enables admin panel to manage custom post items - Sos Lockers.</p>
+</li>
+<li>
+<p>enable or disable fields in post editor.</p>
+</li>
+<li>
+<p>provides callback to customize meta boxes in post editor.</p>
+</li>
 </ul>
-
 <p><strong>Custom Post Type Scope</strong></p>
-
 <p>Don&rsquo;t assume that custom type registration is one time affair in
 WordPress.</p>
-
 <p>Instead, whenever we access admin screen or any of its menu, as part of
 request cycle, init hook executes register_post_type(). In other
 words, during each request, WordPress freshly registers custom post type
 and discards it once request is completed!</p>
-
 <p>After registering the sos custom post type, we add a new post of sos
 type which is the default locker with locker id basic. While adding the
 default locker, we check whether locker with same id exists and create
 only if it not found in database. This check is essential otherwise each
 request adds a new locker.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function create_basic_locker () {
         if ( false == current_user_can( &#39;activate_plugins&#39; ) ) {
@@ -825,36 +810,41 @@ request adds a new locker.</p>
             add_post_meta( $post_id, &#39;share_target&#39;, &#39;page&#39; );
             add_post_meta( $post_id, &#39;locker_text&#39;, $this-&gt;basic_text() );
         }
-    }</code></pre></div>
-<p>While inserting the post, check whether user has the required capability
-- activate-plugins. We set, among other things, post_type as <strong>sos</strong> in
+    }
+</code></pre></div><p>While inserting the post, check whether user has the required capability</p>
+<ul>
+<li>
+<p>activate-plugins. We set, among other things, post_type as <strong>sos</strong> in
 $post array. WordPress function
 <a href="http://codex.wordpress.org/Function_Reference/wp_insert_post" target="_blank">wp_insert_post()</a>
 inserts the post to <strong>wp_posts</strong> table. This table holds posts of all
 types - posts, pages and even custom posts. On success, function returns
 the post id of new post. We use the post id to add meta data for Basic
 Locker such as</p>
-
 <ul>
-<li><p><strong>locker_id</strong> - basic</p></li>
-
-<li><p><strong>shareon_fb</strong>, <strong>shareon_gplus</strong> and <strong>shareon_twitter</strong> -
-enable all Share Buttons in Basic Locker.</p></li>
-
-<li><p><strong>share_target</strong> - Basic Locker shares URL of the page where locker
-is placed.</p></li>
-
-<li><p><strong>locker_text</strong> - HTML snippet that is used as locker display text.</p></li>
+<li>
+<p><strong>locker_id</strong> - basic</p>
+</li>
+<li>
+<p><strong>shareon_fb</strong>, <strong>shareon_gplus</strong> and <strong>shareon_twitter</strong> -
+enable all Share Buttons in Basic Locker.</p>
+</li>
+<li>
+<p><strong>share_target</strong> - Basic Locker shares URL of the page where locker
+is placed.</p>
+</li>
+<li>
+<p><strong>locker_text</strong> - HTML snippet that is used as locker display text.</p>
+</li>
 </ul>
-
+</li>
+</ul>
 <script>
     console.log("slot C"); 
 </script>
-
 <p>Sos Lockers listing shows default locker - Basic. However, if we try to
 add new one or edit the basic locker, the editor shows only the Title
 field as we are yet to add meta boxes.</p>
-
 <p>In the next section, we show how to add meta boxes to the post editor to
 manage post meta data.</p>
 

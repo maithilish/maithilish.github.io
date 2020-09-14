@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Resolvers - Apache Ivy Tutorial – CodeTab</title></head>
 
@@ -394,43 +394,41 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="5-2-apache-ivy-resolvers-and-repository">5.2. Apache Ivy Resolvers and Repository</h2>
-
+            <h2 id="52apache-ivy-resolvers-and-repository">5.2. Apache Ivy Resolvers and Repository</h2>
 <p>Apache Ivy Repositories</p>
-
 <p>Until now, we used the public repository to resolve dependencies. But
 you may want to set up your own repository for reasons like</p>
-
 <ul>
-<li><p>restricted Internet access – your network may have Internet access
+<li>
+<p>restricted Internet access – your network may have Internet access
 or usage policy. This may limit or even restrict access to Internet.
-Setting up an enterprise repository helps to overcome this issue.</p></li>
-
-<li><p>reliability/accuracy – modules available in public repository may
-have quality issues.</p></li>
-
-<li><p>security – module available in public repository may have security
+Setting up an enterprise repository helps to overcome this issue.</p>
+</li>
+<li>
+<p>reliability/accuracy – modules available in public repository may
+have quality issues.</p>
+</li>
+<li>
+<p>security – module available in public repository may have security
 issues and Information Security policy of your organisation may deny
-the access to these repositories.</p></li>
+the access to these repositories.</p>
+</li>
 </ul>
-
 <p>The Default configuration of Ivy allows following types of repository.</p>
-
 <ul>
-<li><p>Public – repositories available publicly in Internet</p></li>
-
-<li><p>Local – private repository, access is restricted to the user</p></li>
-
-<li><p>Shared – a common repository shared between the members of a team</p></li>
+<li>
+<p>Public – repositories available publicly in Internet</p>
+</li>
+<li>
+<p>Local – private repository, access is restricted to the user</p>
+</li>
+<li>
+<p>Shared – a common repository shared between the members of a team</p>
+</li>
 </ul>
-
 <p>Default settings of these repositories are defined by Ivy in its own
 ivysettings.xml which is packaged within the ivy.jar.</p>
-
 <p>Apache Ivy Resolvers</p>
-
 <p>One of the configurable items in the ivysettings.xml is Resolvers.
 Repositories are not homogeneous and they may be hosted on a web server,
 local file-system, VFS file-system, ssh server, etc. Layout of the
@@ -439,26 +437,26 @@ accommodate all these variations in location and structure of the
 repositories, Ivy uses a concept called <strong>Resolver</strong> to contact the
 repository and fetch the files. Resolver takes care of following
 aspects.</p>
-
 <ul>
-<li><p>decide network or file-system protocol to access the repository.</p></li>
-
-<li><p>locate and fetch the Ivy file which may follow different
-layout/naming in different repositories.</p></li>
-
-<li><p>locate and fetch proper artifacts which may follow different
-layout/naming in different repositories.</p></li>
+<li>
+<p>decide network or file-system protocol to access the repository.</p>
+</li>
+<li>
+<p>locate and fetch the Ivy file which may follow different
+layout/naming in different repositories.</p>
+</li>
+<li>
+<p>locate and fetch proper artifacts which may follow different
+layout/naming in different repositories.</p>
+</li>
 </ul>
-
 <p>Resolver defines these aspects so that Ivy can properly resolve the
 dependencies. &lt;resolvers&gt; element in ivysettings.xml defines a list of
 dependency resolvers &lt;resolver&gt;. Each &lt;resolver&gt; is identified by
 its name. Ivy ships with built-in dependency resolvers that handle most
 common needs. Next table lists the Built-in resolvers.</p>
-
 <p><strong>Table 5.3. Ivy Built-in
 Resolvers</strong></p>
-
 <table>
 <thead>
 <tr>
@@ -467,32 +465,27 @@ Resolvers</strong></p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>IBiblio</td>
 <td>Standard</td>
 <td>Finds artifacts on ibiblio.</td>
 </tr>
-
 <tr>
 <td>FileSystem</td>
 <td>Standard</td>
 <td>This resolver finds ivy files and artifacts in your file system.</td>
 </tr>
-
 <tr>
 <td>Url</td>
 <td>Standard</td>
 <td>This resolver finds ivy files and artifacts in your file system.</td>
 </tr>
-
 <tr>
 <td>Chain</td>
 <td>Composite</td>
 <td>Delegates the resolve to a chain of sub resolvers.</td>
 </tr>
-
 <tr>
 <td>Dual</td>
 <td>Composite</td>
@@ -500,17 +493,16 @@ Resolvers</strong></p>
 </tr>
 </tbody>
 </table>
-
 <p>There are two types of resolvers</p>
-
 <ul>
-<li><p>standard – these resolvers are used by Ivy for actual resolve task</p></li>
-
-<li><p>composite – these resolvers delegate the work to standard resolvers</p></li>
+<li>
+<p>standard – these resolvers are used by Ivy for actual resolve task</p>
+</li>
+<li>
+<p>composite – these resolvers delegate the work to standard resolvers</p>
+</li>
 </ul>
-
 <p>Let&rsquo;s go through an ivysettings.xml with a Url resolver :</p>
-
 <p><code>ivysettings.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;ivysettings&gt;</span>
   <span class="nt">&lt;resolvers&gt;</span>
@@ -519,11 +511,10 @@ Resolvers</strong></p>
       <span class="nt">&lt;artifact</span> <span class="na">pattern=</span><span class="s">&#34;http://ivyrep.xyz.com/[module]/[revision]/[artifact].[ext]&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/url&gt;</span>
   <span class="nt">&lt;/resolvers&gt;</span>
-<span class="nt">&lt;/ivysettings&gt;</span></code></pre></div>
-<p>The resolver named url-example will look for ivy.xml using &lt;ivy&gt;
+<span class="nt">&lt;/ivysettings&gt;</span>
+</code></pre></div><p>The resolver named url-example will look for ivy.xml using &lt;ivy&gt;
 element and artifacts using &lt;artifact&gt;. In the both elements, location
 and layout of the repository are defined in pattern attribute.</p>
-
 
 
 <div>&nbsp;</div>
@@ -541,16 +532,14 @@ and layout of the repository are defined in pattern attribute.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Apache Ivy Resolvers Examples</p>
-
 <p>Resolver is one the important concepts in Apache Ivy and understanding
 it thoroughly is quite essential. Examples listed below will help to
 reinforce the concept.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
       <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;xyz&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;resolvers&gt;</span></code></pre></div>
-<p>The above snippet defines a resolver called xyz using the maven 2 public
+<span class="nt">&lt;resolvers&gt;</span>
+</code></pre></div><p>The above snippet defines a resolver called xyz using the maven 2 public
 repository to find module metadata (using maven 2 poms) and artifacts.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
    <span class="nt">&lt;url</span> <span class="na">name=</span><span class="s">&#34;test&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span>
@@ -558,14 +547,14 @@ repository to find module metadata (using maven 2 poms) and artifacts.</p>
          <span class="na">pattern=</span> <span class="s">&#34;http://repo1.maven.org/maven2/[organisation]/[module]/[revision]/
 </span><span class="s">                     [artifact]-[revision].[ext]&#34;</span><span class="nt">/&gt;</span>
    <span class="nt">&lt;/url&gt;</span>
-<span class="nt">&lt;resolvers&gt;</span></code></pre></div>
-<p>defines a resolver named test using url. This is equivalent to the
+<span class="nt">&lt;resolvers&gt;</span>
+</code></pre></div><p>defines a resolver named test using url. This is equivalent to the
 in-built ibiblio resolver.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
    <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;pentaho&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span>
          <span class="na">root=</span><span class="s">&#34;http://repo.pentaho.org/artifactory/repo&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;resolvers&gt;</span></code></pre></div>
-<p>defines a resolver using ibiblio pointing to
+<span class="nt">&lt;resolvers&gt;</span>
+</code></pre></div><p>defines a resolver using ibiblio pointing to
 <a href="http://repo.pentaho.org/artifactory/repo">http://repo.pentaho.org/artifactory/repo</a> instead of the default
 <a href="http://repo1.maven.org/maven2">http://repo1.maven.org/maven2</a>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;resolvers&gt;</span>
@@ -575,8 +564,8 @@ in-built ibiblio resolver.</p>
       <span class="nt">&lt;artifact</span> <span class="na">pattern=</span> <span class="s">&#34;${ivy.default.ivy.user.dir}/local/[organisation]/
 </span><span class="s">                           [module]/[type]s/[artifact]-[revision]-[type]s.[ext]&#34;</span> <span class="nt">/&gt;</span>
    <span class="nt">&lt;/filesystem&gt;</span>
-<span class="nt">&lt;/resolvers&gt;</span></code></pre></div>
-<p>defines a local filesystem resolver named mylocal. Pattern uses Ivy
+<span class="nt">&lt;/resolvers&gt;</span>
+</code></pre></div><p>defines a local filesystem resolver named mylocal. Pattern uses Ivy
 variable <strong>ivy.default.ivy.user.dir</strong> which by default points .ivy2
 directory in user home directory and ${ivy.default.ivy.user.dir}/local
 points to $HOME/.ivy2/local directory. Rest of the tokens in the pattern
@@ -593,12 +582,11 @@ defines the repository layout.</p>
       <span class="nt">&lt;/filesystem&gt;</span>
       <span class="nt">&lt;ibiblio</span> <span class="na">name=</span><span class="s">&#34;ibiblio&#34;</span> <span class="na">m2compatible=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
    <span class="nt">&lt;/chain&gt;</span>
-<span class="nt">&lt;/resolvers&gt;</span></code></pre></div>
-<p>defines a Chain resolver. Chain is a composite resolver which delegates
+<span class="nt">&lt;/resolvers&gt;</span>
+</code></pre></div><p>defines a Chain resolver. Chain is a composite resolver which delegates
 to a chain of sub resolvers. Here Ivy first tries to resolve through the
 local filesystem resolver and on failure, it will try maven2 public
 repository.</p>
-
 
 
 <div>&nbsp;</div>
@@ -617,15 +605,11 @@ repository.</p>
 
 
 
-
 <p>Apache Ivy Default Resolvers</p>
-
 <p>In the absence of user defined resolvers, Ivy uses default resolvers
 which comes bundled with it.</p>
-
 <p><strong>Table 5.4. Default
 Resolvers</strong></p>
-
 <table>
 <thead>
 <tr>
@@ -634,32 +618,27 @@ Resolvers</strong></p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>local</td>
 <td>standard</td>
 <td>Filesystem resolver points to $HOME/.ivy2/local</td>
 </tr>
-
 <tr>
 <td>shared</td>
 <td>standard</td>
 <td>Filesystem resolver points to $HOME/.ivy2/shared</td>
 </tr>
-
 <tr>
 <td>public</td>
 <td>standard</td>
 <td>Ibiblio resolver points <a href="http://repo1.maven.org/maven2">http://repo1.maven.org/maven2</a></td>
 </tr>
-
 <tr>
 <td>main</td>
 <td>composite</td>
 <td>Chain and Dual resolver to shared and public</td>
 </tr>
-
 <tr>
 <td>default</td>
 <td>composite</td>
@@ -667,46 +646,43 @@ Resolvers</strong></p>
 </tr>
 </tbody>
 </table>
-
 <p>Hierarchical relationship of default resolvers is as follows</p>
-
 <ul>
-<li><p>default</p>
-
+<li>
+<p>default</p>
 <ul>
-<li><p>local</p></li>
-
-<li><p>main</p>
-
+<li>
+<p>local</p>
+</li>
+<li>
+<p>main</p>
 <ul>
-<li><p>shared</p></li>
-
-<li><p>public</p></li>
-</ul></li>
-</ul></li>
+<li>
+<p>shared</p>
+</li>
+<li>
+<p>public</p>
+</li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <p>Ivy by default uses resolver named default which first tries the local
 and on failure looks for shared and finally public. We can check this by
 running resolve task after deleting the $HOME/.ivy2/cache directory and
 disabling Internet connection of the machine.</p>
-
 <p><strong>Clearing the Cache</strong></p>
-
 <p>Once the cache directory is deleted, Ivy has to resolve and rebuild the
 cache by downloading the artifacts from Internet. So try this when you
 have less artifacts in cache.</p>
-
 <p>The screen shot shows that it has tried local, shared and public in that
 order</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/resolvers.png" alt="Apache Ivy Repository and Ivy Resolvers" />
 </figure>
 
-
 <p><strong>Figure 5.1. Default Resolve Order</strong></p>
-
 <p>Having gone through some of the important concepts, we are ready to
 build our own repositories.</p>
 

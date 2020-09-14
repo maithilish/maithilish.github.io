@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Enqueue Scripts - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,85 +625,84 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>In the tutorial, so far, we covered WordPress Plugin basics and the
+            <p>In the tutorial, so far, we covered WordPress Plugin basics and the
 admin module. In this chapter, we describe the frontend of Share on
 Social Plugin, the plugin project developed in the tutorial.</p>
-
 <p>For frontend, Share on Social Plugin uses class file
 <code>class-frontend.php</code> and the methods may broadly divided into three
 groups.</p>
-
 <ul>
-<li><p>which handle locker shortcode, fetch locker information and output
-social lockers.</p></li>
-
-<li><p>which handle scripts and stylesheets.</p></li>
-
-<li><p>methods to collect debug info.</p></li>
+<li>
+<p>which handle locker shortcode, fetch locker information and output
+social lockers.</p>
+</li>
+<li>
+<p>which handle scripts and stylesheets.</p>
+</li>
+<li>
+<p>methods to collect debug info.</p>
+</li>
 </ul>
-
 <p>We will not dwell much into the first one as you may not develop a
 similar plugin. Instead, we explain the other two - handling of scripts
 and collect debug info - as they are essential to all plugins.</p>
-
-<h2 id="8-1-wordpress-plugin-enqueue-scripts">8.1. WordPress Plugin Enqueue Scripts</h2>
-
+<h2 id="81wordpress-plugin-enqueue-scripts">8.1. WordPress Plugin Enqueue Scripts</h2>
 <p>Share on Social Plugin uses following scripts and stylesheets.</p>
-
 <ul>
-<li><p>Stylesheet of the plugin. - <strong>css/style.js</strong>.</p></li>
-
-<li><p>JavaScript to handle social shares - <strong>js/share.js</strong>.</p></li>
-
-<li><p>FaceBook API JavaScript-
-<a href="https://connect.facebook.net/en_US/all.js">https://connect.facebook.net/en_US/all.js</a></p></li>
-
-<li><p>Google Plus API JavaScript -
-<a href="https://apis.google.com/js/plusone.js">https://apis.google.com/js/plusone.js</a></p></li>
-
-<li><p>Twitter API JavaScript -
-<a href="https://platform.twitter.com/widgets.js">https://platform.twitter.com/widgets.js</a></p></li>
+<li>
+<p>Stylesheet of the plugin. - <strong>css/style.js</strong>.</p>
+</li>
+<li>
+<p>JavaScript to handle social shares - <strong>js/share.js</strong>.</p>
+</li>
+<li>
+<p>FaceBook API JavaScript-
+<a href="https://connect.facebook.net/en">https://connect.facebook.net/en</a>_US/all.js</p>
+</li>
+<li>
+<p>Google Plus API JavaScript -
+<a href="https://apis.google.com/js/plusone.js">https://apis.google.com/js/plusone.js</a></p>
+</li>
+<li>
+<p>Twitter API JavaScript -
+<a href="https://platform.twitter.com/widgets.js">https://platform.twitter.com/widgets.js</a></p>
+</li>
 </ul>
-
 <p>To add these scripts and stylesheet, either to header or footer, we have
 to use WordPress API Enqueue Functions.</p>
-
 <ul>
-<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_register_script" target="_blank">wp register
+<li>
+<p><a href="http://codex.wordpress.org/Function_Reference/wp_register_script" target="_blank">wp register
 script()</a></p>
-
 <ul>
 <li>registers a script with WordPress core.</li>
-</ul></li>
-
-<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script" target="_blank">wp enqueue
+</ul>
+</li>
+<li>
+<p><a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script" target="_blank">wp enqueue
 script()</a></p>
-
 <ul>
 <li>links script file to WordPress generated
 page.</li>
-</ul></li>
-
-<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_register_style" target="_blank">wp_register_style()</a></p>
-
+</ul>
+</li>
+<li>
+<p><a href="http://codex.wordpress.org/Function_Reference/wp_register_style" target="_blank">wp_register_style()</a></p>
 <ul>
 <li>registers
 stylesheet.</li>
-</ul></li>
-
-<li><p><a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style" target="_blank">wp_enqueue_style()</a></p>
-
+</ul>
+</li>
+<li>
+<p><a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style" target="_blank">wp_enqueue_style()</a></p>
 <ul>
 <li>links stylesheet to WordPress generated page.</li>
-</ul></li>
 </ul>
-
-<p>In Sos_Frontend::setup() method, we hook <code>add_sos_script()</code> method to
+</li>
+</ul>
+<p>In Sos_Frontend::setup() method, we hook <code> add_sos_script()</code> method to
 action hook <strong>wp_enqueue_scripts</strong>. In the method, we enqueue scripts
 and stylesheets.</p>
-
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Frontend {
 
@@ -732,12 +731,11 @@ and stylesheets.</p>
 
             ....
         }
-    }</code></pre></div>
-<p>In the action method, we register plugins stylesheet <code>css/style.css</code> and
+    }
+</code></pre></div><p>In the action method, we register plugins stylesheet <code>css/style.css</code> and
 script <code>js/share.js</code>. If the page contains <strong>share-on-social</strong>
 shortcode, then we enqueue the registered items and also the Twitter API
 script.</p>
-
 
 
 <div>&nbsp;</div>
@@ -756,60 +754,53 @@ script.</p>
 
 
 
-
 <p>The script enqueue functions wp_register_script() and
 wp_enqueue_script() takes following parameters.</p>
-
 <ul>
-<li><p><strong>handle</strong> - name used as handle to the script.</p></li>
-
-<li><p><strong>src</strong> - URL of the script.</p></li>
-
-<li><p><strong>deps</strong> - array of handles of the registered scripts that this
-script depends on.</p></li>
-
-<li><p><strong>ver</strong> - string to specify the script version number.</p></li>
-
-<li><p><strong>in_footer</strong> - if true, then script is added to footer.</p></li>
+<li>
+<p><strong>handle</strong> - name used as handle to the script.</p>
+</li>
+<li>
+<p><strong>src</strong> - URL of the script.</p>
+</li>
+<li>
+<p><strong>deps</strong> - array of handles of the registered scripts that this
+script depends on.</p>
+</li>
+<li>
+<p><strong>ver</strong> - string to specify the script version number.</p>
+</li>
+<li>
+<p><strong>in_footer</strong> - if true, then script is added to footer.</p>
+</li>
 </ul>
-
 <p>These functions links script files at the right time according to the
-script dependencies. While registering js/share.js, we passed <code>array(
-'jquey')</code> in the third parameter - deps. It indicates that our script
+script dependencies. While registering js/share.js, we passed <code>array( 'jquey')</code> in the third parameter - deps. It indicates that our script
 depends on JQuery script and WordPress links share.js after JQuery
 script is added to the page.</p>
-
 <p>Version parameter adds version number to end of URL as query string
 <strong>?ver=x.x</strong>. It is used to ensure that the correct version is sent to
 the client regardless of caching. To stop adding version to URL, set
 this parameter to null.</p>
-
 <p>Enqueue functions, normally, adds script to the page &lt;header&gt;. If last
 parameter in_footer is set as true, then script adds to the &lt;footer&gt;
 provided the site theme has wp_footer() template tag at right place.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-enqueuescript.png" alt="WordPress Enqueue Script - script enqueued to footer" />
 </figure>
 
-
 <p><strong>Register and Enqueue</strong></p>
-
 <p>We can enqueue script by calling wp_enqueue_script() without
-pre-registering. In the above code, we may directly enqueue <code>
-js/share.js</code> without registering it.</p>
-
+pre-registering. In the above code, we may directly enqueue <code>js/share.js</code> without registering it.</p>
 <p>The function wp_register_script() is useful either to register all the
 scripts in one place and enqueue them when needed or to handle
 dependencies.</p>
-
 <p>Scripts that are registered do not need to be manually enqueued, if they
 are listed as a dependency of another script that is enqueued. WordPress
 automatically links the registered script before it links the enqueued
 script that lists the registered script&rsquo;s handle as a dependency. For
 example, say bar.js is depends on foo.js and foo.js is registered, then
 enqueue bar.js links both foo.js and bar.js, in the order, to the page.</p>
-
 <p>Stylesheet register or enqueue functions are similar to script
 functions, except that stylesheets are always linked in &lt;header&gt; so
 there is in_footer parameter. Instead style functions has parameter -
@@ -817,7 +808,6 @@ there is in_footer parameter. Instead style functions has parameter -
 defined.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -833,17 +823,13 @@ defined.</p>
 <div>&nbsp;</div>
 
 
-
 <p>The functions referred here are only for use with frontend and there are
 equivalent functions for admin screen and login screen.</p>
-
 <p><strong>WordPress jQuery</strong></p>
-
 <p>jQuery library included with WordPress is set to noConflict mode and in
 that mode, we are allowed to use jQuery(#somefunction) and not the
 normal jQuery shorthand $(#somefunction). For more information on this
 refer <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#jQuery_noConflict_Wrappers" target="_blank">jQuery noConflict Wrappers</a></p>
-
 <p>In the next section, we explain the steps to pass data to the client
 i.e. browser. We touch upon enqueue of Facebook and Google Plus scripts
 while doing that.</p>

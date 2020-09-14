@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Pattern - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -394,39 +394,32 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Before going further, it&rsquo;s important to understand some of the core
+            <p>Before going further, it&rsquo;s important to understand some of the core
 concepts of Apache Ivy.</p>
-
 <h2 id="apache-ivy-settings-files">Apache Ivy Settings Files</h2>
-
 <p>Till now we have used default settings to carry out the tasks. Apache
 Ivy allows to override the default settings through a settings file.
-Apache Ivy setting file is an XML file, usually named as <code>
-ivysettings.xml</code>. In subsequent chapters, we use ivysettings.xml to
+Apache Ivy setting file is an XML file, usually named as <code>ivysettings.xml</code>. In subsequent chapters, we use ivysettings.xml to
 override the default settings.</p>
-
 <h2 id="apache-ivy-pattern">Apache Ivy Pattern</h2>
-
 <p>Apache Ivy uses a concept called Pattern in many tasks and settings.
 Pattern is used to define a directory structure or the artifact file
 name. Ivy uses patterns to</p>
-
 <ul>
-<li><p>to name artifacts.</p></li>
-
-<li><p>to place artifacts in the proper directory.</p></li>
-
-<li><p>to access or search artifacts in repositories.</p></li>
+<li>
+<p>to name artifacts.</p>
+</li>
+<li>
+<p>to place artifacts in the proper directory.</p>
+</li>
+<li>
+<p>to access or search artifacts in repositories.</p>
+</li>
 </ul>
-
 <p>Apache Ivy Pattern is composed of tokens which are replaced by actual
 values to evaluate a particular module or artifact. Token are surrounded
 by square brackets as [ext].</p>
-
 <p><strong>Table 5.1. Frequently used Tokens</strong></p>
-
 <table>
 <thead>
 <tr>
@@ -434,45 +427,37 @@ by square brackets as [ext].</p>
 <th align="left">Evaluates as</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">[organisation]</td>
 <td align="left">organisation name</td>
 </tr>
-
 <tr>
 <td align="left">[module]</td>
 <td align="left">module name</td>
 </tr>
-
 <tr>
 <td align="left">[revision]</td>
 <td align="left">revision name</td>
 </tr>
-
 <tr>
 <td align="left">[artifact]</td>
 <td align="left">artifact name (or id)</td>
 </tr>
-
 <tr>
 <td align="left">[type]</td>
 <td align="left">artifact type</td>
 </tr>
-
 <tr>
 <td align="left">[ext]</td>
 <td align="left">artifact file extension</td>
 </tr>
-
 <tr>
 <td align="left">[conf]</td>
 <td align="left">configuration name</td>
 </tr>
 </tbody>
 </table>
-
 <p>We may mix tokens, Ivy variables and actual directory names to compose a
 pattern. For example, we wish to install or add module - Pigo developed
 by xyz.com to our local repository. Module pigo Version 2.0 has three
@@ -481,10 +466,8 @@ jar. If we set file pattern as
 <code>[module]-[artifact]-[type]-[revision].[ext]</code>, then Ivy will rename the
 artifact files when they are placed into the cache. Tokens, their values
 and filename for each of the artifact will be as follows.</p>
-
 <p><strong>Table 5.2. Token
 examples</strong></p>
-
 <table>
 <thead>
 <tr>
@@ -493,20 +476,17 @@ examples</strong></p>
 <th align="left">File name (cache)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">pigoapp classes jar file</td>
 <td align="left">[pigo]-[pigoapp]-[jar]-[2.0].[jar]</td>
 <td align="left">pigo-pigoapp-jar-2.0.jar</td>
 </tr>
-
 <tr>
 <td align="left">pigoapp source jar file</td>
 <td align="left">[pigo]-[pigoapp]-[source]-[2.0].[jar]</td>
 <td align="left">pigo-pigoapp-source-2.0.jar</td>
 </tr>
-
 <tr>
 <td align="left">pigoapp javadoc jar file</td>
 <td align="left">[pigo]-[pigoapp]-[doc]-[2.0].[jar]</td>
@@ -514,14 +494,11 @@ examples</strong></p>
 </tr>
 </tbody>
 </table>
-
 <p><strong>Note</strong></p>
-
 <p>For token [type] value changes depending on the type of artifact and
 for all other tokens, values are same for all three artifacts.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -535,66 +512,61 @@ for all other tokens, values are same for all three artifacts.</p>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 <p>Apache Ivy Pattern to change the repository layout</p>
-
 <p>Patterns are helpful to control the directory structure and artifact
 naming. Let&rsquo;s go through some of the pattern examples which change the
 repository layout.</p>
-
 <p><code>[organisation]/[module]/[type]s/[artifact]-[revision].[ext]</code></p>
-
 <p>This pattern makes Ivy to</p>
-
 <ul>
-<li><p>create a directory with organisation name.</p></li>
-
-<li><p>then creates a subdirectory with module name.</p></li>
-
-<li><p>then creates three subdirectories for 3 types – jar, source and doc.
+<li>
+<p>create a directory with organisation name.</p>
+</li>
+<li>
+<p>then creates a subdirectory with module name.</p>
+</li>
+<li>
+<p>then creates three subdirectories for 3 types – jar, source and doc.
 As there is a <strong>s</strong> after [type], the actual directory names will
-be jars, sources and docs.</p></li>
-
-<li><p>then place the artifacts under the respective directories. File name
-consists of artifact name, revision and extension.</p></li>
+be jars, sources and docs.</p>
+</li>
+<li>
+<p>then place the artifacts under the respective directories. File name
+consists of artifact name, revision and extension.</p>
+</li>
 </ul>
-
 <p>Resultant directory tree and files are shown in the next screenshot.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">com.xyz/pigo/jars/pigoapp-1.1.jar
+<pre><code class="language-screen" data-lang="screen">com.xyz/pigo/jars/pigoapp-1.1.jar
 com.xyz/pigo/sources/pigoapp-1.1.jar
-com.xyz/pigo/docs/pigoapp-1.1.jar</code></pre></div>
-<p>Let&rsquo;s see what would be the layout with the next pattern</p>
-
+com.xyz/pigo/docs/pigoapp-1.1.jar
+</code></pre><p>Let&rsquo;s see what would be the layout with the next pattern</p>
 <p><code>[organisation]/[module]/[artifact]-[type]-[revision].[ext]</code></p>
-
 <p>This pattern lands all artifacts in the same directory and artifact file
 name ends up with the types. Layout and file names are shown in the next
 screenshot.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">com.xyz/pigo/pigoapp-jar-1.1.jar
+<pre><code class="language-screen" data-lang="screen">com.xyz/pigo/pigoapp-jar-1.1.jar
 com.xyz/pigo/pigoapp-source-1.1.jar
-com.xyz/pigo/pigoapp-doc-1.1.jar</code></pre></div>
-<p>Apache Ivy Pattern to rename the artifacts in Retrieval Task</p>
-
+com.xyz/pigo/pigoapp-doc-1.1.jar
+</code></pre><p>Apache Ivy Pattern to rename the artifacts in Retrieval Task</p>
 <p>In the previous chapter, for &lt;ivy:retrieve&gt; we used following pattern</p>
-
 <p><code>myfolder/[artifact]-[revision].[ext]</code></p>
-
 <p>This pattern makes Ivy to</p>
-
 <ul>
-<li><p>to retrieve required artifacts and rename the artifacts with
-artifact name, revision and ext.</p></li>
-
-<li><p>then copy the artifact to myfolder.</p></li>
+<li>
+<p>to retrieve required artifacts and rename the artifacts with
+artifact name, revision and ext.</p>
+</li>
+<li>
+<p>then copy the artifact to myfolder.</p>
+</li>
 </ul>
-
 <!-- end list -->
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">myfolder/pigoapp-1.1.jar
+<pre><code class="language-screen" data-lang="screen">myfolder/pigoapp-1.1.jar
 myfolder/pigoapp-1.1.jar
-myfolder/pigo/pigoapp-1.1.jar</code></pre></div>
-
+myfolder/pigo/pigoapp-1.1.jar
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -609,21 +581,24 @@ myfolder/pigo/pigoapp-1.1.jar</code></pre></div>
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
 <p>To sum up, Apache Ivy uses Pattern setting to</p>
-
 <ul>
-<li><p>to name or rename artifacts.</p></li>
-
-<li><p>to change the repository or directory layouts.</p></li>
-
-<li><p>to place artifacts in the proper directory.</p></li>
-
-<li><p>to access, search or retrieve artifacts from different repositories
-layouts.</p></li>
+<li>
+<p>to name or rename artifacts.</p>
+</li>
+<li>
+<p>to change the repository or directory layouts.</p>
+</li>
+<li>
+<p>to place artifacts in the proper directory.</p>
+</li>
+<li>
+<p>to access, search or retrieve artifacts from different repositories
+layouts.</p>
+</li>
 </ul>
 
           </main>

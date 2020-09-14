@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T11:22:00+0530",
         "dateModified" : "2019-01-11T11:22:00+0530",
-        "wordCount" : "834",
+        "wordCount" : "835",
         "keywords" : [ "wordpress google charts","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Google Charts - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,29 +625,23 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="9-3-wordpress-google-charts">9.3. WordPress Google Charts</h2>
-
+            <h2 id="93wordpress-google-charts">9.3. WordPress Google Charts</h2>
 <p>In the previous blog, we setup a new sub menu page to display the charts
 and enqueue Google Chart API scripts. In this blog, we explain the steps
 to load Google Chart API, fetch chart data with Ajax and draw WordPress
 Google Charts.</p>
-
 <h3 id="load-google-charts-api">Load Google Charts API</h3>
-
 <p><a href="https://developers.google.com/chart/interactive/docs/quick_start" target="_blank">Google
 Charts</a>
 is a versatile package to present data as charts. It is robust and
 provides large number of ready to use chart types. Google Chart script
 is dynamically loaded from Google servers which eliminates the need to
 install chart software on the WordPress server.</p>
-
 <p>The script <code>js/chart.js</code>, loads Google Charts API and its corechart
 package and sets drawChart() function as callback.</p>
-
 <p><code>share-on-social/js/chart.js</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">google</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">&#39;visualization&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">
+<span class="nx">google</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">&#39;visualization&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="s1">&#39;packages&#39;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;https://developers.google.com/chart/interactive/docs/reference#dataparam&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="s1">&#39;corechart&#39;</span> <span class="p">]</span>
 <span class="p">});</span>
 
@@ -657,12 +651,10 @@ package and sets drawChart() function as callback.</p>
     <span class="nx">drawSummaryChart</span><span class="p">();</span>
     <span class="nx">drawStatsChart</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>This will fetch Google Chart API and corechart package from Google
+</code></pre></div><p>This will fetch Google Chart API and corechart package from Google
 servers. Once API is loaded, the callback function <code>drawChart()</code> is
 invoked which calls functions to draw Summary chart and Stats chart. We
 will step through the Summary Chart to understand the flow.</p>
-
 
 
 <div>&nbsp;</div>
@@ -681,13 +673,10 @@ will step through the Summary Chart to understand the flow.</p>
 
 
 
-
 <h3 id="fetch-chart-data-using-wordpress-ajax">Fetch Chart Data using WordPress Ajax</h3>
-
-<p>On the server side, <code>Sos_Ajax::setup()</code> method registers
+<p>On the server side, <code> Sos_Ajax::setup()</code> method registers
 <code>Sos_Ajax::get_stats_summary()</code> method as the callback to action hook
 <strong>wp_ajax_get-stats-summary</strong>.</p>
-
 <p><code>share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Ajax {
 
@@ -695,14 +684,12 @@ will step through the Summary Chart to understand the flow.</p>
         ....                
         add_action( &#39;wp_ajax_get-stats-summary&#39;, 
                 array($this,&#39;get_stats_summary&#39;) );
-    }</code></pre></div>
-<p>When chart.js makes an Ajax call with action as <strong>get-stats-summary</strong>,
+    }
+</code></pre></div><p>When chart.js makes an Ajax call with action as <strong>get-stats-summary</strong>,
 WordPress Ajax script <code>wp-admin/admin-ajax.php</code> invokes
 <code>Sos_Ajax::get_stats_summary()</code>.</p>
-
 <p>After linking Ajax handler on server side, we make Ajax call in the
 function <code>drawSummaryChart()</code> to fetch chart data.</p>
-
 <p><code>share-on-social/js/chart.js</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">drawSummaryChart</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -713,34 +700,36 @@ function <code>drawSummaryChart()</code> to fetch chart data.</p>
          <span class="nx">action</span> <span class="o">:</span> <span class="s1">&#39;get-stats-summary&#39;</span><span class="p">,</span>
          <span class="nx">_ajax_nonce</span> <span class="o">:</span> <span class="nx">sos_chart</span><span class="p">.</span><span class="nx">stats_summary_nonce</span><span class="p">,</span>
        <span class="p">},</span>
-       <span class="kr">async</span> <span class="o">:</span> <span class="kc">false</span>
+       <span class="nx">async</span> <span class="o">:</span> <span class="kc">false</span>
      <span class="p">}).</span><span class="nx">responseText</span><span class="p">;</span>
 
     <span class="p">....</span>
-</code></pre></div>
-<p>Client uses<code>jQuery.ajax()</code> function to make Ajax call with following
+</code></pre></div><p>Client uses<code> jQuery.ajax()</code> function to make Ajax call with following
 parameters. It uses some of the data passed by the server earlier
 through <strong>sos_chart</strong> variable.</p>
-
 <ul>
-<li><p><strong>type</strong> - use POST type for the call.</p></li>
-
-<li><p><strong>url</strong> - URL of the WordPress Ajax routing script
-<code>wp-admin/admin-ajax.php</code>.</p></li>
-
-<li><p><strong>dataType</strong> - call returns JSON data.</p></li>
-
-<li><p><strong>data:action</strong> - use <strong>get-stats-summary</strong> as Ajax action name
+<li>
+<p><strong>type</strong> - use POST type for the call.</p>
+</li>
+<li>
+<p><strong>url</strong> - URL of the WordPress Ajax routing script
+<code>wp-admin/admin-ajax.php</code>.</p>
+</li>
+<li>
+<p><strong>dataType</strong> - call returns JSON data.</p>
+</li>
+<li>
+<p><strong>data:action</strong> - use <strong>get-stats-summary</strong> as Ajax action name
 which we have linked to Ajax method <code>Sos_Ajax::get_stats_summary()</code>
-through action hook <strong>wp_ajax_get-stats-summary</strong>.</p></li>
-
-<li><p><strong>_ajax_nonce</strong> - WordPress security token to ensure that only the
-designated client makes the call.</p></li>
+through action hook <strong>wp_ajax_get-stats-summary</strong>.</p>
+</li>
+<li>
+<p><strong>_ajax_nonce</strong> - WordPress security token to ensure that only the
+designated client makes the call.</p>
+</li>
 </ul>
-
 <p>When WordPress Ajax routing script admin-ajax.php receives the call, it
 invokes <code>Sos_Ajax::get_stats_summary()</code> method to handle the request.</p>
-
 <p><code>share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function get_stats_summary () {
         $valid_req = check_ajax_referer( &#39;sos-get-stats-summary&#39;, false, false );
@@ -749,20 +738,17 @@ invokes <code>Sos_Ajax::get_stats_summary()</code> method to handle the request.
         }
         $data = $this-&gt;get_stats_summary_json();
         wp_die( $data );
-    }</code></pre></div>
-<p>The method, first checks whether it is a valid Ajax request originated
+    }
+</code></pre></div><p>The method, first checks whether it is a valid Ajax request originated
 from indented client by using the security token nonce. If not, then
 call terminates and returns -1 to client. If security check goes through
 then it obtains summary stats as JSON string and returns it to the
 client.</p>
-
 <h3 id="google-chart-data-json">Google Chart Data JSON</h3>
-
 <p>The WordPress Option <strong>sos_stats_summary</strong> holds the stats summary and
 <code>Sos_Ajax::get_stats_summary_json()</code> fetches the data and constructs an
 array out of it. The data array is encoded as JSON using PHP function
 <code>json_encode()</code> and returned.</p>
-
 <p><code>share-on-social/admin/class-ajax.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function get_stats_summary_json () {
        
@@ -792,25 +778,21 @@ array out of it. The data array is encoded as JSON using PHP function
         }
         
         return json_encode( $data );
-    }</code></pre></div>
-<figure class="text-center" >
+    }
+</code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-stats-json.png" alt="WordPress Google Charts - chart data json" />
 </figure>
-
 
 <p>The assoc array, $data, uses index &lsquo;cols&rsquo; to set two columns <strong>Share
 on</strong> (Social Media name) and <strong>Total</strong> and their data types - <strong>string</strong>
 or <strong>number</strong>. Next, we scroll through the option data $summary and
-construct rows. The index &lsquo;rows&rsquo; holds rows of data as cells &copy; and
+construct rows. The index &lsquo;rows&rsquo; holds rows of data as cells (c) and
 each cell holds values (v) for each social media - name and total. Refer
 [DataQuery
 JSON</a>
 to know more about the data format.</p>
-
 <h3 id="draw-chart">Draw Chart</h3>
-
 <p>The function <code>drawSummaryChart()</code> uses JSON data to draw the chart.</p>
-
 <p><code>share-on-social/js/chart.js</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">drawSummaryChart</span><span class="p">()</span> <span class="p">{</span>
     <span class="p">....</span>
@@ -827,14 +809,11 @@ to know more about the data format.</p>
 
     <span class="nx">chart</span><span class="p">.</span><span class="nx">draw</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>From JSON data, it constructs <code>DataTable</code> object. Next, it creates a <code>
-BarChart</code> object and attaches &lt;div id=&lsquo;summary_chart&rsquo;&gt;&lt;/div&gt;, the
+</code></pre></div><p>From JSON data, it constructs <code>DataTable</code> object. Next, it creates a <code>BarChart</code> object and attaches &lt;div id='summary_chart&rsquo;&gt;&lt;/div&gt;, the
 empty placeholder to render the chart set in the previous blog. The
 chart options such as orientation, width, height etc., are set in
-<strong>options</strong> object. Finally, <code>chart.draw()</code> function draws the chart
+<strong>options</strong> object. Finally, <code> chart.draw()</code> function draws the chart
 with the data and options as parameter.</p>
-
 
 
 <div>&nbsp;</div>
@@ -852,10 +831,8 @@ with the data and options as parameter.</p>
 <div>&nbsp;</div>
 
 
-
 <p>The second chart, Shares, is displayed in the similar way, but uses Line
 Chart to present the Shares by date.</p>
-
 <p>The next chapter explains the steps to internationalize the plugin.</p>
 
           </main>

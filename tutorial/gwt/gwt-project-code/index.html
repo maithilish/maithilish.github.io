@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Project Code - GWT Tutorial - CodeTab</title></head>
 
@@ -711,12 +711,8 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="gwt-project-code">GWT Project Code</h1>
-
+            <h1 id="gwt-project-code">GWT Project Code</h1>
 <p>The code for complete project covered in this tutorial can be downloaded from <a href="https://github.com/maithilish/codefs/tree/master/gwt" target="_blank">GitHub</a></p>
-
 <p>Source code of the GWT project is archived into
 part-1.zip, part-2.zip etc., corresponding to parts of the book. Each
 archive contains Chapter or Section wise code. Instead of sifting
@@ -725,23 +721,18 @@ to understand the source without much effort. Download section also
 contains a standalone java application, <strong>RStore,</strong> which is used to
 load the data to database in Part 2 of the book.. Download the relevant
 archives and use them as explained below.</p>
-
-<h3 id="project-fins">Project - Fins</h3>
-
+<h3 id="project---fins">Project - Fins</h3>
 <p>It is essential to go through the initial three chapters of the tutorial
 before attempting to run the project code. Some chapters/sections like
 6.3 Title Panel, Google Charts, Chapter 9 DAO etc., requires some
 additional setup. In case of errors, refer the respective chapter or
 section.</p>
-
 <h2 id="import-fins-code">Import Fins Code</h2>
-
 <p>Sample code is zipped into part-1.zip, part-2.zip etc., Use them for
 respective parts of the book. <strong>Please note that zips are just source
 code and not Eclipse project.</strong> It is essential to go through the first
 three chapters of the tutorial and create the GWT project as explained
 in those chapters and then import the source code as explained below.</p>
-
 <p>Download the zip files from Fins Code tab of the site and unzip the
 archive to some location. Next, select Fins Project in Project Explorer
 and choose <strong>File</strong> → <strong>Import</strong> and in Select window expand General and
@@ -753,35 +744,27 @@ src and war folders checkbox as shown in the next figure. In Into Folder
 field, enter fins. Check Overwrite existing resources, but <strong>deselect</strong>
 the <strong>Create top-level folder</strong> and click Finish. Now project has the
 source up to the end of that chapter or section.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/importsample.png" alt="Sample selection" />
 </figure>
 
-
-<h6 id="figure-5-3-sample-selection">Figure 5.3. Sample selection</h6>
-
+<h6 id="figure-53-sample-selection">Figure 5.3. Sample selection</h6>
 <p> </p>
-
 <p>For many of us browsing full blow source code is bit tedious and hence
 incremental source code are placed into Chapter and Section folders in
 the zip. If you are comfortable in browsing the full blown source, then
 you free to select src and war from full-code folder which imports
 source as at end of that part of the book.</p>
-
 <p>After code is imported, clean the project using <strong>Project</strong> →  <strong>Clean</strong>
 . This rebuilds all classes under <code>war/WEB-INF/classes</code>. Project may
 throw strange errors if old classes are lying around in that directory.</p>
-
 <p>GWT compiler uses <strong>gwt-unitCache</strong> dir under project directory to
 speed-up the compile. After source import, delete gwt-unitCache dir else
 GWT may use earlier compilation units from cache. This step is only
 applicable when you import Fins code as file time-stamp may not be in
 proper order. <strong>No need to do this</strong> when you develop your own app
 except as a last resort.</p>
-
 <p> </p>
-
 
 
 <div>&nbsp;</div>
@@ -799,29 +782,20 @@ except as a last resort.</p>
 <div>&nbsp;</div>
 
 
-
-<h3 id="project-rstore">Project - RStore</h3>
-
+<h3 id="project---rstore">Project - RStore</h3>
 <p>RStore is used in <strong>Part 2</strong> of the book to load the data to database.</p>
-
 <h5 id="prepare-rstore-project">Prepare RStore project</h5>
-
 <p>Download RStore.zip from the book site. Create a regular Java project
 named rstore with default settings. Select the project in Project
 Explorer and choose <strong>File</strong> → <strong>Import</strong>. In Import dialog, expand
 general and choose Archive File and import RStore.zip into folder
 rstore.</p>
-
 <h5 id="dependencies">Dependencies</h5>
-
 <p>RStore requires HSQLDB, Data Nucleus JDO, MyBatis and Hibernate
 libraries. Following table lists the
 dependencies.</p>
-
 <p> </p>
-
-<h6 id="table-8-1-dependencies">Table 8.1. Dependencies</h6>
-
+<h6 id="table-81-dependencies">Table 8.1. Dependencies</h6>
 <table>
 <thead>
 <tr>
@@ -831,7 +805,6 @@ dependencies.</p>
 <th>MyBatis</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>hsqldb-2.2.9.jar</td>
@@ -839,49 +812,42 @@ dependencies.</p>
 <td>hibernate-commons-annotations-4.0.1.Final.jar</td>
 <td>mybatis-3.2.0.jar</td>
 </tr>
-
 <tr>
 <td>commons-lang-2.6.jar</td>
 <td>datanucleus-api-jdo-3.1.3.jar</td>
 <td>hibernate-core-4.1.10.Final.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td>log4j-1.2.16.jar</td>
 <td>datanucleus-core-3.1.4.jar</td>
 <td>hibernate-jpa-2.0-api-1.0.1.Final.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td>datanucleus-rdbms-3.1.4.jar</td>
 <td>jboss-logging-3.1.0.GA.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td>datanucleus-enhancer-3.1.1.jar</td>
 <td>jboss-transaction-api_1.1_spec-1.0.0.Final.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td>asm-4.0.jar</td>
 <td>antlr-2.7.7.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td></td>
 <td>dom4j-1.6.1.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td></td>
@@ -890,11 +856,8 @@ dependencies.</p>
 </tr>
 </tbody>
 </table>
-
 <p> </p>
-
-<h6 id="table-8-2-download-url">Table 8.2. Download URL</h6>
-
+<h6 id="table-82-download-url">Table 8.2. Download URL</h6>
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -956,12 +919,9 @@ Download Core Framework zip
 </tr>
 </tbody>
 </table>
-
 <p> </p>
-
 <p>Download the packages and place the essential jars in projects lib
 directory. Also add the jars to project build path.</p>
-
 
 
 <div>&nbsp;</div>
@@ -980,19 +940,14 @@ directory. Also add the jars to project build path.</p>
 
 
 
-
 <p> </p>
-
 <h4 id="automatic-dependency-management">Automatic Dependency Management</h4>
-
 <p>That&rsquo;s a handful of downloads. Rather than struggling with downloads, it
 makes a lot of sense to use dependency management software like Maven or
 Apache Ivy.</p>
-
 <p>Maven is the leader in this space, but if you are in a hurry then go for
 Apache Ivy, which is equally powerful. Apache Ivy is quite easy to start
 with, requires zero configuration and comes with a Plugin for Eclipse.</p>
-
 <p>With Eclipse Plugin, IvyDE, you may shift to automatic dependency
 management in just under ten minutes. All you have to do is, install
 IvyDE plugin and add the ivy.xml file, which is in the root folder of

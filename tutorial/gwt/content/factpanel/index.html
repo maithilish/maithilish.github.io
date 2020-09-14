@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>FactPanel - GWT Tutorial - CodeTab</title></head>
 
@@ -711,52 +711,43 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-5-factpanel">6.5. FactPanel</h2>
-
+            <h2 id="65factpanel">6.5. FactPanel</h2>
 <p>FactPanel displays FactItem in a HorizontalPanel as shown in figure.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/factpanel.png" alt="FactPanel" />
 </figure>
 
-
-<h6 id="figure-6-4-factpanel">Figure 6.4. FactPanel</h6>
-
+<h6 id="figure64factpanel">Figure 6.4. FactPanel</h6>
 <p><code>FactItem</code> is a widget with two Labels, one for text and another for
 value, and FactPanel holds the FactItems. Instead of UiBinder template,
 <code>FactPanel</code> and <code>FactItem</code> directly extends <code>HorizontalPanel</code>.</p>
-
 <p><code>in.fins.client.widget/FactItem.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">FactItem</span> <span class="nf">extends</span> <span class="n">HorizontalPanel</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FactItem</span> <span class="kd">extends</span> <span class="n">HorizontalPanel</span> <span class="o">{</span>
 
-        <span class="kd">private</span> <span class="nf">Label</span> <span class="n">label</span><span class="p">;</span>
-        <span class="kd">private</span> <span class="nf">String</span><span class="p">[]</span> <span class="n">matchs</span><span class="p">;</span>
-        <span class="kd">private</span> <span class="nf">Label</span> <span class="n">value</span><span class="p">;</span>
-        <span class="kd">private</span> <span class="nf">String</span> <span class="n">category</span><span class="p">;</span>
+        <span class="kd">private</span> <span class="n">Label</span> <span class="n">label</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">matchs</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">Label</span> <span class="n">value</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">category</span><span class="o">;</span>
 
         <span class="nd">@UiConstructor</span>
-        <span class="kd">public</span> <span class="nf">FactItem</span><span class="p">(</span><span class="n">String</span> <span class="nf">category</span><span class="p">,</span> <span class="n">String</span> <span class="nf">text</span><span class="p">,</span> <span class="n">String</span> <span class="nf">match</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">category</span> <span class="o">=</span> <span class="n">category</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">matchs</span> <span class="o">=</span> <span class="n">match</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&#34;[,]+&#34;</span><span class="p">);</span>
+        <span class="kd">public</span> <span class="nf">FactItem</span><span class="o">(</span><span class="n">String</span> <span class="n">category</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">,</span> <span class="n">String</span> <span class="n">match</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">category</span> <span class="o">=</span> <span class="n">category</span><span class="o">;</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">matchs</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;[,]+&#34;</span><span class="o">);</span>
 
-                <span class="n">label</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-                <span class="n">label</span><span class="p">.</span><span class="na">setStyleName</span><span class="p">(</span><span class="s">&#34;fins-KeyValuePanel-Label-Key&#34;</span><span class="p">);</span>
-                <span class="n">add</span><span class="p">(</span><span class="n">label</span><span class="p">);</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Label</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
+                <span class="n">label</span><span class="o">.</span><span class="na">setStyleName</span><span class="o">(</span><span class="s">&#34;fins-KeyValuePanel-Label-Key&#34;</span><span class="o">);</span>
+                <span class="n">add</span><span class="o">(</span><span class="n">label</span><span class="o">);</span>
 
-                <span class="n">value</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">();</span>
-                <span class="n">value</span><span class="p">.</span><span class="na">setStyleName</span><span class="p">(</span><span class="s">&#34;fins-KeyValuePanel-Label-Value&#34;</span><span class="p">);</span>
-                <span class="n">add</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-        <span class="p">}</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Label</span><span class="o">();</span>
+                <span class="n">value</span><span class="o">.</span><span class="na">setStyleName</span><span class="o">(</span><span class="s">&#34;fins-KeyValuePanel-Label-Value&#34;</span><span class="o">);</span>
+                <span class="n">add</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
 
-<span class="p">....</span></code></pre></div>
-<p><code>FactItem</code> uses @UiConstructor annotation for constructor as Snapshot&rsquo;s
+<span class="o">....</span>
+</code></pre></div><p><code>FactItem</code> uses @UiConstructor annotation for constructor as Snapshot&rsquo;s
 UiBinder requires this to instantiate the FactItem.</p>
-
 <p>Following UI template, in <code>Snapshot.ui.xml</code>, instantiate FactPanel and
 FactItems.</p>
-
 <p><code>in.fins.client.content/Snapshot.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;g:layer</span> <span class="na">left=</span><span class="s">&#34;2%&#34;</span> <span class="na">width=</span><span class="s">&#34;96%&#34;</span> <span class="na">top=</span><span class="s">&#39;6%&#39;</span> <span class="na">height=</span><span class="s">&#39;7%&#39;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;f:FactPanel&gt;</span>
@@ -770,8 +761,8 @@ FactItems.</p>
                         <span class="nt">&lt;f:FactItem</span> <span class="na">category=</span><span class="s">&#34;Quote&#34;</span> <span class="na">text=</span><span class="s">&#34;MC&#34;</span> <span class="na">match=</span><span class="s">&#34;Mk.Cap&#34;</span> <span class="nt">/&gt;</span>
                         <span class="nt">&lt;f:FactItem</span> <span class="na">category=</span><span class="s">&#34;Quote&#34;</span> <span class="na">text=</span><span class="s">&#34;Ind. PE&#34;</span> <span class="na">match=</span><span class="s">&#34;Ind. PE&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;/f:FactPanel&gt;</span>
-        <span class="nt">&lt;/g:layer&gt;</span></code></pre></div>
-<p>UiBinder creates FactItems through constructor marked with
+        <span class="nt">&lt;/g:layer&gt;</span>
+</code></pre></div><p>UiBinder creates FactItems through constructor marked with
 @UiConstructor and then add them to <code>FactPanel</code> as child widgets and
 then add FactPanel to layer of <code>LayoutPanel</code>. This is the first time we
 are adding custom widget as the children of another custom widget. This
@@ -781,18 +772,14 @@ to FactPanel without implementing HasWidgets and reasons being,
 <code>FactPanel</code> extends <code>HorizontalPanel</code> which implements HasWidgets. In
 case we use UiBinder for FactPanel then we have to implement HasWidgets,
 and we will do this for another widget in a later section.</p>
-
-<p>UI entry <code>&lt;f:FactItem category=&quot;Quote&quot; text=&quot;High/Low&quot; match=&quot;52 Wk
-High,52 Wk Low&quot; /&gt;</code> is bit different which has two keys in match, 52 Wk
+<p>UI entry <code>&lt;f:FactItem category=&quot;Quote&quot; text=&quot;High/Low&quot; match=&quot;52 Wk High,52 Wk Low&quot; /&gt;</code> is bit different which has two keys in match, 52 Wk
 High and 52 Wk Low delimited with a comma. This FactItem takes the value
 from two Facts and displays them in a single FactItem. Constructor
 splits string variable, match, into <code>String</code>[] and which is used later
 to match against Fact with key &ldquo;52 Wk High&rdquo; and another Fact with &ldquo;52 Wk
 Low&rdquo;.</p>
-
 <p>Next we have to pass the selected <code>Symbol</code> to <code>FactPanel</code> so that it
 displays the fact values.</p>
-
 
 
 <div>&nbsp;</div>
@@ -811,66 +798,57 @@ displays the fact values.</p>
 
 
 
-
 <h5 id="symbolevent-and-symbolaction">SymbolEvent and SymbolAction</h5>
-
 <p>When user selects a name in <code>AutoSuggest</code>, it has to fetch the <code>Symbol</code>
 from <code>SymbolDatabase</code> and fire a <code>SymbolEvent</code> so that any interested
 client may retrieve the Symbol from SymbolEvent. Symbol holds data in
 <code>DataGroup</code>, <code>Data</code> and <code>Fact</code>, and FactPanel has to iterate over the
 received Symbol, and display the Facts.</p>
-
 <p>AutoSuggest is a component of view layer whereas, task of fetching a
 Symbol is an aspect of domain/model layer and therefore dealing with
 SymbolEvent in AutoSuggest is not a good design practice, and instead a
 mediator has to handle this task. <code>SymbolAction</code> acts as mediator
 between AutoSuggest and clients like FactPanel, and it fetches a Symbol
 from server, encapsulate it in SymbolEvent and fires the event.</p>
-
 <p> </p>
-
 <p>Propagation of events from AutoSuggest to FactPanel happens in two
 stages as shown in the figure. AutoSuggest fires NameEvent on name
 selection and SymbolAction handles this event, and once SymbolAction
 fetches Symbol it fires a SymbolEvent, and FactPanel handles it to
 display facts.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/fp-events.png" alt="Event Propagation" />
 </figure>
 
-
-<h6 id="figure-6-5-event-propagation">Figure 6.5. Event Propagation</h6>
-
+<h6 id="figure65event-propagation">Figure 6.5. Event Propagation</h6>
 <p>First instantiate SymbolAction and let it handle NameEvent.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">Snapshot</span><span class="o">()</span> <span class="o">{</span>
 
-               <span class="p">....</span>
+               <span class="o">....</span>
 
-                <span class="n">SymbolAction</span> <span class="nf">symbolAction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SymbolAction</span><span class="p">(</span><span class="n">getFilterMap</span><span class="p">());</span>
-                <span class="n">symbolAction</span><span class="p">.</span><span class="na">setEventSource</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">NameEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">symbolAction</span><span class="p">);</span>
-        <span class="p">}</span>
+                <span class="n">SymbolAction</span> <span class="n">symbolAction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SymbolAction</span><span class="o">(</span><span class="n">getFilterMap</span><span class="o">());</span>
+                <span class="n">symbolAction</span><span class="o">.</span><span class="na">setEventSource</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">NameEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">symbolAction</span><span class="o">);</span>
+        <span class="o">}</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
-        <span class="kd">private</span> <span class="nf">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span> <span class="nf">getFilterMap</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span> <span class="nf">filterMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">();</span>
-                <span class="n">filterMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;Quote&#34;</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="s">&#34;Quote&#34;</span><span class="p">));</span>
-                <span class="k">return</span> <span class="n">filterMap</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;</span> <span class="nf">getFilterMap</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;</span> <span class="n">filterMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;();</span>
+                <span class="n">filterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Quote&#34;</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="s">&#34;Quote&#34;</span><span class="o">));</span>
+                <span class="k">return</span> <span class="n">filterMap</span><span class="o">;</span>
+        <span class="o">}</span>
 
-        <span class="kd">private</span> <span class="nf">static</span> <span class="n">String</span><span class="p">[]</span> <span class="nf">getFilter</span><span class="p">(</span><span class="n">String</span> <span class="nf">cat</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">cat</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&#34;Quote&#34;</span><span class="p">))</span> <span class="p">{</span>
-                        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="p">[]</span> <span class="p">{</span> <span class="s">&#34;Price&#34;</span><span class="p">,</span> <span class="s">&#34;PB&#34;</span><span class="p">,</span> <span class="s">&#34;P/E&#34;</span><span class="p">,</span> <span class="s">&#34;BV&#34;</span><span class="p">,</span> <span class="s">&#34;DY (%)&#34;</span><span class="p">,</span>
-                                        <span class="s">&#34;DIV (%)&#34;</span><span class="p">,</span> <span class="s">&#34;FV&#34;</span><span class="p">,</span> <span class="s">&#34;EPS&#34;</span><span class="p">,</span> <span class="s">&#34;Mk.Cap&#34;</span><span class="p">,</span> <span class="s">&#34;Ind. PE&#34;</span><span class="p">,</span> 
-                                        <span class="s">&#34;52 Wk High&#34;</span><span class="p">,</span><span class="s">&#34;52 Wk Low&#34;</span> <span class="p">};</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>Snapshot</code> creates <code>SymbolAction</code> and adds it as handle for <code>NameEvent</code>.
+        <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getFilter</span><span class="o">(</span><span class="n">String</span> <span class="n">cat</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">cat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;Quote&#34;</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span> <span class="s">&#34;Price&#34;</span><span class="o">,</span> <span class="s">&#34;PB&#34;</span><span class="o">,</span> <span class="s">&#34;P/E&#34;</span><span class="o">,</span> <span class="s">&#34;BV&#34;</span><span class="o">,</span> <span class="s">&#34;DY (%)&#34;</span><span class="o">,</span>
+                                        <span class="s">&#34;DIV (%)&#34;</span><span class="o">,</span> <span class="s">&#34;FV&#34;</span><span class="o">,</span> <span class="s">&#34;EPS&#34;</span><span class="o">,</span> <span class="s">&#34;Mk.Cap&#34;</span><span class="o">,</span> <span class="s">&#34;Ind. PE&#34;</span><span class="o">,</span> 
+                                        <span class="s">&#34;52 Wk High&#34;</span><span class="o">,</span><span class="s">&#34;52 Wk Low&#34;</span> <span class="o">};</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>Snapshot</code> creates <code>SymbolAction</code> and adds it as handle for <code>NameEvent</code>.
 Snapshot is set as eventSource for both <code>SymbolAction</code> and
 <code>AutoSuggest</code>. Static method <code>Snapshot.getFilter()</code> returns keys and
 <code>SymbolDatabase</code> generate Facts for those keys. Initially getFilter()
@@ -878,61 +856,57 @@ returns keys for only one category i.e. Quote, as FactPanel displays
 Facts from that category, and later more categories are added. With this
 code, SymbolAction receives the NameEvent and fetches Symbol which
 contains Facts as specified by <code>filterMap()</code>.</p>
-
 <p>Next job is to fire SymbolEvent from SymbolAction and let the FactPanel
 handle the SymbolEvent.</p>
-
 <p><code>in.fins.client.action/SymbolAction.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onNameChange</span><span class="p">(</span><span class="n">NameEvent</span> <span class="nf">nameEvent</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">getSymbol</span><span class="p">(</span><span class="n">nameEvent</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNameChange</span><span class="o">(</span><span class="n">NameEvent</span> <span class="n">nameEvent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">getSymbol</span><span class="o">(</span><span class="n">nameEvent</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
 
-        <span class="kd">private</span> <span class="nf">void</span> <span class="n">getSymbol</span><span class="p">(</span><span class="n">String</span> <span class="nf">symbolName</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">Symbol</span> <span class="nf">symbol</span> <span class="o">=</span> <span class="n">SymbolDatabase</span><span class="p">.</span><span class="na">getSymbol</span><span class="p">(</span><span class="n">symbolName</span><span class="p">,</span> <span class="n">filterMap</span><span class="p">);</span>
-                <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="nf">category</span> <span class="o">:</span> <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">getCategories</span><span class="p">(</span><span class="n">symbol</span><span class="p">))</span> <span class="p">{</span>
-                        <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">setPositionDate</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span>
-                                        <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">getLastDate</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">category</span><span class="p">));</span>
-                <span class="p">}</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fireEventFromSource</span><span class="p">(</span>
-                               <span class="k">new</span> <span class="n">SymbolEvent</span><span class="p">(</span><span class="n">symbol</span><span class="p">),</span><span class="n">eventSource</span><span class="p">);</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Fired SymbolEvent &#34;</span> <span class="o">+</span> <span class="n">symbol</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>in.fins.client.widget/FactPanel.java</code></p>
+        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">getSymbol</span><span class="o">(</span><span class="n">String</span> <span class="n">symbolName</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Symbol</span> <span class="n">symbol</span> <span class="o">=</span> <span class="n">SymbolDatabase</span><span class="o">.</span><span class="na">getSymbol</span><span class="o">(</span><span class="n">symbolName</span><span class="o">,</span> <span class="n">filterMap</span><span class="o">);</span>
+                <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">category</span> <span class="o">:</span> <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">getCategories</span><span class="o">(</span><span class="n">symbol</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">setPositionDate</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span> <span class="n">category</span><span class="o">,</span>
+                                        <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">getLastDate</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span> <span class="n">category</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">fireEventFromSource</span><span class="o">(</span>
+                               <span class="k">new</span> <span class="n">SymbolEvent</span><span class="o">(</span><span class="n">symbol</span><span class="o">),</span><span class="n">eventSource</span><span class="o">);</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Fired SymbolEvent &#34;</span> <span class="o">+</span> <span class="n">symbol</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>in.fins.client.widget/FactPanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onSymbolChange</span><span class="p">(</span><span class="n">SymbolEvent</span> <span class="nf">event</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-                <span class="n">Symbol</span> <span class="nf">symbol</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getSymbol</span><span class="p">();</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">c</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">getWidgetCount</span><span class="p">();</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">Widget</span> <span class="nf">widget</span> <span class="o">=</span> <span class="n">getWidget</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
-                        <span class="k">if</span> <span class="p">(</span><span class="n">widget</span> <span class="nf">instanceof</span> <span class="n">FactItem</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="n">FactItem</span> <span class="nf">item</span> <span class="o">=</span> <span class="p">(</span><span class="n">FactItem</span><span class="p">)</span> <span class="n">widget</span><span class="p">;</span>
-                                <span class="n">Date</span> <span class="nf">date</span> <span class="o">=</span> <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">getPositionDate</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span>
-                                                <span class="n">item</span><span class="p">.</span><span class="na">getCategory</span><span class="p">());</span>
-                                <span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">facts</span> <span class="o">=</span> <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">getFacts</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span>
-                                                <span class="n">item</span><span class="p">.</span><span class="na">getCategory</span><span class="p">(),</span> <span class="n">date</span><span class="p">);</span>
-                                <span class="n">item</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">getValue</span><span class="p">(</span><span class="n">facts</span><span class="p">,</span> <span class="n">item</span><span class="p">.</span><span class="na">getMatchs</span><span class="p">()));</span>
-                        <span class="p">}</span>
-                <span class="p">}</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>ComplexPanel.getWidget()</code> returns the children, and if it is the
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSymbolChange</span><span class="o">(</span><span class="n">SymbolEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">setVisible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+                <span class="n">Symbol</span> <span class="n">symbol</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">getSymbol</span><span class="o">();</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">getWidgetCount</span><span class="o">();</span> <span class="n">c</span><span class="o">++)</span> <span class="o">{</span>
+                        <span class="n">Widget</span> <span class="n">widget</span> <span class="o">=</span> <span class="n">getWidget</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">widget</span> <span class="k">instanceof</span> <span class="n">FactItem</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="n">FactItem</span> <span class="n">item</span> <span class="o">=</span> <span class="o">(</span><span class="n">FactItem</span><span class="o">)</span> <span class="n">widget</span><span class="o">;</span>
+                                <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">getPositionDate</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span>
+                                                <span class="n">item</span><span class="o">.</span><span class="na">getCategory</span><span class="o">());</span>
+                                <span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">facts</span> <span class="o">=</span> <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">getFacts</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span>
+                                                <span class="n">item</span><span class="o">.</span><span class="na">getCategory</span><span class="o">(),</span> <span class="n">date</span><span class="o">);</span>
+                                <span class="n">item</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">getValue</span><span class="o">(</span><span class="n">facts</span><span class="o">,</span> <span class="n">item</span><span class="o">.</span><span class="na">getMatchs</span><span class="o">()));</span>
+                        <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>ComplexPanel.getWidget()</code> returns the children, and if it is the
 instance of FactItem then its value is set. SymbolHelper method is used
 to get the List&lt;Fact&gt;. Private method <code>getValue()</code> on match returns
 the value from the List&lt;Fact&gt;. FactPanel is hidden with
 <code>setVisible(false)</code> in the constructor and made visible only when
 SymbolEvent is received else FactPanel is visible even before user
 selects a name.</p>
-
 <p>Finally, make FactPanel as a handler for SymbolEvent</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">FactPanel</span> <span class="n">factPanelFactory</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">FactPanel</span> <span class="nf">fp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactPanel</span><span class="p">();</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">SymbolEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">fp</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-
+        <span class="kd">public</span> <span class="n">FactPanel</span> <span class="nf">factPanelFactory</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">FactPanel</span> <span class="n">fp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactPanel</span><span class="o">();</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">SymbolEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">fp</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">fp</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -949,9 +923,7 @@ selects a name.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="filtermap">FilterMap</h2>
-
 <p>SymbolDatabase populates the Symbol with Fact based on keys in FilterMap
 and this makes the job of minting new Symbols with random values quite
 easy. Its real purpose is not that instead it reduces the data
@@ -961,7 +933,6 @@ the unfiltered Symbol with all these data point then bloated Symbol uses
 unnecessary bandwidth. Instead, FilterMap is sent to sever to trim down
 the symbol before transmission to save network resources but more about
 this in the next part when we cover the RPC calls.</p>
-
 <p>This pattern of event handling is used extensively for the custom widget
 from now onwards.</p>
 

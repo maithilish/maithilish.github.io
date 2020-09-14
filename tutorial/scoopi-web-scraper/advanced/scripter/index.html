@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Scripter - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,74 +491,62 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="script-plugin">Script Plugin</h1>
-
+            <h1 id="script-plugin">Script Plugin</h1>
 <p>The example in the previous chapter converts date field using built-in
 DateRoller plugin. However, it is not possible to handle all types of
 modification with built-in plugins. To cope with myriad possibilities,
 Scoopi provides Scripter step to which user can hook arbitrary
 JavaScript to modify data.</p>
-
 <h2 id="scripter-step">Scripter Step</h2>
-
 <p>The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-8a/job.yml" target="_blank">Example 8a</a>
 adds <em>process</em> step to <em>jsoupDefault</em> steps in bs task. The relevant
 snippet is shown below</p>
-
 <p><code>defs/examples/fin/jsoup/ex-8a/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsTask:
+<pre><code class="language-raw" data-lang="raw">bsTask:
   dataDef: bs
   steps:
     jsoupDefault:
       process:
-        class: &#34;org.codetab.scoopi.step.script.Scripter&#34;
+        class: &quot;org.codetab.scoopi.step.script.Scripter&quot;
         previous: filter
         next: appender
-        .... </code></pre></div>
-<p>It inserts a new process step between filter and appender step of
+        .... 
+</code></pre><p>It inserts a new process step between filter and appender step of
 jsoupDefault steps. The step class is
 <em>org.codetab.scoopi.step.script.Scripter</em> which executes Script Plugin.</p>
-
 <h2 id="script-plugin-1">Script Plugin</h2>
-
 <p>The Script Plugin can execute any user provided JavaScript. The plugin
 definition for process step is as below.</p>
-
 <p><code>defs/examples/fin/jsoup/ex-8a/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsTask:
+<pre><code class="language-raw" data-lang="raw">bsTask:
   dataDef: bs
   steps:
     jsoupDefault:
       process:
-        class: &#34;org.codetab.scoopi.step.script.Scripter&#34;
+        class: &quot;org.codetab.scoopi.step.script.Scripter&quot;
         previous: filter
         next: appender
         plugins: [
           plugin: { 
             name: script, 
-            class: &#34;org.codetab.scoopi.plugin.script.BasicScript&#34;,
-            script: &#34;/defs/examples/fin/jsoup/ex-8a/script.js&#34;,
-            entryPoint: &#34;execute&#34;,
-            scripts: [ &#34;/defs/examples/fin/jsoup/ex-8a/moment.min.js&#34;] }            
-        ]</code></pre></div>
-<p>The plugins/plugin definition is similar to the one used in previous
+            class: &quot;org.codetab.scoopi.plugin.script.BasicScript&quot;,
+            script: &quot;/defs/examples/fin/jsoup/ex-8a/script.js&quot;,
+            entryPoint: &quot;execute&quot;,
+            scripts: [ &quot;/defs/examples/fin/jsoup/ex-8a/moment.min.js&quot;] }            
+        ]
+</code></pre><p>The plugins/plugin definition is similar to the one used in previous
 chapter but with following changes.</p>
-
 <ul>
 <li>class - org.codetab.scoopi.plugin.script.BasicScript</li>
 <li>script - path to js file which contains the JavaScript code</li>
 <li>entryPoint - the name of JavaScript function to call</li>
 <li>scripts - array of additional JavaScript libraries to load</li>
 </ul>
-
 <p>The <em>entryPoint</em> property in plugin calls the function defined in js and
 <em>scripts</em> array is used to add any other required JavaScripts or
 libraries. In the above example, we add moment.min.js script which is
 well known library in JavaScript to manipulate dates.</p>
-
 <p>The JavaScript file <code>/defs/examples/fin/jsoup/ex-8a/script.js</code> is where
 we have put our JavaScript code which is as shown below.</p>
 <div class="highlight"><pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">execute</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -574,17 +562,14 @@ we have put our JavaScript code which is as shown below.</p>
 <span class="p">}</span>
     <span class="k">return</span> <span class="nx">data</span>
  <span class="p">}</span>
-</code></pre></div>
-<p>The Scripter step passes data object which contains list of date items,
+</code></pre></div><p>The Scripter step passes data object which contains list of date items,
 to the execute() function in script.js and js loops through each data
 item and format the date using Moment library.</p>
-
 <p>While script plugin is the easy and flexible way to modify any sort of
 data but its execution is inherently slow when compared to the built-in
 converter plugin. If you are well versed in Java, then better option is
 to develop your own converter plugin by extending
 <em>org.codetab.scoopi.plugin.converter</em> class.</p>
-
 <p>Next, we move on to creation of new locators from links parsed from
 pages and pagination.</p>
 

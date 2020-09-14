@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>multiple task on Codetab</title>
@@ -19,7 +19,8 @@
       <guid>https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/</guid>
       <description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
 The Example-1 scrapes Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. We can add these two task within tasks element.
-But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.</description>
+But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.
+&amp;nbsp;   (adsbygoogle = window.</description>
     </item>
     
   </channel>

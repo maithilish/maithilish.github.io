@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T18:06:00+0530",
         "dateModified" : "2019-01-10T18:06:00+0530",
-        "wordCount" : "1371",
+        "wordCount" : "1372",
         "keywords" : [ "gwt datagrid","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>DataGrid - GWT Tutorial - CodeTab</title></head>
 
@@ -711,37 +711,29 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-9-factgrid">6.9. FactGrid</h2>
-
+            <h2 id="69factgrid">6.9. FactGrid</h2>
 <p>FactGrid uses GWT <code>DataGrid</code> widget to display the data in a tabular
 view. Instead of adding it to Snapshot which already full with widgets,
 a GWT <code>PopupPanel</code> comes handy to display more data without forcing the
 user to leave the page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/factgrid.png" alt="FactGrid" />
 </figure>
 
-
-<h6 id="figure-6-13-factgrid">Figure 6.13. FactGrid</h6>
-
+<h6 id="figure613factgrid">Figure 6.13. FactGrid</h6>
 <p>Like the <code>CellTable</code>, which we used earlier in FactTable, GWT <code>DataGrid</code>
 also displays data in tabular view. Both are subclasses of
 <code>AbstractCellTable</code> and supports columns, sorting, paging whereas
 DataGrid additionally has a Header, Footer and a scrollable content area
 in the center.</p>
-
 <p>Following UI declaration adds pop-up ToolbarItem to FactTable.</p>
-
 <p><code>in.fins.client.content/Snapshot.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">       <span class="nt">&lt;f:FactTable</span> <span class="na">captionText=</span><span class="s">&#34;Cash Flow&#34;</span> <span class="na">category=</span><span class="s">&#34;Cash Flow&#34;</span><span class="nt">&gt;</span>
                <span class="nt">&lt;f:ToolbarItem</span> <span class="na">type=</span><span class="s">&#34;previous&#34;</span> <span class="na">category=</span><span class="s">&#34;Cash Flow&#34;</span> <span class="nt">/&gt;</span>
                <span class="nt">&lt;f:ToolbarItem</span> <span class="na">type=</span><span class="s">&#34;popup&#34;</span> <span class="na">category=</span><span class="s">&#34;Cash Flow&#34;</span> <span class="nt">/&gt;</span>
                <span class="nt">&lt;f:ToolbarItem</span> <span class="na">type=</span><span class="s">&#34;next&#34;</span> <span class="na">category=</span><span class="s">&#34;Cash Flow&#34;</span> <span class="nt">/&gt;</span>
-       <span class="nt">&lt;/f:FactTable&gt;</span></code></pre></div>
-<p>Unlike, other GWT widgets, PopupPanel is not added to any other panel.
+       <span class="nt">&lt;/f:FactTable&gt;</span>
+</code></pre></div><p>Unlike, other GWT widgets, PopupPanel is not added to any other panel.
 Hence, PopupPanel and FactGrid are initialized bit differently than what
 we have done so far. We add them through code rather than through
 UiBinder. At any time, only one PopupPanel is visible so we can reuse
@@ -749,84 +741,81 @@ the single instances of PopupPanel and FactGrid among all pop-up
 ToolbarItem. Considering these two aspects, we create PopupPanel and
 FactGrid in the constructor of Snapshot and assign the FactGrid to the
 field which is shared by pop-up ToolbarItem.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">       <span class="kd">public</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="p">{</span>
-               <span class="n">factGrid</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactGrid</span><span class="p">();</span>
-               <span class="n">PopupPanel</span> <span class="nf">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PopupPanel</span><span class="p">();</span>
-               <span class="n">popup</span><span class="p">.</span><span class="na">setGlassEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-               <span class="n">popup</span><span class="p">.</span><span class="na">setAutoHideEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-               <span class="n">popup</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">factGrid</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">       <span class="kd">public</span> <span class="nf">Snapshot</span><span class="o">()</span> <span class="o">{</span>
+               <span class="n">factGrid</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FactGrid</span><span class="o">();</span>
+               <span class="n">PopupPanel</span> <span class="n">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PopupPanel</span><span class="o">();</span>
+               <span class="n">popup</span><span class="o">.</span><span class="na">setGlassEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+               <span class="n">popup</span><span class="o">.</span><span class="na">setAutoHideEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+               <span class="n">popup</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">factGrid</span><span class="o">);</span>
 
-               <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-               <span class="p">....</span></code></pre></div>
-<p>Methods <code>show()</code> or <code>center()</code> shows the PopupPanel and method <code>hide()</code>
+               <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+               <span class="o">....</span>
+</code></pre></div><p>Methods <code>show()</code> or <code>center()</code> shows the PopupPanel and method <code>hide()</code>
 hides it. <code>AutoHideEnabled</code> is set to true so that PopupPanel is hidden
 when user clicks area outside the pop-up and with this we avoid <code>hide()</code>
 method.</p>
-
 <p>FactGrid is a slightly tweaked DataGrid to handle Facts and these tweaks
 are to overcome a couple of challenges:</p>
-
 <ul>
-<li><p>mapping the value methods to DataGrid columns</p></li>
-
-<li><p>reorder the data as suitable to DataGrid.</p></li>
+<li>
+<p>mapping the value methods to DataGrid columns</p>
+</li>
+<li>
+<p>reorder the data as suitable to DataGrid.</p>
+</li>
 </ul>
-
 <h5 id="indexed-column">Indexed Column</h5>
-
 <p>Following code snippet adds Contact info columns to
 DataGrid.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span> <span class="nf">nameColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span> <span class="n">nameColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;()</span> <span class="o">{</span>
                         <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="nf">String</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Contact</span> <span class="nf">contact</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="k">return</span> <span class="n">contact</span><span class="p">.</span><span class="na">getName</span><span class="p">();</span>
-                        <span class="p">}</span>
-                <span class="p">};</span>
+                        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getValue</span><span class="o">(</span><span class="n">Contact</span> <span class="n">contact</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="n">contact</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
 
-                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span> <span class="nf">addrColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span> <span class="n">addrColumn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextColumn</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;()</span> <span class="o">{</span>
                         <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="nf">String</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Contact</span> <span class="nf">contact</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="k">return</span> <span class="n">contact</span><span class="p">.</span><span class="na">getAddress</span><span class="p">();</span>
-                        <span class="p">}</span>
-                <span class="p">};</span>
-                <span class="n">dataGrid</span><span class="p">.</span><span class="na">addColumn</span><span class="p">(</span><span class="n">nameColumn</span><span class="p">);</span>
-                <span class="n">dataGrid</span><span class="p">.</span><span class="na">addColumn</span><span class="p">(</span><span class="n">addrColumn</span><span class="p">);</span></code></pre></div>
-<p>Adding columns to DataGrid is easy as long as there are distinct
+                        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getValue</span><span class="o">(</span><span class="n">Contact</span> <span class="n">contact</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="n">contact</span><span class="o">.</span><span class="na">getAddress</span><span class="o">();</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
+                <span class="n">dataGrid</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="n">nameColumn</span><span class="o">);</span>
+                <span class="n">dataGrid</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="n">addrColumn</span><span class="o">);</span>
+</code></pre></div><p>Adding columns to DataGrid is easy as long as there are distinct
 methods, which returns a value for each column like <code>getName()</code> and
 <code>getAddress()</code>. Model can have distinct methods as long as they are few
 and well known before hand. In any financial statement, there are a
 couple of hundred data points like Captial, Debt, Sales etc., and it is
 not feasible to have distinct model class for each of them nor to have
 methods like <code>getCapital()</code>, <code>getSales()</code> etc. All data points are
-represented by Fact class with <code>getKey()</code> and <code>getValue()</code> methods and
-we have to map <code>getValue()</code>method to each and every column of the
-DataGrid and <code>IndexColumn</code> class achieves this feat.</p>
-
+represented by Fact class with <code> getKey()</code> and <code>getValue()</code> methods and
+we have to map <code>getValue() </code>method to each and every column of the
+DataGrid and <code> IndexColumn</code> class achieves this feat.</p>
 <p><code>in.fins.client.widget/FactGrid.java FactGrid$IndexedColumn.class</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">class</span> <span class="nf">IndexedColumn</span> <span class="kd">extends</span> <span class="nf">Column</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="kd">private</span> <span class="nf">int</span> <span class="n">index</span><span class="p">;</span>
-        <span class="kd">private</span> <span class="nf">boolean</span> <span class="n">roundoff</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">class</span> <span class="nc">IndexedColumn</span> <span class="kd">extends</span> <span class="n">Column</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">index</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">roundoff</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="nf">IndexedColumn</span><span class="p">(</span><span class="kt">int</span> <span class="nf">index</span><span class="p">,</span> <span class="n">HorizontalAlignmentConstant</span> <span class="nf">align</span><span class="p">,</span>
-                        <span class="kt">boolean</span> <span class="nf">sortable</span><span class="p">,</span> <span class="kt">boolean</span> <span class="nf">roundoff</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kd">super</span><span class="p">(</span><span class="k">new</span> <span class="n">TextCell</span><span class="p">());</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">index</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
-                <span class="n">setHorizontalAlignment</span><span class="p">(</span><span class="n">align</span><span class="p">);</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">roundoff</span> <span class="o">=</span> <span class="n">roundoff</span><span class="p">;</span>
-                <span class="n">setSortable</span><span class="p">(</span><span class="n">sortable</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="nf">IndexedColumn</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="n">HorizontalAlignmentConstant</span> <span class="n">align</span><span class="o">,</span>
+                        <span class="kt">boolean</span> <span class="n">sortable</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">roundoff</span><span class="o">)</span> <span class="o">{</span>
+                <span class="kd">super</span><span class="o">(</span><span class="k">new</span> <span class="n">TextCell</span><span class="o">());</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">index</span> <span class="o">=</span> <span class="n">index</span><span class="o">;</span>
+                <span class="n">setHorizontalAlignment</span><span class="o">(</span><span class="n">align</span><span class="o">);</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">roundoff</span> <span class="o">=</span> <span class="n">roundoff</span><span class="o">;</span>
+                <span class="n">setSortable</span><span class="o">(</span><span class="n">sortable</span><span class="o">);</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">String</span> <span class="n">getValue</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">facts</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">roundoff</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="k">return</span> <span class="n">facts</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">).</span><span class="na">getRoundoff</span><span class="p">();</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="n">facts</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
-        <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><code>IndexedColumn</code> extends GWT <code>Column</code> and each IndexedColumn holds an
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getValue</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">facts</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">roundoff</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="n">facts</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">index</span><span class="o">).</span><span class="na">getRoundoff</span><span class="o">();</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="n">facts</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">index</span><span class="o">).</span><span class="na">getValue</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><code>IndexedColumn</code> extends GWT <code>Column</code> and each IndexedColumn holds an
 index corresponding to its column position in DataGrid. Column type is
 set to <code>List&lt;Fact&gt;</code>, and because of this, overridden method <code>getValue()</code>
 gets <code>List&lt;Fact&gt;</code> as input. From the list index gets the <code>Fact</code>
@@ -834,7 +823,6 @@ pertaining to that column and its <code>getValue()</code> method returns the val
 for the column. Apart from index, constructor also sets other parameters
 like align, sortable and roundoff which are useful to customize the
 columns. IndexedColumn is a non public class of FactGrid.</p>
-
 
 
 <div>&nbsp;</div>
@@ -852,51 +840,43 @@ columns. IndexedColumn is a non public class of FactGrid.</p>
 <div>&nbsp;</div>
 
 
-
 <h5 id="transpose">Transpose</h5>
-
 <p>Even though, IndexedColumn maps List&lt;Fact&gt; to DataGrid columns,
 List&lt;Fact&gt; corresponds to a row of DataGrid. List&lt;Fact&gt; is collected
 into another List which is List of List&lt;Fact&gt; or List&lt;List&lt;Fact&gt;&gt;
 and it is data for all the rows of DataGrid which is rendered as shown
 in following figure.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/factgrid-notranspose.png" alt="FactGrid" />
 </figure>
 
-
-<h6 id="figure-6-14-factgrid">Figure 6.14. FactGrid</h6>
-
+<h6 id="figure614factgrid">Figure 6.14. FactGrid</h6>
 <p>Order of multidimensional List is not proper, and we have to flip the
 List&lt;List&lt;Fact&gt;&gt; to render it properly. <code>FactGrid.transpose()</code>
 method does exactly that.</p>
-
 <p><code>in.fins.client.widget/FactGrid.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">factsList</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">factsList</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="k">return</span> <span class="n">factsList</span><span class="p">;</span>
-                <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">transpose</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="n">factsList</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">factsList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="n">factsList</span><span class="o">;</span>
+                <span class="o">}</span>
 
-                <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">tList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">factsList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">).</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">tFacts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span><span class="p">();</span>
-                        <span class="k">for</span> <span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">facts</span> <span class="o">:</span> <span class="n">factsList</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="n">tList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;();</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">factsList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">).</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">tFacts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;();</span>
+                        <span class="k">for</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">facts</span> <span class="o">:</span> <span class="n">factsList</span><span class="o">)</span> <span class="o">{</span>
                                 <span class="c1">// facts at index are added to new list
-</span><span class="c1"></span>                                <span class="n">tFacts</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">facts</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
-                        <span class="p">}</span>
-                        <span class="n">tList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">tFacts</span><span class="p">);</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="n">tList</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p>List&lt;List&lt;Fact&gt;&gt; is traversed and, for each of its List&lt;Fact&gt;,
+</span><span class="c1"></span>                                <span class="n">tFacts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">facts</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+                        <span class="o">}</span>
+                        <span class="n">tList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">tFacts</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="n">tList</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p>List&lt;List&lt;Fact&gt;&gt; is traversed and, for each of its List&lt;Fact&gt;,
 index is held in variable i. Then Fact at index is retrieved and added
 to a new List&lt;Fact&gt;; tFacts and all these new List&lt;Fact&gt; are
 collected into new List&lt;List&lt;Fact&gt; tList. This effectively transposes
 columns into rows.</p>
-
-<h6 id="table-6-1-old-list-fact-fact">Table 6.1. Old List&lt;Fact&lt;Fact&gt;&gt;</h6>
-
+<h6 id="table61old-listfactfact">Table 6.1. Old List&lt;Fact&lt;Fact&gt;&gt;</h6>
 <table>
 <thead>
 <tr>
@@ -905,20 +885,17 @@ columns into rows.</p>
 <th>Index 1</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>List&lt;Fact&gt; for 2010</td>
 <td>Capital 200</td>
 <td>Reserve 150</td>
 </tr>
-
 <tr>
 <td>List&lt;Fact&gt; for 2011</td>
 <td>Capital 200</td>
 <td>Reserve 250</td>
 </tr>
-
 <tr>
 <td>List&lt;Fact&gt; for 2012</td>
 <td>Capital 210</td>
@@ -926,9 +903,7 @@ columns into rows.</p>
 </tr>
 </tbody>
 </table>
-
-<h6 id="table-6-2-transposed-list-fact-fact">Table 6.2. Transposed List&lt;Fact&lt;Fact&gt;&gt;</h6>
-
+<h6 id="table62transposed-listfactfact">Table 6.2. Transposed List&lt;Fact&lt;Fact&gt;&gt;</h6>
 <table>
 <thead>
 <tr>
@@ -938,7 +913,6 @@ columns into rows.</p>
 <th>Index 2</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>List&lt;Fact&gt; for Capital</td>
@@ -946,7 +920,6 @@ columns into rows.</p>
 <td>Capital 200</td>
 <td>Capital 210</td>
 </tr>
-
 <tr>
 <td>List&lt;Fact&gt; for Reserve</td>
 <td>Reserve 150</td>
@@ -955,129 +928,121 @@ columns into rows.</p>
 </tr>
 </tbody>
 </table>
-
 <h5 id="event-wiring">Event wiring</h5>
-
 <p>ToolbarItem UiFactory in Snapshot.java wires the events.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">ToolbarItem</span> <span class="n">toolbarItemFactory</span><span class="p">(</span><span class="n">String</span> <span class="nf">type</span><span class="p">,</span> <span class="n">String</span> <span class="nf">category</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">FinsResources</span> <span class="nf">images</span> <span class="o">=</span> <span class="n">FinsResources</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+        <span class="kd">public</span> <span class="n">ToolbarItem</span> <span class="nf">toolbarItemFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">type</span><span class="o">,</span> <span class="n">String</span> <span class="n">category</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">FinsResources</span> <span class="n">images</span> <span class="o">=</span> <span class="n">FinsResources</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">;</span>
 
-<span class="p">....</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">type</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&#34;popup&#34;</span><span class="p">))</span> <span class="p">{</span>
-                        <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">FactGrid</span><span class="o">&gt;</span> <span class="nf">dataGroupAction</span> <span class="o">=</span> 
-                             <span class="k">new</span> <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">FactGrid</span><span class="o">&gt;</span><span class="p">(</span>
-                                        <span class="n">category</span><span class="p">,</span> <span class="n">getFilter</span><span class="p">(</span><span class="n">category</span><span class="p">));</span>
-                        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">SymbolEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span>
-                                        <span class="n">dataGroupAction</span><span class="p">);</span>
+<span class="o">....</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;popup&#34;</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">FactGrid</span><span class="o">&gt;</span> <span class="n">dataGroupAction</span> <span class="o">=</span> 
+                             <span class="k">new</span> <span class="n">DataGroupAction</span><span class="o">&lt;</span><span class="n">FactGrid</span><span class="o">&gt;(</span>
+                                        <span class="n">category</span><span class="o">,</span> <span class="n">getFilter</span><span class="o">(</span><span class="n">category</span><span class="o">));</span>
+                        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">SymbolEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span>
+                                        <span class="n">dataGroupAction</span><span class="o">);</span>
 
-                        <span class="n">ToolbarItem</span> <span class="nf">tbi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ToolbarItem</span><span class="p">(</span><span class="n">images</span><span class="p">.</span><span class="na">tablesheet</span><span class="p">());</span>
-                        <span class="n">tbi</span><span class="p">.</span><span class="na">addClickHandler</span><span class="p">(</span><span class="n">dataGroupAction</span><span class="p">);</span>
+                        <span class="n">ToolbarItem</span> <span class="n">tbi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ToolbarItem</span><span class="o">(</span><span class="n">images</span><span class="o">.</span><span class="na">tablesheet</span><span class="o">());</span>
+                        <span class="n">tbi</span><span class="o">.</span><span class="na">addClickHandler</span><span class="o">(</span><span class="n">dataGroupAction</span><span class="o">);</span>
                         <span class="c1">// tbi.addClickHandler(factPopup);
-</span><span class="c1"></span>                        <span class="n">tbi</span><span class="p">.</span><span class="na">setEventSource</span><span class="p">(</span><span class="n">dataGroupAction</span><span class="p">);</span>
-                        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">DataGroupEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span>
-                                        <span class="n">dataGroupAction</span><span class="p">,</span> <span class="n">factGrid</span><span class="p">);</span>
-                        <span class="k">return</span> <span class="n">tbi</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p>FactGrid displays the data for a category for a range of dates, and this
+</span><span class="c1"></span>                        <span class="n">tbi</span><span class="o">.</span><span class="na">setEventSource</span><span class="o">(</span><span class="n">dataGroupAction</span><span class="o">);</span>
+                        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">DataGroupEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span>
+                                        <span class="n">dataGroupAction</span><span class="o">,</span> <span class="n">factGrid</span><span class="o">);</span>
+                        <span class="k">return</span> <span class="n">tbi</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p>FactGrid displays the data for a category for a range of dates, and this
 sort of data is available from <code>DataGroup</code>, and <code>DataGroupAction</code> is
 used to fetch <code>DataGroup</code> for a category. <code>DataGroupAction</code> handles the
 <code>SymbolEvent</code> fired by <code>SymbolAction</code> and assign the <code>Symbol</code> to its
 field for later reference. On pop-up ToolbarItem click, it fires
 <code>ClickEvent</code> which is handled by <code>DataGroupAction</code> and it fetches the
-<code>DataGroup</code> for the symbol/category and fires <code>DataGroupEvent</code>.
+<code>DataGroup</code> for the symbol/category and fires <code> DataGroupEvent</code>.
 <code>FactGrid</code> handles the <code>DataGroupEvent</code> through handler method
 <code>onDataGroupChange()</code>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/fg-events.png" alt="Events" />
 </figure>
 
-
-<h6 id="figure-6-15-events">Figure 6.15. Events</h6>
-
+<h6 id="figure615events">Figure 6.15. Events</h6>
 <p>Method <code>onDataGroupChange()</code> transforms the data and set it to DataGrid.</p>
-
 <p><code>in.fins.client.widget/FactGrid.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"> <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">factsList</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="n">factsList</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// fact at index 0 is duplicated
 </span><span class="c1"></span>      <span class="c1">// used as label for each row
-</span><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="nf">facts</span> <span class="o">:</span> <span class="n">factsList</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">Fact</span> <span class="nf">labelFact</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fact</span><span class="p">();</span>
-            <span class="n">labelFact</span><span class="p">.</span><span class="na">setKey</span><span class="p">(</span><span class="s">&#34;Label&#34;</span><span class="p">);</span>
-            <span class="n">labelFact</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">facts</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">).</span><span class="na">getKey</span><span class="p">());</span> <span class="c1">// key is used as label
-</span><span class="c1"></span>          <span class="n">facts</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">labelFact</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">dataGrid</span><span class="p">.</span><span class="na">setRowCount</span><span class="p">(</span><span class="n">factsList</span><span class="p">.</span><span class="na">size</span><span class="p">(),</span> <span class="kc">true</span><span class="p">);</span>
-        <span class="n">dataGrid</span><span class="p">.</span><span class="na">setRowData</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">factsList</span><span class="p">);</span>
-        <span class="n">dataGrid</span><span class="p">.</span><span class="na">clearTableWidth</span><span class="p">();</span>
-        <span class="n">dataGrid</span><span class="p">.</span><span class="na">redraw</span><span class="p">();</span>
-    <span class="p">}</span>
+</span><span class="c1"></span>      <span class="k">for</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span> <span class="n">facts</span> <span class="o">:</span> <span class="n">factsList</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Fact</span> <span class="n">labelFact</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fact</span><span class="o">();</span>
+            <span class="n">labelFact</span><span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">&#34;Label&#34;</span><span class="o">);</span>
+            <span class="n">labelFact</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">facts</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">).</span><span class="na">getKey</span><span class="o">());</span> <span class="c1">// key is used as label
+</span><span class="c1"></span>          <span class="n">facts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">labelFact</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">dataGrid</span><span class="o">.</span><span class="na">setRowCount</span><span class="o">(</span><span class="n">factsList</span><span class="o">.</span><span class="na">size</span><span class="o">(),</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="n">dataGrid</span><span class="o">.</span><span class="na">setRowData</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">factsList</span><span class="o">);</span>
+        <span class="n">dataGrid</span><span class="o">.</span><span class="na">clearTableWidth</span><span class="o">();</span>
+        <span class="n">dataGrid</span><span class="o">.</span><span class="na">redraw</span><span class="o">();</span>
+    <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">onDataGroupChange</span><span class="p">(</span><span class="n">DataGroupEvent</span> <span class="nf">dataGroupEvent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDataGroupChange</span><span class="o">(</span><span class="n">DataGroupEvent</span> <span class="n">dataGroupEvent</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">DataGroup</span> <span class="nf">dataGroup</span> <span class="o">=</span> <span class="n">dataGroupEvent</span><span class="p">.</span><span class="na">getDataGroup</span><span class="p">();</span>
-        <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;DataGroupEvent recd &#34;</span> <span class="o">+</span> <span class="n">dataGroup</span><span class="p">);</span>
+        <span class="n">DataGroup</span> <span class="n">dataGroup</span> <span class="o">=</span> <span class="n">dataGroupEvent</span><span class="o">.</span><span class="na">getDataGroup</span><span class="o">();</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;DataGroupEvent recd &#34;</span> <span class="o">+</span> <span class="n">dataGroup</span><span class="o">);</span>
 
         <span class="c1">// reset factGrid                                      
-</span><span class="c1"></span>                <span class="kt">int</span> <span class="nf">c</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">dataGrid</span><span class="p">.</span><span class="na">removeColumn</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
-        <span class="p">}</span>
+</span><span class="c1"></span>                <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="o">.</span><span class="na">getColumnCount</span><span class="o">();</span>
+        <span class="k">while</span> <span class="o">(--</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">dataGrid</span><span class="o">.</span><span class="na">removeColumn</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+        <span class="o">}</span>
 
         <span class="c1">// first column to display the label             
-</span><span class="c1"></span>                <span class="n">addColumn</span><span class="p">(</span><span class="s">&#34;Item&#34;</span><span class="p">,</span> <span class="n">HasHorizontalAlignment</span><span class="p">.</span><span class="na">ALIGN_LEFT</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-        <span class="n">Column</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">?&gt;</span> <span class="n">ic</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="p">.</span><span class="na">getColumn</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
-        <span class="n">ic</span><span class="p">.</span><span class="na">setHorizontalAlignment</span><span class="p">(</span><span class="n">HasHorizontalAlignment</span><span class="p">.</span><span class="na">ALIGN_LEFT</span><span class="p">);</span>
-        <span class="n">ic</span><span class="p">.</span><span class="na">setCellStyleNames</span><span class="p">(</span><span class="s">&#34;gwt-Datagrid-Cell-Watchlist&#34;</span><span class="p">);</span>
-        <span class="n">dataGrid</span><span class="p">.</span><span class="na">setColumnWidth</span><span class="p">(</span><span class="n">ic</span><span class="p">,</span> <span class="s">&#34;150px&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>                <span class="n">addColumn</span><span class="o">(</span><span class="s">&#34;Item&#34;</span><span class="o">,</span> <span class="n">HasHorizontalAlignment</span><span class="o">.</span><span class="na">ALIGN_LEFT</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="n">Column</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;,</span> <span class="o">?&gt;</span> <span class="n">ic</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="o">.</span><span class="na">getColumn</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+        <span class="n">ic</span><span class="o">.</span><span class="na">setHorizontalAlignment</span><span class="o">(</span><span class="n">HasHorizontalAlignment</span><span class="o">.</span><span class="na">ALIGN_LEFT</span><span class="o">);</span>
+        <span class="n">ic</span><span class="o">.</span><span class="na">setCellStyleNames</span><span class="o">(</span><span class="s">&#34;gwt-Datagrid-Cell-Watchlist&#34;</span><span class="o">);</span>
+        <span class="n">dataGrid</span><span class="o">.</span><span class="na">setColumnWidth</span><span class="o">(</span><span class="n">ic</span><span class="o">,</span> <span class="s">&#34;150px&#34;</span><span class="o">);</span>
 
         <span class="c1">// add other columns for each date and
 </span><span class="c1"></span>      <span class="c1">// add facts to List&lt;List&lt;Fact&gt;&gt;
 </span><span class="c1"></span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">factsList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="n">factsList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;();</span>
 
-        <span class="n">DateTimeFormat</span> <span class="nf">fmt</span> <span class="o">=</span> <span class="n">DateTimeFormat</span><span class="p">.</span><span class="na">getFormat</span><span class="p">(</span><span class="s">&#34;MMM yy&#34;</span><span class="p">);</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Date</span><span class="o">&gt;</span> <span class="nf">dates</span> <span class="o">=</span> <span class="n">dataGroup</span><span class="p">.</span><span class="na">getDateList</span><span class="p">();</span>               
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">dates</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="n">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>             
-            <span class="n">Date</span> <span class="nf">date</span> <span class="o">=</span> <span class="n">dates</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-            <span class="n">addColumn</span><span class="p">(</span><span class="n">fmt</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">date</span><span class="p">),</span> <span class="n">HasHorizontalAlignment</span><span class="p">.</span><span class="na">ALIGN_RIGHT</span><span class="p">,</span>                 <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="n">DateTimeFormat</span> <span class="n">fmt</span> <span class="o">=</span> <span class="n">DateTimeFormat</span><span class="o">.</span><span class="na">getFormat</span><span class="o">(</span><span class="s">&#34;MMM yy&#34;</span><span class="o">);</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Date</span><span class="o">&gt;</span> <span class="n">dates</span> <span class="o">=</span> <span class="n">dataGroup</span><span class="o">.</span><span class="na">getDateList</span><span class="o">();</span>               
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>             
+            <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">addColumn</span><span class="o">(</span><span class="n">fmt</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">),</span> <span class="n">HasHorizontalAlignment</span><span class="o">.</span><span class="na">ALIGN_RIGHT</span><span class="o">,</span>                 <span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
             <span class="c1">// add facts for the date to List&lt;List&lt;Fact&gt;&gt;
-</span><span class="c1"></span>          <span class="n">factsList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">dataGroup</span><span class="p">.</span><span class="na">getData</span><span class="p">(</span><span class="n">date</span><span class="p">).</span><span class="na">getFacts</span><span class="p">());</span>
-        <span class="p">}</span>
+</span><span class="c1"></span>          <span class="n">factsList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">dataGroup</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="n">date</span><span class="o">).</span><span class="na">getFacts</span><span class="o">());</span>
+        <span class="o">}</span>
 
         <span class="c1">// transpose and set data to dataGrid
 </span><span class="c1"></span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="nf">tList</span> <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">factsList</span><span class="p">);</span>            
-                <span class="n">setData</span><span class="p">(</span><span class="n">tList</span><span class="p">);</span>                                           
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Fact</span><span class="o">&gt;&gt;</span> <span class="n">tList</span> <span class="o">=</span> <span class="n">transpose</span><span class="o">(</span><span class="n">factsList</span><span class="o">);</span>            
+                <span class="n">setData</span><span class="o">(</span><span class="n">tList</span><span class="o">);</span>                                           
                 <span class="c1">// set minimumTableWidth                                  
-</span><span class="c1"></span>        <span class="kt">int</span> <span class="nf">rows</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="p">.</span><span class="na">getRowCount</span><span class="p">();</span>
-        <span class="kt">int</span> <span class="nf">cols</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span>
-        <span class="n">dataGrid</span><span class="p">.</span><span class="na">setMinimumTableWidth</span><span class="p">(</span><span class="n">cols</span> <span class="o">*</span> <span class="n">80</span><span class="p">,</span> <span class="n">Unit</span><span class="p">.</span><span class="na">PX</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">rows</span> <span class="o">&lt;</span> <span class="n">7</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">rows</span> <span class="o">=</span> <span class="n">7</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">cols</span> <span class="o">&gt;</span> <span class="n">7</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">7</span><span class="p">;</span>
-        <span class="p">}</span>
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="o">.</span><span class="na">getRowCount</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">dataGrid</span><span class="o">.</span><span class="na">getColumnCount</span><span class="o">();</span>
+        <span class="n">dataGrid</span><span class="o">.</span><span class="na">setMinimumTableWidth</span><span class="o">(</span><span class="n">cols</span> <span class="o">*</span> <span class="n">80</span><span class="o">,</span> <span class="n">Unit</span><span class="o">.</span><span class="na">PX</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">rows</span> <span class="o">&lt;</span> <span class="n">7</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="n">7</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cols</span> <span class="o">&gt;</span> <span class="n">7</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">7</span><span class="o">;</span>
+        <span class="o">}</span>
 
         <span class="c1">// set width and height of parent panel
-</span><span class="c1"></span>      <span class="n">String</span> <span class="nf">width</span> <span class="o">=</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">80</span> <span class="o">+</span> <span class="s">&#34;px&#34;</span><span class="p">;</span>
-        <span class="n">String</span> <span class="nf">height</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">35</span> <span class="o">+</span> <span class="s">&#34;px&#34;</span><span class="p">;</span>
-        <span class="n">Widget</span> <span class="nf">parent</span> <span class="o">=</span> <span class="n">getParent</span><span class="p">();</span>
-        <span class="n">parent</span><span class="p">.</span><span class="na">setSize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>                            
+</span><span class="c1"></span>      <span class="n">String</span> <span class="n">width</span> <span class="o">=</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">80</span> <span class="o">+</span> <span class="s">&#34;px&#34;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">height</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">35</span> <span class="o">+</span> <span class="s">&#34;px&#34;</span><span class="o">;</span>
+        <span class="n">Widget</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">getParent</span><span class="o">();</span>
+        <span class="n">parent</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">);</span>                            
                 <span class="c1">// if parent is popup show and center
-</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="n">parent</span> <span class="nf">instanceof</span> <span class="n">PopupPanel</span><span class="p">)</span> <span class="p">{</span>
-            <span class="p">((</span><span class="n">PopupPanel</span><span class="p">)</span> <span class="n">parent</span><span class="p">).</span><span class="na">center</span><span class="p">();</span>
-        <span class="p">}</span>
-    <span class="p">}</span></code></pre></div>
-<h6 id="steps">Steps</h6>
-
+</span><span class="c1"></span>      <span class="k">if</span> <span class="o">(</span><span class="n">parent</span> <span class="k">instanceof</span> <span class="n">PopupPanel</span><span class="o">)</span> <span class="o">{</span>
+            <span class="o">((</span><span class="n">PopupPanel</span><span class="o">)</span> <span class="n">parent</span><span class="o">).</span><span class="na">center</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div><h6 id="steps">Steps</h6>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -1136,7 +1101,6 @@ if parent panel is PopupPanel, then set its width and height and call center met
 </table>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -1153,11 +1117,9 @@ if parent panel is PopupPanel, then set its width and height and call center met
 
 
 
-
 <p>Width is set to a maximum of 7 columns and width is set to 7*80 px. In
 case there are more than 7 columns, then DataGrid enables scrolling as
 <code>MinimumTableWidth</code> is set to 7 columns.</p>
-
 <p>In the next section, we complete the half done chart panel using Google
 Chart Tools.</p>
 

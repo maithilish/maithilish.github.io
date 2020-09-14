@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Save Post - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,18 +625,13 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-3-wordpress-save-post">7.3. WordPress Save Post</h2>
-
+            <h2 id="73wordpress-save-post">7.3. WordPress Save Post</h2>
 <p>In the previous two blogs, we saw how to add custom post type and
 customize post editor. In this blog, we cover the steps to save the
 custom post and its meta data.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-publish.png" alt="WordPress Save Post - WordPress Publish Meta box" />
 </figure>
-
 
 <p>We added sos custom post type as use it as social lockers. Sos Lockers
 defines four meta data fields. One of benefits of WordPress Custom Post
@@ -645,18 +640,14 @@ activities such as publish, trash and edit. For example, to save or
 publish a social locker, we use the WordPress Post Publish button. This
 reduces large amount of code as the task of saving the Post (Social
 Locker) and its content is delegated to WordPress posts module.</p>
-
 <h3 id="wordpress-save-post-and-meta-data">WordPress Save Post and Meta Data</h3>
-
 <p>Though WordPress Post management framework takes care of publishing the
 custom post, the meta data management is still left to the plugin
 developer.</p>
-
 <p>To do that, WordPress provides <strong>save_post</strong> action hook. After saving
 the post, WordPress executes action methods attached to the hook. In
 <code>Sos::setup()</code> method, we add <code>Sos::save_post()</code> method as the action to
 the save_post hook.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function setup () {
 
@@ -685,18 +676,16 @@ the save_post hook.</p>
         update_post_meta( $post_id, $id, $data );
         
         .....
-     }</code></pre></div>
-<p>In the <code>save_post()</code> method, we return without doing anything if
+     }
+</code></pre></div><p>In the <code>save_post()</code> method, we return without doing anything if
 WordPress is auto saving the post or current user doesn&rsquo;t have
 <strong>edit_posts</strong> capability. We also check whether <strong>locker_nonce</strong> is
 set for save_locker. This nonce ensures two things, firstly
 save_post() method is executes only for sos custom post type as for
 other post types this nonce is not set and secondly it secures the
 publish request.</p>
-
 <p>After passing these three conditions, we start to save meta data fields
 with WordPress function <a href="http://codex.wordpress.org/Function_Reference/update_post_meta" target="_blank">update_post_meta()</a>. To the function, we pass the data returned by helper method - sanitized_text().</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function sanitized_text ( $id ) {
         $data = &#39;&#39;;
@@ -704,14 +693,12 @@ with WordPress function <a href="http://codex.wordpress.org/Function_Reference/u
             $data = $_POST[ $id ];
         }
         return sanitize_text_field( $data );
-    }</code></pre></div>
-<p>In the helper method, we obtain the data from $_POST if it is set and
+    }
+</code></pre></div><p>In the helper method, we obtain the data from $_POST if it is set and
 then sanitize it using WordPress function
 [sanitize_text_field()</a>.</p>
-
 <p>Similarly, we handle other meta data field such as locker id, share on
 and locker text.</p>
-
 
 
 <div>&nbsp;</div>
@@ -730,20 +717,16 @@ and locker text.</p>
 
 
 
-
 <h3 id="duplicate-id">Duplicate ID</h3>
-
 <p>By using WordPress Post management framework, we avoid lots of code to
 save the locker. But there is a glitch. When we add multiple lockers
 with same id, WordPress happily saves them as it is not equipped to
 distinguish the duplicate posts. Lockers have to enforce unique
 constraint so that no two lockers can have same id.</p>
-
 <p>In WordPress, there is no way to intercept and stop WordPress from
 publishing the post. Best we can do is, after the post publish check
 whether locker id is duplicate and if so, save an empty id and output
 duplicate id message to the user.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function save_post ( $post_id ) {
 
@@ -765,21 +748,18 @@ duplicate id message to the user.</p>
         }
 
         ....
-     }</code></pre></div>
-<p>In the save_post() method, we check whether locker id is duplicate and
+     }
+</code></pre></div><p>In the save_post() method, we check whether locker id is duplicate and
 if so, we set id to an empty string and then set a flag -
 <strong>sos_duplicate_id</strong> - as a transient option.</p>
-
 <p>WordPress Transient Options are similar to WordPress Options, but they
 expire after certain interval. We use WordPress function
 <a href="http://codex.wordpress.org/Function_Reference/set_transient" target="_blank">set_transient()</a>
 to set the flag for 180 seconds and after which it is deleted from
 database.</p>
-
 <p>To display the duplicate id message we require another action hook
 <strong>admin_notices</strong>. This hook is used to display messages and notices at
 the top of the editor.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function setup () {
         add_action( &#39;admin_notices&#39;, 
@@ -802,27 +782,22 @@ the top of the editor.</p>
 EOD;
         }
         echo $html;
-    }</code></pre></div>
-<figure class="text-center" >
+    }
+</code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-duplicate-error.png" alt="WordPress Save Post - WordPress Publish Meta box" />
 </figure>
-
 
 <p>Why are we doing this? The action method save_post() executes between
 submission of publish form and display of the request. We can&rsquo;t pass the
 duplicate id message from save_post() method to the request output
 through $_POST or other mechanism. Workaround is to set a flag as a
 temporary option and echo the message to request output.</p>
-
 <p>Posts, before save, pass through <strong>wp_insert_post_data</strong> filter and
 it looks promising for duplicate id issue. So far, we have not tried it
 out and may do so in future.</p>
-
 <h3 id="change-post-updated-message">Change Post Updated Message</h3>
-
 <p>To change post save and update messages for custom post type, use filter
 hook post_updated_messages.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function setup () {
         add_filter( &#39;post_updated_messages&#39;, 
@@ -849,8 +824,8 @@ hook post_updated_messages.</p>
         $messages[ &#39;post&#39; ][ $index ] = $message;
         
         return $messages;
-    }</code></pre></div>
-
+    }
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -867,13 +842,11 @@ hook post_updated_messages.</p>
 <div>&nbsp;</div>
 
 
-
 <p>WordPress passes array of messages as parameter to the callback
 function. If post type is sos, we change messages at index 1 and 6 which
 corresponds to update and save respectively and return the modified
 array back to the WordPress. For other post types, return the unmodified
 array.</p>
-
 <p>In the tutorial, so far, we saw how to manage settings and custom
 lockers. With those admin modules in place we are ready to explore the
 plugins&rsquo; frontend. In the next chapter, we go through some of the

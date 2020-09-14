@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Deploy on App Engine - GWT Tutorial - CodeTab</title></head>
 
@@ -711,66 +711,62 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="10-2-deploy">10.2. Deploy</h2>
-
+            <h2 id="102deploy">10.2. Deploy</h2>
 <p>Once app is ready, Google App Engine Deploy is a simple affair with
 following steps.</p>
-
 <ul>
-<li><p>login to <a href="http://appspot.com">http://appspot.com</a> using your Google ID.</p></li>
-
-<li><p>in Google App Engine welcome screen, create an application using
-Create Application option.</p></li>
-
-<li><p>in project context menu, choose <strong>Google</strong> → <strong>App Engine Settings
+<li>
+<p>login to <a href="http://appspot.com">http://appspot.com</a> using your Google ID.</p>
+</li>
+<li>
+<p>in Google App Engine welcome screen, create an application using
+Create Application option.</p>
+</li>
+<li>
+<p>in project context menu, choose <strong>Google</strong> → <strong>App Engine Settings
 .</strong>  In App Engine dialog, enter the Application ID field with
 Application ID created in previous step. Start with 1 for Version
 number and increment it whenever there is a major release of the
 app. For multiple deploy, you may continue with the same version
-number.</p></li>
-
-<li><p>in Project Explorer view, select the project and click Google Drop
+number.</p>
+</li>
+<li>
+<p>in Project Explorer view, select the project and click Google Drop
 Down Menu icon and choose Deploy to App Engine option. This will
 compile the project, upload the files and deploy the app to App
-Engine. App may be accessed through URL <code>http://your\_app\_id.appspot.com/</code></p></li>
+Engine. App may be accessed through URL <code>http://your\_app\_id.appspot.com/</code></p>
+</li>
 </ul>
-
 <p>Refer GAE Documentation - <a href="https://developers.google.com/appengine/docs/java/gettingstarted/uploading" target="_blank">Uploading Your Application</a> for detailed explanation of these steps.</p>
-
 <h5 id="rollback-the-broken-deployment">Rollback the broken deployment</h5>
-
 <p>One of potential problems you may encounter is broken deployment. In
 case of drop in connection or termination by the user, then subsequent
 tries will throw an error - <strong>Another transaction by user User is
 already in progress for this app and major version</strong>. <strong>That user can
 undo the transaction with appcfg.py&rsquo;s &ldquo;rollback&rdquo; command.</strong></p>
-
 <p>There is no option in Google Drop Down Menu to rollback from this
 situation and way out is to use <code>appcfg.sh</code> which comes with App Engine
 SDK. Location of <code>appcfg.sh</code> depends upon the method you chose to
 install the SDK.</p>
-
 <p>In case, you have used Eclipse Install Software to install the SDK then
 SDK lands in plugin directory either at
 &lt;&lt;eclipse-install-path&gt;&gt;/plugins or <code>$HOME/.eclipse</code> and <code>appcfg.sh</code>
 will be in its bin dir. Search these two locations for SDK and
 appcfg.sh.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ find $HOME/.eclipse -name &#34;appcfg.sh&#34;</code></pre></div>
-<p>In case, you have installed App Engine SDK by downloading the archive,
+<pre><code class="language-screen" data-lang="screen">$ find $HOME/.eclipse -name &quot;appcfg.sh&quot;
+</code></pre><p>In case, you have installed App Engine SDK by downloading the archive,
 then appcfg.sh will be in the bin directory of installation.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ find /orange/apps/google/gae -name &#34;appcfg.sh&#34;
+<pre><code class="language-screen" data-lang="screen">$ find /orange/apps/google/gae -name &quot;appcfg.sh&quot;
 
-### GAE SDK archive is install at /orange/apps/google/gae and the above cmd finds the path to appcfg.sh and outputs something like /orange/apps/google/gae/appengine-java-sdk-1.7.5/bin/appcfg.sh</code></pre></div>
-<p>Once you know the path to appcfg.sh, use either of following commands to
+### GAE SDK archive is install at /orange/apps/google/gae and the above cmd finds the path to appcfg.sh and outputs something like /orange/apps/google/gae/appengine-java-sdk-1.7.5/bin/appcfg.sh
+</code></pre><p>Once you know the path to appcfg.sh, use either of following commands to
 rollback the
 deployment.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ $SDK_PATH/bin/appcfg.sh -A yourAppId -s appengine.google.com rollback $WORKSPACE_PATH/fins/war</code></pre></div>
-<p>$WORKSPACE_PATH is full path to your project in Eclipse
+<pre><code class="language-screen" data-lang="screen">$ $SDK_PATH/bin/appcfg.sh -A yourAppId -s appengine.google.com rollback $WORKSPACE_PATH/fins/war
+</code></pre><p>$WORKSPACE_PATH is full path to your project in Eclipse
 workspace.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ $SDK_PATH/bin/appcfg.sh -A yourAppId -s appengine.google.com rollback /tmp/appcfg8593320566371318406.tmp</code></pre></div>
-
+<pre><code class="language-screen" data-lang="screen">$ $SDK_PATH/bin/appcfg.sh -A yourAppId -s appengine.google.com rollback /tmp/appcfg8593320566371318406.tmp
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -788,30 +784,22 @@ workspace.</p>
 
 
 
-
 <p>In Linux, deployment process creates a staging directory in <code>/tmp</code>,
 something like <code>/tmp/appcfg8593320566371318406.tmp</code> and you may use this
 directory in rollback command.</p>
-
 <p>In the next chapter, we look into some of the features of the Google App
 Engine.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>App Engine Features</em> - For features and quota details refer <a href="https://developers.google.com/appengine/docs/whatisgoogleappengine" target="_blank">What Is
 Google App
 Engine</a></p>
-
 <p><em>Deployment Descriptor</em> - For App Engine specific web.xml refer
 <a href="https://cloud.google.com/appengine/docs/java/config/webxml" target="_blank">Deployment
 Descriptor</a></p>
-
 <p><em>App Config</em> - For Application configuration refer <a href="https://cloud.google.com/appengine/docs/java/config/appconfig" target="_blank">Java Application
 Configuration</a></p>
-
 <p><em>Deploy</em> - To known more about deployment refer <a href="https://developers.google.com/appengine/docs/java/gettingstarted/uploading" target="_blank">Uploading Your
 Application</a></p>
-
 <p><em>Managing the App</em> - To manage app through Admin Console refer <a href="https://cloud.google.com/appengine/" target="_blank">Managing
 Your App menu</a></p>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rpc on Codetab</title>
@@ -19,11 +19,11 @@
       <guid>https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/</guid>
       <description>7.2. Rest of RPC In the previous section, we have gone through nuts and bolts of RPC. For some, its pattern may still bit fuzzy and to reinforce the concept we leave the rest of datastore calls as an exercise for readers.
 Client still has SymbolDatabase calls in following three classes.
- in.fins.client.action/SymbolAction.java
- in.fins.client.action/DataGroupAction.java
- in.fins.client.action/DataAction.java
+  in.fins.client.action/SymbolAction.java
+  in.fins.client.action/DataGroupAction.java
+  in.fins.client.action/DataAction.java
   Shift them to RPC with following steps.
- define method in ISymbolService interface.</description>
+  define method in ISymbolService interface.</description>
     </item>
     
   </channel>

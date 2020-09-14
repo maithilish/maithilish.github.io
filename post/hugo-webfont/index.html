@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-10-05T10:20:00Z",
         "dateModified" : "2019-10-05T10:20:00Z",
-        "wordCount" : "640",
+        "wordCount" : "654",
         "keywords" : [ "Hugo Static site generator webfont font awesome","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Hugo Webfont</title></head>
 
@@ -245,52 +245,40 @@
 <i class="icon-blank ctab-transparent"></i></div>
       <hr class="my-3" />
       <main id="content" class="post-basic">
-        
-
-<h1 id="hugo-webfont">Hugo Webfont</h1>
-
+        <h1 id="hugo-webfont">Hugo Webfont</h1>
 <p>The share icons rendered above are not images, instead they are font icons. Font icons, also called webfont, are scalable vector icons that can be styled with css; the size, color, shadow, etc.</p>
-
 <p><a href="https://fontawesome.com" target="_blank">Font Awesome</a> is the top choice for font icons, with more than 650 icons with minimum download size of 130KB. In case we use few icons, better option is to pick and choose icons and create a custom pack; codetab.org uses just 12 icons with total size of 24kb.</p>
-
+<p>This post explains creation of compact webfont files and add them to Hugo sites.</p>
 <h2 id="fontello-icon-font-generator">Fontello Icon Font Generator</h2>
-
 <p>There are many websites to generate custom icon fonts packs. We use <a href="http://fontello.com/" target="_blank">Fontello Icon Font Generator</a> which is a free tool to bundle icon fonts from various providers. Fontello hosts icons from 14 providers including Font Awesome, Fontelico, Entypo, Typicons and Iconic etc. We can also upload our own custom SVG and convert it to webfont.</p>
-
 <p>Go to Fontello website and in the text box next to Download button enter the bundle name as <code>foo-webfont</code> or any name you like. It is used by Fontello to name the files.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/post/hugo-webfont/media/fontello.png" alt="Fontello Icon Font Generator Hugo Webfonts" />
 </figure>
 
-
 <p>Next, from the huge collection, select the icons you require. The Download button shows the count of selected icons. Because of some bug, the last icon is not rendered and to overcome this, choose one extra icon which you don&rsquo;t use. Once you finished the icon selection, click <code>Customize Names</code> tab.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/post/hugo-webfont/media/customize-names.png" alt="Fontello Customize Names Hugo Webfonts" />
 </figure>
 
-
 <p>Drag the extra icon to last. For our site, icon-glass is extra icon which is placed at the end of the list.</p>
-
 <p>That&rsquo;s all. Click Download button which creates and downloads a zip file named fontello-xxxxx.zip. If you missed some icons, you can add new icons to already selected set and download a new zip file.</p>
-
 <h2 id="font-files">Font Files</h2>
-
 <p>Go to <code>Downloads</code> folder and unzip the <code>fontello-xxxxxx.zip</code> file. The files are:</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/post/hugo-webfont/media/fontello-files.png" alt="Fontello Icon Font Generator Hugo Webfonts files" />
 </figure>
 
-
 <p>Preferred to way is to copy <code>font</code> and <code>css</code> directories to your project. As we target only the modern browsers, we use just the <code>foo-webfont.css</code>, <code>foo-webfont.woff</code> and <code>foo-webfont.woff2</code> files. Copy font and css files to theme folder of your Hugo.</p>
-<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">  $ <span class="nb">cd</span> fontello-xxxxx
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+  $ <span class="nb">cd</span> fontello-xxxxx
   $ cp css/foo-webfont.css &lt;your-hugo-site&gt;/themes/&lt;theme-folder&gt;/assets/css
   $ cp font/foo-webfont.woff &lt;your-hugo-site&gt;/themes/&lt;theme-folder&gt;/static/font
-  $ cp font/foo-webfont.woff2 &lt;your-hugo-site&gt;/themes/&lt;theme-folder&gt;/static/font</code></pre></div>
-<p>Edit <code>assets/css/foo-webfont.css</code> and from the top <code>@font-face</code> item remove  all url lines except the lines that contains woff and woff2. In case, you prefer slightly larger icons change font-size element. After modification, the css looks something like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+  $ cp font/foo-webfont.woff2 &lt;your-hugo-site&gt;/themes/&lt;theme-folder&gt;/static/font
+
+</code></pre></div><p>Edit <code>assets/css/foo-webfont.css</code> and from the top <code>@font-face</code> item remove  all url lines except the lines that contains woff and woff2. In case, you prefer slightly larger icons change font-size element. After modification, the css looks something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS">
+<span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
   <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;foo-webfont&#39;</span><span class="o">;</span>  
   <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/foo-webfont.woff2?287xxx&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span>
        <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;../font/foo-webfont.woff?287xxx&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">);</span>       
@@ -300,15 +288,14 @@
 
 <span class="o">....</span>
 
-<span class="nt">font-size</span><span class="o">:</span> <span class="nt">130</span><span class="o">%;</span></code></pre></div>
-<p>The key value shown above i.e. <code>?287xxx</code> is just an illustration. Leave whatever auto generated value as it is; don&rsquo;t modify it as <code>287xxx</code> in your css file.</p>
+<span class="nt">font-size</span><span class="o">:</span> <span class="nt">130</span><span class="o">%;</span>
 
+</code></pre></div><p>The key value shown above i.e. <code>?287xxx</code> is just an illustration. Leave whatever auto generated value as it is; don&rsquo;t modify it as <code>287xxx</code> in your css file.</p>
 <h2 id="add-webfont-css-to-hugo">Add Webfont CSS to Hugo</h2>
-
 <p>Next look for the file in your theme which outputs head and link <code>foo-webfont.css</code>. For our site, we use an custom theme and how it is done is shown below:</p>
-
 <p><code>&lt;theme&gt;/layouts/partials/head.html</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ .Description }}&#34;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ .Site.Author.name }}&#34;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;</span><span class="p">&gt;</span>
@@ -323,20 +310,22 @@
 
 <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $css.RelPermalink }}&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;{{ $allcss.Data.Integrity }}&#34;</span><span class="p">&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{.Title}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span></code></pre></div>
-<p>The slice merges foo-webfont.css, generated by Fontello, with site and syntax css files into a combined css named <code>vendor.css</code> and minifies it.</p>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{.Title}}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 
+</code></pre></div><p>The slice merges foo-webfont.css, generated by Fontello, with site and syntax css files into a combined css named <code>vendor.css</code> and minifies it.</p>
 <h2 id="use-font">Use Font</h2>
-
 <p>The icons fonts you have selected in Fontello is listed at the bottom of foo-webfont.css file as regular css classes.</p>
-
 <p><code>assets/css/foo-webfont.css</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS"><span class="p">.</span><span class="nc">icon-up-open</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span> <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;\e800&#39;</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* &#39;&#39; */</span>
 <span class="p">.</span><span class="nc">icon-whatsapp</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span> <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;\f232&#39;</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* &#39;&#39; */</span>
 <span class="p">.</span><span class="nc">icon-twitter-squared</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span> <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;\f304&#39;</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* &#39;&#39; */</span>
-<span class="p">.</span><span class="nc">icon-facebook-squared</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span> <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;\f308&#39;</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* &#39;&#39; */</span></code></pre></div>
-<p>We can use these class anywhere in Hugo templates to render the icons. For example, to render Twitter icon <i class="icon-twitter-squared"></i>, add following code in template or content page.</p>
-<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icon-twitter-squared&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+<span class="p">.</span><span class="nc">icon-facebook-squared</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span> <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;\f308&#39;</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* &#39;&#39; */</span>
+
+</code></pre></div><p>We can use these class anywhere in Hugo templates to render the icons. For example, to render Twitter icon <i class="icon-twitter-squared"></i>, add following code in template or content page.</p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icon-twitter-squared&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+
+</code></pre></div>
       </main>
     </div>
 

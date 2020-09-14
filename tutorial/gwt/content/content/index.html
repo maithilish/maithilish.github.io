@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Contents - GWT Tutorial - CodeTab</title></head>
 
@@ -711,61 +711,60 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="content">Content</h1>
-
+            <h1 id="content">Content</h1>
 <p>GWT project contains three content pages.</p>
-
 <ul>
-<li><p><strong>Snapshot</strong> – displays financial details like Balance Sheet (BS),
+<li>
+<p><strong>Snapshot</strong> – displays financial details like Balance Sheet (BS),
 Profit and Loss A/c (PL), Quarterly data (Qtr), Cash Flow (CF) and
 Holding details of a Symbol with forward or backward navigation
 capability to view other periods. It has collapsible graphs of
 Price, Price to Earnings (PE) and Price to Book (PB) movements. For
-each category a Pop up displays data for the entire period.</p></li>
-
-<li><p><strong>Manage Watchlist</strong> – create and manage multiple Watch Lists which
-is a list of symbols.</p></li>
-
-<li><p><strong>Watchlist</strong> – displays financial details of symbols for a watch
-list in a Data Grid</p></li>
+each category a Pop up displays data for the entire period.</p>
+</li>
+<li>
+<p><strong>Manage Watchlist</strong> – create and manage multiple Watch Lists which
+is a list of symbols.</p>
+</li>
+<li>
+<p><strong>Watchlist</strong> – displays financial details of symbols for a watch
+list in a Data Grid</p>
+</li>
 </ul>
-
 <p>Tutorial covers Snapshot in detail, and other two pages are similar in
 design, and one may go through them once they are comfortable with
 Snapshot.</p>
-
-<h2 id="6-1-snapshot">6.1. Snapshot</h2>
-
+<h2 id="61snapshot">6.1. Snapshot</h2>
 <p>Snapshot displays various data of a Symbol, and it uses following custom
 widgets.</p>
-
 <ul>
-<li><p><em>AutoSuggest</em> – search and select a Symbol.</p></li>
-
-<li><p><em>FactPanel</em> – displays some financial indicators in row.</p></li>
-
-<li><p><em>ChartPanel</em> – collapsible graphs of Price, PE and PB ratios.</p></li>
-
-<li><p><em>FactTable</em> – displays data of a category in a two column table.</p></li>
-
-<li><p><em>FactGrid</em> – displays data of category for all periods in a tabular
-table.</p></li>
-
-<li><p><em>ToolbarItem</em> – controls to navigate the data.</p></li>
+<li>
+<p><em>AutoSuggest</em> – search and select a Symbol.</p>
+</li>
+<li>
+<p><em>FactPanel</em> – displays some financial indicators in row.</p>
+</li>
+<li>
+<p><em>ChartPanel</em> – collapsible graphs of Price, PE and PB ratios.</p>
+</li>
+<li>
+<p><em>FactTable</em> – displays data of a category in a two column table.</p>
+</li>
+<li>
+<p><em>FactGrid</em> – displays data of category for all periods in a tabular
+table.</p>
+</li>
+<li>
+<p><em>ToolbarItem</em> – controls to navigate the data.</p>
+</li>
 </ul>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/snapshot.png" alt="Snapshot" />
 </figure>
 
-
-<h6 id="figure-6-1-snapshot">Figure 6.1. Snapshot</h6>
-
+<h6 id="figure61snapshot">Figure 6.1. Snapshot</h6>
 <p>Snapshot is a complex UI, and we are going design and add these widget
 one by one so that readers can keep up with the progress.</p>
-
 
 
 <div>&nbsp;</div>
@@ -783,9 +782,7 @@ one by one so that readers can keep up with the progress.</p>
 <div>&nbsp;</div>
 
 
-
 <h5 id="layout">Layout</h5>
-
 <p>Snapshot is a <code>ResizeComposite</code> and uses <code>LayoutPanel</code> for better
 control over widget placement. Template file
 <code>in.fins.client.content/Snapshot.ui.xml</code> places widgets like
@@ -798,34 +795,31 @@ places the Grid in a layer of the LayoutPanel. Constraints of all layers
 use PCT instead of fixed measures. At this point, we are yet to have the
 custom widgets to place them in the template, therefore, uses GWT
 <code>Label</code> as the placeholders.</p>
-
 <p>Following code initializes UI and aligns contents of the second row of
 the grid to top of the cell.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   <span class="kd">public</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-      <span class="n">grid</span><span class="p">.</span><span class="na">getRowFormatter</span><span class="p">().</span><span class="na">setVerticalAlign</span><span class="p">(</span><span class="n">1</span><span class="p">,</span><span class="n">HasVerticalAlignment</span><span class="p">.</span><span class="na">ALIGN_TOP</span><span class="p">);</span>
-   <span class="p">}</span></code></pre></div>
-<p><code>FinsShell.java</code>, for home tab and <code>ContentPanel.java</code>, for menu
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   <span class="kd">public</span> <span class="nf">Snapshot</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+      <span class="n">grid</span><span class="o">.</span><span class="na">getRowFormatter</span><span class="o">().</span><span class="na">setVerticalAlign</span><span class="o">(</span><span class="n">1</span><span class="o">,</span><span class="n">HasVerticalAlignment</span><span class="o">.</span><span class="na">ALIGN_TOP</span><span class="o">);</span>
+   <span class="o">}</span>
+</code></pre></div><p><code>FinsShell.java</code>, for home tab and <code> ContentPanel.java</code>, for menu
 selection used <code>DateBox</code> as placeholder for Snapshot. Now we can replace
 them with the Snapshot.</p>
-
 <p><code>in.fins.client.content/FinsShell.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  <span class="kd">public</span> <span class="nf">FinsShell</span><span class="p">()</span> <span class="p">{</span>
-  <span class="p">....</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  <span class="kd">public</span> <span class="nf">FinsShell</span><span class="o">()</span> <span class="o">{</span>
+  <span class="o">....</span>
 
-     <span class="n">contentPanel</span><span class="p">.</span><span class="na">addTab</span><span class="p">(</span><span class="s">&#34;Home&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="n">Snapshot</span><span class="p">());</span>
-  <span class="p">}</span></code></pre></div>
-<p><code>in.fins.client.widget/ContentPanel.java</code></p>
+     <span class="n">contentPanel</span><span class="o">.</span><span class="na">addTab</span><span class="o">(</span><span class="s">&#34;Home&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Snapshot</span><span class="o">());</span>
+  <span class="o">}</span>
+</code></pre></div><p><code>in.fins.client.widget/ContentPanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">onMenuSelection</span><span class="p">(</span><span class="n">MenuEvent</span> <span class="nf">menuEvent</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">String</span> <span class="nf">contentName</span> <span class="o">=</span> <span class="n">menuEvent</span><span class="p">.</span><span class="na">getMenu</span><span class="p">();</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">contentName</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&#34;Snapshot&#34;</span><span class="p">))</span> <span class="p">{</span>
-          <span class="n">addTab</span><span class="p">(</span><span class="n">contentName</span><span class="p">,</span> <span class="k">new</span> <span class="n">Snapshot</span><span class="p">());</span>
-      <span class="p">}</span>
-   <span class="p">}</span></code></pre></div>
-<p>With the basic template of Snapshot in place, we can proceed to design
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onMenuSelection</span><span class="o">(</span><span class="n">MenuEvent</span> <span class="n">menuEvent</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">contentName</span> <span class="o">=</span> <span class="n">menuEvent</span><span class="o">.</span><span class="na">getMenu</span><span class="o">();</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">contentName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;Snapshot&#34;</span><span class="o">))</span> <span class="o">{</span>
+          <span class="n">addTab</span><span class="o">(</span><span class="n">contentName</span><span class="o">,</span> <span class="k">new</span> <span class="n">Snapshot</span><span class="o">());</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+</code></pre></div><p>With the basic template of Snapshot in place, we can proceed to design
 and add other widgets.</p>
 
           </main>

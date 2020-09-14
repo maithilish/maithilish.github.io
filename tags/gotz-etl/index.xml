@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gotz ETL on Codetab</title>
@@ -10,6 +10,15 @@
     
 	<atom:link href="https://www.codetab.org/tags/gotz-etl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gotz ETL - Gotz ETL - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/gotz-etl/</link>
+      <pubDate>Fri, 11 Jan 2019 18:43:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/gotz-etl/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Introduction - Gotz ETL - CodeTab</title>

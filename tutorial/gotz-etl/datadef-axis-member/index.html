@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>DataDef Axis Member - Gotz ETL - CodeTab</title></head>
 
@@ -400,16 +400,12 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Gotz uses datadef to define data. Datadef contains axis, query, script
+            <p>Gotz uses datadef to define data. Datadef contains axis, query, script
 and members which collectively defines the data to be scrapped from the
 HTML page.</p>
-
 <p>The job.xml in Example 1 uses a simple DataDef which scrape one data
 point i.e. price of the company&rsquo;s share from
 <strong>defs/examples/page/acme-quote.html</strong> page.</p>
-
 <p>The datadef snippet from <strong>defs/examples/jsoup/ex-1/job.xml</strong> is as
 below</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dataDef</span> <span class="na">name=</span><span class="s">&#34;price&#34;</span><span class="nt">&gt;</span>
@@ -427,9 +423,8 @@ below</p>
             <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#price_tick&#34;</span> <span class="na">field=</span><span class="s">&#34;\*&#34;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/xf:fields&gt;</span>
     <span class="nt">&lt;/axis&gt;</span>
-<span class="nt">&lt;/dataDef&gt;</span></code></pre></div>
-<p>It defines a dataDef named price with three axes.</p>
-
+<span class="nt">&lt;/dataDef&gt;</span>
+</code></pre></div><p>It defines a dataDef named price with three axes.</p>
 
 
 <div>&nbsp;</div>
@@ -447,37 +442,27 @@ below</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="axis">Axis</h2>
-
 <p>In Gotz, data is defined by axis which is similar in concept to that of
 spreadsheet.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gotz-etl/media/gotz-datadef-axis.png" alt="Gotz DataDef Axis" />
 </figure>
-
 
 <p>In datadef, we define three axis - COL, ROW and FACT. The value we are
 interested in is called as Fact which is same as value held by a cell in
 spreadsheet. The other two axes, Col and Row say something about the
 Fact.</p>
-
 <p>For example, in the price datadef, the axis Col is date and axis Row is
 Price and if price of company share is say, 121.80 then the axis values
 are as below</p>
-
 <p>COL : 01-01-2018 ROW : Price FACT : 121.80</p>
-
 <p>From the combination of three axes we can deduce that price is 121.80 as
 on Jan 1st 2018.</p>
-
 <p>The concept of axis and fact is borrowed Multidimensional Expression
 (MDX) language used in Data Warehouse which allows us in future to add
 more axis to construct multidimensional data.</p>
-
 <p><strong>As of now only allowed axis names are - col, row and fact.</strong></p>
-
 
 
 <div>&nbsp;</div>
@@ -496,57 +481,47 @@ more axis to construct multidimensional data.</p>
 
 
 
-
 <h2 id="fields-queries-and-scripts">Fields, Queries and Scripts</h2>
-
 <p>Axis can contain queries or scripts and they defined within
 <strong>&lt;xf:fields&gt;</strong> element. In dataDef, only <strong>fields</strong> element and its
 children are prefixed with <strong>xf:</strong> prefix while all other elements are
 without prefix. Later chapter on namspaces explains this in detail.</p>
-
 <p>The fact axis, defines following query.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;fact&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xf:fields&gt;</span>
         <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#price_tick&#34;</span> <span class="na">field=</span><span class="s">&#34;\*&#34;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/xf:fields&gt;</span></code></pre></div>
-<p>&lt;xf:query&gt; has two attributes <strong>region</strong> and <strong>field</strong> and they are
+    <span class="nt">&lt;/xf:fields&gt;</span>
+</code></pre></div><p>&lt;xf:query&gt; has two attributes <strong>region</strong> and <strong>field</strong> and they are
 the selectors used query the data from page. We explain how to construct
 them in the next chapter.</p>
-
 <p>The col axis defines following script.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;col&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xf:fields&gt;</span>
         <span class="nt">&lt;xf:script</span> <span class="na">script=</span><span class="s">&#34;configs.getRunDateTime()&#34;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/xf:fields&gt;</span></code></pre></div>
-<p>Script gets the value using the Script Engine. Here we are call
+    <span class="nt">&lt;/xf:fields&gt;</span>
+</code></pre></div><p>Script gets the value using the Script Engine. Here we are call
 getRunDateTime() method on configs object which returns the date and
 time when GotzEngine run started.</p>
-
 <p><strong>The fact axis should compulsorily contain either query or script while
 there is no such requirement for col and row axis.</strong></p>
-
 <h2 id="member">Member</h2>
-
 <p>In datadef, member is used to hold the value returned either by script
 or query.</p>
-
 <p>For col axis, we defined one member named date.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;col&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xf:fields&gt;</span>
         <span class="nt">&lt;xf:script</span> <span class="na">script=</span><span class="s">&#34;configs.getRunDateTime()&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/xf:fields&gt;</span>
     <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;date&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/axis&gt;</span></code></pre></div>
-<p>The date returned by the script is assigned to the member as value.</p>
-
+<span class="nt">&lt;/axis&gt;</span>
+</code></pre></div><p>The date returned by the script is assigned to the member as value.</p>
 <p>The row axis doesn&rsquo;t contain any query or script, so we are defining a
 member named Price and directly assigning its value to Price.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;row&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;Price&#34;</span> <span class="na">value=</span><span class="s">&#34;Price&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/axis&gt;</span></code></pre></div>
-<p>For fact axis, there is no need to add any member because Gotz
+<span class="nt">&lt;/axis&gt;</span>
+</code></pre></div><p>For fact axis, there is no need to add any member because Gotz
 implicitly adds default member to hold the fact value.</p>
-
 <p>In the next chapter, we explain how to construct the query with
 selectors.</p>
 

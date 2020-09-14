@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Google Charts - GWT Tutorial - CodeTab</title></head>
 
@@ -711,27 +711,19 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-10-chart">6.10. Chart</h2>
-
+            <h2 id="610chart">6.10. Chart</h2>
 <p>Earlier, we designed <code>FactDisclosePanel</code> and <code>ChartPanel</code> but stopped
 short of completing the actual charts as it may be difficult to grasp at
 that stage. In this chapter, we are going to complete it and display
 charts using Google Chart Tools also known as Google Visualization.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/chart.png" alt="Chart" />
 </figure>
 
-
-<h6 id="figure-6-16-chart">Figure 6.16. Chart</h6>
-
+<h6 id="figure616chart">Figure 6.16. Chart</h6>
 <h2 id="install-google-chart-tools">Install Google Chart Tools</h2>
-
 <p>GWT SDK doesn&rsquo;t ship with Chart module, and we have to download and add
 Google Chart Tools module to the project.</p>
-
 <p>Download gwt-visualization-&lt;&lt;version&gt;&gt;.zip file from
 <a href="http://code.google.com/p/gwt-google-apis/wiki/Downloads?tm=2" target="_blank">Downloads</a>
 and unzip the package and copy gwt-visualization-&lt;&lt;version&gt;&gt;.jar to
@@ -739,21 +731,17 @@ and unzip the package and copy gwt-visualization-&lt;&lt;version&gt;&gt;.jar to
 and right click the <code>war/WEB-INF/lib/gwt-visualization.jar</code> and in the
 context menu choose <strong>Build Path</strong> → <strong>Add to Build Path</strong> to add the
 library to the project build path.</p>
-
 <p>Before going further. familiarize yourself with Google Chart Tool
 through <a href="http://code.google.com/p/gwt-google-apis/wiki/VisualizationGettingStarted" target="_blank">Getting Started
 Guide</a></p>
-
 <p>To use Chart Tool, inherit the module in fins.gwt.xml file with
 following line.</p>
-
 <p><code>in.fins/fins.gwt.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;inherits</span> <span class="na">name=</span><span class="s">&#34;com.google.gwt.visualization.Visualization&#34;</span> <span class="nt">/&gt;</span></code></pre></div>
-<p>In the half finished <code>ChartPanel</code>, we used <code>DataGroupAction</code> to fetch
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;inherits</span> <span class="na">name=</span><span class="s">&#34;com.google.gwt.visualization.Visualization&#34;</span> <span class="nt">/&gt;</span>
+</code></pre></div><p>In the half finished <code>ChartPanel</code>, we used <code>DataGroupAction</code> to fetch
 data for a category for all dates available in datastore. For example,
 to draw Price chart we fetch <code>DataGroup</code> for Quote category that
 contains Price facts for all dates.</p>
-
 
 
 <div>&nbsp;</div>
@@ -772,9 +760,7 @@ contains Price facts for all dates.</p>
 
 
 
-
 <p> </p>
-
 <p>Once <code>DataGroupAction</code> fetches <code>DataGroup</code>, it fires <code>DataGroupEvent</code>
 which is handled by <code>onDataGroupChange()</code> method, but it is not possible
 to draw the chart in this method Reason being, to load the Google Chart
@@ -783,72 +769,69 @@ callback method, and in the call back method, we have to add the code
 that is required to create the chart. Once Chart API is loaded, that
 happens asynchronously, loader executes the callback method to create
 and display the chart.</p>
-
 <p> </p>
-
 <p><code>in.fins.client.widget/ChartPanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">ChartPanel</span><span class="p">(</span><span class="n">String</span> <span class="nf">title</span><span class="p">,</span> <span class="n">String</span> <span class="nf">key</span><span class="p">,</span> <span class="n">String</span> <span class="nf">chartWidth</span><span class="p">,</span>
-                        <span class="n">String</span> <span class="nf">chartHeight</span><span class="p">,</span> <span class="kt">boolean</span> <span class="nf">rangeSelector</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">chartWidth</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">chartHeight</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">rangeSelector</span> <span class="o">=</span> <span class="n">rangeSelector</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">ChartPanel</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">,</span> <span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">chartWidth</span><span class="o">,</span>
+                        <span class="n">String</span> <span class="n">chartHeight</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">rangeSelector</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">;</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">chartWidth</span><span class="o">;</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">chartHeight</span><span class="o">;</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">rangeSelector</span> <span class="o">=</span> <span class="n">rangeSelector</span><span class="o">;</span>
 
-                <span class="n">sPanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimplePanel</span><span class="p">();</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">sPanel</span><span class="p">);</span>
+                <span class="n">sPanel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimplePanel</span><span class="o">();</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">sPanel</span><span class="o">);</span>
 
-                <span class="n">onLoadCallback</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Runnable</span><span class="p">()</span> <span class="p">{</span>
-                        <span class="kd">public</span> <span class="nf">void</span> <span class="n">run</span><span class="p">()</span> <span class="p">{</span>
-                                <span class="n">AnnotatedTimeLine</span> <span class="nf">chart</span> <span class="o">=</span> 
-                                      <span class="k">new</span> <span class="n">AnnotatedTimeLine</span><span class="p">(</span><span class="n">createTable</span><span class="p">(),</span>
-                                                <span class="n">createOptions</span><span class="p">(),</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
-                                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Chart created&#34;</span><span class="p">);</span>
-                                <span class="n">sPanel</span><span class="p">.</span><span class="na">setWidget</span><span class="p">(</span><span class="n">chart</span><span class="p">);</span>
-                        <span class="p">}</span>
-                <span class="p">};</span>
-        <span class="p">}</span></code></pre></div>
-<p>Call back method, <code>onLoadCallBack()</code> is a Java Runnable object that runs
+                <span class="n">onLoadCallback</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                                <span class="n">AnnotatedTimeLine</span> <span class="n">chart</span> <span class="o">=</span> 
+                                      <span class="k">new</span> <span class="n">AnnotatedTimeLine</span><span class="o">(</span><span class="n">createTable</span><span class="o">(),</span>
+                                                <span class="n">createOptions</span><span class="o">(),</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">);</span>
+                                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Chart created&#34;</span><span class="o">);</span>
+                                <span class="n">sPanel</span><span class="o">.</span><span class="na">setWidget</span><span class="o">(</span><span class="n">chart</span><span class="o">);</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
+        <span class="o">}</span>
+</code></pre></div><p>Call back method, <code>onLoadCallBack()</code> is a Java Runnable object that runs
 in a separate thread and in its run method we create the chart.</p>
-
 <p><code>in.fins.client.widget/ChartPanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">protected</span> <span class="nf">Options</span> <span class="n">createOptions</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">Options</span> <span class="nf">options</span> <span class="o">=</span> <span class="n">AnnotatedTimeLine</span><span class="p">.</span><span class="na">Options</span><span class="p">.</span><span class="na">create</span><span class="p">();</span>
-                <span class="n">options</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;allowRedraw&#34;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-                <span class="n">options</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;displayExactValues&#34;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-                <span class="n">options</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;dateFormat&#34;</span><span class="p">,</span> <span class="s">&#34;MMM dd, yyyy&#34;</span><span class="p">);</span>
-                <span class="n">options</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;displayRangeSelector&#34;</span><span class="p">,</span> <span class="n">rangeSelector</span><span class="p">);</span>
-                <span class="n">options</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&#34;fill&#34;</span><span class="p">,</span> <span class="s">&#34;20&#34;</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">options</span><span class="p">;</span>
-        <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">protected</span> <span class="n">Options</span> <span class="nf">createOptions</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Options</span> <span class="n">options</span> <span class="o">=</span> <span class="n">AnnotatedTimeLine</span><span class="o">.</span><span class="na">Options</span><span class="o">.</span><span class="na">create</span><span class="o">();</span>
+                <span class="n">options</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;allowRedraw&#34;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+                <span class="n">options</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;displayExactValues&#34;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+                <span class="n">options</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;dateFormat&#34;</span><span class="o">,</span> <span class="s">&#34;MMM dd, yyyy&#34;</span><span class="o">);</span>
+                <span class="n">options</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;displayRangeSelector&#34;</span><span class="o">,</span> <span class="n">rangeSelector</span><span class="o">);</span>
+                <span class="n">options</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;fill&#34;</span><span class="o">,</span> <span class="s">&#34;20&#34;</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">options</span><span class="o">;</span>
+        <span class="o">}</span>
 
-        <span class="kd">private</span> <span class="nf">AbstractDataTable</span> <span class="n">createTable</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">private</span> <span class="n">AbstractDataTable</span> <span class="nf">createTable</span><span class="o">()</span> <span class="o">{</span>
 
-                <span class="n">DataTable</span> <span class="nf">dataTable</span> <span class="o">=</span> <span class="n">DataTable</span><span class="p">.</span><span class="na">create</span><span class="p">();</span>
-                <span class="n">dataTable</span><span class="p">.</span><span class="na">addColumn</span><span class="p">(</span><span class="n">ColumnType</span><span class="p">.</span><span class="na">DATE</span><span class="p">,</span> <span class="s">&#34;Date&#34;</span><span class="p">);</span>
-                <span class="n">dataTable</span><span class="p">.</span><span class="na">addColumn</span><span class="p">(</span><span class="n">ColumnType</span><span class="p">.</span><span class="na">NUMBER</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+                <span class="n">DataTable</span> <span class="n">dataTable</span> <span class="o">=</span> <span class="n">DataTable</span><span class="o">.</span><span class="na">create</span><span class="o">();</span>
+                <span class="n">dataTable</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="n">ColumnType</span><span class="o">.</span><span class="na">DATE</span><span class="o">,</span> <span class="s">&#34;Date&#34;</span><span class="o">);</span>
+                <span class="n">dataTable</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="n">ColumnType</span><span class="o">.</span><span class="na">NUMBER</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">title</span><span class="o">);</span>
 
-                <span class="n">List</span><span class="o">&lt;</span><span class="n">Data</span><span class="o">&gt;</span> <span class="nf">dataList</span> <span class="o">=</span> <span class="n">dataGroup</span><span class="p">.</span><span class="na">getDataList</span><span class="p">();</span>
-                <span class="n">dataTable</span><span class="p">.</span><span class="na">addRows</span><span class="p">(</span><span class="n">dataList</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Data</span><span class="o">&gt;</span> <span class="n">dataList</span> <span class="o">=</span> <span class="n">dataGroup</span><span class="o">.</span><span class="na">getDataList</span><span class="o">();</span>
+                <span class="n">dataTable</span><span class="o">.</span><span class="na">addRows</span><span class="o">(</span><span class="n">dataList</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
 
-                <span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">dataList</span><span class="p">);</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dataList</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">Data</span> <span class="nf">data</span> <span class="o">=</span> <span class="n">dataList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-                        <span class="n">dataTable</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="na">getDate</span><span class="p">());</span>
-                        <span class="k">for</span> <span class="p">(</span><span class="n">Fact</span> <span class="nf">fact</span> <span class="o">:</span> <span class="n">data</span><span class="p">.</span><span class="na">getFacts</span><span class="p">())</span> <span class="p">{</span>
-                                <span class="k">if</span> <span class="p">(</span><span class="n">fact</span><span class="p">.</span><span class="na">getKey</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
-                                        <span class="k">try</span> <span class="p">{</span>
-                                                <span class="kt">double</span> <span class="nf">value</span> 
-                                             <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">fact</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
-                                                <span class="n">dataTable</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">1</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-                                        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-                                        <span class="p">}</span>
-                                <span class="p">}</span>
-                        <span class="p">}</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="n">dataTable</span><span class="p">;</span>
-       <span class="p">}</span></code></pre></div>
-<p>Method <code>createOptions()</code> returns Options which are used to configure the
+                <span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">dataList</span><span class="o">);</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dataList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                        <span class="n">Data</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dataList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                        <span class="n">dataTable</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">data</span><span class="o">.</span><span class="na">getDate</span><span class="o">());</span>
+                        <span class="k">for</span> <span class="o">(</span><span class="n">Fact</span> <span class="n">fact</span> <span class="o">:</span> <span class="n">data</span><span class="o">.</span><span class="na">getFacts</span><span class="o">())</span> <span class="o">{</span>
+                                <span class="k">if</span> <span class="o">(</span><span class="n">fact</span><span class="o">.</span><span class="na">getKey</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">key</span><span class="o">))</span> <span class="o">{</span>
+                                        <span class="k">try</span> <span class="o">{</span>
+                                                <span class="kt">double</span> <span class="n">value</span> 
+                                             <span class="o">=</span> <span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">fact</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+                                                <span class="n">dataTable</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+                                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="o">}</span>
+                                <span class="o">}</span>
+                        <span class="o">}</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="n">dataTable</span><span class="o">;</span>
+       <span class="o">}</span>
+</code></pre></div><p>Method <code>createOptions()</code> returns Options which are used to configure the
 chart. Various configuration options for each Chart type is available in
 <a href="https://developers.google.com/chart/interactive/docs/gallery" target="_blank">Chart
 Gallery</a>.
@@ -858,7 +841,6 @@ the date from each Data to the first column and gets matching fact from
 List&lt;Fact&gt; and sets its value to the second column.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -874,25 +856,22 @@ List&lt;Fact&gt; and sets its value to the second column.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Let&rsquo;s understand how Ajax Loader executes the callback method
 <code>onLoadCallback()</code>.</p>
-
 <p><code>in.fins.client.widget/ChartPanel.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onDataGroupChange</span><span class="p">(</span><span class="n">DataGroupEvent</span> <span class="nf">dataGroupEvent</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;dataGroupEvent received. Load charts &#34;</span><span class="p">);</span>
-                <span class="n">dataGroup</span> <span class="o">=</span> <span class="n">dataGroupEvent</span><span class="p">.</span><span class="na">getDataGroup</span><span class="p">();</span>
-                <span class="n">VisualizationUtils</span><span class="p">.</span><span class="na">loadVisualizationApi</span><span class="p">(</span><span class="n">onLoadCallback</span><span class="p">,</span>
-                                <span class="n">AnnotatedTimeLine</span><span class="p">.</span><span class="na">PACKAGE</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>In handler method <code>onDataGroupChange()</code>, DataGroup is retrieved from
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDataGroupChange</span><span class="o">(</span><span class="n">DataGroupEvent</span> <span class="n">dataGroupEvent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;dataGroupEvent received. Load charts &#34;</span><span class="o">);</span>
+                <span class="n">dataGroup</span> <span class="o">=</span> <span class="n">dataGroupEvent</span><span class="o">.</span><span class="na">getDataGroup</span><span class="o">();</span>
+                <span class="n">VisualizationUtils</span><span class="o">.</span><span class="na">loadVisualizationApi</span><span class="o">(</span><span class="n">onLoadCallback</span><span class="o">,</span>
+                                <span class="n">AnnotatedTimeLine</span><span class="o">.</span><span class="na">PACKAGE</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>In handler method <code> onDataGroupChange()</code>, DataGroup is retrieved from
 DataGroupEvent and assigned to dataGroup field. Next, we call
 <code>VisualizationUtils loadVisulationApi()</code> method by passing <code>Runnable</code>
 object created earlier as callback. VisualizationUtils uses Ajax loader
 to load the Visualization API, and after it loads the API, it calls the
 runnable object (i.e. onLoadCallBack method) to create the chart.</p>
-
 <p>In the next section, which is the closing section of Part 1 of the book,
 we take a look at tab closing.</p>
 

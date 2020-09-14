@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse on Codetab</title>
@@ -19,8 +19,8 @@
       <guid>https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/</guid>
       <description>Maven Eclipse Plugin So far, we worked with Maven CLI. In this chapter, we install Eclipse Maven Plugin and learn to manage Maven Project in Eclipse IDE.
 Eclipse Maven Plugin, M2Eclipse or simply M2E, provides integration between Eclipse IDE and Maven. Among other things, it assists in the following aspects of Maven.
- view contents of local and remote Maven repositories.
- provides wizards to create single module project or multi module Maven Projects.</description>
+  view contents of local and remote Maven repositories.
+  provides wizards to create single module project or multi module Maven Projects.</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ POM Editor When we open pom.xml in Eclipse, M2E opens it in GUI POM Editor shown
       <description>Eclipse Maven Multi Module In this tutorial we explain steps to create a Maven Multi Module Project using Eclipse Maven Plugin (M2E) Wizard.
 The main steps are
  create top level maven project add modules to top level project  Create Top Level Maven Project Open Maven Project Wizard with File → New → Others → Maven → Maven Project.
- The wizard opens Select project name and location window.</description>
+ The wizard opens Select project name and location window. Check the Create a simple project checkbox to create a bare bone project and click Next.</description>
     </item>
     
   </channel>

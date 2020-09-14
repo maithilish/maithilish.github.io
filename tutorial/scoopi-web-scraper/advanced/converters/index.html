@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Converters - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,64 +491,55 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="converters">Converters</h1>
-
+            <h1 id="converters">Converters</h1>
 <p>This chapter explain adding new steps to workflow and converter plugins.</p>
-
 <h2 id="add-new-step">Add new Step</h2>
-
 <p>We can add new steps at task level. The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-8/job.yml" target="_blank">Example 8</a>
 adds <em>converter</em> step to <em>jsoupDefault</em> steps in bs task. The relevant
 snippet is shown below</p>
-
 <p><code>defs/examples/fin/jsoup/ex-8/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsTask:
+<pre><code class="language-raw" data-lang="raw">bsTask:
   dataDef: bs
   steps:
     jsoupDefault:
       converter:
-        class: &#34;org.codetab.scoopi.step.process.DataConverter&#34;
+        class: &quot;org.codetab.scoopi.step.process.DataConverter&quot;
         previous: filter
         next: appender
-        ....  </code></pre></div>
-<p>The bsTask uses jsoupDefault built-in step as base and inserts converter
+        ....  
+</code></pre><p>The bsTask uses jsoupDefault built-in step as base and inserts converter
 step between filter and appender steps. The converter step is added only
 to baTask and for any other task that uses jsoupDefault step is not
 affected by this.</p>
-
 <p>The structure of steps add or override is as follows</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsTask:                 -- task name
+<pre><code class="language-raw" data-lang="raw">bsTask:                 -- task name
     dataDef: bs              
     steps:                 
       jsoupDefault:          -- base steps name
-        converter:           -- step to add or override</code></pre></div>
-<p>Steps can override or add multiple steps.</p>
-
+        converter:           -- step to add or override
+</code></pre><p>Steps can override or add multiple steps.</p>
 <h2 id="converters-1">Converters</h2>
-
 <p>Let&rsquo;s see how to add plugins to steps. The datadef snippet from the
 example is as below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bsTask:
+<pre><code class="language-raw" data-lang="raw">bsTask:
   dataDef: bs
   steps:
     jsoupDefault:
       converter:
-        class: &#34;org.codetab.scoopi.step.process.DataConverter&#34;
+        class: &quot;org.codetab.scoopi.step.process.DataConverter&quot;
         previous: filter
         next: appender           
-        plugins: &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html&#34; target=&#34;_blank&#34;&gt;
+        plugins: &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html&quot; target=&quot;_blank&quot;&gt;
           plugin: { 
                  name: dateConverter, 
-                 class: &#34;org.codetab.scoopi.plugin.converter.DateRoller&#34;, 
+                 class: &quot;org.codetab.scoopi.plugin.converter.DateRoller&quot;, 
                  item: year, 
-                 inPattern: &#34;MMM &#39;&#39;YY&#34;, 
-                 outPattern: &#34;yyyy-MM-dd&#34;, 
-                 roll: &#34;DAY_OF_MONTH=ceil&#34; }            
-       ]</code></pre></div>
-<p>The <em>plugins</em> is an array defined at step level and as array, it can
+                 inPattern: &quot;MMM ''YY&quot;, 
+                 outPattern: &quot;yyyy-MM-dd&quot;, 
+                 roll: &quot;DAY_OF_MONTH=ceil&quot; }            
+       ]
+</code></pre><p>The <em>plugins</em> is an array defined at step level and as array, it can
 hold multiple <em>plugin</em> objects. The above example defines a single
 plugin named dateConverter. It uses
 <em>org.codetab.scoopi.plugin.converter.DateRoller</em> which is applied to
@@ -562,16 +553,13 @@ to ceiling to get month end date. Refer
 for in and out patterns and
 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html" target="_blank">Calendar</a>
 for date fields.</p>
-
 <p>Just to change the format without rolling the date, we can use
 <em>org.codetab.scoopi.plugin.converter.DateFormater</em>.</p>
-
 <h2 id="new-steps-definition">New steps definition</h2>
-
 <p>Do we need to define multiple steps when multiple tasks require
 jsoupDefault steps with date converter plugin. No, Scoopi allows you to
 define new steps in job.yml file using top level <em>steps</em> element.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">taskGroups:
+<pre><code class="language-raw" data-lang="raw">taskGroups:
   bsGroup:
     bsTask:
       dataDef: bs
@@ -586,29 +574,27 @@ steps:
   fooSteps:
     jsoupDefault:
       converter:
-        class: &#34;org.codetab.scoopi.step.process.DataConverter&#34;
+        class: &quot;org.codetab.scoopi.step.process.DataConverter&quot;
         previous: filter
         next: appender           
-        plugins: &lt;a href=&#34;https://github.com/maithilish/scoopi/blob/master/src/main/resources/steps-default.yml&#34; target=&#34;_blank&#34;&gt;
+        plugins: &lt;a href=&quot;https://github.com/maithilish/scoopi/blob/master/src/main/resources/steps-default.yml&quot; target=&quot;_blank&quot;&gt;
           plugin: { 
             name: dateConverter, 
-            class: &#34;org.codetab.scoopi.plugin.converter.DateRoller&#34;, 
+            class: &quot;org.codetab.scoopi.plugin.converter.DateRoller&quot;, 
             item: year, 
-            inPattern: &#34;MMM &#39;&#39;YY&#34;, 
-            outPattern: &#34;yyyy-MM-dd&#34;, 
-            roll: &#34;DAY_OF_MONTH=ceil&#34; }            
-        ]</code></pre></div>
-<p>The above snippet defines two tasks - bsTask and plTask and both uses an
+            inPattern: &quot;MMM ''YY&quot;, 
+            outPattern: &quot;yyyy-MM-dd&quot;, 
+            roll: &quot;DAY_OF_MONTH=ceil&quot; }            
+        ]
+</code></pre><p>The above snippet defines two tasks - bsTask and plTask and both uses an
 user defined steps - fooSteps. The steps element defines a new fooSteps
 which uses jsoupDefault as base and adds converter step with DateRoller
 plugin. The steps element is top level element in job.yml like other top
 level elements - taskGroups, locatorGroups and dataDefs.</p>
-
 <p>We can also create completely new steps without using default steps as
 base. To do that, copy any steps definition from
 [steps-default.yml</a>
 to job.yml. Rename and alter the step as required.</p>
-
 <p>The next chapter describes scripting plugin which allows data
 modifications with JavaScript.</p>
 

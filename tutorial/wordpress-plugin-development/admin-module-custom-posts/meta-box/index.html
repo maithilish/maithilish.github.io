@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Meta Box - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,19 +625,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-2-wordpress-meta-box">7.2. WordPress Meta Box</h2>
-
+            <h2 id="72wordpress-meta-box">7.2. WordPress Meta Box</h2>
 <p>In the previous blog, we saw how to register a new custom post type
 named sos and use it as Social Lockers. To manage the custom post type
 items, in this blog we setup, render and customize Sos Locker editor
 with WordPress Meta Box.</p>
-
 <p>While registering the custom post type, we used
 <strong>register_meta_box_cb</strong> to register the callback method
 <code>setup_meta_boxes()</code>.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function create_post_type () {
 
@@ -647,27 +642,22 @@ with WordPress Meta Box.</p>
         ) );
 
         ....
-    }</code></pre></div>
-<p>When we add or edit Sos Locker WordPress calls the callback, which we
+    }
+</code></pre></div><p>When we add or edit Sos Locker WordPress calls the callback, which we
 use to customize meta boxes of the editor.</p>
-
 <h3 id="wordpress-meta-box">WordPress Meta Box</h3>
-
 <p>WordPress Post editor is composed of Meta Boxes which holds HTML input
 and other elements. The screenshot of Sos Locker editor shows three meta
 boxes. The main meta box titled <strong>Share Locker</strong> is to edit lockers&rsquo;
 meta data. On the right there are two meta boxes - CodeTab which is used
 to advertise this tutorial and the standard Publish meta box that
 WordPress adds to post editor.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-add-new.png" alt="WordPress Meta Box - Share on Social Add New Locker" />
 </figure>
 
-
 <p>Let&rsquo;s see how this is done. In the callback method <code>setup_meta_boxes()</code>,
 we use two WordPress functions - <a href="http://codex.wordpress.org/Function_Reference/add_meta_box" target="_blank">add_meta_box()</a> and <a href="http://codex.wordpress.org/Function_Reference/remove_meta_box" target="_blank">remove_meta_box()</a>.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function setup_meta_boxes ( $post ) {
 
@@ -680,38 +670,43 @@ we use two WordPress functions - <a href="http://codex.wordpress.org/Function_Re
         remove_meta_box( &#39;slider_sectionid&#39;, $this-&gt;post_type, &#39;normal&#39; );
         remove_meta_box( &#39;layout_sectionid&#39;, $this-&gt;post_type, &#39;normal&#39; );
 
-    }</code></pre></div>
-<p>To add <strong>Share Locker</strong> meta box, we use following arguments.</p>
-
+    }
+</code></pre></div><p>To add <strong>Share Locker</strong> meta box, we use following arguments.</p>
 <ul>
-<li><p><strong>id</strong> - locker_meta_box,</p></li>
-
-<li><p><strong>title</strong> - Share Locker.</p></li>
-
-<li><p><strong>callback</strong> - method <code>render_locker_meta_box()</code> renders this meta
-box.</p></li>
-
-<li><p><strong>post_type</strong> - only applicable to custom post type and we set it
-<strong>sos</strong>.</p></li>
-
-<li><p><strong>context</strong> - edit page is divided into three area - normal,
+<li>
+<p><strong>id</strong> - locker_meta_box,</p>
+</li>
+<li>
+<p><strong>title</strong> - Share Locker.</p>
+</li>
+<li>
+<p><strong>callback</strong> - method <code>render_locker_meta_box()</code> renders this meta
+box.</p>
+</li>
+<li>
+<p><strong>post_type</strong> - only applicable to custom post type and we set it
+<strong>sos</strong>.</p>
+</li>
+<li>
+<p><strong>context</strong> - edit page is divided into three area - normal,
 advanced and side. We use normal to position the meta box below the
 title field. While, <strong>advanced</strong> places the meta box below the
-normal and <strong>side</strong> places box on the side bar.</p></li>
-
-<li><p><strong>priority</strong> - when there are multiple meta boxes in each area
+normal and <strong>side</strong> places box on the side bar.</p>
+</li>
+<li>
+<p><strong>priority</strong> - when there are multiple meta boxes in each area
 (context), their placement may fine tuned with priority - high,
-core, default and low.</p></li>
-
-<li><p><strong>callback_args</strong> - arguments to callback, if any.</p></li>
+core, default and low.</p>
+</li>
+<li>
+<p><strong>callback_args</strong> - arguments to callback, if any.</p>
+</li>
 </ul>
-
 <p>We similarly add the second meta box to the side bar. WordPress adds
 other standard meta boxes - Layout and Slider - to the editor. Sos
 Lockers editor doesn&rsquo;t require these two meta boxes. We use
 remove_meta_box() function to remove these meta boxes for sos custom
 post type.</p>
-
 
 
 <div>&nbsp;</div>
@@ -729,10 +724,8 @@ post type.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Let&rsquo;s get back to Share Locker meta box and see how it is rendered by
 the callback.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function render_locker_meta_box () {
 
@@ -766,16 +759,14 @@ the callback.</p>
     <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 EOD;
         return $table;
-}</code></pre></div>
-<p>In the rendering method, we set <strong>nonce</strong> token which is a security
+}
+</code></pre></div><p>In the rendering method, we set <strong>nonce</strong> token which is a security
 feature of WordPress to authenticate the requests. Next, we echo a HTML
 table containing the the required text fields, check boxes and radio
 buttons.</p>
-
 <p>When we edit a locker, WordPress sets the locker object which is a sos
 custom post of type in the global variable $post and we use the $post
-object to get the post_id of the locker as <code>$post-&gt;ID</code>.</p>
-
+object to get the post_id of the locker as <code> $post-&gt;ID</code>.</p>
 
 
 <div>&nbsp;</div>
@@ -794,11 +785,9 @@ object to get the post_id of the locker as <code>$post-&gt;ID</code>.</p>
 
 
 
-
 <p>Locker edit page also has TINY MCE Visual Editor at the bottom to enter
-the display text of the locker. Rendering method calls <code>add_editor()</code>
+the display text of the locker. Rendering method calls <code>add_editor() </code>
 method to add the TINY MCE editor.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_editor () {
         global $post;
@@ -816,20 +805,17 @@ method to add the TINY MCE editor.</p>
                 )
         );
         wp_editor( $value, $id, $editor_options );
-    }</code></pre></div>
-<p>In add_editor() method, we use TINY MCE editor options to set essential
+    }
+</code></pre></div><p>In add_editor() method, we use TINY MCE editor options to set essential
 toolbar icons and then call WordPress
 <a href="http://codex.wordpress.org/Function_Reference/wp_editor" target="_blank">wp_editor()</a>
 function which adds the visual editor. When post is saved we can fetch
 the text entered in editor from the $_POST[&lsquo;locker_text&rsquo;] as the
 editor option <strong>textarea_name</strong> is set to  <strong>locker_text</strong>.</p>
-
 <p><strong>Post Contents</strong></p>
-
 <p>Share on Social plugin saves locker display text as meta data. The
 Display Text field is just a bunch of HTML text and it may very well
 saved as post content instead of separate meta data.</p>
-
 <p>While registering sos custom post type, we disabled the default content
 editor that WordPress adds to the post editor and enabled a separate
 TINY MCE editor to enter the display text. We do so to have a better
@@ -837,21 +823,21 @@ control over the editor. WordPress places the default content editor at
 the top of the page. As it is meant to edit post content, its dimension
 is quite large. By going for custom TINY MCE editor, we could do the
 following.</p>
-
 <ul>
-<li><p>place the editor at the bottom of meta box after all other fields.</p></li>
-
-<li><p>make editor smaller.</p></li>
-
-<li><p>disable some of the toolbar items.</p></li>
+<li>
+<p>place the editor at the bottom of meta box after all other fields.</p>
+</li>
+<li>
+<p>make editor smaller.</p>
+</li>
+<li>
+<p>disable some of the toolbar items.</p>
+</li>
 </ul>
-
 <h3 id="hide-publish-details">Hide Publish Details</h3>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-custom-post-publish-details.png" alt="WordPress Meta Box - Publish Meta box" />
 </figure>
-
 
 <p>The default Publish Meta box has editable fields such as <strong>Status</strong>,
 <strong>Visibility</strong> and <strong>Published on</strong> etc., Sos Lockers doesn&rsquo;t require
@@ -859,7 +845,6 @@ these information. The block that displays these things is the
 minor-publishing section and there is no documented way to remove it.
 Instead, we toggle the block style and hide it in <code>hide_minor_publish()</code>
 method which is hooked to <strong>admin_head</strong> hook.</p>
-
 <p><code>share-on-social/admin/class-sos.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function hide_minor_publish () {
    $screen = get_current_screen();
@@ -867,8 +852,8 @@ method which is hooked to <strong>admin_head</strong> hook.</p>
       array($this-&gt;post_type) ) ) {
        echo &#39;<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;#</span><span class="nn">minor-publishing</span> <span class="p">{</span> <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="p">}&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>&#39;;
    } 
-}</code></pre></div>
-<p>In the next section, we see how to publish the post.</p>
+}
+</code></pre></div><p>In the next section, we see how to publish the post.</p>
 
           </main>
         </div>

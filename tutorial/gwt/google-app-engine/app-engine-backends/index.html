@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>GAE Backends - GWT Tutorial - CodeTab</title></head>
 
@@ -711,55 +711,44 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-4-backends">11.4. Backends</h2>
-
+            <h2 id="114backends">11.4. Backends</h2>
 <p>So far, App Engine handled file upload, cache ops and task execution
 through a default frontend instance. This instance has 60 seconds
 deadline for HTTP requests and 10 minutes deadline for tasks and a low
 memory cap of 128MB.</p>
-
 <p>App Engine Backends allows us to configure additional instances to
 overcome these limits. App Engine Backends are special instances that
 have no request deadlines and comes with higher memory and CPU limits,
 and provides persistent state across requests. We may configure Backends
 to access more memory (up to 1GB) and CPU (up to 4.8GHz).</p>
-
 <h5 id="google-app-engine-backends">Google App Engine Backends</h5>
-
-<p>In this section, we move <code>GaePersistTask</code> to a Backend. But before
+<p>In this section, we move <code> GaePersistTask</code> to a Backend. But before
 that, let&rsquo;s understand the concept of Backend with a servlet example.</p>
-
 <p>Normally GAE runs the app on default instance. Backends are additional
 instances of the app. These additional instances are exact replica of
 the default instance. To understand this, add a test servlet to the app.</p>
-
 <p><code>in.fins.server.task/TestServlet.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">TestServlet</span> <span class="nf">extends</span> <span class="n">HttpServlet</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestServlet</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
   <span class="nd">@Override</span>
-  <span class="kd">protected</span> <span class="nf">void</span> <span class="n">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="nf">req</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="nf">resp</span><span class="p">)</span>
-        <span class="kd">throws</span> <span class="nf">ServletException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span>
+        <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
 
         <span class="c1">// Get the backend handling the current request.
-</span><span class="c1"></span>        <span class="n">BackendService</span> <span class="nf">backendsApi</span> <span class="o">=</span> <span class="n">BackendServiceFactory</span><span class="p">.</span><span class="na">getBackendService</span><span class="p">();</span>
-        <span class="n">String</span> <span class="nf">currentBackendName</span> <span class="o">=</span> <span class="n">backendsApi</span><span class="p">.</span><span class="na">getCurrentBackend</span><span class="p">();</span>
+</span><span class="c1"></span>        <span class="n">BackendService</span> <span class="n">backendsApi</span> <span class="o">=</span> <span class="n">BackendServiceFactory</span><span class="o">.</span><span class="na">getBackendService</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">currentBackendName</span> <span class="o">=</span> <span class="n">backendsApi</span><span class="o">.</span><span class="na">getCurrentBackend</span><span class="o">();</span>
 
-        <span class="n">PrintWriter</span> <span class="nf">out</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="na">getWriter</span><span class="p">();</span>
-        <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Backend Name : &#34;</span> <span class="o">+</span> <span class="n">currentBackendName</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>TestServlet obtains the name of current backend through Backend API and
+        <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Backend Name : &#34;</span> <span class="o">+</span> <span class="n">currentBackendName</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>TestServlet obtains the name of current backend through Backend API and
 sends it as response to the browser.</p>
-
 <p>Add <strong>servlet</strong> entry to <code>web.xml</code> with <strong>url-pattern</strong> as
 <strong>/testServlet</strong>. Deploy the app and access the servlet with
 <code>http://yourappname.appspot.com/testServlet</code>. App Engine sends a
 response Backend Name : null, which indicates that servlet is executed
 on default instance.</p>
-
 <p>Next configure a backend by adding backends.xml to the app</p>
-
 <p><code>war/WEB-INF/backends.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span class="nt">&lt;backends&gt;</span>
@@ -770,28 +759,27 @@ on default instance.</p>
     <span class="nt">&lt;public&gt;</span>true<span class="nt">&lt;/public&gt;</span>
   <span class="nt">&lt;/options&gt;</span>
   <span class="nt">&lt;/backend&gt;</span>
-<span class="nt">&lt;/backends&gt;</span></code></pre></div>
-<p>Deploy the app to App Engine. Now, in addition to default instance, App
+<span class="nt">&lt;/backends&gt;</span>
+</code></pre></div><p>Deploy the app to App Engine. Now, in addition to default instance, App
 Engine starts a backend instance and you may access the TestServlet with
 following URL.</p>
-
 <ul>
-<li><p><code>http://yourappname.appspot.com/testServlet</code> - TestServlet runs on
-default instance and sends response as Backend Name : null</p></li>
-
-<li><p><code>http://test-backend.yourappname.appspot.com/testServlet</code> -
+<li>
+<p><code>http://yourappname.appspot.com/testServlet</code> - TestServlet runs on
+default instance and sends response as Backend Name : null</p>
+</li>
+<li>
+<p><code>http://test-backend.yourappname.appspot.com/testServlet</code> -
 TestServlet runs on test-backend Backend Instance and sends response
-as Backend Name : test-backend</p></li>
+as Backend Name : test-backend</p>
+</li>
 </ul>
-
 <p>Even though we are able to run servlets (or other classes) on backends,
 appropriate use of backends is with GAE services like Task Queues, Cron
 jobs etc.,</p>
-
 <p>Once you are through with the concept, remove TestServlet related
 changes from the project and we are ready to move <code>GaePersistTask</code> to
 Backend.</p>
-
 
 
 <div>&nbsp;</div>
@@ -810,12 +798,9 @@ Backend.</p>
 
 
 
-
 <h5 id="configure-backend">Configure Backend</h5>
-
 <p>Backend configuration file, <code>WEB-INF/backends.xml</code> , configures and adds
 backend instances.</p>
-
 <p><code>war/WEB-INF/backends.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;backends&gt;</span>
   <span class="nt">&lt;backend</span> <span class="na">name=</span><span class="s">&#34;task-backend&#34;</span><span class="nt">&gt;</span>
@@ -825,58 +810,53 @@ backend instances.</p>
     <span class="nt">&lt;public&gt;</span>false<span class="nt">&lt;/public&gt;</span>
   <span class="nt">&lt;/options&gt;</span>
   <span class="nt">&lt;/backend&gt;</span>
-<span class="nt">&lt;/backends&gt;</span></code></pre></div>
-<p>With this config file, App Engine creates a backend named task-backend.
+<span class="nt">&lt;/backends&gt;</span>
+</code></pre></div><p>With this config file, App Engine creates a backend named task-backend.
 App Engine allows four classes of Backends, <strong>B1</strong>, <strong>B2</strong>, <strong>B4</strong> and
 <strong>B8</strong> and Class B2 has Memory limit is 256MB, CPU limit 1200MHz.</p>
-
 <p>Backend may be resident or dynamic. Resident backends run continuously
 where state is maintained over a long period of time while Dynamic
 backends come into existence when they receive a request, and are teared
 down when idle. Persist task doesn&rsquo;t require a resident backend as the
 activity is intermittent in nature without any dependence on state
 information. Hence, task-backend is configured as dynamic.</p>
-
 <p>Persistence task runs in the background and requires no public access.
 Hence task-backend is configured as a private backend.</p>
-
 <h5 id="run-task-on-backend">Run Task on Backend</h5>
-
 <p>Once Backend is configured, we may obtain its address through Backend
 API.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">String</span> <span class="nf">backendAddress</span> <span class="o">=</span> <span class="n">BackendServiceFactory</span><span class="p">.</span><span class="na">getBackendService</span><span class="p">()</span>
-<span class="p">.</span><span class="na">getBackendAddress</span><span class="p">(</span><span class="s">&#34;task-backend&#34;</span><span class="p">);</span></code></pre></div>
-<p>Backend address is added to Task URL header, which forces the App Engine
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">String</span> <span class="n">backendAddress</span> <span class="o">=</span> <span class="n">BackendServiceFactory</span><span class="o">.</span><span class="na">getBackendService</span><span class="o">()</span>
+<span class="o">.</span><span class="na">getBackendAddress</span><span class="o">(</span><span class="s">&#34;task-backend&#34;</span><span class="o">);</span>
+</code></pre></div><p>Backend address is added to Task URL header, which forces the App Engine
 to execute the task on a specific Backend.</p>
-
 <p><code>in.fins.server.task/GaePersistTask.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">parameters</span><span class="p">)</span> <span class="kd">throws</span> <span class="nf">Exception</span> <span class="p">{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
-                <span class="p">....</span>
+                <span class="o">....</span>
 
-                <span class="n">String</span> <span class="nf">backendAddress</span> <span class="o">=</span> <span class="n">BackendServiceFactory</span><span class="p">.</span><span class="na">getBackendService</span><span class="p">()</span>
-                                <span class="p">.</span><span class="na">getBackendAddress</span><span class="p">(</span><span class="s">&#34;task-backend&#34;</span><span class="p">);</span>
-                <span class="n">TaskOptions</span> <span class="nf">task</span> <span class="o">=</span> <span class="n">withUrl</span><span class="p">(</span><span class="s">&#34;/fins/gaePersistTask&#34;</span><span class="p">)</span>
-                                <span class="p">.</span><span class="na">param</span><span class="p">(</span><span class="s">&#34;symbolName&#34;</span><span class="p">,</span> <span class="n">symbolName</span><span class="p">).</span><span class="na">method</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="na">POST</span><span class="p">)</span>
-                                <span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">&#34;Host&#34;</span><span class="p">,</span> <span class="n">backendAddress</span><span class="p">);</span>
-                <span class="n">Queue</span> <span class="nf">queue</span> <span class="o">=</span> <span class="n">QueueFactory</span><span class="p">.</span><span class="na">getQueue</span><span class="p">(</span><span class="n">qName</span><span class="p">);</span>
-                <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">task</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>In development mode, server may throw <code>ConnectException</code> and fails to
+                <span class="n">String</span> <span class="n">backendAddress</span> <span class="o">=</span> <span class="n">BackendServiceFactory</span><span class="o">.</span><span class="na">getBackendService</span><span class="o">()</span>
+                                <span class="o">.</span><span class="na">getBackendAddress</span><span class="o">(</span><span class="s">&#34;task-backend&#34;</span><span class="o">);</span>
+                <span class="n">TaskOptions</span> <span class="n">task</span> <span class="o">=</span> <span class="n">withUrl</span><span class="o">(</span><span class="s">&#34;/fins/gaePersistTask&#34;</span><span class="o">)</span>
+                                <span class="o">.</span><span class="na">param</span><span class="o">(</span><span class="s">&#34;symbolName&#34;</span><span class="o">,</span> <span class="n">symbolName</span><span class="o">).</span><span class="na">method</span><span class="o">(</span><span class="n">Method</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+                                <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">&#34;Host&#34;</span><span class="o">,</span> <span class="n">backendAddress</span><span class="o">);</span>
+                <span class="n">Queue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">QueueFactory</span><span class="o">.</span><span class="na">getQueue</span><span class="o">(</span><span class="n">qName</span><span class="o">);</span>
+                <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">task</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>In development mode, server may throw <code>ConnectException</code> and fails to
 bring up the Backend.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">INFO: Retrying request
+<pre><code class="language-screen" data-lang="screen">INFO: Retrying request
 May 25, 2013 6:46:44 PM com.google.appengine.tools.development.AbstractBackendServers$ServerWrapper sendStartRequest
-WARNING: Got exception while performing /_ah/start request on server: 0.task-backend, java.net.ConnectException: Connection refused</code></pre></div>
-<p>It is found that disabling the net connection before launching the
+WARNING: Got exception while performing /_ah/start request on server: 0.task-backend, java.net.ConnectException: Connection refused
+</code></pre><p>It is found that disabling the net connection before launching the
 application or reloading the server, may solve the issue. Doing so
 brings up Backend on some free
 port.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">May 26, 2013 11:10:09 AM com.google.appengine.tools.development.AbstractBackendServers$ServerWrapper startup
+<pre><code class="language-screen" data-lang="screen">May 26, 2013 11:10:09 AM com.google.appengine.tools.development.AbstractBackendServers$ServerWrapper startup
 INFO: server: -1.task-backend is running on port 47589
 May 26, 2013 4:40:09 PM com.google.appengine.tools.development.DevAppServerImpl start
-INFO: Dev App Server is now running</code></pre></div>
-
+INFO: Dev App Server is now running
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -893,30 +873,22 @@ INFO: Dev App Server is now running</code></pre></div>
 <div>&nbsp;</div>
 
 
-
 <p>If this workaround fails to bring up the Backend, then only option is to
 test Backends on live setup.</p>
-
 <p>Admin console has options to manage the Backends instances.</p>
-
 <p>In the next section, we list the steps to switch the app to run on
 regular app servers.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>App Engine Services</em> - Details about various service provided by App
 Engine <a href="https://cloud.google.com/appengine/docs/java/apis" target="_blank">Java Service
 APIs</a></p>
-
 <p><em>Memcache</em> - Memcache reference <a href="https://cloud.google.com/appengine/docs/java/memcache/" target="_blank">The Memcache
 API</a> and <a href="https://developers.google.com/appengine/docs/java/memcache/usingjcache" target="_blank">Using
 JCache</a>.</p>
-
 <p><em>Task Queue</em> - Task Queue Reference <a href="https://cloud.google.com/appengine/docs/java/taskqueue/" target="_blank">The Task Queue
 API</a> and <a href="https://developers.google.com/appengine/docs/java/config/queue" target="_blank">Java
 Task Queue
 Configuration</a>.</p>
-
 <p><em>Backends</em> - <a href="https://cloud.google.com/appengine/docs/java/backends/overview" target="_blank">Backends Java API
 Overview</a>
 and <a href="https://developers.google.com/appengine/docs/java/config/backends" target="_blank">Java Backends

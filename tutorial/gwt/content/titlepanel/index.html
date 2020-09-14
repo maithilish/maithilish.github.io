@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>TitlePanel - GWT Tutorial - CodeTab</title></head>
 
@@ -711,22 +711,16 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-3-titlepanel">6.3. TitlePanel</h2>
-
+            <h2 id="63titlepanel">6.3. TitlePanel</h2>
 <p><code>TitlePanel</code> displays the symbol name on selection by the user and uses
 a <code>SimplePanel</code> and <code>Label</code>.</p>
-
 <p>Why a separate widget when a Label is suffice, and reason for this is
 with more and more widgets added to Snapshot events handling becomes
 complicated and with a separate widget we can wire events much more
 elegantly. Hence TitlePanel is pulled out as a separate widget with
 <code>TitlePanel.ui.xml</code> and <code>TitlePanel.java</code>.</p>
-
 <p>Snapshot uses TitlePanel in <code>Snapshot.ui.xml</code> which earlier used a Label
 as placeholder for this widget.</p>
-
 <p><code>in.fins.client.content/Snapshot.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;g:LayoutPanel</span> <span class="na">ui:field=</span><span class="s">&#34;layout&#34;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;g:layer</span> <span class="na">left=</span><span class="s">&#39;60%&#39;</span> <span class="na">width=</span><span class="s">&#39;40%&#39;</span> <span class="na">top=</span><span class="s">&#39;1%&#39;</span> <span class="na">height=</span><span class="s">&#39;5%&#39;</span><span class="nt">&gt;</span>
@@ -734,9 +728,8 @@ as placeholder for this widget.</p>
                 <span class="nt">&lt;/g:layer&gt;</span>
                 <span class="nt">&lt;g:layer</span> <span class="na">left=</span><span class="s">&#39;2%&#39;</span> <span class="na">width=</span><span class="s">&#39;50%&#39;</span> <span class="na">top=</span><span class="s">&#39;1%&#39;</span> <span class="na">height=</span><span class="s">&#39;5%&#39;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;f:TitlePanel</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;/g:layer&gt;</span></code></pre></div>
-<h5 id="wire-titlepanel-and-autosuggest">Wire TitlePanel and AutoSuggest</h5>
-
+                <span class="nt">&lt;/g:layer&gt;</span>
+</code></pre></div><h5 id="wire-titlepanel-and-autosuggest">Wire TitlePanel and AutoSuggest</h5>
 <p><code>TitlePanel</code> has to listen to <code>AutoSuggest</code> and display the symbol name
 when user selects one. Instead of traditional event and handler method
 we use GWT EventBus infrastructure to avoid direct couple between these
@@ -745,40 +738,36 @@ dispatches the event to TitlePanel. GWT EventBus mechanism is explained
 in detail in <a href="/tutorial/gwt/menu/gwt-eventbus-events/">EventBus</a>. The <code>NameEvent.java</code> defines NameEvent and NameHandler, and NameEvent holds
 the name selected by the user. Wire AutoSuggest and TitlePanel as
 follows.</p>
-
 <p>First make TitlePanel as a handler of NameEvent.</p>
-
 <p><code>in.fins.client.widget/TitlePanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">TitlePanel</span> <span class="nf">extends</span> <span class="n">Composite</span>  <span class="nf">implements</span> <span class="n">NameHandler</span><span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TitlePanel</span> <span class="kd">extends</span> <span class="n">Composite</span>  <span class="kd">implements</span> <span class="n">NameHandler</span><span class="o">{</span>
 
-<span class="p">...</span>
+<span class="o">...</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onNameChange</span><span class="p">(</span><span class="n">NameEvent</span> <span class="nf">nameEvent</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;NameEvent &#34;</span> <span class="o">+</span> <span class="n">nameEvent</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-                <span class="n">label</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">nameEvent</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-        <span class="p">}</span></code></pre></div>
-<p>Next, register TitlePanel as a handler for NameEvent with EventBus.</p>
-
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNameChange</span><span class="o">(</span><span class="n">NameEvent</span> <span class="n">nameEvent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;NameEvent &#34;</span> <span class="o">+</span> <span class="n">nameEvent</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+                <span class="n">label</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">nameEvent</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+</code></pre></div><p>Next, register TitlePanel as a handler for NameEvent with EventBus.</p>
 <p><code>in.fins.client.content/Snapshot.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">       <span class="nd">@UiField</span>
-       <span class="n">TitlePanel</span> <span class="nf">titlePanel</span><span class="p">;</span>
+       <span class="n">TitlePanel</span> <span class="n">titlePanel</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="p">{</span>
-               <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-               <span class="n">autoSuggest</span><span class="p">.</span><span class="na">requestFocus</span><span class="p">();</span>
-               <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">NameEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">titlePanel</span><span class="p">);</span></code></pre></div>
-<p>Finally, on selection fire NameEvent from AutoSuggest.</p>
-
+        <span class="kd">public</span> <span class="nf">Snapshot</span><span class="o">()</span> <span class="o">{</span>
+               <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+               <span class="n">autoSuggest</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
+               <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">NameEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">titlePanel</span><span class="o">);</span>
+</code></pre></div><p>Finally, on selection fire NameEvent from AutoSuggest.</p>
 <p><code>in.fins.client.widget/AutoSuggest.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiHandler</span><span class="p">(</span><span class="s">&#34;suggestBox&#34;</span><span class="p">)</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">handleSelection</span><span class="p">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="p">.</span><span class="na">Suggestion</span><span class="o">&gt;</span> <span class="nf">s</span><span class="p">)</span> <span class="p">{</span>
-               <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
-               <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fireEvent</span><span class="p">(</span>
-                               <span class="k">new</span> <span class="n">NameEvent</span><span class="p">(</span><span class="n">suggestBox</span><span class="p">.</span><span class="na">getText</span><span class="p">()));</span>
-               <span class="n">suggestBox</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p>In <code>Snapshot.java</code>, we got hold of TitlePanel through <code>@UiField</code> to add
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiHandler</span><span class="o">(</span><span class="s">&#34;suggestBox&#34;</span><span class="o">)</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleSelection</span><span class="o">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="o">.</span><span class="na">Suggestion</span><span class="o">&gt;</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+               <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="o">.</span><span class="na">getText</span><span class="o">());</span>
+               <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">fireEvent</span><span class="o">(</span>
+                               <span class="k">new</span> <span class="n">NameEvent</span><span class="o">(</span><span class="n">suggestBox</span><span class="o">.</span><span class="na">getText</span><span class="o">()));</span>
+               <span class="n">suggestBox</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p>In <code>Snapshot.java</code>, we got hold of TitlePanel through <code>@UiField</code> to add
 the handler, and this is adequate as long as the number of widgets are
 few. Snapshot ends up with more than a dozen of widget and with so many
 UI fields it soon results in untidy code. Instead, we may use

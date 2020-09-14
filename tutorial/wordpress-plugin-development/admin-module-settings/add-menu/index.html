@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Add Menu - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,22 +625,16 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-1-wordpress-add-menu">6.1. WordPress Add Menu</h2>
-
+            <h2 id="61wordpress-add-menu">6.1. WordPress Add Menu</h2>
 <p>Share on Social Plugin uses common options such as FaceBook App ID. In
 this section, we add a new menu item - <strong>Settings</strong> - to WordPress
 Administration Menu to display the option page.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-settings-page.png" alt="WordPress add menu - menu item." />
 </figure>
 
-
 <p>In Share on Social Plugin, class file <code>admin/class-options.php</code> defines
 class <code>Sos_Options</code>to manage the Settings page.</p>
-
 <p><code>share-on-social/admin/admin.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">require_once SOS_PATH . &#39;admin/class-options.php&#39;;
 
@@ -657,10 +651,9 @@ class Sos_Admin {
         $sos_options = new Sos_Options();
         $sos_options-&gt;setup();
 
-        ...</code></pre></div>
-<p>We instantiate Sos_Options class in <code>admin.php</code> and call its setup()
+        ...
+</code></pre></div><p>We instantiate Sos_Options class in <code>admin.php</code> and call its setup()
 method. Let&rsquo;s see what happens in Sos_Options::setup().</p>
-
 <p><code>share-on-social/admin/class-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Options {
 
@@ -677,22 +670,22 @@ method. Let&rsquo;s see what happens in Sos_Options::setup().</p>
                 ) );
     }
 
-    ....</code></pre></div>
-<p>As explained in the previous chapter - <a href="/tutorial/wordpress-plugin-development/hooks-actions-filters/">Hooks, Actions and Filters</a>, we add actions to bind class methods to actions hooks.</p>
-
+    ....
+</code></pre></div><p>As explained in the previous chapter - <a href="/tutorial/wordpress-plugin-development/hooks-actions-filters/">Hooks, Actions and Filters</a>, we add actions to bind class methods to actions hooks.</p>
 <ol>
-<li><p>add <code>init_common_options()</code> method as action function to action hook
-<strong>admin_init</strong>.</p></li>
-
-<li><p>add <code>register_settings_page()</code> method as action function to action
-hook <strong>admin_menu</strong>.</p></li>
+<li>
+<p>add <code>init_common_options()</code> method as action function to action hook
+<strong>admin_init</strong>.</p>
+</li>
+<li>
+<p>add <code>register_settings_page()</code> method as action function to action
+hook <strong>admin_menu</strong>.</p>
+</li>
 </ol>
-
 <p>When we access admin screen, WordPress core after executing typical
 hooks such as plugins_loaded, init etc., encounters <strong>admin_menu</strong>
 hook and it will call Sos_Options::register_settings_page(). We use
 this to add a new menu item to admin menu.</p>
-
 
 
 <div>&nbsp;</div>
@@ -711,14 +704,11 @@ this to add a new menu item to admin menu.</p>
 
 
 
-
 <h3 id="add-administration-menu-item">Add Administration Menu item</h3>
-
 <p>The action functions of <strong>admin_menu</strong> hook are used to add new menu
 item or sub menu item to WordPress Admin menu. In the function, we use
 WordPress function <code>add_submenu_page()</code> to add a new sub menu item and
 link it to a menu page.</p>
-
 <p><code>share-on-social/admin/class-options.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function register_settings_page () {
 
@@ -729,48 +719,49 @@ link it to a menu page.</p>
                          &#39;administrator&#39;, $setting_page,
                           array($this,&#39;render_settings_page&#39;) );
 
-    }</code></pre></div>
-<p>To define strings that are translatable to other languages for
+    }
+</code></pre></div><p>To define strings that are translatable to other languages for
 internationalization, WordPress uses __() functions such as
 <code>$page_title = __( 'Common Options', 'sos-domain' )</code>. We will explain
 this in detail in a later chapter and for the time being you may think
 them as regular string assignment like <code>$page_title = 'Common Options'</code>.</p>
-
 <p>After defining variables, we call
 <a href="http://codex.wordpress.org/Function_Reference/add_submenu_page" target="_blank">add_submenu_page()</a>
 function with following parameters.</p>
-
 <ul>
-<li><p><strong>parent_slug</strong> - slug name of the menu to which this sub menu
+<li>
+<p><strong>parent_slug</strong> - slug name of the menu to which this sub menu
 should attach. We attach our menu item to options-general.php which
 is slug name for Settings menu in the admin screen. Refer
 <a href="http://codex.wordpress.org/Function_Reference/add_submenu_page" target="_blank">add_submenu_page()</a>
-to find out the names of parent slugs that the admin menu uses.</p></li>
-
-<li><p><strong>page_title</strong> - title to use on the page linked to this menu.</p></li>
-
-<li><p><strong>menu_title</strong> - menu item label.</p></li>
-
-<li><p><strong>capability</strong> - minimum capability of user for whom this menu is
+to find out the names of parent slugs that the admin menu uses.</p>
+</li>
+<li>
+<p><strong>page_title</strong> - title to use on the page linked to this menu.</p>
+</li>
+<li>
+<p><strong>menu_title</strong> - menu item label.</p>
+</li>
+<li>
+<p><strong>capability</strong> - minimum capability of user for whom this menu is
 displayed. As we wish show this menu only admin we set it to
-administrator.</p></li>
-
-<li><p><strong>menu_slug</strong> - slug name for this menu. We use
-<strong>sos_settings_page</strong> as slug name for this menu.</p></li>
-
-<li><p><strong>callback function</strong> - the call back function which renders the
+administrator.</p>
+</li>
+<li>
+<p><strong>menu_slug</strong> - slug name for this menu. We use
+<strong>sos_settings_page</strong> as slug name for this menu.</p>
+</li>
+<li>
+<p><strong>callback function</strong> - the call back function which renders the
 page attached to this menu. When menu is clicked, WordPress calls
-the callback function where we echo the HTML to display the page.</p></li>
+the callback function where we echo the HTML to display the page.</p>
+</li>
 </ul>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p> </p>
-
 <p><strong>Parent Slug</strong></p>
-
 <p>In the above code, menu_title is Sos Settings and parent slug is
 options-general.php and this will show Sos Settings menu item under
 Settings menu. But, in the Share on Social Project code, the first
@@ -778,10 +769,8 @@ argument of add_submenu_page() is &lsquo;edit.php?post_type=sos&rsquo; instead o
 &lsquo;options-general.php&rsquo;. This is because we want to list the sub menu item
 under a custom menu named Share on Social. We will cover the custom menu
 in a later chapter that deals with custom posts.</p>
-
 <p>For the time being you can try out both slugs and see the placement of
 the sub menu.</p>
-
 <p>At this point, when we click the new sub menu it displays a blank page.
 We will complete it soon. But before rendering the page, we need to
 register page fields with WordPress. In the next section, we go through

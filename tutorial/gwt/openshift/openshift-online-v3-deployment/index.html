@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift V3 - GWT Tutorial - CodeTab</title></head>
 
@@ -711,12 +711,8 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p> </p>
-
-<h2 id="12-6-openshift-online-v3-deployment">12.6. OpenShift Online V3 Deployment</h2>
-
+            <p> </p>
+<h2 id="126-openshift-online-v3-deployment">12.6. OpenShift Online V3 Deployment</h2>
 <p>The earlier chapters explained configuration and deployment of GWT
 applications on OpenShift V2 using RHC command line tool. OpenShift V2
 is discontinued from October 2017 and replaced with OpenShift V3 which
@@ -724,13 +720,11 @@ is no longer free for production applications. However, for development
 there is free starters account with limited resources. This tutorial,
 OpenShift Online V3 Deployment, explains the configuration and
 deployment process to host the GWT application on OpenShift V3.</p>
-
 <p>Red Hat OpenShift Online (v3) is public cloud application development
 and hosting platform that automates the provisioning, management and
 scaling of applications. It has been completely rewritten and uses
 Docker-formatted containers for builds and deployments, and Kubernetes
 for container orchestration.</p>
-
 <p>To understand the OpenShift V3 build and deployment process, refer
 <a href="https://docs.openshift.com/online/getting_started/index.html" target="_blank">Getting Started with OpenShift Online
 V3</a> which
@@ -744,21 +738,19 @@ the walk through example, we need to have an account in GitHub. Once we
 know the basics of OpenShift web console, OC command line tool and
 concepts such as builds, deployments, pods and services etc., we are
 ready to deploy our GWT application to OpenShift.</p>
-
 <h5 id="prepare-git-repository">Prepare Git repository</h5>
-
 <p>In GitHub, create a new repository named fins. Next, clone it your
 system with</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># git clone https://github.com//fins.git</code></pre></div>
-<p>Create deployments directory in local <code>fins</code> directory.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># cd fins
-# mkdir deployments</code></pre></div>
-<p>Copy GWT application war file, fins.war or ROOT.war, to the
+<pre><code class="language-screen" data-lang="screen"># git clone https://github.com//fins.git
+</code></pre><p>Create deployments directory in local <code>fins</code> directory.</p>
+<pre><code class="language-screen" data-lang="screen"># cd fins
+# mkdir deployments
+</code></pre><p>Copy GWT application war file, fins.war or ROOT.war, to the
 <code>fins/deployments</code> directory. Commit and push the changes to GitHub.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># git add deployments
+<pre><code class="language-screen" data-lang="screen"># git add deployments
 # git commit -m “gwt war file added”
-# git push -u origin master</code></pre></div>
-
+# git push -u origin master
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -776,9 +768,7 @@ system with</p>
 
 
 
-
 <h5 id="deploy-to-openshift">Deploy to OpenShift</h5>
-
 <p>To begin deployment, delete the example NodeJs project and create a new
 project with some unique name. Next in <strong>Add to Project</strong> → <strong>Browse
 Catalog</strong> screen choose Java and then Red Hat JBoss Web Server (Tomcat)
@@ -787,7 +777,6 @@ JBoss EWS screen, enter name as fins and Git Hub URL of your git hub
 repository. OpenShift pulls the project (either source or binary) from
 GitHub and merge it with JBoss EWS image and prepare docker image using
 S2I tool and deploys it as container in OpenShift.</p>
-
 <p>Go to Application Overview page to view the build progress. Once build
 is complete, OpenShift deploys the build as pod. Once Jboss EWS pod is
 up and running, install MySQL database. To do that, select <strong>Add to
@@ -795,19 +784,15 @@ Project</strong> drop down menu from top bar and open <strong>Browse Catalog</st
 Scroll down and choose Data Stores and select MySQL Persistence. In
 database configuration screen, enter database name, user name and
 password for the new database. Leave other fields to default.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/os-v3-db-conf.png" alt="OpenShift Online V3 Deployment mysql database configuration" />
 </figure>
 
-
-<h6 id="figure-12-6-database-configuration">Figure 12.6. Database Configuration</h6>
-
+<h6 id="figure126database-configuration">Figure 12.6. Database Configuration</h6>
 <p>Now the app can be accessed through the URL generated by OpenShift which
 is available in <strong>Overview</strong> screen or under <strong>Applications</strong> →
 <strong>Routes</strong>. At this point you should be able to access the application
 but not any data as we are yet link database with the app.</p>
-
 <p>Before proceeding further, we need to add a webhook to the Git
 repository so that whenever we push changes to GitHub it trigger a new
 build and deployment in OpenShift. To copy the webhook, go to <strong>Builds</strong>
@@ -820,7 +805,6 @@ mark displayed next to the webhook indicates that GitHub is successful
 in communicating with your OpenShift app.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -836,7 +820,6 @@ in communicating with your OpenShift app.</p>
 <div>&nbsp;</div>
 
 
-
 <p>In the app, we used mysqlDS as datasource and ds is configured in
 context.xml file which normally placed in jbossews/conf directory. As
 our app is merged with JBoss image which runs as container in OpenShift
@@ -844,10 +827,9 @@ it is not possible to place the context.xml in conf directory of JBoss
 EWS. Instead, we can add it to our git repository which gets merged into
 image. To do that, go to fins directory in your local system which we
 cloned earlier and add context.xml to configuration directory.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># cd fins
-# mkdir configuration</code></pre></div>
-<p>Add context.xml with following contents to configuration directory.</p>
-
+<pre><code class="language-screen" data-lang="screen"># cd fins
+# mkdir configuration
+</code></pre><p>Add context.xml with following contents to configuration directory.</p>
 <p><code>fins/configuration/context.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
 
@@ -869,18 +851,17 @@ cloned earlier and add context.xml to configuration directory.</p>
               <span class="na">validationQuery=</span><span class="s">&#34;select 1&#34;</span>
               <span class="na">testOnBorrow=</span><span class="s">&#34;true&#34;</span>
               <span class="nt">/&gt;</span>
-<span class="nt">&lt;/Context&gt;</span></code></pre></div>
-<p>Replace url,username and password. URL is constructed from the hostname
+<span class="nt">&lt;/Context&gt;</span>
+</code></pre></div><p>Replace url,username and password. URL is constructed from the hostname
 and port of MySQL service. We can get mysql hostname and port from
 OpenShift Web Console. Go to <strong>Applications</strong> → <strong>Services</strong> → <strong>mysql</strong>
 which contains Hostname (something like mysql.finsdemo.svc) and Service
 Port (normally 3306).</p>
-
 <p>Now commit the changes and push it to Github.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"># git add configuration
+<pre><code class="language-screen" data-lang="screen"># git add configuration
 # git commit -m “mysql config added”
-# git push</code></pre></div>
-<p>Webhook will trigger build and deployment cycle in OpenShift. Once
+# git push
+</code></pre><p>Webhook will trigger build and deployment cycle in OpenShift. Once
 completed, you can upload data to the app using upload option as
 discussed in earlier chapters.</p>
 

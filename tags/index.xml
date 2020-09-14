@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Codetab</title>
@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 11:15:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>kubernetes K8s cluster Fedora CoreOS VirtualBox</title>
+      <link>https://www.codetab.org/tags/kubernetes-k8s-cluster-fedora-coreos-virtualbox/</link>
+      <pubDate>Mon, 14 Sep 2020 11:15:00 +0000</pubDate>
+      
+      <guid>https://www.codetab.org/tags/kubernetes-k8s-cluster-fedora-coreos-virtualbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes k8s cluster Fedora CoreOS Qemu KVM</title>
+      <link>https://www.codetab.org/tags/kubernetes-k8s-cluster-fedora-coreos-qemu-kvm/</link>
+      <pubDate>Sat, 12 Sep 2020 11:15:00 +0000</pubDate>
+      
+      <guid>https://www.codetab.org/tags/kubernetes-k8s-cluster-fedora-coreos-qemu-kvm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>java generics bounded wildcards api tutorial</title>
@@ -138,7 +156,7 @@
     </item>
     
     <item>
-      <title>Apache Ivy Tutorial</title>
+      <title>apache ivy tutorial</title>
       <link>https://www.codetab.org/tags/apache-ivy-tutorial/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -413,6 +431,33 @@
       <pubDate>Sat, 12 Jan 2019 02:11:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tags/appender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google web toolkit</title>
+      <link>https://www.codetab.org/tags/google-web-toolkit/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tags/google-web-toolkit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gwt tutorial</title>
+      <link>https://www.codetab.org/tags/gwt-tutorial/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tags/gwt-tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WordPress plugin development tutorial</title>
+      <link>https://www.codetab.org/tags/wordpress-plugin-development-tutorial/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tags/wordpress-plugin-development-tutorial/</guid>
       <description></description>
     </item>
     
@@ -1745,6 +1790,15 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java generic tutorial</title>
+      <link>https://www.codetab.org/tags/java-generic-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codetab.org/tags/java-generic-tutorial/</guid>
       <description></description>
     </item>
     

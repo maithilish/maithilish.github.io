@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openshift deployment on Codetab</title>
@@ -19,8 +19,8 @@
       <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/</guid>
       <description>12.4. OpenShift Deployment Even though, we developed a fairly complicated GWT application and deployed it to App Engine, surprisingly we never discussed about build cycle. Google Plugin for Eclipse (GPE) was building the application in background. But, when it comes to OpenShift, we have to build and deploy.
 Steps to build a GWT application with JDO are
- compile the java classes with javac.
- enhance persistence classes with JDO Enhancer.</description>
+  compile the java classes with javac.
+  enhance persistence classes with JDO Enhancer.</description>
     </item>
     
   </channel>

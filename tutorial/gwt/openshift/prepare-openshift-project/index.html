@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T18:55:00+0530",
         "dateModified" : "2019-01-10T18:55:00+0530",
-        "wordCount" : "606",
+        "wordCount" : "608",
         "keywords" : [ "gwt openshift","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift - GWT Tutorial - CodeTab</title></head>
 
@@ -711,97 +711,83 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-2-gwt-openshift-project">12.2. GWT OpenShift Project</h2>
-
+            <h2 id="122gwt-openshift-project">12.2. GWT OpenShift Project</h2>
 <p>Project fins developed so far is configured for App Engine and there are
 two options to deploy its code on OpenShift.</p>
-
 <ul>
-<li><p>create a new project and import the code.</p></li>
-
-<li><p>modify the existing project.</p></li>
+<li>
+<p>create a new project and import the code.</p>
+</li>
+<li>
+<p>modify the existing project.</p>
+</li>
 </ul>
-
 <p>As we are exploring the functionalities of OpenShift with a demo
 application, we suggest you to go with a new project. For a live
 project, we suggest the second one.</p>
-
 <h5 id="create-a-new-project">Create a new project</h5>
-
 <p>In this method, we create a new project and import the fins.</p>
-
 <p>Use New Web Application wizard to create new project. Choose  <strong>GDT
 Pulldown</strong> → <strong>New Web Application Project &hellip;</strong>  or  <strong>File</strong> → <strong>New</strong>
 → <strong>Web Application Project</strong> and fill details</p>
-
-<p>Project Name - <strong><code>project name may be anything</code></strong></p>
-
+<p>Project Name - <strong><code>project name may be anything </code></strong></p>
 <p>Package - <strong><code>in.fins</code></strong></p>
-
 <p>Use Google Web Toolkit - <strong><code>select</code></strong></p>
-
 <p>Use Google App Engine - <strong><code>deselect</code></strong></p>
-
 <p>Google App Marketplace - <strong><code>deselect</code></strong></p>
-
 <p>Generate Sample Code - <strong><code>deselect</code></strong></p>
-
 <p>Project name may be anything but package name should be in.fins.</p>
-
 <p>Next import full-code or sec-backends from part-3.zip as explained in
 Import Code in Chapter 5 - Model.</p>
-
 <p>Copy <code>gwt-visualization-1.1.2.jar</code> from Project fins - <code>war/WEB-INF/lib</code>
 to new project <code>war/WEB-INF/lib</code> directory and add the jar to project
 build path.</p>
-
 <p>In case you are using IvyDE, add ivy.xml as Ivy library</p>
-
 <p>In case your are not using IvyDE, copy jars from Project fins -
 <code>war/WEB-INF/lib</code> to new project <code>war/WEB-INF/lib</code> directory and add the
 jars to project build path. To connect to MySQL fins need MySQL
 connector so add <code>mysql-connector-java-5.1.25.jar</code> to project lib
 directory and build path.</p>
-
 <h5 id="modify-the-existing-project">Modify the existing project</h5>
-
 <p>Another method is to modify the existing fins project and remove/modify
 App Engine specific items. Steps to do so are</p>
-
 <ul>
-<li><p>go to the project context menu and choose <strong>Build Path</strong> →
+<li>
+<p>go to the project context menu and choose <strong>Build Path</strong> →
 <strong>Configure Build Path</strong> and in Java Build Path dialog select
 Libraries tab and remove App Engine SDK entry.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/buildpath1.png" alt="" />
 </figure>
+
 </li>
-
-<li><p>next in project&rsquo;s context menu, choose <strong>Google</strong> → <strong>App Engine
-Settings &hellip;</strong> and in App Engine dialog, deselect Use Google App
-Engine checkbox.</p></li>
-
-<li><p>remove all App Engine related jars from <code>war/WEB-INF/lib</code>, which
-were added by GPE when App Engine support was enabled.</p></li>
-
-<li><p>add DataNucleus, Hibernate and MyBatis related jars as explained in <a href="/tutorial/gwt/database/persist/">Persist</a></p></li>
-
-<li><p>remove SystemServiceServlet entry and hash out GaePersistTask entry
-from <code>war/WEB-INF/web.xml</code>.</p></li>
-
-<li><p>modify <code>src/META-INF/jdoconfig.xml</code> and change datastore config to a
+<li>
+<p>next in project&rsquo;s context menu, choose <strong>Google</strong> → <strong>App Engine
+Settings . . .</strong> and in App Engine dialog, deselect Use Google App
+Engine checkbox.</p>
+</li>
+<li>
+<p>remove all App Engine related jars from <code>war/WEB-INF/lib</code>, which
+were added by GPE when App Engine support was enabled.</p>
+</li>
+<li>
+<p>add DataNucleus, Hibernate and MyBatis related jars as explained in <a href="/tutorial/gwt/database/persist/">Persist</a></p>
+</li>
+<li>
+<p>remove SystemServiceServlet entry and hash out GaePersistTask entry
+from <code>war/WEB-INF/web.xml</code>.</p>
+</li>
+<li>
+<p>modify <code>src/META-INF/jdoconfig.xml</code> and change datastore config to a
 RDBMS like HSQLDB. Modify <code>src/in/fins/shared/package.jdo</code> and set
 value-strategy attribute of Data and DataGroup to <strong>uuid-string</strong>.
 Make sure that DataNucleus support is enabled for the project and
 classes are enhanced.</p>
-
 <p>Remember to remove DataNucleus support when reverting back to App
-Engine as App Engine enhances class automatically on each build.</p></li>
-
-<li><p>if app uses Hibernate as ORM, then modify
+Engine as App Engine enhances class automatically on each build.</p>
+</li>
+<li>
+<p>if app uses Hibernate as ORM, then modify
 <code>src/META-INF/fins.properties</code> and set ORM to Hibernate. It also
 requires an additional validator library hibernate-validator ( same
 major version as hibernate-core) and also slf4j-api and slf4j-log4j
@@ -809,13 +795,14 @@ major version as hibernate-core) and also slf4j-api and slf4j-log4j
 have to remove hibernate-validator and slf4j libraries else GAE
 raises some weird exception. (this applies only when you use
 Hibernate as ORM. For OpenShift, we are going with JDO with MySQL as
-RDBMS)</p></li>
-
-<li><p>To connect to MySQL, fins need MySQL connector, so add
+RDBMS)</p>
+</li>
+<li>
+<p>To connect to MySQL, fins need MySQL connector, so add
 <code>mysql-connector-java-5.1.25.jar</code> to <code>war/WEB-INF/lib</code> and add the
-jar to build path.</p></li>
+jar to build path.</p>
+</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -834,17 +821,13 @@ jar to build path.</p></li>
 
 
 
-
 <p>As App Engine related libraries are removed from lib you will have error
 in <code>in.fins.server.cache.GaeCache</code> and
 <code>in.fins.server.task.GaePersistTask</code> classes, but these error will not
 stop the app from running on an App Server.</p>
-
 <h2 id="back-to-gae">Back to GAE</h2>
-
 <p>Anytime you want to revert the project back to Google App Engine,
 reverse the above mentioned steps.</p>
-
 <p>In the next section, we explain the configuration changes required in
 the project (either the new one or the existing project) to run it on
 OpenShift.</p>

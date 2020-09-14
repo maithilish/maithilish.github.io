@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Archetype Plugin - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,19 +535,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-archetype-plugin">Maven Archetype Plugin</h1>
-
+            <h1 id="maven-archetype-plugin">Maven Archetype Plugin</h1>
 <p>In the previous tutorial, we covered Maven Resources Plugin. In this
 tutorial, we introduce Maven Archetype Plugin.</p>
-
 <p>An archetype is a template for a Maven project which is used by the
 Maven Archetype plugin to create new projects. Simply put, it generates
 skeleton for different types of projects.</p>
-
 <p>To better understand, lets create a new project using <a href="http://maven.apache.org/archetype/maven-archetype-plugin/" target="_blank">Maven Archetype Plugin</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn archetype:generate 
+<pre><code class="language-screen" data-lang="screen">$ mvn archetype:generate 
 -DgroupId=com.xyz 
 -DartifactId=my-app 
 -Dversion=1.0 
@@ -555,39 +550,38 @@ skeleton for different types of projects.</p>
 -DarchetypeGroupId=org.apache.maven.archetypes 
 -DarchetypeArtifactId=maven-archetype-quickstart 
 -DarchetypeVersion=1.0 
--DinteractiveMode=false</code></pre></div>
-<figure class="text-center" >
+-DinteractiveMode=false
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-sample-tree.png" alt="Maven Archetype Plugin - quickstart dir structure" />
 </figure>
-
 
 <p>The archetype plugin creates a new sample Java project named <strong>my-app</strong>
 with source and test directories with sample files and pom.xml. The
 plugin uses archetype
 org.apache.maven.archetypes:maven-archetype-quickstart:1.0 as the
 template.</p>
-
 <p>The above command invokes archetype:generate goal of
 maven-archetype-plugin. We pass various parameters to the goal (through
 -D) and meaning of these parameters are:</p>
-
 <ul>
-<li><p><strong>groupId</strong>, <strong>artifactId</strong>, <strong>version</strong> - defines the coordinates
+<li>
+<p><strong>groupId</strong>, <strong>artifactId</strong>, <strong>version</strong> - defines the coordinates
 of the new project and com.xyz:my-app:1.0 is the Maven coordinates
-of my-app project. The goal uses <strong>artifactId</strong> to name the project.</p></li>
-
-<li><p><strong>packageName</strong> - defines the package in the project. It creates a
-package named com.xyz for my-app project.</p></li>
-
-<li><p><strong>archetypeGroupId</strong>, <strong>archetypeArtifactId</strong>, <strong>archetypeVersion</strong></p>
-
+of my-app project. The goal uses <strong>artifactId</strong> to name the project.</p>
+</li>
+<li>
+<p><strong>packageName</strong> - defines the package in the project. It creates a
+package named com.xyz for my-app project.</p>
+</li>
+<li>
+<p><strong>archetypeGroupId</strong>, <strong>archetypeArtifactId</strong>, <strong>archetypeVersion</strong></p>
 <ul>
 <li>defines the coordinates of archetype to be used as template. It
 uses <strong>quickstart archetype</strong> which is template for Java application
 with sample files.</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 
 
 <div>&nbsp;</div>
@@ -606,39 +600,37 @@ with sample files.</li>
 
 
 
-
 <h3 id="note">Note</h3>
-
 <p>So far in the guide, we avoided the use of Maven Archetype Plugin so
 that beginners can have a better grasp of things by hand coding the
 project. The directory structure and sources of the Simple App Project,
 we hand coded in the earlier chapters is same as the one created by
 quickstart archetype.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-webapp-tree.png" alt="Maven Archetype Plugin - webapp dir structure" />
 </figure>
 
-
 <p>Some of the commonly used archetypes are</p>
-
 <ul>
-<li><p><strong>maven-archetype-quickstart</strong> - creates a Java project with sample
-files.</p></li>
-
-<li><p><strong>maven-archetype-simple</strong> - creates a Java project without sample
-files.</p></li>
-
-<li><p><strong>maven-archetype-webapp</strong> - creates a Web App project as shown in
-the screenshot.</p></li>
+<li>
+<p><strong>maven-archetype-quickstart</strong> - creates a Java project with sample
+files.</p>
+</li>
+<li>
+<p><strong>maven-archetype-simple</strong> - creates a Java project without sample
+files.</p>
+</li>
+<li>
+<p><strong>maven-archetype-webapp</strong> - creates a Web App project as shown in
+the screenshot.</p>
+</li>
 </ul>
-
 <p>There are hundreds of archetypes in Maven repository contributed by
 different software projects. We can use following command to enter
 interactive mode and select the required archetype for our
 project.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn archetype:generate -DgroupId=com.xyz -DartifactId=my-app -Dversion=1.0 -DinteractiveMode=true</code></pre></div>
-<p>Above, we have not provided the archetype to use instead we use
+<pre><code class="language-screen" data-lang="screen">$ mvn archetype:generate -DgroupId=com.xyz -DartifactId=my-app -Dversion=1.0 -DinteractiveMode=true
+</code></pre><p>Above, we have not provided the archetype to use instead we use
 interactive mode and select the archetype. In interactive mode, plugin
 shows a very long list of archetype (more than five hundred archetypes)
 and prompt us enter the archetype number. In the prompt, we can enter
@@ -648,7 +640,6 @@ list, select from the archetype number and enter it to generate the
 project from that template.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -664,10 +655,8 @@ project from that template.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Maven Archetype Plugin is also useful to generate multi-module project
 and we cover this in a later chapter.</p>
-
 <p>In the next tutorial, we cover project distribution.</p>
 
           </main>

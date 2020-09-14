@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multi Module Dependency - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,24 +535,17 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="multi-module-dependency-management">Multi Module Dependency Management</h1>
-
+            <h1 id="multi-module-dependency-management">Multi Module Dependency Management</h1>
 <p>Dependency inheritance (explained in previous chapter) is useful when a dependency is required by all child modules. When a dependency is required by some or even many, but not by all modules, then use dependency management feature.</p>
-
 <p>The example code <code>extended-multi</code>, used in this tutorial, is available
 at GitHub <a href="https://github.com/maithilish/maven-examples" target="_blank">Maven Examples</a>. Download the examples as zip and extract it to some location or clone it with git.</p>
-
 <p>In <code>extended-multi</code>, <code>util</code> module uses commons-lang3 as dependency and
 let&rsquo;s assume that another module <code>app</code> also require commons-lang3. Now,
 both <code>app/pom.xml</code> and <code>shared/util/pom.xml</code> should declare this
 dependency. When multiple modules require a dependency then move it the
 top-level pom.xml as <code>dependencyManagement</code>.</p>
-
 <p>To move commons-lang3 to dependency management, first modify the
 <code>extended-multi/pom.xml</code> and following lines</p>
-
 <p><code>extended-multi/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dependencyManagement&gt;</span>
     <span class="nt">&lt;dependencies&gt;</span>
@@ -562,51 +555,43 @@ top-level pom.xml as <code>dependencyManagement</code>.</p>
             <span class="nt">&lt;version&gt;</span>3.6<span class="nt">&lt;/version&gt;</span>
         <span class="nt">&lt;/dependency&gt;</span>
     <span class="nt">&lt;/dependencies&gt;</span>
-<span class="nt">&lt;/dependencyManagement&gt;</span></code></pre></div>
-<p>The dependency management declaration is dependencies declaration
+<span class="nt">&lt;/dependencyManagement&gt;</span>
+</code></pre></div><p>The dependency management declaration is dependencies declaration
 wrapped in dependencyManagement element.</p>
-
 <p>Next, modify <code>app/pom.xml</code> and add the following to dependencies
 element. Notice that version is not specified.</p>
-
 <p><code>app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.apache.commons<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>commons-lang3<span class="nt">&lt;/artifactId&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span></code></pre></div>
-<p>Next, modify <code>shared/util/pom.xml</code> and remove version element from the
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div><p>Next, modify <code>shared/util/pom.xml</code> and remove version element from the
 commons-lang3 dependency. After modification the dependency is as
 follows</p>
-
 <p><code>shared/util/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dependency&gt;</span>
         <span class="nt">&lt;groupId&gt;</span>org.apache.commons<span class="nt">&lt;/groupId&gt;</span>
         <span class="nt">&lt;artifactId&gt;</span>commons-lang3<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;/dependency&gt;</span></code></pre></div>
-<p>To use commons-lang3 from app module, modify the greet() method of
+    <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div><p>To use commons-lang3 from app module, modify the greet() method of
 App.java as follows</p>
-
 <p><code>app/src/main/java/app/App.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="p">....</span>
-<span class="kn">import</span> <span class="nf">org</span><span class="p">.</span><span class="na">apache</span><span class="p">.</span><span class="na">commons</span><span class="p">.</span><span class="na">lang3</span><span class="p">.</span><span class="na">StringUtils</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="o">....</span>
+<span class="kn">import</span> <span class="nn">org.apache.commons.lang3.StringUtils</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">App</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="nf">String</span> <span class="n">greet</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">StringUtils</span><span class="p">.</span><span class="na">trim</span><span class="p">(</span><span class="s">&#34;dummy&#34;</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">Util</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&#34;Hello &#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">....</span></code></pre></div>
-<p>Now, run <code>mvn test</code> and project should build successfully.</p>
-
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">greet</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">StringUtils</span><span class="o">.</span><span class="na">trim</span><span class="o">(</span><span class="s">&#34;dummy&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">Util</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="s">&#34;Hello &#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">....</span>
+</code></pre></div><p>Now, run <code>mvn test</code> and project should build successfully.</p>
 <p>To summarize, we added the dependency in top level pom.xml as
 dependencyManagement and referred it in required modules using simpler
 reference i.e. just groupId + artifactId and without the version.</p>
-
 <h2 id="dependency-management-vs-inheritance">Dependency Management vs Inheritance</h2>
-
 <p><strong>Dependency management</strong></p>
-
 <ul>
 <li>used when dependency is required by some of the child modules</li>
 <li>declared in parent POM using
@@ -614,16 +599,13 @@ reference i.e. just groupId + artifactId and without the version.</p>
 <li>need to refer them in the required child modules using simpler
 reference i.e. just groupId + artifactId, but without the version</li>
 </ul>
-
 <p><strong>Dependency inheritance</strong>, which we explained in the previous tutorial</p>
-
 <ul>
 <li>used when dependency is required by all child modules</li>
 <li>declared in parent POM using <code>dependencies/dependency</code> element</li>
 <li>no need to refer them in the child modules as they are inherited by
 all child modules by default</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -642,9 +624,7 @@ all child modules by default</li>
 
 
 
-
 <h2 id="plugin-management">Plugin Management</h2>
-
 <p>Let&rsquo;s suppose that all modules of extended-app should compile as Java
 1.7. One way to do this is configure compiler plugin by adding following
 snippet to app, util and config POM.</p>
@@ -658,11 +638,10 @@ snippet to app, util and config POM.</p>
             <span class="nt">&lt;/configuration&gt;</span>
         <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>    
-<span class="nt">&lt;/build&gt;</span></code></pre></div>
-<p>Instead, the better approach is to centralize the plugin configuration
+<span class="nt">&lt;/build&gt;</span>
+</code></pre></div><p>Instead, the better approach is to centralize the plugin configuration
 using <code>pluginManagement</code> element in top level POM. To do that, add
 following lines to the top level POM <code>extended-multi/pom.xml</code></p>
-
 <p><code>extended-multi/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;build&gt;</span>
     <span class="nt">&lt;pluginManagement&gt;</span>
@@ -678,8 +657,8 @@ following lines to the top level POM <code>extended-multi/pom.xml</code></p>
             <span class="nt">&lt;/plugin&gt;</span>
         <span class="nt">&lt;/plugins&gt;</span>
     <span class="nt">&lt;/pluginManagement&gt;</span>
-<span class="nt">&lt;/build&gt;</span></code></pre></div>
-<p>Next, we need to refer the plugin in the required modules. Modify all
+<span class="nt">&lt;/build&gt;</span>
+</code></pre></div><p>Next, we need to refer the plugin in the required modules. Modify all
 module POM, <code>app/pom.xml</code>, <code>shared/util/pom.xml</code> and <code>shared/config.pom</code>
 and add following lines</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;build&gt;</span>
@@ -689,11 +668,10 @@ and add following lines</p>
             <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
         <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
-<span class="nt">&lt;/build&gt;</span></code></pre></div>
-<p>While referring the plugin in the modules, specify plugin groupId,
+<span class="nt">&lt;/build&gt;</span>
+</code></pre></div><p>While referring the plugin in the modules, specify plugin groupId,
 artifactId and there is no need to repeat the version as well as the
 configuration as they are inherited from the parent POM.</p>
-
 
 
 <div>&nbsp;</div>
@@ -711,11 +689,9 @@ configuration as they are inherited from the parent POM.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Child module POM can override the configuration if required. For
 example, replace compiler plugin reference in <code>shared/config/pom.xml</code> as
 below</p>
-
 <p><code>shared/config/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;build&gt;</span>        
         <span class="nt">&lt;plugins&gt;</span>
@@ -729,12 +705,11 @@ below</p>
                 <span class="nt">&lt;/configuration&gt;</span>
             <span class="nt">&lt;/plugin&gt;</span>
         <span class="nt">&lt;/plugins&gt;</span>        
-<span class="nt">&lt;/build&gt;</span></code></pre></div>
-<p>Run <code>mvn clean test</code>, app and util module are complied as Java 1.7 where
+<span class="nt">&lt;/build&gt;</span>
+</code></pre></div><p>Run <code>mvn clean test</code>, app and util module are complied as Java 1.7 where
 as config module is complied as Java 1.8. We can investigate the
 compiled classes and know Java version
-    with</p>
-
+with</p>
 <pre><code>$ javap -verbose app/target/test-classes/app/AppTest.class  | grep major
 $ javap -verbose shared/util/target/test-classes/util/UtilTest.class  | grep major
 $ javap -verbose shared/config/target/test-classes/config/ConfigServiceTest.class  | grep major  
@@ -742,10 +717,8 @@ $ javap -verbose shared/config/target/test-classes/config/ConfigServiceTest.clas
 ## for Java 1.7, output is major version: 51
 ## for Java 1.8, output is major version: 52
 </code></pre>
-
 <p>For more complicated examples of Maven Multi Module Project, refer
 Official Maven Book - <a href="http://www.sonatype.com/resources/books/maven-by-example" target="_blank">Maven By Example</a>.</p>
-
 <p>The next chapter, the concluding part of the tutorial, covers
 integration of Maven with Eclipse IDE.</p>
 

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Appenders Encoders - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,78 +491,72 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="appender-and-encoder">Appender and Encoder</h1>
-
+            <h1 id="appender-and-encoder">Appender and Encoder</h1>
 <p>Scoopi uses appender to append data to output and encoder to encode or
 alter the output format. At present, it comes with two appender -
 FileAppender and ListAppender.</p>
-
 <h2 id="fileappender">FileAppender</h2>
-
 <p>So far, examples use FileAppender of default steps defined in
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/steps-default.yml" target="_blank">steps-default.yml</a>
 which is packaged with scoopi distribution jar. The appender snippet is
 as below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">appender:
-  class: &#34;org.codetab.scoopi.step.load.DataAppender&#34;
+<pre><code class="language-raw" data-lang="raw">appender:
+  class: &quot;org.codetab.scoopi.step.load.DataAppender&quot;
   previous: filter
   next: end
   plugins: [
     plugin: { 
       name: dataFile, 
-      class: &#34;org.codetab.scoopi.plugin.appender.FileAppender&#34;,
-      file: &#34;output/data.txt&#34;, 
+      class: &quot;org.codetab.scoopi.plugin.appender.FileAppender&quot;,
+      file: &quot;output/data.txt&quot;, 
       plugins: [ 
          plugin: { 
            name: csv,
-           delimiter: &#34;|&#34;,
+           delimiter: &quot;|&quot;,
            includeTags: false,               
-           class: &#34;org.codetab.scoopi.plugin.encoder.CsvEncoder&#34;
+           class: &quot;org.codetab.scoopi.plugin.encoder.CsvEncoder&quot;
          } 
       ]
     }          
-  ]</code></pre></div>
-<p>We can override the step in task level or create altogether new steps as
+  ]
+</code></pre><p>We can override the step in task level or create altogether new steps as
 detailed in <a href="/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/">WorkFlow, Steps and Plugins</a>.</p>
-
 <p>To use appender, first define a step that uses class DataAppender which
 is responsible for unique appender creation common to many task. The
 appender itself is a plugin such as FileAppender, List appender etc.,
 and it defined in plugins array. For example, say we want two output
 files with different delimiters then override the step as follows</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">appender:
-  class: &#34;org.codetab.scoopi.step.load.DataAppender&#34;
+<pre><code class="language-raw" data-lang="raw">appender:
+  class: &quot;org.codetab.scoopi.step.load.DataAppender&quot;
   previous: filter
   next: end
   plugins: [
     plugin: {
       name: file1,
-      class: &#34;org.codetab.scoopi.plugin.appender.FileAppender&#34;,
-      file: &#34;output/data.csv&#34;,
+      class: &quot;org.codetab.scoopi.plugin.appender.FileAppender&quot;,
+      file: &quot;output/data.csv&quot;,
       plugins: [
          plugin: {
            name: csv,
-           delimiter: &#34;,&#34;,
-           class: &#34;org.codetab.scoopi.plugin.encoder.CsvEncoder&#34;
+           delimiter: &quot;,&quot;,
+           class: &quot;org.codetab.scoopi.plugin.encoder.CsvEncoder&quot;
          }
       ]
     },
     plugin: {
       name: file2,
-      class: &#34;org.codetab.scoopi.plugin.appender.FileAppender&#34;,
-      file: &#34;output/data.dump&#34;,
+      class: &quot;org.codetab.scoopi.plugin.appender.FileAppender&quot;,
+      file: &quot;output/data.dump&quot;,
       plugins: [
          plugin: {
            name: pipe,
-           delimiter: &#34;|&#34;,
-           class: &#34;org.codetab.scoopi.plugin.encoder.CsvEncoder&#34;
+           delimiter: &quot;|&quot;,
+           class: &quot;org.codetab.scoopi.plugin.encoder.CsvEncoder&quot;
          }
       ]
     }
-  ]</code></pre></div>
-<p>In next chapter, we show how to handle JavaScript and Ajax driven pages
+  ]
+</code></pre><p>In next chapter, we show how to handle JavaScript and Ajax driven pages
 using Selenium WebDriver.</p>
 
           </main>

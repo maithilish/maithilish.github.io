@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Lifecycle Phases - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,25 +535,17 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="lifecycle-phases">Lifecycle Phases</h1>
-
+            <h1 id="lifecycle-phases">Lifecycle Phases</h1>
 <p>Apart from the options, the <code>mvn</code> command accepts only two things - <strong>goal</strong> or <strong>phase</strong>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-command-usage.png" alt="Maven Lifecycle Phases - mvn usage description" />
 </figure>
 
-
 <p>This chapter covers Phases which are related to Lifecycles and in
 the next chapter explains Goals which are related to Plugins.</p>
-
 <h2 id="maven-lifecycles-and-phases">Maven Lifecycles and Phases</h2>
-
 <p>To understand the concepts of lifecycle and phase, let&rsquo;s recap how we
 used to build Java projects by hand.</p>
-
 <ul>
 <li>copy resources such as conf files to some build folder</li>
 <li>compile the source files</li>
@@ -561,40 +553,30 @@ used to build Java projects by hand.</p>
 <li>run unit tests</li>
 <li>package the build folder as jar</li>
 </ul>
-
 <p>The job consisted of series of tasks or steps which we used to run one
 after another in some predefined order. Lifecycle and phases are just
 formal names for jobs and steps. Maven calls the jobs as lifecycles and
 tasks (or steps) as phases.</p>
-
 <p>Maven defines three Lifecycles -  <strong>default, clean and site</strong>  and each
 <strong>Lifecycle</strong> consists of <strong>predefined Phases</strong>. Let&rsquo;s go through them,
 one by one, to understand them better.</p>
-
 <h2 id="clean-lifecycle">Clean Lifecycle</h2>
-
 <p>To clean the project, we use command <code>mvn clean</code> which deletes the
 build directory named target and its contents. The <strong>clean</strong> argument
 which we pass to mvn command is phase which is in lifecycle named clean.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-lifecycle-clean.png" alt="Maven Lifecycle Phases clean lifecycle" />
 </figure>
 
-
 <p>The clean lifecycle contains three phases  <strong>pre-clean, clean and
 post-clean</strong> .</p>
-
 <p>When we invoke command <code>mvn clean</code>, Maven loads Clean Lifecycle and
 executes the phases pre-clean and clean.</p>
-
 <p>We can invoke any of these three phases and all preceding phases up to
 and including the invoked phase are executed sequentially.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-lifecycle-sequence.png" alt="Maven Lifecycle Phases - lifecycle sequence" />
 </figure>
-
 
 <p>Lifecycle phases can&rsquo;t do anything by themselves. For example, phase
 clean by itself doesn&rsquo;t have ability or functionality to delete the
@@ -605,7 +587,6 @@ phases are similar to the steps in a job which are executed one after
 another.</p>
 
 
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -622,27 +603,21 @@ another.</p>
 
 
 
-
 <h2 id="default-lifecycle">Default Lifecycle</h2>
-
 <p>The most important of the three lifecycles is the  <strong>Default Lifecycle</strong>
 . Maven uses default lifecycle to build, test and distribute the
 project. Default lifecycle contains 21 phases. Out of this big list,
 some of the frequently used ones are:</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-lifecycle-default.png" alt="Maven Lifecycle Phases default lifecycle" />
 </figure>
-
 
 <p>Project may contain resources such as properties, XML configuration
 files etc., and phases <strong>process-resources</strong> and
 <strong>process-test-resources</strong> copy and process such resources files. and in
 a later chapter, we explain the resource management in detail.</p>
-
 <p>The phases <strong>compile</strong> and <strong>test-compile</strong> complies the source Java
 files and test files respectively.</p>
-
 <p>The phases <strong>package</strong>, <strong>install</strong>, and <strong>deploy</strong> are used to
 distribute the project. As we have already seen, the <strong>package</strong> phase
 creates JAR file of resources and compiled classes for distribution. The
@@ -652,55 +627,48 @@ can use them as dependencies. The phase <strong>deploy</strong> installs the
 artifacts of the project to a remote repository (probably on Internet)
 so that a wider group of projects can use it as dependency. We will
 cover these phases in a later chapter.</p>
-
 <p>Since focus of this chapter is lifecycle phases, let&rsquo;s get back to the
 default lifecycle. As we have seen in clean lifecycle, when a phase is
 invoked using mvn command, all preceding phases up to and including the
 invoked phase are executed sequentially. For example,</p>
-
 <ul>
-<li><p><code>mvn compile</code> - will run phases process-resources and then compile.</p></li>
-
-<li><p><code>mvn test</code> - will run phases process-resources, compile,
-process-test-resources, test-compile and finally test.</p></li>
-
-<li><p><code>mvn install</code> - will run phases process-resources, compile,
-process-test-resources, test-compile, test and finally install.</p></li>
+<li>
+<p><code>mvn compile</code> - will run phases process-resources and then compile.</p>
+</li>
+<li>
+<p><code>mvn test</code> - will run phases process-resources, compile,
+process-test-resources, test-compile and finally test.</p>
+</li>
+<li>
+<p><code>mvn install</code> - will run phases process-resources, compile,
+process-test-resources, test-compile, test and finally install.</p>
+</li>
 </ul>
-
 <p>Like in clean lifecycle, in default lifecycle too, lifecycle phases by
 themselves don&rsquo;t have capabilities to accomplish some task. For example,
 compile phase by itself can&rsquo;t do anything but, it delegates compilation
 job to a plugin named <strong>maven-compiler-plugin</strong>.</p>
-
 <p>In between the important phases shown above, there are many other minor
 phases such as validation, pre- and post- phases etc., For the complete
 list of phases in default life cycle, refer <a href="http://books.sonatype.com/mvnref-book/reference/lifecycle-sect-structure.html#lifecycle-sect-default" target="_blank">Maven - The Complete Reference - Default Lifecyle</a>.</p>
-
 <h2 id="list-of-phases">List of Phases</h2>
-
 <p>It is sufficient to remember the frequently used phases - clean,
 compile, test, package, install and deploy. We can always obtain the
-complete list by running <code>mvn</code> command without any argument. It
+complete list by running <code> mvn</code> command without any argument. It
 triggers build failure and Maven shows the complete list of lifecycle
 phases.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-lifecycle-listing.png" alt="Maven Lifecycle Phases default lifecycle" />
 </figure>
 
-
 <p>For clarity, we have formatted the output and highlighted the three
 lifecycle. Default lifecycle phases are marked in yellow, clean in red
 and site in blue.</p>
-
 <h2 id="site-lifecycle">Site Lifecycle</h2>
-
 <p>Site lifecycle generates project documentation and reports about the
 project. It contains four phases - pre-site, site, post-site,
 site-deploy. We can generate a site from a Maven project by running
 command - <code>mvn site</code>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -718,28 +686,30 @@ command - <code>mvn site</code>.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="summary">Summary</h2>
-
 <p>To summarize,</p>
-
 <ul>
-<li><p>The Maven command <code>mvn</code> can accept only Lifecycle Phase or Plugin
-Goal as argument.</p></li>
-
-<li><p>Maven comes with three lifecycles -  <strong>default, clean and site</strong> .</p></li>
-
-<li><p>each lifecycle is made up of lifecycle phases and in all, there are
-28 phases - default 21, clean 3 and site 4.</p></li>
-
-<li><p>when a lifecycle phase is invoked with <code>mvn</code>, all preceding phases
+<li>
+<p>The Maven command <code>mvn</code> can accept only Lifecycle Phase or Plugin
+Goal as argument.</p>
+</li>
+<li>
+<p>Maven comes with three lifecycles -  <strong>default, clean and site</strong> .</p>
+</li>
+<li>
+<p>each lifecycle is made up of lifecycle phases and in all, there are
+28 phases - default 21, clean 3 and site 4.</p>
+</li>
+<li>
+<p>when a lifecycle phase is invoked with <code> mvn</code>, all preceding phases
 up to and including the invoked phase are executed sequentially one
-after another.</p></li>
-
-<li><p>lifecycle phases by themselves don&rsquo;t have any capabilities to
-accomplish some task and they rely on plugins to carryout the task.</p></li>
+after another.</p>
+</li>
+<li>
+<p>lifecycle phases by themselves don&rsquo;t have any capabilities to
+accomplish some task and they rely on plugins to carryout the task.</p>
+</li>
 </ul>
-
 <p>In the next chapter, we look at Maven Plugins and how they bind with
 Maven Lifecycle Phases.</p>
 

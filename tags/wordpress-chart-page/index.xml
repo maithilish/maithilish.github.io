@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wordpress chart page on Codetab</title>
@@ -18,12 +18,12 @@
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/</guid>
       <description>9.2. WordPress Chart Page In the next two blogs, we add a sub menu to Share on Social Plugin menu to display the share statistics with Google Charts API. The chart page uses functionalities already discussed in following topics.
- Add Menu
- Options Page
- Plugin Enqueue Scripts
- Pass Data to JavaScript
- Ajax
-  The plugin uses two files admin/class-stats.php andjs/chart.js. As many of the concepts are already covered in the tutorial we will not get into the detail, instead explain the overall flow with the relevant code snippets.</description>
+  Add Menu
+  Options Page
+  Plugin Enqueue Scripts
+  Pass Data to JavaScript
+  Ajax
+  The plugin uses two files admin/class-stats.php and js/chart.</description>
     </item>
     
   </channel>

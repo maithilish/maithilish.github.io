@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Apache Ivy - GWT Tutorial - CodeTab</title></head>
 
@@ -711,66 +711,58 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>IvyDE is Apache Ivy plugin for Eclipse and using IvyDE plugin, with just
+            <p>IvyDE is Apache Ivy plugin for Eclipse and using IvyDE plugin, with just
 two steps you will be able to migrate your projects to auto dependency
 management.</p>
-
 <h5 id="install-ivyde">Install IvyDE</h5>
-
 <p>In Eclipse select <strong>Help</strong> → <strong>Install New Software</strong>. Add IvyDE update
 site <a href="http://www.apache.org/dist/ant/ivyde/updatesite/">http://www.apache.org/dist/ant/ivyde/updatesite/</a>. Following
 softwares are available for installation.</p>
-
 <ul>
-<li><p>Apache Ivy library</p></li>
-
-<li><p>Apache IvyDE Eclipse plugin</p></li>
+<li>
+<p>Apache Ivy library</p>
+</li>
+<li>
+<p>Apache IvyDE Eclipse plugin</p>
+</li>
 </ul>
-
 <p>Select both and complete the installation. On Eclipse restart, menu bar
 will have IvyDE&rsquo;s Resove button.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/resolvebutton.png" alt="IvyDE Resolve menu" />
 </figure>
 
-
-<h6 id="figure-a-1-ivyde-resolve-menu">Figure A.1. IvyDE Resolve menu</h6>
-
+<h6 id="figurea1ivyde-resolve-menu">Figure A.1. IvyDE Resolve menu</h6>
 <h5 id="enable-dependency-management">Enable dependency Management</h5>
-
 <p>In Package Explorer, select ivy.xml of fins project. Right click to open
 context menu and choose <strong>Add Ivy Library&hellip;</strong>  and it will open IvyDE
 Managed Libraries window. Select Classpath Tab and enter following
 details</p>
-
 <ul>
-<li><p><strong>Enable Project specific settings</strong> - select the checkbox.</p></li>
-
-<li><p><strong>Build the classpath with</strong> - select retrieved artifacts radio box.</p></li>
-
-<li><p><strong>Retrieve Pattern</strong> - enter
-war/WEB-INF/lib/[artifact]-[revision].[ext]</p></li>
-
-<li><p><strong>Types</strong> - enter jar,bundle</p></li>
+<li>
+<p><strong>Enable Project specific settings</strong> - select the checkbox.</p>
+</li>
+<li>
+<p><strong>Build the classpath with</strong> - select retrieved artifacts radio box.</p>
+</li>
+<li>
+<p><strong>Retrieve Pattern</strong> - enter
+war/WEB-INF/lib/[artifact]-[revision].[ext]</p>
+</li>
+<li>
+<p><strong>Types</strong> - enter jar,bundle</p>
+</li>
 </ul>
-
 <p>Figure shows the classpath tab with required values.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/ivydedialog.png" alt="IvyDE Managed Libraries" />
 </figure>
 
-
-<h6 id="figure-a-2-ivyde-managed-libraries">Figure A.2. IvyDE Managed Libraries</h6>
-
+<h6 id="figurea2ivyde-managed-libraries">Figure A.2. IvyDE Managed Libraries</h6>
 <p>Click Finish button. Ivy downloads all required modules from public
 repository and adds them to war/WEB-INF/lib directory and configures the
 project Build Path to use these downloaded modules.That&rsquo;s all; project
 is under Ivy dependency management.</p>
-
 <p>Apache Ivy is highly configurable and powerful dependency management
 software and to know more refer <strong>Beginner&rsquo;s Guide</strong> at <a href="http://ant.apache.org/ivy/links.html" target="_blank">Apache Ivy -
 Links</a> (under Doc, tutorials, articles) or <a ref="http://ant.apache.org/ivy/history/latest-milestone/moreexamples.html" target="_blank">Tutorials - More Examples</a></p>

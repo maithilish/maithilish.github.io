@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Introduction - Gotz ETL - CodeTab</title></head>
 
@@ -402,8 +402,6 @@
           <main id="content" class="col-md-11 post-basic">
             
 
-
-
 <div>&nbsp;</div>
 
 <ins class="adsbygoogle"
@@ -419,124 +417,112 @@
 <div>&nbsp;</div>
 
 
-
 <h1 id="codetab-gotz-etl">CodeTab Gotz ETL</h1>
-
 <p>Gotz ETL is a tool to extract data from HTML pages. In Java, it&rsquo;s easy
 to scrape web pages with libraries such as JSoup and HtmlUnit, but the
 task become daunting when we try to scrape data from huge set of pages.</p>
-
 <p>Some of the challenges while extracting large set of data from
 unstructured sources such as HTML pages are:</p>
-
 <ul>
-<li><p>Single web page may hold multiple types of data, queries should be
-able to dynamically handle different types of data</p></li>
-
-<li><p>Net connection may go down in middle of a run and scraper should be
-able to recover from failed state</p></li>
-
-<li><p>Some of the sources page may change frequently and others less
+<li>
+<p>Single web page may hold multiple types of data, queries should be
+able to dynamically handle different types of data</p>
+</li>
+<li>
+<p>Net connection may go down in middle of a run and scraper should be
+able to recover from failed state</p>
+</li>
+<li>
+<p>Some of the sources page may change frequently and others less
 frequently and scraper should avoid parsing the pages that are not
-changed otherwise it may take very long time to complete the run</p></li>
-
-<li><p>Data in unstructured source such as HTML pages may not be in desired
+changed otherwise it may take very long time to complete the run</p>
+</li>
+<li>
+<p>Data in unstructured source such as HTML pages may not be in desired
 format or some data may be unwanted and scraper should be able to
-filter and transform the values</p></li>
+filter and transform the values</p>
+</li>
 </ul>
-
 <p>Scraping libraries such as JSoup and HtmlUnit do well in scraping data
 but they are not meant to handle the situations listed above.</p>
-
 <p>Gotz is developed taking these aspects into consideration. It is built
 upon JSoup and HtmlUnit. Functionalities offered by Gotz over and above
 the scrapping libraries are:</p>
-
 <ul>
-<li><p>Gotz is completely model driven like a real ETL tool. Data
+<li>
+<p>Gotz is completely model driven like a real ETL tool. Data
 structure, task workflow and pages to scrape are defined with a set
-of XML definition files and no coding is required</p></li>
-
-<li><p>It can be configured to use either <a href="https://jsoup.org/" target="_blank">JSoup</a> or
-<a href="http://htmlunit.sourceforge.net/" target="_blank">HtmlUnit</a> as scraper</p></li>
-
-<li><p>Queires can be written either using Selectors with JSoup or XPath
-with HtmlUnit</p></li>
-
-<li><p>Gotz persists pages and data to database so that it recover from the
-failed state without repeating the tasks already completed</p></li>
-
-<li><p>For Transparent persistence, Gotz uses <a href="https://db.apache.org/jdo" target="_blank">JDO
+of XML definition files and no coding is required</p>
+</li>
+<li>
+<p>It can be configured to use either <a href="https://jsoup.org/" target="_blank">JSoup</a> or
+<a href="http://htmlunit.sourceforge.net/" target="_blank">HtmlUnit</a> as scraper</p>
+</li>
+<li>
+<p>Queires can be written either using Selectors with JSoup or XPath
+with HtmlUnit</p>
+</li>
+<li>
+<p>Gotz persists pages and data to database so that it recover from the
+failed state without repeating the tasks already completed</p>
+</li>
+<li>
+<p>For Transparent persistence, Gotz uses <a href="https://db.apache.org/jdo" target="_blank">JDO
 Standard</a> and <a href="http://www.datanucleus.org" target="_blank">DataNucleus
 AccessPlatform</a> and you can choose your
-Datastore from a very wide range!</p></li>
-
-<li><p>Gotz is a multi-thread application which process pages in parallel
+Datastore from a very wide range!</p>
+</li>
+<li>
+<p>Gotz is a multi-thread application which process pages in parallel
 for maximum throughput. Threads allotted to each task pool is
-configurable based on workload</p></li>
-
-<li><p>Allows to transform, filter and sort the data</p></li>
-
-<li><p>Comes with built-in appenders such as FileAppender, DBAppender and
-ListAppender.</p></li>
-
-<li><p>GotzEngine can be embedded in other programs and access scrapped
-data with ListAppender</p></li>
-
-<li><p>Flexible workflow allows one to change sequence of steps</p></li>
-
-<li><p>Gotz is extensible. Developers can extends the predefined base steps
+configurable based on workload</p>
+</li>
+<li>
+<p>Allows to transform, filter and sort the data</p>
+</li>
+<li>
+<p>Comes with built-in appenders such as FileAppender, DBAppender and
+ListAppender.</p>
+</li>
+<li>
+<p>GotzEngine can be embedded in other programs and access scrapped
+data with ListAppender</p>
+</li>
+<li>
+<p>Flexible workflow allows one to change sequence of steps</p>
+</li>
+<li>
+<p>Gotz is extensible. Developers can extends the predefined base steps
 or even create new ones with different functionality and weave them
-in workflow</p></li>
+in workflow</p>
+</li>
 </ul>
-
 <h2 id="gotz-etl-reference">Gotz ETL Reference</h2>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gotz-etl/media/gotz-logo.png" alt="Gotz ETL Logo" />
 </figure>
 
-
 <h3 id="maithilish">Maithilish</h3>
-
-<p>www.codetab.org</p>
-
+<p><a href="http://www.codetab.org">www.codetab.org</a></p>
 <p><code>maithilish@gmail.com</code></p>
-
 <script>
     console.log("slot D"); 
 </script>
-
 <h2 id="table-of-contents">Table of Contents</h2>
-
 <p><a href="gotz-installation-quick-start">1. Install Gotz</a></p>
-
 <p><a href="bean-locator">2. Bean and Locator</a></p>
-
 <p><a href="datadef-axis-member">3. DataDef and Axis</a></p>
-
 <p><a href="query-region-field">4. Query, Region and Field</a></p>
-
 <p><a href="members-dynamic-query/">5. Members and Dynamic Query</a></p>
-
 <p><a href="indexrange-index/">6. IndexRange and BreakAfter</a></p>
-
 <p><a href="filters">7. Filters</a></p>
-
 <p><a href="namespace">8. Namespace</a></p>
-
 <p><a href="tasks-steps">9. Tasks and Steps</a></p>
-
 <p><a href="multiple-task-tasks">10. Multiple Task and Tasks</a></p>
-
 <p><a href="converters">11. Converters</a></p>
-
 <p><a href="create-locators-links">12. Create Locators from Links</a></p>
-
 <p><a href="persistence">13. Persistence</a></p>
-
 <p><a href="appenders-encoders">14. Appenders and Encoders</a></p>
-
 <p><a href="split-definitions">15. Split Definition Files</a></p>
 
           </main>

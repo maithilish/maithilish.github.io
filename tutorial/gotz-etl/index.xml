@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gotz ETL - Gotz ETL - CodeTab on Codetab</title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/gotz-installation-quick-start/</guid>
       <description>If you use Docker to run applications, then the easiest way install Gotz is to pull its image from DockerHub and run it straight away with an added convince that it comes MariaDB preconfigured. In case, you are not using Docker then you can also download its release from GitHub. We explain both the options here.
-Install Gotz from Docker Image Gotz releases are available as docker image from DockerHub.</description>
+Install Gotz from Docker Image Gotz releases are available as docker image from DockerHub. To run Gotz container, we needDocker installed in the system and additionally, to run it with database, we also need Docker Compose.</description>
     </item>
     
     <item>
@@ -92,7 +92,8 @@ Dec &amp;lsquo;14
 Dec &amp;lsquo;13
 Dec &amp;lsquo;12
 Equity
-804.72</description>
+804.72
+801.55</description>
     </item>
     
     <item>
@@ -136,7 +137,8 @@ Gotz uses extensible fields (xfields) to pass user defined values to the classes
       <guid>https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/</guid>
       <description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
 The Example-1 scrapes Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. We can add these two task within tasks element.
-But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.</description>
+But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.
+&amp;nbsp;   (adsbygoogle = window.</description>
     </item>
     
     <item>

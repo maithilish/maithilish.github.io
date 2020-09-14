@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>OpenShift Configure - GWT Tutorial - CodeTab</title></head>
 
@@ -711,28 +711,21 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-3-openshift-configure">12.3. OpenShift Configure</h2>
-
+            <h2 id="123openshift-configure">12.3. OpenShift Configure</h2>
 <p>This section explains the changes required in application configuration
 and code to run Fins on OpenShift.</p>
-
 <h5 id="jdo-config-for-mysql">JDO config for MySQL</h5>
-
 <p>In JDO configuration file <code>META-INF/jdoconfig.xml</code>, we have to add a new
 <strong>persistence-manager-factory</strong> for MySQL.</p>
-
 <p>Configuration requires connection URL, User Name and Password and we
 obtain them through</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ rhc app ssh demo
+<pre><code class="language-screen" data-lang="screen">$ rhc app ssh demo
 &gt; env | grep -i mysql
 OPENSHIFT_MYSQL_DB_PORT=60311
 OPENSHIFT_MYSQL_DB_HOST=51fb####-finsdemo.rhcloud.com
 OPENSHIFT_MYSQL_DB_PASSWORD=w1pd####
-OPENSHIFT_MYSQL_DB_USERNAME=admin####</code></pre></div>
-<p>Use the values for configuration in <code>jdoconfig.xml</code>.</p>
-
+OPENSHIFT_MYSQL_DB_USERNAME=admin####
+</code></pre><p>Use the values for configuration in <code>jdoconfig.xml</code>.</p>
 <p><code>META-INF/jdoconfig.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.PersistenceManagerFactoryClass&#34;</span>
@@ -743,29 +736,26 @@ OPENSHIFT_MYSQL_DB_USERNAME=admin####</code></pre></div>
                       <span class="na">value=</span><span class="s">&#34;jdbc:mysql://51fb####-finsdemo.rhcloud.com:60311/demo&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionUserName&#34;</span> <span class="na">value=</span><span class="s">&#34;admin####&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionPassword&#34;</span> <span class="na">value=</span><span class="s">&#34;w1pd####&#34;</span> <span class="nt">/&gt;</span>
-           ....</code></pre></div>
-<p>This hard coded configuration works, but problem with this approach is
+           ....
+</code></pre></div><p>This hard coded configuration works, but problem with this approach is
 that, OpenShift may change the Host and Port in future and then
 application fails to connect to MySQL. To overcome these nasty
 surprises, OpenShift suggests to use environment variables as shown in
 following snippet.</p>
-
 <p><code>META-INF/jdoconfig.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">   <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
       ....
        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.option.ConnectionURL&#34;</span>
           <span class="na">value=</span><span class="s">&#34;jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/demo&#34;</span> <span class="nt">/&gt;</span>
  
-      ....</code></pre></div>
-<p>But, when JDO tries create the connection it doesn&rsquo;t patch the env
+      ....
+</code></pre></div><p>But, when JDO tries create the connection it doesn&rsquo;t patch the env
 variables with their actual values and throws exception. OpenShift forum
 suggests to use <strong>${env.OPENSHIFT_MYSQL_DB_HOST}</strong> but that too
 fails.</p>
-
 <p>Another option is to add a JNDI datasource to Tomcat context file -
 <code>META-INF/context.xml</code> with these env variables. But, even Tomcat fails
 to patch the variable with actual values.</p>
-
 
 
 <div>&nbsp;</div>
@@ -783,17 +773,14 @@ to patch the variable with actual values.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Fortunately OpenShift JBoss EWS comes with a pre-configured JNDI
 datasource for MySQL and PostgreSQL, which is in
 <code>.openshift/config/context.xml</code> in cloned application folder . It
 defines two JNDI resources; <strong>jdbc/MysqlDS</strong> and <strong>jdbc/PostgreSQLDS</strong>
 using OpenShift environment variables and we may use this resource for
 our JDO config.</p>
-
 <p>The new <strong>persistence-manager-factory</strong> configuration for MySQL is added
 to jdoconfig.xml.</p>
-
 <p><code>META-INF/jdoconfig.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">       <span class="nt">&lt;persistence-manager-factory</span> <span class="na">name=</span><span class="s">&#34;datastore&#34;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;javax.jdo.PersistenceManagerFactoryClass&#34;</span>
@@ -810,21 +797,19 @@ to jdoconfig.xml.</p>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.cache.level2.type&#34;</span> <span class="na">value=</span><span class="s">&#34;soft&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.metadata.validate&#34;</span> <span class="na">value=</span><span class="s">&#34;false&#34;</span> <span class="nt">/&gt;</span>
                 <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;datanucleus.autoCreateSchema&#34;</span> <span class="na">value=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/persistence-manager-factory&gt;</span></code></pre></div>
-<p>To use JNDI resource, we require a resource-ref definition in <code>web.xml</code>.</p>
-
+        <span class="nt">&lt;/persistence-manager-factory&gt;</span>
+</code></pre></div><p>To use JNDI resource, we require a resource-ref definition in <code>web.xml</code>.</p>
 <p><code>war/WEB-INF/web.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        <span class="nt">&lt;resource-ref&gt;</span>
                 <span class="nt">&lt;description&gt;</span>DataSource<span class="nt">&lt;/description&gt;</span>
                 <span class="nt">&lt;res-ref-name&gt;</span>jdbc/MysqlDS<span class="nt">&lt;/res-ref-name&gt;</span>
                 <span class="nt">&lt;res-type&gt;</span>javax.sql.DataSource<span class="nt">&lt;/res-type&gt;</span>
                 <span class="nt">&lt;res-auth&gt;</span>Container<span class="nt">&lt;/res-auth&gt;</span>
-        <span class="nt">&lt;/resource-ref&gt;</span></code></pre></div>
-<p>Value generator <strong>uuid-string</strong> throws duplicate key exception for
+        <span class="nt">&lt;/resource-ref&gt;</span>
+</code></pre></div><p>Value generator <strong>uuid-string</strong> throws duplicate key exception for
 MySQL, instead it requires <strong>auid</strong> as value generator. In
 <code>src/in/fins/shared/package.jdo</code> value-strategy attribute of Data and
 DataGroup is set to <strong>auid</strong>.</p>
-
 
 
 <div>&nbsp;</div>
@@ -843,14 +828,11 @@ DataGroup is set to <strong>auid</strong>.</p>
 
 
 
-
 <h5 id="form-url">Form URL</h5>
-
 <p>For FormPanel, we had given form action as <strong>/upload</strong>, but this fails
 to work in OpenShift. For OpenShift, we have to remove the leading <strong>/</strong>
 from <strong>/upload</strong> in <code>in/fins/client/widget/UploadPanel.ui.xml</code> and
 <code>in/fins/client/widget/CachePanel.ui.xml</code>.</p>
-
 <p>With these changes, Fins is ready for deployment and the next section
 explains how it done.</p>
 

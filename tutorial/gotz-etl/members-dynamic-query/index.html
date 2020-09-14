@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Members Dynamic Query - Gotz ETL - CodeTab</title></head>
 
@@ -402,10 +402,8 @@
           <main id="content" class="col-md-11 post-basic">
             <p>This chapter explores extracting multiple values with members and
 dynamic query.</p>
-
 <p>The <strong>Example 2</strong> extracts snapshot data from
 <strong>defs/examples/page/acme-quote.html</strong> page</p>
-
 <ul>
 <li>MARKET CAP</li>
 <li>EPS (TTM)</li>
@@ -418,7 +416,6 @@ dynamic query.</p>
 <li>FACE VALUE</li>
 <li>INDUSTRY P/E</li>
 </ul>
-
 <p>The snippet of HTML from the page is</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#34;snapshot&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div&gt;</span>
@@ -437,8 +434,8 @@ dynamic query.</p>
             <span class="nt">&lt;div&gt;</span>27.89<span class="nt">&lt;/div&gt;</span>
             <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-   ....</code></pre></div>
-<p>The datadef used to extract data from this page is</p>
+   ....
+</code></pre></div><p>The datadef used to extract data from this page is</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;dataDef</span> <span class="na">name=</span><span class="s">&#34;snapshot&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;col&#34;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;xf:fields&gt;</span>
@@ -468,17 +465,15 @@ dynamic query.</p>
                 <span class="na">field=</span><span class="s">&#34;div:matchesOwn(^%{row.match}) + div&#34;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/xf:fields&gt;</span>
     <span class="nt">&lt;/axis&gt;</span>
-<span class="nt">&lt;/dataDef&gt;</span></code></pre></div>
-<p>Here, row axis defines multiple members elements with <strong>name</strong> and
+<span class="nt">&lt;/dataDef&gt;</span>
+</code></pre></div><p>Here, row axis defines multiple members elements with <strong>name</strong> and
 <strong>match</strong> attributes.</p>
-
-<p>The previous example defined price as &lt;member name=&ldquo;Price&rdquo;
-value=&ldquo;Price&rdquo; /&gt; with value attribute, instead of match. The <strong>value</strong>
+<p>The previous example defined price as &lt;member name=&quot;Price&rdquo;
+value=&quot;Price&rdquo; /&gt; with value attribute, instead of match. The <strong>value</strong>
 attribute assigns the value directly to the member without any query.</p>
-
 <p>But the present example uses match attribute</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;FV&#34;</span> <span class="na">match=</span><span class="s">&#34;FACE VALUE&#34;</span> <span class="nt">/&gt;</span></code></pre></div>
-<p>When <strong>match</strong> attribute is defined it can be accessed through
+<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;FV&#34;</span> <span class="na">match=</span><span class="s">&#34;FACE VALUE&#34;</span> <span class="nt">/&gt;</span>
+</code></pre></div><p>When <strong>match</strong> attribute is defined it can be accessed through
 substitution variable <strong>%{&lt;axisName&gt;.match}</strong> and in the row query, we
 are using the match as substitution variable in the selector.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;row&#34;</span><span class="nt">&gt;</span>
@@ -489,35 +484,32 @@ are using the match as substitution variable in the selector.</p>
 
     ... Members ....
 
-<span class="nt">&lt;/axis&gt;</span></code></pre></div>
-<p>When Gotz process row axis, for each member defined in the axis it gets
+<span class="nt">&lt;/axis&gt;</span>
+</code></pre></div><p>When Gotz process row axis, for each member defined in the axis it gets
 the raw query and replaces its %{row.match} with the value of member&rsquo;s
 match attribute and then dispatches the query to JSoup and once JSoup
 returns the content of selected item, it assigns the value to member&rsquo;s
 value field.</p>
-
-<p>Let&rsquo;s see how match=&ldquo;BOOK VALUE&rdquo; is handled by each axis. For, HTML
+<p>Let&rsquo;s see how match=&quot;BOOK VALUE&rdquo; is handled by each axis. For, HTML
 snippet</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;div&gt;</span>
   <span class="nt">&lt;div&gt;</span>BOOK VALUE<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div&gt;</span>27.89<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-<p>when axis <strong>row</strong> is processed, selector selects the element &lt;div&gt;BOOK
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div><p>when axis <strong>row</strong> is processed, selector selects the element &lt;div&gt;BOOK
 VALUE&lt;/div&gt; as it contains matching text and returns its content which
 is nothing but &ldquo;BOOK VALUE&rdquo;</p>
-
 <p>The <strong>fact</strong> axis uses slightly modified selector</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&#34;fact&#34;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;xf:fields&gt;</span>
             <span class="nt">&lt;xf:query</span> <span class="na">region=</span><span class="s">&#34;div#snapshot&#34;</span>
                 <span class="na">field=</span><span class="s">&#34;div:matchesOwn(^%{row.match}) + div&#34;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/xf:fields&gt;</span>
-<span class="nt">&lt;/axis&gt;</span></code></pre></div>
-<p>The fact selector is same as row selector but with the trailing <strong>+
+<span class="nt">&lt;/axis&gt;</span>
+</code></pre></div><p>The fact selector is same as row selector but with the trailing <strong>+
 div</strong>. This selector, selects next sibling of the matched element which
 is &lt;div&gt;27.89&lt;/div&gt; and returns its content i.e. 27.89</p>
-
 
 
 <div>&nbsp;</div>
@@ -536,13 +528,11 @@ is &lt;div&gt;27.89&lt;/div&gt; and returns its content i.e. 27.89</p>
 
 
 
-
 <p>When we scrape limited number of items as in this example then it is
 convenient to use members directly either with match attribute. But,
 when we scrape large number of items then dataDef definition becomes
 lengthy and to overcome that, Gotz comes with two more features
 <strong>indexRange</strong> and <strong>breakAfter</strong>.</p>
-
 <p>The next chapter describe indexRange and how to define dataDef with it.</p>
 
           </main>

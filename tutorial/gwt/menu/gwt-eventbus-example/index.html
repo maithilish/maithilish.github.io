@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>EvenBus - GWT Tutorial - CodeTab</title></head>
 
@@ -711,10 +711,7 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="4-4-gwt-eventbus-example">4.4. GWT EventBus Example</h2>
-
+            <h2 id="44-gwt-eventbus-example">4.4. GWT EventBus Example</h2>
 <p>One of the best widgets to explain the benefits of <code>EventBus</code> is
 <code>Status</code> widget. Various objects of the application may like to send
 messages to Status widget for display, and with the traditional style,
@@ -723,10 +720,8 @@ for this, all interested objects has to get a reference to the Status
 widget. But EventBus eliminates these unnecessary couplings. Just
 register Status widget with EventBus and any object may fire
 <code>StatusEvent</code> and EventBus takes care to pass it on to Status widget.</p>
-
 <p>Add <code>Status.ui.xml</code> and <code>Status.java</code> to <code>in.fins.client.widget</code>
 package.</p>
-
 <p><code>in.fins.client.widget/Status.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;!DOCTYPE ui:UiBinder SYSTEM &#34;http://dl.google.com/gwt/DTD/xhtml.ent&#34;&gt;</span>
 <span class="nt">&lt;ui:UiBinder</span> <span class="na">xmlns:ui=</span><span class="s">&#34;urn:ui:com.google.gwt.uibinder&#34;</span>
@@ -734,44 +729,43 @@ package.</p>
     <span class="nt">&lt;g:HTMLPanel&gt;</span>       
         <span class="nt">&lt;g:HTML</span> <span class="na">styleName=</span><span class="s">&#34;&#34;</span> <span class="na">ui:field=</span><span class="s">&#34;html&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/g:HTMLPanel&gt;</span>
-<span class="nt">&lt;/ui:UiBinder&gt;</span> </code></pre></div>
-<p><code>in.fins.client.widget/Status.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">widget</span><span class="p">;</span>
+<span class="nt">&lt;/ui:UiBinder&gt;</span> 
+</code></pre></div><p><code>in.fins.client.widget/Status.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.fins.client.widget</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">core</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">GWT</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiBinder</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiField</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Composite</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">HTML</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">HasText</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Widget</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.core.client.GWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiBinder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiField</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Composite</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.HTML</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.HasText</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Widget</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">Status</span> <span class="nf">extends</span> <span class="n">Composite</span> <span class="nf">implements</span> <span class="n">HasText</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Status</span> <span class="kd">extends</span> <span class="n">Composite</span> <span class="kd">implements</span> <span class="n">HasText</span> <span class="o">{</span>
 
-    <span class="kd">interface</span> <span class="nf">StatusBinder</span> <span class="kd">extends</span> <span class="nf">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">Status</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="p">}</span>
+    <span class="kd">interface</span> <span class="nc">StatusBinder</span> <span class="kd">extends</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">Status</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="nf">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">Status</span><span class="o">&gt;</span> <span class="nf">binder</span> <span class="o">=</span> <span class="n">GWT</span>
-            <span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">StatusBinder</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">Status</span><span class="o">&gt;</span> <span class="n">binder</span> <span class="o">=</span> <span class="n">GWT</span>
+            <span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">StatusBinder</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="nd">@UiField</span>
-    <span class="n">HTML</span> <span class="nf">html</span><span class="p">;</span>
+    <span class="n">HTML</span> <span class="n">html</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Status</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">Status</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">setText</span><span class="p">(</span><span class="n">String</span> <span class="nf">text</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">html</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setText</span><span class="o">(</span><span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">html</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">String</span> <span class="n">getText</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">html</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getText</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">html</span><span class="o">.</span><span class="na">getText</span><span class="o">();</span>
+    <span class="o">}</span>
 
-<span class="p">}</span></code></pre></div>
-<p>Status is a simple widget, which is <code>HtmlPanel</code> with <code>HTML</code> widget.</p>
-
+<span class="o">}</span>
+</code></pre></div><p>Status is a simple widget, which is <code>HtmlPanel</code> with <code>HTML</code> widget.</p>
 
 
 <div>&nbsp;</div>
@@ -789,50 +783,48 @@ package.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Earlier we had separate files for <code>MenuEvent</code> and <code>MenuHandler</code>, but we
 can improvise this and place Handler interface in the Event file itself,
 to reduce the number of files. Add <code>StatusEvent.java</code> to
 <code>in.fins.client.event</code> package.</p>
-
 <p><code>in.fins.client.event/StatusEvent.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">event</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.fins.client.event</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">event</span><span class="p">.</span><span class="na">StatusEvent</span><span class="p">.</span><span class="na">StatusHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">in.fins.client.event.StatusEvent.StatusHandler</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">event</span><span class="p">.</span><span class="na">shared</span><span class="p">.</span><span class="na">EventHandler</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">web</span><span class="p">.</span><span class="na">bindery</span><span class="p">.</span><span class="na">event</span><span class="p">.</span><span class="na">shared</span><span class="p">.</span><span class="na">Event</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.event.shared.EventHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.web.bindery.event.shared.Event</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">StatusEvent</span> <span class="nf">extends</span> <span class="n">Event</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StatusEvent</span> <span class="kd">extends</span> <span class="n">Event</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="nf">interface</span> <span class="n">StatusHandler</span> <span class="nf">extends</span> <span class="n">EventHandler</span> <span class="p">{</span>               
-                <span class="kd">public</span> <span class="nf">void</span> <span class="n">onStatusChange</span><span class="p">(</span><span class="n">StatusEvent</span> <span class="nf">event</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">StatusHandler</span> <span class="kd">extends</span> <span class="n">EventHandler</span> <span class="o">{</span>               
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStatusChange</span><span class="o">(</span><span class="n">StatusEvent</span> <span class="n">event</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Type</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span> <span class="nf">TYPE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Type</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Type</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span> <span class="n">TYPE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Type</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;();</span>
 
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">status</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">status</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">StatusEvent</span><span class="p">(</span><span class="n">String</span> <span class="nf">status</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">StatusEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">String</span> <span class="n">getStatus</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">status</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nf">Type</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span> <span class="nf">getAssociatedType</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">TYPE</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getStatus</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">status</span><span class="o">;</span>
+    <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="nf">void</span> <span class="n">dispatch</span><span class="p">(</span><span class="n">StatusHandler</span> <span class="nf">handler</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">handler</span><span class="p">.</span><span class="na">onStatusChange</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">Type</span><span class="o">&lt;</span><span class="n">StatusHandler</span><span class="o">&gt;</span> <span class="nf">getAssociatedType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">TYPE</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<span class="p">}</span></code></pre></div>
-<table>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">dispatch</span><span class="o">(</span><span class="n">StatusHandler</span> <span class="n">handler</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">handler</span><span class="o">.</span><span class="na">onStatusChange</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div><table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -846,10 +838,8 @@ to reduce the number of files. Add <code>StatusEvent.java</code> to
 </tr>
 </tbody>
 </table>
-
 <p>Add Status widget to <code>FinsShell.ui.xml</code> and register FinsShell with
 EventBus for <code>StatusEvent</code>.</p>
-
 <p><code>in.fins.client.content/FinsShell.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
                 <span class="nt">&lt;g:south</span> <span class="na">size=</span><span class="s">&#39;3&#39;</span><span class="nt">&gt;</span>
@@ -859,52 +849,48 @@ EventBus for <code>StatusEvent</code>.</p>
                                 <span class="nt">&lt;/g:layer&gt;</span>
                         <span class="nt">&lt;/g:LayoutPanel&gt;</span>
                 <span class="nt">&lt;/g:south&gt;</span>
-....</code></pre></div>
-<p><code>in.fins.client.widget/Status.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="p">....</span>
+....
+</code></pre></div><p><code>in.fins.client.widget/Status.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="o">....</span>
 
-<span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">event</span><span class="p">.</span><span class="na">EventBus</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">event</span><span class="p">.</span><span class="na">StatusEvent</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">event</span><span class="p">.</span><span class="na">StatusEvent</span><span class="p">.</span><span class="na">StatusHandler</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">widget</span><span class="p">.</span><span class="na">Status</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">in.fins.client.event.EventBus</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">in.fins.client.event.StatusEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">in.fins.client.event.StatusEvent.StatusHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">in.fins.client.widget.Status</span><span class="o">;</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">FinsShell</span> <span class="nf">extends</span> <span class="n">ResizeComposite</span> <span class="nf">implements</span> <span class="n">StatusHandler</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinsShell</span> <span class="kd">extends</span> <span class="n">ResizeComposite</span> <span class="kd">implements</span> <span class="n">StatusHandler</span> <span class="o">{</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
         <span class="nd">@UiField</span>
-        <span class="n">Status</span> <span class="nf">status</span><span class="p">;</span>
+        <span class="n">Status</span> <span class="n">status</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="nf">FinsShell</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+        <span class="kd">public</span> <span class="nf">FinsShell</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
 
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">StatusEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fireEvent</span><span class="p">(</span><span class="k">new</span> <span class="n">StatusEvent</span><span class="p">(</span><span class="s">&#34;message&#34;</span><span class="p">));</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">StatusEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">fireEvent</span><span class="o">(</span><span class="k">new</span> <span class="n">StatusEvent</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">));</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">onStatusChange</span><span class="p">(</span><span class="n">StatusEvent</span> <span class="nf">event</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">status</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">getStatus</span><span class="p">());</span>
-        <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>Now any object in the application may fire status message with
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStatusChange</span><span class="o">(</span><span class="n">StatusEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">status</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getStatus</span><span class="o">());</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>Now any object in the application may fire status message with
 <code>EventBus.get().fireEvent(new StatusEvent(&quot;Status message”)</code> and it is
 no longer necessary to register the handler with each and every event
 source.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <p>That completes the menu with some simple code. We have placed some
 <code>DateBox</code> composite as placeholders and actual contents have to replace
 them. Let&rsquo;s proceed to design the content pages.</p>
-
 <h2 id="time-to-change-style">Time to change style.</h2>
-
 <p>First four chapters follow tutorial style, which explains each and every
 step in detail. But as we are comfortable with many concepts by now,
 remaining chapters trims down the details. Instead of step by step
@@ -912,19 +898,15 @@ instructions, explanation will be terse that concentrates on important
 concepts, routines and methods, with the relevant code snippets. But
 occasionally, we may provide detailed code where they may be necessary
 to explain some concepts or to present alternative coding.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/style.png" alt="" />
 </figure>
-
 
 <p>Sample code contains chapter wise zip archives and even section wise
 zips for lengthly chapters like Snapshot. Import respective sample code
 to Eclipse to browse and run the application while going through a
 chapter or section.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>ClientBundle -</em> For more information on ClientBundle refer <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideUiImageBundles" target="_blank">Developer&rsquo;s
 Guide - Bundling Image
 Resources</a></p>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Plugins - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,17 +535,12 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-plugins">Maven Plugins</h1>
-
+            <h1 id="maven-plugins">Maven Plugins</h1>
 <p>The previous chapter explained the concept of Maven Lifecycle and
 Phases. Lifecycle phases are just steps without any capability to
 carryout some task and they delegate the actual work to Maven Plugins.</p>
-
 <p>This chapter on Maven Plugins cover plugins goal, how they bind with
 lifecycle phases and plugin configuration.</p>
-
 <p>The Maven core is small and it&rsquo;s just capable of parsing XML files such
 as pom.xml and manage lifecycle and phases. By itself, Maven doesn’t
 know how to compile the code or even to make a JAR file. It is designed
@@ -554,7 +549,6 @@ first time we ran something like <code>mvn install</code> with a new Maven
 installation, it retrieves most of the core Maven plugins from the
 Central Maven Repository. Maven is - at its heart - a plugin execution
 framework; all work is done by plugins.</p>
-
 
 
 <div>&nbsp;</div>
@@ -573,32 +567,25 @@ framework; all work is done by plugins.</p>
 
 
 
-
 <p>Plugins are broadly grouped as <strong>build plugins</strong> and <strong>reporting
 plugins</strong>. Apache Maven Project provides around fifty plugins and some
 of the frequently used plugins are listed here.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-core-plugins.png" alt="Maven Plugins - Maven core plugins" />
 </figure>
-
 
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-packaging-plugins.png" alt="Maven Plugins - Maven packaging plugins" />
 </figure>
 
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-tools-plugins.png" alt="Maven Plugins - Maven tools plugins" />
 </figure>
 
-
 <p>Throughout the guide, we learn more about these plugins.</p>
-
 <p>Apart from Apache Maven Project, many projects such as Hibernate,
 Tomcat, Jetty comes with plugin related to the project. For complete
 list of Plugins, refer <a href="http://maven.apache.org/plugins/index.html" target="_blank">Maven Plugin Directory</a>.</p>
-
 <p>In the next tutorial, we look at plugin goals.</p>
 
           </main>

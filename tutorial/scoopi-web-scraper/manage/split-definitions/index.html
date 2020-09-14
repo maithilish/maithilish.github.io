@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Split Definitions - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -372,13 +372,13 @@
         
         
         <a href="https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/"
-            class="toc-page dropdown-item text-wrap text-muted">
+            class="toc-page dropdown-item text-wrap text-danger">
             Persistence
         </a>
         
         
         <a href="https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/"
-            class="toc-page dropdown-item text-wrap text-danger">
+            class="toc-page dropdown-item text-wrap text-muted">
             Split Definitions
         </a>
         
@@ -491,26 +491,20 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="split-definitions">Split Definitions</h1>
-
+            <h1 id="split-definitions">Split Definitions</h1>
 <p>The Scoopi definition file tends to grow as you scrape multiple types of
 data or large set of links. This chapter explains how to split the
 definitions into multiple files for easy maintenance.</p>
-
 <p>Scoopi allows you to split the definitions either on job types or on top
 level elements.</p>
-
 <h2 id="split-on-job-types">Split on Job Types</h2>
-
 <p>The examples so far scraped BS, PL, snapshot data - price and snapshot -
 of Acme. We can split the definitions into three job types snapshot, bs
 and pl. The
 <a href="https://github.com/maithilish/scoopi/tree/master/src/main/resources/defs/examples/fin/jsoup/ex-13" target="_blank">Example 13</a>
 splits job.yml into snapshot.yml, bs.yml and pl.yml. When we split on
 job types, the broad outline of each definition file is as below</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
 
   snapshotGroup:                -- locator group
     locators:                      -- locators
@@ -524,21 +518,17 @@ taskGroups:
 dataDefs:                       -- datadefs
   links:                           -- datadef
 
-  ...</code></pre></div>
-<p>The files bs.yml and pl.yml do not specify locatorGroups as locators are
+  ...
+</code></pre><p>The files bs.yml and pl.yml do not specify locatorGroups as locators are
 created from linkGroup tasks in snapshot.yml.</p>
-
 <h2 id="split-on-top-elements">Split on Top elements</h2>
-
 <p>Another way to split is based top elements - locatorGroups, taskGroups
 and dataDefs. The
 <a href="https://github.com/maithilish/scoopi/tree/master/src/main/resources/defs/examples/fin/jsoup/ex-14" target="_blank">Example 14</a>
 splits top level elements into three files - locators.yml, tasks.yml and
 datadefs.yml.</p>
-
 <p>When we split definitions, Scoopi merges all yml files found in the
 folder and creates effective defination.</p>
-
 <p>In the next chapter we explain the logging framework of Scoopi.</p>
 
           </main>

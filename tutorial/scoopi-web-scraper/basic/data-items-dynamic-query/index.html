@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-12T05:57:00+0530",
         "dateModified" : "2019-01-12T05:57:00+0530",
-        "wordCount" : "655",
+        "wordCount" : "654",
         "keywords" : [ "data items","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,19 +491,14 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="data-items-and-dynamic-query">Data Items and Dynamic Query</h1>
-
+            <h1 id="data-items-and-dynamic-query">Data Items and Dynamic Query</h1>
 <p>This chapter explores extracting multiple data points by defining
 multiple items and dynamic query.</p>
-
 <p>The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-2/job.yml" target="_blank">Example 2</a>
 extracts ten data points shown below from
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/page/acme-snapshot.html" target="_blank">defs/examples/fin/page/acme-snapshot.html</a>
 page.</p>
-
 <ul>
 <li>MARKET CAP</li>
 <li>EPS (TTM)</li>
@@ -516,7 +511,6 @@ page.</p>
 <li>FACE VALUE</li>
 <li>INDUSTRY P/E</li>
 </ul>
-
 <p>The snippet of HTML from the page is</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;snapshot&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -535,79 +529,76 @@ page.</p>
             <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>27.89<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-   ....</code></pre></div>
-<p>The datadef used to extract data from this page is</p>
-
+   ....
+</code></pre></div><p>The datadef used to extract data from this page is</p>
 <p><code>defs/examples/fin/jsoup/ex-2/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
 
   snapshot:
     query:
-      block: &#34;div#snapshot&#34;
-      selector: &#34;div:matchesOwn(^%{item.match}) + div&#34;
+      block: &quot;div#snapshot&quot;
+      selector: &quot;div:matchesOwn(^%{item.match}) + div&quot;
     items: [
-      item: { name: &#34;MC&#34;, match: &#34;MARKET CAP&#34; },
-      item: { name: &#34;EPS&#34;, match: &#34;EPS \\(TTM\\)&#34; },
-      item: { name: &#34;PE&#34;, match: &#34;P/E&#34; },
-      item: { name: &#34;PC&#34;, match: &#34;P/C&#34; },
-      item: { name: &#34;BV&#34;, match: &#34;BOOK VALUE&#34; },
-      item: { name: &#34;PB&#34;, match: &#34;PRICE/BOOK&#34; },
-      item: { name: &#34;DIV&#34;, match: &#34;DIV \\(%\\)&#34; },
-      item: { name: &#34;DY&#34;, match: &#34;DIV YIELD&#34; },
-      item: { name: &#34;FV&#34;, match: &#34;FACE VALUE&#34; },
-      item: { name: &#34;IND PE&#34;, match: &#34;INDUSTRY P/E&#34; },
+      item: { name: &quot;MC&quot;, match: &quot;MARKET CAP&quot; },
+      item: { name: &quot;EPS&quot;, match: &quot;EPS \\(TTM\\)&quot; },
+      item: { name: &quot;PE&quot;, match: &quot;P/E&quot; },
+      item: { name: &quot;PC&quot;, match: &quot;P/C&quot; },
+      item: { name: &quot;BV&quot;, match: &quot;BOOK VALUE&quot; },
+      item: { name: &quot;PB&quot;, match: &quot;PRICE/BOOK&quot; },
+      item: { name: &quot;DIV&quot;, match: &quot;DIV \\(%\\)&quot; },
+      item: { name: &quot;DY&quot;, match: &quot;DIV YIELD&quot; },
+      item: { name: &quot;FV&quot;, match: &quot;FACE VALUE&quot; },
+      item: { name: &quot;IND PE&quot;, match: &quot;INDUSTRY P/E&quot; },
     ]  
     dims: [ 
-      item: { name: &#34;date&#34;, script: &#34;document.getFromDate()&#34; },
-    ]</code></pre></div>
-<p>Here, items array defines multiple item elements with <em>name</em> and <em>match</em>
+      item: { name: &quot;date&quot;, script: &quot;document.getFromDate()&quot; },
+    ]
+</code></pre><p>Here, items array defines multiple item elements with <em>name</em> and <em>match</em>
 properties and dims array defines an item for date.</p>
-
 <h2 id="dynamic-query">Dynamic Query</h2>
-
 <p>When scraping single data point say MARKET CAP, we can hard code the
 selector as</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">query:
-  block: &#34;div#snapshot&#34;
-  selector: &#34;div:matchesOwn(MARKET CAP) + div&#34;</code></pre></div>
-<p>But, to access say P/E we need another selector as <strong>div:matchesOwn(P/E)
-+ div</strong> and for the above example, in all we need 10 selectors. Instead,
+<pre><code class="language-raw" data-lang="raw">query:
+  block: &quot;div#snapshot&quot;
+  selector: &quot;div:matchesOwn(MARKET CAP) + div&quot;
+</code></pre><p>But, to access say P/E we need another selector as **div:matchesOwn(P/E)</p>
+<ul>
+<li>div** and for the above example, in all we need 10 selectors. Instead,
 we can use Scoopi dynamic query feature. The hard coded query can be
-converted into dynamic query with substitution variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">query:
-  block: &#34;div#snapshot&#34;
-  selector: &#34;div:matchesOwn(^%{item.match}) + div&#34;</code></pre></div>
-<p>Scoopi dynamically substitute the variable <em>%{item.match}</em> with the
+converted into dynamic query with substitution variables.</li>
+</ul>
+<pre><code class="language-raw" data-lang="raw">query:
+  block: &quot;div#snapshot&quot;
+  selector: &quot;div:matchesOwn(^%{item.match}) + div&quot;
+</code></pre><p>Scoopi dynamically substitute the variable <em>%{item.match}</em> with the
 match property of the item and fires the query. With the dynamic query,
 we can scrape any number of item with single query.</p>
-
 <p>When Scoopi process item axis, for each item defined it gets the raw
 query and replaces the %{item.match} with the item match property and
 then dispatches the query to JSoup and once JSoup returns the content of
 selected item, assigns it to item&rsquo;s value field. Let&rsquo;s see how item with
-match=&ldquo;BOOK VALUE&rdquo; is handled by Scoopi.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+match=&quot;BOOK VALUE&rdquo; is handled by Scoopi.</p>
+<pre><code class="language-raw" data-lang="raw">dataDefs:
 
   snapshot:
     query:
-      block: &#34;div#snapshot&#34;
-      selector: &#34;div:matchesOwn(^%{item.match}) + div&#34;
+      block: &quot;div#snapshot&quot;
+      selector: &quot;div:matchesOwn(^%{item.match}) + div&quot;
     items: [
-      item: { name: &#34;BV&#34;, match: &#34;BOOK VALUE&#34; },
+      item: { name: &quot;BV&quot;, match: &quot;BOOK VALUE&quot; },
     ]  
     dims: [ 
-      item: { name: &#34;date&#34;, script: &#34;document.getFromDate()&#34; },
-    ]</code></pre></div>
-<p>The HTML snippet is</p>
+      item: { name: &quot;date&quot;, script: &quot;document.getFromDate()&quot; },
+    ]
+</code></pre><p>The HTML snippet is</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>BOOK VALUE<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>27.89<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
-<p>For the above datadef, Scoopi internally creates an data item object
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>For the above datadef, Scoopi internally creates an data item object
 with three
 axis.</p>
-
 <table>
 <thead>
 <tr>
@@ -616,20 +607,17 @@ axis.</p>
 <th>Query or Script</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>dim</td>
 <td>date</td>
 <td>document.getFromDate()</td>
 </tr>
-
 <tr>
 <td>item</td>
 <td>BV</td>
 <td>no query/script name is set as value</td>
 </tr>
-
 <tr>
 <td>fact</td>
 <td>fact</td>
@@ -637,7 +625,6 @@ axis.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Note that we defined only two axis in datadef - dim (date) and item (BV)
 and the third axis fact is added by Scoopi by default. It processes each
 axis starting with dim (date) and assigns date returned by the script as
@@ -649,16 +636,13 @@ field and replace the variable with it. So, the substituted selector
 becomes <em>div:matchesOwn(BV) + div</em> which scrapes data 27.89 from HTML.
 We can also use other dynamic variables such as %{item.index} and
 {item.value}.</p>
-
 <p>The subsequent chapters covers other types of dynamic queries
 extensively with more examples.</p>
-
 <p>When we scrape limited number of items as done in example 2, then it is
 convenient to use members directly either with value or match property.
 But, when large number of items are involved, then dataDef definition
 becomes lengthy and to overcome that, Scoopi comes with two more
 features <strong>indexRange</strong> and <strong>breakAfter</strong>.</p>
-
 <p>The next chapter covers item properties - index, indexRange and
 breakAfter.</p>
 

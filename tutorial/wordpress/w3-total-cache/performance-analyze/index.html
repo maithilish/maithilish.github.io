@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Performance Analyze - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,28 +561,21 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-4-analyze-performance">7.4. Analyze Performance</h2>
-
+            <h2 id="74analyze-performance">7.4. Analyze Performance</h2>
 <p>In this previous sections, we setup W3 Total Cache to boost the
 WordPress performance. In this section, we cover one more WordPress
 Optimization technique and also explore the tools that help us to
 analyze the WordPress Performance and pinpoint areas that need tuning.</p>
-
 <h3 id="wordpress-optimize-images">WordPress Optimize Images</h3>
-
 <p>We use a lot of PNG images in our pages instead of JPG as PNG supports
 more colors and livelier than JPG images. WordPress by default optimizes
 the JPG images on upload, but it does not optimize the PNG images. There
 are a number of plugins that do the lossless compress of PNG images and
 in codetab.org, we use EWWW Image Optimizer Plugin.</p>
-
 <p>Install <a href="https://wordpress.org/plugins/ewww-image-optimizer/" target="_blank">EWWW Image
 Optimizer</a> by
 nosilver4u. After activation of the plugin, whenever we upload images to
 Media Library plugin automatically optimizes the images.</p>
-
 <p>However, for the existing images in the Media Library, we need to run
 Bulk Optimize option. Go to <strong>Dashboard</strong> → <strong>Settings</strong> → <strong>EWWW Image
 Optimizer</strong> and select Bulk Optimize. In Bulk Optimize Screen, click
@@ -594,13 +587,10 @@ doing the bulk optimization, set <strong>choose how long to pause between
 images</strong> to 5 seconds or more. Pause between image processing may
 improve the response time if site has a large number of existing images
 in the Media Library and a good number of visitors.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <h3 id="analyze-wordpress-performance">Analyze WordPress Performance</h3>
-
 <p>In the web, we may find many tools available to analyze the performance
 of the web sites. Leading being <a href="http://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed
 Insights</a>,
@@ -608,7 +598,6 @@ Insights</a>,
 YSlow</a> browser Add-On. They are
 useful to analyze the WordPress performance and to pinpoint the areas
 that require performance tuning.</p>
-
 <p>It is difficult to eliminate all the issues as some of them may be
 external. For example, these tools show expiry header is too low for
 external scripts like AdSense and Google Analytics codes, however, we do
@@ -617,27 +606,24 @@ as much as possible and leave out any complicated optimization. Score of
 90 and above by these tools are good enough. Refer performance tuning
 documents that come with Google PageSpeed and YSlow to understand the
 various tricks to speed up the web pages.</p>
-
 <p>GTMetrix</p>
-
 <p>One more portal that we find extremely handy to analyze the WordPress
 performance is <a href="http://gtmetrix.com/" target="_blank">GTmetrix</a>. GTMetrix uses Google
 PageSpeed and YSlow in backend and shows the results in a single report.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-gtmetrix.png" alt="WordPress Performance Analyze - GTMetrix performance report." />
 </figure>
 
-
 <p>Timeline tab shows the whole request cycle as a waterfall and is very
 useful to understand:</p>
-
 <ul>
-<li><p>Which resources download in parallel.</p></li>
-
-<li><p>Which resources take longtime to download.</p></li>
+<li>
+<p>Which resources download in parallel.</p>
+</li>
+<li>
+<p>Which resources take longtime to download.</p>
+</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -655,12 +641,10 @@ useful to understand:</p>
 <div>&nbsp;</div>
 
 
-
 <p>History tab shows the trend of important indicators of the page - Page
 Load Time, Page Size, Request Count and Speed scores - for a range of
 dates. We find it useful to check some of the large pages occasionally
 and known how they are performing over the period.</p>
-
 <p>In the next chapter, we cover WordPress SEO Plugin that optimizes the
 site for Search Engines.</p>
 

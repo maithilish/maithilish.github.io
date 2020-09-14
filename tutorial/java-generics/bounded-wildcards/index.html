@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-07-23T13:54:00+0530",
         "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "1173",
+        "wordCount" : "1163",
         "keywords" : [ "java generics bounded wildcards tutorial","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Java Generics Bounded Wildcards - CodeTab</title></head>
 
@@ -344,109 +344,100 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="bounded-wildcards">Bounded Wildcards</h1>
-
+            <h1 id="bounded-wildcards">Bounded Wildcards</h1>
 <p>We can use wildcard ? with either upper or lower bound.</p>
-
 <h2 id="extends">Extends</h2>
-
 <p>The <code>&lt;? extends Type&gt;</code> is a wildcard with upper bound. Extends allows us to restrict the unbounded <code>List&lt;?&gt;</code> to some type and its subtypes. For example, we want restrict display method only to Food and its subclasses and for change list parameter as below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="nf">void</span> <span class="n">display</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Food</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Food</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// display the list elements
-</span><span class="c1"></span>    <span class="p">}</span>
+</span><span class="c1"></span>    <span class="o">}</span>
 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span><span class="p">());</span>         
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span><span class="p">());</span>      
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span><span class="p">());</span>
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span><span class="p">());</span>      
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span><span class="p">());</span>      
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;());</span>         
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;());</span>      
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;());</span>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;());</span>      
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;());</span>      
 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">());</span>    <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">());</span>   <span class="o">//</span> <span class="n">error</span>         </code></pre></div>
-<p>Now display() accepts only the list of Food and its subtypes - Snack, Cookie, Fruit, Apple and nothing else. Compiler throws error if we tries to pass list of String or Integer as they are not subclasses of Food.</p>
-
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>    <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;());</span>   <span class="c1">// error         
+</span><span class="c1"></span>
+</code></pre></div><p>Now display() accepts only the list of Food and its subtypes - Snack, Cookie, Fruit, Apple and nothing else. Compiler throws error if we tries to pass list of String or Integer as they are not subclasses of Food.</p>
 <p>We can use extends in variable declarations too as show below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span> <span class="nf">fruits</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="nf">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span> <span class="nf">apples</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span> <span class="n">apples</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Food</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">;</span>
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Snack</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">;</span>        
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Apple</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">apples</span><span class="p">;</span></code></pre></div>
-<p>Various extends for our example class hierarchy.</p>
+    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Food</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">;</span>
+    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Snack</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>        
+    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Apple</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">apples</span><span class="o">;</span>
 
+</code></pre></div><p>Various extends for our example class hierarchy.</p>
 <ul>
-<li>List&lt;? extends Food&gt;  &nbsp; allows list of Food, Snack, Cookie, Fruit and Apple</li>
-<li>List&lt;? extends Snack&gt;  &nbsp; allows list of Snack and Cookie</li>
-<li>List&lt;? extends Cookie&gt; &nbsp; allows list of Cookie</li>
-<li>List&lt;? extends Fruit&gt;  &nbsp; allows list of Fruit and Apple</li>
-<li>List&lt;? extends Apple&gt; &nbsp; allows list of Apple</li>
+<li>List&lt;? extends Food&gt;    allows list of Food, Snack, Cookie, Fruit and Apple</li>
+<li>List&lt;? extends Snack&gt;    allows list of Snack and Cookie</li>
+<li>List&lt;? extends Cookie&gt;   allows list of Cookie</li>
+<li>List&lt;? extends Fruit&gt;    allows list of Fruit and Apple</li>
+<li>List&lt;? extends Apple&gt;   allows list of Apple</li>
 </ul>
-
 <p>To sum up, extends allows type and its subtypes.</p>
-
 <h2 id="super">Super</h2>
-
 <p>The <code>&lt;? super Type&gt;</code> is a wildcard with lower bound. Suppose, we want a parameter that allows Food, Snack and Cookie. As we have seen earlier, the <code>List&lt;? extends Food&gt;</code> allows not only list of Food, Snack and Cookie but also list of Fruit and Apple, whereas the <code>List&lt;? extends Snack&gt;</code> allows only list of Snack and Cookie but not the list of Food. So top-down <strong>extends</strong> doesn&rsquo;t work and we should use bottom-up <strong>super</strong> keyword.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="nf">void</span> <span class="n">display</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Cookie</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// display the list elements
-</span><span class="c1"></span>    <span class="p">}</span>
+</span><span class="c1"></span>    <span class="o">}</span>
 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span><span class="p">());</span>         
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span><span class="p">());</span>      
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;());</span>         
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;());</span>      
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;());</span>
 
-    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span><span class="p">());</span>      <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">display</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span><span class="p">());</span>      <span class="o">//</span> <span class="n">error</span></code></pre></div>
-<p>The <code>List&lt;? super Cookie&gt;</code> allows list of Cookie and all its supertypes i.e. list of Snack and Food which is exactly what we want.</p>
-
+    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;());</span>      <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;());</span>      <span class="c1">// error
+</span><span class="c1"></span>
+</code></pre></div><p>The <code>List&lt;? super Cookie&gt;</code> allows list of Cookie and all its supertypes i.e. list of Snack and Food which is exactly what we want.</p>
 <p>As usual, we can use <strong>super</strong> in variable declarations also bellow:</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="nf">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span> <span class="nf">fruits</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Food</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">foods</span><span class="p">;</span>
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Snack</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">foods</span><span class="p">;</span>        
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Apple</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">;</span></code></pre></div>
-<p>Various super for our example class hierarchy.</p>
+    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Food</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">foods</span><span class="o">;</span>
+    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Snack</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">foods</span><span class="o">;</span>        
+    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Apple</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">;</span>
 
+</code></pre></div><p>Various super for our example class hierarchy.</p>
 <ul>
-<li>List&lt;? super Food&gt;  &nbsp; allows list of Food</li>
-<li>List&lt;? extends Snack&gt;  &nbsp; allows list of Snack and Food</li>
-<li>List&lt;? extends Cookie&gt; &nbsp; allows list of Cookie, Snack and Food</li>
-<li>List&lt;? extends Fruit&gt;  &nbsp; allows list of Fruit and Food</li>
-<li>List&lt;? extends Apple&gt; &nbsp; allows list of Apple, Fruit and Food</li>
+<li>List&lt;? super Food&gt;    allows list of Food</li>
+<li>List&lt;? extends Snack&gt;    allows list of Snack and Food</li>
+<li>List&lt;? extends Cookie&gt;   allows list of Cookie, Snack and Food</li>
+<li>List&lt;? extends Fruit&gt;    allows list of Fruit and Food</li>
+<li>List&lt;? extends Apple&gt;   allows list of Apple, Fruit and Food</li>
 </ul>
-
 <p>To sum up, super allows type and its supertypes.</p>
-
 <h2 id="producer-and-consumer">Producer and Consumer</h2>
-
 <p>So far, we saw how wildcards affects types, sub types and super types. Wildcards also dictates what type of methods can be invoked and to understand that, we categorize parameterized types based on their behavior - producers and consumers.</p>
-
 <p>When we get an item from list then list acts as producer and when an item is added then it acts as consumer. Let&rsquo;s see how a list changes its nature when assigned to unbounded, upper bounded or lower bounded wildcards variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="nf">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>          <span class="c1">// acts both as producer and consumer    
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>                   <span class="c1">// acts as producer 
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Snacks</span><span class="o">&gt;</span> <span class="n">upperBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span> <span class="c1">// acts as producer
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Snacks</span><span class="o">&gt;</span> <span class="n">lowerBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>   <span class="o">//</span> <span class="n">acts</span> <span class="nf">both</span> <span class="n">as</span> <span class="nf">producer</span> <span class="n">and</span> <span class="nf">consumer</span></code></pre></div>
-<p>There is an acronym <strong>PECS</strong> to remember this, which is abbreviation for <strong>Producer extends, Consumer super</strong>.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>          <span class="c1">// acts both as producer and consumer    
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>                   <span class="c1">// acts as producer 
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Snacks</span><span class="o">&gt;</span> <span class="n">upperBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span> <span class="c1">// acts as producer
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Snacks</span><span class="o">&gt;</span> <span class="n">lowerBoundedVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>   <span class="c1">// acts both as producer and consumer
+</span><span class="c1"></span>
+</code></pre></div><p>There is an acronym <strong>PECS</strong> to remember this, which is abbreviation for <strong>Producer extends, Consumer super</strong>.</p>
 <ul>
 <li>assign list to <code>List&lt;? extends Snack&gt;</code>; it becomes producer.</li>
 <li>assign the list to <code>List&lt;? super Snack&gt;</code>; it becomes consumer.</li>
 </ul>
-
 <p>There are some rules about invoking methods on consumers and producers and to understand it, we divide methods into two groups - get and add methods.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="nf">E</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="nf">index</span><span class="p">);</span>        <span class="c1">// method without formal type parameter
-</span><span class="c1"></span>    <span class="kd">public</span> <span class="nf">boolean</span> <span class="n">add</span><span class="p">(</span><span class="n">E</span> <span class="nf">element</span><span class="p">);</span>  <span class="c1">// method with formal type parameter
+    <span class="kd">public</span> <span class="n">E</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>        <span class="c1">// method without formal type parameter
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">add</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span><span class="o">);</span>  <span class="c1">// method with formal type parameter
 </span><span class="c1"></span>
-<span class="p">}</span></code></pre></div>
-<p>The methods such as <code>E get(int index)</code> or <code>E remove​(int index)</code> has no formal type parameter with E. We can ignore the return type even if it is type parameter.  Similarly, <code>boolean remove​(Object o)</code> is also a method with no formal type parameter with E. For convenience, we call all such methods as  <strong>get</strong> methods. Some more examples are:</p>
+<span class="o">}</span>
 
+</code></pre></div><p>The methods such as <code>E get(int index)</code> or <code>E remove​(int index)</code> has no formal type parameter with E. We can ignore the return type even if it is type parameter.  Similarly, <code>boolean remove​(Object o)</code> is also a method with no formal type parameter with E. For convenience, we call all such methods as  <strong>get</strong> methods. Some more examples are:</p>
 <table>
 <thead>
 <tr>
@@ -455,32 +446,27 @@
 <th>Reason</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>E get​(int index)</td>
 <td>get</td>
 <td>no E in parameter, even though return type is E</td>
 </tr>
-
 <tr>
 <td>E remove​(int index)</td>
 <td>get</td>
 <td>no E in parameter, even though return type is E</td>
 </tr>
-
 <tr>
 <td>boolean remove​(Object o)</td>
 <td>get</td>
 <td>no E in parameter</td>
 </tr>
-
 <tr>
 <td>boolean removeAll​(Collection&lt;?&gt; c)</td>
 <td>get</td>
 <td>no E in parameter</td>
 </tr>
-
 <tr>
 <td>boolean retainAll​(Collection&lt;?&gt; c)</td>
 <td>get</td>
@@ -488,9 +474,7 @@
 </tr>
 </tbody>
 </table>
-
 <p>The other group is methods that have one or more formal type parameters. For example, the method <code>E set​(int index, E element)</code> and <code>void add(E element)</code> have formal type parameter <code>element</code> whose type is E. Again informally, we call all such methods as <strong>add</strong> methods. Some examples of add methods are shown below:</p>
-
 <table>
 <thead>
 <tr>
@@ -499,26 +483,22 @@
 <th>Reason</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>void add​(int index, E element)</td>
 <td>add</td>
 <td>parameter has E (type parameter)</td>
 </tr>
-
 <tr>
 <td>boolean add(​E element)</td>
 <td>add</td>
 <td>parameter has E</td>
 </tr>
-
 <tr>
 <td>boolean addAll​(Collection&lt;? extends E&gt; c)</td>
 <td>add</td>
 <td>parameter has E</td>
 </tr>
-
 <tr>
 <td>E set​(int index, E element)</td>
 <td>add</td>
@@ -526,37 +506,32 @@
 </tr>
 </tbody>
 </table>
-
 <p>Finally, let&rsquo;s know the rules about invoking methods (get and add) on regular, unbounded, and bounded types (consumers and producers).</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="nf">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>         <span class="c1">// can call add and get methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>                    <span class="c1">// can call get methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nf">Snack</span><span class="o">&gt;</span> <span class="n">upperboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>   <span class="c1">// can call get methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nf">Snack</span><span class="o">&gt;</span> <span class="n">lowerboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="p">;</span>     <span class="c1">// can call add and get methods
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>         <span class="c1">// can call add and get methods
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>                    <span class="c1">// can call get methods
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Snack</span><span class="o">&gt;</span> <span class="n">upperboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>   <span class="c1">// can call get methods
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Snack</span><span class="o">&gt;</span> <span class="n">lowerboundVar</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>     <span class="c1">// can call add and get methods
 </span><span class="c1"></span>
     <span class="c1">// can call get group of methods on all
-</span><span class="c1"></span>    <span class="n">snacks</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
-    <span class="n">unboundVar</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
-    <span class="n">upperboundVar</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
-    <span class="n">lowerboundVar</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
+</span><span class="c1"></span>    <span class="n">snacks</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+    <span class="n">unboundVar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+    <span class="n">upperboundVar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+    <span class="n">lowerboundVar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
 
     <span class="c1">// can call add group of methods only on consumers
-</span><span class="c1"></span>    <span class="n">snacks</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>
-    <span class="n">unboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>        <span class="c1">// error    
-</span><span class="c1"></span>    <span class="n">upperboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>     <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">lowerboundVar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Snack</span><span class="p">());</span>    
-    </code></pre></div>
-<p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?&gt;</code> and <code>List&lt;? extends Snacks&gt;</code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>add</strong> group of methods (methods with one or more type parameters) on them.</p>
-
+</span><span class="c1"></span>    <span class="n">snacks</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Snack</span><span class="o">());</span>
+    <span class="n">unboundVar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Snack</span><span class="o">());</span>        <span class="c1">// error    
+</span><span class="c1"></span>    <span class="n">upperboundVar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Snack</span><span class="o">());</span>     <span class="c1">// error
+</span><span class="c1"></span>    <span class="n">lowerboundVar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Snack</span><span class="o">());</span>    
+    
+</code></pre></div><p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?&gt;</code> and <code>List&lt;? extends Snacks&gt;</code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>add</strong> group of methods (methods with one or more type parameters) on them.</p>
 <p>Yet another way to remember is</p>
-
 <ul>
 <li>can call get methods (methods without type parameter) on any type of variables.</li>
 <li>can&rsquo;t invoke add methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with super (<code>List&lt;? extends Snack&gt;</code> etc.,).</li>
 </ul>
-
 <h2 id="summary">Summary</h2>
-
 <ul>
 <li><code>List&lt;?&gt;</code> accepts list of any type.</li>
 <li><code>List&lt;? extends T&gt;</code> accepts list of type and all its subtypes.</li>

@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-06-21T22:12:00+0530",
         "dateModified" : "2019-06-21T22:12:00+0530",
-        "wordCount" : "670",
+        "wordCount" : "677",
         "keywords" : [ "eclipse maven multi module","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Eclipse Maven Multi Module - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,55 +535,39 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="eclipse-maven-multi-module">Eclipse Maven Multi Module</h1>
-
+            <h1 id="eclipse-maven-multi-module">Eclipse Maven Multi Module</h1>
 <p>In this tutorial we explain steps to create a Maven Multi Module Project using Eclipse Maven Plugin (M2E) Wizard.</p>
-
 <p>The main steps are</p>
-
 <ul>
 <li>create top level maven project</li>
 <li>add modules to top level project</li>
 </ul>
-
 <h2 id="create-top-level-maven-project">Create Top Level Maven Project</h2>
-
 <p>Open Maven Project Wizard with <strong>File</strong> → <strong>New</strong> → <strong>Others</strong> →
 <strong>Maven</strong>  → <strong>Maven Project.</strong></p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-wiz.png" alt="Eclipse Maven Multi Module - Maven Project Wizard" />
 </figure>
 
-
 <p>The wizard opens <strong>Select project name and location</strong> window. Check  the <strong>Create a simple project</strong> checkbox to create a bare bone project and click Next.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-projectlocation.png" alt="Eclipse Maven Multi Module - Project Location" />
 </figure>
 
-
 <p>Next in the Configure Project window, enter <strong>Group ID</strong> as org.codetab, <strong>Artifact ID</strong> as eclipse-multi and for packaging field select <strong>pom</strong>. For a normal project the packaging type is jar or war, but for a multi module top level project it should be <strong>pom</strong>.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-coordinates.png" alt="Eclipse Maven Multi Module - Maven Project Coordinates" />
 </figure>
 
-
 <p>Finally, click Finish to create the project. At this point the top level project, also called as parent project, contains just the top level <strong>pom.xml</strong>.</p>
-
 <p>Open pom.xml and add following properties.</p>
-
 <p><code>eclipse-multi/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">    <span class="nt">&lt;properties&gt;</span>
         <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
         <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
         <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
-    <span class="nt">&lt;/properties&gt;</span></code></pre></div>
-<p>We add these properties in the top level POM so that all its modules inherits them. This also ensures that build path of all modules uses Java 1.8 library instead of default 1.5.</p>
-
+    <span class="nt">&lt;/properties&gt;</span>
+</code></pre></div><p>We add these properties in the top level POM so that all its modules inherits them. This also ensures that build path of all modules uses Java 1.8 library instead of default 1.5.</p>
 
 
 <div>&nbsp;</div>
@@ -599,65 +583,46 @@
 </script>
 
 <div>&nbsp;</div>
-
 
 
 
 <h2 id="add-modules">Add Modules</h2>
-
 <p>To add modules, select eclipse-multi project in the Project Explorer  and right click to open context menu. From the context menu, open Maven Project Wizard with <strong>New</strong> → <strong>Others</strong> →
 <strong>Maven</strong>  and select <strong>Maven Module</strong> and click Next.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-module-wiz.png" alt="Eclipse Maven Multi Module - Maven Module Wizard" />
 </figure>
 
-
 <p>In the <strong>Enter Module Name</strong> window, check <strong>Create Simple Project</strong> checkbox and enter the name for the module as <strong>api</strong> and click next. This brings up <strong>Configure Project</strong> window. Wizard auto fills module and parent project coordinates. For modules, the packaging type is either jar or war.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-module-coordinates.png" alt="Eclipse Maven Multi Module - Maven Module Coordinates" />
 </figure>
 
-
 <p>Click finish to create the module. The the module folder get created in the parent project folder. We can repeat the same procedure to add more modules. The modules can be added either to top level folder or to any module. When module is added to another module then project becomes hierarchical multi module project.</p>
-
 <p>The project structure is as shown in the screenshot.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-projectstructure.png" alt="Maven Eclipse Plugin - Project Structure" />
 </figure>
 
-
 <p>The util module is shown in two places - one under eclipse-multi folder and one outside. If we open eclipse workspace in File Manager the util folder exists only in eclipse-multi folder. For convenience, Eclipse shows modules as separate entries in Project Explorer which are used for development.</p>
-
 <p>For more information on Maven Multi Module and sample project, see <a href="http://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/">Multi Module Project Tutorial</a></p>
-
 <h2 id="import-maven-multi-module">Import Maven Multi Module</h2>
-
-<p>We can import the Simple Maven Project explained in above tutorial into Eclipse. Download the example code from GitHub <a href="https://github.com/maithilish/maven-examples" target="_blank">Maven Examples</a> and extract it (or clone) to Eclipse workspace. In Eclipse, open import wizard with <strong>New</strong> → <strong>Import</strong> and in Select window choose <strong>Existing Maven Project</strong></p>
-
+<p>Alternatively, we can also import existing Maven Multi Module project. To import the Simple Maven Project, explained in above tutorial, download the example code from GitHub <a href="https://github.com/maithilish/maven-examples" target="_blank">Maven Examples</a> and extract it (or clone) to Eclipse workspace. In Eclipse, open import wizard with <strong>New</strong> → <strong>Import</strong> and in Select window choose <strong>Existing Maven Project</strong></p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-import.png" alt="Maven Eclipse Plugin Multi Module Project Import" />
 </figure>
 
-
 <p>Choose workspace as Root Directory in Select Maven Project window,  which displays all Maven projects in your workspace. First, Deselect All and then select Simple Multi Module Project as shown in next image.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-import-select.png" alt="Maven Eclipse Plugin Multi Module Project Import" />
 </figure>
 
-
 <p>Click Finish to import the project. The Simple Multi Project and its modules are displayed in Project Explorer.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-m2e-multi-import-structure.png" alt="Maven Eclipse Plugin Multi Module Project Import" />
 </figure>
 
-
 <p>We can also use <strong>Check out Maven Project from SCM</strong> in Import wizard to directly import the project from GitHub. For that,  install M2E Git Connector from M2E marketplace.</p>
-
 
 
 <div>&nbsp;</div>
@@ -675,11 +640,8 @@
 <div>&nbsp;</div>
 
 
-
 <h2 id="how-to-run-multi-module-project">How to run Multi Module Project</h2>
-
 <p>We can use Maven build option to run the multi module. To do that, first right click on top level project and select <strong>Run As</strong> → <strong>Maven Install</strong> and after project installed in local repository again select <strong>Run As</strong> → <strong>Maven Build</strong> and in run configuration screen enter <strong>exec:java -pl &lt;module that has main class&gt; -Dexec.mainClass=&lt;main class&gt;</strong> in Goals field and then click run.</p>
-
 <p>This is cumbersome, but fortunately there is a shortcut. All we have to do is right click on the main class file and open the context menu and choose <strong>Run As</strong> → <strong>Java Application</strong>. Eclipse links all the modules and run the application straight away.</p>
 
           </main>

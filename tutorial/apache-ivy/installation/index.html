@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Installation - Apache Ivy Tutorial - CodeTab</title></head>
 
@@ -396,7 +396,6 @@
           <main id="content" class="col-md-11 post-basic">
             <p>To work through the tutorial, we require Apache Ivy, Ant and IvyDE, and
 this chapter covers installation of software.</p>
-
 <table>
 <thead>
 <tr>
@@ -405,20 +404,17 @@ this chapter covers installation of software.</p>
 <th align="center">Size (approximate)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Apache Ivy</td>
 <td align="center">2.2</td>
 <td align="center">1 MB</td>
 </tr>
-
 <tr>
 <td align="left">Apache Ant</td>
 <td align="center">1.8.2</td>
 <td align="center">8 MB</td>
 </tr>
-
 <tr>
 <td align="left">IvyDE Eclipse Plugin</td>
 <td align="center"></td>
@@ -426,61 +422,53 @@ this chapter covers installation of software.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Apache Ant and Apache Ivy Installation</p>
-
 <p>We require Apache Ant and Apache Ivy to work through the tutorial.
 Download latest distribution of Apache Ivy and Ant from Apache site. In
 case Ant is already installed in your system, ignore the its
 installation commands. Following commands installs Apache Ant at
 <code>/opt/ant</code>, but any other location is perfectly fine. Adjust settings
 accordingly.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">tar -C /opt/ant/ -xzvf apache-ant-1.8.2-bin.tar.gz
+<pre><code class="language-screen" data-lang="screen">tar -C /opt/ant/ -xzvf apache-ant-1.8.2-bin.tar.gz
 tar -xzvf apache-ivy-2.2.0-bin-with-deps.tar.gz
 cp apache-ivy-2.2.0/ivy-2.2.0.jar /opt/ant/apache-ant-1.8.2/lib
 export ANT_HOME=/opt/ant/apache-ant-1.8.2
-export PATH=$PATH:$ANT_HOME/bin</code></pre></div>
-<p>Environment variables ANT_HOME and PATH are essential to run Ant. These
+export PATH=$PATH:$ANT_HOME/bin
+</code></pre><p>Environment variables ANT_HOME and PATH are essential to run Ant. These
 exports may be moved to <code>.bash_profile</code> in Linux so that they are always
 set when you login.</p>
-
 <p><strong>Work Dir</strong></p>
-
 <p>Throughout the tutorial, we use a work directory to run Apache Ivy
 examples, This directory is some location like $HOME/work, but you are
 free to choose any other location. We will be using phrases like &ldquo;create
 a file in work dir&rdquo;, &ldquo;add a ivy.xml to workdir&rdquo; and &ldquo;run from work dir&rdquo;
 etc., which simply means do that in the work directory.</p>
-
 <p>Test the Apache Ivy installation</p>
-
 <p>To test the Ant and Apache Ivy installation, add following build.xml
 file to work
 dir.</p>
-
 <p><code>build.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&#34;test ivy&#34;</span> <span class="na">default=</span><span class="s">&#34;test&#34;</span> <span class="na">xmlns:ivy=</span><span class="s">&#34;antlib:org.apache.ivy.ant&#34;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#34;test&#34;</span> <span class="na">description=</span><span class="s">&#34;Test ivy installation&#34;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;ivy:settings</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/target&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>and run Ant.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">ant</code></pre></div>
-<p>Successful build indicates that ant and ivy installation is fine.</p>
-
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>and run Ant.</p>
+<pre><code class="language-screen" data-lang="screen">ant
+</code></pre><p>Successful build indicates that ant and ivy installation is fine.</p>
 <p><strong>Build Error</strong></p>
-
 <p>Typical error installation error
 is</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">build.xml:5: Problem: failed to create task or type antlib:org.apache.ivy.ant:settings</code></pre></div>
-<p>check the following to resolve this</p>
-
+<pre><code class="language-screen" data-lang="screen">build.xml:5: Problem: failed to create task or type antlib:org.apache.ivy.ant:settings
+</code></pre><p>check the following to resolve this</p>
 <ul>
-<li><p>environment variable ANT_HOME is not set properly</p></li>
-
-<li><p>ivy.jar is missing from ANT_HOME/lib</p></li>
+<li>
+<p>environment variable ANT_HOME is not set properly</p>
+</li>
+<li>
+<p>ivy.jar is missing from ANT_HOME/lib</p>
+</li>
 </ul>
-
 
 
 <div>&nbsp;</div>
@@ -498,27 +486,24 @@ is</p>
 <div>&nbsp;</div>
 
 
-
 <p>Install IvyDE Eclipse Plugin</p>
-
 <p>IvyDE Plugin for Eclipse integrates Apache Ivy with Eclipse IDE. From <a href="/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/">IvyDE Plugin for Eclipse</a> onwards we use the IvyDE plugin to enable dependency management of Eclipse projects. Install IvyDE using one of the following installation methods.</p>
-
 <p><strong>Update Site</strong> : To install IvyDE, start Eclipse and go to <strong>Help</strong> →
 <strong>Install New Software &hellip;</strong> and it displays the Available Softwares
 window. In  <strong>Work with</strong>  text box, enter IvyDE update site
 <strong><a href="http://www.apache.org/dist/ant/ivyde/updatesite/">http://www.apache.org/dist/ant/ivyde/updatesite/</a></strong> and click Add and
 then in Add Repository window click OK. It displays the following
 plugins.</p>
-
 <ul>
-<li><p>Apache Ivy library</p></li>
-
-<li><p>Apache IvyDE Eclipse plugin</p></li>
+<li>
+<p>Apache Ivy library</p>
+</li>
+<li>
+<p>Apache IvyDE Eclipse plugin</p>
+</li>
 </ul>
-
 <p>Select both and proceed. This will install Apache Ivy, Ivy Ant Tasks and
 IvyDE.</p>
-
 
 
 <div>&nbsp;</div>
@@ -537,54 +522,50 @@ IvyDE.</p>
 
 
 
-
 <p><strong>Manual Installation</strong> : This method involves the installation of two
 plugins - IvyDE and Apache Ivy plugins.</p>
-
 <p><strong>IvyDE Plugin</strong> : This plugin links core Ivy to Eclipse. Download the
 IvyDE plugin from <a href="https://ant.apache.org/ivy/ivyde/download.html">https://ant.apache.org/ivy/ivyde/download.html</a>. For
 Eclipse Indigo download apache-ivyde- 2.1.0.201008101807-RELEASE.tar.gz
 and uncompress. to get two folders containing the artifacts to deploy.
 Copy the plugin and features to Eclipse installation directory as
 follows:</p>
-
 <ul>
-<li><p>plugins/org.apache.ivyde.eclipse_2.1.0.201008101807-RELEASE.jar to
-$ECLIPSE_HOME/plugins</p></li>
-
-<li><p>features/org.apache.ivyde.feature_2.1.0.201008101807-RELEASE.jar to
-$ECLIPSE_HOME/features</p></li>
+<li>
+<p>plugins/org.apache.ivyde.eclipse_2.1.0.201008101807-RELEASE.jar to
+$ECLIPSE_HOME/plugins</p>
+</li>
+<li>
+<p>features/org.apache.ivyde.feature_2.1.0.201008101807-RELEASE.jar to
+$ECLIPSE_HOME/features</p>
+</li>
 </ul>
-
 <p><strong>Apache Ivy Plugin</strong> : This plugin contains core Apache Ivy and Ant
 Tasks. Get the latest Ivy feature and plugin from following sites</p>
-
 <ul>
-<li><a href="http://www.apache.org/dist/ant/ivyde/updatesite">http://www.apache.org/dist/ant/ivyde/updatesite</a>
-<br /></li>
+<li><a href="http://www.apache.org/dist/ant/ivyde/updatesite">http://www.apache.org/dist/ant/ivyde/updatesite</a></li>
 </ul>
-
 <p>For Eclipse Indigo download and copy them to your eclipse installation
 directory as follows</p>
-
 <ul>
-<li><p>org.apache.ivy_2.2.0.final_20100923230623.jar to
-$ECLIPSE_HOME/plugin</p></li>
-
-<li><p>org.apache.ivy.eclipse.ant_2.2.0.final_20100923230623.jar to
-$ECLIPSE_HOME/plugin</p></li>
-
-<li><p>org.apache.ivy.feature_2.2.0.final_20100923230623.jar to
-$ECLIPSE_HOME/features</p></li>
+<li>
+<p>org.apache.ivy_2.2.0.final_20100923230623.jar to
+$ECLIPSE_HOME/plugin</p>
+</li>
+<li>
+<p>org.apache.ivy.eclipse.ant_2.2.0.final_20100923230623.jar to
+$ECLIPSE_HOME/plugin</p>
+</li>
+<li>
+<p>org.apache.ivy.feature_2.2.0.final_20100923230623.jar to
+$ECLIPSE_HOME/features</p>
+</li>
 </ul>
-
 <p>After installation, restart Eclipse and menu bar should show the Resolve
 button of IvyDE.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-ivy/media/menu.png" alt="Apache Ivy Tutorial - Chapter Apache Ivy and IvyDE Installation" />
 </figure>
-
 
 <p>With these installations we are ready to Automate the dependency
 management with Apache Ivy.</p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>maven plugin configuration on Codetab</title>
@@ -20,7 +20,7 @@
       <description>Maven Plugin Configuration Till now we used a basic POM that has only the project coordinates, and explored the out-of-the-box behavior of Maven core and plugins. In this tutorial, we cover the plugin configuration.
 To configure plugins, we use project build element in pom.xml. The next listing shows the top level elements used to configure a plugin.
 pom.xml
-&amp;lt;project&amp;gt; ... &amp;lt;build&amp;gt; ... &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;...&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;...&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;...&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt;...&amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt;.</description>
+&amp;lt;project&amp;gt; ... &amp;lt;build&amp;gt; ... &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;...&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;...&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;...&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt;...&amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt;...&amp;lt;/executions&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; &amp;lt;/project&amp;gt; The elements are</description>
     </item>
     
   </channel>

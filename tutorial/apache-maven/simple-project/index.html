@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T15:53:00+0530",
         "dateModified" : "2019-01-11T15:53:00+0530",
-        "wordCount" : "1255",
+        "wordCount" : "1257",
         "keywords" : [ "simple maven project","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Simple Project - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,19 +535,13 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="simple-maven-project">Simple Maven Project</h1>
-
+            <h1 id="simple-maven-project">Simple Maven Project</h1>
 <p>In the previous chapter we introduced Apache Maven and installed it. In
 this chapter, we create a simple Maven project and build it with Maven.</p>
-
 <p>Maven comes with wizard to create various type of projects, but for now
 we are not going to use Maven to create project for us. Instead, we hand
 code the project as beginners can learn more from the process.</p>
-
 <h3 id="work-dir">Work Dir</h3>
-
 <p>Throughout the guide, we use a work directory to run Apache Maven
 examples. The work directory is some location like $HOME/work or
 C:Usersxwork, but you are free to choose any other location. Throughout
@@ -555,12 +549,10 @@ the guide, we use phrases such as create a file, add pom.xml, run Maven
 etc., which simply means carryout that task from <strong>work</strong> directory.
 When a task is to be done from some other folder then we will explicitly
 say so.</p>
-
 <h2 id="create-project">Create Project</h2>
-
 <p>Let&rsquo;s start with the Simple Maven Project named Simple App. Create
 project folder in work directory and then add source folders.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">Linux
+<pre><code class="language-screen" data-lang="screen">Linux
 
 $ mkdir simple-app
 $ cd simple-app
@@ -571,40 +563,34 @@ Windows
 
 C:Usersxwork&gt; mkdir simple-app
 C:Usersxwork&gt; cd simple-app
-C:Usersxwork&gt; mkdir srcmainjava</code></pre></div>
-<p>In Maven, Java source files are placed under <code>src/main/java</code> directory
+C:Usersxwork&gt; mkdir srcmainjava
+</code></pre><p>In Maven, Java source files are placed under <code>src/main/java</code> directory
 and it is a custom enforced by Maven.</p>
-
 <h3 id="note">Note</h3>
-
 <p>Windows user can use Notepad and Linux users can use vi, nano or any
 other editor to add or edit the files.</p>
-
 <p>For sake of brevity, here onwards, we present only the commands for
 Linux. As commands are simple ones such as mkdir, cp, cd etc., users
 should not find it difficult to adapt them for Windows OS.</p>
-
 <p>Next, create package named <strong>com.xyz</strong> in it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd src/main/java
+<pre><code class="language-screen" data-lang="screen">$ cd src/main/java
 $ mkdir com/xyz -p
-$ cd com/xyz</code></pre></div>
-<p>Add a Java class <code>App.java</code> to <code>src/main/java/com/xyz</code> folder with
+$ cd com/xyz
+</code></pre><p>Add a Java class <code>App.java</code> to <code>src/main/java/com/xyz</code> folder with
 following contents.</p>
-
 <p><code>simple-app/src/main/java/com/xyz/App.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">com</span><span class="p">.</span><span class="na">xyz</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">com.xyz</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">App</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
 
-        <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello World!&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
 
-<span class="p">}</span></code></pre></div>
-<p>The App outputs just a greeting and nothing more. In the examples, we
+<span class="o">}</span>
+</code></pre></div><p>The App outputs just a greeting and nothing more. In the examples, we
 use simple and trivial code so that we can focus more on Maven rather
 than the project.</p>
-
 
 
 <div>&nbsp;</div>
@@ -622,13 +608,10 @@ than the project.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="add-pom">Add POM</h2>
-
 <p>Finally, add Maven Project Object Model (POM) file named <code>pom.xml</code> to
 the top level folder of the project i.e. to the <code>simple-app</code>
 folder.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class="nt">&gt;</span>
@@ -640,37 +623,39 @@ folder.</p>
         <span class="nt">&lt;artifactId&gt;</span>simple-app<span class="nt">&lt;/artifactId&gt;</span>
         <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Maven Project Object Model (POM) is sort of build file, but much more.
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Maven Project Object Model (POM) is sort of build file, but much more.
 The POM is where a project’s identity and structure are declared, builds
 are configured, and projects are related to one another. The presence of
 a pom.xml file indicates that project uses Maven as project management
 tool.</p>
-
 <p>At this stage, we use a bare minimum POM to define the project. The
 elements in pom.xml are:</p>
-
 <ul>
-<li><p>project - the top level or root element of the POM.</p>
-
+<li>
+<p>project - the top level or root element of the POM.</p>
 <ul>
-<li><p>modelVersion - POM model to use and it should be set to 4.0.0</p></li>
-
-<li><p>groupId - project&rsquo;s group id and normally, it is organization
+<li>
+<p>modelVersion - POM model to use and it should be set to 4.0.0</p>
+</li>
+<li>
+<p>groupId - project&rsquo;s group id and normally, it is organization
 name which owns the project such as org.apache, org.springsource
-etc.,</p></li>
-
-<li><p>artifactId - name of the project such as commons-lang, junit
-etc.,</p></li>
-
-<li><p>version - artifact version.</p></li>
-</ul></li>
+etc.,</p>
+</li>
+<li>
+<p>artifactId - name of the project such as commons-lang, junit
+etc.,</p>
+</li>
+<li>
+<p>version - artifact version.</p>
+</li>
 </ul>
-
+</li>
+</ul>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-simple-app-files.png" alt="Simple Maven Project - directory structure" />
 </figure>
-
 
 <p>The trio - groupId, artifactId and version - is known as <strong>Maven
 Coordinates</strong>. The coordinate provides an unique identity to a Maven
@@ -678,45 +663,36 @@ project and every project should have them. The coordinates should be
 unique and no two Maven projects can have same coordinates. These three
 values form the project&rsquo;s fully qualified artifact name and the fully
 qualified name of our simple maven project is <strong>com.xyz:simple-app:1.0</strong>.</p>
-
 <p>At this point, the simple-app project directory structure is as shown in
 the figure.</p>
-
 <h3 id="ellipsis">Ellipsis</h3>
-
 <p>As we progress through Maven, the pom.xml becomes lengthy and it would
 be difficult to present the complete listing each and every time.</p>
-
-<p>To shorten the listing, we use Ellipses (&hellip;) in the listing.</p>
+<p>To shorten the listing, we use Ellipses (. . .) in the listing.</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        ...
         <span class="c">&lt;!-- project build --&gt;</span>
         <span class="nt">&lt;build&gt;</span>
           <span class="nt">&lt;filters&gt;</span>
               <span class="nt">&lt;filter&gt;</span>src/main/filters/default.properties<span class="nt">&lt;/filter&gt;</span>
           <span class="nt">&lt;/filters&gt;</span>
-        ...</code></pre></div>
-<p>To run the examples, add the snippet between the ellipses to the
+        ...
+</code></pre></div><p>To run the examples, add the snippet between the ellipses to the
 existing pom.xml or other files at appropriate place.</p>
-
 <h2 id="build-project">Build Project</h2>
-
 <p>It&rsquo;s time to run Maven and use it compile simple-app.</p>
-
 <p>Maven downloads core plugins during initial run. So, enable Internet
 connection, and execute the Maven from the top folder of the project
 where <code>pom.xml</code> exists i.e. from <code>simple-app</code> folder.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
-$ mvn compile</code></pre></div>
-<figure class="text-center" >
+<pre><code class="language-screen" data-lang="screen">$ cd simple-app
+$ mvn compile
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-simple-app-target.png" alt="Simple Maven Project - build directory structure" />
 </figure>
-
 
 <p>Maven downloads some of core plugins (around 6MB) and then compile the
 project. It creates a build directory called <code>target</code> in the top folder
 and complied class files goes into it. At this point, the simple-app
 folder is as shown in the screenshot.</p>
-
 <p>Maven core, installed in the previous chapter, is just under 10MB and
 reason for such a small core is, Maven delegates the functionality such
 as compile,test etc., to plugins. On first run of command <code>mvn compile</code>,
@@ -725,7 +701,6 @@ Plugin</strong> from its central repository and saves it in the local
 repository and then uses the Complier Plugin to compile the project. On
 subsequent invocation of the command, it finds the Complier Plugin in
 local repository and uses it to execute the command.</p>
-
 
 
 <div>&nbsp;</div>
@@ -744,49 +719,38 @@ local repository and uses it to execute the command.</p>
 
 
 
-
 <h2 id="maven-cli">Maven CLI</h2>
-
 <p>The command line interface (CLI) of Maven is <code>mvn</code>, which is used to
 build, manage and also to interact with Maven. Everything in Maven is
 done through <code>mvn</code> and it&rsquo;s always executed from the top folder of the
 project that contains the <code>pom.xml</code>.</p>
-
 <p>Let&rsquo;s now package the our app for distribution with Maven.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn package</code></pre></div>
-<p>Again, since it&rsquo;s first run of package command, Maven downloads <strong>Maven
+<pre><code class="language-screen" data-lang="screen">$ mvn package
+</code></pre><p>Again, since it&rsquo;s first run of package command, Maven downloads <strong>Maven
 Jar Plugin</strong> and some others (around 4MB) from central repository and
 then, it completes the packaging of the project by creating a jar file
 named <code>simple-app-1.0.jar</code> in target folder.</p>
-
 <p>Let&rsquo;s check whether our app is built properly.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ java -cp target/simple-app-1.0.jar com.xyz.App</code></pre></div>
-<p>If app runs without any error and outputs Hello World! message, then we
+<pre><code class="language-screen" data-lang="screen">$ java -cp target/simple-app-1.0.jar com.xyz.App
+</code></pre><p>If app runs without any error and outputs Hello World! message, then we
 have build our first project with Maven.</p>
-
 <p>We can now remove the build directory with following command.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ mvn clean</code></pre></div>
-<p>Again, Maven has to delegate the cleaning task to a plugin called
+<pre><code class="language-screen" data-lang="screen">$ mvn clean
+</code></pre><p>Again, Maven has to delegate the cleaning task to a plugin called
 <strong>Apache Clean Plugin</strong> and to do that, it downloads the plugin (around
 2MB) and then, clean plugin deletes the build directory i.e. target and
 its subdirectories.</p>
-
 <p>We can tryout compile, package again to rebuild the project, and this
 time, we can do so without Internet connection as all required plugins
 are there in the local directory.</p>
-
 <h3 id="resource-encoding">Resource Encoding</h3>
-
 <p>In the build output, you might have observed a
 warning</p>
-
-<p>[WARNING] File encoding has not been set, using platform encoding UTF-8, <br />
+<p>[WARNING] File encoding has not been set, using platform encoding UTF-8, <br>
           i.e. build is platform dependent!</p>
-
 <p>To overcome the issue and make build platform independent, modify
 pom.xml and set project.build.sourceEncoding property to UTF-8 as shown
 in the listing.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">        ...
         <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
@@ -797,22 +761,18 @@ in the listing.</p>
         <span class="nt">&lt;/properties&gt;</span>
 
         <span class="c">&lt;!-- project coordinates --&gt;</span>
-        ...</code></pre></div>
-<h2 id="maven-repository">Maven Repository</h2>
-
+        ...
+</code></pre></div><h2 id="maven-repository">Maven Repository</h2>
 <p>In the previous section, we executed Maven commands, it downloaded the
 core plugins from Maven central repository such as <code>https://repo.maven.apache.org</code> and stores or caches them in a local repository.</p>
-
 <p>Apart from plugins, Maven also stores dependencies in the local
 repository. For example, if our project depends on Apache Commons Lang
 and when project is built, Maven downloads artifacts of Commons Lang
 from the central repository and caches them in the local repository.</p>
-
 <p>The local repository is normally located in Users home directory under a
 folder named .m2. In Linux, it defaults <code>$HOME/.m2</code> and in Windows, it
 is <code>C:Documents and Settings{username}.m2</code>. Beyond this, we need not
 bother much about the repository and its contents.</p>
-
 <p>In the next chapter, we go through Maven Dependency Management and add
 some dependencies to our Simple App.</p>
 

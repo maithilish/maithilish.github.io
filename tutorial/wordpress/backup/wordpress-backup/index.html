@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T03:53:00+0530",
         "dateModified" : "2019-01-11T03:53:00+0530",
-        "wordCount" : "790",
+        "wordCount" : "789",
         "keywords" : [ "wordpress backup","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Backup - WordPress Tutorial - CodeTab</title></head>
 
@@ -561,47 +561,44 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="11-1-wordpress-backup">11.1. WordPress Backup</h2>
-
+            <h2 id="111wordpress-backup">11.1. WordPress Backup</h2>
 <p>So far in the tutorial, we covered WordPress topics that assist us to
 install WordPress, add contents, optimize the performance and page
 ranking. All that effort we put to build a quality site may go in vein
 unless we have a good WordPress Backup and Restore strategy. In this
 chapter, we cover WordPress Backup topics - Backup, Restore, Migrate and
 Clone.</p>
-
 <h3 id="wordpress-backup">WordPress Backup</h3>
-
 <p>There are a number of plugins for WordPress backup. Out of them many
 offers essential features with an upgrade to paid version.</p>
-
 <p><a href="https://wordpress.org/plugins/backwpup/" target="_blank">BackWPup Free Plugin</a> is one
 of the best free plugin for WordPress backup. It comes with features to
 move the backup files to various cloud storages including Dropbox.</p>
-
 <p>However, we use a command line scripts to backup codetab.org which is:</p>
-
 <ul>
-<li><p>Simple to setup and use.</p></li>
-
-<li><p>Backups the whole setup and contents.</p></li>
-
-<li><p>Schedules automatic backup on OpenShift.</p></li>
-
-<li><p>Push the compressed backup set to DropBox.</p></li>
-
-<li><p>Restore the full site from the backup set.</p></li>
-
-<li><p>Clone the site from the backup set.</p></li>
+<li>
+<p>Simple to setup and use.</p>
+</li>
+<li>
+<p>Backups the whole setup and contents.</p>
+</li>
+<li>
+<p>Schedules automatic backup on OpenShift.</p>
+</li>
+<li>
+<p>Push the compressed backup set to DropBox.</p>
+</li>
+<li>
+<p>Restore the full site from the backup set.</p>
+</li>
+<li>
+<p>Clone the site from the backup set.</p>
+</li>
 </ul>
-
 <p>Benefit of learning the backup at command line (CLI) is that it helps to
 understand structure and layout WordPress installation and this
 knowledge comes handy when we recover the site and to troubleshoot any
 other site related issues.</p>
-
 
 
 <div>&nbsp;</div>
@@ -620,29 +617,22 @@ other site related issues.</p>
 
 
 
-
 <p>How data is stored in WordPress</p>
-
 <p>Before we get into the WordPress backup, it is important to understand
 how WordPress stores the data.</p>
-
 <p>WordPress installation consists of two parts - core WordPress
 installation and user added data. Core installation contains the PHP and
 setup files that powers the WordPress. We need not consider them for
 backup as we can always reinstall them from the source.</p>
-
 <p>From the backup perspective, we concentrate on user added data that
 consists of themes, plugins, media library and finally actual posts and
 pages. Strictly speaking, there is no need to backup themes and plugins
 as we can reinstall them. However, for the sake of convenience, we
 include them in the backup so that we can restore the site less time.</p>
-
 <p>WordPress stores the user data in two locations.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-backupitems.png" alt="WordPress Backup - WordPress files and data locations" />
 </figure>
-
 
 <p><strong>MySQL database</strong>: WordPress stores post and page contents in a MySQL
 database table. Plugin and theme configurations go into a database
@@ -651,53 +641,42 @@ uploads the media files to a directory but stores the media metadata
 (details about the media) in a database table. WordPress settings too
 are saved in the database. WordPress saves its own settings in the
 database.</p>
-
 <p><strong>WordPress wp-content</strong>: Plugin, Theme, and Media files are stored in
 <code>wp-content</code> directory within WordPress installation directory. Majority
 of plugins store their settings in the database table, but some save in
 wp-content directory. Media and other uploaded files are saved in folder
-<code>wp-content/uploads</code>, plugins in <code>wp-content/plugins</code> and themes in<code>
-wp-content/themes</code>.</p>
-
+<code>wp-content/uploads</code>, plugins in <code>wp-content/plugins</code> and themes in<code>wp-content/themes</code>.</p>
 <p>For a full backup of WordPress, we need to take backup of MySQL
 database, <code>plugins</code>, <code>themes</code> and <code>uploads</code> directories.</p>
-
 <p>In this rest of the section, we explain the WordPress CLI backup. If you
 have an inclination towards CLI, then go for the CLI backup else use
 BackWPup Free Plugin to backup the site.</p>
-
 <p><strong>CLI</strong></p>
-
 <p>To complete tasks in this chapter, we need to access OpenShift Shell
 through RHC or PuTTY (for Windows users). <a href="/tutorial/wordpress/openshift/rhc-client-tools/">OpenShift RHC Client Tools</a> explains RHC and PuTTY setup. Before continuing, setup these tools and download and extract wordpress-tutorial-sample.zip to OpenShift server as explained in the Appendix.The <code>backup</code> folder in the wordpress-tutorial-sample.zip contains the backup scripts.</p>
-
 <h3 id="wordpress-backup-script">WordPress Backup Script</h3>
-
 <p>To backup WordPress, log in to OpenShift Shell.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen"> rhc ssh quickstart</code></pre></div>
-<p>In OpenShift Shell, change directory to <code>app-root/data/backup</code>, which
+<pre><code class="language-screen" data-lang="screen"> rhc ssh quickstart
+</code></pre><p>In OpenShift Shell, change directory to <code>app-root/data/backup</code>, which
 holds the backup scripts extracted from <code>wordpress-tutorial-sample.zip</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; cd app-root/data/backup</code></pre></div>
-<p>To create a backup, run the script file <code>local-backup.sh</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; ./local-backup.sh</code></pre></div>
-<p>Script dumps the MySQL database to a SQL file. Then it archives the SQL
+<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data/backup
+</code></pre><p>To create a backup, run the script file <code>local-backup.sh</code>.</p>
+<pre><code class="language-screen" data-lang="screen">&gt; ./local-backup.sh
+</code></pre><p>Script dumps the MySQL database to a SQL file. Then it archives the SQL
 file and three wp-content directories - plugins, themes and uploads -
 using tar (tape archive) command. In OpenShift, WordPress wp-content
 directories - <code>plugins</code>, <code>themes</code> and <code>uploads</code> - reside in
 <code>app-root/data</code> directory. Finally it compresses the tar file as a gzip
 file. We can list the backup file with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">&gt; ls -lrt *.gz</code></pre></div>
-<figure class="text-center" >
+<pre><code class="language-screen" data-lang="screen">&gt; ls -lrt *.gz
+</code></pre><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-backup-filelisting.png" alt="WordPress Backup file listing." />
 </figure>
 
-
 <p>Script names the backup gz file using WordPress application name and the
 backup date.</p>
-
 <p>In the script, to backup MySQL database we use mysqldump command, which
 dumps the MySQL database as SQL statements.</p>
-
 <p><code>backup/local-backup.sh</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">...
 
@@ -707,8 +686,8 @@ MYSQLDUMP_FILE=&#34;$OPENSHIFT_APP_NAME-$DATE.sql&#34;
 mysqldump -u $OPENSHIFT_MYSQL_DB_USERNAME --password=$OPENSHIFT_MYSQL_DB_PASSWORD     
           -S $OPENSHIFT_MYSQL_DB_SOCKET $DB_NAME &gt; $BACKUP_DIR/$MYSQLDUMP_FILE
 
-...</code></pre></div>
-
+...
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -725,13 +704,11 @@ mysqldump -u $OPENSHIFT_MYSQL_DB_USERNAME --password=$OPENSHIFT_MYSQL_DB_PASSWOR
 <div>&nbsp;</div>
 
 
-
 <p>OpenShift environment variables are useful to pass Username, Password
 and Socket details to the mysqldump. For the application named
 <strong>quickstart</strong>, OpenShift sets OPENSHIFT_APP_NAME to <strong>quickstart</strong>
 and creates a database named <strong>quickstart</strong>. By using variable
 OPENSHIFT_APP_NAME, mysqldump dumps the database named <strong>quickstart</strong>.</p>
-
 <p>In the next section, we expand the backup script to push the backup
 files to Dropbox.</p>
 

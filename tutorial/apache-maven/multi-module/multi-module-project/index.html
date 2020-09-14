@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Multi Module Project - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,55 +535,40 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-multi-module">Maven Multi Module</h1>
-
+            <h1 id="maven-multi-module">Maven Multi Module</h1>
 <p>As project size and complexity increases, it makes sense to split the project into multiple modules. While it is always possible to split the project into multiple projects and link them as dependencies,  it complicates the build process. In Maven, the preferred approach is to structure the project as multi module project and delegate the rest to Maven.</p>
-
 <p>In this tutorial, we go through a simple multi module project. Download the example code from GitHub <a href="https://github.com/maithilish/maven-examples" target="_blank">Maven Examples</a> and extract it to some location before going further.
  </p>
-
 <h2 id="simple-multi-module-project">Simple Multi Module Project</h2>
-
 <p>The Simple Multi Module project contains two modules - <strong>app</strong> and <strong>util</strong>. The util module provides a static method that joins multiple strings using Apache Commons Lang library and the app module calls it. Snippet from App.java is shown below</p>
-
 <p><code>simple-multi/app/src/main/java/app/App.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">App</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">App</span><span class="p">().</span><span class="na">greet</span><span class="p">(</span><span class="s">&#34;World!&#34;</span><span class="p">));</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="n">App</span><span class="o">().</span><span class="na">greet</span><span class="o">(</span><span class="s">&#34;World!&#34;</span><span class="o">));</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">String</span> <span class="n">greet</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">Util</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&#34;Hello &#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>To build the project, run</p>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">greet</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Util</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="s">&#34;Hello &#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>To build the project, run</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">$ <span class="nb">cd</span> simple-multi
-$ mvn clean test</code></pre></div>
-<p>Maven builds both the modules in proper order, runs tests and outputs nice little summary.</p>
-
+$ mvn clean <span class="nb">test</span>
+</code></pre></div><p>Maven builds both the modules in proper order, runs tests and outputs nice little summary.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/maven-multi-build.png" alt="Maven Multi Module Project Build Summary" />
 </figure>
 
-
 <h2 id="structure-of-multi-module-project">Structure of multi module project</h2>
-
 <p>The layout of Simple Multi is</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/simple-multi-layout.png" alt="Maven Multi Module Project Simple Multi Layout " />
 </figure>
 
-
 <p>The directory <code>simple-multi</code> is the top directory of the multi module project. It contains the parent POM also known as top-level POM, but the top level directory doesn&rsquo;t contain any source folder.</p>
-
 <p>Along with parent POM, the top level directory also contains two sub folders – <code>app</code> and <code>util</code>. These module folders are regular maven projects with source directories and pom.xml.</p>
-
 <p>The top level as well as module POM differs slightly from the regular POM and let&rsquo;s see what they holds.</p>
-
 
 
 <div>&nbsp;</div>
@@ -601,11 +586,8 @@ $ mvn clean test</code></pre></div>
 <div>&nbsp;</div>
 
 
-
 <h2 id="top-level-pom">Top Level POM</h2>
-
 <p>Maven Multi Module Project requires a parent POM at the project’s top level directory. The contents of the file is</p>
-
 <p><code>simple-multi/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
@@ -621,15 +603,11 @@ $ mvn clean test</code></pre></div>
       <span class="nt">&lt;module&gt;</span>util<span class="nt">&lt;/module&gt;</span>
   <span class="nt">&lt;/modules&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>It defines project coordinates - groupId, artifactId and version - as in any normal project, but the  packaging type is specified as <strong>pom</strong> instead of usual jar or war. Since top level project  doesn&rsquo;t contain any source directory, packaging is set as <strong>pom</strong>. The <code>modules/module</code> elements add the modules - app and util.</p>
-
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>It defines project coordinates - groupId, artifactId and version - as in any normal project, but the  packaging type is specified as <strong>pom</strong> instead of usual jar or war. Since top level project  doesn&rsquo;t contain any source directory, packaging is set as <strong>pom</strong>. The <code>modules/module</code> elements add the modules - app and util.</p>
 <p>To sum up, the top level POM specifies packaging type as pom and lists all sub modules.</p>
-
 <h2 id="maven-reactor">Maven Reactor</h2>
-
 <p>While declaring the modules in parent POM there is no need to bother about their ordering as Maven uses  software component called reactor to properly order the modules. In simple-multi, maven  builds util module and then app as app depends on util.</p>
-
 
 
 <div>&nbsp;</div>
@@ -648,11 +626,8 @@ $ mvn clean test</code></pre></div>
 
 
 
-
 <h2 id="module-pom">Module POM</h2>
-
 <p>Next, let&rsquo;s explore the util module folder. It contains normal source folders and its own pom.xml. The contents of <code>util/pom.xml</code> is as below</p>
-
 <p><code>util/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
@@ -686,11 +661,9 @@ $ mvn clean test</code></pre></div>
        <span class="nt">&lt;/dependency&gt;</span>
    <span class="nt">&lt;/dependencies&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>The <code>parent</code> element specifies the coordinates (groupId,artifactId and version) of parent project i.e. simple-multi, while the coordinates of util module is defined using just the <code>artifactId</code> element. There is no need to specify groupId and version for module as they are derived from the parent. The <code>dependencies/dependency</code> block defines the dependencies of util module - commons-lang3 and junit.</p>
-
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>The <code>parent</code> element specifies the coordinates (groupId,artifactId and version) of parent project i.e. simple-multi, while the coordinates of util module is defined using just the <code>artifactId</code> element. There is no need to specify groupId and version for module as they are derived from the parent. The <code>dependencies/dependency</code> block defines the dependencies of util module - commons-lang3 and junit.</p>
 <p>Next, let&rsquo;s see the <code>app/pom.xml</code> which is similar to <code>util/pom.xml</code> except the <code>dependencies block</code> which is as below</p>
-
 <p><code>app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">....
 <span class="nt">&lt;dependencies&gt;</span>
@@ -700,39 +673,30 @@ $ mvn clean test</code></pre></div>
         <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
     <span class="nt">&lt;/dependency&gt;</span>
     ....
-<span class="nt">&lt;/dependencies&gt;</span></code></pre></div>
-<p>The app module uses methods from util module and for this, the <code>app/pom.xml</code> specifies util as dependency.</p>
-
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div><p>The app module uses methods from util module and for this, the <code>app/pom.xml</code> specifies util as dependency.</p>
 <p>To summarize,</p>
-
 <p>The top level project (parent project),</p>
-
 <ul>
 <li>defines top level pom.xml which specifies the project coordinates with packaging type as <strong>pom</strong> and lists its sub modules</li>
 <li>contains module folders</li>
 <li>there are no source folders in top level project</li>
 </ul>
-
 <p>Each module folder is nothing but normal maven project directory, however the pom.xml contains</p>
-
 <ul>
 <li><code>parent</code> element specifies module&rsquo;s parent</li>
 <li>module coordinates is specified in the <code>artifactId</code> element. The <code>groupId</code> and <code>version</code> are not specified as they are derived from parent coordinates</li>
 <li>when one module depends on another module, then dependency is specified in <code>dependencies/dependency</code> element.</li>
 </ul>
-
 <h2 id="how-to-execute-multi-module-project">How to execute multi module project</h2>
-
 <p>We can compile, test and package a multi module with</p>
-<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">$ mvn clean package</code></pre></div>
-<p>However, running a multi module with <strong>maven-exec-plugin</strong> is a two-step process. To run the project do as follows</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">$ mvn clean package
+</code></pre></div><p>However, running a multi module with <strong>maven-exec-plugin</strong> is a two-step process. To run the project do as follows</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">$ <span class="nb">cd</span> simple-multi
 $ mvn clean install
-$ mvn exec:java -pl app -Dexec.mainClass<span class="o">=</span>app.App</code></pre></div>
-<p>The install phase install the modules to local $HOME/.m2 repository and then we run the project. The option <strong>-pl</strong> app tells exec plugin to use app module and run its class app.App. Without install, build fails as maven is unable to download and resolve the util module dependency.</p>
-
+$ mvn exec:java -pl app -Dexec.mainClass<span class="o">=</span>app.App
+</code></pre></div><p>The install phase install the modules to local $HOME/.m2 repository and then we run the project. The option <strong>-pl</strong> app tells exec plugin to use app module and run its class app.App. Without install, build fails as maven is unable to download and resolve the util module dependency.</p>
 <p>It is quite cumbersome to install the project in local repository before each run, especially in development phase. Fortunately, we can directly execute a multi module in Eclipse IDE without install. In the later chapter <a href="http://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/">Eclipse and Maven Multi Module</a>, we show how to create multi module project in Eclipse and run it straight away.</p>
-
 <p>In the next tutorial, we extend the simple-multi example and convert it into a hierarchical multi module with multiple parent POM.</p>
 
           </main>

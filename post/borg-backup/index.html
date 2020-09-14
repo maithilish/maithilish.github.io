@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Borg Backup</title></head>
 
@@ -245,68 +245,51 @@
 <i class="icon-blank ctab-transparent"></i></div>
       <hr class="my-3" />
       <main id="content" class="post-basic">
-        
-
-<p>For long, I was looking for an ideal backup setup. Expectations were minimal;periodically backup set of folders from the main disk to secondary disk, compressing the files to save disk space, retaining the earlier sets and easy to learn, deploy and maintain. I tried and dropped many backup solutions because of cumbersome setup and steep learning curve.</p>
-
+        <p>For long, I was looking for an ideal backup setup. Expectations were minimal;periodically backup set of folders from the main disk to secondary disk, compressing the files to save disk space, retaining the earlier sets and easy to learn, deploy and maintain. I tried and dropped many backup solutions because of cumbersome setup and steep learning curve.</p>
 <p>Finally, I chose <a href="https://www.borgbackup.org/" target="_blank">Borg Backup</a> for its sophistication and ease of use; thereupon, using it for more than a year now. This post covers the basics of Borg Backup and the next post, <a href="/post/borg-backup-automate/">Automate Borg Backup<a>, covers steps to automate the whole setup.</p>
-
 <h2 id="borg-backup">Borg Backup</h2>
-
 <p>BorgBackup is a de-duplicating backup program which provides an efficient and secure way to backup data. The data de-duplication makes it suitable for daily backups since only changes (similar to GIT commits) are stored.</p>
-
 <p>Borg gives you:</p>
-
 <ul>
-<li>space efficient storage of backups.<br /></li>
+<li>space efficient storage of backups.</li>
 <li>compression using LZ4, zlib and LZMA.</li>
-<li>secure, authenticated encryption.<br /></li>
-<li>easy installation on multiple platforms.
-<br /></li>
+<li>secure, authenticated encryption.</li>
+<li>easy installation on multiple platforms.</li>
 </ul>
-
 <h2 id="install-borg">Install Borg</h2>
-
 <p>In Ubuntu, it is as simple as this</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
 $ sudo apt install borgbackup
-    </code></pre></div>
-<p>Refer <a href="https://borgbackup.readthedocs.io/en/stable/installation.html#" target="_blank">Borg Documentation</a> for other systems.</p>
-
+    
+</code></pre></div><p>Refer <a href="https://borgbackup.readthedocs.io/en/stable/installation.html#" target="_blank">Borg Documentation</a> for other systems.</p>
 <h2 id="borg-basics">Borg Basics</h2>
-
 <p>Let&rsquo;s create a Borg Repository and go through frequently used operations.</p>
-
 <h3 id="create-repository">Create Repository</h3>
-
 <p>Borg repository holds set of Borg backups. To create repository use borg init command.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">        
 $ borg init --encryption<span class="o">=</span>none <span class="nv">$HOME</span>/borgrepo
-    </code></pre></div>
-<p>It initializes repository in $HOME/borgrepo directory. For sake of simplicity, we are creating repository in home dir, but for production backup we need to create the repository in a file system on fallback disk or on a remote system.</p>
-
+    
+</code></pre></div><p>It initializes repository in $HOME/borgrepo directory. For sake of simplicity, we are creating repository in home dir, but for production backup we need to create the repository in a file system on fallback disk or on a remote system.</p>
 <h3 id="backup-some-folders">Backup some folders</h3>
-
 <p>In Borg, the backup is called as archive. The following command backup $HOME/Documents folder to a archive named Monday.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
 $ borg create <span class="nv">$HOME</span>/borgrepo::Monday <span class="nv">$HOME</span>/Documents
-    </code></pre></div>
-<p>The archive referred with <code>path/to/repo::archive-name</code>. We can&rsquo;t create another backup using same name, so to backup Documents folder, say next day, we need to use new archive name.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">$ borg create <span class="nv">$HOME</span>/borgrepo::Tuesday <span class="nv">$HOME</span>/Documents</code></pre></div>
-<p>The first backup is a full backup, and Borg de-duplicates data during subsequent backup of same folder and stores only the changed chunks to save space and backup time.</p>
+    
+</code></pre></div><p>The archive referred with <code>path/to/repo::archive-name</code>. We can&rsquo;t create another backup using same name, so to backup Documents folder, say next day, we need to use new archive name.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">
+$ borg create <span class="nv">$HOME</span>/borgrepo::Tuesday <span class="nv">$HOME</span>/Documents
 
+</code></pre></div><p>The first backup is a full backup, and Borg de-duplicates data during subsequent backup of same folder and stores only the changed chunks to save space and backup time.</p>
 <h3 id="list-backups">List Backups</h3>
-
 <p>Use borg list command to list all archives in borg repository.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Screen" data-lang="Screen">    
+<pre><code class="language-Screen" data-lang="Screen">    
 $ borg list $HOME/borgrepo
 Monday           Mon, 2019-07-29 10:17:12
 Tuesday          Tue, 2019-07-30 10:45:14
-    </code></pre></div>
-<h3 id="repository-info">Repository Info</h3>
-
+    
+</code></pre><h3 id="repository-info">Repository Info</h3>
 <p>We can obtain info about the repository using borg info command. The info from my borg repository is shown below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-Screen" data-lang="Screen">    
+<pre><code class="language-Screen" data-lang="Screen">    
 $ borg info /cherry/borgrepo/
 
 Repository ID: 0307c0296168c2e75c357334b8ae
@@ -319,39 +302,37 @@ Security dir: /home/m/.config/borg/security/0307c0296168c2e75c357334b8ae
 All archives:               18.55 GB             17.52 GB              1.93 GB
 
                        Unique chunks         Total chunks
-Chunk index:                   27125               353185</code></pre></div>
-<p>It is info of my backup; the backup size is roughly about 1.6 GB. The repository contains about 18 archive and the total size should have been about 17 GB, but because of de-duplicating feature the repository size is still 1.93 GB.</p>
+Chunk index:                   27125               353185
 
+</code></pre><p>It is info of my backup; the backup size is roughly about 1.6 GB. The repository contains about 18 archive and the total size should have been about 17 GB, but because of de-duplicating feature the repository size is still 1.93 GB.</p>
 <h3 id="extract-archive">Extract Archive</h3>
-
 <p>Use extract command to retrieve data from the repository.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">$ mkdir tem
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">
+$ mkdir tem
 $ <span class="nb">cd</span> tem         
-$ borg extract <span class="nv">$HOME</span>/borgrepo::Monday</code></pre></div>
-<p>Extract always writes into the current working directory, so make sure you cd to the right place before calling borg extract!</p>
+$ borg extract <span class="nv">$HOME</span>/borgrepo::Monday
 
+</code></pre></div><p>Extract always writes into the current working directory, so make sure you cd to the right place before calling borg extract!</p>
 <p>You can pass &ndash;exclude option to exclude specific path or paths. We can also pass specific path to extract as below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">$ <span class="nb">cd</span> tem         
+<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">
+$ <span class="nb">cd</span> tem         
 $ borg extract <span class="nv">$HOME</span>/borgrepo::Monday  **/Documents/somefolder
-     </code></pre></div>
-<h3 id="prune-repository">Prune Repository</h3>
-
+     
+</code></pre></div><h3 id="prune-repository">Prune Repository</h3>
 <p>Suppose, we have automated the borg for daily backup and after an year, repository will have hundreds of archive. They may not take lot of space because of data de-duplication, but we soon realise that many of them may be purged. For example, we may wish to retain only one backup per week or even less, one for each month. The prune command allows to sparse out unwanted archives.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Screen" data-lang="Screen">     
+<pre><code class="language-Screen" data-lang="Screen">     
 $ borg prune -n --list --keep-weekly -1 $HOME/borgrepo
 Keeping archive: Tuesday          Fri, 2019-08-02 16:07:28 
-Would prune:     Monday           Fri, 2019-08-02 16:07:16 </code></pre></div>
-<p>The command uses -n for dry run and &ndash;list shows which archives are pruned or retained. The option &ndash;keep-weekly tells borg to retain the last archive in each week. The limit -1 indicates that there is no limit on number of archives to retain. If limit is greater than zero, then that many archive are retained. Say, keep-weekly prunes 25 archives and retains 10; if limit is set to 3, then the latest three, from the retained set of 10, are retained and rest seven are pruned. For actual pruning, remove dry run option <code>-n</code> from the above command.</p>
+Would prune:     Monday           Fri, 2019-08-02 16:07:16 
 
+</code></pre><p>The command uses -n for dry run and &ndash;list shows which archives are pruned or retained. The option &ndash;keep-weekly tells borg to retain the last archive in each week. The limit -1 indicates that there is no limit on number of archives to retain. If limit is greater than zero, then that many archive are retained. Say, keep-weekly prunes 25 archives and retains 10; if limit is set to 3, then the latest three, from the retained set of 10, are retained and rest seven are pruned. For actual pruning, remove dry run option <code>-n</code> from the above command.</p>
 <p>The frequently used keep options are:</p>
-
 <ul>
 <li>&ndash;keep-daily DAILY,     number of daily archives to keep</li>
 <li>&ndash;keep-weekly WEEKLY,   number of weekly archives to keep</li>
 <li>&ndash;keep-monthly MONTHLY,  number of monthly archives to keep</li>
 <li>&ndash;keep-yearly YEARLY,    number of yearly archives to keep</li>
 </ul>
-
 <p>The prune doesn&rsquo;t distinguishes between different data set. For example, let&rsquo;s say we have archives as follows</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
 $ borg create <span class="nv">$HOME</span>/borgrepo::Docs-Sunday <span class="nv">$HOME</span>/Documents
@@ -359,15 +340,14 @@ $ borg create <span class="nv">$HOME</span>/borgrepo::Picts-Sunday <span class="
 
 $ borg create <span class="nv">$HOME</span>/borgrepo::Docs-Monday <span class="nv">$HOME</span>/Documents    
 $ borg create <span class="nv">$HOME</span>/borgrepo::Picts-Monday <span class="nv">$HOME</span>/Pictures
-    </code></pre></div>
-<p>Then &ndash;keep-weekly prunes the first three and retains only the last archive, and we stands to loose Documents folder backup. We can avoid this by using prefix option <code>-P</code>.</p>
+    
+</code></pre></div><p>Then &ndash;keep-weekly prunes the first three and retains only the last archive, and we stands to loose Documents folder backup. We can avoid this by using prefix option <code>-P</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">    
 $ borg prune -n --list -P Docs --keep-weekly -1 <span class="nv">$HOME</span>/borgrepo
-Keeping archive: Docs-Monday            Fri, <span class="m">2019</span>-08-02 <span class="m">16</span>:48:47 
-Would prune:     Docs-Sunday            Fri, <span class="m">2019</span>-08-02 <span class="m">16</span>:48:32 
-    </code></pre></div>
-<p>The option <code>-P Docs</code>, tells borg to prune only the archives that start with Docs and ignore others.</p>
-
+Keeping archive: Docs-Monday            Fri, 2019-08-02 16:48:47 
+Would prune:     Docs-Sunday            Fri, 2019-08-02 16:48:32 
+    
+</code></pre></div><p>The option <code>-P Docs</code>, tells borg to prune only the archives that start with Docs and ignore others.</p>
 <p>The next post, <a href="/post/borg-backup-automate/">Automate Borg Backup<a>, shows how to easily automate multiple backups.</p>
 
       </main>

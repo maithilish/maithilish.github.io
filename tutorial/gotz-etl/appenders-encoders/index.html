@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Appenders Encoders - Gotz ETL - CodeTab</title></head>
 
@@ -400,14 +400,10 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>Gotz uses appenders to append data to output and encoders to encode
+            <p>Gotz uses appenders to append data to output and encoders to encode
 (alter the output format) the output. At present, it comes with two
 appenders - FileAppender and DbAppender.</p>
-
 <h2 id="fileappender">FileAppender</h2>
-
 <p>So far, all examples use FileAppender which is defined as follows</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;steps</span> <span class="na">name=</span><span class="s">&#34;commonSteps&#34;</span><span class="nt">&gt;</span>
    ... other steps ...
@@ -422,28 +418,25 @@ appenders - FileAppender and DbAppender.</p>
             <span class="nt">&lt;file&gt;</span>output/data.txt<span class="nt">&lt;/file&gt;</span>
         <span class="nt">&lt;/appender&gt;</span>
   <span class="nt">&lt;/step&gt;</span>
-<span class="nt">&lt;/steps&gt;</span></code></pre></div>
-<p>To use appenders, first we must define a step that uses class
+<span class="nt">&lt;/steps&gt;</span>
+</code></pre></div><p>To use appenders, first we must define a step that uses class
 DataAppender and this class is responsible for creation of appenders.
 Then we can define multiple appenders within it and in the example, we
 are using FileAppender with &lt;file&gt; element pointing to
 output/data.txt. To encode the data, it uses CsvEncoder which by default
 delimits output with | and we can change it with &lt;delimiter&gt; element.</p>
-
 <p>Encoder also handles sort. By default, it sorts on col and then by row
 axis and we can change this by using &lt;sortOrder&gt; element. For example
 the following sorts by row and then on col</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;encoder</span> <span class="na">name=</span><span class="s">&#34;csv&#34;</span>
 <span class="na">class=</span><span class="s">&#34;org.codetab.gotz.step.load.encoder.CsvEncoder&#34;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;sortOrder&gt;</span>row,col<span class="nt">&lt;sortOrder&gt;</span>
-<span class="nt">&lt;/encoder&gt;</span></code></pre></div>
-<p>The CsvEncoder outputs one member per line and to output in table format
+<span class="nt">&lt;/encoder&gt;</span>
+</code></pre></div><p>The CsvEncoder outputs one member per line and to output in table format
 use CsvRecordEncoder.</p>
-
 <p>It is possible specify separate appender for each task by overriding the
 commonSteps. It is also possible to specify multiple appenders either in
 commonSteps or overridden steps.</p>
-
 
 
 <div>&nbsp;</div>
@@ -462,9 +455,7 @@ commonSteps or overridden steps.</p>
 
 
 
-
 <h2 id="dbappender">DbAppender</h2>
-
 <p>The Example-12 appends data to a database table dataset and the
 definition is as follows</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&#34;appender&#34;</span> <span class="na">class=</span><span class="s">&#34;org.codetab.gotz.step.load.DataAppender&#34;</span><span class="nt">&gt;</span>
@@ -475,9 +466,8 @@ definition is as follows</p>
               <span class="na">class=</span><span class="s">&#34;org.codetab.gotz.step.load.encoder.DataSetEncoder&#34;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;/encoder&gt;</span>
     <span class="nt">&lt;/appender&gt;</span>
-<span class="nt">&lt;/step&gt;</span></code></pre></div>
-<p>The encoder DataSetEncoder converts the data to database table format.</p>
-
+<span class="nt">&lt;/step&gt;</span>
+</code></pre></div><p>The encoder DataSetEncoder converts the data to database table format.</p>
 <p>In next chapter, we explain how to split job.xml into multiple files
 when definitions become large and complex.</p>
 

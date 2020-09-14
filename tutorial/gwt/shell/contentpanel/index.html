@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>TabLayoutPanel - GWT Tutorial - CodeTab</title></head>
 
@@ -711,18 +711,13 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="3-3-contentpanel">3.3. ContentPanel</h2>
-
+            <h2 id="33contentpanel">3.3. ContentPanel</h2>
 <h5 id="contentpanel">ContentPanel</h5>
-
 <p>Next task is to design custom widgets and dock them in DockLayoutPanel
 of FinsShell. Let us start with <code>ContentPanel</code> which displays the
 contents of the application. GWT comes with a stock tab panel, GWT
 <code>TabLayoutPanel</code>, which can display contents in multiple tabs and it is
 a perfect panel for content area.</p>
-
 <p>Just for convenience, place all the custom widgets in a separate
 package. Go ahead and create a package <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/package.png" alt="" />
@@ -730,7 +725,6 @@ package. Go ahead and create a package <figure class="text-center" >
 
 <code>in.fins.client.widget</code>. Add <code>ContentPanel.ui.xml</code> and its owner class
 <code>ContentPanel.java</code>.</p>
-
 <p><code>in.fins.client.widget/ContentPanel.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;!DOCTYPE ui:UiBinder SYSTEM &#34;http://dl.google.com/gwt/DTD/xhtml.ent&#34;&gt;</span>
 <span class="nt">&lt;ui:UiBinder</span> <span class="na">xmlns:ui=</span><span class="s">&#34;urn:ui:com.google.gwt.uibinder&#34;</span>
@@ -739,58 +733,53 @@ package. Go ahead and create a package <figure class="text-center" >
     <span class="nt">&lt;g:TabLayoutPanel</span> <span class="na">ui:field=</span><span class="s">&#34;tab&#34;</span> <span class="na">barHeight=</span><span class="s">&#34;30&#34;</span> <span class="na">barUnit=</span><span class="s">&#34;PX&#34;</span> 
             <span class="na">animationDuration=</span><span class="s">&#34;500&#34;</span><span class="nt">/&gt;</span>        
 
-<span class="nt">&lt;/ui:UiBinder&gt;</span> </code></pre></div>
-<p><code>in.fins.client.widget/ContentPanel.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">widget</span><span class="p">;</span>
+<span class="nt">&lt;/ui:UiBinder&gt;</span> 
+</code></pre></div><p><code>in.fins.client.widget/ContentPanel.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.fins.client.widget</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">core</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">GWT</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiBinder</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">uibinder</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">UiField</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Composite</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">ResizeComposite</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">TabLayoutPanel</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">gwt</span><span class="p">.</span><span class="na">user</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">Widget</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.core.client.GWT</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiBinder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.uibinder.client.UiField</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Composite</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.ResizeComposite</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.TabLayoutPanel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Widget</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">ContentPanel</span> <span class="nf">extends</span> <span class="n">ResizeComposite</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ContentPanel</span> <span class="kd">extends</span> <span class="n">ResizeComposite</span> <span class="o">{</span>
 
-    <span class="kd">interface</span> <span class="nf">ContentPanelBinder</span> <span class="kd">extends</span> <span class="nf">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">ContentPanel</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="p">}</span>
+    <span class="kd">interface</span> <span class="nc">ContentPanelBinder</span> <span class="kd">extends</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">ContentPanel</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="nf">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="p">,</span> <span class="n">ContentPanel</span><span class="o">&gt;</span> <span class="nf">binder</span> <span class="o">=</span> <span class="n">GWT</span>
-            <span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">ContentPanelBinder</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">ContentPanel</span><span class="o">&gt;</span> <span class="n">binder</span> <span class="o">=</span> <span class="n">GWT</span>
+            <span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">ContentPanelBinder</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="nd">@UiField</span>
-    <span class="n">TabLayoutPanel</span> <span class="nf">tab</span><span class="p">;</span>
+    <span class="n">TabLayoutPanel</span> <span class="n">tab</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">ContentPanel</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">ContentPanel</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">addTab</span><span class="p">(</span><span class="n">String</span> <span class="nf">text</span><span class="p">,</span> <span class="n">Composite</span> <span class="nf">content</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">tab</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">text</span><span class="p">);</span>
-        <span class="n">tab</span><span class="p">.</span><span class="na">selectTab</span><span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="na">getWidgetCount</span><span class="p">()</span> <span class="o">-</span> <span class="n">1</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addTab</span><span class="o">(</span><span class="n">String</span> <span class="n">text</span><span class="o">,</span> <span class="n">Composite</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">tab</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">content</span><span class="o">,</span><span class="n">text</span><span class="o">);</span>
+        <span class="n">tab</span><span class="o">.</span><span class="na">selectTab</span><span class="o">(</span><span class="n">tab</span><span class="o">.</span><span class="na">getWidgetCount</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span>
 
-<span class="p">}</span></code></pre></div>
-<p>In ContentPanel.ui.xml we add GWT TabLayoutPanel as the top panel.
+<span class="o">}</span>
+</code></pre></div><p>In ContentPanel.ui.xml we add GWT TabLayoutPanel as the top panel.
 UiBinder class <code>ContentPanel</code> extends <code>ResizeComposite</code> and wraps
 <code>TabLayoutPanel</code> returned by UiBinder. To add a new tab and set a widget
 as the content it provides <code>addTab()</code> method.
 <code>TabLayoutPanel.selectTab()</code> selects the latest tab.</p>
-
 <script>
     console.log("slot C"); 
 </script>
-
 <h5 id="expose-custom-widgets-to-uibinder">Expose custom widgets to UiBinder</h5>
-
 <p>Until now we have used GWT widgets in the template file by using prefix
 g:. It is not possible to access custom widgets this way, and for that
 we need to tie their package to a xml namespace prefix.</p>
-
 <p>Modify <code>FinsShell.ui.xml</code> and add a new namespace in ui:UiBinder element
 to expose <code>in.fins.client.widget</code> package.</p>
-
 <p><code>in.fins.client.content/FinsShell.ui.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;!DOCTYPE ui:UiBinder SYSTEM &#34;http://dl.google.com/gwt/DTD/xhtml.ent&#34;&gt;</span>
 <span class="nt">&lt;ui:UiBinder</span> <span class="na">xmlns:ui=</span><span class="s">&#34;urn:ui:com.google.gwt.uibinder&#34;</span>
@@ -806,12 +795,11 @@ to expose <code>in.fins.client.widget</code> package.</p>
    <span class="nt">&lt;g:center&gt;</span>
       <span class="nt">&lt;f:ContentPanel</span> <span class="na">ui:field=</span><span class="s">&#34;contentPanel&#34;</span> <span class="nt">/&gt;</span>
    <span class="nt">&lt;/g:center&gt;</span>
-<span class="nt">&lt;/g:SplitLayoutPanel&gt;</span></code></pre></div>
-<p>Namespace <code>xmlns:f=&quot;urn:import:in.fins.client.widget&quot;</code> exposes custom
+<span class="nt">&lt;/g:SplitLayoutPanel&gt;</span>
+</code></pre></div><p>Namespace <code>xmlns:f=&quot;urn:import:in.fins.client.widget&quot;</code> exposes custom
 widgets to UiBinder and with prefix f: we can refer any of our custom
 widgets in the template. ContentPanel is placed in the center dock of
 SplitLayoutPanel.</p>
-
 
 
 <div>&nbsp;</div>
@@ -829,28 +817,25 @@ SplitLayoutPanel.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Modify FinsShell.java to add Home tab to ContentPanel.</p>
-
 <p><code>in.fins.client.content/FinsShell.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">content</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">in.fins.client.content</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nf">in</span><span class="p">.</span><span class="na">fins</span><span class="p">.</span><span class="na">client</span><span class="p">.</span><span class="na">widget</span><span class="p">.</span><span class="na">ContentPanel</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">in.fins.client.widget.ContentPanel</span><span class="o">;</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
 <span class="nd">@UiField</span>
-<span class="n">ContentPanel</span> <span class="nf">contentPanel</span><span class="p">;</span>
+<span class="n">ContentPanel</span> <span class="n">contentPanel</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">FinsShell</span><span class="p">()</span> <span class="p">{</span>
-   <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-   <span class="n">contentPanel</span><span class="p">.</span><span class="na">addTab</span><span class="p">(</span><span class="s">&#34;Home&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="n">DateBox</span><span class="p">());</span>
-<span class="p">}</span></code></pre></div>
-<p>@UiField allows UiBinder to inject ContentPanel to owner class.
+<span class="kd">public</span> <span class="nf">FinsShell</span><span class="o">()</span> <span class="o">{</span>
+   <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+   <span class="n">contentPanel</span><span class="o">.</span><span class="na">addTab</span><span class="o">(</span><span class="s">&#34;Home&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">DateBox</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div><p>@UiField allows UiBinder to inject ContentPanel to owner class.
 <code>ContentPanel.addTab()</code> method adds the Home Tab to the ContentPanel.
 <code>DateBox</code> a GWT composite, is just a placeholder, and actual content
 replaces it later.</p>
-
 <p>Next section looks at LogTab, a custom widget, which can be added to a
 tab to display client side log messages.</p>
 

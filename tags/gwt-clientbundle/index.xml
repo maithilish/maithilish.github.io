@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gwt clientbundle on Codetab</title>
@@ -18,11 +18,11 @@
       
       <guid>https://www.codetab.org/tutorial/gwt/menu/menu/</guid>
       <description>Chapter 4. Menu This Chapter covers design of Menu system used by Fins. Menu contains three widgets
- MenuItem
- MenuHeader
- MenuBar
+  MenuItem
+  MenuHeader
+  MenuBar
    Figure 4.1. Menu parts MenuHeader is a stylish header that display menu categories. MenuItem is GWT Anchor widget and the user clicks them to invoke menu options. MenuBar is a StackLayoutPanel with MenuHeader as header and MenuItem as content.
- console.log(&#34;slot C&#34;);  4.</description>
+ console.log(&#34;slot C&#34;</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>apache ivy pattern on Codetab</title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/apache-ivy/pattern/</guid>
       <description>Before going further, it&amp;rsquo;s important to understand some of the core concepts of Apache Ivy.
-Apache Ivy Settings Files Till now we have used default settings to carry out the tasks. Apache Ivy allows to override the default settings through a settings file. Apache Ivy setting file is an XML file, usually named as  ivysettings.xml. In subsequent chapters, we use ivysettings.xml to override the default settings.
+Apache Ivy Settings Files Till now we have used default settings to carry out the tasks. Apache Ivy allows to override the default settings through a settings file. Apache Ivy setting file is an XML file, usually named as ivysettings.xml. In subsequent chapters, we use ivysettings.xml to override the default settings.
 Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and settings.</description>
     </item>
     

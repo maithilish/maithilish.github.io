@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wordpress options page on Codetab</title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/</guid>
       <description>6.3. WordPress Options Page In previous two blogs, we created a sub menu and saw how to add fields with WordPress Settings API. In this blog, as the final step, we explore WordPress Settings functions to render the WordPress Options Page.
-While adding the sub menu, we passed render_settings_page()method as callback function to add_submenu_page() function . The callback method has to echo the HTML required to display the page and also, use WordPress Settings API functions to output the registered fields.</description>
+While adding the sub menu, we passed render_settings_page() method as callback function to add_submenu_page() function . The callback method has to echo the HTML required to display the page and also, use WordPress Settings API functions to output the registered fields.</description>
     </item>
     
   </channel>

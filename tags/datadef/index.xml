@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DataDef on Codetab</title>
@@ -20,7 +20,7 @@
       <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
 The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
-dataDefs: price: query: block: &amp;#34;div#price_tick&amp;#34; selector: &amp;#34;*&amp;#34; items: [ item: { name: &amp;#34;Price&amp;#34;, value: &amp;#34;Price&amp;#34; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
+dataDefs: price: query: block: &amp;quot;div#price_tick&amp;quot; selector: &amp;quot;*&amp;quot; items: [ item: { name: &amp;quot;Price&amp;quot;, value: &amp;quot;Price&amp;quot; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@ The datadef snippet from defs/examples/jsoup/ex-1/job.xml is as below
       <description>DataDef Scoopi uses datadef to define data. Datadef contains axis, query, script and members which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Example-1 job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/page/acme-quote.html page.
 The datadef snippet from defs/examples/jsoup/ex-1/job.yml is as below
-dataDefs: price: axis: fact: query: region: &amp;#34;div#price_tick&amp;#34; field: &amp;#34;*&amp;#34; col: query: script: configs.</description>
+dataDefs: price: axis: fact: query: region: &amp;quot;div#price_tick&amp;quot; field: &amp;quot;*&amp;quot; col: query: script: configs.</description>
     </item>
     
   </channel>

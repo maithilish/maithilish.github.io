@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Link Locator - Scoopi Web Scraper - CodeTab</title></head>
 
@@ -421,40 +421,35 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="create-locators-from-links">Create Locators from Links</h1>
-
+            <h1 id="create-locators-from-links">Create Locators from Links</h1>
 <p>The definitions would become lengthy when we define each and every link
 in job.xml. Instead, we can use Scoopi to scrape links from a start page
 and dynamically create locators. This feature allows you to recursively
 scrape the web pages. Let&rsquo;s see how to create locators from scraped
 links.</p>
-
 <h2 id="link-scrape-step">Link Scrape Step</h2>
-
 <p>The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-9/job.yml" target="_blank">Example 9</a>
 scrapes Balance Sheet and Profit &amp; Loss links from
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/page/acme-quote-links.html" target="_blank">acme-quote.html</a>
 page. Links snippet in the html page is as below.</p>
-
 <p>recursively</p>
-
 <p><code>defs/examples/page/acme-quote-links.html</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="c">&lt;!-- links to other pages --&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">
+<span class="c">&lt;!-- links to other pages --&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;page_links&#34;</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Financial<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-bs.html&#34;</span><span class="p">&gt;</span>Balance Sheet<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-pl.html&#34;</span><span class="p">&gt;</span>Profit <span class="err">&amp;</span> Loss<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
-<p>In job.xml, instead of locators for bs and pl, we just define locator
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>In job.xml, instead of locators for bs and pl, we just define locator
 for acme-quote-links.html and a task to scrape and convert links.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">
+locatorGroups:
 
   quoteGroup:
-    locators: &lt;a href=&#34;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-10/job.yml&#34; target=&#34;_blank&#34;&gt;
-       { name: acme, url: &#34;/defs/examples/page/acme-quote-links.html&#34; }
+    locators: &lt;a href=&quot;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-10/job.yml&quot; target=&quot;_blank&quot;&gt;
+       { name: acme, url: &quot;/defs/examples/page/acme-quote-links.html&quot; }
     ]
 
 taskGroups:
@@ -466,53 +461,48 @@ taskGroups:
       steps:
         jsoupDefault:
           process:
-            class: &#34;org.codetab.scoopi.step.convert.LocatorCreator&#34;
+            class: &quot;org.codetab.scoopi.step.convert.LocatorCreator&quot;
             previous: parser
-            next: seeder</code></pre></div>
-<p>In default steps <em>jsoupDefault</em>, the parser step handover data to
+            next: seeder
+</code></pre><p>In default steps <em>jsoupDefault</em>, the parser step handover data to
 process step to filter which in turn handover the filtered data to
 converter. The work flow is</p>
-
 <pre><code>seeder -&gt; loader -&gt; parser -&gt; process (filter) -&gt; converter
 </code></pre>
-
 <p>But, the task <em>linkTask</em> override process step of <em>jsoupDefault</em> with a
 local step which executes
 <code>org.codetab.scoopi.step.convert.LocatorCreator</code> which creates a new
 locator from the links and hand them over to seeder step and the work
 flow
 becomes</p>
-
 <pre><code> seeder -&gt; loader -&gt; parser -&gt; process (locator creator) -&gt; seeder -&gt; loader -&gt; parser -&gt; process (filter) -&gt; converter
-</code></pre>
-
-<h2 id="datadef-for-links">DataDef for Links</h2>
-
+</code></pre><h2 id="datadef-for-links">DataDef for Links</h2>
 <p>The linkTask used dataDef named <em>links</em> where we define the member to
 hold the scraped link which as follows</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">links:
+<pre><code class="language-raw" data-lang="raw">
+links:
   axis:
     fact:
       query:
-        region: &#34;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&#34;
-        field: &#34;li:nth-child(%{row.index}) &gt; a[href]&#34;
-        attribute: &#34;href&#34;
-      prefix: [ &#34;/defs/examples/page/&#34; ]
+        region: &quot;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&quot;
+        field: &quot;li:nth-child(%{row.index}) &gt; a[href]&quot;
+        attribute: &quot;href&quot;
+      prefix: [ &quot;/defs/examples/page/&quot; ]
     col:
       query:
-        script: &#34;configs.getRunDateTime()&#34;
+        script: &quot;configs.getRunDateTime()&quot;
       members: [
         member: {name: date},
       ]
     row:
       query:
-        region: &#34;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&#34;
-        field: &#34;li:nth-child(%{row.index}) &gt; a[href]&#34;
+        region: &quot;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&quot;
+        field: &quot;li:nth-child(%{row.index}) &gt; a[href]&quot;
       members: [
         member: {name: bs, index: 2, linkGroup: bsGroup},
         member: {name: pl, index: 3, linkGroup: plGroup},
-      ]</code></pre></div>
-<p>The row axis defines two members bs and pl to hold the scraped links.
+      ]
+</code></pre><p>The row axis defines two members bs and pl to hold the scraped links.
 The linkGroup is name of the task group that has to set to the newly
 created locator. Let&rsquo;s clarify this aspect in detail. The task group of
 the task linkTask is quoteGroup. So the parsed member bs initially
@@ -522,42 +512,38 @@ able to parse the acme-bs.html as they use bs dataDef. So we need to
 assign newly created bs locator to bsGroup which is specified using
 linkGroup property of
 member.</p>
-
 <pre><code> |-----            quoteGroup                       -----|                     bsGroup 
 
  seeder -&gt; loader -&gt; parser -&gt; process (locator creator) -&gt; seeder -&gt; loader -&gt; parser -&gt; process (filter) -&gt; converter
-</code></pre>
-
-<h2 id="prefix">Prefix</h2>
-
+</code></pre><h2 id="prefix">Prefix</h2>
 <p>The web pages uses absolute or relative links. The example
 acme-quote-links.html uses relative links as shown below.</p>
-
 <p><code>defs/examples/page/acme-quote-links.html</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="c">&lt;!-- links to other pages --&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">
+<span class="c">&lt;!-- links to other pages --&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;page_links&#34;</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Financial<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-bs.html&#34;</span><span class="p">&gt;</span>Balance Sheet<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;acme-pl.html&#34;</span><span class="p">&gt;</span>Profit <span class="err">&amp;</span> Loss<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
-<p>We have to prefix path <code>/defs/examples/page/</code> to link value
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>We have to prefix path <code>/defs/examples/page/</code> to link value
 <code>acme-bs.html</code> otherwise loader is not able to load the page. Use prefix
 property in axis to add any prefix to axis value. In the example, as
 scraped link value is in fact axis it defines fact axis as</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">links:
+<pre><code class="language-raw" data-lang="raw">
+links:
   axis:
     fact:
       query:
-        region: &#34;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&#34;
-        field: &#34;li:nth-child(%{row.index}) &gt; a[href]&#34;
-        attribute: &#34;href&#34;
-      prefix: [ &#34;/defs/examples/page/&#34; ]</code></pre></div>
-<p>The
+        region: &quot;#page_links &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; ul&quot;
+        field: &quot;li:nth-child(%{row.index}) &gt; a[href]&quot;
+        attribute: &quot;href&quot;
+      prefix: [ &quot;/defs/examples/page/&quot; ]
+</code></pre><p>The
 [Example 10</a>
 combines all the definitions we have used so far (examples 1 to 9) -
 links, price, snapshot, bs and pl - into single job which outputs all
 the data to data.txt file.</p>
-
 <p>In this next chapter we setup database and use persistence feature of
 Scoopi.</p>
 

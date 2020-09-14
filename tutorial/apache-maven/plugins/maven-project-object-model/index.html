@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Project Object Model - POM - Apache Maven Tutorial – CodeTab</title></head>
 
@@ -535,26 +535,19 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="maven-project-object-model">Maven Project Object Model</h1>
-
+            <h1 id="maven-project-object-model">Maven Project Object Model</h1>
 <p>So far in the handbook, we used bit and pieces of Maven POM (pom.xml)
 without going to deep into the subject. In this section, we formally
 introduce Maven Project Object Model (POM), one of the central concept
 of Maven. Having gone through other concepts such as lifecycle phase,
 plugins and goals, we can now put many aspects of POM into perspective
 than before.</p>
-
 <p>In POM, we declare project&rsquo;s identity and structure, configure builds,
 and relate projects to one another. The presence of a pom.xml file
 defines a Maven project.</p>
-
 <h2 id="overview-of-pom-elements-and-structure">Overview of POM Elements and Structure</h2>
-
 <p>The next listing shows the sections or blocks of Maven POM and the top
 level elements within the project element.</p>
-
 <p><code>pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
   <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
@@ -598,21 +591,17 @@ level elements within the project element.</p>
   <span class="nt">&lt;pluginRepositories&gt;</span>...<span class="nt">&lt;/pluginRepositories&gt;</span>
   <span class="nt">&lt;distributionManagement&gt;</span>...<span class="nt">&lt;/distributionManagement&gt;</span>
   <span class="nt">&lt;profiles&gt;</span>...<span class="nt">&lt;/profiles&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>For now, it&rsquo;s suffice to know the overall structure and once you through
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>For now, it&rsquo;s suffice to know the overall structure and once you through
 with the guide you may refer official <a href="http://maven.apache.org/pom.html" target="_blank">POM Reference</a> to know more about it.</p>
-
 <h2 id="super-pom">Super POM</h2>
-
 <p>Maven installation comes with a pom.xml which is known as Super POM. As
 in Java, where every other class extends java.lang.Object, all Maven
 projects extends Super POM. The pom.xml we create in our project is
 child or decedent of the Super POM.</p>
-
 <p>The Super POM declares location of Maven central repository, Plugins
 repository, build element which sets the standard locations of the
 directories, plugin configuration and execution etc.,</p>
-
 
 
 <div>&nbsp;</div>
@@ -631,23 +620,18 @@ directories, plugin configuration and execution etc.,</p>
 
 
 
-
 <h2 id="effective-pom">Effective POM</h2>
-
 <p>At the start of every build, Maven internally merges project pomx.ml
 with Super POM and constructs a new POM which is known as  <strong>Effective
 POM</strong>.</p>
-
 <p>Earlier in <a href="/tutorial/apache-maven/plugins/maven-lifecycle-goals/">Maven Lifecycle and Plugin Goals</a>, we learned
 that Maven binds plugins goals to lifecycle phases. Actually, this magic
 happens in effective POM and it is highly instructive to go through the
 effective POM to know the what goes on under the hood.</p>
-
 <p>Let&rsquo;s generate the effective POM and analyze it. To get a clear picture,
 replace the simple-app pom.xml with a basic POM - just project
 coordinates and project
 dependencies.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class="nt">&gt;</span>
@@ -674,21 +658,19 @@ dependencies.</p>
                 <span class="nt">&lt;/dependency&gt;</span>
         <span class="nt">&lt;/dependencies&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span></code></pre></div>
-<p>Next, use Maven Help Plugin to dump the effective POM to a file for
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div><p>Next, use Maven Help Plugin to dump the effective POM to a file for
 investigation.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd simple-app
-$ mvn help:effective-pom -Doutput=target/effective-pom.xml</code></pre></div>
-<p>It creates a file <code>effective-pom.xml</code> in target directory. If -Doutput
+<pre><code class="language-screen" data-lang="screen">$ cd simple-app
+$ mvn help:effective-pom -Doutput=target/effective-pom.xml
+</code></pre><p>It creates a file <code>effective-pom.xml</code> in target directory. If -Doutput
 is omitted then command outputs the effective POM to console.</p>
-
 <p>We explained that Maven merges project pom.xml with Super POM and
 internally creates an effective POM which it uses to build the project.
 In the example pom.xml, we defined project coordinates, a property
 related to resource encoding and project dependencies. The effective POM
 contains these items from pom.xml and also, many more items from Super
 POM.</p>
-
 <p>The effective POM starts with coordinates of our project and then goes
 on to define Maven central and plugin repositories. Next, in build
 section, it defines project and build directories.</p>
@@ -701,23 +683,21 @@ section, it defines project and build directories.</p>
   ....  
 
   <span class="nt">&lt;directory&gt;</span>/home/m/work/simple-app/target<span class="nt">&lt;/directory&gt;</span>  
-  <span class="nt">&lt;finalName&gt;</span>simple-app-1.0<span class="nt">&lt;/finalName&gt;</span></code></pre></div>
-<p>In the plugins section, Maven binds default goals for lifecycle phases.
+  <span class="nt">&lt;finalName&gt;</span>simple-app-1.0<span class="nt">&lt;/finalName&gt;</span>
+
+</code></pre></div><p>In the plugins section, Maven binds default goals for lifecycle phases.
 Though we have not defined build section in the project pom.xml, Maven
 constructs the effective POM with all sections which are essential to
 build the project.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-pom-package.png" alt="Maven Project Object Model - package phase" />
 </figure>
-
 
 <p>As sample, the next screenshot shows the plugin definition for Maven Jar
 Plugin. It defines plugin execution with id <strong>default-jar</strong>
 (default-&lt;goal-name&gt;) which binds jar:jar goal to the package phase.
 If we go through the effective POM, we can find other default goals
 which binds to various lifecycle phases.</p>
-
 
 
 <div>&nbsp;</div>
@@ -735,12 +715,9 @@ which binds to various lifecycle phases.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="project-pom-and-effective-pom">Project POM and Effective POM</h2>
-
 <p>Let&rsquo;s add some plugin configuration to pom.xml and see how they get
 merged into effective POM.</p>
-
 <p>So far, we saw many examples where single goal is executed in a
 lifecycle phase. However, it is also possible to execute multiple goals
 a single phase. For example, the package phase, by default, creates a
@@ -749,7 +726,6 @@ we also require a separate Jar that contains only the test classes and
 resources. The Maven Jar Plugin has another goal jar:test-jar which
 creates the Jar of test files and to bind it to package phase, add
 following snippet to the pom.xml.</p>
-
 <p><code>simple-app/pom.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"> ...
  <span class="c">&lt;!-- project build --&gt;</span>
@@ -770,20 +746,17 @@ following snippet to the pom.xml.</p>
         <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
  <span class="nt">&lt;/build&gt;</span>
- ...</code></pre></div>
-<figure class="text-center" >
+ ...
+</code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-pom-jar-multi.png" alt="Maven Project Object Model - Jar Multi goals" />
 </figure>
-
 
 <p>Run <code>mvn package</code> and build, in package phase, executes two goals -
 jar:jar and jar:test-jar - and creates two jars - simple-app-1.0.jar and
 simple-app-1.0-tests.jar - in target directory.</p>
-
 <p>Generate effective POM with <code>mvn help:effective-pom</code> and in it, for
 Maven Jar Plugin we can find two executions - default one defined by
 Super POM and another one defined by us in pom.xml.</p>
-
 <p>In the next chapter, we describe project resources and the Maven
 Resources Plugin.</p>
 

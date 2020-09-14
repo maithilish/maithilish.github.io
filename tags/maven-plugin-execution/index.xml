@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>maven plugin execution on Codetab</title>
@@ -19,9 +19,9 @@
       <guid>https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/</guid>
       <description>Maven Plugin Execution In the previous tutorial, we saw plugin configuration. In this tutorial, we cover the Maven Plugin execution configuration.
 Configure Plugin Execution The element &amp;lt;executions&amp;gt;/&amp;lt;execution&amp;gt; allows you to configure the execution of a plugin goal. With it, you can accomplish the following things.
- bind a plugin goal to a lifecycle phase.
- configure plugin parameters of a specific goal.
- configure plugin parameters of a specific goal such as compiler:compile, surefire:test etc.</description>
+  bind a plugin goal to a lifecycle phase.
+  configure plugin parameters of a specific goal.
+  configure plugin parameters of a specific goal such as compiler:compile, surefire:test etc.</description>
     </item>
     
   </channel>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Installation - GWT Tutorial - CodeTab</title></head>
 
@@ -711,15 +711,10 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="install-gwt">Install GWT</h1>
-
+            <h1 id="install-gwt">Install GWT</h1>
 <p>This chapter explains the steps required to install GWT Plugin for
 Eclipse.</p>
-
 <p>Software used in the book are</p>
-
 <table>
 <thead>
 <tr>
@@ -728,32 +723,27 @@ Eclipse.</p>
 <th align="center">Size (approximate)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Eclipse</td>
 <td align="center">4.2 Juno</td>
 <td align="center">220 MB</td>
 </tr>
-
 <tr>
 <td align="left">Google Plugin for Eclipse (GPE)</td>
 <td align="center">3.2.0</td>
 <td align="center">60 MB (including any Juno updates)</td>
 </tr>
-
 <tr>
 <td align="left">GWT Designer for GPE</td>
 <td align="center"></td>
 <td align="center">20 MB</td>
 </tr>
-
 <tr>
 <td align="left">Google Web Toolkit SDK</td>
 <td align="center">2.5.0</td>
 <td align="center">105 MB</td>
 </tr>
-
 <tr>
 <td align="left">Google App Engine SDK</td>
 <td align="center">1.7.5</td>
@@ -761,55 +751,48 @@ Eclipse.</p>
 </tr>
 </tbody>
 </table>
-
 <h2 id="eclipse">Eclipse</h2>
-
 <p>Download and install Eclipse Juno 4.2. Preferred Package is <strong>Eclipse
 IDE for Java EE Developers</strong>. Other packages should also work but, Java
 EE package contains many of the dependencies of GWT.</p>
-
 <h3 id="google-plugin-for-eclipse-gpe">Google Plugin for Eclipse (GPE)</h3>
-
 <p>GPE is the base plugin of Google and is required by other development
 tools and SDK like</p>
-
 <ul>
-<li><p>Android Developers Tool ADT</p></li>
-
-<li><p>GWT Designer for GWT</p></li>
-
-<li><p>Google Web Toolkit SDK</p></li>
-
-<li><p>Google App Engine Java SDK</p></li>
+<li>
+<p>Android Developers Tool ADT</p>
+</li>
+<li>
+<p>GWT Designer for GWT</p>
+</li>
+<li>
+<p>Google Web Toolkit SDK</p>
+</li>
+<li>
+<p>Google App Engine Java SDK</p>
+</li>
 </ul>
-
 <p>To install GPE, Designer and SDK, start Eclipse Juno and go to <strong>Help</strong>
 → <strong>Install New Software &hellip;</strong> and it displays Available Softwares
 window. Enter GPE update site url <strong><a href="http://dl.google.com/eclipse/plugin/4.2">http://dl.google.com/eclipse/plugin/4.2</a></strong> in  <strong>Work with</strong>  text box and click Add and then in Add Repository window click Ok. List of available software is displayed as shown in the Figure.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/availablesoftware.png" alt="Available Software" />
 </figure>
 
-
 <p>Select Google Plugin for Eclipse, GWT Designer for GPE, Google App
 Engine Java SDK and Google Web Toolkit SDK. Click Next and complete the
 installation by going through the dialogs.</p>
-
 <h3 id="install-gpe-from-archive">Install GPE from archive</h3>
-
 <p>Above method works smoothly if the link is stable. Couple of jars, GAE
 and GWT SDK, are quite large and in case link goes down while they are
 being downloaded then Eclipse goes for fresh download on retry. Instead,
 we can manually download these items and install them.</p>
-
 <p>In the previous method, Eclipse installs all the four items (GPE,
 Designer, GWT SDK and GAE SDK) as plugins either in plugin directory
 under Eclipse install directory or under $HOME/.eclipse (In case Eclipse
 install dir, has no write access). This method installs GPE and Designer
 as plugins and, GWT and GAE SDK as standalone software outside the
 eclipse and configures the Eclipse to use them.</p>
-
 
 
 <div>&nbsp;</div>
@@ -828,69 +811,67 @@ eclipse and configures the Eclipse to use them.</p>
 
 
 
-
 <p>Steps are as follows.</p>
-
 <ol>
-<li><p>Download GPE update site zip for Juno from
-<a href="http://dl.google.com/eclipse/plugin/core/4.2/zips/gpe-e42-latest-updatesite.zip">http://dl.google.com/eclipse/plugin/core/4.2/zips/gpe-e42-latest-updatesite.zip</a>.</p></li>
-
-<li><p>Download Google Web Toolkit SDK - gwt-2.5.0.zip from
-<a href="http://code.google.com/p/google-web-toolkit/downloads/list">http://code.google.com/p/google-web-toolkit/downloads/list</a> .</p></li>
-
-<li><p>Down Google App Engine SDK - appengine-java-sdk-1.7.5.zip from
+<li>
+<p>Download GPE update site zip for Juno from
+<a href="http://dl.google.com/eclipse/plugin/core/4.2/zips/gpe-e42-latest-updatesite.zip">http://dl.google.com/eclipse/plugin/core/4.2/zips/gpe-e42-latest-updatesite.zip</a>.</p>
+</li>
+<li>
+<p>Download Google Web Toolkit SDK - gwt-2.5.0.zip from
+<a href="http://code.google.com/p/google-web-toolkit/downloads/list">http://code.google.com/p/google-web-toolkit/downloads/list</a> .</p>
+</li>
+<li>
+<p>Down Google App Engine SDK - appengine-java-sdk-1.7.5.zip from
 <a href="http://code.google.com/p/googleappengine/downloads/list">http://code.google.com/p/googleappengine/downloads/list</a> . These
 files may be downloaded either through the browser or wget, with
-option -c to resume the partially downloaded file.</p></li>
-
-<li><p>Start Eclipse Juno and choose <strong>Help</strong> → <strong>Install New Software
+option -c to resume the partially downloaded file.</p>
+</li>
+<li>
+<p>Start Eclipse Juno and choose <strong>Help</strong> → <strong>Install New Software
 &hellip;</strong> to display <strong>Available Software</strong> window. Click the <strong>Add</strong>
 button and in <strong>Add Repository</strong> window click <strong>Archive</strong> and browse
-and select the downloaded GPE zip file.</p></li>
-
-<li><p>List of available software, as shown in Figure 1.1, is displayed.
+and select the downloaded GPE zip file.</p>
+</li>
+<li>
+<p>List of available software, as shown in Figure 1.1, is displayed.
 Select <strong>Google Plugin for Eclipse</strong> and <strong>GWT Designer for GPE</strong>
-and install the plugins.</p></li>
-
-<li><p>Extract gwt-2.5.0.zip to any location of your choice. Go to
+and install the plugins.</p>
+</li>
+<li>
+<p>Extract gwt-2.5.0.zip to any location of your choice. Go to
 <strong>Windows</strong> → <strong>Preferences</strong> → <strong>Google</strong> → <strong>Web Toolkit.</strong> Click
 the <strong>Add</strong> button and in pop up dialog browse to select the root
 dir of extracted GWT SDK and click <strong>OK</strong> button. This configures
 Eclipse to use GWT SDK.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/addgwtsdk.png" alt="Add GWT SDK" />
 </figure>
-</li>
 
-<li><p>Extract appengine-java-sdk-1.7.5.zip to any location. Go to
+</li>
+<li>
+<p>Extract appengine-java-sdk-1.7.5.zip to any location. Go to
 <strong>Windows</strong> → <strong>Preferences</strong> → <strong>Google</strong> →  <strong>App Engine.</strong> Click
 the <strong>Add</strong> button and in pop up dialog browse and select the root
 dir of extracted App Engine SDK and click <strong>OK</strong> button. This
-configures Eclipse to use App Engine SDK.</p></li>
+configures Eclipse to use App Engine SDK.</p>
+</li>
 </ol>
-
 <p>GPE plugin adds Google Pulldown menu to the toolbar.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/gdtpulldown.png" alt="Google Pulldown" />
 </figure>
 
-
 <h2 id="gwt-stockwatcher-tutorial">GWT StockWatcher Tutorial</h2>
-
 <p>Official GWT documentation comes with an excellent tutorial which
 explains the GWT concepts in easy and clear steps. If you are new to
 GWT, then it is a prerequisite to cover the first part of the
 StockWatcher tutorial as this book does not explain the basics of GWT.
 StockWatcher Tutorial is available at <a href="https://developers.google.com/web-toolkit/doc/latest/tutorial/gettingstarted" target="_blank">Build a Sample GWT Application</a></p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>Install</em> - For installation details refer <a href="https://developers.google.com/eclipse/docs/install-eclipse-4.2" target="_blank">Google Plugin for
 Eclipse 4.2(Juno) Installation
 Instructions</a>.</p>
-
 <p><em>Install from zip</em> - To install from local updatesite archive refer
 <a href="https://developers.google.com/eclipse/docs/install-from-zip" target="_blank">Installing the Google Plugin for Eclipse from a local update
 archive</a>.</p>

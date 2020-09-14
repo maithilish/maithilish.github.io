@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>JDO – Hibernate - GWT Tutorial - CodeTab</title></head>
 
@@ -711,41 +711,35 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="8-3-retrieve">8.3. Retrieve</h2>
-
+            <h2 id="83retrieve">8.3. Retrieve</h2>
 <p>In this section, we retrieve persisted symbols through a variety of ORM
 like JDO, Hibernate and MyBatis. We do so, just to demonstrate that
 objects persisted through an ORM are readily retrievable through others.</p>
-
 <h5 id="jdo">JDO</h5>
-
 <p>In JDO, we use <code>PersistenceManager</code> to retrieve an object from the
 database.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">PersistenceManager</span> <span class="nf">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="p">.</span><span class="na">getPersistenceManager</span><span class="p">();</span>
-    <span class="k">try</span> <span class="p">{</span>
-       <span class="n">Symbol</span> <span class="nf">symbol</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="na">getObjectById</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+    <span class="n">PersistenceManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="na">getPersistenceManager</span><span class="o">();</span>
+    <span class="k">try</span> <span class="o">{</span>
+       <span class="n">Symbol</span> <span class="n">symbol</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">getObjectById</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
        <span class="c1">// use the object
 </span><span class="c1"></span>
-    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-          <span class="n">pm</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-    <span class="p">}</span></code></pre></div>
-<p>Sometimes, we may be like to retrieve only a certain fields of an
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+          <span class="n">pm</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></div><p>Sometimes, we may be like to retrieve only a certain fields of an
 object, and for this, JDO supports JDOQL and SQL query. Following code
 uses JDO&rsquo;s NamedQuery feature to retrieve list of symbol names from
 SYMBOL table.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  <span class="n">PersistenceManager</span> <span class="nf">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="p">.</span><span class="na">getPersistenceManager</span><span class="p">();</span>
-  <span class="k">try</span> <span class="p">{</span>
-      <span class="n">Query</span> <span class="nf">query</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="na">newNamedQuery</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="s">&#34;selectSymbolNames&#34;</span><span class="p">);</span>
-      <span class="n">query</span><span class="p">.</span><span class="na">setResultClass</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-      <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">list</span> <span class="o">=</span> <span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">query</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
-  <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-      <span class="n">pm</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-  <span class="p">}</span></code></pre></div>
-<p><strong>Query</strong> element defines the NamedQuery and its SQL.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  <span class="n">PersistenceManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="na">getPersistenceManager</span><span class="o">();</span>
+  <span class="k">try</span> <span class="o">{</span>
+      <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">newNamedQuery</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">&#34;selectSymbolNames&#34;</span><span class="o">);</span>
+      <span class="n">query</span><span class="o">.</span><span class="na">setResultClass</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+      <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;)</span> <span class="n">query</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+  <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="n">pm</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+  <span class="o">}</span>
+</code></pre></div><p><strong>Query</strong> element defines the NamedQuery and its SQL.</p>
 <p><code>in.fins.shared/package.jdo</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;class</span> <span class="na">name=</span><span class="s">&#34;Symbol&#34;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&#34;name&#34;</span> <span class="na">primary-key=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
@@ -757,9 +751,8 @@ SYMBOL table.</p>
             CDATA[
             SELECT s.name FROM in.fins.shared.Symbol s
             ]]&gt;<span class="nt">&lt;/query&gt;</span>
-<span class="nt">&lt;/class&gt;</span></code></pre></div>
-<h2 id="jdo-class-enhancement">JDO Class enhancement</h2>
-
+<span class="nt">&lt;/class&gt;</span>
+</code></pre></div><h2 id="jdo-class-enhancement">JDO Class enhancement</h2>
 <p>JDO uses byte-code manipulation to make normal Java classes as
 persistable through a process is known as class enhancement. This
 enables JDO to keep track of modifications to persistence objects so as
@@ -767,9 +760,7 @@ to trigger database update only on changes. In RStore, ant target
 <strong>enhance</strong> takes care of enhancement. DataNucleus throws
 <code>ClassNotPersistenceCapableException</code> when we try to persist classes
 which are not enhanced.</p>
-
 <p>Hibernate and MyBatis require no class enhancement.</p>
-
 
 
 <div>&nbsp;</div>
@@ -787,9 +778,7 @@ which are not enhanced.</p>
 <div>&nbsp;</div>
 
 
-
 <h5 id="hibernate">Hibernate</h5>
-
 <p>Configuration file of Hibernate is <code>hibernate.cfg.xml</code> in which we
 define session factory, one for each database connection, using
 <strong>session-factory</strong> element. JDBC properties are set within the
@@ -797,7 +786,6 @@ define session factory, one for each database connection, using
 class path, Hibernate requires inclusion of mapping files in its
 configuration file, via mapping element. Following configuration
 includes three mapping files.</p>
-
 <p><code>src/hibernate.cfg.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;hibernate-configuration&gt;</span>
         <span class="nt">&lt;session-factory&gt;</span>
@@ -811,10 +799,9 @@ includes three mapping files.</p>
                 <span class="nt">&lt;mapping</span> <span class="na">resource=</span><span class="s">&#34;in/fins/shared/Data.hbm.xml&#34;</span> <span class="nt">/&gt;</span>
 
         <span class="nt">&lt;/session-factory&gt;</span>
-<span class="nt">&lt;/hibernate-configuration&gt;</span></code></pre></div>
-<p>Each hbm.xml file maps a single persistable class, and let&rsquo;s go through
+<span class="nt">&lt;/hibernate-configuration&gt;</span>
+</code></pre></div><p>Each hbm.xml file maps a single persistable class, and let&rsquo;s go through
 <code>Symbol.hbm,xml</code> to understand Hibernate mapping concepts.</p>
-
 <p><code>in.fins.shared/Symbol.hbm.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE hibernate-mapping PUBLIC
@@ -838,45 +825,42 @@ includes three mapping files.</p>
 </span><span class="cp">          ]]&gt;</span>
     <span class="nt">&lt;/query&gt;</span>
 
-<span class="nt">&lt;/hibernate-mapping&gt;</span></code></pre></div>
-<p>Mapping structure is almost similar to JDO with some variations in
+<span class="nt">&lt;/hibernate-mapping&gt;</span>
+</code></pre></div><p>Mapping structure is almost similar to JDO with some variations in
 naming of elements and attributes. <strong>Table</strong> attribute is explicitly
 mentioned in <strong>class</strong> element. An <strong>id</strong> element defines primary key
 field, whereas <strong>property</strong> element defines a regular field. Attribute
-<strong>type=&ldquo;serializable&rdquo;</strong> in <strong>property</strong> element serializes the field.
+<strong>type=&quot;serializable&rdquo;</strong> in <strong>property</strong> element serializes the field.
 For 1-N relationship, <strong>list</strong> element is used with <strong>one-to-many</strong>
 element where foreign key is specified with key element. <strong>Query</strong>
 element specifies named query.</p>
-
 <p>Typical Hibernate session is as shown in the following snippet from
 <code>HibernateDao</code>.</p>
-
 <p><code>in.rstore.dao.hibernate/HibernateDao.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="k">try</span> <span class="p">{</span>
-                <span class="n">Configuration</span> <span class="nf">configuration</span> <span class="o">=</span>
-                      <span class="k">new</span> <span class="n">Configuration</span><span class="p">().</span><span class="na">configure</span><span class="p">();</span>
-                <span class="n">ServiceRegistry</span> <span class="nf">serviceRegistry</span> <span class="o">=</span> 
-                      <span class="k">new</span> <span class="n">ServiceRegistryBuilder</span><span class="p">()</span>
-                         <span class="p">.</span><span class="na">applySettings</span><span class="p">(</span><span class="n">configuration</span><span class="p">.</span><span class="na">getProperties</span><span class="p">())</span>
-                         <span class="p">.</span><span class="na">buildServiceRegistry</span><span class="p">();</span>
-                <span class="n">SessionFactory</span> <span class="nf">sf</span> <span class="o">=</span> 
-                         <span class="n">configuration</span><span class="p">.</span><span class="na">buildSessionFactory</span><span class="p">(</span><span class="n">serviceRegistry</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="k">try</span> <span class="o">{</span>
+                <span class="n">Configuration</span> <span class="n">configuration</span> <span class="o">=</span>
+                      <span class="k">new</span> <span class="n">Configuration</span><span class="o">().</span><span class="na">configure</span><span class="o">();</span>
+                <span class="n">ServiceRegistry</span> <span class="n">serviceRegistry</span> <span class="o">=</span> 
+                      <span class="k">new</span> <span class="n">ServiceRegistryBuilder</span><span class="o">()</span>
+                         <span class="o">.</span><span class="na">applySettings</span><span class="o">(</span><span class="n">configuration</span><span class="o">.</span><span class="na">getProperties</span><span class="o">())</span>
+                         <span class="o">.</span><span class="na">buildServiceRegistry</span><span class="o">();</span>
+                <span class="n">SessionFactory</span> <span class="n">sf</span> <span class="o">=</span> 
+                         <span class="n">configuration</span><span class="o">.</span><span class="na">buildSessionFactory</span><span class="o">(</span><span class="n">serviceRegistry</span><span class="o">);</span>
 
-                <span class="n">Session</span> <span class="nf">session</span> <span class="o">=</span> <span class="n">sf</span><span class="p">.</span><span class="na">openSession</span><span class="p">();</span>
-                <span class="n">Symbol</span> <span class="nf">symbol</span> <span class="o">=</span> <span class="p">(</span><span class="n">Symbol</span><span class="p">)</span> <span class="n">session</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-                    <span class="p">....</span>
+                <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="na">openSession</span><span class="o">();</span>
+                <span class="n">Symbol</span> <span class="n">symbol</span> <span class="o">=</span> <span class="o">(</span><span class="n">Symbol</span><span class="o">)</span> <span class="n">session</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+                    <span class="o">....</span>
 
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">HibernateException</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="n">ExceptionInInitializerError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-                <span class="n">session</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>Configuration().configure()</code> searches for <code>hibernate.cfg.xml</code> in
-classpath and configures the <code>SessionFactory</code>. <code>Session</code> obtained from
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">HibernateException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">ExceptionInInitializerError</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+                <span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>Configuration().configure()</code> searches for <code>hibernate.cfg.xml</code> in
+classpath and configures the <code> SessionFactory</code>. <code>Session</code> obtained from
 SessionFactory is used to interact with the database.
 <code>Session.getNamedQuery()</code> and <code>Query.list()</code> methods are used to query
 the database through NamedQuery.</p>
-
 
 
 <div>&nbsp;</div>
@@ -895,24 +879,19 @@ the database through NamedQuery.</p>
 
 
 
-
 <h5 id="mybatis">MyBatis</h5>
-
 <p>MyBatis is altogether a different class of ORM, which relays heavily on
 SQL to map object to tables. One has to have a fair degree of SQL skill
 to work with MyBatis. This section is optional and you may skip this if
 you aren&rsquo;t planning to use MyBatis in your project.</p>
-
 <p>JDO and Hibernate are the leaders in open source ORM softwares. For some
 reasons, you still like to work with MyBatis, then go through the
 reminder of this section.</p>
-
 <p>MyBatis configuration file is <code>mybatis-config.xml</code>, wherein
 <strong>typeAlias</strong> element provides short alias to long fully qualified class
 name, <strong>environment</strong> element configures JDBC connection and <strong>mapper</strong>
 element adds mapping file. Following snippet from <code>Mapper.xml</code>, shows
 MyBatis mapping structure.</p>
-
 <p><code>in.fins.shared/Mappers.xml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&#34;mappers&#34;</span><span class="nt">&gt;</span>
 
@@ -930,8 +909,8 @@ MyBatis mapping structure.</p>
         <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;selectDataGroups&#34;</span> <span class="na">parameterType=</span><span class="s">&#34;String&#34;</span> <span class="na">resultMap=</span><span class="s">&#34;resultDataGroup&#34;</span><span class="nt">&gt;</span>
                 select * from datagroup where symbol_name = #{name}
         <span class="nt">&lt;/select&gt;</span>
-        ....</code></pre></div>
-<p>Mapping structure is entirely different from what we have seen in JDO
+        ....
+</code></pre></div><p>Mapping structure is entirely different from what we have seen in JDO
 and Hibernate. <strong>Select</strong> element select rows from a table via SQL The
 first select element, selectSymbol selects a row whose name column
 equals the input parameter and the second select element,
@@ -941,7 +920,6 @@ these two statements are distinct and no way interconnected. The first
 one, fetches a single Symbol object, but its List&lt;DataGroup&gt; field
 will be null, and the second one, fetches a list of DataGroup. Now the
 question is how to set the list to List&lt;DataGroup&gt; field of Symbol.</p>
-
 <p>Attribute <strong>resultMap</strong> in select element, indicates that result of
 select has to be handed over to a specific resultMap defined by
 <strong>resultMap</strong> element, which may be used to interlinks the multiple
@@ -952,7 +930,6 @@ selectDataGroups statement to fetch a list of DataGroup which is set
 Symbol.dataGroups field. ResultMap chaining, allows us to populate
 DataGroup.List&lt;Data&gt; field in a similar fashion. Refer RStore&rsquo;s
 Mapper.xml, for the complete listing.</p>
-
 <p>In JDO and Hibernate, an attribute is all that is required to serialize
 a field. But in MyBatis, it not possible to get away so easily.
 Generally, database stores serialized object in a Binary Large Object
@@ -961,23 +938,16 @@ to deserialize the blob and assign it to a field. MyBatis supports a
 construct, known as <code>TypeHandler</code>, for this sort of type conversion, and
 RStore uses a custom type handler
 <code>in.rstore.dao.mybatis.BlobTypeHandler</code> to convert Blob to List&lt;Fact&gt;</p>
-
 <p>Next chapter integrates Fins with database using the concepts covered in
 this chapter.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>DataNucleus JDO Documentation</em> - refer JDO API tab of <a href="http://www.datanucleus.org/products/accessplatform_3_2/" target="_blank">DataNucleus Access Platform</a></p>
-
 <p><em>1-N Mapping</em> - refer <a href="http://www.datanucleus.org/products/accessplatform_3_2/jdo/orm/one_to_many_list.html" target="_blank">JDO : 1-N Relationships with
 Lists</a></p>
-
 <p><em>Class Enhancement</em> - refer <a href="http://www.datanucleus.org/products/accessplatform/jdo/enhancer.html#enhancement" target="_blank">JDO Class
 enhancement</a></p>
-
 <p><em>Hibernate</em> - refer Hibernate Core Reference Manual of latest version in
 <a href="http://www.hibernate.org/docs" target="_blank">Hibernate Docs site</a></p>
-
 <p><em>MyBatis</em> - refer <a href="http://mybatis.github.com/mybatis-3/" target="_blank">MyBatis reference
 documentation</a></p>
 

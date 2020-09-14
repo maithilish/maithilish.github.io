@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wordpress plugin development on Codetab</title>
@@ -19,6 +19,15 @@
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/</guid>
       <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab WordPress Plugin Development Tutorial Some time back, we released Share on Social, a social media sharing plugin. In this WordPress Plugin Development Tutorial, we go through the construction of the plugin and also other essentials to develop a robust WordPress plugin, so as to share the experience with aspiring WordPress Plugin developers.
 There are enough blogs about WordPress Plugin Development.</description>
+    </item>
+    
+    <item>
+      <title>WordPress Plugin Development - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/</link>
+      <pubDate>Fri, 11 Jan 2019 07:12:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/</guid>
+      <description></description>
     </item>
     
     <item>

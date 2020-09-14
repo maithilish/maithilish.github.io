@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T11:09:00+0530",
         "dateModified" : "2019-01-11T11:09:00+0530",
-        "wordCount" : "621",
+        "wordCount" : "623",
         "keywords" : [ "wordpress chart page","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Chart Page - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,45 +625,41 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="9-2-wordpress-chart-page">9.2. WordPress Chart Page</h2>
-
+            <h2 id="92wordpress-chart-page">9.2. WordPress Chart Page</h2>
 <p>In the next two blogs, we add a sub menu to Share on Social Plugin menu
 to display the share statistics with Google Charts API. The chart page
 uses functionalities already discussed in following topics.</p>
-
 <ul>
-<li><p><a href="/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/">Add Menu</a></p></li>
-
-<li><p><a href="/tutorial/wordpress-plugin-development/admin-module-settings/options-page/">Options Page</a></p></li>
-
-<li><p><a href="/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/">Plugin Enqueue Scripts</a></p></li>
-
-<li><p><a href="/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/">Pass Data to JavaScript</a></p></li>
-
-<li><p><a href="/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/">Ajax</a></p></li>
+<li>
+<p><a href="/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/">Add Menu</a></p>
+</li>
+<li>
+<p><a href="/tutorial/wordpress-plugin-development/admin-module-settings/options-page/">Options Page</a></p>
+</li>
+<li>
+<p><a href="/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/">Plugin Enqueue Scripts</a></p>
+</li>
+<li>
+<p><a href="/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/">Pass Data to JavaScript</a></p>
+</li>
+<li>
+<p><a href="/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/">Ajax</a></p>
+</li>
 </ul>
-
-<p>The plugin uses two files <code>admin/class-stats.php</code> and<code>js/chart.js</code>. As
+<p>The plugin uses two files <code>admin/class-stats.php</code> and<code> js/chart.js</code>. As
 many of the concepts are already covered in the tutorial we will not get
 into the detail, instead explain the overall flow with the relevant code
 snippets.</p>
-
 <h3 id="add-sub-menu-page">Add Sub Menu Page</h3>
-
-<p>To add sub menu, <code>Sos_Stats::setup()</code> adds <code>
-Sos_Stats::register_stats_page()</code> to action hook <strong>admin_menu</strong>.</p>
-
+<p>To add sub menu, <code>Sos_Stats::setup()</code> adds <code>Sos_Stats::register_stats_page()</code> to action hook <strong>admin_menu</strong>.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Stats {
 
     public function setup () {
         add_action( &#39;admin_menu&#39;, array($this,&#39;register_stats_page&#39;) );
-    }</code></pre></div>
-<p>The action method, adds the sub menu <strong>Statistics</strong> to <strong>sos</strong> post type
+    }
+</code></pre></div><p>The action method, adds the sub menu <strong>Statistics</strong> to <strong>sos</strong> post type
 menu using the slug <strong>edit.php?post_type=sos</strong>.</p>
-
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function register_stats_page () {
         $menu_label = __( &#39;Statistics&#39;, &#39;sos-domain&#39; );
@@ -679,24 +675,19 @@ menu using the slug <strong>edit.php?post_type=sos</strong>.</p>
          */
         add_action( &#39;admin_print_scripts-&#39; . $page_hook_suffix, 
                 array($this,&#39;enqueue_chart_scripts&#39;) );
-    }</code></pre></div>
-<p>Normally, plugins use <strong>wp_enqueue_scripts</strong> hook to enqueue scripts,
+    }
+</code></pre></div><p>Normally, plugins use <strong>wp_enqueue_scripts</strong> hook to enqueue scripts,
 but here we use a dynamic hook so that chart scripts are added only to
 plugins&rsquo; admin screens. The <code>add_submenu_page()</code> returns the slug of
-newly added sub menu and we use that to add the <code>
-Sos_Stats::enqueue_chart_scripts()</code> method to action hook
+newly added sub menu and we use that to add the <code>Sos_Stats::enqueue_chart_scripts()</code> method to action hook
 <strong>admin_print_scripts-&lt;menu slug&gt;</strong>. Refer <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Link_Scripts_Only_on_a_Plugin_Administration_Screen" target="_blank">Link Scripts Only on a Plugin Administration Screen</a> to known more about this.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-stats-charts.png" alt="WordPress chart page - statistics menu." />
 </figure>
 
-
 <h3 id="enqueue-scripts">Enqueue Scripts</h3>
-
 <p>Actual enqueue happens in <code>Sos_Stats::enqueue_chart_scripts(</code>) method
 which is called only when we click Statistics sub menu.</p>
-
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function enqueue_chart_scripts () {
 
@@ -704,10 +695,9 @@ which is called only when we click Statistics sub menu.</p>
         wp_enqueue_script( &#39;sos_chart_script&#39; );
 
         ....
-    }</code></pre></div>
-<p>We use script handles to enqueue, so we need to register them before
+    }
+</code></pre></div><p>We use script handles to enqueue, so we need to register them before
 they actually enqueue.</p>
-
 
 
 <div>&nbsp;</div>
@@ -725,10 +715,8 @@ they actually enqueue.</p>
 <div>&nbsp;</div>
 
 
-
 <p>We do that in <code>Sos_Stats::setup()</code> where we add
 <code>Sos_Stats::init_chart_scripts()</code> to <strong>admin_init</strong> action hook.</p>
-
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Stats {
 
@@ -736,30 +724,28 @@ they actually enqueue.</p>
         add_action( &#39;admin_init&#39;, array($this,&#39;init_chart_scripts&#39;) );
     }
 
-....</code></pre></div>
-<p>In the action method, we register the two scripts</p>
-
+....
+</code></pre></div><p>In the action method, we register the two scripts</p>
 <ul>
-<li><p>Google Chart API which draws the charts. The real benefit of using
+<li>
+<p>Google Chart API which draws the charts. The real benefit of using
 Google Chart API is that there is no need to install any chart
-library on the server.</p></li>
-
-<li><p>Plugin script file<code>js/chart.js</code> which is used to fetch chart data
-and draw the chart with Google Chart API.</p></li>
+library on the server.</p>
+</li>
+<li>
+<p>Plugin script file<code> js/chart.js</code> which is used to fetch chart data
+and draw the chart with Google Chart API.</p>
+</li>
 </ul>
-
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function init_chart_scripts () {       
         $google_api = &#39;https://www.google.com/jsapi&#39;;
         wp_register_script( &#39;sos_google_api&#39;, $google_api, 
                 array(&#39;jquery&#39;), null, false );
         wp_register_script( &#39;sos_chart_script&#39;, SOS_URL . &#39;/js/chart.js&#39; );
-    }</code></pre></div>
-<h3 id="render-chart-page">Render Chart Page</h3>
-
-<p>To render the page, <code>add_submenu_page()</code> used <code>
-Sos_Stats::render_stats_page()</code> method as the callback.</p>
-
+    }
+</code></pre></div><h3 id="render-chart-page">Render Chart Page</h3>
+<p>To render the page, <code>add_submenu_page()</code> used <code>Sos_Stats::render_stats_page()</code> method as the callback.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_stats_page () {
         $heading = __( &#39;Share Stats&#39;, &#39;sos-domain&#39; );
@@ -770,18 +756,15 @@ Sos_Stats::render_stats_page()</code> method as the callback.</p>
         <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>        
 EOD;
-    }</code></pre></div>
-<p>In the callback method, apart from the heading, we place two empty
+    }
+</code></pre></div><p>In the callback method, apart from the heading, we place two empty
 &lt;div&gt; elements as placeholders, where Google Charts API draws the
 charts. The &lt;div&gt; with id summary_chart is for the chart that shows
 total share for each Social network and the other one for the chart that
 shows share details by date.</p>
-
 <h3 id="pass-data-to-client">Pass Data to Client</h3>
-
 <p>We also use <code>Sos_Stats::enqueue_chart_scripts()</code> method to pass data to
 the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()</code>.</p>
-
 <p><code>share-on-social/admin/class-stats.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function enqueue_chart_scripts () {
         ....
@@ -793,10 +776,9 @@ the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()
                     &#39;summary_title&#39; =&gt; __( &#39;Summary&#39;, &#39;sos-domain&#39; ),
                     &#39;stats_title&#39; =&gt; __( &#39;Shares&#39;, &#39;sos-domain&#39; )
             ) );
-    }</code></pre></div>
-<p>Apart from the standard WordPress Ajax URL, we also pass <strong>title</strong> and
+    }
+</code></pre></div><p>Apart from the standard WordPress Ajax URL, we also pass <strong>title</strong> and
 <strong>nonce</strong> for the two charts.</p>
-
 
 
 <div>&nbsp;</div>
@@ -812,7 +794,6 @@ the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()
 </script>
 
 <div>&nbsp;</div>
-
 
 
 

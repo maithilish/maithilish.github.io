@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>JDO Persistence - GWT Tutorial - CodeTab</title></head>
 
@@ -711,38 +711,33 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="8-2-persist">8.2. Persist</h2>
-
+            <h2 id="82persist">8.2. Persist</h2>
 <p>To load data, we use RStore which has following features,</p>
-
 <ul>
-<li><p>enhance java classes for persistence</p></li>
-
-<li><p>create database schema</p></li>
-
-<li><p>delete database schema</p></li>
-
-<li><p>persist and retrieve objects from database</p></li>
+<li>
+<p>enhance java classes for persistence</p>
+</li>
+<li>
+<p>create database schema</p>
+</li>
+<li>
+<p>delete database schema</p>
+</li>
+<li>
+<p>persist and retrieve objects from database</p>
+</li>
 </ul>
-
 <h5 id="prepare-rstore-project">Prepare RStore project</h5>
-
 <p>Download RStore.zip from the book site. Create a regular Java project
 named rstore with default settings. Select the project in Project
 Explorer and choose <strong>File</strong> → <strong>Import</strong>. In Import dialog, expand
 general and choose Archive File and import RStore.zip into folder
 rstore.</p>
-
 <h5 id="dependencies">Dependencies</h5>
-
 <p>RStore requires HSQLDB, Data Nucleus JDO, MyBatis and Hibernate
 libraries. Following table lists the
 dependencies.</p>
-
-<h6 id="table-8-1-dependencies">Table 8.1. Dependencies</h6>
-
+<h6 id="table81dependencies">Table 8.1. Dependencies</h6>
 <table>
 <thead>
 <tr>
@@ -752,7 +747,6 @@ dependencies.</p>
 <th>MyBatis</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>hsqldb-2.2.9.jar</td>
@@ -760,49 +754,42 @@ dependencies.</p>
 <td>hibernate-commons-annotations-4.0.1.Final.jar</td>
 <td>mybatis-3.2.0.jar</td>
 </tr>
-
 <tr>
 <td>commons-lang-2.6.jar</td>
 <td>datanucleus-api-jdo-3.1.3.jar</td>
 <td>hibernate-core-4.1.10.Final.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td>log4j-1.2.16.jar</td>
 <td>datanucleus-core-3.1.4.jar</td>
 <td>hibernate-jpa-2.0-api-1.0.1.Final.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td>datanucleus-rdbms-3.1.4.jar</td>
 <td>jboss-logging-3.1.0.GA.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td>datanucleus-enhancer-3.1.1.jar</td>
 <td>jboss-transaction-api_1.1_spec-1.0.0.Final.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td>asm-4.0.jar</td>
 <td>antlr-2.7.7.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td></td>
 <td>dom4j-1.6.1.jar</td>
 <td></td>
 </tr>
-
 <tr>
 <td></td>
 <td></td>
@@ -811,9 +798,7 @@ dependencies.</p>
 </tr>
 </tbody>
 </table>
-
-<h6 id="table-8-2-download-url">Table 8.2. Download URL</h6>
-
+<h6 id="table82download-url">Table 8.2. Download URL</h6>
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -875,21 +860,16 @@ Download Core Framework zip
 </tr>
 </tbody>
 </table>
-
 <p>Download the packages and place the essential jars in projects lib
 directory. Also add the jars to project build path.</p>
-
 <h2 id="automatic-dependency-management">Automatic Dependency Management</h2>
-
 <p>Thats a handful of downloads. Rather than struggling with downloads, it
 makes a lot of sense to use dependency management softwares like Maven
 or Apache Ivy.</p>
-
 <p>Maven is the leading contender in this space, but if you are in a hurry
 then go for Apache Ivy, which is equally powerful. Apache Ivy is quite
 easy to start with, zero configuration and comes with a Plugin for
 Eclipse.</p>
-
 <p>With Eclipse Plugin, IvyDE, you may shift to automatic dependency
 management in just under ten minutes. All you have to do is, install
 IvyDE plugin and add the ivy.xml file, which is in the root folder of
@@ -898,20 +878,15 @@ dependencies and add them to project. It also updates project build
 path, links package&rsquo;s API documentation and source. In case jars are
 deleted from project workspace, it restores them from its cache to keep
 the project in shipshape. Refer <a href="/tutorial/gwt/introduction/#tutorial-gwt-build">Apache Ivy</a> for quick start.</p>
-
 <h5 id="run-rstore">Run RStore</h5>
-
 <p>Open HSQLDB view and start HSQLDB. Next, open Ant View using <strong>Windows</strong>
 → <strong>Show View.</strong> Drag and drop <code>build.xml</code> to Ant View, which shows
 following targets.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/antview.png" alt="Ant View" />
 </figure>
 
-
-<h6 id="figure-8-3-ant-view">Figure 8.3. Ant View</h6>
-
+<h6 id="figure83ant-view">Figure 8.3. Ant View</h6>
 <p>Select Run target and run it. RStore compiles the project and enhances
 the domain classes for persistence using Data Nucleus Enhance. It then
 parses fins.xml file from data directory and creates four Symbol with
@@ -922,7 +897,6 @@ data first via JDO and then through alternate ORM, Hibernate and MyBatis
 and output the details to Console. At this point, you may browse the
 tables using Database Manager. Targets createschema creates empty tables
 and dropschema drops the schema.</p>
-
 <p>XML file, <code>data/fins-data.xml</code>, contains data for four symbols from year
 2007 onwards. These data are from real listed companies from India where
 financial year generally between 1st April to 31st March, hence you will
@@ -933,7 +907,6 @@ as parse progresses, populates the Symbol with data. On SAX
 <strong>endElement</strong> event, it pops Symbol object from the stack and passes it
 to <code>ISymbolProcessor</code> whose method <code>ISymbolProcessor.processSymbol()</code>
 persists the object using JdoData. Let&rsquo;s see how JDO accomplish this.</p>
-
 
 
 <div>&nbsp;</div>
@@ -951,25 +924,22 @@ persists the object using JdoData. Let&rsquo;s see how JDO accomplish this.</p>
 <div>&nbsp;</div>
 
 
-
 <h5 id="orm-configuration">ORM Configuration</h5>
-
 <p>ORM softwares use two types of setup files.</p>
-
 <ul>
-<li><p>Configuration file - ORM requires various configurations to deal
+<li>
+<p>Configuration file - ORM requires various configurations to deal
 with different databases and this file defines configuration
-properties that is essential to connect and interact with database.</p></li>
-
-<li><p>Mapping file - maps Java classes to tables and its fields to table
-columns.</p></li>
+properties that is essential to connect and interact with database.</p>
+</li>
+<li>
+<p>Mapping file - maps Java classes to tables and its fields to table
+columns.</p>
+</li>
 </ul>
-
 <p>For these files, each ORM has its own naming convention and path.
 Following table shows RStore&rsquo;s configuration and mapping files.</p>
-
-<h6 id="table-8-3-orm-setup">Table 8.3. ORM Setup</h6>
-
+<h6 id="table83orm-setup">Table 8.3. ORM Setup</h6>
 <table style="width:99%;">
 <colgroup>
 <col style="width: 33%" />
@@ -1009,17 +979,13 @@ src/in/fins/shared/Data.hbm.xml
 </tr>
 </tbody>
 </table>
-
 <p>In this section, we use JDO to persist Symbols. JDO is a specification
 to persist data. There are many implementations of JDO specification and
 we use implementation by DataNucleus known as DataNucleus Access
 Platform.</p>
-
 <h5 id="configuration-file">Configuration file</h5>
-
 <p>DataNucleus JDO uses <code>datanucleus.properties</code> to configure connection
 and other properties.</p>
-
 <p><code>src/datanucleus.properties</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">javax.jdo.option.ConnectionDriverName=org.hsqldb.jdbcDriver
 javax.jdo.option.ConnectionURL=jdbc:hsqldb:hsql://localhost/finsdb
@@ -1031,14 +997,11 @@ javax.jdo.option.Mapping=hsql
 datanucleus.metadata.validate=false
 datanucleus.autoCreateSchema=true
 datanucleus.validateTables=false
-datanucleus.validateConstraints=false</code></pre></div>
-<p>Preferences set for HSQLDB is used to configure the JDBC connection.</p>
-
+datanucleus.validateConstraints=false
+</code></pre></div><p>Preferences set for HSQLDB is used to configure the JDBC connection.</p>
 <h5 id="java-object-to-table-mapping">Java Object to Table Mapping</h5>
-
 <p>JDO uses <code>package.jdo</code> as its mapping file, and allows to place it in
 various locations. We prefer to place it along with persistable classes.</p>
-
 <p><code>in.fins.shared/package.jdo</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE jdo PUBLIC
@@ -1070,8 +1033,8 @@ various locations. We prefer to place it along with persistable classes.</p>
             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&#34;facts&#34;</span> <span class="na">serialized=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/class&gt;</span>
     <span class="nt">&lt;/package&gt;</span>
-<span class="nt">&lt;/jdo&gt;</span></code></pre></div>
-<p><strong>Package</strong> element names the package that contains persistable classes
+<span class="nt">&lt;/jdo&gt;</span>
+</code></pre></div><p><strong>Package</strong> element names the package that contains persistable classes
 and <strong>Class</strong> element maps a class to a table and <strong>Field</strong> element map
 field to table column. In Class element, <strong>table</strong> attribute is used to
 name the table, and in its absence, class name is used as table name.
@@ -1080,39 +1043,32 @@ For primary key field,  <strong>primary-key</strong> attribute is used. Attribut
 persistable as in field positionDate. We will explain the <strong>Query</strong>
 element in the next section when we retrieve the objects. JDO creates
 following schema from this mapping file.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/dbschema.png" alt="Schema" />
 </figure>
 
-
-<h6 id="figure-8-4-schema">Figure 8.4. Schema</h6>
-
+<h6 id="figure84schema">Figure 8.4. Schema</h6>
 <p>In the absence of table attribute in Class elements, JDO uses class
 names to name tables. JDO maps the simple fields like <code>String</code>, <code>Date</code>
 and <code>long</code> to equivalent database column types but it is quite
 interesting to understand how JDO maps the List&lt;T&gt; items.</p>
-
 <p>For example, take Symbol which has a field List&lt;DataGroup&gt; that holds
 a list of <code>DataGroup</code> which comes from certain rows of DATAGROUP table.
 In JDO, this 1-N unidirectional relationship may be handled using three
 strategies; Join Table, Primay Key - Foreign Key (PK-FK) and Serialized
 list. We use PK-FK and Serialized list strategies in RStore.</p>
-
 <p>We use PK-FK strategy for List&lt;DataGroup&gt; field in Symbol, which is
 specified as</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&#34;dataGroups&#34;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;element</span> <span class="na">column=</span><span class="s">&#34;symbol_name&#34;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/field&gt;</span></code></pre></div>
-<p>This tells JDO to create a column SYMBOL_NAME in DATAGROUP table and
+    <span class="nt">&lt;/field&gt;</span>
+</code></pre></div><p>This tells JDO to create a column SYMBOL_NAME in DATAGROUP table and
 use it as foreign key of primary key of SYMBOL. To construct the list of
 DataGroup, JDO retrieves rows from table DATAGROUP whose SYMBOL_NAME is
 same as SYMBOL.NAME. Likewise, between DATAGROUP and DATA tables,
 DATAGROUP.ID and DATA.DATAGROUP_ID are PK and FK respectively.</p>
-
 <p>JDO also creates columns DATAGROUPS_INTEGER_IDX and
 DATALIST_INTEGER_IND and use them to sort the rows, if required.</p>
-
 <p>Next, let&rsquo;s understand Serialized list strategy. Field List&lt;Fact&gt; in
 <code>Data</code> class, uses this strategy as we have set serialize attribute to
 true. Usually, items from a collection are stored in individual rows,
@@ -1121,7 +1077,6 @@ There are roughly 800 facts in a Symbol, and FACT table ends up with 800
 rows for each symbol if we use PK-FK strategy. But with the
 Serialization, JDO serializes the List&lt;Fact&gt; and inserts it into a
 column named Facts which occupies a single row of DATA table.</p>
-
 <p>There is a couple of drawbacks with this approach. For starters, one
 will not be able to query the facts directly. But most importantly, it
 is not possible to deserialize facts into a Fact of another package. In
@@ -1132,13 +1087,11 @@ we have to retrieve them in Fins. Classes and fields which are not
 serialized, are freely interchangeable between any package, but we must
 honor the java serialization rules for serialized field, else we get
 Class cast exception in runtime.</p>
-
 <p>JDO and Hibernate also supports annotation of persistence classes and
 with annotation one may avoid mapping files altogether. But with this,
 persistence classes end up with ORM specific annotations. To avoid
 lock-in with a specific ORM, we go with mapping files for the sake of
 interchangeability.</p>
-
 
 
 <div>&nbsp;</div>
@@ -1157,26 +1110,24 @@ interchangeability.</p>
 
 
 
-
 <h5 id="persist">Persist</h5>
-
 <p>Once we are through with the mapping, it is quite easy to persist an
 object in JDO. Following code block explains JDO persistence logic.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="n">PersistenceManagerFactory</span> <span class="nf">pmf</span> <span class="o">=</span>
-                <span class="n">JDOHelper</span><span class="p">.</span><span class="na">getPersistenceManagerFactory</span><span class="p">(</span><span class="s">&#34;datanucleus.properties&#34;</span><span class="p">);</span>    
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="n">PersistenceManagerFactory</span> <span class="n">pmf</span> <span class="o">=</span>
+                <span class="n">JDOHelper</span><span class="o">.</span><span class="na">getPersistenceManagerFactory</span><span class="o">(</span><span class="s">&#34;datanucleus.properties&#34;</span><span class="o">);</span>    
 
-        <span class="n">PersistenceManager</span> <span class="nf">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="p">.</span><span class="na">getPersistenceManager</span><span class="p">();</span>                         
-        <span class="n">Transaction</span> <span class="nf">tx</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="na">currentTransaction</span><span class="p">();</span>                                    <span class="k">try</span> <span class="p">{</span>
-            <span class="n">tx</span><span class="p">.</span><span class="na">begin</span><span class="p">();</span>
-            <span class="n">pm</span><span class="p">.</span><span class="na">makePersistent</span><span class="p">(</span><span class="n">symbol</span><span class="p">);</span>                                               
-            <span class="n">tx</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>                                                             
-        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">tx</span><span class="p">.</span><span class="na">isActive</span><span class="p">())</span> <span class="p">{</span>
-                <span class="n">tx</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span>
-            <span class="p">}</span>
-            <span class="n">pm</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-        <span class="p">}</span></code></pre></div>
-<table>
+        <span class="n">PersistenceManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="na">getPersistenceManager</span><span class="o">();</span>                         
+        <span class="n">Transaction</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">currentTransaction</span><span class="o">();</span>                                    <span class="k">try</span> <span class="o">{</span>
+            <span class="n">tx</span><span class="o">.</span><span class="na">begin</span><span class="o">();</span>
+            <span class="n">pm</span><span class="o">.</span><span class="na">makePersistent</span><span class="o">(</span><span class="n">symbol</span><span class="o">);</span>                                               
+            <span class="n">tx</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>                                                             
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">tx</span><span class="o">.</span><span class="na">isActive</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">tx</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">pm</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+</code></pre></div><table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1214,38 +1165,35 @@ either commit or rollback transaction based on transaction outcome.
 </tr>
 </tbody>
 </table>
-
 <p>The actual method that takes care of persistence in RStore is
 <code>JdoDao.insert()</code>.</p>
-
 <p><code>in.rstore.dao.jdo/JdoDao.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">void</span> <span class="n">insert</span><span class="p">(</span><span class="n">Symbol</span> <span class="nf">symbol</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">PersistenceManager</span> <span class="nf">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="p">.</span><span class="na">getPersistenceManager</span><span class="p">();</span>
-                <span class="n">Transaction</span> <span class="nf">tx</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="na">currentTransaction</span><span class="p">();</span>
-                <span class="k">try</span> <span class="p">{</span>
-                        <span class="n">tx</span><span class="p">.</span><span class="na">begin</span><span class="p">();</span>
-                        <span class="n">Symbol</span> <span class="nf">existingSymbol</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="na">getObjectById</span><span class="p">(</span><span class="n">Symbol</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
-                                        <span class="n">symbol</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-                        <span class="n">SymbolHelper</span><span class="p">.</span><span class="na">updateSymbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">existingSymbol</span><span class="p">);</span>
-                        <span class="n">tx</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
-                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">JDOObjectNotFoundException</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">pm</span><span class="p">.</span><span class="na">makePersistent</span><span class="p">(</span><span class="n">symbol</span><span class="p">);</span>
-                        <span class="n">tx</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
-                <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-                        <span class="k">if</span> <span class="p">(</span><span class="n">tx</span><span class="p">.</span><span class="na">isActive</span><span class="p">())</span> <span class="p">{</span>
-                                <span class="n">tx</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span>
-                        <span class="p">}</span>
-                        <span class="n">pm</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-                <span class="p">}</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>JdoDao.insert()</code>. initially tries to retrieve symbol object if similar
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">insert</span><span class="o">(</span><span class="n">Symbol</span> <span class="n">symbol</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">PersistenceManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="na">getPersistenceManager</span><span class="o">();</span>
+                <span class="n">Transaction</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">currentTransaction</span><span class="o">();</span>
+                <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">tx</span><span class="o">.</span><span class="na">begin</span><span class="o">();</span>
+                        <span class="n">Symbol</span> <span class="n">existingSymbol</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">getObjectById</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span>
+                                        <span class="n">symbol</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+                        <span class="n">SymbolHelper</span><span class="o">.</span><span class="na">updateSymbol</span><span class="o">(</span><span class="n">symbol</span><span class="o">,</span> <span class="n">existingSymbol</span><span class="o">);</span>
+                        <span class="n">tx</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JDOObjectNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">pm</span><span class="o">.</span><span class="na">makePersistent</span><span class="o">(</span><span class="n">symbol</span><span class="o">);</span>
+                        <span class="n">tx</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+                <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">tx</span><span class="o">.</span><span class="na">isActive</span><span class="o">())</span> <span class="o">{</span>
+                                <span class="n">tx</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+                        <span class="o">}</span>
+                        <span class="n">pm</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>JdoDao.insert()</code>. initially tries to retrieve symbol object if similar
 one already exists in the database. If found, it uses
 <code>SymbolHelper.updateSymbol()</code> method to update the retrieved object&rsquo;s
 fields with new values. JDO keeps track of any modification to retrieved
 object and auto updates the tables on any changes. In case object is not
 found in the database, then <code>PM.makePersistent()</code> method persists the
 new symbol.</p>
-
 <p>Next section explains object retrieval via JDO, Hibernate or MyBatis.</p>
 
           </main>

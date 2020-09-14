@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>UiFactory - GWT Tutorial - CodeTab</title></head>
 
@@ -711,70 +711,61 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="6-4-uifactory">6.4. UiFactory</h2>
-
+            <h2 id="64uifactory">6.4. UiFactory</h2>
 <p>UiBinder constructs a widget in multiple ways, and they fall into two
 categories.</p>
-
 <ul>
-<li><p>UiBinder creates the widget and insert it to UI structure.</p></li>
-
-<li><p>Application code creates the widget and hand it over to UiBinder to
-insert it to UI structure.</p></li>
+<li>
+<p>UiBinder creates the widget and insert it to UI structure.</p>
+</li>
+<li>
+<p>Application code creates the widget and hand it over to UiBinder to
+insert it to UI structure.</p>
+</li>
 </ul>
-
 <h5 id="widget-creation-delegated-to-uibinder">Widget creation delegated to UiBinder</h5>
-
 <p>This is of two types - without value attributes and with value
 attributes.</p>
-
-<p><strong>Without value attributes</strong> - For <code>&lt;f:TitlePanel ui:field=”titlePanel”
-/&gt;</code>, UiBinder uses default constructor of TitlePanel to create the
+<p><strong>Without value attributes</strong> - For <code>&lt;f:TitlePanel ui:field=”titlePanel” /&gt;</code>, UiBinder uses default constructor of TitlePanel to create the
 widget.</p>
-
-<p><strong>With value attributes and @UiConstructor</strong> - For <code>&lt;f:TitlePanel
-ui:field=”titlePanel” myText=”some text” /&gt;</code>, UiBinder looks for a
+<p><strong>With value attributes and @UiConstructor</strong> - For <code>&lt;f:TitlePanel ui:field=”titlePanel” myText=”some text” /&gt;</code>, UiBinder looks for a
 constructor annotated with @UiConstructor and if there is one with
 matching parameters then uses it to create the widget.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiConstructor</span>
-        <span class="kd">public</span> <span class="nf">TitlePanel</span><span class="p">(</span><span class="n">String</span> <span class="nf">myText</span><span class="p">){</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-                <span class="n">label</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">myText</span><span class="p">);</span>
-        <span class="p">}</span></code></pre></div>
-<p><strong>With value attributes and setter methods</strong> - In case there is no
+        <span class="kd">public</span> <span class="nf">TitlePanel</span><span class="o">(</span><span class="n">String</span> <span class="n">myText</span><span class="o">){</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+                <span class="n">label</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">myText</span><span class="o">);</span>
+        <span class="o">}</span>
+</code></pre></div><p><strong>With value attributes and setter methods</strong> - In case there is no
 constructor that fulfills the above conditions, then UiBinder requires a
 setter method to set the value of the attribute. In the previous
 example, UiBinder looks for method <code>setMyText()</code>. It is important to
 note that UiBinder calls the setter once widget is instantiated.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">TitlePanel</span><span class="p">(){</span>
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-        <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="nf">TitlePanel</span><span class="o">(){</span>
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+        <span class="o">}</span>
 
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">setMyText</span><span class="p">(</span><span class="n">String</span> <span class="nf">myText</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">label</span><span class="p">.</span><span class="na">text</span> <span class="o">=</span> <span class="n">myText</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<h5 id="create-widget-and-handover-it-to-uibinder">Create Widget and handover it to UiBinder</h5>
-
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMyText</span><span class="o">(</span><span class="n">String</span> <span class="n">myText</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">label</span><span class="o">.</span><span class="na">text</span> <span class="o">=</span> <span class="n">myText</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><h5 id="create-widget-and-handover-it-to-uibinder">Create Widget and handover it to UiBinder</h5>
 <p>In this method, we have to create the widget and handover it to UiBinder
 which adds the widget to UI structure as defined in ui.xml, and there
 are two ways to do this.</p>
-
 <p><strong>Field marked with @UiField(provided=true)</strong> - In case field is marked
 with <code>@UiField(provided=true)</code> then we have to instantiate the widget
 before calling <code>UiBinder.createAndBindUi()</code> method.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiField</span><span class="p">(</span><span class="n">provided</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-        <span class="n">Image</span> <span class="nf">image</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiField</span><span class="o">(</span><span class="n">provided</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+        <span class="n">Image</span> <span class="n">image</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="nf">SomeWidget</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">public</span> <span class="nf">SomeWidget</span><span class="o">()</span> <span class="o">{</span>
 
                 <span class="c1">// create image and then call createAndBind
 </span><span class="c1"></span>
-                <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Image</span><span class="p">(</span><span class="n">imageResource</span><span class="p">);</span>        
-                <span class="n">initWidget</span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">createAndBindUi</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-        <span class="p">}</span></code></pre></div>
-
+                <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Image</span><span class="o">(</span><span class="n">imageResource</span><span class="o">);</span>        
+                <span class="n">initWidget</span><span class="o">(</span><span class="n">binder</span><span class="o">.</span><span class="na">createAndBindUi</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+        <span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -792,79 +783,71 @@ before calling <code>UiBinder.createAndBindUi()</code> method.</p>
 
 
 
-
 <h3 id="gwt-uifactory">GWT UiFactory</h3>
-
 <p>In case you wish to bypass the above mentioned constructors i.e. default
 constructor or UiConstructor or constructor plus setter methods, then
 use <code>@UiFactory</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">TitlePanel</span> <span class="n">titlePanelFactory</span><span class="p">(</span><span class="n">String</span> <span class="nf">myText</span><span class="p">){</span>
-                <span class="n">TitlePanel</span> <span class="nf">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TitlePanel</span><span class="p">();</span>
+        <span class="kd">public</span> <span class="n">TitlePanel</span> <span class="nf">titlePanelFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">myText</span><span class="o">){</span>
+                <span class="n">TitlePanel</span> <span class="n">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TitlePanel</span><span class="o">();</span>
 
                 <span class="c1">// any other code
 </span><span class="c1"></span>
-                <span class="k">return</span> <span class="n">tp</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p>This factory method has to be added to java file where TitlePanel is
+                <span class="k">return</span> <span class="n">tp</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p>This factory method has to be added to java file where TitlePanel is
 used and not in TitlePanel.java. Once factory method is defined then we
 have to, instantiate and return proper widget, and Uibinder adds the
 widget returned by the factory method to UI Tree. We are free to add any
 other logic within in factory method.</p>
-
 <p>GWT UiFactory is suitable when we want to handle multiple instances of a
 widget in a uniform manner. Let&rsquo;s imagine, we have three instances of
 Zwidget then using UiField to attach a handler results in following code</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiField</span>
-        <span class="n">ZWidget</span>  <span class="nf">w1</span><span class="p">,</span>  <span class="n">w2</span><span class="p">,</span> <span class="n">w3</span><span class="p">;</span>
+        <span class="n">ZWidget</span>  <span class="n">w1</span><span class="o">,</span>  <span class="n">w2</span><span class="o">,</span> <span class="n">w3</span><span class="o">;</span>
 
-        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">SomeEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">w1</span><span class="p">);</span>
-        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">SomeEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">w2</span><span class="p">);</span>
-        <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">SomeEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">w3</span><span class="p">);</span></code></pre></div>
-<p>UiFactory compacts the code as</p>
+        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">SomeEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">w1</span><span class="o">);</span>
+        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">SomeEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">w2</span><span class="o">);</span>
+        <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">SomeEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">w3</span><span class="o">);</span>
+</code></pre></div><p>UiFactory compacts the code as</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">ZWidget</span> <span class="n">zFactory</span><span class="p">(){</span>
-                <span class="n">ZWidget</span> <span class="nf">w</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ZWidget</span><span class="p">();</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">SomeEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">zw</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">w</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p>Before creating a widget UiBinder checks whether there is a factory
+        <span class="kd">public</span> <span class="n">ZWidget</span> <span class="nf">zFactory</span><span class="o">(){</span>
+                <span class="n">ZWidget</span> <span class="n">w</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ZWidget</span><span class="o">();</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">SomeEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">zw</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">w</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p>Before creating a widget UiBinder checks whether there is a factory
 method that returns the widget and if there is one, it uses that method
 to obtain the widget instead creating one. It is our job to create and
 return the widget in the factory method, and we may add any other logic
 inside the factory method.</p>
-
 <p>With that brief introduction to GWT UiFactory we now move to create
 <code>AutoSuggest</code> and <code>TitlePanel</code> with UiFactory. First remove the handler
 added in the constructor of Snapshot and add factories.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">AutoSuggest</span> <span class="n">autoSuggestFactory</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">AutoSuggest</span> <span class="nf">autoSuggest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AutoSuggest</span><span class="p">();</span>
-                <span class="k">return</span> <span class="n">autoSuggest</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="kd">public</span> <span class="n">AutoSuggest</span> <span class="nf">autoSuggestFactory</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">AutoSuggest</span> <span class="n">autoSuggest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AutoSuggest</span><span class="o">();</span>
+                <span class="k">return</span> <span class="n">autoSuggest</span><span class="o">;</span>
+        <span class="o">}</span>
 
         <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">TitlePanel</span> <span class="n">titlePanelFactory</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">TitlePanel</span> <span class="nf">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TitlePanel</span><span class="p">();</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandler</span><span class="p">(</span><span class="n">NameEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="n">tp</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">tp</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p>UiFactory for <code>AutoSuggest</code> and <code>TitlePanel</code> is unnecessary, but soon we
+        <span class="kd">public</span> <span class="n">TitlePanel</span> <span class="nf">titlePanelFactory</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TitlePanel</span> <span class="n">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TitlePanel</span><span class="o">();</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandler</span><span class="o">(</span><span class="n">NameEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">tp</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">tp</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p>UiFactory for <code>AutoSuggest</code> and <code>TitlePanel</code> is unnecessary, but soon we
 are going have widgets with dozens of instances and as explained earlier
 using UiFactory for such widgets makes a lot of sense. For the sake of
 uniformity and also to make readers comfortable with @UiFactory we have
 used them even, for widgets with single instances like AutoSuggest and
 TitlePanel.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/uif-events.png" alt="Event wiring" />
 </figure>
 
-
-<h6 id="figure-6-2-event-wiring">Figure 6.2. Event wiring</h6>
-
+<h6 id="figure62event-wiring">Figure 6.2. Event wiring</h6>
 <p>Access the application and test event by selecting a symbol name in
 suggestion box and on TitlePanel displays the name, and it seems things
 are working as expected. Test it further by selecting Symbol menu to
@@ -872,65 +855,61 @@ open a second tab and then select a name and this causes TitlePanel in
 other tabs to display selected name. NameEvent fired by
 <code>AutoSelection.handleSelection()</code> propagates also to TitlePanel in other
 tabs.</p>
-
 <p>This is bound happen as we told the <code>EventBus</code> that <code>TitlePanel</code> is
 interested in <code>NameEvent</code>. EventBus dispatches the NameEvent to each and
 every TitlePanel and thats why event fired by Tab 2 updates
 Tab2-TitlePanel as well as in Tab1-TitlePanel.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/gwt/media/uif-events2.png" alt="Event broadcast" />
 </figure>
 
-
-<h6 id="figure-6-3-event-broadcast">Figure 6.3. Event broadcast</h6>
-
+<h6 id="figure63event-broadcast">Figure 6.3. Event broadcast</h6>
 <p>Event generated by widgets in one tab should be dispatched to interested
 widgets in that tab only, and events should not propagate to other tabs.</p>
-
 <p>EventBus API provides two methods exactly for this.</p>
-
 <ul>
-<li><p>fireEventFromSource(event, source)</p></li>
-
-<li><p>addHandlerToSource(type, source, handler)</p></li>
+<li>
+<p>fireEventFromSource(event, source)</p>
+</li>
+<li>
+<p>addHandlerToSource(type, source, handler)</p>
+</li>
 </ul>
-
 <p>These methods tag event to a source and listens only for events which
 are tagged to a specific source.</p>
-
 <p><code>in.fins.client.content/Snapshot.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">AutoSuggest</span> <span class="n">autoSuggestFactory</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">AutoSuggest</span> <span class="nf">autoSuggest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AutoSuggest</span><span class="p">();</span>
-                <span class="n">autoSuggest</span><span class="p">.</span><span class="na">setEventSource</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">autoSuggest</span><span class="p">;</span>
-        <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+        <span class="nd">@UiFactory</span>
+        <span class="kd">public</span> <span class="n">AutoSuggest</span> <span class="nf">autoSuggestFactory</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">AutoSuggest</span> <span class="n">autoSuggest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AutoSuggest</span><span class="o">();</span>
+                <span class="n">autoSuggest</span><span class="o">.</span><span class="na">setEventSource</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">autoSuggest</span><span class="o">;</span>
+        <span class="o">}</span>
 
         <span class="nd">@UiFactory</span>
-        <span class="kd">public</span> <span class="nf">TitlePanel</span> <span class="n">titlePanelFactory</span><span class="p">()</span> <span class="p">{</span>
-                <span class="n">TitlePanel</span> <span class="nf">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TitlePanel</span><span class="p">();</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">addHandlerToSource</span><span class="p">(</span><span class="n">NameEvent</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">tp</span><span class="p">);</span>
-                <span class="k">return</span> <span class="n">tp</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-<p><code>in.fins.client.widget/AutoSuggest.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="nf">Object</span> <span class="n">eventSource</span><span class="p">;</span>
+        <span class="kd">public</span> <span class="n">TitlePanel</span> <span class="nf">titlePanelFactory</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TitlePanel</span> <span class="n">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TitlePanel</span><span class="o">();</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">addHandlerToSource</span><span class="o">(</span><span class="n">NameEvent</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">tp</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">tp</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div><p><code>in.fins.client.widget/AutoSuggest.java</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="n">Object</span> <span class="n">eventSource</span><span class="o">;</span>
 
-<span class="p">....</span>
+<span class="o">....</span>
 
 
-        <span class="nd">@UiHandler</span><span class="p">(</span><span class="s">&#34;suggestBox&#34;</span><span class="p">)</span>
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">handleSelection</span><span class="p">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="p">.</span><span class="na">Suggestion</span><span class="o">&gt;</span> <span class="nf">s</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">log</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
-                <span class="n">EventBus</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">fireEventFromSource</span><span class="p">(</span><span class="k">new</span> <span class="n">NameEvent</span><span class="p">(</span><span class="n">suggestBox</span><span class="p">.</span><span class="na">getText</span><span class="p">()),</span>
-                                <span class="n">eventSource</span><span class="p">);</span>
-                <span class="n">suggestBox</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span class="nd">@UiHandler</span><span class="o">(</span><span class="s">&#34;suggestBox&#34;</span><span class="o">)</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleSelection</span><span class="o">(</span><span class="n">SelectionEvent</span><span class="o">&lt;</span><span class="n">SuggestOracle</span><span class="o">.</span><span class="na">Suggestion</span><span class="o">&gt;</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;Selection : &#34;</span> <span class="o">+</span> <span class="n">suggestBox</span><span class="o">.</span><span class="na">getText</span><span class="o">());</span>
+                <span class="n">EventBus</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">fireEventFromSource</span><span class="o">(</span><span class="k">new</span> <span class="n">NameEvent</span><span class="o">(</span><span class="n">suggestBox</span><span class="o">.</span><span class="na">getText</span><span class="o">()),</span>
+                                <span class="n">eventSource</span><span class="o">);</span>
+                <span class="n">suggestBox</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
 
-        <span class="kd">public</span> <span class="nf">void</span> <span class="n">setEventSource</span><span class="p">(</span><span class="n">Object</span> <span class="nf">eventSource</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">eventSource</span> <span class="o">=</span> <span class="n">eventSource</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></div>
-
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setEventSource</span><span class="o">(</span><span class="n">Object</span> <span class="n">eventSource</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">eventSource</span> <span class="o">=</span> <span class="n">eventSource</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div>
 
 <div>&nbsp;</div>
 
@@ -947,21 +926,16 @@ are tagged to a specific source.</p>
 <div>&nbsp;</div>
 
 
-
 <p>Snapshot is used as eventSource because it is visible to both
 AutoSuggest and TitlePanel. Now AutoSuggest fires NameEvent tagged to a
 Snapshot instance, and TitlePanel handles NameEvent tagged with that
 Snapshot instance and with this Snapshot tab is no longer interested in
 NameEvent originated in other tabs.</p>
-
 <h2 id="constructor-or-uifactory">Constructor or UiFactory</h2>
-
 <p>Less widget instances or instance behavior is heterogeneous go for
 constructor.</p>
-
 <p>Multiple widget instances and instances have similar behavior then go
 for UiFactory.</p>
-
 <p>Next section designs FactPanel to display some facts about the Symbol
 selected by the user.</p>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>filters on Codetab</title>
@@ -20,7 +20,7 @@
       <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml
-dataDefs: bs: query: block: &amp;#34;table:contains(Sources Of Funds)&amp;#34; selector: &amp;#34;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;#34; items: - item: name: item selector: &amp;#34;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;#34; index: 5 breakAfter: - &amp;#34;Book Value (Rs)&amp;#34; filters: - filter: { type: value, pattern: &amp;#34;&amp;#34; } - filter: { type: value, pattern: &amp;#34;Sources Of Funds&amp;#34; } - filter: { type: value, pattern: &amp;#34;Application Of Funds&amp;#34; } dims: - item: name: year selector: &amp;#34;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;#34; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ The filter is normally applied after parse is over and members are constructed. 
       <description>Filters The extracted data of the previous example contains many unwanted items and Scoopi provides filters to remove them from output.
 The filter is normally applied after parse is over and members are created. The Example 5 uses filter for row axis. The filter snippet is as below
 defs/examples/jsoup/ex-5/job.yml
-row: query: region: &amp;#34;table:contains(Sources Of Funds)&amp;#34; field: &amp;#34;tr:nth-child(%{row.index}) &amp;gt; td:nth-child(1)&amp;#34; members: [ member: {name: item, index: 5, breakAfter: [&amp;#34;Book Value (Rs)&amp;#34;] }, ] filters: [ filter: { type: value, pattern: &amp;#34;&amp;#34; }, filter: { type: value, pattern: &amp;#34;Sources Of Funds&amp;#34; }, filter: { type: value, pattern: &amp;#34;Application Of Funds&amp;#34; }, ] The filter definition remove the members whose row axis value</description>
+row: query: region: &amp;quot;table:contains(Sources Of Funds)&amp;quot; field: &amp;quot;tr:nth-child(%{row.index}) &amp;gt; td:nth-child(1)&amp;quot; members: [ member: {name: item, index: 5, breakAfter: [&amp;quot;Book Value (Rs)&amp;quot;] }, ] filters: [ filter: { type: value, pattern: &amp;quot;&amp;quot; }, filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; }, filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; }, ] The filter definition remove the members whose row axis value</description>
     </item>
     
   </channel>

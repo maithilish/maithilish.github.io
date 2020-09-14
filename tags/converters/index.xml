@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>converters on Codetab</title>
@@ -32,7 +32,7 @@ In Example-8, defs/examples/jsoup/ex-8/job.xml, we override DataConverter step o
       <description>Converters This chapter explain step override and converters.
 Step Override We can override any step at task level. The Example 8 overrides converter step of jsoupDefault steps in bs task. The relevant snippet is shown below
 defs/examples/jsoup/ex-8/job.yml
-bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org.codetab.scoopi.step.convert.DataConverter&amp;#34; previous: process next: appender The other tasks in the example uses jsoupDefault steps as it is but the bsTask takes all steps from jsoupDefault and replace converter step with the step defined locally at task level.</description>
+bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;quot;org.codetab.scoopi.step.convert.DataConverter&amp;quot; previous: process next: appender The other tasks in the example uses jsoupDefault steps as it is but the bsTask takes all steps from jsoupDefault and replace converter step with the step defined locally at task level.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@ bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org
       <description>Converters This chapter explain adding new steps to workflow and converter plugins.
 Add new Step We can add new steps at task level. The Example 8 adds converter step to jsoupDefault steps in bs task. The relevant snippet is shown below
 defs/examples/fin/jsoup/ex-8/job.yml
-bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org.codetab.scoopi.step.process.DataConverter&amp;#34; previous: filter next: appender ....  The bsTask uses jsoupDefault built-in step as base and inserts converter step between filter and appender steps.</description>
+bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;quot;org.codetab.scoopi.step.process.DataConverter&amp;quot; previous: filter next: appender .... The bsTask uses jsoupDefault built-in step as base and inserts converter step between filter and appender steps.</description>
     </item>
     
   </channel>

@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Split Definitions - Gotz ETL - CodeTab</title></head>
 
@@ -400,15 +400,11 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<p>The definition file <strong>job.xml</strong> tends to grow as you scrape more and
+            <p>The definition file <strong>job.xml</strong> tends to grow as you scrape more and
 more data sets or pages. This chapter explains how to split the
 definitions into multiple files for easy maintenance.</p>
-
 <p>Gotz allows you to split the definitions either on job types or on model
 types.</p>
-
 
 
 <div>&nbsp;</div>
@@ -426,9 +422,7 @@ types.</p>
 <div>&nbsp;</div>
 
 
-
 <h2 id="split-on-job-types">Split on Job Types</h2>
-
 <p>The examples so far scraped BS, PL, Quote data - price and snapshot - of
 Acme. We can split the definitions into three job types quote, bs and
 pl. The Example-13 splits job.xml into quote.xml, bs.xml and pl.xml. The
@@ -438,8 +432,8 @@ The bean.xml is as below</p>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task quote&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;quote.xml&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task bs&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;bs.xml&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task pl&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;pl.xml&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p>When we split on job types, the broad outline of each definition file is
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p>When we split on job types, the broad outline of each definition file is
 as below</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
 
@@ -458,9 +452,8 @@ as below</p>
 
     <span class="nt">&lt;dataDef&gt;</span>                  <span class="c">&lt;!-- one or more --&gt;</span>
 
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<h2 id="split-on-model">Split on Model</h2>
-
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><h2 id="split-on-model">Split on Model</h2>
 <p>Another way to split is based Gotz model objects. The Locators, DataDef
 and Fields are model objects. The Example-14 shows how to split on them.
 The bean.xml is as follows</p>
@@ -468,9 +461,8 @@ The bean.xml is as follows</p>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;locator&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;locator.xml&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;task&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;task.xml&#34;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;datadef&#34;</span> <span class="na">xmlFile=</span><span class="s">&#34;datadef.xml&#34;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p>The outline of files are as below.</p>
-
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p>The outline of files are as below.</p>
 
 
 <div>&nbsp;</div>
@@ -489,14 +481,13 @@ The bean.xml is as follows</p>
 
 
 
-
 <p><strong>locator.xml</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
 
     <span class="nt">&lt;locators</span> <span class="nt">/&gt;</span>               <span class="c">&lt;!-- one or more --&gt;</span>
 
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p><strong>task.xml</strong></p>
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p><strong>task.xml</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
 
     <span class="nt">&lt;fields&gt;</span>
@@ -510,14 +501,14 @@ The bean.xml is as follows</p>
         <span class="nt">&lt;/tasks&gt;</span>
     <span class="nt">&lt;/fields&gt;</span>
 
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p><strong>datadef.xml</strong></p>
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p><strong>datadef.xml</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;gotz&gt;</span>
 
   <span class="nt">&lt;dataDef</span> <span class="nt">/&gt;</span>               <span class="c">&lt;!-- one or more --&gt;</span>
 
-<span class="nt">&lt;/gotz&gt;</span></code></pre></div>
-<p>In the next chapter we explain the logging framework of Gotz.</p>
+<span class="nt">&lt;/gotz&gt;</span>
+</code></pre></div><p>In the next chapter we explain the logging framework of Gotz.</p>
 
           </main>
         </div>

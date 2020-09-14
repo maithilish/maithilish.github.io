@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T19:05:00+0530",
         "dateModified" : "2019-01-10T19:05:00+0530",
-        "wordCount" : "179",
+        "wordCount" : "178",
         "keywords" : [ "rpc","Blog" ]
     }
 </script>
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>RPC - GWT Tutorial - CodeTab</title></head>
 
@@ -711,51 +711,50 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="7-2-rest-of-rpc">7.2. Rest of RPC</h2>
-
+            <h2 id="72rest-of-rpc">7.2. Rest of RPC</h2>
 <p>In the previous section, we have gone through nuts and bolts of RPC. For
 some, its pattern may still bit fuzzy and to reinforce the concept we
 leave the rest of datastore calls as an exercise for readers.</p>
-
 <p>Client still has SymbolDatabase calls in following three classes.</p>
-
 <ul>
-<li><p>in.fins.client.action/SymbolAction.java</p></li>
-
-<li><p>in.fins.client.action/DataGroupAction.java</p></li>
-
-<li><p>in.fins.client.action/DataAction.java</p></li>
+<li>
+<p>in.fins.client.action/SymbolAction.java</p>
+</li>
+<li>
+<p>in.fins.client.action/DataGroupAction.java</p>
+</li>
+<li>
+<p>in.fins.client.action/DataAction.java</p>
+</li>
 </ul>
-
 <p>Shift them to RPC with following steps.</p>
-
 <ul>
-<li><p>define method in ISymbolService interface. Use method names -
+<li>
+<p>define method in ISymbolService interface. Use method names -
 getSymbol(), getDataGroup() and getData() with proper parameters and
-return type.</p></li>
-
-<li><p>define equivalent methods in ISymbolServiceAsync with a
-AsyncCallback as last parameter and return type as void.</p></li>
-
-<li><p>implement the methods in SymbolService on server side.</p></li>
-
-<li><p>invoke service methods from client</p></li>
+return type.</p>
+</li>
+<li>
+<p>define equivalent methods in ISymbolServiceAsync with a
+AsyncCallback as last parameter and return type as void.</p>
+</li>
+<li>
+<p>implement the methods in SymbolService on server side.</p>
+</li>
+<li>
+<p>invoke service methods from client</p>
+</li>
 </ul>
-
 <h2 id="client-modules">Client modules</h2>
-
 <p>Random and DateTimeFormat in SymbolDatabase throws runtime error on
-server as they are meant for client side coding as explained in Chapter
-- Model. On server side, you are free to use any Java class. So replace
-them with java.util.Random and java.text.SimpleDataFormat.</p>
-
+server as they are meant for client side coding as explained in Chapter</p>
+<ul>
+<li>Model. On server side, you are free to use any Java class. So replace
+them with java.util.Random and java.text.SimpleDataFormat.</li>
+</ul>
 <p>In the next chapter, we migrate to a RDBMS datasource from mock
 SymbolDatabase.</p>
-
 <h5 id="forward-pointers">Forward Pointers</h5>
-
 <p><em>Deferred Binding</em> - refer <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideCodingBasicsDeferred" target="_blank">Coding Basics - Deferred
 Binding</a>
 and

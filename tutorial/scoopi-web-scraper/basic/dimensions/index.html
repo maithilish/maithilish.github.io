@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,85 +491,68 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="datadef-dimensions">DataDef Dimensions</h1>
-
+            <h1 id="datadef-dimensions">DataDef Dimensions</h1>
 <p>The previous quickstart example scrapes stock price data from the page
 and associates it with the item named price. However, we are also
 interested to know on what date the price was scraped. The <em>dims</em> allows
 Scoopi to add multiple dimensions to scraped data.</p>
-
 <p>In this chapter, we go through <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-1/job.yml" target="_blank">Example 1
 job.xml</a>
 to explain <em>dimensions</em>. The example adds date dimension to scraped
 price data.</p>
-
 <h2 id="dimensions">Dimensions</h2>
-
 <p>The datadefs snippet from <code>defs/examples/fin/jsoup/ex-1/job.yml</code> is as
 below</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
 
   price:
     query:
-      block: &#34;div#price_tick&#34;
-      selector: &#34;*&#34;
+      block: &quot;div#price_tick&quot;
+      selector: &quot;*&quot;
     items: [ 
-      item: { name: &#34;Price&#34;, value: &#34;Price&#34; },
+      item: { name: &quot;Price&quot;, value: &quot;Price&quot; },
     ]
     dims: [ 
-      item: { name: &#34;date&#34;, script: &#34;document.getFromDate()&#34; },
-    ]</code></pre></div>
-<p>It uses dims array to define date dimension. The dims array consists of
+      item: { name: &quot;date&quot;, script: &quot;document.getFromDate()&quot; },
+    ]
+</code></pre><p>It uses dims array to define date dimension. The dims array consists of
 one or more item which similar to items item element.</p>
-
 <p>For price item, we hard code the value to price, but for date item, we
 use script property to set the value. Script gets the value using the
 built-in JavaScript script engine and we call getFromDate() method on
 document object which returns the date and time when document was
 loaded.</p>
-
 <p>The dims array can define multiple dimensions and we explain it in a
 later chapter.</p>
-
 <h2 id="items-dimensions-and-axis">Items, Dimensions and Axis</h2>
-
 <p>Internally Scoopi defines data by data items which is composed of axis
 which is similar in concept to that of spreadsheet.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/scoopi-web-scraper/media/scoopi-datadef-axis.png" alt="Scoopi DataDef Dimensions" />
 </figure>
-
 
 <p>For price datadef, it defines three axis - FACT, ITEM and DATE. The data
 we are interested in is called as Fact which is same as value held by a
 cell in spreadsheet. The other two axes, ITEM and DATE say something
 about the Fact. For example, if price of company stock is say 121.80 on
 01-01-2018, then the axis values are as below</p>
-
 <pre><code>FACT    : 121.80
 ITEM    : Price
 DATE    : 01-01-2018
 </code></pre>
-
 <p>From the combination of three axes we deduce that price as on Jan 1st
 2018 is 121.80.</p>
-
 <p>The item elements defined either in items or dims arrays are internally
 mapped to axis. Even though the fact axis is not defined in datadef,
 Scoopi adds default fact axis and assigns selector defined in query
 element to it. The value retrieved by the query/selector is set to value
 field of FACT axis.</p>
-
 <p>The concept of dimensions, axis and fact are borrowed from
 Multidimensional Expression (MDX) language used in Data Warehouse which
 allows us to construct multidimensional data. It provides extreme
 flexibility as we move on to more complex data definitions. Just with
 few lines we can scrape huge set of data and associate it in multiple
 way.</p>
-
 <p>The next chapter covers multiple items and dynamic queries.</p>
 
           </main>

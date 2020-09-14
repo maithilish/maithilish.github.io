@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Definition File - Scoopi Web Scraper - CodeTab</title></head>
 
@@ -421,18 +421,13 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="defs-locators-and-tasks">Defs, Locators and Tasks</h1>
-
+            <h1 id="defs-locators-and-tasks">Defs, Locators and Tasks</h1>
 <p>Scoopi uses set of YML definition files to extract data from HTML pages.
 To learn the YML elements used by the definition files, Scoopi
 distribution comes with a set of examples which are under
 <code>def/examples/jsoup</code> folder. Examples are named as ex-1, ex-2 and so on,
 each with increasing complexity.</p>
-
 <h2 id="scoopi-definition-files">Scoopi Definition Files</h2>
-
 <p>Scoopi creates the data model based on YML definition files. We can
 specify the definition file using <em>scoopi.defs.dir</em> configuration
 property, which is normally set in <code>scoopi.properties</code> file located in
@@ -440,111 +435,93 @@ property, which is normally set in <code>scoopi.properties</code> file located i
 loads the example 1. As we progress through the examples, you need to
 edit <code>conf/scoopi.properties</code> file and set property <em>scoopi.defs.dir</em> to
 the specific example.</p>
-
 <h3 id="def-file">Def file</h3>
-
 <p>The def file defines the definition required to run Scoopi. In examples,
 we have named the definition file as <code>job.yml</code> but it can be named
 anything as long as file extension is <em>yml</em>. In otherwords, any file
 from the defs directory with file extension <em>yml</em> is loaded by scooopi
 as definition file.</p>
-
 <p>The top level elements in the <code>job.yml</code> are</p>
-
 <ul>
 <li>locatorGroups</li>
 <li>taskGroups</li>
 <li>dataDefs</li>
 </ul>
-
 <p>In this chapter, we go through <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/jsoup/ex-1/job.yml" target="_blank">Example-1
 job.xml</a> and explain <em>locatorGroups</em> and <em>taskGroups</em> elements. Refer <a href="/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/">Scoopi Installation</a> to know how to run Scooopi and examples.</p>
-
 <h2 id="locatorgroups">LocatorGroups</h2>
-
 <p>LocatorGroups defines list of locators and locator specifies the name
 and URL of the HTML page to fetch from the Internet or local file
 system.</p>
-
 <p>In the example <code>job.yml</code>, the locatorGroups is defined as</p>
-
 <p><code>defs/examples/jsoup/ex-1/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
 
   quoteGroup:
     locators: [
-       { name: acme, url: &#34;/defs/examples/page/acme-quote.html&#34; }  
-    ]</code></pre></div>
-<p>It defines a locatorGroups named quoteGroup which in turn defines one
+       { name: acme, url: &quot;/defs/examples/page/acme-quote.html&quot; }  
+    ]
+</code></pre><p>It defines a locatorGroups named quoteGroup which in turn defines one
 locator. The locator name is acme and its <em>url</em> points to local HTML
 file <code>acme-quote.html</code> which is in <code>defs/examples/page</code> folder.</p>
-
 <p>Here is one more example with two groups</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
 
   groupA:
     locators: [
-       { name: acme, url: &#34;/defs/examples/page/acme-quote.html&#34; },
-       { name: exPage, url: &#34;http://example.org&#34; }    
+       { name: acme, url: &quot;/defs/examples/page/acme-quote.html&quot; },
+       { name: exPage, url: &quot;http://example.org&quot; }    
     ]
 
   groupB:
     locators: [
-       { name: acme, url: &#34;/defs/examples/page/acme-bs.html&#34; }  
-    ]</code></pre></div>
-<p>It defines two locatorGroups named groupA and groupB. The first group
+       { name: acme, url: &quot;/defs/examples/page/acme-bs.html&quot; }  
+    ]
+</code></pre><p>It defines two locatorGroups named groupA and groupB. The first group
 defines two locators and the second group defined one locator. To scrape
 pages from website, we need to specify the actual address of the page
 such as <a href="http://example.org">http://example.org</a>.</p>
-
 <p>Please note that in the above examples we have used JSON array construct
 using [ ] and {} as we can define one locator per line. Alternativley,
 you are free to use slightly lengthier YML array construct as show below</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
 
   groupA:
     locators:
        - name: acme
-         url: &#34;/defs/examples/page/acme-quote.html&#34;
+         url: &quot;/defs/examples/page/acme-quote.html&quot;
        - name: exPage
-         url: &#34;http://example.org&#34;</code></pre></div>
-<h2 id="taskgroups">TaskGroups</h2>
-
+         url: &quot;http://example.org&quot;
+</code></pre><h2 id="taskgroups">TaskGroups</h2>
 <p>TaskGroups property is used to define task which has to be executed for
 the page loaded by the locator.</p>
-
 <p>The snippet from example <code>job.yml</code> with locatorGroups and taskGroups is</p>
-
 <p><code>defs/examples/jsoup/ex-1/job.yml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
 
   quoteGroup:
     locators: [
-       { name: acme, url: &#34;/defs/examples/page/acme-quote.html&#34; }  
+       { name: acme, url: &quot;/defs/examples/page/acme-quote.html&quot; }  
     ]
 
 taskGroups:
 
   quoteGroup:
     priceTask:
-      dataDef: price</code></pre></div>
-<p>The <em>taskGroups</em> defines a task group named <em>quoteGroup</em>. The task group
+      dataDef: price
+</code></pre><p>The <em>taskGroups</em> defines a task group named <em>quoteGroup</em>. The task group
 has a task named <em>priceTask</em> with a property named dataDef and its value
 is <em>price</em>.</p>
-
 <p>Scoopi executes this task to all locators defined for <em>quoteGroup</em> in
 <em>locatorGroups</em>. The above example defines only one locator for the
 group <em>quoteGroup</em> and task gets executed for the HTML page loaded by
 that locator.</p>
-
 <p>At this point, Scoopi knows</p>
-
 <ul>
 <li>which pages to download or load</li>
 <li>which tasks to execute for which page</li>
 <li>the dataDef to use for a task</li>
 </ul>
-
 <p>In the next chapter, we describe dataDefs which is used to parse the
 data from the page.</p>
 

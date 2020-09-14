@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Test Setup - WordPress Plugin Development - CodeTab</title></head>
 
@@ -625,19 +625,13 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h2 id="12-2-wordpress-test-setup">12.2. WordPress Test Setup</h2>
-
+            <h2 id="122wordpress-test-setup">12.2. WordPress Test Setup</h2>
 <p>In the previous blog, <a href="/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/">WordPress PHPUnit Setup</a> we put up all the scaffolding necessary to run WordPress Plugin Tests. In this blog, we test the setup by running some test cases.</p>
-
 <h3 id="run-test-cases">Run Test Cases</h3>
-
 <p>The test cases are placed in plugins&rsquo; <code>tests/phpunit/tests</code> folder.
 Let&rsquo;s start with a test case to test the constants defined in the
 <code>wp-simple-plugin.php</code>. Add a test file <code>test-wp-simple-plugin.php</code> to
 <code>tests/phpunit/tests</code> with following contents.</p>
-
 <p><code>wp-simple-plugin/tests/phpunit/tests/test-wp-simple-plugin.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -651,27 +645,22 @@ Let&rsquo;s start with a test case to test the constants defined in the
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nv">$url</span><span class="p">,</span> <span class="nx">WPSP_URL</span> <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>PHPUnit is an Object Oriented Testing Framework and we define test class
+</code></pre></div><p>PHPUnit is an Object Oriented Testing Framework and we define test class
 by extending the WordPress Tests Library class <code>WP_UnitTestCase</code>. The
 test methods are prefixed with <strong>test_</strong> and in the test method
 <code>test_constants()</code> we assert whether constants WPSP_NAME and WPSP_URL
 exists.</p>
-
 <p>Let&rsquo;s run test and see how it progresses.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd wp-simple-plugin
-$ phpunit</code></pre></div>
-<p>PHPUnit is called from the top directory of the plugin where it reads
+<pre><code class="language-screen" data-lang="screen">$ cd wp-simple-plugin
+$ phpunit
+</code></pre><p>PHPUnit is called from the top directory of the plugin where it reads
 the phpunit.xml and executes test files defined by it.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-first-run.png" alt="WordPress Test Setup - PHPUnit run tests" />
 </figure>
 
-
 <p>If all is well, then you should get see OK at the end of result with
 counts of tests and assertions.</p>
-
 
 
 <div>&nbsp;</div>
@@ -689,75 +678,64 @@ counts of tests and assertions.</p>
 <div>&nbsp;</div>
 
 
-
 <h3 id="troubleshoot-the-setup">Troubleshoot the Setup</h3>
-
 <p>But, many things tends to go wrong when we first execute the tests. Some
 of the typical errors and how to troubleshoot them are explained here.</p>
-
 <p>Database Connection Error</p>
-
 <p>When Test Lib is unable to connect to test database, it displays error
 message in HTML format. Resolve database connection error by going
 through following steps.</p>
-
 <ul>
-<li><p>check whether you are able to connect to wptest database through
+<li>
+<p>check whether you are able to connect to wptest database through
 mysql client by using username - wptest and password - wptest.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp
 $ bin/mysql --pass=wptest -u wptest wptest
-mysql&gt; exit</code></pre></div>
-<p>In case, you are unable to connect to MySQL then check whether mysql
+mysql&gt; exit
+</code></pre><p>In case, you are unable to connect to MySQL then check whether mysql
 is up and running by using ps in Linux or process manager in
-Windows.</p></li>
-
-<li><p>next, check whether you are able to connect to MySQL through network
+Windows.</p>
+</li>
+<li>
+<p>next, check whether you are able to connect to MySQL through network
 layer by using host name and port.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">$ cd /opt/lampp
+<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp
 $ bin/mysql --pass=wptest -u wptest --host=localhost.localdomain --port=3306 wptest
-mysql&gt; exit</code></pre></div>
-<p>In case, you are unable to connect to MySQL then check whether mysql
+mysql&gt; exit
+</code></pre><p>In case, you are unable to connect to MySQL then check whether mysql
 is up and running and its listening port is 3306 by using ps in
 Linux.</p>
-
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-mysql-ps.png" alt="WordPress Test Setup - MySQL     ps" />
 </figure>
+
 </li>
 </ul>
-
 <p>Host Name</p>
-
 <p>One more oddity we found was the host name and MySQL version. When path
 is pointed to MySQL version 5.3.x then we are able run tests with
 DB_HOST (wp-tests-config.php) is set as localhost.localdomain but not
 with localhost. However, with MySQL version 5.5.x we are able to run
 test even when DB_HOST is set as localhost.</p>
-
 <p>WordPress Core Path Error</p>
-
 <p>The ABSPATH definition in wp-tests-config.php should end with a trailing
 slash otherwise WordPress is unable to construct the absolute path of
 include files.</p>
-
 <p>Permission Error</p>
-
 <p>One more error is related to permission of WordPress directory.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">1) Test_WP_Simple_Plugin::test_constants
-UnexpectedValueException: RecursiveDirectoryIterator::__construct(/opt/lampp/wptest/wordpress/wp-content/uploads): failed to open dir: No such file or directory</code></pre></div>
-<p>The error indicates that WordPress instance created by Tests Library is
+<pre><code class="language-screen" data-lang="screen">1) Test_WP_Simple_Plugin::test_constants
+UnexpectedValueException: RecursiveDirectoryIterator::__construct(/opt/lampp/wptest/wordpress/wp-content/uploads): failed to open dir: No such file or directory
+</code></pre><p>The error indicates that WordPress instance created by Tests Library is
 unable to access the uploads directory in <code>wordpress/wp-content</code>. The
 user who runs the test should have write permission on wp-contents
 directory. To rectify this, either change the owner of the
 <code>/opt/lampp/wptest/wordpress</code> or add the user to group which owns the
 the wordpress directory.</p>
-
 <p>Plugin Link Error</p>
-
 <p>When you run tests that checks the constants if you get following error
 then it means Test Lib is unable to load the plugin main file (and also
 the plugin) and because of that constant WPSP_NAME is not defined.</p>
-<div class="highlight"><pre class="chroma"><code class="language-screen" data-lang="screen">There was 1 failure:
+<pre><code class="language-screen" data-lang="screen">There was 1 failure:
 
 1) Test_WP_Simple_Plugin::test_constants
 Failed asserting that two strings are identical.
@@ -770,19 +748,16 @@ Failed asserting that two strings are identical.
 /orange/work/tem/wp-simple-plugin/tests/phpunit/tests/test-wp-simple-plugin.php:7
 
 FAILURES!
-Tests: 1, Assertions: 1, Failures: 1.</code></pre></div>
-<p>To rectify this, you need to create link in wordpress/wp-content/plugins
+Tests: 1, Assertions: 1, Failures: 1.
+</code></pre><p>To rectify this, you need to create link in wordpress/wp-content/plugins
 directory pointing to the actual location of the plugin code as
 explained in <a href="/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/#create-plugin-link">Create Link to Plugin</a>.</p>
-
 <p>PHPUnit Error</p>
-
 <p>XAMPP comes with PHPUnit and PHP. On one occasion, PHPUnit threw some
 dependency error which happened when /opt/lampp/bin was in users $PATH.
 However, subsequently the problem has not repeated. We have never faced
 this problem when we use stock PHP that comes with Linux and
 phpunit.phar installed as explained in the previous blog.</p>
-
 
 
 <div>&nbsp;</div>
@@ -801,35 +776,30 @@ phpunit.phar installed as explained in the previous blog.</p>
 
 
 
-
 <h3 id="wordpress-options-and-tests">WordPress Options and Tests</h3>
-
 <p>In the previous blog, we used following code in
 <code>tests/phpunit/bootstrap.php</code> to activate and load the plugin.</p>
-
 <p><code>wp-simple-plugin/tests/phpunit/bootstrap.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">$GLOBALS[ &#39;wp_tests_options&#39; ] = array(
         &#39;active_plugins&#39; =&gt; array(
                 &#39;wp-simple-plugin/wp-simple-plugin.php&#39;
         ),
         &#39;wpsp_test&#39; =&gt; true
-);</code></pre></div>
-<p>The array at index <strong>active_plugins</strong> is used by Tests Library to
+);
+</code></pre></div><p>The array at index <strong>active_plugins</strong> is used by Tests Library to
 activate and load the plugin as part of WordPress initialization. The
 subsequent items in the array are used to create WordPress Options that
 are available during testing. With the above code, Tests Library creates
 an WordPress Option named <strong>wpsp_test</strong> and sets it value as true.
 Within test cases, we can refer this temporary option using WordPress
 Options API.</p>
-
 <p>To test the option declared in bootstrap.php, add a new test case to the
 test file and re-run the phpunit.</p>
-
 <p><code>wp-simple-plugin//tests/phpunit/tests/test-wp-simple-plugin.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_wpsp_option () {
         $this-&gt;assertTrue(get_option(&#39;wpsp_test&#39;));
-    }</code></pre></div>
-<p>In the next blog, we explain the various patterns used to unit test the
+    }
+</code></pre></div><p>In the next blog, we explain the various patterns used to unit test the
 Share on Social Plugin.</p>
 
           </main>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scoopi Web Scraper V094 on Codetab</title>
@@ -50,7 +50,7 @@ Scoopi Definition Files Scoopi creates the data model based on YML definition fi
       <description>DataDef Scoopi uses datadef to define data. Datadef contains axis, query, script and members which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Example-1 job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/page/acme-quote.html page.
 The datadef snippet from defs/examples/jsoup/ex-1/job.yml is as below
-dataDefs: price: axis: fact: query: region: &amp;#34;div#price_tick&amp;#34; field: &amp;#34;*&amp;#34; col: query: script: configs.</description>
+dataDefs: price: axis: fact: query: region: &amp;quot;div#price_tick&amp;quot; field: &amp;quot;*&amp;quot; col: query: script: configs.</description>
     </item>
     
     <item>
@@ -97,7 +97,7 @@ The Example 3 extracts multiple data from defs/examples/page/acme-bs.html page, 
       <description>Filters The extracted data of the previous example contains many unwanted items and Scoopi provides filters to remove them from output.
 The filter is normally applied after parse is over and members are created. The Example 5 uses filter for row axis. The filter snippet is as below
 defs/examples/jsoup/ex-5/job.yml
-row: query: region: &amp;#34;table:contains(Sources Of Funds)&amp;#34; field: &amp;#34;tr:nth-child(%{row.index}) &amp;gt; td:nth-child(1)&amp;#34; members: [ member: {name: item, index: 5, breakAfter: [&amp;#34;Book Value (Rs)&amp;#34;] }, ] filters: [ filter: { type: value, pattern: &amp;#34;&amp;#34; }, filter: { type: value, pattern: &amp;#34;Sources Of Funds&amp;#34; }, filter: { type: value, pattern: &amp;#34;Application Of Funds&amp;#34; }, ] The filter definition remove the members whose row axis value</description>
+row: query: region: &amp;quot;table:contains(Sources Of Funds)&amp;quot; field: &amp;quot;tr:nth-child(%{row.index}) &amp;gt; td:nth-child(1)&amp;quot; members: [ member: {name: item, index: 5, breakAfter: [&amp;quot;Book Value (Rs)&amp;quot;] }, ] filters: [ filter: { type: value, pattern: &amp;quot;&amp;quot; }, filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; }, filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; }, ] The filter definition remove the members whose row axis value</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@ row: query: region: &amp;#34;table:contains(Sources Of Funds)&amp;#34; field: &a
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/</guid>
       <description>Multiple Tasks Scoopi can execute multiple tasks for a locator and also multiple tasks on multiple locatorGroups.
-Multiple tasks and single Locator group The Example-1 scrape Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. One option is to define acme-quote.html locator in two locatorGroups and assign task to each of them. This unnecessarily downloads acme-quote.html twice. Instead, it is better to define single locatorGroup and assign two tasks - priceTask and snapshotTask so that page downloads only once.</description>
+Multiple tasks and single Locator group The Example-1 scrape Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. One option is to define acme-quote.html locator in two locatorGroups and assign task to each of them. This unnecessarily downloads acme-quote.html twice. Instead, it is better to define single locatorGroup and assign two tasks</description>
     </item>
     
     <item>
@@ -129,7 +129,7 @@ Scoopi is designed to execute tasks as workflow which is normally referred as st
       <description>Converters This chapter explain step override and converters.
 Step Override We can override any step at task level. The Example 8 overrides converter step of jsoupDefault steps in bs task. The relevant snippet is shown below
 defs/examples/jsoup/ex-8/job.yml
-bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org.codetab.scoopi.step.convert.DataConverter&amp;#34; previous: process next: appender The other tasks in the example uses jsoupDefault steps as it is but the bsTask takes all steps from jsoupDefault and replace converter step with the step defined locally at task level.</description>
+bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;quot;org.codetab.scoopi.step.convert.DataConverter&amp;quot; previous: process next: appender The other tasks in the example uses jsoupDefault steps as it is but the bsTask takes all steps from jsoupDefault and replace converter step with the step defined locally at task level.</description>
     </item>
     
     <item>
@@ -139,7 +139,7 @@ bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;#34;org
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/</guid>
       <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, we can use Scoopi to scrape links from a start page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
-Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-quote.html page.</description>
+Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-quote.html page. Links snippet in the html page is as below.</description>
     </item>
     
     <item>
@@ -160,7 +160,7 @@ Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss l
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/appender-and-encoder-v094/</guid>
       <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
 FileAppender So far, all examples use FileAppender defined in default steps steps-default.yml packaged in scoopi distribution jar. The appender snippet from is as below
-appender: class: &amp;#34;org.codetab.scoopi.step.load.DataAppender&amp;#34; previous: converter next: end plugins: [ plugin: { name: file, class: &amp;#34;org.</description>
+appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: converter next: end plugins: [ plugin: { name: file, class: &amp;quot;org.codetab.scoopi.plugin.appender.FileAppender&amp;quot;, file: &amp;quot;output/data.</description>
     </item>
     
     <item>
@@ -181,7 +181,7 @@ Split on Job Types The examples so far scraped BS, PL, Quote data - price and sn
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
-Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs only error, warn and info logs. To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element.
+Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs only error, warn and info logs. To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element.
 Similarly for trace logs. Trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     

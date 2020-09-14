@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java Generics Tutorial - CodeTab on Codetab</title>
@@ -40,7 +40,8 @@ public class Food { public void foodMethod(){ } } public class Snack extends Foo
       
       <guid>https://www.codetab.org/tutorial/java-generics/wildcards/</guid>
       <description>Wildcards The previous tutorial explained that there is no relationship, what so ever, between List&amp;lt;Food&amp;gt;, List&amp;lt;Snack&amp;gt; and List&amp;lt;Cookie&amp;gt;,even though Food, Snack and Cookie belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
-Unbounded Wildcard Consider a method to display the elements of a List.</description>
+Unbounded Wildcard Consider a method to display the elements of a List.
+public void display(List&amp;lt;Food&amp;gt; list) { // display the list elements  } display(new ArrayList&amp;lt;Food&amp;gt;()); display(new ArrayList&amp;lt;Snack&amp;gt;()); // error  display(new ArrayList&amp;lt;Cookie&amp;gt;()); // error  display(new ArrayList&amp;lt;Fruit&amp;gt;()); // error  display(new ArrayList&amp;lt;Apple&amp;gt;()); // error  display(new ArrayList&amp;lt;String&amp;gt;()); // error  The method can display only the list of Food and nothing else.</description>
     </item>
     
     <item>
@@ -62,7 +63,7 @@ public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the li
       <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
       <description>Wildcard bounds in Java API The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.
 Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze java.util.Stream.map() method which is normally used along with lambda expression as follows:
-List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList());  At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
+List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList()); At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
     </item>
     
     <item>
@@ -72,7 +73,7 @@ List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japa
       
       <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
       <description>Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
-public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
+public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error  The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
     </item>
     
     <item>

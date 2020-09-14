@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="/css/vendor.min.5094155807f5e8e42efd4efe08a15d3c51025b1e28787bdea850902bf7650261.css" integrity="sha256-UJQVWAf16OQu/U7&#43;CKFdPFECWx4oeHveqFCQK/dlAmE=">
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
 <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
 
@@ -491,33 +491,29 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            
-
-<h1 id="pagination">Pagination</h1>
-
+            <h1 id="pagination">Pagination</h1>
 <p>Many pages provide pagination buttons or links to navigate through
 series of pages. We can use link locators described in previous chapter
 to scrape pages using pagination.</p>
-
 <p>The <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/page" target="_blank">Books example
 folder</a>
 contains three HTML pages which has pagination link at the bottom of
 pages.</p>
-
 <p><code>defs/examples/book/page/page-1.html</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML">
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;pager&#34;</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;current&#34;</span><span class="p">&gt;</span>Page 1 of 50<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;next&#34;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;page-2.html&#34;</span><span class="p">&gt;</span>next<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
-<p>The <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-4/job.yml" target="_blank">Books
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>The <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-4/job.yml" target="_blank">Books
 Example 4</a>
 go through each page and scrape book items.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">locatorGroups:
+<pre><code class="language-raw" data-lang="raw">locatorGroups:
   bookGroup:
-    locators: &lt;a href=&#34;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-5/job.yml&#34; target=&#34;_blank&#34;&gt;
-       { name: &#34;books&#34;, url: &#34;/defs/examples/book/page/page-1.html&#34; }  
+    locators: &lt;a href=&quot;https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/book/jsoup/ex-5/job.yml&quot; target=&quot;_blank&quot;&gt;
+       { name: &quot;books&quot;, url: &quot;/defs/examples/book/page/page-1.html&quot; }  
     ]
 
 taskGroups:
@@ -530,50 +526,45 @@ taskGroups:
       steps:
         jsoupDefault:              
           process:
-            class: &#34;org.codetab.scoopi.step.process.LocatorCreator&#34;
+            class: &quot;org.codetab.scoopi.step.process.LocatorCreator&quot;
             previous: parser
-            next: seeder </code></pre></div>
-<p>The locator defines only the first page. The bookTask parse book items
+            next: seeder 
+</code></pre><p>The locator defines only the first page. The bookTask parse book items
 from the page while the link task scrape next page link and creates a
 locator which points to next page. The process goes on till the last
 page.</p>
-
 <p>While datadef to scrape link is as below</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">dataDefs:
+<pre><code class="language-raw" data-lang="raw">dataDefs:
   bookLink:
     query:
-      block: &#34;li[class=&#39;next&#39;]&#34;              
+      block: &quot;li[class='next']&quot;              
     items: [ 
-      item: { name: &#34;link&#34;,  selector: &#34;a attribute: href&#34;, 
-        linkGroup: bookGroup, prefix: [ &#34;/defs/examples/book/page/&#34; ] },
-    ]</code></pre></div>
-<p>It creates a new locator pointing to the scraped link and assign it to
+      item: { name: &quot;link&quot;,  selector: &quot;a attribute: href&quot;, 
+        linkGroup: bookGroup, prefix: [ &quot;/defs/examples/book/page/&quot; ] },
+    ]
+</code></pre><p>It creates a new locator pointing to the scraped link and assign it to
 bookGroup so that bookGroup tasks - bookTask (which scrapes book item)
 and linkTask (which scrapes next page link) are executed on the new
 page.</p>
-
 <p>In this previous chapter we scrape link in snapshotGroup and assigned it
 bsGroup for processing. But, in pagination there is no shift in task
 group. In the pagination example, we scrape link in bookGroup and assign
 it back to the same group.</p>
-
 <h2 id="breaking-the-pagination">Breaking the pagination</h2>
-
 <p>The [Books
 Example 5</a>
 breaks pagination using <em>linkBreakOn</em> as show below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-raw" data-lang="raw">bookLink:
+<pre><code class="language-raw" data-lang="raw">bookLink:
     query:
-      block: &#34;li[class=&#39;next&#39;]&#34;              
+      block: &quot;li[class='next']&quot;              
     items: [ 
-      item: { name: &#34;link&#34;,  selector: &#34;a attribute: href&#34;, 
-        linkGroup: bookGroup, prefix: [ &#34;/defs/examples/book/page/&#34; ],
-        linkBreakOn: [ &#34;/defs/examples/fin/page/page-3.html&#34; },
-    ]</code></pre></div>
-<p>With <em>linkBreakOn</em>, it paginate through first and second page and breaks
+      item: { name: &quot;link&quot;,  selector: &quot;a attribute: href&quot;, 
+        linkGroup: bookGroup, prefix: [ &quot;/defs/examples/book/page/&quot; ],
+        linkBreakOn: [ &quot;/defs/examples/fin/page/page-3.html&quot; },
+    ]
+</code></pre><p>With <em>linkBreakOn</em>, it paginate through first and second page and breaks
 when it encounters scraped link value is page-3.html. To break, link
 value use full link including prefix, if any.</p>
-
 <p>The next chapter covers encoders and appenders to output data.</p>
 
           </main>

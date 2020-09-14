@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenShift on Codetab</title>
@@ -28,8 +28,8 @@ OpenShift also comes with a free account which allows you to host three applicat
       
       <guid>https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/</guid>
       <description>12.2. GWT OpenShift Project Project fins developed so far is configured for App Engine and there are two options to deploy its code on OpenShift.
- create a new project and import the code.
- modify the existing project.
+  create a new project and import the code.
+  modify the existing project.
   As we are exploring the functionalities of OpenShift with a demo application, we suggest you to go with a new project. For a live project, we suggest the second one.</description>
     </item>
     
@@ -53,8 +53,8 @@ $ rhc app ssh demo &amp;gt; env | grep -i mysql OPENSHIFT_MYSQL_DB_PORT=60311 OP
       <guid>https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/</guid>
       <description>12.4. OpenShift Deployment Even though, we developed a fairly complicated GWT application and deployed it to App Engine, surprisingly we never discussed about build cycle. Google Plugin for Eclipse (GPE) was building the application in background. But, when it comes to OpenShift, we have to build and deploy.
 Steps to build a GWT application with JDO are
- compile the java classes with javac.
- enhance persistence classes with JDO Enhancer.</description>
+  compile the java classes with javac.
+  enhance persistence classes with JDO Enhancer.</description>
     </item>
     
     <item>
