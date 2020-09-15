@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-14T11:15:00Z",
         "dateModified" : "2020-09-14T11:15:00Z",
-        "wordCount" : "2570",
+        "wordCount" : "2571",
         "keywords" : [ "kubernetes K8s cluster Fedora CoreOS VirtualBox","Blog" ]
     }
 </script>
@@ -360,7 +360,7 @@ sudo coreos-installer install /dev/sda -i base-config.ign
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 ssh k@192.168.99.99
 
-</code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/">Fedora CoreOS</a></p>
+</code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/" target="_blank">Fedora CoreOS</a></p>
 <h2 id="install-packages">Install Packages</h2>
 <p>Kubeadm has dependency on conntrack and ethtool packages, so install them with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
@@ -439,8 +439,7 @@ cat <span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/K8s.conf
 sudo sysctl --system
 
 </code></pre></div><p>Shut it down with <code>sudo init 0</code>. We are done with the base VM, no more install or setup. We are ready to clone it to create other nodes - master and workers.</p>
-<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl">Installing kubeadm</a> and more specifically:
-Fedora CoreOS or Flatcar Container Linux tab</p>
+<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank">Installing kubeadm</a> and specifically: Fedora CoreOS or Flatcar Container Linux tab</p>
 <h2 id="clone-master-node">Clone Master Node</h2>
 <p>Create a clone of <code>fcos</code> with these options,</p>
 <ul>
@@ -456,7 +455,7 @@ Fedora CoreOS or Flatcar Container Linux tab</p>
 <p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.100 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
-</span><span class="s">apiVersion: kubeadm.K8s.io/v1beta2
+</span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
 </span><span class="s">kind: InitConfiguration
 </span><span class="s">nodeRegistration:
 </span><span class="s">  kubeletExtraArgs:
@@ -464,7 +463,7 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">localAPIEndpoint:
 </span><span class="s">  advertiseAddress: &#34;192.168.99.100&#34;
 </span><span class="s">---
-</span><span class="s">apiVersion: kubeadm.K8s.io/v1beta2
+</span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
 </span><span class="s">kind: ClusterConfiguration
 </span><span class="s">networking:
 </span><span class="s">  podSubnet: &#34;192.168.0.0/16&#34;
@@ -473,7 +472,8 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">    flex-volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">apiServer:
 </span><span class="s">  extraArgs:
-</span><span class="s">    advertise-address: 192.168.99.100    
+</span><span class="s">    advertise-address: 192.168.99.100
+</span><span class="s">
 </span><span class="s">EOF</span>
 
 </code></pre></div><p>It indicates that,</p>
@@ -495,7 +495,7 @@ sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k
 watch kubectl get pods --all-namespaces 
 
 </code></pre></div><p>Watch cluster creation till all pods reach <code>Running</code> state except coredns pods which reach <code>ClusterCreating</code> or <code>Pending</code> state.</p>
-<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/">Creating a cluster with kubeadm</a> and <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file">Using kubeadm init with a configuration file</a></p>
+<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/" target="_blank">Creating a cluster with kubeadm</a> and <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file" target="_blank">Using kubeadm init with a configuration file</a></p>
 <h3 id="install-pod-network-add-on">Install Pod Network Add-on</h3>
 <p>Pods communicates through <code>Container Network Interface (CNI)</code> based Pod Network Add-on and Calico is one such add-on. To install calico, download <code>calico.yaml</code> and apply in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
@@ -511,7 +511,7 @@ watch kubectl get pods --all-namespaces
 </code></pre></div><p>It pulls calico container images. Once Calico pods are up and running the coredns pods should change to <code>Running</code> state.</p>
 <p>Now, master node, with K8s api server and control-plane, is ready and <code>kubectl get nodes</code> should now show one node cluster with master in <code>Ready</code> state.</p>
 <p>If something goes wrong during init, clean up and revert back with <code>sudo kubeadm reset</code> and try init again.</p>
-<p>For more info: <a href="https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises">Calico Add on</a></p>
+<p>For more info: <a href="https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises" target="_blank">Calico Add on</a></p>
 <h2 id="setup-worker-node">Setup worker node</h2>
 <p>Create second clone of <code>fcos</code> with these options,</p>
 <ul>
@@ -538,7 +538,7 @@ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt <span class="p">|</span> ope
 <span class="nv">JOIN_CERT_HASH</span><span class="o">=</span>&lt;paste-cert-hash-from-master-here&gt;
 
 cat <span class="s">&lt;&lt;EOF &gt; kubeadm-join.yaml
-</span><span class="s">apiVersion: kubeadm.K8s.io/v1beta2
+</span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
 </span><span class="s">kind: JoinConfiguration
 </span><span class="s">nodeRegistration:
 </span><span class="s">  kubeletExtraArgs:
@@ -559,7 +559,7 @@ cat kubeadm-join.yaml
 </code></pre></div><p>To join the worker1 to cluster, execute <code>sudo kubeadm join --config kubeadm-join.yaml</code> in worker1 node.</p>
 <p>On master run <code>watch kubectl get pods --all-namespaces </code>. It may take about 2 to 3 minutes as it pulls calico and K8s images. Once all pods are up and running, fire <code>kubectl get nodes</code> and both master and worker1 are part of K8s cluster and in <code>Ready</code> state.</p>
 <p>Clone one more node, worker2, from base VM and join it to cluster.</p>
-<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#join-nodes">Join your nodes</a></p>
+<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#join-nodes" target="_blank">K8s - Join your nodes</a></p>
 <p>Via systemctl, we have enabled docker and kubelet services to start on system boot. Once docker and kubelet are up, K8s cluster starts and synchronizes on its own.</p>
 <h2 id="access-cluster-from-host">Access Cluster from Host</h2>
 <p>While it is fine to administer the cluster from master, it is quite convenient to do it from the host. For that, all you have to do is to install <code>kubectl</code> in the host and copy the <code>$HOME/.kube/config</code> file from master node to hosts <code>$HOME/.kube</code> directory and you are good to go.</p>
