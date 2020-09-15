@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-14T11:15:00Z",
         "dateModified" : "2020-09-14T11:15:00Z",
-        "wordCount" : "2492",
+        "wordCount" : "2553",
         "keywords" : [ "kubernetes K8s cluster Fedora CoreOS VirtualBox","Blog" ]
     }
 </script>
@@ -308,18 +308,26 @@
 <span class="p">}</span>
 </code></pre></div><p>The ignition creates a new user <code>k</code> and adds the user to docker, wheel and sudo groups; sets hostname to <code>fcos</code>; reduces audit level to warn so that debug messages are not spewed to console.</p>
 <p>In the above file, you have to patch <code>passwordHash</code> and <code>sshAuthorizedKeys</code>.</p>
-<p>For <code>passwordHash</code>, generate password hash with <code>mkpasswd --method=md5crypt</code> and copy that to <code>passwordHash</code> field. Windows users have to use <a href="https://cygwin.com/cygwin-ug-net/mkpasswd.html">Cygwin mkpasswd utility</a> to generate the hash.</p>
-<p>For <code>sshAuthorizedKeys</code>, copy the content of your ssh public key. On Linux, you can find it in <code>$HOME/.ssh/id_rsa.pub</code> or you can create a new one with <code>ssh-keygen</code>. In Windows, use Putty to generate and manage ssh key.</p>
+<p>For <code>passwordHash</code>, generate password hash with <code>mkpasswd --method=md5crypt </code>, enter some password of your choice and copy the generated hash to <code>passwordHash</code> field. Windows users have to use <a href="https://cygwin.com/cygwin-ug-net/mkpasswd.html">Cygwin mkpasswd utility</a> to generate the hash.</p>
+<p>The <code>sshAuthorizedKeys</code> allows password less login via ssh and in case, you don&rsquo;t need this feature you may remove the field from the file. Otherwise, copy the content of your ssh public key to <code>sshAuthorizedKeys</code> field. On Linux, you can find it in <code>$HOME/.ssh/id_rsa.pub</code> or you can create a new one with <code>ssh-keygen</code>. In Windows, use Putty to generate and manage ssh key.</p>
 <p>After creating the file, let&rsquo;s move on to create base VM.</p>
 <h3 id="create-base-vm">Create Base VM</h3>
-<p>We need two network interfaces on each VM - one interface to connect from PC (host) to VM (guest) and another interface to connect, from with VM, to the internet. Start VirtualBox Manager, open File -&gt; Host Network Manager and create a <code>Host-only network</code> with following config,</p>
+<p>We need two network interfaces on each VM - one interface to connect from PC (host) to VM (guest) and another interface to connect, from with VM, to the internet. Start VirtualBox Manager, open File -&gt; Host Network Manager and create a <code>Host-only network</code> (normally, named as vboxnet0, vboxnet1 etc.,) and edit the properties as,</p>
 <ul>
-<li>Network - 192.168.99.0/24</li>
+<li>Adapter
+<ul>
+<li>choose Configure Adapter Manually</li>
+<li>IPv4 Address: 192.168.99.1</li>
+<li>Mask: 255.255.255.0</li>
+</ul>
+</li>
 <li>DHCP
 <ul>
-<li>Server Address - 192.168.99.2/24</li>
-<li>Lower Address Bound - 192.168.99.99</li>
-<li>Upper Address Bound - 192.168.99.254</li>
+<li>Enable Server</li>
+<li>Server Address: 192.168.99.2</li>
+<li>Mask: 255.255.255.0</li>
+<li>Lower Address Bound: 192.168.99.99</li>
+<li>Upper Address Bound: 192.168.99.254</li>
 </ul>
 </li>
 </ul>
@@ -335,11 +343,11 @@
 <p>After its creation, go to settings and set CPU count to 2. Next, in the VM Network settings, attach Adapter 1 to Host-Only Adapter and select the Host-Only network that we created earlier. Attach Adapter 2 to Bridge Adapter and select the interface used by the host to connect to the internet.</p>
 <p>By default, K8s picks the first interface to configure its network, so make sure that Adapter 1 is attached to Host-Only Network. The Adapter 2 should be the interface to internet.</p>
 <p>Enable net connection on host and start the VM. In <code>Select Startup Disk</code> window, choose the downloaded Fedora CoreOS image and start. Once os boots, it auto login to Fedora CoreOS Live Environment.</p>
-<p>Now, you have to get the earlier created <code>base-config.ign</code> file from the host to guest with <code>scp</code> command. As we have bridged guest (VM) to host (PC) via internet interface, we can use that interface to copy the file. For example, my host (PC) wifi interface is 192.168.43.169 and in guest (VM) I execute</p>
+<p>Now, you have to get the earlier created <code>base-config.ign</code> file from the host to guest with <code>scp</code> command. Ensure that ssh server is running on host and in Linux, you can start it with <code>sudo systemctl start ssh</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-scp &lt;my-pc-user-id&gt;@192.168.43.169:base-config.ign .
+scp &lt;my-pc-user-id&gt;@192.168.99.1:base-config.ign .
 
-</code></pre></div><p>Fedora CoreOS Live Environment runs entirely from system memory and we have manually install the os. In the next section, we are going to do that.</p>
+</code></pre></div><p>At this point, Fedora CoreOS Live Environment runs entirely from system memory and we have manually install the os. In the next section, we are going to do that.</p>
 <p>For more info: <a href="https://www.nakivo.com/blog/use-virtualbox-quick-overview/" target="_blank">VirtualBox Quick Overview</a></p>
 <h2 id="install-fedora-coreos">Install Fedora CoreOS</h2>
 <p>To install Fcos, run following command,</p>
@@ -347,7 +355,7 @@ scp &lt;my-pc-user-id&gt;@192.168.43.169:base-config.ign .
 sudo coreos-installer install /dev/sda -i base-config.ign
 
 </code></pre></div><p>It extracts the os (around 3GB) from image and copies it to VM storage file. Installation completes within 2 minutes and after installation, don&rsquo;t reboot; instead shutdown with <code>sudo init 0</code>.</p>
-<p>Once guest is shutdown, in VM Manager, open its Settings -&gt; Storage and select <code>Fedora-coreos-xxxx.iso</code> installation media and right click and remove the media with <code>Remove Attachment</code> option. If this is not done, on VM reboot, you land again in Live Environment instead of installed OS. Start the guest and on first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> and the passwd your have provided to create the password hash earlier.</p>
+<p>Once guest is shutdown, in VM Manager, open its Settings -&gt; Storage and select <code>Fedora-coreos-xxxx.iso</code> installation media and type <code>-</code> key to remove the attached ISO image; otherwise on VM reboot, you will land again in Live Environment instead of installed OS. Start the guest and on first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> and the passwd your have provided to create the password hash earlier.</p>
 <p>It is quite annoying to work in guest console, rather it is convenient from host console with ssh. To find out the ip, execute <code>ip a</code> on guest and use it to make ssh connection from host.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 ssh k@192.168.99.99
@@ -360,7 +368,8 @@ sudo rpm-ostree install conntrack ethtool
 
 sudo systemctl reboot
 
-</code></pre></div><p>The rpm-ostree is the package manager used by Fcos, which installs packages as layers above the base os image. On reboot, in boot menu, we can see two os trees - ostree:0 (after installation of conntrack and ethtool) and ostree:1 (base os); and boot any of them. The top one is the latest. We can also view the ostree with <code>sudo rpm-ostree status</code>.</p>
+</code></pre></div><p>In case of &ldquo;error: Transaction in progress: &hellip;&rdquo;, wait for any running rpm-ostree process to finish. As last resort, you can cancel transaction with <code>sudo rpm-ostree cancel</code>.</p>
+<p>The rpm-ostree is the package manager used by Fcos, which installs packages as layers above the base os image. On reboot, in boot menu, we can see two os trees - ostree:0 (after installation of conntrack and ethtool) and ostree:1 (base os); and boot any of them. The top one is the latest. We can also view the ostree with <code>sudo rpm-ostree status</code>.</p>
 <h2 id="setup-docker">Setup Docker</h2>
 <p>The container runtime, Docker uses either <code>systemd</code> or <code>cgroupfs</code> as cgroup managers. For a stable K8s cluster, it is advised to use systemd as cgroup manager. On guest, run</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
