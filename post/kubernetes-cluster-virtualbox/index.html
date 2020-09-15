@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-14T11:15:00Z",
         "dateModified" : "2020-09-14T11:15:00Z",
-        "wordCount" : "2553",
+        "wordCount" : "2568",
         "keywords" : [ "kubernetes K8s cluster Fedora CoreOS VirtualBox","Blog" ]
     }
 </script>
@@ -171,7 +171,7 @@
     <div id="contentspace" class="col-md-7 post-basic order-md-2">
       <h2>Kubernetes Cluster on Fedora CoreOS</h2>
       <small class="text-muted">
-        Sep 14, 2020 . 12 min read
+        Sep 14, 2020 . 13 min read
       </small>
       <div id="share" class="row mx-0 justify-content-end">
 
@@ -356,7 +356,7 @@ sudo coreos-installer install /dev/sda -i base-config.ign
 
 </code></pre></div><p>It extracts the os (around 3GB) from image and copies it to VM storage file. Installation completes within 2 minutes and after installation, don&rsquo;t reboot; instead shutdown with <code>sudo init 0</code>.</p>
 <p>Once guest is shutdown, in VM Manager, open its Settings -&gt; Storage and select <code>Fedora-coreos-xxxx.iso</code> installation media and type <code>-</code> key to remove the attached ISO image; otherwise on VM reboot, you will land again in Live Environment instead of installed OS. Start the guest and on first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> and the passwd your have provided to create the password hash earlier.</p>
-<p>It is quite annoying to work in guest console, rather it is convenient from host console with ssh. To find out the ip, execute <code>ip a</code> on guest and use it to make ssh connection from host.</p>
+<p>It is cumbersome to work in guest console, rather I prefer to work from host console with ssh. Run <code>ip a</code> on guest console to find its ip and use it to make ssh connection from host.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 ssh k@192.168.99.99
 
@@ -368,7 +368,7 @@ sudo rpm-ostree install conntrack ethtool
 
 sudo systemctl reboot
 
-</code></pre></div><p>In case of &ldquo;error: Transaction in progress: &hellip;&rdquo;, wait for any running rpm-ostree process to finish. As last resort, you can cancel transaction with <code>sudo rpm-ostree cancel</code>.</p>
+</code></pre></div><p>In case of &ldquo;error: Transaction in progress: &hellip;&rdquo;, wait for any running rpm-ostree process to finish. This happens when there is a new release of Fcos and node automatically upgrades to new version. As last resort, you can cancel transaction with <code>sudo rpm-ostree cancel</code>.</p>
 <p>The rpm-ostree is the package manager used by Fcos, which installs packages as layers above the base os image. On reboot, in boot menu, we can see two os trees - ostree:0 (after installation of conntrack and ethtool) and ostree:1 (base os); and boot any of them. The top one is the latest. We can also view the ostree with <code>sudo rpm-ostree status</code>.</p>
 <h2 id="setup-docker">Setup Docker</h2>
 <p>The container runtime, Docker uses either <code>systemd</code> or <code>cgroupfs</code> as cgroup managers. For a stable K8s cluster, it is advised to use systemd as cgroup manager. On guest, run</p>
@@ -417,9 +417,9 @@ sudo mkdir -p <span class="nv">$DOWNLOAD_DIR</span>
 <span class="nv">CRICTL_VERSION</span><span class="o">=</span><span class="s2">&#34;v1.17.0&#34;</span>
 curl -L <span class="s2">&#34;https://github.com/kubernetes-sigs/cri-tools/releases/download/</span><span class="si">${</span><span class="nv">CRICTL_VERSION</span><span class="si">}</span><span class="s2">/crictl-</span><span class="si">${</span><span class="nv">CRICTL_VERSION</span><span class="si">}</span><span class="s2">-Linux-amd64.tar.gz&#34;</span> <span class="p">|</span> sudo tar -C <span class="nv">$DOWNLOAD_DIR</span> -xz
 
-<span class="nv">RELEASE</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -sSL https://dl.K8s.io/release/stable.txt<span class="k">)</span><span class="s2">&#34;</span>
+<span class="nv">RELEASE</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -sSL https://dl.k8s.io/release/stable.txt<span class="k">)</span><span class="s2">&#34;</span>
 <span class="nb">cd</span> <span class="nv">$DOWNLOAD_DIR</span>
-sudo curl -L --remote-name-all https://storage.googleapis.com/kubernetes-release/release/<span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>/bin/Linux/amd64/<span class="o">{</span>kubeadm,kubelet,kubectl<span class="o">}</span>
+sudo curl -L --remote-name-all https://storage.googleapis.com/kubernetes-release/release/<span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>/bin/linux/amd64/<span class="o">{</span>kubeadm,kubelet,kubectl<span class="o">}</span>
 sudo chmod +x <span class="o">{</span>kubeadm,kubelet,kubectl<span class="o">}</span>
 
 <span class="nv">RELEASE_VERSION</span><span class="o">=</span><span class="s2">&#34;v0.4.0&#34;</span>
@@ -560,7 +560,7 @@ cat kubeadm-join.yaml
 <p>On master run <code>watch kubectl get pods --all-namespaces </code>. It may take about 2 to 3 minutes as it pulls calico and K8s images. Once all pods are up and running, fire <code>kubectl get nodes</code> and both master and worker1 are part of K8s cluster and in <code>Ready</code> state.</p>
 <p>Clone one more node, worker2, from base VM and join it to cluster.</p>
 <p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#join-nodes">Join your nodes</a></p>
-<p>Via systemctl enable, we have enabled docker and kubelet services to start on system boot. Once docker and kubelet are up, K8s cluster starts and synchronizes without any user intervention.</p>
+<p>Via systemctl, we have enabled docker and kubelet services to start on system boot. Once docker and kubelet are up, K8s cluster starts and synchronizes on its own.</p>
 <h2 id="access-cluster-from-host">Access Cluster from Host</h2>
 <p>While it is fine to administer the cluster from master, it is quite convenient to do it from the host. For that, all you have to do is to install <code>kubectl</code> in the host and copy the <code>$HOME/.kube/config</code> file from master node to hosts <code>$HOME/.kube</code> directory and you are good to go.</p>
 
