@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-15T11:30:00Z",
         "dateModified" : "2020-09-15T11:30:00Z",
-        "wordCount" : "2457",
+        "wordCount" : "2496",
         "keywords" : [ "kubernetes k8s cluster Fedora CoreOS Qemu KVM","Blog" ]
     }
 </script>
@@ -250,7 +250,7 @@
 <p>This post, explains how to create K8s Cluster on Fedora CoreOS (Fcos) using Qemu/KVM. However, if your prefer VirtualBox then <a href="/post/kubernetes-cluster-virtualbox">K8s Cluster with VirtualBox</a> explains the setup for that environment.</p>
 <h2 id="why-fedora-coreos">Why Fedora CoreOS</h2>
 <p>Fedora CoreOS (fcos) is a minimal operating system designed for running containerized workloads at scale. Fcos image is about 750MB and unlike Ubuntu server, comes with pre-installed Docker. I could spinoff VM with OS installation in 10 minutes and a three node fcos K8s cluster in 30 minutes. It takes just 12GB of disk space, and the cluster is blazing fast without the overhead of extra services.</p>
-<p>However, there is a catch. The design of Fedora CoreOS is quite different from the regular, run-of-the-mill, Linux distro. Where else you can find user home directory in /var/home; /usr directory that is not writable; new package install spins of a new os image; ships with a single user without password and worst still, can&rsquo;t set or reset that user. Nothing is same in Fcos because it is designed for fast and secured rollout of cluster nodes in high end data centers.</p>
+<p>However, there is a catch. The design of Fedora CoreOS is quite different from the regular, run-of-the-mill, Linux distro. Where else you can find /usr directory that is not writable; new package install spins of a new os image; ships with a single user without password and worst still, can&rsquo;t set or reset that user. Nothing is same in Fcos because it is designed for fast and secured rollout of cluster nodes in high end data centers.</p>
 <p>Frustrated, I almost gave up after a day. Then on second try, I got hang of it; in the end, it is much easier to setup K8s cluster on Fcos than on Ubuntu.</p>
 <p>This post lists all the steps to create Fcos base VM and clone it to setup three node cluster. This is not a tutorial on how to spinoff a VM, how to change its settings, how to create a network adaptor or on kubernetes as there are enough tutorials out there on these things. Again, if you are new to Kubernetes then familiarize with K8s by working through <a href="https://kubernetes.io/docs/tutorials/" target="_blank">Kubernetes and Minikube Tutorial</a> found in official site and then, try to setup a multi node cluster.</p>
 <h2 id="download-fedora-coreos">Download Fedora CoreOS</h2>
@@ -344,7 +344,7 @@ sudo ip addr add 192.168.99.100/24 dev ens3
 <span class="c1"># copy ignition file from host to VM</span>
 scp &lt;user_id&gt;@192.168.99.1:base-config.ign .
 
-</code></pre></div><p>The <code>ip addr add</code> temporarily sets the static ip to interface. However, it is not stable and may unset before you do scp. Use up-arrow and again set the ip and retry scp. I know this not elegant solution, but with couple of tries you should be able to copy the file to guest.</p>
+</code></pre></div><p>The <code>ip addr add</code> temporarily sets the static ip to interface. However, it is not stable, may unset before you do scp and <code>network unreachable</code> error is thrown when you try scp. Use up-arrow, again set the ip and retry scp. I know this not elegant solution, but with couple of tries you should be able to copy the file to guest. Also, ensure that ssh server is running on host and in Linux, you can start it with <code>sudo systemctl start ssh</code>. If ssh server is not running in host, then you will get <code>connection refused error</code>.</p>
 <p>For more info: <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_getting_started_guide/sec-virtualization_getting_started-quickstart_virt-manager-create_vm" target="_blank">Creating a Virtual Machine with Virtual Machine Manager</a>
 and <a href="https://documentation.suse.com/sles/15-SP1/html/SLES-all/cha-libvirt-config-gui.html" target="_blank">Configuring Virtual Machines with Virtual Machine Manager</a></p>
 <h2 id="install-fedora-coreos">Install Fedora CoreOS</h2>
