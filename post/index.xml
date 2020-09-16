@@ -64,10 +64,10 @@ Font Awesome is the top choice for font icons, with more than 650 icons with min
     <item>
       <title>Kubernetes Cluster on Fedora CoreOS with Qemu</title>
       <link>https://www.codetab.org/post/kubernetes-cluster-qemu/</link>
-      <pubDate>Sat, 12 Sep 2020 11:15:00 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2020 11:30:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/post/kubernetes-cluster-qemu/</guid>
-      <description>K8s Cluster on Fedora CoreOS Qemu After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims, but found that Ubuntu K8s cluster has its own share of drawbacks. It&amp;rsquo;s time and space: Ubuntu Server VM installation takes an hour and needs about 20GB of disk space for a three node cluster.</description>
+      <description>K8s Cluster on Fedora CoreOS VM After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims but found that Ubuntu K8s cluster has its own share of drawbacks. It&amp;rsquo;s time and space: Ubuntu Server installation takes an hour and needs about 20GB of disk space for a three node cluster.</description>
     </item>
     
   </channel>

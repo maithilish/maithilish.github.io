@@ -47,9 +47,9 @@
         },
         "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2020",
-        "datePublished": "2020-09-12T11:15:00Z",
-        "dateModified" : "2020-09-12T11:15:00Z",
-        "wordCount" : "2390",
+        "datePublished": "2020-09-15T11:30:00Z",
+        "dateModified" : "2020-09-15T11:30:00Z",
+        "wordCount" : "2457",
         "keywords" : [ "kubernetes k8s cluster Fedora CoreOS Qemu KVM","Blog" ]
     }
 </script>
@@ -171,7 +171,7 @@
     <div id="contentspace" class="col-md-7 post-basic order-md-2">
       <h2>Kubernetes Cluster on Fedora CoreOS with Qemu</h2>
       <small class="text-muted">
-        Sep 12, 2020 . 12 min read
+        Sep 15, 2020 . 12 min read
       </small>
       <div id="share" class="row mx-0 justify-content-end">
 
@@ -245,18 +245,18 @@
 <i class="icon-blank ctab-transparent"></i></div>
       <hr class="my-3" />
       <main id="content" class="post-basic">
-        <h1 id="k8s-cluster-on-fedora-coreos-qemu">K8s Cluster on Fedora CoreOS Qemu</h1>
-<p>After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims, but found that Ubuntu K8s cluster has its own share of drawbacks. It&rsquo;s time and space: Ubuntu Server VM installation takes an hour and needs about 20GB of disk space for a three node cluster. Add to it, cluster boot is slow and resource intensive because of unnecessary services and packages that comes with it. I was looking for a minimal Linux distro and found Fedora CoreOS.</p>
+        <h1 id="k8s-cluster-on-fedora-coreos-vm">K8s Cluster on Fedora CoreOS VM</h1>
+<p>After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims but found that Ubuntu K8s cluster has its own share of drawbacks. It&rsquo;s time and space: Ubuntu Server installation takes an hour and needs about 20GB of disk space for a three node cluster. Add to that, cluster boot is slow and resource intensive because of unnecessary services and packages that comes with it. I was looking for a minimal Linux distro and came to know Fedora CoreOS.</p>
 <p>This post, explains how to create K8s Cluster on Fedora CoreOS (Fcos) using Qemu/KVM. However, if your prefer VirtualBox then <a href="/post/kubernetes-cluster-virtualbox">K8s Cluster with VirtualBox</a> explains the setup for that environment.</p>
 <h2 id="why-fedora-coreos">Why Fedora CoreOS</h2>
-<p>Fedora CoreOS (fcos) is a minimal operating system designed for running containerized workloads at scale. Fcos image is about 750MB and unlike Ubuntu server, comes with pre-installed Docker. I could spinoff VM with OS installation in 10 minutes and a three node fcos k8s cluster in 30 minutes and takes just 12GB of disk space. Without extra services and modules, the cluster is blazing fast.</p>
-<p>However, there is a catch. The design of Fedora CoreOS is quite different from the regular, run-of-the-mill, linux distro. Where else you can find user home directory in /var/home, regular /usr directory that is not writable, each software install spins of a new os image and ships with a single user without password  and worst still, can&rsquo;t set or reset that user. Nothing is same in Fcos because it is designed  for fast and secured rollout of cluster nodes in high end data centers.</p>
-<p>Because of these oddities, I almost gave up after a day feeling dejected. Then on second try, I got hang of it and in the end, it is much easier to setup k8s cluster on Fcos than on Ubuntu.</p>
-<p>This post lays out all the steps to create Fcos VM and setup 3 node K8s cluster. It doesn&rsquo;t covers basics; how to spinoff a VM, how to change its settings or how to create a network adaptor as there are enough documents out there on these things. Again, if you are new to Kubernetes then familiarize with K8s concepts with Minikube or Kind, and then try to setup a multi node cluster.</p>
+<p>Fedora CoreOS (fcos) is a minimal operating system designed for running containerized workloads at scale. Fcos image is about 750MB and unlike Ubuntu server, comes with pre-installed Docker. I could spinoff VM with OS installation in 10 minutes and a three node fcos K8s cluster in 30 minutes. It takes just 12GB of disk space, and the cluster is blazing fast without the overhead of extra services.</p>
+<p>However, there is a catch. The design of Fedora CoreOS is quite different from the regular, run-of-the-mill, Linux distro. Where else you can find user home directory in /var/home; /usr directory that is not writable; new package install spins of a new os image; ships with a single user without password and worst still, can&rsquo;t set or reset that user. Nothing is same in Fcos because it is designed for fast and secured rollout of cluster nodes in high end data centers.</p>
+<p>Frustrated, I almost gave up after a day. Then on second try, I got hang of it; in the end, it is much easier to setup K8s cluster on Fcos than on Ubuntu.</p>
+<p>This post lists all the steps to create Fcos base VM and clone it to setup three node cluster. This is not a tutorial on how to spinoff a VM, how to change its settings, how to create a network adaptor or on kubernetes as there are enough tutorials out there on these things. Again, if you are new to Kubernetes then familiarize with K8s by working through <a href="https://kubernetes.io/docs/tutorials/" target="_blank">Kubernetes and Minikube Tutorial</a> found in official site and then, try to setup a multi node cluster.</p>
 <h2 id="download-fedora-coreos">Download Fedora CoreOS</h2>
 <p>We use Fedora CoreOS Bare Metal ISO and you can download it from
 <a href="https://getfedora.org/en/coreos/download?tab=metal_virtualized&stream=stable" target="_blank">Fedora CoreOS Downloads</a></p>
-<p><a id="create-base-qemu"></a></p>
+<p><a id="create-base-vm"></a></p>
 <h2 id="setup-qemu-base-vm">Setup Qemu Base VM</h2>
 <p>Steps to create Qemu/KVM using VMM (Virtual Machine Manager) is as follows</p>
 <ul>
@@ -297,14 +297,14 @@
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="nt">&#34;contents&#34;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,fcosbase&#34;</span>
+          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,fcos&#34;</span>
         <span class="p">},</span>
         <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="mi">420</span><span class="p">,</span>
         <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/etc/hostname&#34;</span>
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="nt">&#34;contents&#34;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,%5Bconnection%5D%0Atype%3Dethernet%0Aid%3D&#39;nw1&#39;%0Ainterface-name%3Dens3%0A%0A%5Bipv4%5D%0Amethod%3Dmanual%0Aaddresses%3D192.168.99.99%2F24%0Agateway%3D192.168.99.1%0Adns%3D192.168.99.1%3B8.8.8.8%0A&#34;</span>
+          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,%5Bconnection%5D%0Atype%3Dethernet%0Aid%3Dnetwork1%0Ainterface-name%3Dens3%0A%0A%5Bipv4%5D%0Amethod%3Dmanual%0Aaddresses%3D192.168.99.99%2F24%0Agateway%3D192.168.99.1%0Adns%3D192.168.99.1%3B8.8.8.8%0A&#34;</span>
         <span class="p">},</span>
         <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="mi">384</span><span class="p">,</span>
         <span class="nt">&#34;overwrite&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -314,8 +314,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><p>!!!!!!!! change network name !!!!!!!!!!!!!!!!!!!!</p>
-<p>The ignition file creates a new user <code>k</code> and adds the user to docker, wheel and sudo groups; sets hostname to fcosbase; reduces audit level to warn so that debug messages are not spewed to console. It also configures static ip for the interface.</p>
+</code></pre></div><p>The ignition file creates a new user <code>k</code> and adds the user to docker, wheel and sudo groups; sets hostname to fcosbase; reduces audit level to warn so that debug messages are not spewed to console. It also configures static ip for the interface.</p>
 <p>In the above file, you have to patch <code>sshAuthorizedKeys</code> with your ssh public key. On linux, you can find it in <code>$HOME/.ssh/id_rsa.pub</code> or create a new one with <code>ssh-keygen</code>.</p>
 <p>Generate password hash with <code>mkpasswd --method=md5crypt</code> and copy that to <code>passwordHash</code> field.</p>
 <p>Once file is ready, let&rsquo;s move on to create base VM.</p>
@@ -332,9 +331,9 @@
 </ul>
 </li>
 </ul>
-<p>This network is able to connect both to host and internet. Unlike VirtualBox, the Qemu DHCP allots random IP to interface where as K8s master node need fixed IP, so we have to disable DHCP and go with static IP.</p>
+<p>This network is able to connect both to host and internet. Unlike VirtualBox, the Qemu DHCP allots random IP to interface where as K8s master node need fixed IP, so we have to disable DHCP and go with static IP. Network name <code>network1</code> is hardcoded in base-config.ign, so don&rsquo;t change the name.</p>
 <p>Next, create a new VM, choose <code>Local Install Media</code> and browse and select the downloaded Fedora CoreOS iso image and in os type generic and select <code>Generic default</code>. Set memory to 2048MB and cpu to 2. In Storage dialog, choose <code>Create custom storage</code> and create a disk of size 8GB and qcow2 format. In network selection dropdown, select the <code>network1</code> that we have created earlier. Name the VM as <code>fcos</code> Click <code>Finish</code> to start Fedora CoreOS.</p>
-<p>VM boots to CoreOS Live Environment which runs entirely from memory and we have to manually install the os to disk. Earlier, we had created Ignition file <code>base-config.ign</code> in our home directory on host. To install OS, we have to copy it from host to guest through scp command. As we have disabled DHCP while creating the virtual network, set static IP and the use scp.</p>
+<p>VM boots to CoreOS Live Environment which runs completely from memory and we have to manually install the os to disk. Earlier, we had created Ignition file <code>base-config.ign</code> in our home directory on host. To install OS, we have to copy it from host to guest through scp command. As we have disabled DHCP while creating the virtual network, set static IP and the use scp.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 <span class="c1"># find the name of interface, normally ens3</span>
 ip a      
@@ -349,25 +348,27 @@ scp &lt;user_id&gt;@192.168.99.1:base-config.ign .
 <p>For more info: <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_getting_started_guide/sec-virtualization_getting_started-quickstart_virt-manager-create_vm" target="_blank">Creating a Virtual Machine with Virtual Machine Manager</a>
 and <a href="https://documentation.suse.com/sles/15-SP1/html/SLES-all/cha-libvirt-config-gui.html" target="_blank">Configuring Virtual Machines with Virtual Machine Manager</a></p>
 <h2 id="install-fedora-coreos">Install Fedora CoreOS</h2>
-<p>Once we have booted into Fcos Live Environment and copied ignition file, run following command to start Fcos installation,</p>
+<p>To install Fcos, run following command,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo coreos-installer install /dev/sda -i base-config.ign
 
-</code></pre></div><p>Installation completes within 2 minutes. After installation, reboot with <code>sudo init 6</code>. On first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> with sudo privileges and the passwd your have provided to create the password hash earlier. It also permanently configures static ip to 192.168.99.99, use it to make ssh connection from host.</p>
+</code></pre></div><p>It extracts the os (around 3GB) from image and copies it to VM storage file. Installation completes within 2 minutes and after installation, reboot with <code>sudo init 6</code>. On first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> with sudo privileges and the password your have provided to create the password hash earlier. It also permanently configures static ip to 192.168.99.99.</p>
+<p>It is cumbersome to work in guest console, rather I prefer to work from host console with ssh. Make ssh connection from host with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 ssh k@192.168.99.99
 
-</code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/">Fedora CoreOS</a></p>
+</code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/" target="_blank">Fedora CoreOS</a></p>
 <h2 id="install-packages">Install Packages</h2>
-<p>Kubeadm requires conntrack and ethtool, so install it with</p>
+<p>Kubeadm has dependency on conntrack and ethtool packages, so install them with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo rpm-ostree install conntrack ethtool
 
 sudo systemctl reboot
 
-</code></pre></div><p>To install packages, Fedora CoreOS uses rpm-ostree which install packages on a layer above the base os image. On reboot, in Grub boot menu there are now two os tree - ostree:0 (after installation of conntrack and ethtool) and ostree:1 (base os). The top one is the latest. We can also view the ostree with <code>sudo rpm-ostree status</code>.</p>
+</code></pre></div><p>In case of &ldquo;error: Transaction in progress: &hellip;&rdquo;, wait for any running rpm-ostree process to finish. This happens when there is a new release of Fcos and node automatically upgrades to new version. As last resort, you can cancel transaction with <code>sudo rpm-ostree cancel</code>.</p>
+<p>The rpm-ostree is the package manager used by Fcos, which installs packages as layers above the base os image. On reboot, in boot menu, we can see two os trees - ostree:0 (after installation of conntrack and ethtool) and ostree:1 (base os); and boot any of them. The top one is the latest. We can also view the ostree with <code>sudo rpm-ostree status</code>.</p>
 <h2 id="setup-docker">Setup Docker</h2>
-<p>Docker (container runtime) can use <code>systemd</code> or <code>cgroupfs</code> as cgroup managers. For a stable k8s cluster, it is advised to use systemd as cgroup manager. On guest, run</p>
+<p>The container runtime, Docker uses either <code>systemd</code> or <code>cgroupfs</code> as cgroup managers. For a stable K8s cluster, it is advised to use systemd as cgroup manager. On guest, run</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo systemctl start docker
 sudo systemctl <span class="nb">enable</span> docker
@@ -399,26 +400,19 @@ cat <span class="s">&lt;&lt;EOF | sudo tee /etc/systemd/system/docker.service.d/
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
-</code></pre></div><p>Check that docker setup with <code>docker run hello-world</code></p>
+</code></pre></div><p>Check the docker setup by executing <code>docker run hello-world</code></p>
 <h2 id="install-k8s-toolbox">Install K8s Toolbox</h2>
 <p>The K8s toolbox consists of kubeadm, kubectl and kubelet. Install them with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-cat <span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
-</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
-</span><span class="s">net.bridge.bridge-nf-call-iptables = 1
-</span><span class="s">EOF</span>
-sudo sysctl --system
-
-
 <span class="nv">CNI_VERSION</span><span class="o">=</span><span class="s2">&#34;v0.8.2&#34;</span>
 sudo mkdir -p /opt/cni/bin
-curl -L <span class="s2">&#34;https://github.com/containernetworking/plugins/releases/download/</span><span class="si">${</span><span class="nv">CNI_VERSION</span><span class="si">}</span><span class="s2">/cni-plugins-linux-amd64-</span><span class="si">${</span><span class="nv">CNI_VERSION</span><span class="si">}</span><span class="s2">.tgz&#34;</span> <span class="p">|</span> sudo tar -C /opt/cni/bin -xz
+curl -L <span class="s2">&#34;https://github.com/containernetworking/plugins/releases/download/</span><span class="si">${</span><span class="nv">CNI_VERSION</span><span class="si">}</span><span class="s2">/cni-plugins-Linux-amd64-</span><span class="si">${</span><span class="nv">CNI_VERSION</span><span class="si">}</span><span class="s2">.tgz&#34;</span> <span class="p">|</span> sudo tar -C /opt/cni/bin -xz
 
 <span class="nv">DOWNLOAD_DIR</span><span class="o">=</span>/usr/local/bin
 sudo mkdir -p <span class="nv">$DOWNLOAD_DIR</span>
 
 <span class="nv">CRICTL_VERSION</span><span class="o">=</span><span class="s2">&#34;v1.17.0&#34;</span>
-curl -L <span class="s2">&#34;https://github.com/kubernetes-sigs/cri-tools/releases/download/</span><span class="si">${</span><span class="nv">CRICTL_VERSION</span><span class="si">}</span><span class="s2">/crictl-</span><span class="si">${</span><span class="nv">CRICTL_VERSION</span><span class="si">}</span><span class="s2">-linux-amd64.tar.gz&#34;</span> <span class="p">|</span> sudo tar -C <span class="nv">$DOWNLOAD_DIR</span> -xz
+curl -L <span class="s2">&#34;https://github.com/kubernetes-sigs/cri-tools/releases/download/</span><span class="si">${</span><span class="nv">CRICTL_VERSION</span><span class="si">}</span><span class="s2">/crictl-</span><span class="si">${</span><span class="nv">CRICTL_VERSION</span><span class="si">}</span><span class="s2">-Linux-amd64.tar.gz&#34;</span> <span class="p">|</span> sudo tar -C <span class="nv">$DOWNLOAD_DIR</span> -xz
 
 <span class="nv">RELEASE</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -sSL https://dl.k8s.io/release/stable.txt<span class="k">)</span><span class="s2">&#34;</span>
 <span class="nb">cd</span> <span class="nv">$DOWNLOAD_DIR</span>
@@ -432,14 +426,21 @@ curl -sSL <span class="s2">&#34;https://raw.githubusercontent.com/kubernetes/rel
 
 sudo systemctl <span class="nb">enable</span> --now kubelet
 
-</code></pre></div><p>No more install or setup in fcos VM. We are going to use this as base and clone it to create other nodes. Shut it down with <code>sudo init 0</code></p>
-<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl">Installing kubeadm</a> and more specifically:
-<a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#k8s-install-2">Install Kubeadm on Fedora CoreOS</a></p>
-<p>Start the master VM (guest) and login with user id <code>k</code>. Set hostname as <code>master</code> with <code>sudo hostnamectl set-hostname master</code>. Find its primary ip with <code>ip -a</code> which is used to advertise the k8s api server. In all subsequent commands, we are presuming master node&rsquo;s ip as 192.168.99.100, but you have to use the actual ip of your master node. Now connect from host to master node with <code>ssh k@192.168.99.100</code>.</p>
-<h2 id="clone-master-node---qemu">Clone Master Node - Qemu</h2>
+</code></pre></div><p>Allow iptables see bridged traffic,</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+cat <span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/K8s.conf
+</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span class="s">net.bridge.bridge-nf-call-iptables = 1
+</span><span class="s">EOF</span>
+
+sudo sysctl --system
+
+</code></pre></div><p>Shut it down with <code>sudo init 0</code>. We are done with the base VM, no more install or setup. We are ready to clone it to create other nodes - master and workers.</p>
+<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank">Installing kubeadm</a> and specifically: Fedora CoreOS or Flatcar Container Linux tab</p>
+<h2 id="clone-master-node">Clone Master Node</h2>
 <p>Each K8s nodes should have unique product_uuid, but clones created by Virtual Machine Manager (GUI) will have same uuid. To overcome this, we use cli to create the clone. So go ahead and create a clone of <code>fcos</code> and name it as <code>master</code> with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-virt-clone --connect qemu:///system --original fcos --name master --file /orange/qemu/master.qcow2
+virt-clone --connect qemu:///system --original fcos --name master --file /var/qemu/master.qcow2
 
 </code></pre></div><p>Start the master and login through <code>ssh k@192.168.99.99</code> and execute following commands,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
@@ -467,10 +468,9 @@ sudo nmcli connection mod &lt;connection-name&gt; <span class="se">\
 sudo systemctl restart NetworkManager
 sudo systemctl reboot   
 
-</code></pre></div><p>After VM reboot, login with new ip <code>ssh k@192.168.99.100</code>.</p>
+</code></pre></div><p>After VM reboot, login to master with the new ip <code>ssh k@192.168.99.100</code>.</p>
 <h2 id="setup-master-node-with-control-plane">Setup Master Node with Control Plane</h2>
-<p>On master node, we have to init the kubeadm so that it works as k8s API Server and control plane.</p>
-<p>Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.100 --pod-network-cidr=192.168.0.0/16 </code>. But in FCOS, this is not going to work as the <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. So, we need to use kubeadm&rsquo;s config file method intead of cli. Create kubeadm-init.yaml config file by executing following command in master node.</p>
+<p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.100 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
@@ -496,38 +496,40 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 
 </code></pre></div><p>It indicates that,</p>
 <ul>
-<li>control manager and nodes should use <code>/opt/libexec</code> as the kubernetes volume instead of default <code>/usr/libexec</code></li>
+<li>control manager and nodes should use <code>/opt/libexec</code> as the kubernetes volume instead of default <code>/usr/libexec</code>. The /opt is writable in Fcos.</li>
 <li>API server advertise address is 192.168.99.100, i.e. primary ip of master node.</li>
 <li>Pods subnet is 192.168.0.0/16</li>
 </ul>
-<p>With this file we can run kubeadm init on master node.</p>
+<p>With the config file, run kubeadm init on master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo kubeadm init --config kubeadm-init.yaml
 
+</code></pre></div><p>Init pulls K8s images and starts various pods. At the end of kubeadm init messages, a join command is displayed; save it somewhere as we need it to join worker nodes to cluster. Copy the admin.conf file to your $HOME/.kube  directory so that you can run kubectl commands as normal user.</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 mkdir -p <span class="nv">$HOME</span>/.kube
 sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
 sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
 
-</code></pre></div><p>Init pulls k8s images and starts various pods. At the end of kubeadm init messages, a join command is displayed; save it somewhere as we need it to join worker nodes to cluster. Watch cluster creation till all pods reach <code>Running</code> state except coredns pods which reach <code>ClusterCreating</code> or <code>Pending</code> state.</p>
-<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 watch kubectl get pods --all-namespaces 
 
-</code></pre></div><p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/">Creating a cluster with kubeadm</a> and <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file">Using kubeadm init with a configuration file</a></p>
+</code></pre></div><p>Watch cluster creation till all pods reach <code>Running</code> state except coredns pods which reach <code>ClusterCreating</code> or <code>Pending</code> state.</p>
+<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/" target="_blank">Creating a cluster with kubeadm</a> and <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file" target="_blank">Using kubeadm init with a configuration file</a></p>
 <h3 id="install-pod-network-add-on">Install Pod Network Add-on</h3>
-<p>Pods communicates through Container Network Interface (CNI) based Pod network add-on and Calico is one such addon. To install calico, download calico.yaml and apply in master node. Sed command replaces all occurances of <code>/usr/libexec</code> to <code>/opt/libexec</code> in calico.yaml file.</p>
+<p>Pods communicates through <code>Container Network Interface (CNI)</code> based Pod Network Add-on and Calico is one such add-on. To install calico, download <code>calico.yaml</code> and apply in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 curl https://docs.projectcalico.org/manifests/calico.yaml -O
 
+<span class="c1"># replace all `/usr/libexec` to `/opt/libexec`</span>
 sed -i <span class="s1">&#39;s/usr\/libexec/opt\/libexec/g&#39;</span> calico.yaml
 
 kubectl apply -f calico.yaml
 
 watch kubectl get pods --all-namespaces 
 
-</code></pre></div><p>This too pulls images required by calico. Once Calico pods are up and running the coredns pods should change to <code>Running</code> state.</p>
-<p>Finally, master node, with k8s api server and control-plane, is ready and <code>kubectl get nodes</code> should now show one node cluster with master in <code>Ready</code> state.</p>
-<p>If something goes wrong during init, we can clean up and revert back with <code>sudo kubeadm reset</code> and try init again.</p>
-<p>For more info: <a href="https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises">Calico Add on</a></p>
+</code></pre></div><p>It pulls calico container images. Once Calico pods are up and running the coredns pods should change to <code>Running</code> state.</p>
+<p>Now, master node, with K8s api server and control-plane, is ready and <code>kubectl get nodes</code> should now show one node cluster with master in <code>Ready</code> state.</p>
+<p>If something goes wrong during init, clean up and revert back with <code>sudo kubeadm reset</code> and try init again.</p>
+<p>For more info: <a href="https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises" target="_blank">Calico Add on</a></p>
 <h2 id="setup-worker-node">Setup worker node</h2>
 <p>Create second clone of <code>fcos</code> and name it <code>worker1</code>. Steps are same as explained when we cloned master, but with following changes,</p>
 <p>In virt-clone command,</p>
@@ -543,9 +545,10 @@ watch kubectl get pods --all-namespaces
 <ul>
 <li>ipv4.addresses: 192.168.99.101/24</li>
 </ul>
-<p>Once worker1 is restarted, login with <code>ssh k@192.168.99.101</code>.</p>
+<p>Reboot worker1 and login with <code>ssh k@192.168.99.101</code>.</p>
 <h2 id="join-the-k8s-cluster">Join the K8s Cluster</h2>
-<p>Again, we can&rsquo;t use kubeadm join cli method because of issues we discussed earlier, so we go with config file method. To start, we now need <code>token</code> and <code>discovery-token-ca-cert-hash</code> which was part of join command displayed when we setup master. If you haven&rsquo;t noted down the join command, then find out token and cert-hash with these commands in the <code>master</code> node.</p>
+<p>As already explained in master node section, we can&rsquo;t use kubeadm join cli method; so, we go with config file method.</p>
+<p>To join the cluster, worker node needs <code>token</code> and <code>discovery-token-ca-cert-hash</code> which was part of join command displayed when we setup master. If you haven&rsquo;t noted down the join command, then find out token and cert-hash with these commands in the <code>master</code> node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 <span class="c1"># run in master node to get token</span>
 kubeadm token list
@@ -572,14 +575,18 @@ cat <span class="s">&lt;&lt;EOF &gt; kubeadm-join.yaml
 </span><span class="s">    - sha256:${JOIN_CERT_HASH}
 </span><span class="s">EOF</span>
 
+<span class="c1"># verify whether variables are substituted properly</span> 
+cat kubeadm-join.yaml
+
 <span class="c1"># if variables are not replaced in config file then use envsubst</span> 
 
-</code></pre></div><p>Now, to join worker1 node to the cluster, execute <code>sudo kubeadm join --config kubeadm-join.yaml</code> in worker1 node.</p>
-<p>It may take about 2 to 3 minutes as it pulls calico and k8s images. On master run <code>watch kubectl get pods --all-namespaces </code>. Once all pods are up and running, fire <code>kubectl get nodes</code> and both master and worker1 are part of k8s cluster and in <code>Ready</code> state.</p>
-<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#join-nodes">Join your nodes</a></p>
-<p>Whenever you start or restart the VM, the K8s cluster starts on its own as we have enabled systemctl to start docker and kubelet services.</p>
+</code></pre></div><p>To join the worker1 to cluster, execute <code>sudo kubeadm join --config kubeadm-join.yaml</code> in worker1 node.</p>
+<p>On master run <code>watch kubectl get pods --all-namespaces </code>. It may take about 2 to 3 minutes as it pulls calico and K8s images. Once all pods are up and running, fire <code>kubectl get nodes</code> and both master and worker1 are part of K8s cluster and in <code>Ready</code> state.</p>
+<p>Clone one more node, worker2, from base VM and join it to cluster.</p>
+<p>For more info: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#join-nodes" target="_blank">K8s - Join your nodes</a></p>
+<p>Via systemctl, we have enabled docker and kubelet services to start on system boot. Once docker and kubelet are up, K8s cluster starts and synchronizes on its own.</p>
 <h2 id="access-cluster-from-host">Access Cluster from Host</h2>
-<p>While it is fine to administer the cluster from master, it is much more convenient to do it from the host. For that, all you have to do is to install <code>kubectl</code> in the host and copy the <code>$HOME/.kube/config</code> file from master node to <code>$HOME/.kube</code> directory in the host and you are good to go.</p>
+<p>While it is fine to administer the cluster from master, it is quite convenient to do it from the host. For that, all you have to do is to install <code>kubectl</code> in the host and copy the <code>$HOME/.kube/config</code> file from master node to hosts <code>$HOME/.kube</code> directory and you are good to go.</p>
 
       </main>
     </div>
