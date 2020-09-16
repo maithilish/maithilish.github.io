@@ -326,7 +326,7 @@
 <li>Enable Server</li>
 <li>Server Address: 192.168.99.2</li>
 <li>Mask: 255.255.255.0</li>
-<li>Lower Address Bound: 192.168.99.99</li>
+<li>Lower Address Bound: 192.168.99.100</li>
 <li>Upper Address Bound: 192.168.99.254</li>
 </ul>
 </li>
@@ -358,7 +358,7 @@ sudo coreos-installer install /dev/sda -i base-config.ign
 <p>Once guest is shutdown, in VM Manager, open its Settings -&gt; Storage and select <code>Fedora-coreos-xxxx.iso</code> installation media and type <code>-</code> key to remove the attached ISO image; otherwise on VM reboot, you will land again in Live Environment instead of installed OS. Start the guest and on first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> and the passwd your have provided to create the password hash earlier.</p>
 <p>It is cumbersome to work in guest console, rather I prefer to work from host console with ssh. Run <code>ip a</code> on guest console to find its ip and use it to make ssh connection from host.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-ssh k@192.168.99.99
+ssh k@192.168.99.100
 
 </code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/" target="_blank">Fedora CoreOS</a></p>
 <h2 id="install-packages">Install Packages</h2>
@@ -449,10 +449,10 @@ sudo sysctl --system
 <li>Keep Disk Names: unchecked</li>
 <li>Keep Hardware UUIDs: unchecked</li>
 </ul>
-<p>Start the master VM (guest) and login with user id <code>k</code>. Set hostname as <code>master</code> with <code>sudo hostnamectl set-hostname master</code>. Find the primary ip with <code>ip -a</code> which is used to advertise the K8s api server which runs on master node. In all subsequent commands, we are presuming master node&rsquo;s ip as 192.168.99.100, but you have to use the actual ip of your master node.</p>
-<p>Now connect from host to master node with <code>ssh k@192.168.99.100</code>.</p>
+<p>Start the master VM (guest) and login with user id <code>k</code>. Set hostname as <code>master</code> with <code>sudo hostnamectl set-hostname master</code>. Find the primary ip with <code>ip -a</code> which is used to advertise the K8s api server which runs on master node. In all subsequent commands, we are presuming master node&rsquo;s ip as 192.168.99.101, but you have to use the actual ip of your master node.</p>
+<p>Now connect from host to master node with <code>ssh k@192.168.99.101</code>.</p>
 <h2 id="setup-master-node-with-control-plane">Setup Master Node with Control Plane</h2>
-<p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.100 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
+<p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.101 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
@@ -461,7 +461,7 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">  kubeletExtraArgs:
 </span><span class="s">    volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">localAPIEndpoint:
-</span><span class="s">  advertiseAddress: &#34;192.168.99.100&#34;
+</span><span class="s">  advertiseAddress: &#34;192.168.99.101&#34;
 </span><span class="s">---
 </span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
 </span><span class="s">kind: ClusterConfiguration
@@ -472,14 +472,14 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">    flex-volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">apiServer:
 </span><span class="s">  extraArgs:
-</span><span class="s">    advertise-address: 192.168.99.100
+</span><span class="s">    advertise-address: 192.168.99.101
 </span><span class="s">
 </span><span class="s">EOF</span>
 
 </code></pre></div><p>It indicates that,</p>
 <ul>
 <li>control manager and nodes should use <code>/opt/libexec</code> as the kubernetes volume instead of default <code>/usr/libexec</code>. The /opt is writable in Fcos.</li>
-<li>API server advertise address is 192.168.99.100, i.e. primary ip of master node.</li>
+<li>API server advertise address is 192.168.99.101, i.e. primary ip of master node.</li>
 <li>Pods subnet is 192.168.0.0/16</li>
 </ul>
 <p>With the config file, run kubeadm init on master node.</p>
@@ -545,7 +545,7 @@ cat <span class="s">&lt;&lt;EOF &gt; kubeadm-join.yaml
 </span><span class="s">    volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">discovery:
 </span><span class="s">  bootstrapToken:
-</span><span class="s">    apiServerEndpoint: 192.168.99.100:6443
+</span><span class="s">    apiServerEndpoint: 192.168.99.101:6443
 </span><span class="s">    token: ${JOIN_TOKEN}
 </span><span class="s">    caCertHashes:
 </span><span class="s">    - sha256:${JOIN_CERT_HASH}

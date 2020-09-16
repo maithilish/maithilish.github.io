@@ -304,7 +304,7 @@
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="nt">&#34;contents&#34;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,%5Bconnection%5D%0Atype%3Dethernet%0Aid%3Dnetwork1%0Ainterface-name%3Dens3%0A%0A%5Bipv4%5D%0Amethod%3Dmanual%0Aaddresses%3D192.168.99.99%2F24%0Agateway%3D192.168.99.1%0Adns%3D192.168.99.1%3B8.8.8.8%0A&#34;</span>
+          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,%5Bconnection%5D%0Atype%3Dethernet%0Aid%3Dnetwork1%0Ainterface-name%3Dens3%0A%0A%5Bipv4%5D%0Amethod%3Dmanual%0Aaddresses%3D192.168.99.100%2F24%0Agateway%3D192.168.99.1%0Adns%3D192.168.99.1%3B8.8.8.8%0A&#34;</span>
         <span class="p">},</span>
         <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="mi">384</span><span class="p">,</span>
         <span class="nt">&#34;overwrite&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -339,7 +339,7 @@
 ip a      
 
 <span class="c1"># temporarily allot static IP</span>
-sudo ip addr add 192.168.99.99/24 dev ens3
+sudo ip addr add 192.168.99.100/24 dev ens3
 
 <span class="c1"># copy ignition file from host to VM</span>
 scp &lt;user_id&gt;@192.168.99.1:base-config.ign .
@@ -352,10 +352,10 @@ and <a href="https://documentation.suse.com/sles/15-SP1/html/SLES-all/cha-libvir
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo coreos-installer install /dev/sda -i base-config.ign
 
-</code></pre></div><p>It extracts the os (around 3GB) from image and copies it to VM storage file. Installation completes within 2 minutes and after installation, reboot with <code>sudo init 6</code>. On first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> with sudo privileges and the password your have provided to create the password hash earlier. It also permanently configures static ip to 192.168.99.99.</p>
+</code></pre></div><p>It extracts the os (around 3GB) from image and copies it to VM storage file. Installation completes within 2 minutes and after installation, reboot with <code>sudo init 6</code>. On first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> with sudo privileges and the password your have provided to create the password hash earlier. It also permanently configures static ip to 192.168.99.100.</p>
 <p>It is cumbersome to work in guest console, rather I prefer to work from host console with ssh. Make ssh connection from host with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-ssh k@192.168.99.99
+ssh k@192.168.99.100
 
 </code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/" target="_blank">Fedora CoreOS</a></p>
 <h2 id="install-packages">Install Packages</h2>
@@ -442,7 +442,7 @@ sudo sysctl --system
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 virt-clone --connect qemu:///system --original fcos --name master --file /var/qemu/master.qcow2
 
-</code></pre></div><p>Start the master and login through <code>ssh k@192.168.99.99</code> and execute following commands,</p>
+</code></pre></div><p>Start the master and login through <code>ssh k@192.168.99.100</code> and execute following commands,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo hostnamectl set-hostname master
 
@@ -459,7 +459,7 @@ sudo nmcli connection   <span class="c1"># find the &lt;connection name&gt;</spa
 
 sudo nmcli connection mod &lt;connection-name&gt; <span class="se">\
 </span><span class="se"></span>     ipv4.method manual <span class="se">\
-</span><span class="se"></span>     ipv4.addresses 192.168.99.100/24 <span class="se">\
+</span><span class="se"></span>     ipv4.addresses 192.168.99.101/24 <span class="se">\
 </span><span class="se"></span>     ipv4.gateway 192.168.99.1 <span class="se">\
 </span><span class="se"></span>     ipv4.dns 192.168.99.1 <span class="se">\
 </span><span class="se"></span>     +ipv4.dns 8.8.8.8 <span class="se">\
@@ -468,9 +468,9 @@ sudo nmcli connection mod &lt;connection-name&gt; <span class="se">\
 sudo systemctl restart NetworkManager
 sudo systemctl reboot   
 
-</code></pre></div><p>After VM reboot, login to master with the new ip <code>ssh k@192.168.99.100</code>.</p>
+</code></pre></div><p>After VM reboot, login to master with the new ip <code>ssh k@192.168.99.101</code>.</p>
 <h2 id="setup-master-node-with-control-plane">Setup Master Node with Control Plane</h2>
-<p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.100 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
+<p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.101 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
@@ -479,7 +479,7 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">  kubeletExtraArgs:
 </span><span class="s">    volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">localAPIEndpoint:
-</span><span class="s">  advertiseAddress: &#34;192.168.99.100&#34;
+</span><span class="s">  advertiseAddress: &#34;192.168.99.101&#34;
 </span><span class="s">---
 </span><span class="s">apiVersion: kubeadm.k8s.io/v1beta2
 </span><span class="s">kind: ClusterConfiguration
@@ -490,14 +490,14 @@ cat <span class="s">&lt;&lt; EOF &gt; kubeadm-init.yaml
 </span><span class="s">    flex-volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">apiServer:
 </span><span class="s">  extraArgs:
-</span><span class="s">    advertise-address: 192.168.99.100
+</span><span class="s">    advertise-address: 192.168.99.101
 </span><span class="s">
 </span><span class="s">EOF</span>
 
 </code></pre></div><p>It indicates that,</p>
 <ul>
 <li>control manager and nodes should use <code>/opt/libexec</code> as the kubernetes volume instead of default <code>/usr/libexec</code>. The /opt is writable in Fcos.</li>
-<li>API server advertise address is 192.168.99.100, i.e. primary ip of master node.</li>
+<li>API server advertise address is 192.168.99.101, i.e. primary ip of master node.</li>
 <li>Pods subnet is 192.168.0.0/16</li>
 </ul>
 <p>With the config file, run kubeadm init on master node.</p>
@@ -543,9 +543,9 @@ watch kubectl get pods --all-namespaces
 </ul>
 <p>In nmcli connection mod command,</p>
 <ul>
-<li>ipv4.addresses: 192.168.99.101/24</li>
+<li>ipv4.addresses: 192.168.99.102/24</li>
 </ul>
-<p>Reboot worker1 and login with <code>ssh k@192.168.99.101</code>.</p>
+<p>Reboot worker1 and login with <code>ssh k@192.168.99.102</code>.</p>
 <h2 id="join-the-k8s-cluster">Join the K8s Cluster</h2>
 <p>As already explained in master node section, we can&rsquo;t use kubeadm join cli method; so, we go with config file method.</p>
 <p>To join the cluster, worker node needs <code>token</code> and <code>discovery-token-ca-cert-hash</code> which was part of join command displayed when we setup master. If you haven&rsquo;t noted down the join command, then find out token and cert-hash with these commands in the <code>master</code> node.</p>
@@ -569,7 +569,7 @@ cat <span class="s">&lt;&lt;EOF &gt; kubeadm-join.yaml
 </span><span class="s">    volume-plugin-dir: &#34;/opt/libexec/kubernetes/kubelet-plugins/volume/exec/&#34;
 </span><span class="s">discovery:
 </span><span class="s">  bootstrapToken:
-</span><span class="s">    apiServerEndpoint: 192.168.99.100:6443
+</span><span class="s">    apiServerEndpoint: 192.168.99.101:6443
 </span><span class="s">    token: ${JOIN_TOKEN}
 </span><span class="s">    caCertHashes:
 </span><span class="s">    - sha256:${JOIN_CERT_HASH}
