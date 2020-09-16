@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-14T11:15:00Z",
         "dateModified" : "2020-09-14T11:15:00Z",
-        "wordCount" : "2566",
+        "wordCount" : "2593",
         "keywords" : [ "kubernetes K8s cluster Fedora CoreOS VirtualBox","Blog" ]
     }
 </script>
@@ -356,6 +356,10 @@ sudo coreos-installer install /dev/sda -i base-config.ign
 
 </code></pre></div><p>It extracts the os (around 3GB) from image and copies it to VM storage file. Installation completes within 2 minutes and after installation, don&rsquo;t reboot; instead shutdown with <code>sudo init 0</code>.</p>
 <p>Once guest is shutdown, in VM Manager, open its Settings -&gt; Storage and select <code>Fedora-coreos-xxxx.iso</code> installation media and type <code>-</code> key to remove the attached ISO image; otherwise on VM reboot, you will land again in Live Environment instead of installed OS. Start the guest and on first boot, fcos provisions the new system by running the <code>base-config.ign</code> and presents the login prompt. Login with user id <code>k</code> and the passwd your have provided to create the password hash earlier.</p>
+<p>Troubleshoot:</p>
+<ul>
+<li>fcos hangs on first boot after os installation: cause, syntax error in base-config.ign. Correct the ignition file and delete and create new VM; start fresh installation.</li>
+</ul>
 <p>It is cumbersome to work in guest console, rather I prefer to work from host console with ssh. Run <code>ip a</code> on guest console to find its ip and use it to make ssh connection from host.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 ssh k@192.168.99.100

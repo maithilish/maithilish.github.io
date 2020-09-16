@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-15T11:30:00Z",
         "dateModified" : "2020-09-15T11:30:00Z",
-        "wordCount" : "2496",
+        "wordCount" : "2527",
         "keywords" : [ "kubernetes k8s cluster Fedora CoreOS Qemu KVM","Blog" ]
     }
 </script>
@@ -266,8 +266,7 @@
 <li>copy ignition file from host to guest</li>
 </ul>
 <h3 id="create-ignition-file">Create Ignition file</h3>
-<div class="highlight"><pre class="chroma"><code class="language-JSON" data-lang="JSON">
-<span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-JSON" data-lang="JSON"><span class="p">{</span>
   <span class="nt">&#34;ignition&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;3.1.0&#34;</span>
   <span class="p">},</span>
@@ -344,7 +343,12 @@ sudo ip addr add 192.168.99.100/24 dev ens3
 <span class="c1"># copy ignition file from host to VM</span>
 scp &lt;user_id&gt;@192.168.99.1:base-config.ign .
 
-</code></pre></div><p>The <code>ip addr add</code> temporarily sets the static ip to interface. However, it is not stable, may unset before you do scp and <code>network unreachable</code> error is thrown when you try scp. Use up-arrow, again set the ip and retry scp. I know this not elegant solution, but with couple of tries you should be able to copy the file to guest. Also, ensure that ssh server is running on host and in Linux, you can start it with <code>sudo systemctl start ssh</code>. If ssh server is not running in host, then you will get <code>connection refused error</code>.</p>
+</code></pre></div><p>The <code>ip addr add</code> temporarily sets the static ip to interface. However, it is not stable, may unset before you do scp before you try scp. Use up-arrow, again set the ip and retry scp. I know this not elegant solution, but with couple of tries you should be able to copy the file to guest. Also, ensure that ssh server is running on host and in Linux, you can start it with <code>sudo systemctl start ssh</code>.</p>
+<p>Troubleshoot:</p>
+<ul>
+<li>network unreachable: interface ip not set, reset with <code>ip addr add ...</code></li>
+<li>connection refused: ssh server not running on host, start it on host</li>
+</ul>
 <p>For more info: <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_getting_started_guide/sec-virtualization_getting_started-quickstart_virt-manager-create_vm" target="_blank">Creating a Virtual Machine with Virtual Machine Manager</a>
 and <a href="https://documentation.suse.com/sles/15-SP1/html/SLES-all/cha-libvirt-config-gui.html" target="_blank">Configuring Virtual Machines with Virtual Machine Manager</a></p>
 <h2 id="install-fedora-coreos">Install Fedora CoreOS</h2>
@@ -357,7 +361,11 @@ sudo coreos-installer install /dev/sda -i base-config.ign
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 ssh k@192.168.99.100
 
-</code></pre></div><p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/" target="_blank">Fedora CoreOS</a></p>
+</code></pre></div><p>Troubleshoot:</p>
+<ul>
+<li>fcos hangs on first boot after os installation: cause, syntax error in base-config.ign. Correct the ignition file and delete and create new VM; start fresh installation.</li>
+</ul>
+<p>For more info: <a href="https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/" target="_blank">Fedora CoreOS</a></p>
 <h2 id="install-packages">Install Packages</h2>
 <p>Kubeadm has dependency on conntrack and ethtool packages, so install them with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
