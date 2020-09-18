@@ -47,9 +47,9 @@
         },
         "copyrightHolder" : "Maithilish",
         "copyrightYear" : "2020",
-        "datePublished": "2020-09-14T11:15:00Z",
-        "dateModified" : "2020-09-14T11:15:00Z",
-        "wordCount" : "2593",
+        "datePublished": "2020-09-15T11:15:00Z",
+        "dateModified" : "2020-09-15T11:15:00Z",
+        "wordCount" : "2898",
         "keywords" : [ "kubernetes K8s cluster Fedora CoreOS VirtualBox","Blog" ]
     }
 </script>
@@ -171,7 +171,7 @@
     <div id="contentspace" class="col-md-7 post-basic order-md-2">
       <h2>Kubernetes Cluster on Fedora CoreOS</h2>
       <small class="text-muted">
-        Sep 14, 2020 . 13 min read
+        Sep 15, 2020 . 14 min read
       </small>
       <div id="share" class="row mx-0 justify-content-end">
 
@@ -258,59 +258,78 @@
 <a href="https://getfedora.org/en/coreos/download?tab=metal_virtualized&stream=stable" target="_blank">Fedora CoreOS Downloads</a></p>
 <p><a id="create-base-vm"></a></p>
 <h2 id="setup-virtualbox-base-vm">Setup VirtualBox Base VM</h2>
-<p>Steps to create VirtualBox VM for Fcos is as follows</p>
+<p>Steps to create VirtualBox VM for Fcos are as follows</p>
 <ul>
 <li>create Ignition File in host</li>
 <li>create and configure VM and networks</li>
 <li>start VM and boot into Fedora CoreOS Live Environment</li>
 <li>copy ignition file from host to guest</li>
+<li>install Fedora CoreOS</li>
 </ul>
 <h3 id="create-ignition-file">Create Ignition File</h3>
-<p>On first boot, Fcos uses a json file known as Ignition file to configure and provision the new system.</p>
-<p>Using text editor, create a file <code>base-config.ign</code> in <code>your home directory on host</code> with following contents.</p>
-<div class="highlight"><pre class="chroma"><code class="language-JSON" data-lang="JSON"><span class="p">{</span>
-  <span class="nt">&#34;ignition&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;3.1.0&#34;</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;passwd&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;users&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&#34;groups&#34;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&#34;docker&#34;</span><span class="p">,</span>
-          <span class="s2">&#34;wheel&#34;</span><span class="p">,</span>
-          <span class="s2">&#34;sudo&#34;</span>
-        <span class="p">],</span>
-        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;k&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;passwordHash&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;replace this with actual hash&gt;&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;sshAuthorizedKeys&#34;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&#34;&lt;replace this with your actual ssh public key&gt;&#34;</span>
-        <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;storage&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;files&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&#34;contents&#34;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,kernel.printk%3D4%0A&#34;</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/etc/sysctl.d/20-silence-audit.conf&#34;</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nt">&#34;contents&#34;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;data:,fcos&#34;</span>
-        <span class="p">},</span>
-        <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="mi">420</span><span class="p">,</span>
-        <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/etc/hostname&#34;</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><p>The ignition creates a new user <code>k</code> and adds the user to docker, wheel and sudo groups; sets hostname to <code>fcos</code>; reduces audit level to warn so that debug messages are not spewed to console.</p>
-<p>In the above file, you have to patch <code>passwordHash</code> and <code>sshAuthorizedKeys</code>.</p>
-<p>For <code>passwordHash</code>, generate password hash with <code>mkpasswd --method=md5crypt </code>, enter some password of your choice and copy the generated hash to <code>passwordHash</code> field. Windows users have to use <a href="https://cygwin.com/cygwin-ug-net/mkpasswd.html">Cygwin mkpasswd utility</a> to generate the hash.</p>
+<p>On first boot, Fcos uses a json file known as Ignition file to configure and provision the new system. With text editor, create yaml file <code>base-config.yaml</code> with following contents,</p>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="w">
+</span><span class="w"></span><span class="k">variant</span><span class="p">:</span><span class="w"> </span>fcos<span class="w">
+</span><span class="w"></span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="m">1.1.0</span><span class="w">
+</span><span class="w"></span><span class="k">passwd</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">users</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>k<span class="w">
+</span><span class="w">      </span><span class="k">groups</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- docker<span class="w">
+</span><span class="w">        </span>- wheel<span class="w">
+</span><span class="w">        </span>- sudo<span class="w">
+</span><span class="w">      </span><span class="k">password_hash</span><span class="p">:</span><span class="w"> </span>&lt;replace-this<span class="sd">&gt;
+</span><span class="sd">      ssh_authorized_keys:</span><span class="w">
+</span><span class="w">        </span>- &lt;replace-this&gt;<span class="w">
+</span><span class="w"></span><span class="k">storage</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">files</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/etc/sysctl.d/<span class="m">20</span>-silence-audit.conf<span class="w">
+</span><span class="w">      </span><span class="k">contents</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">inline</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">          kernel.printk=4</span><span class="w">
+</span><span class="w">    </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/etc/hostname<span class="w">
+</span><span class="w">      </span><span class="k">mode</span><span class="p">:</span><span class="w"> </span><span class="m">420</span><span class="w">
+</span><span class="w">      </span><span class="k">contents</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;data:,fcos&#34;</span><span class="w">
+</span><span class="w">    </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/etc/NetworkManager/system-connections/enp1s0.nmconnection<span class="w">
+</span><span class="w">      </span><span class="k">mode</span><span class="p">:</span><span class="w"> </span><span class="m">0600</span><span class="w">
+</span><span class="w">      </span><span class="k">overwrite</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">      </span><span class="k">contents</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">inline</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">          [connection]</span><span class="w">
+</span><span class="w">          </span>type=ethernet<span class="w">
+</span><span class="w">          </span>id=<span class="s2">&#34;Wired connection 1&#34;</span><span class="w">
+</span><span class="w">          </span>interface-name=enp0s3<span class="w">
+</span><span class="w">
+</span><span class="w">          </span><span class="p">[</span>ipv4<span class="p">]</span><span class="w">
+</span><span class="w">          </span>method=manual<span class="w">
+</span><span class="w">          </span>addresses=<span class="m">192.168.99.100</span>/<span class="m">24</span><span class="w">
+</span><span class="w">          </span>gateway=<span class="m">192.168.99.1</span><span class="w">
+</span><span class="w">          </span>dns=<span class="m">192.168.99.1</span>;<span class="m">8.8.8.8</span><span class="w">
+</span><span class="w">
+</span></code></pre></div><p>On first boot, the ignition file provisions</p>
+<ul>
+<li>a new user <code>k</code></li>
+<li>adds the user to docker, wheel and sudo groups</li>
+<li>sets hostname to fcos</li>
+<li>reduces audit level to warn so that debug messages are not spewed to console</li>
+<li>configures static IP for the interface.</li>
+</ul>
+<p>In the yaml file you have to replace two fields - <code>password_hash</code>, <code>sshAuthorizedKeys</code>.</p>
+<p>For <code>password_hash</code>, generate password hash with <code>mkpasswd --method=md5crypt </code>, enter some password of your choice and copy the generated hash to <code>password_hash</code> field. Windows users have to use <a href="https://cygwin.com/cygwin-ug-net/mkpasswd.html">Cygwin mkpasswd utility</a> to generate the hash.</p>
 <p>The <code>sshAuthorizedKeys</code> allows password less login via ssh and in case, you don&rsquo;t need this feature you may remove the field from the file. Otherwise, copy the content of your ssh public key to <code>sshAuthorizedKeys</code> field. On Linux, you can find it in <code>$HOME/.ssh/id_rsa.pub</code> or you can create a new one with <code>ssh-keygen</code>. In Windows, use Putty to generate and manage ssh key.</p>
-<p>After creating the file, let&rsquo;s move on to create base VM.</p>
+<p>In the connection definition, interface and id may vary depending on the network setup. Only way to confirm is to create a test VM and boot Fedora CoreOS and find out the interface name with <code>ip a</code> and connection id with <code>nmcli connection</code>.</p>
+<p>Now, compile yaml definition to ignition format. If you have docker, then you can compile with following command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+docker run -i --rm quay.io/coreos/fcct:release --pretty --strict &lt; base-config.yaml &gt; base-config.ign
+
+</code></pre></div><p>In case, docker is not installed in your PC, then download appropriate fcct binary from <a href="https://github.com/coreos/fcct/releases" target="_blank">Coreos Fcct Releases</a> and compile the yaml,</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+fcct --pretty --strict &lt; base-config.yaml &gt; base-config.ign
+
+</code></pre></div><p>For some reason, you are unable to compile the file; then as workaround, you can download the compiled version from <a href="https://github.com/maithilish/codefs/blob/master/fcos/base-config-virtualbox.ign" target="_blank">GitHub repo</a>. As mentioned earlier, replace fields -  <code>password_hash</code>, <code>sshAuthorizedKeys</code>.</p>
+<p>Once you are ready with the file, move on to create base VM.</p>
+<p><a id="create-base-vm"></a></p>
 <h3 id="create-base-vm">Create Base VM</h3>
 <p>We need two network interfaces on each VM - one interface to connect from PC (host) to VM (guest) and another interface to connect, from with VM, to the internet. Start VirtualBox Manager, open File -&gt; Host Network Manager and create a <code>Host-only network</code> (normally, named as vboxnet0, vboxnet1 etc.,) and edit the properties as,</p>
 <ul>
@@ -323,14 +342,11 @@
 </li>
 <li>DHCP
 <ul>
-<li>Enable Server</li>
-<li>Server Address: 192.168.99.2</li>
-<li>Mask: 255.255.255.0</li>
-<li>Lower Address Bound: 192.168.99.100</li>
-<li>Upper Address Bound: 192.168.99.254</li>
+<li>Disable Server</li>
 </ul>
 </li>
 </ul>
+<p>When editing interface properties,  if IP is not changing as expected, twice change and apply!</p>
 <p>The host-only network is used to open ssh connection from host to guest. By default, K8s pod container network interface (cni) uses subnet 192.168.99.0/24, so we go with that.</p>
 <p>Next, find out the network interface that is used by the your PC (host) to connect to the internet. For example, I use a wifi connection and its interface is something like wlx98dexxxx.</p>
 <p>Create VM named <code>fcos</code> with following configuration,</p>
@@ -343,14 +359,46 @@
 <p>After its creation, go to settings and set CPU count to 2. Next, in the VM Network settings, attach Adapter 1 to Host-Only Adapter and select the Host-Only network that we created earlier. Attach Adapter 2 to Bridge Adapter and select the interface used by the host to connect to the internet.</p>
 <p>By default, K8s picks the first interface to configure its network, so make sure that Adapter 1 is attached to Host-Only Network. The Adapter 2 should be the interface to internet.</p>
 <p>Enable net connection on host and start the VM. In <code>Select Startup Disk</code> window, choose the downloaded Fedora CoreOS image and start. Once os boots, it auto login to Fedora CoreOS Live Environment.</p>
-<p>Now, you have to get the earlier created <code>base-config.ign</code> file from the host to guest with <code>scp</code> command. Ensure that ssh server is running on host and in Linux, you can start it with <code>sudo systemctl start ssh</code>.</p>
+<h3 id="get-ignition-file-to-guest">Get Ignition File to Guest</h3>
+<p>Earlier, we had created Ignition file <code>base-config.ign</code> on host. To install OS, we have to get it from host to guest. Easiest option is to use python http server,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-scp &lt;my-pc-user-id&gt;@192.168.99.1:base-config.ign .
+<span class="c1"># on host, run from the ignition file&#39;s directory</span> 
+python3 -m http.server
 
-</code></pre></div><p>At this point, Fedora CoreOS Live Environment runs entirely from system memory and we have manually install the os. In the next section, we are going to do that.</p>
+<span class="c1"># on guest</span>
+<span class="c1"># find the interface name, normally enp0s3</span>
+ip a      
+
+<span class="c1"># temporarily allot static IP in guest</span>
+sudo ip addr add 192.168.99.100/24 dev enp0s3
+
+curl -LO 192.168.99.1:8000/base-config.ign
+
+</code></pre></div><p>As we have disabled DHCP while creating the virtual network, set static IP and the use curl. The <code>ip addr add</code> temporarily sets the static ip to interface. However, it is not stable, may unset before you do curl before you try scp. Use up-arrow, again set the ip and retry scp. I know this not elegant solution, but with couple of tries you should be able to copy the file to guest.</p>
+<p>Alternatively, if you have ssh server on host, use scp to get the file to guest.</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+<span class="c1"># on host - start open ssh server</span>
+sudo systemctl start ssh
+
+<span class="c1"># on guest</span>
+<span class="c1"># find the interface name, normally ens3</span>
+ip a      
+
+<span class="c1"># temporarily allot static IP in guest</span>
+sudo ip addr add 192.168.99.100/24 dev ens3
+
+<span class="c1"># copy ignition file from host to VM</span>
+scp &lt;user_id&gt;@192.168.99.1:base-config.ign .
+
+</code></pre></div><p>Troubleshoot:</p>
+<ul>
+<li>network unreachable: interface ip not set, reset with <code>ip addr add ...</code></li>
+<li>connection refused: ssh server not running on host, start it on host</li>
+</ul>
+<p>At this point, Fedora CoreOS Live Environment runs entirely from system memory and we have manually install the os. In the next section, we are going to do that.</p>
 <p>For more info: <a href="https://www.nakivo.com/blog/use-virtualbox-quick-overview/" target="_blank">VirtualBox Quick Overview</a></p>
 <h2 id="install-fedora-coreos">Install Fedora CoreOS</h2>
-<p>To install Fcos, run following command,</p>
+<p>VM boots to CoreOS Live Environment which runs completely from memory and we have to manually install the os to disk. To install Fcos, run following command,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
 sudo coreos-installer install /dev/sda -i base-config.ign
 
@@ -453,8 +501,33 @@ sudo sysctl --system
 <li>Keep Disk Names: unchecked</li>
 <li>Keep Hardware UUIDs: unchecked</li>
 </ul>
-<p>Start the master VM (guest) and login with user id <code>k</code>. Set hostname as <code>master</code> with <code>sudo hostnamectl set-hostname master</code>. Find the primary ip with <code>ip -a</code> which is used to advertise the K8s api server which runs on master node. In all subsequent commands, we are presuming master node&rsquo;s ip as 192.168.99.101, but you have to use the actual ip of your master node.</p>
-<p>Now connect from host to master node with <code>ssh k@192.168.99.101</code>.</p>
+<p>Start the master and login through <code>ssh k@192.168.99.100</code> and execute following commands,</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+sudo hostnamectl set-hostname master
+
+<span class="c1"># ensure that product_uuid is unique</span>
+sudo cat /sys/class/dmi/id/product_uuid
+
+<span class="c1"># reset machine id to product uuid</span>
+sudo rm /etc/machine-id
+sudo systemd-machine-id-setup
+sudo systemd-machine-id-setup --commit
+
+<span class="c1"># change static ip</span> 
+sudo nmcli connection   <span class="c1"># find the &lt;connection name&gt;</span>
+
+sudo nmcli connection mod &lt;connection-name&gt; <span class="se">\
+</span><span class="se"></span>     ipv4.method manual <span class="se">\
+</span><span class="se"></span>     ipv4.addresses 192.168.99.101/24 <span class="se">\
+</span><span class="se"></span>     ipv4.gateway 192.168.99.1 <span class="se">\
+</span><span class="se"></span>     ipv4.dns 192.168.99.1 <span class="se">\
+</span><span class="se"></span>     +ipv4.dns 8.8.8.8 <span class="se">\
+</span><span class="se"></span>     connection.autoconnect yes
+
+sudo systemctl restart NetworkManager
+sudo systemctl reboot   
+
+</code></pre></div><p>After VM reboot, login to master with the new ip <code>ssh k@192.168.99.101</code>.</p>
 <h2 id="setup-master-node-with-control-plane">Setup Master Node with Control Plane</h2>
 <p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.101 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
@@ -517,15 +590,21 @@ watch kubectl get pods --all-namespaces
 <p>If something goes wrong during init, clean up and revert back with <code>sudo kubeadm reset</code> and try init again.</p>
 <p>For more info: <a href="https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises" target="_blank">Calico Add on</a></p>
 <h2 id="setup-worker-node">Setup worker node</h2>
-<p>Create second clone of <code>fcos</code> with these options,</p>
+<p>Create second clone of <code>fcos</code> and name it <code>worker1</code>. Steps are same as explained when we cloned master, but with following changes,</p>
+<p>In virt-clone command,</p>
 <ul>
-<li>Name: worker1</li>
-<li>Clone Type: Full clone</li>
-<li>MAC Address Policy: Generate new MAC address for all network adapters</li>
-<li>Keep Disk Names: unchecked</li>
-<li>Keep Hardware UUIDs: unchecked</li>
+<li>clone name: worker1</li>
+<li>file: worker1.qcow2</li>
 </ul>
-<p>Start the worker1 VM and login with user id <code>k</code>. Set hostname as <code>worker1</code> with <code>sudo hostnamectl set-hostname worker1</code>. Find its primary ip with <code>ip -a</code> and use it to connect from host to worker1 node with <code>ssh k@192.168.99.x</code>.</p>
+<p>In hostnamectl command</p>
+<ul>
+<li>host name: worker1</li>
+</ul>
+<p>In nmcli connection mod command,</p>
+<ul>
+<li>ipv4.addresses: 192.168.99.102/24</li>
+</ul>
+<p>Reboot worker1 and login with <code>ssh k@192.168.99.102</code>.</p>
 <h2 id="join-the-k8s-cluster">Join the K8s Cluster</h2>
 <p>As already explained in master node section, we can&rsquo;t use kubeadm join cli method; so, we go with config file method.</p>
 <p>To join the cluster, worker node needs <code>token</code> and <code>discovery-token-ca-cert-hash</code> which was part of join command displayed when we setup master. If you haven&rsquo;t noted down the join command, then find out token and cert-hash with these commands in the <code>master</code> node.</p>

@@ -593,7 +593,7 @@ Let&amp;rsquo;s use New Web Application wizard to create GWT project. Choose  GD
     <item>
       <title>Kubernetes Cluster on Fedora CoreOS</title>
       <link>https://www.codetab.org/post/kubernetes-cluster-virtualbox/</link>
-      <pubDate>Mon, 14 Sep 2020 11:15:00 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2020 11:15:00 +0000</pubDate>
       
       <guid>https://www.codetab.org/post/kubernetes-cluster-virtualbox/</guid>
       <description>K8s Cluster on Fedora CoreOS VM After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims but found that Ubuntu K8s cluster has its own share of drawbacks. It&amp;rsquo;s time and space: Ubuntu Server installation takes an hour and needs about 20GB of disk space for a three node cluster.</description>
@@ -698,15 +698,6 @@ WordPress Posts Open Dashboard → Posts to display the list of posts from the s
   &amp;lt;ivy:retrieve&amp;gt; task
   Apache Ivy Cachepath Task
 &amp;lt;ivy:cachepath&amp;gt; constructs an Ant classpath consisting of resolved artifacts in the cache.</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes Cluster on Fedora CoreOS with Qemu</title>
-      <link>https://www.codetab.org/post/kubernetes-cluster-qemu/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:00 +0000</pubDate>
-      
-      <guid>https://www.codetab.org/post/kubernetes-cluster-qemu/</guid>
-      <description>K8s Cluster on Fedora CoreOS VM After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims but found that Ubuntu K8s cluster has its own share of drawbacks. It&amp;rsquo;s time and space: Ubuntu Server installation takes an hour and needs about 20GB of disk space for a three node cluster.</description>
     </item>
     
     <item>
@@ -2453,6 +2444,15 @@ Install IvyDE In Eclipse select Help → Install New Software. Add IvyDE update 
   Apache Ivy library
   Apache IvyDE Eclipse plugin
   Select both and complete the installation. On Eclipse restart, menu bar will have IvyDE&amp;rsquo;s Resove button.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Cluster on Fedora CoreOS with Qemu</title>
+      <link>https://www.codetab.org/post/kubernetes-cluster-qemu/</link>
+      <pubDate>Tue, 15 Sep 2020 11:30:00 +0000</pubDate>
+      
+      <guid>https://www.codetab.org/post/kubernetes-cluster-qemu/</guid>
+      <description>K8s Cluster on Fedora CoreOS VM After dabbling with Kubernetes on Minikube, I moved on to setup a three node cluster with VirtualBox and Ubuntu. It was not that difficult as some blogs and books on K8s claims but found that Ubuntu K8s cluster has its own share of drawbacks. It&amp;rsquo;s time and space: Ubuntu Server installation takes an hour and needs about 20GB of disk space for a three node cluster.</description>
     </item>
     
     <item>
