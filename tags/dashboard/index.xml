@@ -6,7 +6,7 @@
     <description>Recent content in dashboard on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 02:35:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 01:36:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/dashboard/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,9 +25,20 @@ The screenshot of the Scoopi dashboard is
     <item>
       <title>Dashboard - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/dashboard/</link>
-      <pubDate>Sat, 12 Jan 2019 01:36:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:36:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/dashboard/</guid>
+      <description>Dashboard Scoopi Dashboard is an nice little Angular web app that displays useful information such as system, task and pool stats.
+The screenshot of the Scoopi dashboard is
+ Embedded Jetty Web Server serves the dashboard and we can access the Scoopi dashboard at http://localhost:9010 while Scoopi is running. The dashboard can kept running even after scoopi is finished and use the same one for next run as it stops when scoopi terminates and refreshes itself once it detects that scoopi is running again.</description>
+    </item>
+    
+    <item>
+      <title>Dashboard - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</link>
+      <pubDate>Sat, 12 Jan 2019 01:36:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</guid>
       <description>Dashboard Scoopi Dashboard is an nice little Angular web app that displays useful information such as system, task and pool stats.
 The screenshot of the Scoopi dashboard is
  Embedded Jetty Web Server serves the dashboard and we can access the Scoopi dashboard at http://localhost:9010 while Scoopi is running. The dashboard can kept running even after scoopi is finished and use the same one for next run as it stops when scoopi terminates and refreshes itself once it detects that scoopi is running again.</description>

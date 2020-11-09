@@ -6,7 +6,7 @@
     <description>Recent content in Advanced on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 23:03:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</link>
-      <pubDate>Sat, 12 Jan 2019 06:14:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:14:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</guid>
       <description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
@@ -26,7 +26,7 @@ The snippet of HTML of a book item is
     <item>
       <title>Multi Tasks - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</link>
-      <pubDate>Fri, 11 Jan 2019 23:51:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 23:51:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</guid>
       <description>Multiple Tasks Scoopi can execute multiple tasks for a locator and also multiple tasks on multiple locatorGroups.
@@ -36,7 +36,7 @@ Multiple tasks and single Locator group The Example-1 from fin folder scrape Pri
     <item>
       <title>Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</link>
-      <pubDate>Fri, 11 Jan 2019 23:59:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 23:59:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</guid>
       <description>Steps So far, we explored locators, tasks and dataDef to scrape data from the pages. But, we haven&amp;rsquo;t explained how Scoopi executes tasks and scrape data.
@@ -46,7 +46,7 @@ Scoopi is designed to execute tasks as workflow which is normally referred as st
     <item>
       <title>Converters - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</link>
-      <pubDate>Sat, 12 Jan 2019 00:16:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 00:16:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</guid>
       <description>Converters This chapter explain adding new steps to workflow and converter plugins.
@@ -58,7 +58,7 @@ bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;quot;org.codetab
     <item>
       <title>Scripter - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</link>
-      <pubDate>Sat, 12 Jan 2019 06:29:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</guid>
       <description>Script Plugin The example in the previous chapter converts date field using built-in DateRoller plugin. However, it is not possible to handle all types of modification with built-in plugins. To cope with myriad possibilities, Scoopi provides Scripter step to which user can hook arbitrary JavaScript to modify data.
@@ -70,7 +70,7 @@ bsTask: dataDef: bs steps: jsoupDefault: process: class: &amp;quot;org.</descrip
     <item>
       <title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</link>
-      <pubDate>Sat, 12 Jan 2019 00:29:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 00:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</guid>
       <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
@@ -80,7 +80,7 @@ Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss l
     <item>
       <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</link>
-      <pubDate>Sat, 12 Jan 2019 06:40:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:40:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</guid>
       <description>Pagination Many pages provide pagination buttons or links to navigate through series of pages. We can use link locators described in previous chapter to scrape pages using pagination.
@@ -92,7 +92,7 @@ defs/examples/book/page/page-1.html
     <item>
       <title>Appenders Encoders - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</link>
-      <pubDate>Sat, 12 Jan 2019 01:09:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:09:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</guid>
       <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
@@ -103,7 +103,7 @@ appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; p
     <item>
       <title>DOM Loader - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</link>
-      <pubDate>Sat, 12 Jan 2019 06:47:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:47:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</guid>
       <description>JavaScript and WebDriver So far in the guide, the examples scrape data from regular HTML pages. But, we encounter many web pages that generates and renders pages with JavaScript or Ajax functions. In this and next chapter, we explore ways to seamlessly scrape such pages.
@@ -114,7 +114,7 @@ Open JavaScript - JavaScript generated contents page and view its page source.</
     <item>
       <title>Ajax - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</link>
-      <pubDate>Sat, 12 Jan 2019 07:03:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 07:03:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</guid>
       <description>Browser interaction with WebDriver In this previous chapter, we scrape data from page with JavaScript created contents. In this chapter, we extend it further and show how to interact with WebDriver to emulate browser automation.

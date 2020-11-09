@@ -6,7 +6,7 @@
     <description>Recent content in definition file on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 04:27:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 22:37:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/definition-file/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,19 @@
     <item>
       <title>Definition files - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</link>
-      <pubDate>Fri, 11 Jan 2019 22:37:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 22:37:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</guid>
+      <description>Defs, Locators and Tasks Scoopi uses YML definition files to extract data from HTML pages. To learn the YML elements used by the definition files, Scoopi distribution comes with a set of examples which are under def/examples folder.
+Scoopi Definition Files Scoopi creates the data model based on YML definition files. We can specify the definition file using scoopi.defs.dir configuration property, which is normally set in scoopi.properties file located in conf folder.</description>
+    </item>
+    
+    <item>
+      <title>Definition files - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</link>
+      <pubDate>Fri, 11 Jan 2019 22:37:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</guid>
       <description>Defs, Locators and Tasks Scoopi uses YML definition files to extract data from HTML pages. To learn the YML elements used by the definition files, Scoopi distribution comes with a set of examples which are under def/examples folder.
 Scoopi Definition Files Scoopi creates the data model based on YML definition files. We can specify the definition file using scoopi.defs.dir configuration property, which is normally set in scoopi.properties file located in conf folder.</description>
     </item>

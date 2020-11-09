@@ -6,7 +6,7 @@
     <description>Recent content in scripter on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 06:29:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 06:29:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/scripter/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,21 @@
     <item>
       <title>Scripter - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</link>
-      <pubDate>Sat, 12 Jan 2019 06:29:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</guid>
+      <description>Script Plugin The example in the previous chapter converts date field using built-in DateRoller plugin. However, it is not possible to handle all types of modification with built-in plugins. To cope with myriad possibilities, Scoopi provides Scripter step to which user can hook arbitrary JavaScript to modify data.
+Scripter Step The Example 8a adds process step to jsoupDefault steps in bs task. The relevant snippet is shown below
+defs/examples/fin/jsoup/ex-8a/job.yml
+bsTask: dataDef: bs steps: jsoupDefault: process: class: &amp;quot;org.</description>
+    </item>
+    
+    <item>
+      <title>Scripter - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/scripter/</link>
+      <pubDate>Sat, 12 Jan 2019 06:29:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/scripter/</guid>
       <description>Script Plugin The example in the previous chapter converts date field using built-in DateRoller plugin. However, it is not possible to handle all types of modification with built-in plugins. To cope with myriad possibilities, Scoopi provides Scripter step to which user can hook arbitrary JavaScript to modify data.
 Scripter Step The Example 8a adds process step to jsoupDefault steps in bs task. The relevant snippet is shown below
 defs/examples/fin/jsoup/ex-8a/job.yml

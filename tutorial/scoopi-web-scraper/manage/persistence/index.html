@@ -8,15 +8,6 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
 <script type="application/ld+json">
     {
         "@context" : "http://schema.org",
@@ -46,10 +37,10 @@
             }
         },
         "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-12T01:02:00+0530",
-        "dateModified" : "2019-01-12T01:02:00+0530",
-        "wordCount" : "537",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-11-05T01:02:00+0530",
+        "dateModified" : "2020-11-05T01:02:00+0530",
+        "wordCount" : "390",
         "keywords" : [ "persistence","Blog" ]
     }
 </script>
@@ -395,9 +386,32 @@
         </a>
         
         
-        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper/manage/db-setup/"
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-cluster" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Cluster
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-cluster" class="collapse">
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/"
             class="toc-page dropdown-item text-wrap text-muted">
-            DB Setup
+            Quick Start
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Docker
         </a>
         
         
@@ -499,33 +513,12 @@
 <li>avoid expensive parse operation by reuse of persisted data</li>
 <li>set expiry date for each page</li>
 </ul>
-<h2 id="setup-database">Setup Database</h2>
-<p>If you running Scoopi from docker image then no database setup is
-required as docker image contains pre-configured MariaDB container.
-Please refer <a href="/tutorial/scoopi-web-scraper/basic/installation-quick-start/">Scoopi Installation</a> to run Scoopi with MariaDB using docker-compose.</p>
-<p>In case you are using release package from GitHub to run Scoopi, then
-you have to set up MariaDB or HSQLDB database manually. See <a href="/tutorial/scoopi-web-scraper/manage/db-setup/">HSQLDB
-Setup</a> to setup and configure Hsql
-database.</p>
-<h2 id="enable-persistence-in-scoopi">Enable Persistence in Scoopi</h2>
+<h2 id="enable-persistence">Enable Persistence</h2>
 <p>By default persistence is disabled in Scoopi through configuration
-setting <em>scoopi.useDatastore=false</em> in <code>conf/scoopi.properties</code> file. To
-enable persistence, either set the property <em>scoopi.useDatastore=true</em>
-or hash it out.</p>
-<p>Now run <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-10/job.yml" target="_blank">Example 10</a> and scoopi database should have locator, datadef, data and document tables with data.</p>
+setting <em>scoopi.datastore.enable=false</em> in <code>conf/scoopi.properties</code> file. To enable persistence, either set the property <em>scoopi.datastore.enable=true</em> or hash it out. By default, the scoopi objects are persisted in <code>data/</code> directory and it is configurable through <em>scoopi.datastore.path</em> config property.</p>
+<p>Now run <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-10/job.yml" target="_blank">Example 10</a> and the scoopi objects are stored in data directory.</p>
 <h2 id="live">Live</h2>
-<p>When we first run Example-10 with persistence enabled, <em>document table</em>
-which holds compressed contents of the pages - acme-snapshot-links.html,
-acme-bs.html and acme-pl.html will end up with three rows and <em>data
-table</em> which holds the parsed data will have five rows - finLinks,
-price, snapshot, bs and pl.</p>
-<p>If we run Scoopi again and query the tables, the document table will
-have 6 rows and data table will end up with 10 rows. For each run,
-Scoopi fetches fresh pages and parse it to create data even though
-persistence is enabled. This is because, by default, <em>live</em> setting
-which controls the expiry of page is set to zero days (P0D). So, in each
-run, Scoopi sees page as expired and fetches new one. Use live property
-in tasks group to alter this default behavior.</p>
+<p>When we first run Example-10 with persistence enabled, the fetched pages, acme-snapshot-links.html, acme-bs.html and acme-pl.html and parsed data are compressed and stored in <em>data</em> folder. If we run Scoopi again they are re-fetched and new doc and data objects are created . For each run, Scoopi fetches fresh pages and parse it to create data even though persistence is enabled. This is because, by default, <em>live</em> setting which controls the expiry of page is set to zero days (P0D).  Use <em>live</em> property in tasks group to alter this default behavior.</p>
 <p>Suppose, we want to fetch new snapshot page once in a week. The
 <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-11/job.yml" target="_blank">Example 11</a>
 sets live property to P1W for snapshotGroup as shown below</p>
@@ -538,9 +531,7 @@ sets live property to P1W for snapshotGroup as shown below</p>
       dataDef: snapshot        
 
     live: P1W
-</code></pre><p>The P0D, P1W are
-<a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO_8601</a> based
-representation of duration.</p>
+</code></pre><p>The P0D, P1W are <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO_8601</a> based representation of duration.</p>
 <p>During initial run, Scoopi fetches fresh pages and persists. In
 subsequent runs, it reuses the persisted page and data till pages are
 expired. This speeds up the run by many fold.</p>
@@ -548,13 +539,12 @@ expired. This speeds up the run by many fold.</p>
 <p>We can further control persistence of locator or data using persist
 property.</p>
 <p>In <code>conf/scoopi.properties</code> we can set following properties</p>
-<pre><code>scoopi.useDatastore=true|false
+<pre><code>scoopi.datastore.enable=true|false
 
 scoopi.persist.locator=true|false
 scoopi.persist.data=true|false
 </code></pre>
-<p>If scoopi.useDatastore is false then there is no need to start database
-as nothing is stored. If scoopi.useDatastore is true, then</p>
+<p>If scoopi.datastore.enable is true, then</p>
 <ul>
 <li>if scoopi.persist.locator is false then no locator and its documents
 are stored</li>
@@ -562,8 +552,7 @@ are stored</li>
 </ul>
 <p>If scoopi.persist.data is true, then in addition, we can control whether
 to persist data of each task using <em>persist/data</em> property in task
-definition. The
-<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-12/job.yml" target="_blank">Example 12</a></p>
+definition. The <a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/defs/examples/fin/jsoup/ex-12/job.yml" target="_blank">Example 12</a></p>
 <pre><code class="language-raw" data-lang="raw">taskGroups:
   snapshotGroup:
 
@@ -580,13 +569,7 @@ definition. The
     live: P1W
 </code></pre><p>The data parsed by priceTask are stored but not the snapshotTask as
 persist/data is false for that task.</p>
-<h2 id="use-scoopi-with-other-databases">Use Scoopi with other Databases</h2>
-<p>Scoopi uses <a href="https://db.apache.org/jdo/" target="_blank">JDO</a> and <a href="http://www.datanucleus.org/" target="_blank">DataNucleus
-AccessPlatform</a> which works with variety of
-databases. Scoopi is tested with MySQL, MariaDB and MongoDB and
-configuration for each of them is in <code>conf/jdoconfig.properties</code> file.</p>
-<p>The next chapter describes spliting the lengthy defintions into multiple
-files for easy maintainance.</p>
+<p>The next chapter describes splitting the lengthy definitions into multiple files for easy maintenance.</p>
 
           </main>
         </div>
@@ -635,8 +618,6 @@ files for easy maintainance.</p>
     </div>
 
 </footer>
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 

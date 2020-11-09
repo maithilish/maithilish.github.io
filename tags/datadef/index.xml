@@ -6,7 +6,7 @@
     <description>Recent content in DataDef on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 02:47:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 22:47:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/datadef/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,21 @@
     <item>
       <title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</link>
-      <pubDate>Fri, 11 Jan 2019 22:47:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 22:47:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</guid>
+      <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
+In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
+The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
+dataDefs: price: query: block: &amp;quot;div#price_tick&amp;quot; selector: &amp;quot;*&amp;quot; items: [ item: { name: &amp;quot;Price&amp;quot;, value: &amp;quot;Price&amp;quot; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
+    </item>
+    
+    <item>
+      <title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</link>
+      <pubDate>Fri, 11 Jan 2019 22:47:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</guid>
       <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
 The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below

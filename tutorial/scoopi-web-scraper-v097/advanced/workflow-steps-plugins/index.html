@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><meta charset="utf-8">
+<meta name="description" content="Scoopi web scraper uses a robust workflow engine and plugin framework and is highly extensible. Workflow consists of tasks, steps and plugins.">
+<meta name="author" content="Maithilish">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://google.com/article"
+        },
+        "articleSection" : "tutorial",
+        "name" : "Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop",
+        "headline" : "Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop",
+        "url" : "https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/",
+        "description" : "Scoopi web scraper uses a robust workflow engine and plugin framework and is highly extensible. Workflow consists of tasks, steps and plugins.",
+        "inLanguage" : "en",
+        "image": "https://www.codetab.org/logo.jpg",
+        "author" : "Maithilish",
+        "creator" : "Maithilish",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Maithilish",
+            "url": "https://www.codetab.org/",
+            "logo": {
+               "@type": "ImageObject",
+               "url": "https://www.codetab.org/logo.png",
+               "width":"200",
+               "height":"200"
+            }
+        },
+        "copyrightHolder" : "Maithilish",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-01-11T23:59:00+0530",
+        "dateModified" : "2019-01-11T23:59:00+0530",
+        "wordCount" : "430",
+        "keywords" : [ "steps","Blog" ]
+    }
+</script>
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
+
+<title>Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop</title></head>
+
+<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
+
+    <div class="container-fluid">
+
+        
+        <a class="navbar-brand" href="/">Codetab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbar">
+
+            
+            
+            <ul class="navbar-nav ml-auto">
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tutorials"  >
+                        
+                        <span>Home</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects"  >
+                        
+                        <span>Projects</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/post"  >
+                        
+                        <span>Posts</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about"  >
+                        
+                        <span>About</span>
+                        
+                    </a>
+                </li>
+
+                
+                
+
+            </ul>
+
+        </div>
+    </div>
+</nav></header>
+
+<div class="container-fluid">
+  <div class="row">&nbsp;</div>
+
+  <div class="row">
+    
+    <aside id="sidebar" class="col-md-3">
+      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    <h4 class="text-muted bg-white pl-2">Scoopi Web Scraper</h4>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
+            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bookmenu">
+            <div>
+                
+                
+
+
+
+
+
+
+
+
+
+<div id="Scoopi Web Scraper">
+    
+    <div>
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/introduction/"
+            class="toc-page text-wrap text-muted ">
+            Introduction
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-v097-basic" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Basics
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-v097-basic" class="collapse">
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Installation and Quick Start
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Definition File
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            DataDef
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Dimensions
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Data Items and Dynamic Query
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Index, IndexRange and BreakAfter
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Filters
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Selector
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-v097-advanced" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Advanced
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-v097-advanced" class="">
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Multi Dimensions
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-tasks/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Multi Tasks
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/"
+            class="toc-page dropdown-item text-wrap text-danger">
+            WorkFlow, Steps and Plugins
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/converters/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Converters
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/scripter/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Scripter
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Create Locators from Links
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/pagination/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Pagination
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/appender-encoder/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Appender and Encoder
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/dom-loader-selenium-webdriver/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Dom Loader
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/ajax-selenium-webdriver/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Ajax
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="dropdown show mt-2">
+    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-scoopi-web-scraper-v097-manage" id="dropdownheader"
+        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+        Manage
+    </a>
+    
+    <div id="tutorial-scoopi-web-scraper-v097-manage" class="collapse">
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Persistence
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Split Definitions
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Logs
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            Dashboard
+        </a>
+        
+        
+        <a href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/"
+            class="toc-page dropdown-item text-wrap text-muted">
+            DB Setup
+        </a>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+                
+            </div>
+        </div>
+    </nav>
+
+</nav>
+
+</div>
+    </aside>
+
+    <div id="contentbar" class="col-md-7">
+        <div id="share" class="row justify-content-end">
+
+
+
+
+
+<div title=twitter>
+    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/&amp;text=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop" target="_blank" rel="noopener">
+        <i class="icon-twitter-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=facebook>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/&amp;t=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop" target="_blank" rel="noopener">
+        <i class="icon-facebook-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=linkedin>
+    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/&amp;title=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop" target="_blank" rel="noopener">
+        <i class="icon-linkedin-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=email>
+    <a href="mailto:?subject=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop&amp;body=https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/" target="_blank" rel="noopener">
+        <i class="icon-mail-squared text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=whatsapp>
+    <a href="https://web.whatsapp.com/send?text=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop%20https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/" target="_blank" rel="noopener">
+        <i class="icon-whatsapp text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=reddit>
+    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/&amp;title=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop" target="_blank" rel="noopener">
+        <i class="icon-reddit-alien text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<div title=weibo>
+    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/&amp;title=Workflows%20Steps%20-%20Scoopi%20Web%20Scraper%20-%20why%20just%20scrape%20when%20you%20can%20scoop" target="_blank" rel="noopener">
+        <i class="icon-weibo text-secondary"></i>
+    </a>
+</div>
+
+
+
+
+<i class="icon-blank ctab-transparent"></i></div>
+        <div class="row">
+          <main id="content" class="col-md-11 post-basic">
+            <h1 id="steps">Steps</h1>
+<p>So far, we explored locators, tasks and dataDef to scrape data from the
+pages. But, we haven&rsquo;t explained how Scoopi executes tasks and scrape
+data.</p>
+<p>Scoopi is designed to execute tasks as workflow which is normally
+referred as <em>steps</em> which in turn consists of multiple <em>step</em>. Scoopi
+ships with two in-built defaults steps <em>jsoupDefault</em> and
+<em>htmlUnitDefault</em> and they are defined in <code>steps-default.yml</code> which is
+packaged inside Scoopi distribution jar. We can access the contents of
+<a href="https://github.com/maithilish/scoopi/blob/master/src/main/resources/steps-default.yml" target="_blank">steps-default.yml from the
+source</a>.</p>
+<h2 id="steps-1">Steps</h2>
+<p>Let&rsquo;s go through the jsoupDefault to understand the workflow design.</p>
+<p><code>steps-default.yml</code></p>
+<pre><code class="language-raw" data-lang="raw">steps: 
+  jsoupDefault:
+    seeder:
+      class: &quot;org.codetab.scoopi.step.extract.LocatorSeeder&quot;
+      previous: start
+      next: loader
+    loader:
+      class: &quot;org.codetab.scoopi.step.extract.PageLoader&quot;
+      previous: seeder
+      next: parser
+    parser:
+      class: &quot;org.codetab.scoopi.step.parse.jsoup.Parser&quot;
+      previous: loader
+      next: filter
+    filter:
+      class: &quot;org.codetab.scoopi.step.process.DataFilter&quot;
+      previous: parser
+      next: appender    
+    appender:
+      class: &quot;org.codetab.scoopi.step.load.DataAppender&quot;
+      previous: filter
+      next: end
+      plugins: [
+        plugin: { 
+          name: dataFile, 
+          class: &quot;org.codetab.scoopi.plugin.appender.FileAppender&quot;,
+          file: &quot;output/data.txt&quot;, 
+          plugins: [ 
+             plugin: { 
+               name: csv,
+               delimiter: &quot;|&quot;,               
+               class: &quot;org.codetab.scoopi.plugin.encoder.CsvEncoder&quot;
+             } 
+          ]
+        }          
+      ]
+</code></pre><p>The sequence of step is</p>
+<ol>
+<li>seeder</li>
+<li>loader</li>
+<li>parser</li>
+<li>filter</li>
+<li>appender</li>
+</ol>
+<p>Each step specifies three properties</p>
+<ul>
+<li>class that has to be executed for the step</li>
+<li>name of the previous</li>
+<li>name of the next step</li>
+</ul>
+<p>For the the first step the previous is start and the last step next is
+set to end.</p>
+<p>The list of built-in step classes
+are</p>
+<table>
+<thead>
+<tr>
+<th>Step type</th>
+<th>Description</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>seeder</td>
+<td>create and seed locators</td>
+<td>org.codetab.scoopi.step.extract.LocatorSeeder</td>
+</tr>
+<tr>
+<td>loader</td>
+<td>load HTML page</td>
+<td>org.codetab.scoopi.step.extract.URLLoader</td>
+</tr>
+<tr>
+<td>parser</td>
+<td>parse using JSoup</td>
+<td>org.codetab.scoopi.step.parse.jsoup.Parser</td>
+</tr>
+<tr>
+<td>parser</td>
+<td>parse with HtmlUnit</td>
+<td>org.codetab.scoopi.step.parse.htmlunit.Parser</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>filter parsed data</td>
+<td>org.codetab.scoopi.step.process.DataFilter</td>
+</tr>
+<tr>
+<td>appender</td>
+<td>encode and append data as output</td>
+<td>org.codetab.scoopi.step.load.DataAppender</td>
+</tr>
+</tbody>
+</table>
+<p>The class name should be fully qualified including package otherwise
+class not found error is thrown.</p>
+<h2 id="plugins">Plugins</h2>
+<p>The last step appender is bit interesting. It uses FileAppender plugin
+to append data to output file which in turn uses another plugin
+CsvEncoder plugin to encode data into string delimited with | character
+before sending the output to file.</p>
+<pre><code class="language-raw" data-lang="raw">appender:
+      class: &quot;org.codetab.scoopi.step.load.DataAppender&quot;
+      previous: filter
+      next: end
+      plugins: [
+        plugin: { 
+          name: dataFile, 
+          class: &quot;org.codetab.scoopi.plugin.appender.FileAppender&quot;,
+          file: &quot;output/data.txt&quot;, 
+          plugins: [ 
+             plugin: { 
+               name: csv,
+               delimiter: &quot;|&quot;,               
+               class: &quot;org.codetab.scoopi.plugin.encoder.CsvEncoder&quot;
+             } 
+          ]
+        }          
+      ]
+</code></pre><p>Plugins framework allows Scoopi to get configuration from definition
+file and execute any plugin class without modifying the source code and
+Scoopi ships with following
+plugins.</p>
+<table>
+<thead>
+<tr>
+<th>Plugin type</th>
+<th>Description</th>
+<th>Plugin class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>encoder</td>
+<td>encodes data as csv</td>
+<td>org.codetab.scoopi.plugin.encoder.CsvEncoder</td>
+</tr>
+<tr>
+<td>appender</td>
+<td>appends data to file</td>
+<td>org.codetab.scoopi.plugin.appender.FileAppender</td>
+</tr>
+<tr>
+<td>appender</td>
+<td>appends data to ListArray</td>
+<td>org.codetab.scoopi.plugin.appender.ListAppender</td>
+</tr>
+<tr>
+<td>converter</td>
+<td>change date format</td>
+<td>org.codetab.scoopi.plugin.converter.DateFormater</td>
+</tr>
+<tr>
+<td>converter</td>
+<td>roll date and change format</td>
+<td>org.codetab.scoopi.plugin.converter.DateRoller</td>
+</tr>
+<tr>
+<td>script</td>
+<td>run JavaScript to modify data</td>
+<td>org.codetab.scoopi.plugin.script.DataScript</td>
+</tr>
+</tbody>
+</table>
+<p>In subsequent chapters we explain how to override default steps or add
+new one and plugins. The next chapter uses converter plugin to format
+dates.</p>
+
+          </main>
+        </div>
+      </div>
+  
+    <aside id="sidebar-right" class="col-md-2">
+      <div class="row my-5 justify-content-center border">
+<div>&nbsp;</div>
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="8963022093"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+</div>
+    </aside>
+
+  </div>
+
+</div>
+
+<footer class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col ml-auto">
+            <div class="row mb-1 ml-2">
+                <a class="text-muted" href="/privacy-policy">Privacy</a>
+            </div>
+            <div class="row text-muted mb-2 ml-2">
+                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
+                        rel="noopener">Hugo</a></span>
+            </div>
+        </div>
+        <div class="col mr-auto">
+            <span class="float-right">
+                <a href="#" id="back_to_top">
+                    <i class="icon-up-open h1 text-secondary"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
+</body>
+
+</html>

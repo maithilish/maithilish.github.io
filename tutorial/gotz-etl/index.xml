@@ -27,8 +27,9 @@ Install Gotz from Docker Image Gotz releases are available as docker image from 
       <pubDate>Fri, 11 Jan 2019 18:43:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/introduction/</guid>
-      <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
-Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:</description>
+      <description>CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
+Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
+  Single web page may hold multiple types of data, queries should be able to dynamically handle different types of data</description>
     </item>
     
     <item>
@@ -126,7 +127,7 @@ Gotz uses extensible fields (xfields) to pass user defined values to the classes
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/tasks-steps/</guid>
       <description>So far, we explored locators which defines the pages to scrape and dataDef which defines data to scrape from the pages. But, we haven&amp;rsquo;t defined how that work has to be carried out. This chapter defines Tasks and Steps which executes series of steps that use dataDef to scrape data from locator.
-&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; Tasks and Task The defs/examples/jsoup/ex-5/job.xml defines one task which applies dataDef named bs to locators of same group.</description>
+Tasks and Task The defs/examples/jsoup/ex-5/job.xml defines one task which applies dataDef named bs to locators of same group.</description>
     </item>
     
     <item>
@@ -138,7 +139,7 @@ Gotz uses extensible fields (xfields) to pass user defined values to the classes
       <description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
 The Example-1 scrapes Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. We can add these two task within tasks element.
 But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.
-&amp;nbsp;   (adsbygoogle = window.</description>
+Steps Reference In Example-6, steps is moved out of task element as a standalone element under &amp;lt;fields&amp;gt;</description>
     </item>
     
     <item>
@@ -182,7 +183,7 @@ FileAppender So far, all examples use FileAppender which is defined as follows
       <guid>https://www.codetab.org/tutorial/gotz-etl/split-definitions/</guid>
       <description>The definition file job.xml tends to grow as you scrape more and more data sets or pages. This chapter explains how to split the definitions into multiple files for easy maintenance.
 Gotz allows you to split the definitions either on job types or on model types.
-&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; Split on Job Types The examples so far scraped BS, PL, Quote data - price and snapshot - of Acme.</description>
+Split on Job Types The examples so far scraped BS, PL, Quote data - price and snapshot - of Acme. We can split the definitions into three job types quote, bs and pl.</description>
     </item>
     
   </channel>

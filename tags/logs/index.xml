@@ -6,7 +6,7 @@
     <description>Recent content in logs on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 03:34:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 01:29:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/logs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,9 +25,20 @@ Similarly for trace logs. Trace logs output query and parsed html nodes which is
     <item>
       <title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</link>
-      <pubDate>Sat, 12 Jan 2019 01:29:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</guid>
+      <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
+Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+    </item>
+    
+    <item>
+      <title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</link>
+      <pubDate>Sat, 12 Jan 2019 01:29:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
 To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>

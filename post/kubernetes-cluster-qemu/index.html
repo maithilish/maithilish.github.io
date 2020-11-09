@@ -8,15 +8,6 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
 <script type="application/ld+json">
     {
         "@context" : "http://schema.org",
@@ -168,7 +159,7 @@
 
   <div class="row">
     
-    <div id="contentspace" class="col-md-7 post-basic order-md-2">
+    <div id="contentspace" class="col-md-8 post-basic order-md-2">
       <h2>Kubernetes Cluster on Fedora CoreOS with Qemu</h2>
       <small class="text-muted">
         Sep 15, 2020 . 13 min read
@@ -478,7 +469,7 @@ sudo sysctl --system
 <h2 id="clone-master-node">Clone Master Node</h2>
 <p>Each K8s nodes should have unique product_uuid, but clones created by Virtual Machine Manager (GUI) will have same uuid. To overcome this, we use cli to create the clone. So go ahead and create a clone of <code>fcos</code> and name it as <code>master</code> with,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-virt-clone --connect qemu:///system --original fcos --name master --file /var/qemu/master.qcow2
+virt-clone --connect qemu:///system --original fcos --name master --file /var/lib/libvirt/images/master.qcow2
 
 </code></pre></div><p>Start the master and login through <code>ssh k@192.168.99.100</code> and execute following commands,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
@@ -495,7 +486,7 @@ sudo systemd-machine-id-setup --commit
 <span class="c1"># change static ip</span> 
 sudo nmcli connection   <span class="c1"># find the &lt;connection name&gt;</span>
 
-sudo nmcli connection mod &lt;connection-name&gt; <span class="se">\
+sudo nmcli connection mod network1 <span class="se">\
 </span><span class="se"></span>     ipv4.method manual <span class="se">\
 </span><span class="se"></span>     ipv4.addresses 192.168.99.101/24 <span class="se">\
 </span><span class="se"></span>     ipv4.gateway 192.168.99.1 <span class="se">\
@@ -647,7 +638,7 @@ cat kubeadm-join.yaml
 </div>
     </aside>
 
-    <aside id="sidebar-right" class="col-md-2 order-md-last">
+    <aside id="sidebar-right" class="col-md-1 order-md-last">
     </aside>
 
   </div>
@@ -675,8 +666,6 @@ cat kubeadm-join.yaml
     </div>
 
 </footer>
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 

@@ -6,7 +6,7 @@
     <description>Recent content in persistence on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 04:11:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 01:02:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/persistence/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,9 +34,19 @@
     <item>
       <title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/</link>
-      <pubDate>Sat, 12 Jan 2019 01:02:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/</guid>
+      <description>Persistence With persistence, Scoopi offers following benefits.
+ reduce network usage by reusing the downloaded pages recover from the aborted run by skipping the tasks already completed avoid expensive parse operation by reuse of persisted data set expiry date for each page  Enable Persistence By default persistence is disabled in Scoopi through configuration setting scoopi.datastore.enable=false in conf/scoopi.properties file. To enable persistence, either set the property scoopi.datastore.enable=true or hash it out.</description>
+    </item>
+    
+    <item>
+      <title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</link>
+      <pubDate>Sat, 12 Jan 2019 01:02:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</guid>
       <description>Persistence With persistence, Scoopi offers following benefits.
  reduce network usage by reusing the downloaded pages recover from the aborted run by skipping the tasks already completed avoid expensive parse operation by reuse of persisted data set expiry date for each page  Setup Database If you running Scoopi from docker image then no database setup is required as docker image contains pre-configured MariaDB container. Please refer Scoopi Installation to run Scoopi with MariaDB using docker-compose.</description>
     </item>

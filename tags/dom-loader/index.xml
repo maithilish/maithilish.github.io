@@ -6,7 +6,7 @@
     <description>Recent content in dom loader on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 06:47:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 06:47:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/dom-loader/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,20 @@
     <item>
       <title>DOM Loader - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</link>
-      <pubDate>Sat, 12 Jan 2019 06:47:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:47:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</guid>
+      <description>JavaScript and WebDriver So far in the guide, the examples scrape data from regular HTML pages. But, we encounter many web pages that generates and renders pages with JavaScript or Ajax functions. In this and next chapter, we explore ways to seamlessly scrape such pages.
+Dynamically generated pages The website toscrape.com has many endpoints showing the quotes in many different way that are generated through DOM manipulation.
+Open JavaScript - JavaScript generated contents page and view its page source.</description>
+    </item>
+    
+    <item>
+      <title>DOM Loader - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/dom-loader-selenium-webdriver/</link>
+      <pubDate>Sat, 12 Jan 2019 06:47:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/dom-loader-selenium-webdriver/</guid>
       <description>JavaScript and WebDriver So far in the guide, the examples scrape data from regular HTML pages. But, we encounter many web pages that generates and renders pages with JavaScript or Ajax functions. In this and next chapter, we explore ways to seamlessly scrape such pages.
 Dynamically generated pages The website toscrape.com has many endpoints showing the quotes in many different way that are generated through DOM manipulation.
 Open JavaScript - JavaScript generated contents page and view its page source.</description>

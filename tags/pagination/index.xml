@@ -6,7 +6,7 @@
     <description>Recent content in pagination on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 06:40:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 06:40:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/pagination/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,21 @@
     <item>
       <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</link>
-      <pubDate>Sat, 12 Jan 2019 06:40:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:40:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</guid>
+      <description>Pagination Many pages provide pagination buttons or links to navigate through series of pages. We can use link locators described in previous chapter to scrape pages using pagination.
+The Books example folder contains three HTML pages which has pagination link at the bottom of pages.
+defs/examples/book/page/page-1.html
+&amp;lt;div&amp;gt; &amp;lt;ul class=&amp;#34;pager&amp;#34;&amp;gt; &amp;lt;li class=&amp;#34;current&amp;#34;&amp;gt;Page 1 of 50&amp;lt;/li&amp;gt; &amp;lt;li class=&amp;#34;next&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;page-2.html&amp;#34;&amp;gt;next&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; The Books Example 4 go through each page and scrape book items.</description>
+    </item>
+    
+    <item>
+      <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/pagination/</link>
+      <pubDate>Sat, 12 Jan 2019 06:40:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/pagination/</guid>
       <description>Pagination Many pages provide pagination buttons or links to navigate through series of pages. We can use link locators described in previous chapter to scrape pages using pagination.
 The Books example folder contains three HTML pages which has pagination link at the bottom of pages.
 defs/examples/book/page/page-1.html

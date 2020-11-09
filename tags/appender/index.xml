@@ -6,7 +6,7 @@
     <description>Recent content in appender on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 02:11:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 01:09:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/appender/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,9 +25,20 @@ appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; p
     <item>
       <title>Appenders Encoders - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</link>
-      <pubDate>Sat, 12 Jan 2019 01:09:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:09:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</guid>
+      <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
+FileAppender So far, examples use FileAppender of default steps defined in steps-default.yml which is packaged with scoopi distribution jar. The appender snippet is as below.
+appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: filter next: end plugins: [ plugin: { name: dataFile, class: &amp;quot;org.</description>
+    </item>
+    
+    <item>
+      <title>Appenders Encoders - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/appender-encoder/</link>
+      <pubDate>Sat, 12 Jan 2019 01:09:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/appender-encoder/</guid>
       <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
 FileAppender So far, examples use FileAppender of default steps defined in steps-default.yml which is packaged with scoopi distribution jar. The appender snippet is as below.
 appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: filter next: end plugins: [ plugin: { name: dataFile, class: &amp;quot;org.</description>

@@ -12,6 +12,26 @@
     
     
     <item>
+      <title>Introduction - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</link>
+      <pubDate>Thu, 05 Nov 2020 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</guid>
+      <description>Scoopi Web Scraper Scoopi web scraper extracts and transform data from HTML pages. JSoup and HtmlUnit makes it quite easy to scrape web pages in Java, but the things get complicated when data is from large number of pages. Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
+ Data being unstructured, may requires many queries to scrape them Data may not be in desired format and to make them usable, needs filter and transform Connection may drop during a run and all the work is lost When data is from thousands of pages, performance does matter Need Java or Python proficiency to use scraper libraries  Scraping libraries do well in scraping data from limited set of pages but they are not meant to handle thousands of pages.</description>
+    </item>
+    
+    <item>
+      <title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</link>
+      <pubDate>Thu, 05 Nov 2020 22:25:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</guid>
+      <description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
+Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system.</description>
+    </item>
+    
+    <item>
       <title>Borg Backup</title>
       <link>https://www.codetab.org/post/borg-backup/</link>
       <pubDate>Tue, 27 Aug 2019 10:00:00 +0000</pubDate>
@@ -70,20 +90,20 @@ If you are new to generics, we suggest you to go through Java Tutorial Trail - G
     
     <item>
       <title>Introduction - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/introduction/</link>
       <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/introduction/</guid>
       <description>Scoopi Web Scraper Scoopi web scraper extracts and transform data from HTML pages. JSoup and HtmlUnit makes it quite easy to scrape web pages in Java, but the things get complicated when data is from large number of pages. Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
  Data being unstructured, may requires many queries to scrape them Data may not be in desired format and to make them usable, needs filter and transform Connection may drop during a run and all the work is lost When data is from thousands of pages, performance does matter Need Java or Python proficiency to use scraper libraries  Scraping libraries do well in scraping data from limited set of pages but they are not meant to handle thousands of pages.</description>
     </item>
     
     <item>
       <title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</link>
       <pubDate>Fri, 11 Jan 2019 22:25:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</guid>
       <description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8 and Maria DB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
 Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with MariaDB database, you also need Docker Compose.</description>
     </item>
@@ -104,8 +124,9 @@ Install Gotz from Docker Image Gotz releases are available as docker image from 
       <pubDate>Fri, 11 Jan 2019 18:43:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/introduction/</guid>
-      <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
-Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:</description>
+      <description>CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
+Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
+  Single web page may hold multiple types of data, queries should be able to dynamically handle different types of data</description>
     </item>
     
     <item>
@@ -137,8 +158,8 @@ export M2_HOME=/opt/apache-maven/maven export PATH=$M2_HOME/bin:${PATH} To persi
       <pubDate>Fri, 11 Jan 2019 07:12:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/</guid>
-      <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab WordPress Plugin Development Tutorial Some time back, we released Share on Social, a social media sharing plugin. In this WordPress Plugin Development Tutorial, we go through the construction of the plugin and also other essentials to develop a robust WordPress plugin, so as to share the experience with aspiring WordPress Plugin developers.
-There are enough blogs about WordPress Plugin Development.</description>
+      <description>CodeTab WordPress Plugin Development Tutorial Some time back, we released Share on Social, a social media sharing plugin. In this WordPress Plugin Development Tutorial, we go through the construction of the plugin and also other essentials to develop a robust WordPress plugin, so as to share the experience with aspiring WordPress Plugin developers.
+There are enough blogs about WordPress Plugin Development. However, it is difficult to find a complete tutorial that explains structure and working of a production ready plugin.</description>
     </item>
     
     <item>
@@ -200,6 +221,16 @@ Like many other Web sites, http://www.codetab.org makes use of log files.</descr
     </item>
     
     <item>
+      <title>Definition files - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</link>
+      <pubDate>Thu, 05 Nov 2020 22:37:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</guid>
+      <description>Defs, Locators and Tasks Scoopi uses YML definition files to extract data from HTML pages. To learn the YML elements used by the definition files, Scoopi distribution comes with a set of examples which are under def/examples folder.
+Scoopi Definition Files Scoopi creates the data model based on YML definition files. We can specify the definition file using scoopi.defs.dir configuration property, which is normally set in scoopi.properties file located in conf folder.</description>
+    </item>
+    
+    <item>
       <title>Automate Borg Backup</title>
       <link>https://www.codetab.org/post/borg-backup-automate/</link>
       <pubDate>Tue, 27 Aug 2019 11:00:00 +0000</pubDate>
@@ -252,10 +283,10 @@ Install Scoopi from Docker Image Scoopi releases are available as docker image f
     
     <item>
       <title>Definition files - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</link>
       <pubDate>Fri, 11 Jan 2019 22:37:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</guid>
       <description>Defs, Locators and Tasks Scoopi uses YML definition files to extract data from HTML pages. To learn the YML elements used by the definition files, Scoopi distribution comes with a set of examples which are under def/examples folder.
 Scoopi Definition Files Scoopi creates the data model based on YML definition files. We can specify the definition file using scoopi.defs.dir configuration property, which is normally set in scoopi.properties file located in conf folder.</description>
     </item>
@@ -331,6 +362,18 @@ We require Apache Ant and Apache Ivy to work through the tutorial.</description>
     </item>
     
     <item>
+      <title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</link>
+      <pubDate>Thu, 05 Nov 2020 22:47:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</guid>
+      <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
+In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
+The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
+dataDefs: price: query: block: &amp;quot;div#price_tick&amp;quot; selector: &amp;quot;*&amp;quot; items: [ item: { name: &amp;quot;Price&amp;quot;, value: &amp;quot;Price&amp;quot; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
+    </item>
+    
+    <item>
       <title>Fun with Unicode in Java</title>
       <link>https://www.codetab.org/post/java-unicode-basics/</link>
       <pubDate>Sun, 29 Sep 2019 11:00:00 +0000</pubDate>
@@ -361,10 +404,10 @@ Scoopi Definition Files Scoopi creates the data model based on YML definition fi
     
     <item>
       <title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</link>
       <pubDate>Fri, 11 Jan 2019 22:47:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</guid>
       <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
 The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
@@ -458,6 +501,17 @@ Software used in the book are
     </item>
     
     <item>
+      <title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</link>
+      <pubDate>Thu, 05 Nov 2020 05:41:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</guid>
+      <description>DataDef Dimensions The previous quickstart example scrapes stock price data from the page and associates it with the item named price. However, we are also interested to know on what date the price was scraped. The dims allows Scoopi to add multiple dimensions to scraped data.
+In this chapter, we go through Example 1 job.xml to explain dimensions. The example adds date dimension to scraped price data.
+Dimensions The datadefs snippet from defs/examples/fin/jsoup/ex-1/job.</description>
+    </item>
+    
+    <item>
       <title>Hugo Webfont</title>
       <link>https://www.codetab.org/post/hugo-webfont/</link>
       <pubDate>Sat, 05 Oct 2019 10:20:00 +0000</pubDate>
@@ -489,10 +543,10 @@ public void display(List&amp;lt;Food&amp;gt; list) { // display the list element
     
     <item>
       <title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</link>
       <pubDate>Sat, 12 Jan 2019 05:41:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</guid>
       <description>DataDef Dimensions The previous quickstart example scrapes stock price data from the page and associates it with the item named price. However, we are also interested to know on what date the price was scraped. The dims allows Scoopi to add multiple dimensions to scraped data.
 In this chapter, we go through Example 1 job.xml to explain dimensions. The example adds date dimension to scraped price data.
 Dimensions The datadefs snippet from defs/examples/fin/jsoup/ex-1/job.</description>
@@ -591,6 +645,18 @@ Let&amp;rsquo;s use New Web Application wizard to create GWT project. Choose  GD
     </item>
     
     <item>
+      <title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</link>
+      <pubDate>Thu, 05 Nov 2020 05:57:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</guid>
+      <description>Data Items and Dynamic Query This chapter explores extracting multiple data points by defining multiple items and dynamic query.
+The Example 2 extracts ten data points shown below from defs/examples/fin/page/acme-snapshot.html page.
+ MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is
+&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.</description>
+    </item>
+    
+    <item>
       <title>Kubernetes Cluster on Fedora CoreOS</title>
       <link>https://www.codetab.org/post/kubernetes-cluster-virtualbox/</link>
       <pubDate>Tue, 15 Sep 2020 11:15:00 +0000</pubDate>
@@ -621,10 +687,10 @@ public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the li
     
     <item>
       <title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</link>
       <pubDate>Sat, 12 Jan 2019 05:57:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</guid>
       <description>Data Items and Dynamic Query This chapter explores extracting multiple data points by defining multiple items and dynamic query.
 The Example 2 extracts ten data points shown below from defs/examples/fin/page/acme-snapshot.html page.
  MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is
@@ -701,6 +767,17 @@ WordPress Posts Open Dashboard → Posts to display the list of posts from the s
     </item>
     
     <item>
+      <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</link>
+      <pubDate>Thu, 05 Nov 2020 23:34:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</guid>
+      <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
+The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
+   Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
+    </item>
+    
+    <item>
       <title>Java Generics Wildcards in API - CodeTab</title>
       <link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link>
       <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
@@ -734,10 +811,10 @@ The Example 2 extracts ten data points shown below from defs/examples/page/acme-
     
     <item>
       <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</link>
       <pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</guid>
       <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
 The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
    Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
@@ -794,6 +871,18 @@ WordPress theme customizes the look and feel of the site. WordPress, being one o
     </item>
     
     <item>
+      <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</link>
+      <pubDate>Thu, 05 Nov 2020 23:40:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</guid>
+      <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
+The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
+defs/examples/fin/jsoup/ex-5/job.yml
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
+    </item>
+    
+    <item>
       <title>Java Generics Type Parameter Bounds - CodeTab</title>
       <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
@@ -805,10 +894,10 @@ public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element)
     
     <item>
       <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</link>
       <pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</guid>
       <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml
@@ -835,7 +924,7 @@ The filter is normally applied after parse is over and members are constructed. 
       <description>Maven Plugin Goals Maven plugin is a collection of one or more goals which do some task or job. It is also known as Mojo - Maven Plain Old Java Object.
 For example, Maven uses maven-surefire-plugin to run tests and it comes with two goals.
  Similarly, Maven uses maven-compiler-plugin to compile the source and test files and it provides three goals - compiler:compile, compiler:testCompile and compiler:help.
-&amp;nbsp;   (adsbygoogle = window.</description>
+List Plugin Goals We can use help goal to list the plugin goals.</description>
     </item>
     
     <item>
@@ -882,6 +971,16 @@ Apache Ivy Pattern Apache Ivy uses a concept called Pattern in many tasks and se
     </item>
     
     <item>
+      <title>Selector - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</link>
+      <pubDate>Thu, 05 Nov 2020 23:10:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</guid>
+      <description>Query, Block and Selector So far in this guide, we have covered the basics locators, tasks and datadefs. In this chapter we review selectors and also, show how to get selector or xpath using Firefox or Chrome browsers and fine tune it with Query Analyzer.
+Selector In Scoopi, selector is a common term which refers either to the selector (Jsoup) or to the xpath (HtmlUnit or Selenium driver) that is used to scrape data from the page.</description>
+    </item>
+    
+    <item>
       <title>Java Generics Design - CodeTab</title>
       <link>https://www.codetab.org/tutorial/java-generics/design/</link>
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
@@ -905,10 +1004,10 @@ The Example 3 extracts multiple data from defs/examples/page/acme-bs.html page, 
     
     <item>
       <title>Selector - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</link>
       <pubDate>Fri, 11 Jan 2019 23:10:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</guid>
       <description>Query, Block and Selector So far in this guide, we have covered the basics locators, tasks and datadefs. In this chapter we review selectors and also, show how to get selector or xpath using Firefox or Chrome browsers and fine tune it with Query Analyzer.
 Selector In Scoopi, selector is a common term which refers either to the selector (Jsoup) or to the xpath (HtmlUnit or Selenium driver) that is used to scrape data from the page.</description>
     </item>
@@ -960,9 +1059,21 @@ Just for convenience, place all the custom widgets in a separate package. Go ahe
     <item>
       <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</link>
-      <pubDate>Sat, 12 Jan 2019 06:14:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:14:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</guid>
+      <description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
+The defs/examples/book/page/page-1.html page lists details of 20 books similar to an e-commerce site. The Example 1 extracts one book and its related data.
+The snippet of HTML of a book item is
+&amp;lt;article class=&amp;#34;product_pod&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;image_container&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.html&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;media/cache/cc35693c.jpg&amp;#34; alt=&amp;#34;A Light in the Attic&amp;#34; class=&amp;#34;thumbnail&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;p class=&amp;#34;star-rating Three&amp;#34;&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.</description>
+    </item>
+    
+    <item>
+      <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</link>
+      <pubDate>Sat, 12 Jan 2019 06:14:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</guid>
       <description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
 The defs/examples/book/page/page-1.html page lists details of 20 books similar to an e-commerce site. The Example 1 extracts one book and its related data.
 The snippet of HTML of a book item is
@@ -988,7 +1099,7 @@ row: query: region: &amp;quot;table:contains(Sources Of Funds)&amp;quot; field: 
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/tasks-steps/</guid>
       <description>So far, we explored locators which defines the pages to scrape and dataDef which defines data to scrape from the pages. But, we haven&amp;rsquo;t defined how that work has to be carried out. This chapter defines Tasks and Steps which executes series of steps that use dataDef to scrape data from locator.
-&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; Tasks and Task The defs/examples/jsoup/ex-5/job.xml defines one task which applies dataDef named bs to locators of same group.</description>
+Tasks and Task The defs/examples/jsoup/ex-5/job.xml defines one task which applies dataDef named bs to locators of same group.</description>
     </item>
     
     <item>
@@ -1038,6 +1149,16 @@ in.fins.client.content/LogTab.ui.xml
     </item>
     
     <item>
+      <title>Multi Tasks - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</link>
+      <pubDate>Thu, 05 Nov 2020 23:51:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</guid>
+      <description>Multiple Tasks Scoopi can execute multiple tasks for a locator and also multiple tasks on multiple locatorGroups.
+Multiple tasks and single Locator group The Example-1 from fin folder scrape Price data from acme-snapshot.html page while Example-2 extracts Snapshot data from the same page. One option is to define acme-snapshot.html locator in two locatorGroups and assign task to each of them. This unnecessarily downloads acme-snapshot.html twice. Instead, it is better to define single locatorGroup and assign two tasks - priceTask and snapshotTask so that page downloads only once.</description>
+    </item>
+    
+    <item>
       <title>Multiple Tasks - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/</link>
       <pubDate>Sat, 12 Jan 2019 03:54:00 +0530</pubDate>
@@ -1049,10 +1170,10 @@ Multiple tasks and single Locator group The Example-1 scrape Price data from acm
     
     <item>
       <title>Multi Tasks - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-tasks/</link>
       <pubDate>Fri, 11 Jan 2019 23:51:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-tasks/</guid>
       <description>Multiple Tasks Scoopi can execute multiple tasks for a locator and also multiple tasks on multiple locatorGroups.
 Multiple tasks and single Locator group The Example-1 from fin folder scrape Price data from acme-snapshot.html page while Example-2 extracts Snapshot data from the same page. One option is to define acme-snapshot.html locator in two locatorGroups and assign task to each of them. This unnecessarily downloads acme-snapshot.html twice. Instead, it is better to define single locatorGroup and assign two tasks - priceTask and snapshotTask so that page downloads only once.</description>
     </item>
@@ -1066,7 +1187,7 @@ Multiple tasks and single Locator group The Example-1 from fin folder scrape Pri
       <description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
 The Example-1 scrapes Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. We can add these two task within tasks element.
 But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.
-&amp;nbsp;   (adsbygoogle = window.</description>
+Steps Reference In Example-6, steps is moved out of task element as a standalone element under &amp;lt;fields&amp;gt;</description>
     </item>
     
     <item>
@@ -1124,6 +1245,16 @@ For beginners, the most helpful resource is the Quick start tutorial. But beyond
     </item>
     
     <item>
+      <title>Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</link>
+      <pubDate>Thu, 05 Nov 2020 23:59:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</guid>
+      <description>Steps So far, we explored locators, tasks and dataDef to scrape data from the pages. But, we haven&amp;rsquo;t explained how Scoopi executes tasks and scrape data.
+Scoopi is designed to execute tasks as workflow which is normally referred as steps which in turn consists of multiple step. Scoopi ships with two in-built defaults steps jsoupDefault and htmlUnitDefault and they are defined in steps-default.yml which is packaged inside Scoopi distribution jar. We can access the contents of steps-default.</description>
+    </item>
+    
+    <item>
       <title>Steps - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/</link>
       <pubDate>Sat, 12 Jan 2019 05:01:00 +0530</pubDate>
@@ -1135,10 +1266,10 @@ Scoopi is designed to execute tasks as workflow which is normally referred as st
     
     <item>
       <title>Workflows Steps - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/</link>
       <pubDate>Fri, 11 Jan 2019 23:59:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/</guid>
       <description>Steps So far, we explored locators, tasks and dataDef to scrape data from the pages. But, we haven&amp;rsquo;t explained how Scoopi executes tasks and scrape data.
 Scoopi is designed to execute tasks as workflow which is normally referred as steps which in turn consists of multiple step. Scoopi ships with two in-built defaults steps jsoupDefault and htmlUnitDefault and they are defined in steps-default.yml which is packaged inside Scoopi distribution jar. We can access the contents of steps-default.</description>
     </item>
@@ -1211,6 +1342,18 @@ Default configuration comes with a resolver named shared which points to $HOME/.
     </item>
     
     <item>
+      <title>Converters - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</link>
+      <pubDate>Thu, 05 Nov 2020 00:16:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</guid>
+      <description>Converters This chapter explain adding new steps to workflow and converter plugins.
+Add new Step We can add new steps at task level. The Example 8 adds converter step to jsoupDefault steps in bs task. The relevant snippet is shown below
+defs/examples/fin/jsoup/ex-8/job.yml
+bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;quot;org.codetab.scoopi.step.process.DataConverter&amp;quot; previous: filter next: appender .... The bsTask uses jsoupDefault built-in step as base and inserts converter step between filter and appender steps.</description>
+    </item>
+    
+    <item>
       <title>Converters - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/</link>
       <pubDate>Sat, 12 Jan 2019 02:25:00 +0530</pubDate>
@@ -1224,10 +1367,10 @@ bsGroup: bsTask: dataDef: bs steps: jsoupDefault: converter: class: &amp;quot;or
     
     <item>
       <title>Converters - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/converters/</link>
       <pubDate>Sat, 12 Jan 2019 00:16:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/converters/</guid>
       <description>Converters This chapter explain adding new steps to workflow and converter plugins.
 Add new Step We can add new steps at task level. The Example 8 adds converter step to jsoupDefault steps in bs task. The relevant snippet is shown below
 defs/examples/fin/jsoup/ex-8/job.yml
@@ -1282,9 +1425,21 @@ package in.fins.client.widget; import com.google.gwt.core.client.GWT; import com
     <item>
       <title>Scripter - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</link>
-      <pubDate>Sat, 12 Jan 2019 06:29:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</guid>
+      <description>Script Plugin The example in the previous chapter converts date field using built-in DateRoller plugin. However, it is not possible to handle all types of modification with built-in plugins. To cope with myriad possibilities, Scoopi provides Scripter step to which user can hook arbitrary JavaScript to modify data.
+Scripter Step The Example 8a adds process step to jsoupDefault steps in bs task. The relevant snippet is shown below
+defs/examples/fin/jsoup/ex-8a/job.yml
+bsTask: dataDef: bs steps: jsoupDefault: process: class: &amp;quot;org.</description>
+    </item>
+    
+    <item>
+      <title>Scripter - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/scripter/</link>
+      <pubDate>Sat, 12 Jan 2019 06:29:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/scripter/</guid>
       <description>Script Plugin The example in the previous chapter converts date field using built-in DateRoller plugin. However, it is not possible to handle all types of modification with built-in plugins. To cope with myriad possibilities, Scoopi provides Scripter step to which user can hook arbitrary JavaScript to modify data.
 Scripter Step The Example 8a adds process step to jsoupDefault steps in bs task. The relevant snippet is shown below
 defs/examples/fin/jsoup/ex-8a/job.yml
@@ -1354,6 +1509,16 @@ in.fins.client.widget/ContentPanel.java
     </item>
     
     <item>
+      <title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</link>
+      <pubDate>Thu, 05 Nov 2020 00:29:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</guid>
+      <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
+Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-snapshot.html page. Links snippet in the html page is as below.</description>
+    </item>
+    
+    <item>
       <title>Persistence - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/persistence-v094/</link>
       <pubDate>Sat, 12 Jan 2019 04:11:00 +0530</pubDate>
@@ -1365,10 +1530,10 @@ in.fins.client.widget/ContentPanel.java
     
     <item>
       <title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</link>
       <pubDate>Sat, 12 Jan 2019 00:29:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</guid>
       <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
 Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-snapshot.html page. Links snippet in the html page is as below.</description>
     </item>
@@ -1441,9 +1606,21 @@ To manage Ivy settings in Eclipse, you need to open IvyDE Managed Libraries wind
     <item>
       <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</link>
-      <pubDate>Sat, 12 Jan 2019 06:40:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:40:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</guid>
+      <description>Pagination Many pages provide pagination buttons or links to navigate through series of pages. We can use link locators described in previous chapter to scrape pages using pagination.
+The Books example folder contains three HTML pages which has pagination link at the bottom of pages.
+defs/examples/book/page/page-1.html
+&amp;lt;div&amp;gt; &amp;lt;ul class=&amp;#34;pager&amp;#34;&amp;gt; &amp;lt;li class=&amp;#34;current&amp;#34;&amp;gt;Page 1 of 50&amp;lt;/li&amp;gt; &amp;lt;li class=&amp;#34;next&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;page-2.html&amp;#34;&amp;gt;next&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; The Books Example 4 go through each page and scrape book items.</description>
+    </item>
+    
+    <item>
+      <title>Pagination - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/pagination/</link>
+      <pubDate>Sat, 12 Jan 2019 06:40:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/pagination/</guid>
       <description>Pagination Many pages provide pagination buttons or links to navigate through series of pages. We can use link locators described in previous chapter to scrape pages using pagination.
 The Books example folder contains three HTML pages which has pagination link at the bottom of pages.
 defs/examples/book/page/page-1.html
@@ -1469,7 +1646,7 @@ appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; p
       <guid>https://www.codetab.org/tutorial/gotz-etl/split-definitions/</guid>
       <description>The definition file job.xml tends to grow as you scrape more and more data sets or pages. This chapter explains how to split the definitions into multiple files for easy maintenance.
 Gotz allows you to split the definitions either on job types or on model types.
-&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; Split on Job Types The examples so far scraped BS, PL, Quote data - price and snapshot - of Acme.</description>
+Split on Job Types The examples so far scraped BS, PL, Quote data - price and snapshot - of Acme. We can split the definitions into three job types quote, bs and pl.</description>
     </item>
     
     <item>
@@ -1520,6 +1697,17 @@ WordPress SEO Plugin by Yoast is one the leading search engine optimization (SEO
     </item>
     
     <item>
+      <title>Appenders Encoders - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</link>
+      <pubDate>Thu, 05 Nov 2020 01:09:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</guid>
+      <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
+FileAppender So far, examples use FileAppender of default steps defined in steps-default.yml which is packaged with scoopi distribution jar. The appender snippet is as below.
+appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: filter next: end plugins: [ plugin: { name: dataFile, class: &amp;quot;org.</description>
+    </item>
+    
+    <item>
       <title>Split Definitions - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/split-definitions-v094/</link>
       <pubDate>Sat, 12 Jan 2019 04:46:00 +0530</pubDate>
@@ -1532,10 +1720,10 @@ Split on Job Types The examples so far scraped BS, PL, Quote data - price and sn
     
     <item>
       <title>Appenders Encoders - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/appender-encoder/</link>
       <pubDate>Sat, 12 Jan 2019 01:09:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/appender-encoder/</guid>
       <description>Appender and Encoder Scoopi uses appender to append data to output and encoder to encode or alter the output format. At present, it comes with two appender - FileAppender and ListAppender.
 FileAppender So far, examples use FileAppender of default steps defined in steps-default.yml which is packaged with scoopi distribution jar. The appender snippet is as below.
 appender: class: &amp;quot;org.codetab.scoopi.step.load.DataAppender&amp;quot; previous: filter next: end plugins: [ plugin: { name: dataFile, class: &amp;quot;org.</description>
@@ -1565,9 +1753,20 @@ Assembly Plugin ships with four Pre-defined Descriptor Files.</description>
     <item>
       <title>DOM Loader - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</link>
-      <pubDate>Sat, 12 Jan 2019 06:47:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 06:47:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</guid>
+      <description>JavaScript and WebDriver So far in the guide, the examples scrape data from regular HTML pages. But, we encounter many web pages that generates and renders pages with JavaScript or Ajax functions. In this and next chapter, we explore ways to seamlessly scrape such pages.
+Dynamically generated pages The website toscrape.com has many endpoints showing the quotes in many different way that are generated through DOM manipulation.
+Open JavaScript - JavaScript generated contents page and view its page source.</description>
+    </item>
+    
+    <item>
+      <title>DOM Loader - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/dom-loader-selenium-webdriver/</link>
+      <pubDate>Sat, 12 Jan 2019 06:47:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/dom-loader-selenium-webdriver/</guid>
       <description>JavaScript and WebDriver So far in the guide, the examples scrape data from regular HTML pages. But, we encounter many web pages that generates and renders pages with JavaScript or Ajax functions. In this and next chapter, we explore ways to seamlessly scrape such pages.
 Dynamically generated pages The website toscrape.com has many endpoints showing the quotes in many different way that are generated through DOM manipulation.
 Open JavaScript - JavaScript generated contents page and view its page source.</description>
@@ -1619,9 +1818,20 @@ For frontend, Share on Social Plugin uses class file class-frontend.php and the 
     <item>
       <title>Ajax - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</link>
-      <pubDate>Sat, 12 Jan 2019 07:03:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 07:03:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</guid>
+      <description>Browser interaction with WebDriver In this previous chapter, we scrape data from page with JavaScript created contents. In this chapter, we extend it further and show how to interact with WebDriver to emulate browser automation.
+Browser Scrolling and Ajax The Quote Example 2 scrape quotations from Scroll - infinite scrolling pagination page loads next set of quotes through Ajax call when we scroll to the bottom of browser.
+The locator and task snippet from this example is as below.</description>
+    </item>
+    
+    <item>
+      <title>Ajax - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/ajax-selenium-webdriver/</link>
+      <pubDate>Sat, 12 Jan 2019 07:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/ajax-selenium-webdriver/</guid>
       <description>Browser interaction with WebDriver In this previous chapter, we scrape data from page with JavaScript created contents. In this chapter, we extend it further and show how to interact with WebDriver to emulate browser automation.
 Browser Scrolling and Ajax The Quote Example 2 scrape quotations from Scroll - infinite scrolling pagination page loads next set of quotes through Ajax call when we scroll to the bottom of browser.
 The locator and task snippet from this example is as below.</description>
@@ -1673,9 +1883,19 @@ private void setSymbolNames() { List&amp;lt;String&amp;gt; list = SymbolDatabase
     <item>
       <title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/</link>
-      <pubDate>Sat, 12 Jan 2019 01:02:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/</guid>
+      <description>Persistence With persistence, Scoopi offers following benefits.
+ reduce network usage by reusing the downloaded pages recover from the aborted run by skipping the tasks already completed avoid expensive parse operation by reuse of persisted data set expiry date for each page  Enable Persistence By default persistence is disabled in Scoopi through configuration setting scoopi.datastore.enable=false in conf/scoopi.properties file. To enable persistence, either set the property scoopi.datastore.enable=true or hash it out.</description>
+    </item>
+    
+    <item>
+      <title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</link>
+      <pubDate>Sat, 12 Jan 2019 01:02:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</guid>
       <description>Persistence With persistence, Scoopi offers following benefits.
  reduce network usage by reusing the downloaded pages recover from the aborted run by skipping the tasks already completed avoid expensive parse operation by reuse of persisted data set expiry date for each page  Setup Database If you running Scoopi from docker image then no database setup is required as docker image contains pre-configured MariaDB container. Please refer Scoopi Installation to run Scoopi with MariaDB using docker-compose.</description>
     </item>
@@ -1722,6 +1942,17 @@ Snapshot uses TitlePanel in Snapshot.</description>
     </item>
     
     <item>
+      <title>Split Definitions - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/</link>
+      <pubDate>Thu, 05 Nov 2020 01:18:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/</guid>
+      <description>Split Definitions The Scoopi definition file tends to grow as you scrape multiple types of data or large set of links. This chapter explains how to split the definitions into multiple files for easy maintenance.
+Scoopi allows you to split the definitions either on job types or on top level elements.
+Split on Job Types The examples so far scraped BS, PL, snapshot data - price and snapshot - of Acme.</description>
+    </item>
+    
+    <item>
       <title>DB Setup - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/db-setup-v094/</link>
       <pubDate>Sat, 12 Jan 2019 03:02:00 +0530</pubDate>
@@ -1734,10 +1965,10 @@ Use HSQLDB client to connect running database and to do that run following from 
     
     <item>
       <title>Split Definitions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</link>
       <pubDate>Sat, 12 Jan 2019 01:18:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</guid>
       <description>Split Definitions The Scoopi definition file tends to grow as you scrape multiple types of data or large set of links. This chapter explains how to split the definitions into multiple files for easy maintenance.
 Scoopi allows you to split the definitions either on job types or on top level elements.
 Split on Job Types The examples so far scraped BS, PL, snapshot data - price and snapshot - of Acme.</description>
@@ -1770,9 +2001,20 @@ Without value attributes - For &amp;lt;f:TitlePanel ui:field=”titlePanel” /&
     <item>
       <title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</link>
-      <pubDate>Sat, 12 Jan 2019 01:29:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:29:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</guid>
+      <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
+Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+    </item>
+    
+    <item>
+      <title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</link>
+      <pubDate>Sat, 12 Jan 2019 01:29:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
 To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
@@ -1825,9 +2067,20 @@ public class FactItem extends HorizontalPanel { private Label label; private Str
     <item>
       <title>Dashboard - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/dashboard/</link>
-      <pubDate>Sat, 12 Jan 2019 01:36:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 01:36:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/dashboard/</guid>
+      <description>Dashboard Scoopi Dashboard is an nice little Angular web app that displays useful information such as system, task and pool stats.
+The screenshot of the Scoopi dashboard is
+ Embedded Jetty Web Server serves the dashboard and we can access the Scoopi dashboard at http://localhost:9010 while Scoopi is running. The dashboard can kept running even after scoopi is finished and use the same one for next run as it stops when scoopi terminates and refreshes itself once it detects that scoopi is running again.</description>
+    </item>
+    
+    <item>
+      <title>Dashboard - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</link>
+      <pubDate>Sat, 12 Jan 2019 01:36:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</guid>
       <description>Dashboard Scoopi Dashboard is an nice little Angular web app that displays useful information such as system, task and pool stats.
 The screenshot of the Scoopi dashboard is
  Embedded Jetty Web Server serves the dashboard and we can access the Scoopi dashboard at http://localhost:9010 while Scoopi is running. The dashboard can kept running even after scoopi is finished and use the same one for next run as it stops when scoopi terminates and refreshes itself once it detects that scoopi is running again.</description>
@@ -2088,10 +2341,10 @@ Take the case of codetab.org and its real URL tuts-codedrops.rhcloud.com. To pop
     
     <item>
       <title>DB Setup - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/db-setup/</link>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</link>
       <pubDate>Sat, 12 Jan 2019 00:46:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/db-setup/</guid>
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</guid>
       <description>Setup HSQLDB Database for Scoopi To run examples with persistence we need HSQLDB up and running. Download HSQLDB version 2.3 and extract it to some folder. To create database and start HSQLDB server, run
 cd hsqldb-2.3.0/hsqldb java -cp lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:data/scoopi --dbname.0 scoopi  This creates database named scoopi and places database files in data directory.
 Use HSQLDB client to connect running database and to do that run following from another console</description>
@@ -2126,6 +2379,17 @@ OpenShift RHC Client Tools OpenShift Client tools also called as RHC is a comman
       <guid>https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/</guid>
       <description>Remote Procedure Calls AutoSuggest, for its SuggestOracle, fetches a list of symbol names from a mock datastore SymbolDatabase. In this section, we move SymbolDatabase to server and fetch list from the server via Remote Procedure Call (RPC).
 GWT RPC Tutorial GWT StockWatcher tutorial has a gentle introduction to client-server communication. . If you are new to GWT, then it is a prerequisite to cover the RPC section - Making Remote Procedure Calls of the StockWatcher tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</link>
+      <pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</guid>
+      <description>Scoopi Cluster Scoopi Cluster scale horizontally by distributing tasks across the cluster nodes. It is designed to run in various environments; in bare JVM or in Docker containers or even on high end container orchestration platforms such as Kubernetes. Scoopi Cluster uses Hazelcast IMDG, a fault-tolerant distributed in-memory computing platform, as its clustering library.
+Let&amp;rsquo;s see Scoopi Cluster in action with multiple JVM on single host.
+Java Download the latest release zip file scoopi-x-production.</description>
     </item>
     
     <item>
@@ -2164,6 +2428,17 @@ Client still has SymbolDatabase calls in following three classes.
   in.fins.client.action/DataAction.java
   Shift them to RPC with following steps.
   define method in ISymbolService interface.</description>
+    </item>
+    
+    <item>
+      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</link>
+      <pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</guid>
+      <description>Scoopi Cluster Containers We can also run Scoopi Cluster as plain Docker containers.
+Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system. The following command pulls Scoopi image, creates and run container named scoopi.
+docker run --name scoopi codetab/scoopi It executes quick-start example which outputs single record to an output file. However, we will not be able to view the output file nor modify the conf files as they are within the container.</description>
     </item>
     
     <item>

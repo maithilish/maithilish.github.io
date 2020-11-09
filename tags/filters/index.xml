@@ -6,7 +6,7 @@
     <description>Recent content in filters on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 03:12:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 23:40:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/filters/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,21 @@
     <item>
       <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</link>
-      <pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 23:40:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</guid>
+      <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
+The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
+defs/examples/fin/jsoup/ex-5/job.yml
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
+    </item>
+    
+    <item>
+      <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</link>
+      <pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</guid>
       <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml

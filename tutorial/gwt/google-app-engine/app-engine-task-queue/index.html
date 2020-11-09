@@ -8,15 +8,6 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
 <script type="application/ld+json">
     {
         "@context" : "http://schema.org",
@@ -49,7 +40,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-10T19:33:00+0530",
         "dateModified" : "2019-01-10T19:33:00+0530",
-        "wordCount" : "1982",
+        "wordCount" : "1968",
         "keywords" : [ "app engine task queue","Blog" ]
     }
 </script>
@@ -254,7 +245,7 @@
         Shell
     </a>
     
-    <div id="tutorial-gwt-shell" class="">
+    <div id="tutorial-gwt-shell" class="collapse">
         
         
         <a href="https://www.codetab.org/tutorial/gwt/shell/finsshell/"
@@ -264,7 +255,7 @@
         
         
         <a href="https://www.codetab.org/tutorial/gwt/shell/contentpanel/"
-            class="toc-page dropdown-item text-wrap text-danger">
+            class="toc-page dropdown-item text-wrap text-muted">
             TabLayoutPanel
         </a>
         
@@ -506,7 +497,7 @@
         Goolge App Engine
     </a>
     
-    <div id="tutorial-gwt-google-app-engine" class="collapse">
+    <div id="tutorial-gwt-google-app-engine" class="">
         
         
         <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/"
@@ -534,7 +525,7 @@
         
         
         <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/"
-            class="toc-page dropdown-item text-wrap text-muted">
+            class="toc-page dropdown-item text-wrap text-danger">
             App Engine Task Queue
         </a>
         
@@ -940,22 +931,6 @@ dequeues the tasks one by one, which persist the symbol.</p>
 <p>It is a two step process, first we have to define a Task and then, add
 them to Queue. Let&rsquo;s see how it is done in detail.</p>
 
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
 <h5 id="app-engine-tasks">App Engine Tasks</h5>
 <p>App Engine Task is simply a regular servlet, and <code> GaePersistTask</code>
 extends <code>HttpServlet</code> so that it acts as a App Engine Task. Please note
@@ -1036,22 +1011,6 @@ parameter and method is POST. Then, task is added to queue. App Engine
 dequeues the tasks one by one by calling the URL
 <strong>/fins/gaePersistTask</strong> which invokes the GaePersistTask and calls it
 doPost() method with symbol name as the request parameter.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
 
 
 <h5 id="task-instances">Task instances</h5>
@@ -1144,8 +1103,6 @@ frontend exclusively for user requests.</p>
     </div>
 
 </footer>
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 

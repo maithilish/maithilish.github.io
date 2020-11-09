@@ -6,7 +6,7 @@
     <description>Recent content in data items on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 05:57:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 05:57:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/data-items/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,21 @@
     <item>
       <title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</link>
-      <pubDate>Sat, 12 Jan 2019 05:57:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 05:57:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</guid>
+      <description>Data Items and Dynamic Query This chapter explores extracting multiple data points by defining multiple items and dynamic query.
+The Example 2 extracts ten data points shown below from defs/examples/fin/page/acme-snapshot.html page.
+ MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is
+&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</link>
+      <pubDate>Sat, 12 Jan 2019 05:57:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</guid>
       <description>Data Items and Dynamic Query This chapter explores extracting multiple data points by defining multiple items and dynamic query.
 The Example 2 extracts ten data points shown below from defs/examples/fin/page/acme-snapshot.html page.
  MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is

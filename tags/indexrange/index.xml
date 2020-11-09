@@ -6,7 +6,7 @@
     <description>Recent content in indexrange on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 03:23:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 23:34:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/indexrange/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,20 @@
     <item>
       <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</link>
-      <pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 23:34:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</guid>
+      <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
+The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
+   Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
+    </item>
+    
+    <item>
+      <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</link>
+      <pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</guid>
       <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
 The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
    Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>

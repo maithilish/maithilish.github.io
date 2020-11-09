@@ -31,7 +31,7 @@ The Maven core is small and it&amp;rsquo;s just capable of parsing XML files suc
       <description>Maven Plugin Goals Maven plugin is a collection of one or more goals which do some task or job. It is also known as Mojo - Maven Plain Old Java Object.
 For example, Maven uses maven-surefire-plugin to run tests and it comes with two goals.
  Similarly, Maven uses maven-compiler-plugin to compile the source and test files and it provides three goals - compiler:compile, compiler:testCompile and compiler:help.
-&amp;nbsp;   (adsbygoogle = window.</description>
+List Plugin Goals We can use help goal to list the plugin goals.</description>
     </item>
     
     <item>

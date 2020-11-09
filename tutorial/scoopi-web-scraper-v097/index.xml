@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scoopi Web Scraper on Codetab</title>
+    <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/</link>
+    <description>Recent content in Scoopi Web Scraper on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/introduction/</link>
+      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/introduction/</guid>
+      <description>Scoopi Web Scraper Scoopi web scraper extracts and transform data from HTML pages. JSoup and HtmlUnit makes it quite easy to scrape web pages in Java, but the things get complicated when data is from large number of pages. Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
+ Data being unstructured, may requires many queries to scrape them Data may not be in desired format and to make them usable, needs filter and transform Connection may drop during a run and all the work is lost When data is from thousands of pages, performance does matter Need Java or Python proficiency to use scraper libraries  Scraping libraries do well in scraping data from limited set of pages but they are not meant to handle thousands of pages.</description>
+    </item>
+    
+  </channel>
+</rss>

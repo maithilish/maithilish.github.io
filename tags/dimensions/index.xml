@@ -6,7 +6,7 @@
     <description>Recent content in dimensions on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 05:41:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 05:41:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tags/dimensions/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,20 @@
     <item>
       <title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</link>
-      <pubDate>Sat, 12 Jan 2019 05:41:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 05:41:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</guid>
+      <description>DataDef Dimensions The previous quickstart example scrapes stock price data from the page and associates it with the item named price. However, we are also interested to know on what date the price was scraped. The dims allows Scoopi to add multiple dimensions to scraped data.
+In this chapter, we go through Example 1 job.xml to explain dimensions. The example adds date dimension to scraped price data.
+Dimensions The datadefs snippet from defs/examples/fin/jsoup/ex-1/job.</description>
+    </item>
+    
+    <item>
+      <title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</link>
+      <pubDate>Sat, 12 Jan 2019 05:41:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</guid>
       <description>DataDef Dimensions The previous quickstart example scrapes stock price data from the page and associates it with the item named price. However, we are also interested to know on what date the price was scraped. The dims allows Scoopi to add multiple dimensions to scraped data.
 In this chapter, we go through Example 1 job.xml to explain dimensions. The example adds date dimension to scraped price data.
 Dimensions The datadefs snippet from defs/examples/fin/jsoup/ex-1/job.</description>

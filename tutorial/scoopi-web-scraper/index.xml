@@ -6,7 +6,7 @@
     <description>Recent content in Scoopi Web Scraper on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 23:03:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Introduction - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</link>
-      <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
+      <pubDate>Thu, 05 Nov 2020 23:03:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</guid>
       <description>Scoopi Web Scraper Scoopi web scraper extracts and transform data from HTML pages. JSoup and HtmlUnit makes it quite easy to scrape web pages in Java, but the things get complicated when data is from large number of pages. Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:

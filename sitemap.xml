@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</loc>
+    <lastmod>2020-11-05T22:25:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/java-generics/</loc>
     <lastmod>2019-11-01T12:32:00+05:30</lastmod>
   </url>
@@ -48,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/</loc>
     <lastmod>2019-01-11T23:03:00+05:30</lastmod>
   </url>
   
@@ -58,7 +78,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/introduction/</loc>
     <lastmod>2019-01-11T23:03:00+05:30</lastmod>
   </url>
   
@@ -68,7 +88,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/</loc>
     <lastmod>2019-01-11T23:03:00+05:30</lastmod>
   </url>
   
@@ -78,7 +98,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</loc>
     <lastmod>2019-01-11T22:25:00+05:30</lastmod>
   </url>
   
@@ -173,6 +193,16 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</loc>
+    <lastmod>2020-11-05T22:37:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/post/borg-backup-automate/</loc>
     <lastmod>2019-08-27T11:00:00+00:00</lastmod>
   </url>
@@ -203,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/</loc>
     <lastmod>2019-01-11T23:03:00+05:30</lastmod>
   </url>
   
@@ -223,7 +253,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/definition-file/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</loc>
     <lastmod>2019-01-11T22:37:00+05:30</lastmod>
   </url>
   
@@ -263,6 +293,16 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</loc>
+    <lastmod>2020-11-05T22:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/post/java-unicode-basics/</loc>
     <lastmod>2019-09-29T11:00:00+00:00</lastmod>
   </url>
@@ -283,7 +323,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/</loc>
     <lastmod>2019-01-11T23:03:00+05:30</lastmod>
   </url>
   
@@ -303,7 +343,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/datadef/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</loc>
     <lastmod>2019-01-11T22:47:00+05:30</lastmod>
   </url>
   
@@ -348,6 +388,16 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</loc>
+    <lastmod>2020-11-05T05:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/post/hugo-webfont/</loc>
     <lastmod>2019-10-05T10:20:00+00:00</lastmod>
   </url>
@@ -363,7 +413,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/dimensions/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</loc>
     <lastmod>2019-01-12T05:41:00+05:30</lastmod>
   </url>
   
@@ -428,6 +478,11 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</loc>
+    <lastmod>2020-11-05T05:57:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/post/kubernetes-cluster-virtualbox/</loc>
     <lastmod>2020-09-15T11:15:00+00:00</lastmod>
   </url>
@@ -443,7 +498,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/data-items-dynamic-query/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</loc>
     <lastmod>2019-01-12T05:57:00+05:30</lastmod>
   </url>
   
@@ -498,6 +553,11 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</loc>
+    <lastmod>2020-11-05T23:34:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/java-generics/wildcards-api/</loc>
     <lastmod>2019-11-01T12:32:00+05:30</lastmod>
   </url>
@@ -513,7 +573,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</loc>
     <lastmod>2019-01-11T23:34:00+05:30</lastmod>
   </url>
   
@@ -553,12 +613,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</loc>
+    <lastmod>2020-11-05T23:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</loc>
     <lastmod>2019-01-11T23:40:00+05:30</lastmod>
   </url>
   
@@ -603,6 +668,11 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</loc>
+    <lastmod>2020-11-05T23:10:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/java-generics/design/</loc>
     <lastmod>2019-07-23T13:54:00+05:30</lastmod>
   </url>
@@ -613,7 +683,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/selector-query-analyzer/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</loc>
     <lastmod>2019-01-11T23:10:00+05:30</lastmod>
   </url>
   
@@ -649,6 +719,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</loc>
+    <lastmod>2020-11-05T06:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</loc>
     <lastmod>2019-01-12T06:14:00+05:30</lastmod>
   </url>
   
@@ -683,12 +758,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</loc>
+    <lastmod>2020-11-05T23:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/multiple-tasks-v094/</loc>
     <lastmod>2019-01-12T03:54:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-tasks/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-tasks/</loc>
     <lastmod>2019-01-11T23:51:00+05:30</lastmod>
   </url>
   
@@ -728,12 +808,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</loc>
+    <lastmod>2020-11-05T23:59:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/steps-and-plugins-v094/</loc>
     <lastmod>2019-01-12T05:01:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/workflow-steps-plugins/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/workflow-steps-plugins/</loc>
     <lastmod>2019-01-11T23:59:00+05:30</lastmod>
   </url>
   
@@ -768,12 +853,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</loc>
+    <lastmod>2020-11-05T00:16:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/converters-v094/</loc>
     <lastmod>2019-01-12T02:25:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/converters/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/converters/</loc>
     <lastmod>2019-01-12T00:16:00+05:30</lastmod>
   </url>
   
@@ -799,6 +889,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/scripter/</loc>
+    <lastmod>2020-11-05T06:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/scripter/</loc>
     <lastmod>2019-01-12T06:29:00+05:30</lastmod>
   </url>
   
@@ -833,12 +928,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</loc>
+    <lastmod>2020-11-05T00:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/persistence-v094/</loc>
     <lastmod>2019-01-12T04:11:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</loc>
     <lastmod>2019-01-12T00:29:00+05:30</lastmod>
   </url>
   
@@ -874,6 +974,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/pagination/</loc>
+    <lastmod>2020-11-05T06:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/pagination/</loc>
     <lastmod>2019-01-12T06:40:00+05:30</lastmod>
   </url>
   
@@ -908,12 +1013,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</loc>
+    <lastmod>2020-11-05T01:09:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/split-definitions-v094/</loc>
     <lastmod>2019-01-12T04:46:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/appender-encoder/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/appender-encoder/</loc>
     <lastmod>2019-01-12T01:09:00+05:30</lastmod>
   </url>
   
@@ -929,6 +1039,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/dom-loader-selenium-webdriver/</loc>
+    <lastmod>2020-11-05T06:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/dom-loader-selenium-webdriver/</loc>
     <lastmod>2019-01-12T06:47:00+05:30</lastmod>
   </url>
   
@@ -954,6 +1069,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/ajax-selenium-webdriver/</loc>
+    <lastmod>2020-11-05T07:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/ajax-selenium-webdriver/</loc>
     <lastmod>2019-01-12T07:03:00+05:30</lastmod>
   </url>
   
@@ -979,6 +1099,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/</loc>
+    <lastmod>2020-11-05T01:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</loc>
     <lastmod>2019-01-12T01:02:00+05:30</lastmod>
   </url>
   
@@ -1003,12 +1128,17 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/</loc>
+    <lastmod>2020-11-05T01:18:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/db-setup-v094/</loc>
     <lastmod>2019-01-12T03:02:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/split-definitions/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</loc>
     <lastmod>2019-01-12T01:18:00+05:30</lastmod>
   </url>
   
@@ -1024,6 +1154,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</loc>
+    <lastmod>2020-11-05T01:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</loc>
     <lastmod>2019-01-12T01:29:00+05:30</lastmod>
   </url>
   
@@ -1049,6 +1184,11 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/dashboard/</loc>
+    <lastmod>2020-11-05T01:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</loc>
     <lastmod>2019-01-12T01:36:00+05:30</lastmod>
   </url>
   
@@ -1168,7 +1308,7 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/db-setup/</loc>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</loc>
     <lastmod>2019-01-12T00:46:00+05:30</lastmod>
   </url>
   
@@ -1188,6 +1328,11 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</loc>
+    <lastmod>2020-11-05T01:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/</loc>
     <lastmod>2019-01-11T12:01:00+05:30</lastmod>
   </url>
@@ -1200,6 +1345,11 @@
   <url>
     <loc>https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/</loc>
     <lastmod>2019-01-10T19:05:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</loc>
+    <lastmod>2020-11-05T01:02:00+05:30</lastmod>
   </url>
   
   <url>
@@ -1348,12 +1498,142 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/kubernetes-k8s-cluster-fedora-coreos-qemu-kvm/</loc>
-    <lastmod>2020-09-15T11:30:00+00:00</lastmod>
+    <loc>https://www.codetab.org/tags/steps/</loc>
+    <lastmod>2020-11-05T23:59:00+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tags/</loc>
+    <lastmod>2020-11-05T23:59:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tutorial/</loc>
+    <lastmod>2020-11-05T23:59:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multiple-tasks/</loc>
+    <lastmod>2020-11-05T23:51:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/filters/</loc>
+    <lastmod>2020-11-05T23:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/indexrange/</loc>
+    <lastmod>2020-11-05T23:34:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/selector/</loc>
+    <lastmod>2020-11-05T23:10:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scoopi-web-scraper/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scoopi-web-scraper-cluster/</loc>
+    <lastmod>2020-11-05T23:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/datadef/</loc>
+    <lastmod>2020-11-05T22:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/definition-file/</loc>
+    <lastmod>2020-11-05T22:37:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scoopi-installation/</loc>
+    <lastmod>2020-11-05T22:25:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/ajax/</loc>
+    <lastmod>2020-11-05T07:03:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/dom-loader/</loc>
+    <lastmod>2020-11-05T06:47:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/pagination/</loc>
+    <lastmod>2020-11-05T06:40:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/scripter/</loc>
+    <lastmod>2020-11-05T06:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/multi-dimensions/</loc>
+    <lastmod>2020-11-05T06:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/data-items/</loc>
+    <lastmod>2020-11-05T05:57:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/dimensions/</loc>
+    <lastmod>2020-11-05T05:41:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/dashboard/</loc>
+    <lastmod>2020-11-05T01:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/logs/</loc>
+    <lastmod>2020-11-05T01:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/split-definitions/</loc>
+    <lastmod>2020-11-05T01:18:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/appender/</loc>
+    <lastmod>2020-11-05T01:09:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/cluster/</loc>
+    <lastmod>2020-11-05T01:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/persistence/</loc>
+    <lastmod>2020-11-05T01:02:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/create-locators-from-links/</loc>
+    <lastmod>2020-11-05T00:29:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/converters/</loc>
+    <lastmod>2020-11-05T00:16:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/kubernetes-k8s-cluster-fedora-coreos-qemu-kvm/</loc>
     <lastmod>2020-09-15T11:30:00+00:00</lastmod>
   </url>
   
@@ -1364,11 +1644,6 @@
   
   <url>
     <loc>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</loc>
-    <lastmod>2019-11-01T12:32:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tutorial/</loc>
     <lastmod>2019-11-01T12:32:00+05:30</lastmod>
   </url>
   
@@ -1463,11 +1738,6 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/scoopi-web-scraper/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.codetab.org/tags/share-on-social/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
   </url>
@@ -1488,123 +1758,13 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/ajax/</loc>
-    <lastmod>2019-01-12T07:03:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/dom-loader/</loc>
-    <lastmod>2019-01-12T06:47:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/pagination/</loc>
-    <lastmod>2019-01-12T06:40:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/scripter/</loc>
-    <lastmod>2019-01-12T06:29:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multi-dimensions/</loc>
-    <lastmod>2019-01-12T06:14:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/data-items/</loc>
-    <lastmod>2019-01-12T05:57:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/dimensions/</loc>
-    <lastmod>2019-01-12T05:41:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/scoopi-installation/</loc>
-    <lastmod>2019-01-12T05:26:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/create-locators-from-links/</loc>
-    <lastmod>2019-01-12T05:16:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/steps/</loc>
-    <lastmod>2019-01-12T05:01:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/split-definitions/</loc>
-    <lastmod>2019-01-12T04:46:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/selector/</loc>
-    <lastmod>2019-01-12T04:34:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/definition-file/</loc>
-    <lastmod>2019-01-12T04:27:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/persistence/</loc>
-    <lastmod>2019-01-12T04:11:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/multiple-tasks/</loc>
-    <lastmod>2019-01-12T03:54:00+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.codetab.org/tags/members/</loc>
     <lastmod>2019-01-12T03:40:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/logs/</loc>
-    <lastmod>2019-01-12T03:34:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/indexrange/</loc>
-    <lastmod>2019-01-12T03:23:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/filters/</loc>
-    <lastmod>2019-01-12T03:12:00+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.codetab.org/tags/db-setup/</loc>
     <lastmod>2019-01-12T03:02:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/datadef/</loc>
-    <lastmod>2019-01-12T02:47:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/dashboard/</loc>
-    <lastmod>2019-01-12T02:35:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/converters/</loc>
-    <lastmod>2019-01-12T02:25:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.codetab.org/tags/appender/</loc>
-    <lastmod>2019-01-12T02:11:00+05:30</lastmod>
   </url>
   
   <url>
