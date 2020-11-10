@@ -8,6 +8,15 @@
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
 <script type="application/ld+json">
     {
         "@context" : "http://schema.org",
@@ -40,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-06-21T22:12:00+0530",
         "dateModified" : "2019-06-21T22:12:00+0530",
-        "wordCount" : "663",
+        "wordCount" : "677",
         "keywords" : [ "eclipse maven multi module","Blog" ]
     }
 </script>
@@ -561,6 +570,22 @@
 </code></pre></div><p>We add these properties in the top level POM so that all its modules inherits them. This also ensures that build path of all modules uses Java 1.8 library instead of default 1.5.</p>
 
 
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+
 <h2 id="add-modules">Add Modules</h2>
 <p>To add modules, select eclipse-multi project in the Project Explorer  and right click to open context menu. From the context menu, open Maven Project Wizard with <strong>New</strong> → <strong>Others</strong> →
 <strong>Maven</strong>  and select <strong>Maven Module</strong> and click Next.</p>
@@ -598,6 +623,22 @@
 </figure>
 
 <p>We can also use <strong>Check out Maven Project from SCM</strong> in Import wizard to directly import the project from GitHub. For that,  install M2E Git Connector from M2E marketplace.</p>
+
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
 
 <h2 id="how-to-run-multi-module-project">How to run Multi Module Project</h2>
 <p>We can use Maven build option to run the multi module. To do that, first right click on top level project and select <strong>Run As</strong> → <strong>Maven Install</strong> and after project installed in local repository again select <strong>Run As</strong> → <strong>Maven Build</strong> and in run configuration screen enter <strong>exec:java -pl &lt;module that has main class&gt; -Dexec.mainClass=&lt;main class&gt;</strong> in Goals field and then click run.</p>
@@ -650,6 +691,8 @@
     </div>
 
 </footer>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 

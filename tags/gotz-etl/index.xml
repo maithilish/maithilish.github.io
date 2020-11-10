@@ -26,9 +26,8 @@
       <pubDate>Fri, 11 Jan 2019 18:43:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/introduction/</guid>
-      <description>CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
-Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:
-  Single web page may hold multiple types of data, queries should be able to dynamically handle different types of data</description>
+      <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab Gotz ETL Gotz ETL is a tool to extract data from HTML pages. In Java, it&amp;rsquo;s easy to scrape web pages with libraries such as JSoup and HtmlUnit, but the task become daunting when we try to scrape data from huge set of pages.
+Some of the challenges while extracting large set of data from unstructured sources such as HTML pages are:</description>
     </item>
     
   </channel>

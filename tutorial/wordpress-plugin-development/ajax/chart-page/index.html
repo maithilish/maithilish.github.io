@@ -8,6 +8,15 @@
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42139846-3');
+</script>
+
 <script type="application/ld+json">
     {
         "@context" : "http://schema.org",
@@ -40,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T11:09:00+0530",
         "dateModified" : "2019-01-11T11:09:00+0530",
-        "wordCount" : "609",
+        "wordCount" : "623",
         "keywords" : [ "wordpress chart page","Blog" ]
     }
 </script>
@@ -690,6 +699,22 @@ which is called only when we click Statistics sub menu.</p>
 </code></pre></div><p>We use script handles to enqueue, so we need to register them before
 they actually enqueue.</p>
 
+
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
 <p>We do that in <code>Sos_Stats::setup()</code> where we add
 <code>Sos_Stats::init_chart_scripts()</code> to <strong>admin_init</strong> action hook.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
@@ -756,6 +781,22 @@ the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()
 <strong>nonce</strong> for the two charts.</p>
 
 
+<div>&nbsp;</div>
+
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1281079745125126"
+     data-ad-slot="6135368983"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div>&nbsp;</div>
+
+
+
 <p>In the next section, we use WordPress Ajax to fetch the data from the
 server and draw chart with the Google Chart API.</p>
 
@@ -806,6 +847,8 @@ server and draw chart with the Google Chart API.</p>
     </div>
 
 </footer>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 

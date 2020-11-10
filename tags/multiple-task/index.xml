@@ -20,7 +20,7 @@
       <description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
 The Example-1 scrapes Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. We can add these two task within tasks element.
 But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.
-Steps Reference In Example-6, steps is moved out of task element as a standalone element under &amp;lt;fields&amp;gt;</description>
+&amp;nbsp;   (adsbygoogle = window.</description>
     </item>
     
   </channel>

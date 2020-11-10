@@ -18,7 +18,7 @@
       
       <guid>https://www.codetab.org/tutorial/gotz-etl/tasks-steps/</guid>
       <description>So far, we explored locators which defines the pages to scrape and dataDef which defines data to scrape from the pages. But, we haven&amp;rsquo;t defined how that work has to be carried out. This chapter defines Tasks and Steps which executes series of steps that use dataDef to scrape data from locator.
-Tasks and Task The defs/examples/jsoup/ex-5/job.xml defines one task which applies dataDef named bs to locators of same group.</description>
+&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; Tasks and Task The defs/examples/jsoup/ex-5/job.xml defines one task which applies dataDef named bs to locators of same group.</description>
     </item>
     
   </channel>
