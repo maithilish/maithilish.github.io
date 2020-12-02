@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T13:07:00+0530",
         "dateModified" : "2019-01-11T13:07:00+0530",
-        "wordCount" : "1058",
+        "wordCount" : "1057",
         "keywords" : [ "wordpress plugin simple unit tests","Blog" ]
     }
 </script>
@@ -643,7 +643,7 @@ explain a couple of basic types of plugin tests.</p>
 
 <p>In Share on Social Plugin, for each class file there is corresponding
 test class file in <code>tests/phpunit/tests</code> directory. The test file is a
-regular PHP class which extends WordPress Tests Librarys&rsquo;
+regular PHP class which extends WordPress Tests Librarys'
 <code>WP_UnitTestCase</code> which itself extends <code>PHPUnit_Framework_TestCase</code>.</p>
 <p>The test method names are prefixed with <strong>test_</strong> as PHPUnit requires
 that to distinguish the test methods from others in the test case.</p>
@@ -653,18 +653,18 @@ will hold an instance of class <code>Sos</code> which is the class under test.</
 <p>The instance of the class under test is normally created in <code>setup()</code>
 method.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos extends WP_UnitTestCase {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Sos</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
 
-    var $sos;
+    <span class="k">var</span> <span class="nv">$sos</span><span class="p">;</span>
 
-    public function setup () {
-        parent::setup();
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">setup</span><span class="p">();</span>
         
-        require_once &#39;admin/class-sos.php&#39;;
-        $this-&gt;sos = new Sos();
-    }
-    ....
-}
+        <span class="k">require_once</span> <span class="s1">&#39;admin/class-sos.php&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sos</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="o">....</span>
+<span class="p">}</span>
 </code></pre></div><p>In the <code>setup()</code> method, we need to call <code>parent::setup()</code> before doing
 any other thing. Next, we include the class file of class under test
 with require_once(). In the above test case, we include
@@ -676,19 +676,19 @@ instance of class Sos.</p>
 <code>parent::teardown()</code> and then any clean up required to run subsequent
 tests.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos extends WP_UnitTestCase {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Sos</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
 
-    var $sos;
+    <span class="k">var</span> <span class="nv">$sos</span><span class="p">;</span>
 
-    ....
+    <span class="o">....</span>
 
-    public function teardown () {
-        parent::teardown();
-        unload_textdomain( &#39;sos-domain&#39; );
-        Util::set_activate_plugins_cap( false );
-    }
-    ....
-}
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">teardown</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">teardown</span><span class="p">();</span>
+        <span class="nx">unload_textdomain</span><span class="p">(</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="nx">Util</span><span class="o">::</span><span class="na">set_activate_plugins_cap</span><span class="p">(</span> <span class="k">false</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="o">....</span>
+<span class="p">}</span>
 </code></pre></div><p>In majority of test cases, in <code>teardown()</code> method, we unload the text
 domain which we explain in a later blog when we cover the WordPress
 Internationalization testing. In the above test case, we also remove a
@@ -720,27 +720,27 @@ value. For example, the <code>Sos_Options::sanitize_options()</code> method take
 an array as input which hold key, value pairs and the method sanitize
 the values using WP function <a href="http://codex.wordpress.org/Function_Reference/wp_filter_nohtml_kses" target="_blank">wp_filter_nohtml_kses()</a> and add the sanitized value to an output array. The method returns the output array which holds the sanitized values.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function sanitize_options ( $input ) {
-        $output = array();
-        foreach ( $input as $key =&gt; $val ) {
-            if ( isset( $input<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://phpunit.de/manual/current/en/appendixes.assertions.html&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> $key ] ) ) {
-                // $output[$key] = strip_tags(stripslashes($input[$key]));
-                $output[ $key ] = wp_filter_nohtml_kses( $input[ $key ] );
-            }
-        }
-        return apply_filters( &#39;sanitize_options&#39;, $output, $input );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">sanitize_options</span> <span class="p">(</span> <span class="nv">$input</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$output</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$input</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$val</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$input</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;https://phpunit.de/manual/current/en/appendixes.assertions.html&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="nv">$key</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// $output[$key] = strip_tags(stripslashes($input[$key]));
+</span><span class="c1"></span>                <span class="nv">$output</span><span class="p">[</span> <span class="nv">$key</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">wp_filter_nohtml_kses</span><span class="p">(</span> <span class="nv">$input</span><span class="p">[</span> <span class="nv">$key</span> <span class="p">]</span> <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">apply_filters</span><span class="p">(</span> <span class="s1">&#39;sanitize_options&#39;</span><span class="p">,</span> <span class="nv">$output</span><span class="p">,</span> <span class="nv">$input</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>We test this type of methods by asserting whether the returned object
 contains the expected values.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_sanitize_options_scripts () {
-        $input = array(
-                &#39;id&#39; =&gt; &#39;test id<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="nx">evil</span> <span class="cp">?&gt;</span>&#39;
-        );
-        $output = $this-&gt;sos_options-&gt;sanitize_options( $input );
-        $this-&gt;assertCount( 1, $output );
-        $this-&gt;assertSame( &#39;test id&#39;, $output[ &#39;id&#39; ] );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_sanitize_options_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$input</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test id&lt;h1&gt;&lt;?php evil ?&gt;&#39;</span>
+        <span class="p">);</span>
+        <span class="nv">$output</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="o">-&gt;</span><span class="na">sanitize_options</span><span class="p">(</span> <span class="nv">$input</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$output</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;test id&#39;</span><span class="p">,</span> <span class="nv">$output</span><span class="p">[</span> <span class="s1">&#39;id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>In the test method, first we construct an input array and add an option
 value which contains some PHP script tags. Next, we call method under
 test <code>Sos_Options::sanitize_options()</code> by passing input array as
@@ -776,33 +776,33 @@ pages, menu etc.,</p>
 <p>One such example is <code>Sos_Stats::render_stats_page()</code> method from
 <code>admin/class-stats.php</code>.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_stats_page () {
-        $heading = __( &#39;Share Stats&#39;, &#39;sos-domain&#39; );
-        echo <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
-        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>{$heading}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;summary_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>        
-EOD;
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">render_stats_page</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$heading</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Share Stats&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="k">echo</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOD</span><span class="s">
+</span><span class="s">        &lt;h3&gt;{$heading}&lt;/h3&gt;
+</span><span class="s">        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+</span><span class="s">        &lt;div id=&#34;summary_chart&#34;&gt;&lt;/div&gt;
+</span><span class="s">        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+</span><span class="s">        &lt;div id=&#34;stats_chart&#34;&gt;&lt;/div&gt;        
+</span><span class="s"></span><span class="dl">EOD</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div><p>In Share on Social, we test such methods by capturing the echoed output
 with PHP output buffer functions.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_render_stats_page () {
-        ob_start();
-        $this-&gt;sos_stats-&gt;render_stats_page();
-        $result = ob_get_contents();
-        ob_end_clean();
-        $expected = <span class="err">&lt;&lt;</span><span class="p">&lt;</span> <span class="nt">EOD</span>
-        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>Share Stats<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;summary_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>    
-EOD;
-        $this-&gt;assertSame( trim( $expected ), trim( $result ) );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_render_stats_page</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">ob_start</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_stats</span><span class="o">-&gt;</span><span class="na">render_stats_page</span><span class="p">();</span>
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nx">ob_get_contents</span><span class="p">();</span>
+        <span class="nx">ob_end_clean</span><span class="p">();</span>
+        <span class="nv">$expected</span> <span class="o">=</span> <span class="o">&lt;&lt;&lt;</span> <span class="nx">EOD</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Share</span> <span class="nx">Stats</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;summary_chart&#34;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;stats_chart&#34;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>    
+<span class="nx">EOD</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nx">trim</span><span class="p">(</span> <span class="nv">$expected</span> <span class="p">),</span> <span class="nx">trim</span><span class="p">(</span> <span class="nv">$result</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>PHP output buffer functions are used to capture the output. After
 turning on the output buffer with PHP function
 <a href="http://php.net/manual/en/function.ob-start.php" target="_blank">ob_start()</a>, we call

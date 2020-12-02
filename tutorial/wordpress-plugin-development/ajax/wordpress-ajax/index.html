@@ -636,15 +636,15 @@ to share and on success, send the share details to the server.</p>
 <code>wp-admin/admin-ajax.php</code>. To initiate Ajax, JavaScript require URL of
 this file and we use <code>wp_localize_script()</code> function, explained in <a href="/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/">Pass Data to JavaScript</a> to pass URL and other data from the server to client.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
-        ....          
-        wp_localize_script( &#39;sos_script&#39;, &#39;sos_data&#39;, 
-                array(
-                        &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
-                        &#39;nonce&#39; =&gt; wp_create_nonce( &#39;sos-save-stat&#39; ),
-                        &#39;gplus_client_id&#39; =&gt; $gplus_client_id ) );
-    }
-</code></pre></div><p>WordPress function <a href="http://codex.wordpress.org/Function_Reference/admin_url" target="_blank">admin_url()</a> returns the URL of admin-ajax.php. WordPress function <a href="http://codex.wordpress.org/Function_Reference/wp_create_nonce" target="_blank">wp_create_nonce()</a> creates one time security token called nonce that can be only used for <strong>sos-save-stat</strong> request. The screenshot shows passed data in the browsers&rsquo; <strong>View Source</strong> screen.</p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="o">....</span>          
+        <span class="nx">wp_localize_script</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;sos_data&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;ajax_url&#39;</span> <span class="o">=&gt;</span> <span class="nx">admin_url</span><span class="p">(</span> <span class="s1">&#39;admin-ajax.php&#39;</span> <span class="p">),</span>
+                        <span class="s1">&#39;nonce&#39;</span> <span class="o">=&gt;</span> <span class="nx">wp_create_nonce</span><span class="p">(</span> <span class="s1">&#39;sos-save-stat&#39;</span> <span class="p">),</span>
+                        <span class="s1">&#39;gplus_client_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$gplus_client_id</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div><p>WordPress function <a href="http://codex.wordpress.org/Function_Reference/admin_url" target="_blank">admin_url()</a> returns the URL of admin-ajax.php. WordPress function <a href="http://codex.wordpress.org/Function_Reference/wp_create_nonce" target="_blank">wp_create_nonce()</a> creates one time security token called nonce that can be only used for <strong>sos-save-stat</strong> request. The screenshot shows passed data in the browsers' <strong>View Source</strong> screen.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-localizedata1.png" alt="WordPress Ajax - ajax URL." />
 </figure>
@@ -712,16 +712,16 @@ attached to the action hooks <strong>wp_ajax_save-stats</strong> or
 
 
 <p>So, we have to add action method to these two hooks and that is done in
-plugins&rsquo; Ajax file<code>- admin/class-ajax.php</code>.</p>
+plugins' Ajax file<code>- admin/class-ajax.php</code>.</p>
 <p><code>share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Ajax {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Ajax</span> <span class="p">{</span>
 
-    public function setup () {
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
 
-        add_action( &#39;wp_ajax_nopriv_save-stats&#39;, array( $this,&#39;save_stats&#39; ) );
-        add_action( &#39;wp_ajax_save-stats&#39;, array( $this,&#39;save_stats&#39; ) );
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;wp_ajax_nopriv_save-stats&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;save_stats&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;wp_ajax_save-stats&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;save_stats&#39;</span> <span class="p">)</span> <span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 </code></pre></div><p>In <code> Sos_Ajax::setup()</code> method. we add <code>Sos_Ajax::save_stats()</code> as
 action method to hooks <strong>wp_ajax_save-stats</strong> and
 <strong>wp_ajax_nopriv_save-stats.</strong></p>
@@ -739,23 +739,23 @@ for regular users. The second one, wp_ajax_nopriv_save-stats invokes
 the method when regular user shares.</p>
 <p>Let&rsquo;s see what goes on in the Ajax method <code>Sos_Ajax::save_stats()</code>.</p>
 <p><code>share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function save_stats () {
-        $valid_req = check_ajax_referer( &#39;sos-save-stat&#39;, false, false );
-        if ( false == $valid_req ) {
-            wp_die( &#39;-1&#39; );
-        }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">save_stats</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$valid_req</span> <span class="o">=</span> <span class="nx">check_ajax_referer</span><span class="p">(</span> <span class="s1">&#39;sos-save-stat&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nv">$valid_req</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;-1&#39;</span> <span class="p">);</span>
+        <span class="p">}</span>
         
-        if ( ! isset( $_POST<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/check_ajax_referer&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> &#39;type&#39; ] ) || ! isset( $_POST[ &#39;share_name&#39; ] ) ) {
-            wp_die( &#39;-1&#39; );
-        }
-        $share_on = $_POST[ &#39;type&#39; ];
-        $share_name = $_POST[ &#39;share_name&#39; ];
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$_POST</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Function_Reference/check_ajax_referer&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="s1">&#39;type&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="o">||</span> <span class="o">!</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;share_name&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;-1&#39;</span> <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$share_on</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;type&#39;</span> <span class="p">];</span>
+        <span class="nv">$share_name</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;share_name&#39;</span> <span class="p">];</span>
         
-        $this-&gt;update_sos_stats( $share_on, $share_name );
-        $this-&gt;update_sos_stats_summary( $share_on, $share_name );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">update_sos_stats</span><span class="p">(</span> <span class="nv">$share_on</span><span class="p">,</span> <span class="nv">$share_name</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">update_sos_stats_summary</span><span class="p">(</span> <span class="nv">$share_on</span><span class="p">,</span> <span class="nv">$share_name</span> <span class="p">);</span>
         
-        wp_die( &#39;1&#39; );
-    }
+        <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;1&#39;</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>The method, first do a security check and ascertains whether it is a
 valid Ajax request originated from indented page with the help of
 WordPress function
@@ -780,22 +780,22 @@ Unit Testing.</p>
 <p>Let&rsquo;s see how data is saved to WordPress database by the
 Sos_Ajax::update_sos_stats() method.</p>
 <p><code> share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function update_sos_stats ( $share_on, $share_name ) {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">update_sos_stats</span> <span class="p">(</span> <span class="nv">$share_on</span><span class="p">,</span> <span class="nv">$share_name</span> <span class="p">)</span> <span class="p">{</span>
 
-        $stats = get_option( &#39;sos_stats&#39; );
-        if ( null == $stats ) {
-            $stats = array();
-        }
+        <span class="nv">$stats</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_stats&#39;</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">null</span> <span class="o">==</span> <span class="nv">$stats</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$stats</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        $stat = array(
-                &#39;date&#39; =&gt; strtotime( &#39;now UTC&#39; ), // UTC timestamp
-                &#39;type&#39; =&gt; $share_on,
-                &#39;share_name&#39; =&gt; $share_name
-        );
+        <span class="nv">$stat</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="nx">strtotime</span><span class="p">(</span> <span class="s1">&#39;now UTC&#39;</span> <span class="p">),</span> <span class="c1">// UTC timestamp
+</span><span class="c1"></span>                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="nv">$share_on</span><span class="p">,</span>
+                <span class="s1">&#39;share_name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$share_name</span>
+        <span class="p">);</span>
         
-        $stats[] = $stat;
-        update_option( &#39;sos_stats&#39;, $stats );
-    }
+        <span class="nv">$stats</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$stat</span><span class="p">;</span>
+        <span class="nx">update_option</span><span class="p">(</span> <span class="s1">&#39;sos_stats&#39;</span><span class="p">,</span> <span class="nv">$stats</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>It uses <code>get_option()</code> function to check whether option <strong>sos_stats</strong>
 exists in the database else creates a new one. Next, it creates an array
 from the data sent by the client and update it as WordPress Option

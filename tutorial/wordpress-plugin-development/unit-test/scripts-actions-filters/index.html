@@ -695,14 +695,14 @@ activate_plugins capability.</p>
 <p>In many of the tests, setUp() method uses following constructs to set
 the user and capability to run the tests.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos_Options extends WP_UnitTestCase {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Sos_Options</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
 
-    public function setup () {
-        parent::setup();  
-        ....
-        wp_set_current_user( 1 );
-        Util::set_admin_role( true );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">setup</span><span class="p">();</span>  
+        <span class="o">....</span>
+        <span class="nx">wp_set_current_user</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+        <span class="nx">Util</span><span class="o">::</span><span class="na">set_admin_role</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>Having gone through the utility class and its methods, let&rsquo;s get back to
 the tests that uses WordPress API functions to assert the outcome of
 method under test.</p>
@@ -730,34 +730,34 @@ and filters.</p>
 <p>For example, <code>Sos_Options::setup()</code> method adds actions for
 <strong>admin_init</strong> and <strong>admin_menu</strong> hooks.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Options {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Options</span> <span class="p">{</span>
 
-    public function setup () {
-        add_action( &#39;admin_init&#39;, 
-                array( $this,&#39;init_common_options&#39; ) );
-        add_action( &#39;admin_menu&#39;, 
-                array( $this,&#39;register_settings_page&#39; ) );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;init_common_options&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_menu&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;register_settings_page&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>We test actions in <code>Test_Sos_Options</code> using utility method
 <code>Util::has_action()</code>.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos_Options extends WP_UnitTestCase {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Sos_Options</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
 
-    public function test_setup () {
-        $this-&gt;assertFalse( 
-           Util::has_action( &#39;admin_init&#39;, $this-&gt;sos_options,&#39;init_common_options&#39; ) );
-        $this-&gt;assertFalse( 
-           Util::has_action( &#39;admin_menu&#39;, $this-&gt;sos_options,&#39;register_settings_page&#39; ) );
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> 
+           <span class="nx">Util</span><span class="o">::</span><span class="na">has_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="p">,</span><span class="s1">&#39;init_common_options&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> 
+           <span class="nx">Util</span><span class="o">::</span><span class="na">has_action</span><span class="p">(</span> <span class="s1">&#39;admin_menu&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="p">,</span><span class="s1">&#39;register_settings_page&#39;</span> <span class="p">)</span> <span class="p">);</span>
         
-        $this-&gt;sos_options-&gt;setup();
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="o">-&gt;</span><span class="na">setup</span><span class="p">();</span>
         
-        $this-&gt;assertTrue( 
-           Util::has_action( &#39;admin_init&#39;, $this-&gt;sos_options, &#39;init_common_options&#39; ) );
-        $this-&gt;assertTrue( 
-           Util::has_action( &#39;admin_menu&#39;, $this-&gt;sos_options, &#39;register_settings_page&#39; ) );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> 
+           <span class="nx">Util</span><span class="o">::</span><span class="na">has_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="p">,</span> <span class="s1">&#39;init_common_options&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> 
+           <span class="nx">Util</span><span class="o">::</span><span class="na">has_action</span><span class="p">(</span> <span class="s1">&#39;admin_menu&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="p">,</span> <span class="s1">&#39;register_settings_page&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>In <code>Test_Sos_Options::test_setup()</code>, we first test that admin_init and
-admin_menu hooks&rsquo; actions are not set. Next, we call method under test
+admin_menu hooks' actions are not set. Next, we call method under test
 with $this-&gt;sos_options-&gt;setup(). Finally, we test whether
 admin_init has action pointing to <code>Sos_Option::init_common_options()</code>
 method. For this, we use <code>Util::has_action()</code> which is wrapper for
@@ -777,18 +777,18 @@ thereafter, it is responsibility of WordPress core to handle the action.</p>
 Share on Social Plugin enqueues couple of scripts and a style sheet in
 <code>Sos_Frontend::add_sos_scripts()</code> method.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
-        ....
-        wp_register_style( &#39;sos_style&#39;, SOS_URL . &#39;/css/style.css&#39; );
-        wp_register_script( &#39;sos_script&#39;, SOS_URL . &#39;/js/share.js&#39;, 
-                            array(&#39;jquery&#39;), &#39;&#39;, true );
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="o">....</span>
+        <span class="nx">wp_register_style</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span><span class="p">,</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/css/style.css&#39;</span> <span class="p">);</span>
+        <span class="nx">wp_register_script</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/js/share.js&#39;</span><span class="p">,</span> 
+                            <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
      
-        if ( has_shortcode( $post-&gt;post_content, $this-&gt;sos_shortcode ) ) {
-            wp_enqueue_style( &#39;sos_style&#39; );
-            wp_enqueue_script( &#39;sos_script&#39; );
-            ....
-        }
-     }
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">has_shortcode</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">post_content</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_shortcode</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_enqueue_style</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span> <span class="p">);</span>
+            <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span> <span class="p">);</span>
+            <span class="o">....</span>
+        <span class="p">}</span>
+     <span class="p">}</span>
 </code></pre></div><p>The method, registers the script and stylesheets and if, share-on-social
 shortcode exists in the post, then it enqueue them. WordPress functions
 <a href="http://codex.wordpress.org/Function_Reference/wp_script_is" target="_blank">wp_script_is()</a>
@@ -797,23 +797,23 @@ and
 are useful to check whether scripts and stylesheets are registered or
 enqueued.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_add_sos_scripts () {
-        // if no shortcode 
-        $this-&gt;frontend-&gt;add_sos_scripts();
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// if no shortcode 
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">frontend</span><span class="o">-&gt;</span><span class="na">add_sos_scripts</span><span class="p">();</span>
         
-        $this-&gt;assertTrue( wp_style_is( &#39;sos_style&#39;, &#39;registered&#39; ) );
-        $this-&gt;assertTrue( wp_script_is( &#39;sos_script&#39;, &#39;registered&#39; ) );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">wp_style_is</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span><span class="p">,</span> <span class="s1">&#39;registered&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">wp_script_is</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;registered&#39;</span> <span class="p">)</span> <span class="p">);</span>
         
-        $this-&gt;assertFalse( wp_style_is( &#39;sos_style&#39;, &#39;enqueued&#39; ) );
-        $this-&gt;assertFalse( wp_script_is( &#39;sos_script&#39;, &#39;enqueued&#39; ) );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">wp_style_is</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span><span class="p">,</span> <span class="s1">&#39;enqueued&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">wp_script_is</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;enqueued&#39;</span> <span class="p">)</span> <span class="p">);</span>
         
-        // if shortcode exists 
-        $this-&gt;frontend-&gt;setup();
-        $this-&gt;frontend-&gt;add_sos_scripts();
+        <span class="c1">// if shortcode exists 
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">frontend</span><span class="o">-&gt;</span><span class="na">setup</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">frontend</span><span class="o">-&gt;</span><span class="na">add_sos_scripts</span><span class="p">();</span>
         
-        $this-&gt;assertTrue( wp_style_is( &#39;sos_style&#39;, &#39;enqueued&#39; ) );
-        $this-&gt;assertTrue( wp_script_is( &#39;sos_script&#39;, &#39;enqueued&#39; ) );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">wp_style_is</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span><span class="p">,</span> <span class="s1">&#39;enqueued&#39;</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">wp_script_is</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;enqueued&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>The test calls method under test <code>Sos_Frontend::add_sos_scripts()</code> and
 then, assert that script and stylesheet are registered but not enqueued.
 Next, it calls <code>Sos_Frontend::setup()</code> to register the shortcode and
@@ -824,40 +824,40 @@ obtains the post, within tests, that has the shortcode. For that, we
 need to look at <code>Test_Frontend::setUp() </code>method where the global post is
 set.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Frontend extends WP_UnitTestCase {
-    ....
-    public function setUp () {
-        parent::setUp();
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Frontend</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
+    <span class="o">....</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
         
-        global $post;
-        $this-&gt;create_posts();
-        $post = get_post( $this-&gt;child_post_id );
-        setup_postdata( $post );
-        ....
-    }
+        <span class="k">global</span> <span class="nv">$post</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">create_posts</span><span class="p">();</span>
+        <span class="nv">$post</span> <span class="o">=</span> <span class="nx">get_post</span><span class="p">(</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">child_post_id</span> <span class="p">);</span>
+        <span class="nx">setup_postdata</span><span class="p">(</span> <span class="nv">$post</span> <span class="p">);</span>
+        <span class="o">....</span>
+    <span class="p">}</span>
 
-    private function create_posts () {
-        $args = array(
-                &#39;post_name&#39; =&gt; &#39;parent test page&#39;,
-                &#39;post_title&#39; =&gt; &#39;parent test page title&#39;,
-                &#39;post_status&#39; =&gt; &#39;publish&#39;,
-                &#39;post_type&#39; =&gt; &#39;page&#39;,
-                &#39;post_content&#39; =&gt; &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/setup_postdata&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>[share-on-social][/share-on-social]]&#39;
-        );
-        $post_id = $this-&gt;factory-&gt;post-&gt;create( $args );
-        $this-&gt;parent_post_id = $post_id;
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">create_posts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;post_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;parent test page&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;parent test page title&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;publish&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;page&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;a href=&#34;http://codex.wordpress.org/Function_Reference/setup_postdata&#34; target=&#34;_blank&#34;&gt;[share-on-social][/share-on-social]]&#39;</span>
+        <span class="p">);</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">factory</span><span class="o">-&gt;</span><span class="na">post</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span> <span class="nv">$args</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parent_post_id</span> <span class="o">=</span> <span class="nv">$post_id</span><span class="p">;</span>
         
-        $args = array(
-                &#39;post_name&#39; =&gt; &#39;child test page&#39;,
-                &#39;post_title&#39; =&gt; &#39;child test page title&#39;,
-                &#39;post_status&#39; =&gt; &#39;publish&#39;,
-                &#39;post_type&#39; =&gt; &#39;page&#39;,
-                &#39;post_parent&#39; =&gt; $this-&gt;parent_post_id,
-                &#39;post_content&#39; =&gt; &#39;[[share-on-social]test-content[/share-on-social]]&#39;
-        );
-        $post_id = $this-&gt;factory-&gt;post-&gt;create( $args );
-        $this-&gt;child_post_id = $post_id;
-    }
+        <span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;post_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;child test page&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;child test page title&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;publish&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;page&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_parent&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parent_post_id</span><span class="p">,</span>
+                <span class="s1">&#39;post_content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;[[share-on-social]test-content[/share-on-social]]&#39;</span>
+        <span class="p">);</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">factory</span><span class="o">-&gt;</span><span class="na">post</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span> <span class="nv">$args</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">child_post_id</span> <span class="o">=</span> <span class="nv">$post_id</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div><p>In <code>Test_Frontend::setUp()</code> we call a private method
 <code>Test_Frontend::create_posts()</code> to create two posts - actually two pages
 and one of which is the parent of other. The args[&lsquo;post_content&rsquo;] of

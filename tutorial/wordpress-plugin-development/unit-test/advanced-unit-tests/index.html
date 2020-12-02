@@ -656,38 +656,38 @@ WP_Screen object and assign it to current_screen.</p>
 <p>The trimmed version of <code>Test_Share_On_Social::test_setup_for_admin()</code>
 shows how it is done.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-share-on-social.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_setup_for_admin () {
-        global $current_screen;
-        $this-&gt;assertNull( $current_screen );
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_setup_for_admin</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$current_screen</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNull</span><span class="p">(</span> <span class="nv">$current_screen</span> <span class="p">);</span>
 
-        $included_files = get_included_files();
+        <span class="nv">$included_files</span> <span class="o">=</span> <span class="nx">get_included_files</span><span class="p">();</span>
                 
-        $file = SOS_PATH . &#39;admin/class-admin.php&#39;;
-        $this-&gt;assertNotContains( $file, $included_files );
+        <span class="nv">$file</span> <span class="o">=</span> <span class="nx">SOS_PATH</span> <span class="o">.</span> <span class="s1">&#39;admin/class-admin.php&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNotContains</span><span class="p">(</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$included_files</span> <span class="p">);</span>
         
-        $this-&gt;assertFalse( has_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; ) );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">has_action</span><span class="p">(</span> <span class="s1">&#39;plugins_loaded&#39;</span><span class="p">,</span> <span class="s1">&#39;load_sos_admin&#39;</span> <span class="p">)</span> <span class="p">);</span>
                 
-        // setup admin screen to make is_admin() as true
-
+        <span class="c1">// setup admin screen to make is_admin() as true
+</span><span class="c1"></span>
         
-        $screen = WP_Screen::get( &#39;admin_init&#39; );
-        $current_screen = $screen;
+        <span class="nv">$screen</span> <span class="o">=</span> <span class="nx">WP_Screen</span><span class="o">::</span><span class="na">get</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span> <span class="p">);</span>
+        <span class="nv">$current_screen</span> <span class="o">=</span> <span class="nv">$screen</span><span class="p">;</span>
         
-        // now call setup
-        setup_sos_plugin();
+        <span class="c1">// now call setup
+</span><span class="c1"></span>        <span class="nx">setup_sos_plugin</span><span class="p">();</span>
         
-        // test for admin stuff
-        $included_files = get_included_files();
+        <span class="c1">// test for admin stuff
+</span><span class="c1"></span>        <span class="nv">$included_files</span> <span class="o">=</span> <span class="nx">get_included_files</span><span class="p">();</span>
         
-        $file = SOS_PATH . &#39;admin/class-admin.php&#39;;
-        $this-&gt;assertContains( $file, $included_files );
+        <span class="nv">$file</span> <span class="o">=</span> <span class="nx">SOS_PATH</span> <span class="o">.</span> <span class="s1">&#39;admin/class-admin.php&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertContains</span><span class="p">(</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$included_files</span> <span class="p">);</span>
        
-        $this-&gt;assertTrue( 
-                has_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; ) == true );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> 
+                <span class="nx">has_action</span><span class="p">(</span> <span class="s1">&#39;plugins_loaded&#39;</span><span class="p">,</span> <span class="s1">&#39;load_sos_admin&#39;</span> <span class="p">)</span> <span class="o">==</span> <span class="k">true</span> <span class="p">);</span>
        
-        // revert back the screen
-        $current_screen = null;
-    }
+        <span class="c1">// revert back the screen
+</span><span class="c1"></span>        <span class="nv">$current_screen</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div><p>To start with, we assert that global current_screen is null which
 confirms that we are in site screen. Next, with PHP function
 get_included_files(), we get list of loaded files and assert that
@@ -737,38 +737,38 @@ localize script data with the help of WordPress function
 WordPress sends the localized data to the browser which is used by the
 scripts on client side.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_sos_scripts () {
-        ....            
-        wp_localize_script( &#39;sos_script&#39;, &#39;sos_data&#39;, 
-                    array(
-                            &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
-                            &#39;nonce&#39; =&gt; wp_create_nonce( &#39;sos-save-stat&#39; ),
-                            &#39;gplus_client_id&#39; =&gt; $gplus_client_id
-                    ) );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="o">....</span>            
+        <span class="nx">wp_localize_script</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;sos_data&#39;</span><span class="p">,</span> 
+                    <span class="k">array</span><span class="p">(</span>
+                            <span class="s1">&#39;ajax_url&#39;</span> <span class="o">=&gt;</span> <span class="nx">admin_url</span><span class="p">(</span> <span class="s1">&#39;admin-ajax.php&#39;</span> <span class="p">),</span>
+                            <span class="s1">&#39;nonce&#39;</span> <span class="o">=&gt;</span> <span class="nx">wp_create_nonce</span><span class="p">(</span> <span class="s1">&#39;sos-save-stat&#39;</span> <span class="p">),</span>
+                            <span class="s1">&#39;gplus_client_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$gplus_client_id</span>
+                    <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>Since WordPress doesn&rsquo;t provide any function to access the localized
 data, we test them using WordPress class <code>WP_Scripts</code>.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_localized_script () {
-        global $wp_scripts;      
-        ....
-        // add shortcode and localize data
-        $this-&gt;frontend-&gt;setup();
-        $this-&gt;frontend-&gt;add_sos_scripts();
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_localized_script</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$wp_scripts</span><span class="p">;</span>      
+        <span class="o">....</span>
+        <span class="c1">// add shortcode and localize data
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">frontend</span><span class="o">-&gt;</span><span class="na">setup</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">frontend</span><span class="o">-&gt;</span><span class="na">add_sos_scripts</span><span class="p">();</span>
         
-        $data = $wp_scripts-&gt;get_data( &#39;sos_script&#39;, &#39;data&#39; );
-        $data = substr( $data, strpos( $data, &#39;{&#39; ) - 1, strpos( $data, &#39;}&#39; ) + 1 );
-        $sos_data = json_decode( $data, true );
-        $this-&gt;assertCount( 3, $sos_data );        
-        $this-&gt;assertarrayHasKey( &#39;ajax_url&#39;, $sos_data );
-        $this-&gt;assertarrayHasKey( &#39;nonce&#39;, $sos_data );
-        $this-&gt;assertarrayHasKey( &#39;gplus_client_id&#39;, $sos_data );
-        $this-&gt;assertSame( $sos_data<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/wp_verify_nonce&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> &#39;ajax_url&#39; ],
-                      &#39;http://localhost/wp-admin/admin-ajax.php&#39; );      
-        $this-&gt;assertSame( $sos_data[ &#39;gplus_client_id&#39; ], &#39;test_gplusclientid&#39; );
-        // wp_verify_nonce returns 1 or 2 when valid else false
-        $this-&gt;assertSame( 1,wp_verify_nonce( $sos_data[ &#39;nonce&#39; ], &#39;sos-save-stat&#39; ) );
-    }
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$wp_scripts</span><span class="o">-&gt;</span><span class="na">get_data</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span> <span class="p">);</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span> <span class="nv">$data</span><span class="p">,</span> <span class="nx">strpos</span><span class="p">(</span> <span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;{&#39;</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">strpos</span><span class="p">(</span> <span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span>
+        <span class="nv">$sos_data</span> <span class="o">=</span> <span class="nx">json_decode</span><span class="p">(</span> <span class="nv">$data</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$sos_data</span> <span class="p">);</span>        
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertarrayHasKey</span><span class="p">(</span> <span class="s1">&#39;ajax_url&#39;</span><span class="p">,</span> <span class="nv">$sos_data</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertarrayHasKey</span><span class="p">(</span> <span class="s1">&#39;nonce&#39;</span><span class="p">,</span> <span class="nv">$sos_data</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertarrayHasKey</span><span class="p">(</span> <span class="s1">&#39;gplus_client_id&#39;</span><span class="p">,</span> <span class="nv">$sos_data</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nv">$sos_data</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Function_Reference/wp_verify_nonce&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="s1">&#39;ajax_url&#39;</span> <span class="p">],</span>
+                      <span class="s1">&#39;http://localhost/wp-admin/admin-ajax.php&#39;</span> <span class="p">);</span>      
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nv">$sos_data</span><span class="p">[</span> <span class="s1">&#39;gplus_client_id&#39;</span> <span class="p">],</span> <span class="s1">&#39;test_gplusclientid&#39;</span> <span class="p">);</span>
+        <span class="c1">// wp_verify_nonce returns 1 or 2 when valid else false
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span><span class="nx">wp_verify_nonce</span><span class="p">(</span> <span class="nv">$sos_data</span><span class="p">[</span> <span class="s1">&#39;nonce&#39;</span> <span class="p">],</span> <span class="s1">&#39;sos-save-stat&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p><code>WP_Script::get_data()</code> returns the localized data as JSON string and
 PHP function json_decode() is used to decode which returns the array of
 localized data. Out of the localized data, nonce is a special case as
@@ -780,58 +780,58 @@ is used to test whether nonce is valid.</p>
 <code>share-on-social/admin/class-sos.php</code> registers a custom post type and
 the test uses global array <code>$wp_post_types</code> to test it.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_create_post_type () {
-        global $wp_post_types;
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_create_post_type</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$wp_post_types</span><span class="p">;</span>
         
-        if ( isset( $wp_post_types[ &#39;sos&#39; ] ) ) {
-            unset( $wp_post_types[ &#39;sos&#39; ] );
-        }
-        $this-&gt;assertarrayNotHasKey( &#39;sos&#39;, $wp_post_types );
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$wp_post_types</span><span class="p">[</span> <span class="s1">&#39;sos&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">unset</span><span class="p">(</span> <span class="nv">$wp_post_types</span><span class="p">[</span> <span class="s1">&#39;sos&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertarrayNotHasKey</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="nv">$wp_post_types</span> <span class="p">);</span>
         
-        // register post type
-        $this-&gt;sos-&gt;create_post_type();
-        $this-&gt;assertarrayHasKey( &#39;sos&#39;, $wp_post_types );
+        <span class="c1">// register post type
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span><span class="o">-&gt;</span><span class="na">create_post_type</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertarrayHasKey</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="nv">$wp_post_types</span> <span class="p">);</span>
         
-        $sos_type = $wp_post_types[ &#39;sos&#39; ];
-        $this-&gt;assertFalse( $sos_type-&gt;public );
-        $this-&gt;assertFalse( $sos_type-&gt;hierarchical );
-        $this-&gt;assertTrue( $sos_type-&gt;exclude_from_search );
-        $this-&gt;assertFalse( $sos_type-&gt;publicly_queryable );
-        $this-&gt;assertTrue( $sos_type-&gt;has_archive );
+        <span class="nv">$sos_type</span> <span class="o">=</span> <span class="nv">$wp_post_types</span><span class="p">[</span> <span class="s1">&#39;sos&#39;</span> <span class="p">];</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">public</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">hierarchical</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">exclude_from_search</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">publicly_queryable</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">has_archive</span> <span class="p">);</span>
         
-        $this-&gt;assertSame( 15, $sos_type-&gt;menu_position );
-        $this-&gt;assertTrue( $sos_type-&gt;show_ui );
-        $this-&gt;assertTrue( $sos_type-&gt;show_in_menu );
-        $this-&gt;assertTrue( $sos_type-&gt;show_in_admin_bar );
-        $this-&gt;assertFalse( $sos_type-&gt;show_in_nav_menus );
-        $this-&gt;assertSame( SOS_URL . &#39;/images/sos-icon.png&#39;, 
-                $sos_type-&gt;menu_icon );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="mi">15</span><span class="p">,</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">menu_position</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">show_ui</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">show_in_menu</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">show_in_admin_bar</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">show_in_nav_menus</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/images/sos-icon.png&#39;</span><span class="p">,</span> 
+                <span class="nv">$sos_type</span><span class="o">-&gt;</span><span class="na">menu_icon</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><h3 id="test-menu-and-sub-menu">Test Menu and Sub Menu</h3>
 <p>Method <code> Sos_Options::register_settings_page()</code> creates sub menu for the
 options page and WordPress holds sub menu data in global array
 <code>$submenu</code>.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_register_settings_page () {
-        global $submenu;
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_register_settings_page</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$submenu</span><span class="p">;</span>
         
-        $this-&gt;assertFalse( isset( $submenu[ &#39;edit.php?post_type=sos&#39; ] ) );
-        $this-&gt;assertFalse( 
-                Util::has_action( &#39;admin_page_sos_settings_page&#39;, 
-                        $this-&gt;sos_options, &#39;render_settings_page&#39; ) );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$submenu</span><span class="p">[</span> <span class="s1">&#39;edit.php?post_type=sos&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> 
+                <span class="nx">Util</span><span class="o">::</span><span class="na">has_action</span><span class="p">(</span> <span class="s1">&#39;admin_page_sos_settings_page&#39;</span><span class="p">,</span> 
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="p">,</span> <span class="s1">&#39;render_settings_page&#39;</span> <span class="p">)</span> <span class="p">);</span>
         
-        $this-&gt;sos_options-&gt;register_settings_page();
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="o">-&gt;</span><span class="na">register_settings_page</span><span class="p">();</span>
         
-        $this-&gt;assertTrue( isset( $submenu[ &#39;edit.php?post_type=sos&#39; ] ) );
-        $settings = $submenu[ &#39;edit.php?post_type=sos&#39; ];
-        $this-&gt;assertSame( &#39;Settings&#39;, $settings[ 0 ][ 0 ] );
-        $this-&gt;assertSame( &#39;administrator&#39;, $settings[ 0 ][ 1 ] );
-        $this-&gt;assertSame( &#39;sos_settings_page&#39;, $settings[ 0 ][ 2 ] );
-        $this-&gt;assertSame( &#39;Common Options&#39;, $settings[ 0 ][ 3 ] );
-        $this-&gt;assertTrue( 
-                Util::has_action( &#39;admin_page_sos_settings_page&#39;, 
-                        $this-&gt;sos_options, &#39;render_settings_page&#39; ) );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$submenu</span><span class="p">[</span> <span class="s1">&#39;edit.php?post_type=sos&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$settings</span> <span class="o">=</span> <span class="nv">$submenu</span><span class="p">[</span> <span class="s1">&#39;edit.php?post_type=sos&#39;</span> <span class="p">];</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;Settings&#39;</span><span class="p">,</span> <span class="nv">$settings</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;administrator&#39;</span><span class="p">,</span> <span class="nv">$settings</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;sos_settings_page&#39;</span><span class="p">,</span> <span class="nv">$settings</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="mi">2</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;Common Options&#39;</span><span class="p">,</span> <span class="nv">$settings</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="mi">3</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> 
+                <span class="nx">Util</span><span class="o">::</span><span class="na">has_action</span><span class="p">(</span> <span class="s1">&#39;admin_page_sos_settings_page&#39;</span><span class="p">,</span> 
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_options</span><span class="p">,</span> <span class="s1">&#39;render_settings_page&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>Throughout the Share on Social Plugin test suit you will find many such
 tests that uses WordPress global arrays and class objects.</p>
 
@@ -868,7 +868,7 @@ source file of the function.</p>
 <p>Open the source file and search for function add_submenu_page() and
 there you gather that it uses global $submenu and $menu among other
 globals. When function uses multiple globals, you may have to study the
-source little bit to understand which of them holds the functions&rsquo;
+source little bit to understand which of them holds the functions'
 outcome.</p>
 <p>Once you know the target global variable, you can echo it in the test
 method to know more about data held by it. As globals are typically

@@ -6,11 +6,7 @@
     <description>Recent content in wordpress simple plugin on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 08:04:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/wordpress-simple-plugin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 08:04:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-simple-plugin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simple Plugin - WordPress Plugin Development - CodeTab</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</link>
@@ -20,7 +16,7 @@
       <description>2.1. WordPress Simple Plugin In this section, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
 We use Eclipse IDE with PDT (PHP Development Tools), but you are free to use your favorite PHP IDE.
 Create PHP Project
-In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&amp;rsquo; main file wp-simple-plugin.php in the top folder with the following contents.</description>
+In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&#39; main file wp-simple-plugin.php in the top folder with the following contents.</description>
     </item>
     
   </channel>

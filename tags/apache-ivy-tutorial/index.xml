@@ -6,11 +6,7 @@
     <description>Recent content in apache ivy tutorial on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/apache-ivy-tutorial/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codetab.org/tags/apache-ivy-tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Eclipse Ivy Plugin</title>
       <link>https://www.codetab.org/tutorial/apache-ivy/ivyde/</link>

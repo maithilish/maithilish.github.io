@@ -678,13 +678,13 @@ will step through the Summary Chart to understand the flow.</p>
 <code>Sos_Ajax::get_stats_summary()</code> method as the callback to action hook
 <strong>wp_ajax_get-stats-summary</strong>.</p>
 <p><code>share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Ajax {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Ajax</span> <span class="p">{</span>
 
-    public function setup () {
-        ....                
-        add_action( &#39;wp_ajax_get-stats-summary&#39;, 
-                array($this,&#39;get_stats_summary&#39;) );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="o">....</span>                
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;wp_ajax_get-stats-summary&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;get_stats_summary&#39;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>When chart.js makes an Ajax call with action as <strong>get-stats-summary</strong>,
 WordPress Ajax script <code>wp-admin/admin-ajax.php</code> invokes
 <code>Sos_Ajax::get_stats_summary()</code>.</p>
@@ -700,7 +700,7 @@ function <code>drawSummaryChart()</code> to fetch chart data.</p>
          <span class="nx">action</span> <span class="o">:</span> <span class="s1">&#39;get-stats-summary&#39;</span><span class="p">,</span>
          <span class="nx">_ajax_nonce</span> <span class="o">:</span> <span class="nx">sos_chart</span><span class="p">.</span><span class="nx">stats_summary_nonce</span><span class="p">,</span>
        <span class="p">},</span>
-       <span class="nx">async</span> <span class="o">:</span> <span class="kc">false</span>
+       <span class="kr">async</span> <span class="o">:</span> <span class="kc">false</span>
      <span class="p">}).</span><span class="nx">responseText</span><span class="p">;</span>
 
     <span class="p">....</span>
@@ -731,14 +731,14 @@ designated client makes the call.</p>
 <p>When WordPress Ajax routing script admin-ajax.php receives the call, it
 invokes <code>Sos_Ajax::get_stats_summary()</code> method to handle the request.</p>
 <p><code>share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function get_stats_summary () {
-        $valid_req = check_ajax_referer( &#39;sos-get-stats-summary&#39;, false, false );
-        if ( false == $valid_req ) {
-            wp_die( &#39;-1&#39; );
-        }
-        $data = $this-&gt;get_stats_summary_json();
-        wp_die( $data );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_stats_summary</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$valid_req</span> <span class="o">=</span> <span class="nx">check_ajax_referer</span><span class="p">(</span> <span class="s1">&#39;sos-get-stats-summary&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nv">$valid_req</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;-1&#39;</span> <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_stats_summary_json</span><span class="p">();</span>
+        <span class="nx">wp_die</span><span class="p">(</span> <span class="nv">$data</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>The method, first checks whether it is a valid Ajax request originated
 from indented client by using the security token nonce. If not, then
 call terminates and returns -1 to client. If security check goes through
@@ -750,35 +750,35 @@ client.</p>
 array out of it. The data array is encoded as JSON using PHP function
 <code>json_encode()</code> and returned.</p>
 <p><code>share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function get_stats_summary_json () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">get_stats_summary_json</span> <span class="p">()</span> <span class="p">{</span>
        
-        // add cols to data
-        $data = array();
-        $data[ &#39;cols&#39; ][] = array(
-                &#39;label&#39; =&gt; __( &#39;Share On&#39;, &#39;sos-domain&#39; ),
-                &#39;type&#39; =&gt; &#39;string&#39;
-        );
-        $data[ &#39;cols&#39; ][] = array(
-                &#39;label&#39; =&gt; __( &#39;Total&#39;, &#39;sos-domain&#39; ),
-                &#39;type&#39; =&gt; &#39;number&#39;
-        );
+        <span class="c1">// add cols to data
+</span><span class="c1"></span>        <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+        <span class="nv">$data</span><span class="p">[</span> <span class="s1">&#39;cols&#39;</span> <span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Share On&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
+        <span class="p">);</span>
+        <span class="nv">$data</span><span class="p">[</span> <span class="s1">&#39;cols&#39;</span> <span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;number&#39;</span>
+        <span class="p">);</span>
         
-        // get summary stats and if no found then return just cols
-        $summary = get_option( &#39;sos_stats_summary&#39; );
-        if ( false == $summary ) {
-            return json_encode( $data );
-        }
+        <span class="c1">// get summary stats and if no found then return just cols
+</span><span class="c1"></span>        <span class="nv">$summary</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_stats_summary&#39;</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nv">$summary</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">json_encode</span><span class="p">(</span> <span class="nv">$data</span> <span class="p">);</span>
+        <span class="p">}</span>
         
-        // from summary create and add rows to data
-        foreach ( $summary as $key =&gt; $value ) {
-            $row = array();
-            $row[][ &#39;v&#39; ] = $this-&gt;get_label( $key );
-            $row[][ &#39;v&#39; ] = $value;
-            $data[ &#39;rows&#39; ][][ &#39;c&#39; ] = $row;
-        }
+        <span class="c1">// from summary create and add rows to data
+</span><span class="c1"></span>        <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$summary</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$row</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+            <span class="nv">$row</span><span class="p">[][</span> <span class="s1">&#39;v&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_label</span><span class="p">(</span> <span class="nv">$key</span> <span class="p">);</span>
+            <span class="nv">$row</span><span class="p">[][</span> <span class="s1">&#39;v&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+            <span class="nv">$data</span><span class="p">[</span> <span class="s1">&#39;rows&#39;</span> <span class="p">][][</span> <span class="s1">&#39;c&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        return json_encode( $data );
-    }
+        <span class="k">return</span> <span class="nx">json_encode</span><span class="p">(</span> <span class="nv">$data</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-stats-json.png" alt="WordPress Google Charts - chart data json" />
 </figure>
@@ -809,7 +809,7 @@ to know more about the data format.</p>
 
     <span class="nx">chart</span><span class="p">.</span><span class="nx">draw</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><p>From JSON data, it constructs <code>DataTable</code> object. Next, it creates a <code>BarChart</code> object and attaches &lt;div id='summary_chart&rsquo;&gt;&lt;/div&gt;, the
+</code></pre></div><p>From JSON data, it constructs <code>DataTable</code> object. Next, it creates a <code>BarChart</code> object and attaches &lt;div id=&lsquo;summary_chart&rsquo;&gt;&lt;/div&gt;, the
 empty placeholder to render the chart set in the previous blog. The
 chart options such as orientation, width, height etc., are set in
 <strong>options</strong> object. Finally, <code> chart.draw()</code> function draws the chart

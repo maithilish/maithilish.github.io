@@ -6,11 +6,7 @@
     <description>Recent content in wordpress posts on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 03:20:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/wordpress-posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 03:20:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Posts vs Pages - WordPress Tutorial - CodeTab</title>
       <link>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</link>

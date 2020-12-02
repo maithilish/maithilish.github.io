@@ -520,12 +520,12 @@ resolve and fetch the module.</p>
 <p>In case a module itself has other dependencies, then Ivy will fetch all
 required dependencies. These are known as transitive dependencies. For
 example, log4j depends on other modules like javax.mail, junit,
-jermanio.spec and oro etc., Dependency line &lt;dependency org=&quot;log4j&rdquo;
-name=&quot;log4j&rdquo; rev=&quot;1.2.16&rdquo;/&gt; will download log4j plus four dependent
-modules. By adding <strong>transitive=&quot;false&rdquo;</strong> to dependency line, we can
+jermanio.spec and oro etc., Dependency line &lt;dependency org=&ldquo;log4j&rdquo;
+name=&ldquo;log4j&rdquo; rev=&ldquo;1.2.16&rdquo;/&gt; will download log4j plus four dependent
+modules. By adding <strong>transitive=&ldquo;false&rdquo;</strong> to dependency line, we can
 force the Ivy not to download the other transitive dependencies.
-Dependency line &lt;dependency org=&quot;log4j&rdquo; name=&quot;log4j&rdquo; rev=&quot;1.2.16&rdquo;
-transitive=&quot;false&rdquo; /&gt; downloads just log4j.</p>
+Dependency line &lt;dependency org=&ldquo;log4j&rdquo; name=&ldquo;log4j&rdquo; rev=&ldquo;1.2.16&rdquo;
+transitive=&ldquo;false&rdquo; /&gt; downloads just log4j.</p>
 
 
 <div>&nbsp;</div>
@@ -545,8 +545,8 @@ transitive=&quot;false&rdquo; /&gt; downloads just log4j.</p>
 
 
 <p>Ivy dependency line</p>
-<p>The dependency line &lt;dependency org=&quot;commons-lang&rdquo; name=&quot;commons-lang&rdquo;
-rev=&quot;2.6&rdquo; /&gt; in ivy.xml requires some explanation. First is how to
+<p>The dependency line &lt;dependency org=&ldquo;commons-lang&rdquo; name=&ldquo;commons-lang&rdquo;
+rev=&ldquo;2.6&rdquo; /&gt; in ivy.xml requires some explanation. First is how to
 construct this line. When module developers publish the modules to
 public repositories they define these values and from these repositories
 we can easily get the details. As an example, let&rsquo;s find out the

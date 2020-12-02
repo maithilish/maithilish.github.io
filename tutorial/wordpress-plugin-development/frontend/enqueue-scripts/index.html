@@ -704,34 +704,34 @@ stylesheet.</li>
 action hook <strong>wp_enqueue_scripts</strong>. In the method, we enqueue scripts
 and stylesheets.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Frontend {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Frontend</span> <span class="p">{</span>
 
-    public function setup () {
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
 
-        add_action( &#39;wp_enqueue_scripts&#39;, array($this,&#39;add_sos_scripts&#39;) );
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;wp_enqueue_scripts&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;add_sos_scripts&#39;</span><span class="p">)</span> <span class="p">);</span>
         
-        ....
-    }
+        <span class="o">....</span>
+    <span class="p">}</span>
 
-    function add_sos_scripts () {
-        global $post;        
+    <span class="k">function</span> <span class="nf">add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$post</span><span class="p">;</span>        
         
-        wp_register_style( &#39;sos_style&#39;, SOS_URL . &#39;/css/style.css&#39; );
-        wp_register_script(&#39;sos_script&#39;, SOS_URL . &#39;/js/share.js&#39;, array(&#39;jquery&#39;),&#39;&#39;, true);
+        <span class="nx">wp_register_style</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span><span class="p">,</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/css/style.css&#39;</span> <span class="p">);</span>
+        <span class="nx">wp_register_script</span><span class="p">(</span><span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/js/share.js&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">),</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
     
-        if ( has_shortcode( $post-&gt;post_content, $this-&gt;sos_shortcode ) ) {
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">has_shortcode</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">post_content</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_shortcode</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
 
-            wp_enqueue_style( &#39;sos_style&#39; );
-            wp_enqueue_script( &#39;sos_script&#39; );
+            <span class="nx">wp_enqueue_style</span><span class="p">(</span> <span class="s1">&#39;sos_style&#39;</span> <span class="p">);</span>
+            <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span> <span class="p">);</span>
      
-            ....
+            <span class="o">....</span>
 
-            $twitter_sdk = &#39;https://platform.twitter.com/widgets.js&#39;;
-            wp_enqueue_script( &#39;twitter&#39;, $twitter_sdk, &#39;&#39;, &#39;&#39;, FALSE );
+            <span class="nv">$twitter_sdk</span> <span class="o">=</span> <span class="s1">&#39;https://platform.twitter.com/widgets.js&#39;</span><span class="p">;</span>
+            <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;twitter&#39;</span><span class="p">,</span> <span class="nv">$twitter_sdk</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">FALSE</span> <span class="p">);</span>
 
-            ....
-        }
-    }
+            <span class="o">....</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>In the action method, we register plugins stylesheet <code>css/style.css</code> and
 script <code>js/share.js</code>. If the page contains <strong>share-on-social</strong>
 shortcode, then we enqueue the registered items and also the Twitter API

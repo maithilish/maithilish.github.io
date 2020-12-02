@@ -636,41 +636,41 @@ Administration Menu to display the option page.</p>
 <p>In Share on Social Plugin, class file <code>admin/class-options.php</code> defines
 class <code>Sos_Options</code>to manage the Settings page.</p>
 <p><code>share-on-social/admin/admin.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">require_once SOS_PATH . &#39;admin/class-options.php&#39;;
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">require_once</span> <span class="nx">SOS_PATH</span> <span class="o">.</span> <span class="s1">&#39;admin/class-options.php&#39;</span><span class="p">;</span>
 
-/**
- * Class to load admin modules
- */
-class Sos_Admin {
+<span class="sd">/**
+</span><span class="sd"> * Class to load admin modules
+</span><span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Sos_Admin</span> <span class="p">{</span>
 
-    /**
-     * initializes the admin modules
-     */
-    function setup () {
+    <span class="sd">/**
+</span><span class="sd">     * initializes the admin modules
+</span><span class="sd">     */</span>
+    <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
         
-        $sos_options = new Sos_Options();
-        $sos_options-&gt;setup();
+        <span class="nv">$sos_options</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sos_Options</span><span class="p">();</span>
+        <span class="nv">$sos_options</span><span class="o">-&gt;</span><span class="na">setup</span><span class="p">();</span>
 
-        ...
+        <span class="o">...</span>
 </code></pre></div><p>We instantiate Sos_Options class in <code>admin.php</code> and call its setup()
 method. Let&rsquo;s see what happens in Sos_Options::setup().</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Options {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Options</span> <span class="p">{</span>
 
-    public function setup () {
-        add_action( &#39;admin_init&#39;, 
-                array(
-                        $this,
-                        &#39;init_common_options&#39;
-                ) );
-        add_action( &#39;admin_menu&#39;, 
-                array(
-                        $this,
-                        &#39;register_settings_page&#39;
-                ) );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="nv">$this</span><span class="p">,</span>
+                        <span class="s1">&#39;init_common_options&#39;</span>
+                <span class="p">)</span> <span class="p">);</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_menu&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="nv">$this</span><span class="p">,</span>
+                        <span class="s1">&#39;register_settings_page&#39;</span>
+                <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 
-    ....
+    <span class="o">....</span>
 </code></pre></div><p>As explained in the previous chapter - <a href="/tutorial/wordpress-plugin-development/hooks-actions-filters/">Hooks, Actions and Filters</a>, we add actions to bind class methods to actions hooks.</p>
 <ol>
 <li>
@@ -710,16 +710,16 @@ item or sub menu item to WordPress Admin menu. In the function, we use
 WordPress function <code>add_submenu_page()</code> to add a new sub menu item and
 link it to a menu page.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function register_settings_page () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">register_settings_page</span> <span class="p">()</span> <span class="p">{</span>
 
-        $page_title = __( &#39;Common Options&#39;, &#39;sos-domain&#39; );
-        $menu_label = __( &#39;Sos Settings&#39;, &#39;sos-domain&#39; );
-        $setting_page = &#39;sos_settings_page&#39;;
-        add_submenu_page(&#39;options-general.php&#39;, $page_title, $menu_label, 
-                         &#39;administrator&#39;, $setting_page,
-                          array($this,&#39;render_settings_page&#39;) );
+        <span class="nv">$page_title</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Common Options&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="nv">$menu_label</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Sos Settings&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="nv">$setting_page</span> <span class="o">=</span> <span class="s1">&#39;sos_settings_page&#39;</span><span class="p">;</span>
+        <span class="nx">add_submenu_page</span><span class="p">(</span><span class="s1">&#39;options-general.php&#39;</span><span class="p">,</span> <span class="nv">$page_title</span><span class="p">,</span> <span class="nv">$menu_label</span><span class="p">,</span> 
+                         <span class="s1">&#39;administrator&#39;</span><span class="p">,</span> <span class="nv">$setting_page</span><span class="p">,</span>
+                          <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;render_settings_page&#39;</span><span class="p">)</span> <span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 </code></pre></div><p>To define strings that are translatable to other languages for
 internationalization, WordPress uses __() functions such as
 <code>$page_title = __( 'Common Options', 'sos-domain' )</code>. We will explain

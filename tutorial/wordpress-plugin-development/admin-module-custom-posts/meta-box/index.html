@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T09:52:00+0530",
         "dateModified" : "2019-01-11T09:52:00+0530",
-        "wordCount" : "949",
+        "wordCount" : "948",
         "keywords" : [ "wordpress meta box","Blog" ]
     }
 </script>
@@ -634,21 +634,21 @@ with WordPress Meta Box.</p>
 <strong>register_meta_box_cb</strong> to register the callback method
 <code>setup_meta_boxes()</code>.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function create_post_type () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">create_post_type</span> <span class="p">()</span> <span class="p">{</span>
 
-        register_post_type( $this-&gt;post_type, 
-                 // other args
-                &#39;register_meta_box_cb&#39; =&gt; array($this,&#39;setup_meta_boxes&#39;)
-        ) );
+        <span class="nx">register_post_type</span><span class="p">(</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">,</span> 
+                 <span class="c1">// other args
+</span><span class="c1"></span>                <span class="s1">&#39;register_meta_box_cb&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;setup_meta_boxes&#39;</span><span class="p">)</span>
+        <span class="p">)</span> <span class="p">);</span>
 
-        ....
-    }
+        <span class="o">....</span>
+    <span class="p">}</span>
 </code></pre></div><p>When we add or edit Sos Locker WordPress calls the callback, which we
 use to customize meta boxes of the editor.</p>
 <h3 id="wordpress-meta-box">WordPress Meta Box</h3>
 <p>WordPress Post editor is composed of Meta Boxes which holds HTML input
 and other elements. The screenshot of Sos Locker editor shows three meta
-boxes. The main meta box titled <strong>Share Locker</strong> is to edit lockers&rsquo;
+boxes. The main meta box titled <strong>Share Locker</strong> is to edit lockers'
 meta data. On the right there are two meta boxes - CodeTab which is used
 to advertise this tutorial and the standard Publish meta box that
 WordPress adds to post editor.</p>
@@ -659,18 +659,18 @@ WordPress adds to post editor.</p>
 <p>Let&rsquo;s see how this is done. In the callback method <code>setup_meta_boxes()</code>,
 we use two WordPress functions - <a href="http://codex.wordpress.org/Function_Reference/add_meta_box" target="_blank">add_meta_box()</a> and <a href="http://codex.wordpress.org/Function_Reference/remove_meta_box" target="_blank">remove_meta_box()</a>.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function setup_meta_boxes ( $post ) {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">setup_meta_boxes</span> <span class="p">(</span> <span class="nv">$post</span> <span class="p">)</span> <span class="p">{</span>
 
-        add_meta_box( &#39;locker_meta_box&#39;, __( &#39;Share Locker&#39;, &#39;sos-domain&#39; ),
-                array($this,&#39;render_locker_meta_box&#39;), $this-&gt;post_type, &#39;normal&#39;, &#39;high&#39; );
+        <span class="nx">add_meta_box</span><span class="p">(</span> <span class="s1">&#39;locker_meta_box&#39;</span><span class="p">,</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Share Locker&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;render_locker_meta_box&#39;</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">,</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span> <span class="p">);</span>
 
-        add_meta_box( &#39;codedrops_meta_box&#39;, &#39;CodeDrops&#39;, 
-                array($this,&#39;render_codedrops_meta_box&#39;), $this-&gt;post_type, &#39;side&#39; );
+        <span class="nx">add_meta_box</span><span class="p">(</span> <span class="s1">&#39;codedrops_meta_box&#39;</span><span class="p">,</span> <span class="s1">&#39;CodeDrops&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;render_codedrops_meta_box&#39;</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">,</span> <span class="s1">&#39;side&#39;</span> <span class="p">);</span>
 
-        remove_meta_box( &#39;slider_sectionid&#39;, $this-&gt;post_type, &#39;normal&#39; );
-        remove_meta_box( &#39;layout_sectionid&#39;, $this-&gt;post_type, &#39;normal&#39; );
+        <span class="nx">remove_meta_box</span><span class="p">(</span> <span class="s1">&#39;slider_sectionid&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">,</span> <span class="s1">&#39;normal&#39;</span> <span class="p">);</span>
+        <span class="nx">remove_meta_box</span><span class="p">(</span> <span class="s1">&#39;layout_sectionid&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">,</span> <span class="s1">&#39;normal&#39;</span> <span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 </code></pre></div><p>To add <strong>Share Locker</strong> meta box, we use following arguments.</p>
 <ul>
 <li>
@@ -727,39 +727,39 @@ post type.</p>
 <p>Let&rsquo;s get back to Share Locker meta box and see how it is rendered by
 the callback.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function render_locker_meta_box () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">render_locker_meta_box</span> <span class="p">()</span> <span class="p">{</span>
 
-        wp_nonce_field( &#39;save_locker&#39;, &#39;locker_nonce&#39; );
+        <span class="nx">wp_nonce_field</span><span class="p">(</span> <span class="s1">&#39;save_locker&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_nonce&#39;</span> <span class="p">);</span>
         
-        echo $this-&gt;get_table();
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_table</span><span class="p">();</span>
         
-        $this-&gt;add_editor();
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add_editor</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    function get_table () {
+    <span class="k">function</span> <span class="nf">get_table</span> <span class="p">()</span> <span class="p">{</span>
 
-        global $post;
+        <span class="k">global</span> <span class="nv">$post</span><span class="p">;</span>
         
-        $locker_id = get_post_meta( $post-&gt;ID, &#39;locker_id&#39;, true );
-        // other meta data
-       
-        $locker_id_label = __( &#39;Locker ID&#39;, &#39;sos-domain&#39; );
-        // other labels
-        
-        $table = <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
-<span class="err">&lt;</span><span class="na">div</span><span class="p">&gt;</span>$see_help_message<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-table&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;locker_id&#34;</span><span class="p">&gt;</span>$locker_id_label<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;locker_id&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;locker_id&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;$locker_id&#34;</span> <span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    
-        // html elements of other metadata fields
-
-    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-EOD;
-        return $table;
-}
+        <span class="nv">$locker_id</span> <span class="o">=</span> <span class="nx">get_post_meta</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="c1">// other meta data
+</span><span class="c1"></span>       
+        <span class="nv">$locker_id_label</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Locker ID&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="c1">// other labels
+</span><span class="c1"></span>        
+        <span class="nv">$table</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOD</span><span class="s">
+</span><span class="s">&lt;div&gt;$see_help_message&lt;/div&gt;
+</span><span class="s">&lt;table class=&#34;form-table&#34;&gt;
+</span><span class="s">&lt;tr&gt;
+</span><span class="s">&lt;th scope=&#34;row&#34;&gt;&lt;label for=&#34;locker_id&#34;&gt;$locker_id_label&lt;/label&gt;&lt;/th&gt;
+</span><span class="s">    &lt;td&gt;&lt;input type=&#34;text&#34; name=&#34;locker_id&#34; id=&#34;locker_id&#34; value=&#34;$locker_id&#34; /&gt;&lt;/td&gt;
+</span><span class="s">&lt;/tr&gt;
+</span><span class="s">    
+</span><span class="s">        // html elements of other metadata fields
+</span><span class="s">
+</span><span class="s">    &lt;/table&gt;
+</span><span class="s"></span><span class="dl">EOD</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$table</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div><p>In the rendering method, we set <strong>nonce</strong> token which is a security
 feature of WordPress to authenticate the requests. Next, we echo a HTML
 table containing the the required text fields, check boxes and radio
@@ -789,23 +789,23 @@ object to get the post_id of the locker as <code> $post-&gt;ID</code>.</p>
 the display text of the locker. Rendering method calls <code>add_editor() </code>
 method to add the TINY MCE editor.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function add_editor () {
-        global $post;
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">add_editor</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$post</span><span class="p">;</span>
         
-        $id = &#39;locker_text&#39;;
-        $name = &#39;locker_text&#39;;
-        $value = wp_kses_post( get_post_meta( $post-&gt;ID, &#39;locker_text&#39;, true ) );
+        <span class="nv">$id</span> <span class="o">=</span> <span class="s1">&#39;locker_text&#39;</span><span class="p">;</span>
+        <span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;locker_text&#39;</span><span class="p">;</span>
+        <span class="nv">$value</span> <span class="o">=</span> <span class="nx">wp_kses_post</span><span class="p">(</span> <span class="nx">get_post_meta</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span><span class="p">,</span> <span class="s1">&#39;locker_text&#39;</span><span class="p">,</span> <span class="k">true</span> <span class="p">)</span> <span class="p">);</span>
         
-        $editor_options = array(
-                &#39;textarea_name&#39; =&gt; $name,
-                &#39;textarea_rows&#39; =&gt; 10,
-                &#39;tinymce&#39; =&gt; array(
-                        &#39;toolbar1&#39; =&gt; &#39;bold italic underline | alignleft aligncenter alignright | outdent indent | undo redo |  fullscreen&#39;,
-                        &#39;toolbar2&#39; =&gt; &#39;formatselect fontselect fontsizeselect | forecolor backcolor | removeformat&#39;
-                )
-        );
-        wp_editor( $value, $id, $editor_options );
-    }
+        <span class="nv">$editor_options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;textarea_name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+                <span class="s1">&#39;textarea_rows&#39;</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="s1">&#39;tinymce&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;toolbar1&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bold italic underline | alignleft aligncenter alignright | outdent indent | undo redo |  fullscreen&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;toolbar2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;formatselect fontselect fontsizeselect | forecolor backcolor | removeformat&#39;</span>
+                <span class="p">)</span>
+        <span class="p">);</span>
+        <span class="nx">wp_editor</span><span class="p">(</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$editor_options</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>In add_editor() method, we use TINY MCE editor options to set essential
 toolbar icons and then call WordPress
 <a href="http://codex.wordpress.org/Function_Reference/wp_editor" target="_blank">wp_editor()</a>
@@ -846,13 +846,13 @@ minor-publishing section and there is no documented way to remove it.
 Instead, we toggle the block style and hide it in <code>hide_minor_publish()</code>
 method which is hooked to <strong>admin_head</strong> hook.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function hide_minor_publish () {
-   $screen = get_current_screen();
-   if ( in_array( $screen-&gt;id, 
-      array($this-&gt;post_type) ) ) {
-       echo &#39;<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;#</span><span class="nn">minor-publishing</span> <span class="p">{</span> <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="p">}&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>&#39;;
-   } 
-}
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">hide_minor_publish</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="nv">$screen</span> <span class="o">=</span> <span class="nx">get_current_screen</span><span class="p">();</span>
+   <span class="k">if</span> <span class="p">(</span> <span class="nx">in_array</span><span class="p">(</span> <span class="nv">$screen</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span> 
+      <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+       <span class="k">echo</span> <span class="s1">&#39;&lt;style&gt;#minor-publishing { display: none; }&lt;/style&gt;&#39;</span><span class="p">;</span>
+   <span class="p">}</span> 
+<span class="p">}</span>
 </code></pre></div><p>In the next section, we see how to publish the post.</p>
 
           </main>

@@ -648,34 +648,34 @@ method. This method adds input details into an array and in turn, calls
 <code>Sos_Helper::collect_debug_data()</code>.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    
-    function enable_sos_shortcode ( $atts, $content ) {
-        $locker = $this-&gt;get_locker( $locker_id );
+    <span class="k">function</span> <span class="nf">enable_sos_shortcode</span> <span class="p">(</span> <span class="nv">$atts</span><span class="p">,</span> <span class="nv">$content</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$locker</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_locker</span><span class="p">(</span> <span class="nv">$locker_id</span> <span class="p">);</span>
         
-        $this-&gt;collect_debug_data( $id, $name, $link, $post, $share_props, 
-                $locker );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collect_debug_data</span><span class="p">(</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$name</span><span class="p">,</span> <span class="nv">$link</span><span class="p">,</span> <span class="nv">$post</span><span class="p">,</span> <span class="nv">$share_props</span><span class="p">,</span> 
+                <span class="nv">$locker</span> <span class="p">);</span>
+    <span class="p">}</span>
 
-    function collect_debug_data ( $id, $name, $link, $post, $share_props, 
-            $locker ) {
+    <span class="k">function</span> <span class="nf">collect_debug_data</span> <span class="p">(</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$name</span><span class="p">,</span> <span class="nv">$link</span><span class="p">,</span> <span class="nv">$post</span><span class="p">,</span> <span class="nv">$share_props</span><span class="p">,</span> 
+            <span class="nv">$locker</span> <span class="p">)</span> <span class="p">{</span>
 
-        // add all input to $debug_data array
+        <span class="c1">// add all input to $debug_data array
+</span><span class="c1"></span>
+        <span class="o">....</span>
 
-        ....
-
-        Sos_Helper::collect_debug_data( $debug_data );
-    }
+        <span class="nx">Sos_Helper</span><span class="o">::</span><span class="na">collect_debug_data</span><span class="p">(</span> <span class="nv">$debug_data</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>The static method Sos_Helper::collect_debug_data() is called whenever
 WordPress processes <strong>share-on-social</strong> shortcode and it merges the
 debug data array with a global array $sos_debug_data.</p>
 <p><code>share-on-social/include/class-helper.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    static function collect_debug_data ( $debug_data ) {
-        global $sos_debug_data;
-        if ( null == $sos_debug_data ) {
-            $sos_debug_data = array();
-        }
-        $sos_debug_data = array_merge( $sos_debug_data, 
-                array($debug_data ) );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">static</span> <span class="k">function</span> <span class="nf">collect_debug_data</span> <span class="p">(</span> <span class="nv">$debug_data</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$sos_debug_data</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">null</span> <span class="o">==</span> <span class="nv">$sos_debug_data</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$sos_debug_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="nv">$sos_debug_data</span> <span class="o">=</span> <span class="nx">array_merge</span><span class="p">(</span> <span class="nv">$sos_debug_data</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span><span class="nv">$debug_data</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div>
 
 <div>&nbsp;</div>
@@ -700,37 +700,37 @@ plugin main file, we hook <code>Sos_Helper::output_debug_data() </code>method to
 <strong>shutdown</strong> action hook. WordPress executes shutdown hook when it
 finishes or shuts down the page generation.</p>
 <p><code>share-on-social/share-on-social.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function setup_sos_plugin () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">setup_sos_plugin</span> <span class="p">()</span> <span class="p">{</span>
 
-    require_once SOS_PATH . &#39;include/class-helper.php&#39;;
+    <span class="k">require_once</span> <span class="nx">SOS_PATH</span> <span class="o">.</span> <span class="s1">&#39;include/class-helper.php&#39;</span><span class="p">;</span>
     
-    add_action( &#39;shutdown&#39;, &#39;Sos_Helper::output_debug_data&#39; 
-    ....
-);
+    <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;shutdown&#39;</span><span class="p">,</span> <span class="s1">&#39;Sos_Helper::output_debug_data&#39;</span> 
+    <span class="o">....</span>
+<span class="p">);</span>
 </code></pre></div><p>In <code>Sos_Helper::output_debug_data()</code> method, we echo the debug info
 collected during the page generation.</p>
 <p><code>share-on-social/include/class-helper.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    static function output_debug_data () {
-        global $sos_debug_data;
-        if ( false == Sos_Helper::is_debug_enabled() ) {
-            return;
-        }
-        if ( 0 == count( $sos_debug_data ) ) {
-            return;
-        }
-        echo PHP_EOL;
-        echo &#39;<span class="c">&lt;!--&#39; . PHP_EOL;
-</span><span class="c">        echo &#39;&lt;![CDATA[&#39; . PHP_EOL;
-</span><span class="c">        echo PHP_EOL;
-</span><span class="c">        echo &#39;Plugin [&#39; . SOS_NAME . &#39;] Version [&#39; . SOS_VERSION . &#39;]&#39; . PHP_EOL;
-</span><span class="c">        echo PHP_EOL;
-</span><span class="c">        echo &#39;Debug info [ disable debug in production site !!! ]&#39; . PHP_EOL;
-</span><span class="c">        echo PHP_EOL;
-</span><span class="c">        echo print_r( $sos_debug_data, true );
-</span><span class="c">        echo PHP_EOL;
-</span><span class="c">        echo &#39;]]&gt;&#39; . PHP_EOL;
-</span><span class="c">        echo &#39; --&gt;</span>&#39; . PHP_EOL;
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">static</span> <span class="k">function</span> <span class="nf">output_debug_data</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$sos_debug_data</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">Sos_Helper</span><span class="o">::</span><span class="na">is_debug_enabled</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="mi">0</span> <span class="o">==</span> <span class="nx">count</span><span class="p">(</span> <span class="nv">$sos_debug_data</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">&#39;&lt;!--&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">&#39;&lt;![CDATA[&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">&#39;Plugin [&#39;</span> <span class="o">.</span> <span class="nx">SOS_NAME</span> <span class="o">.</span> <span class="s1">&#39;] Version [&#39;</span> <span class="o">.</span> <span class="nx">SOS_VERSION</span> <span class="o">.</span> <span class="s1">&#39;]&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">&#39;Debug info [ disable debug in production site !!! ]&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nx">print_r</span><span class="p">(</span> <span class="nv">$sos_debug_data</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">&#39;]]&gt;&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s1">&#39; --&gt;&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div><script>
     console.log("slot C"); 
 </script>

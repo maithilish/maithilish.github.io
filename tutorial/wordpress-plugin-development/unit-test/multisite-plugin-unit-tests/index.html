@@ -674,41 +674,41 @@ PHPUnit configuration file named <code>multisite.xml</code> under <code>tests/ph
 folder. The multisite.xml file is similar to phpunit.xml except that in
 multisite.xml we define the constant WP_TESTS_MULTISITE.</p>
 <p><code>share-on-social/tests/phpunit/multisite.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="p">&lt;</span><span class="nt">phpunit</span> <span class="na">bootstrap</span><span class="o">=</span><span class="s">&#34;bootstrap.php&#34;</span> <span class="na">backupGlobals</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">colors</span><span class="o">=</span><span class="s">&#34;false&#34;</span>
-<span class="na">convertErrorsToExceptions</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">convertNoticesToExceptions</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
-<span class="na">convertWarningsToExceptions</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">php</span><span class="p">&gt;</span>
-     <span class="p">&lt;</span><span class="nt">const</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;WP_TESTS_MULTISITE&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">php</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">testsuites</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">testsuite</span><span class="p">&gt;</span>
-    <span class="c">&lt;!-- don&#39;t change order of next two files --&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-share-on-social.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-admin.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">phpunit</span> <span class="nx">bootstrap</span><span class="o">=</span><span class="s2">&#34;bootstrap.php&#34;</span> <span class="nx">backupGlobals</span><span class="o">=</span><span class="s2">&#34;false&#34;</span> <span class="nx">colors</span><span class="o">=</span><span class="s2">&#34;false&#34;</span>
+<span class="nx">convertErrorsToExceptions</span><span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nx">convertNoticesToExceptions</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>
+<span class="nx">convertWarningsToExceptions</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">php</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="k">const</span> <span class="no">name</span><span class="o">=</span><span class="s2">&#34;WP_TESTS_MULTISITE&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;1&#34;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="nx">php</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">testsuites</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">testsuite</span><span class="o">&gt;</span>
+    <span class="o">&lt;!--</span> <span class="nx">don</span><span class="err">&#39;</span><span class="nx">t</span> <span class="nx">change</span> <span class="nx">order</span> <span class="nx">of</span> <span class="nx">next</span> <span class="nx">two</span> <span class="nx">files</span> <span class="o">--&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">share</span><span class="o">-</span><span class="nx">on</span><span class="o">-</span><span class="nx">social</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">admin</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
 
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-ajax.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">ajax</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
 
-      <span class="c">&lt;!-- no order --&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-sos.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-options.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-stats.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-help.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-frontend.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-helper.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-ajax-others.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-uninstall-multisite.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="o">&lt;!--</span> <span class="nx">no</span> <span class="nx">order</span> <span class="o">--&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">sos</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">options</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">stats</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">help</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">frontend</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">helper</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">ajax</span><span class="o">-</span><span class="nx">others</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">uninstall</span><span class="o">-</span><span class="nx">multisite</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
 
-      <span class="c">&lt;!-- need to be last as it breaks mysqli --&gt;</span>
-      <span class="p">&lt;</span><span class="nt">file</span><span class="p">&gt;</span>tests/test-activator-multisite.php<span class="p">&lt;/</span><span class="nt">file</span><span class="p">&gt;</span>
+      <span class="o">&lt;!--</span> <span class="nx">need</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">last</span> <span class="k">as</span> <span class="nx">it</span> <span class="nx">breaks</span> <span class="nx">mysqli</span> <span class="o">--&gt;</span>
+      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">activator</span><span class="o">-</span><span class="nx">multisite</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
 
-    <span class="p">&lt;/</span><span class="nt">testsuite</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">testsuites</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">groups</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">exclude</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">group</span><span class="p">&gt;</span>ajax<span class="p">&lt;/</span><span class="nt">group</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">exclude</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">groups</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">phpunit</span><span class="p">&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">testsuite</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nx">testsuites</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">groups</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">exclude</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">group</span><span class="o">&gt;</span><span class="nx">ajax</span><span class="o">&lt;/</span><span class="nx">group</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">exclude</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nx">groups</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">phpunit</span><span class="o">&gt;</span>
 </code></pre></div><p>Multisite tests are defined in separate test case files - <code>tests/test-uninstall-multisite.php</code> and
 <code>tests/test-activator-multisite.php</code>. We add these test files in
 <strong>&lt;testsuite&gt;</strong> element of <code>multisite.xml</code>.</p>
@@ -751,99 +751,99 @@ site. For tests, we require one more site in the network and to add
 additional site, we use <code>WP_UnitTestCase::add_blog()</code> method in test
 case <code>setup()</code> method.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Test_Sos_Activator extends WP_UnitTestCase {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Sos_Activator</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
 
-    public function setup () {
-        parent::setup();
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">setup</span><span class="p">();</span>
         
-        // create sos post type
-        require_once &#39;admin/class-sos.php&#39;;
-        $this-&gt;sos = new Sos();
+        <span class="c1">// create sos post type
+</span><span class="c1"></span>        <span class="k">require_once</span> <span class="s1">&#39;admin/class-sos.php&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sos</span><span class="p">();</span>
         
-        require_once &#39;admin/class-activator.php&#39;;
-        $this-&gt;activator = new Sos_Activator();
+        <span class="k">require_once</span> <span class="s1">&#39;admin/class-activator.php&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sos_Activator</span><span class="p">();</span>
         
-        // add one more blog to the site
-        $this-&gt;add_blog( &#39;test1&#39;, &#39;Test 1&#39; );
+        <span class="c1">// add one more blog to the site
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add_blog</span><span class="p">(</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="s1">&#39;Test 1&#39;</span> <span class="p">);</span>
         
-        // set default admin - some test change user
-        wp_set_current_user( 1 );
-        Util::set_admin_role( true );
-    }
+        <span class="c1">// set default admin - some test change user
+</span><span class="c1"></span>        <span class="nx">wp_set_current_user</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+        <span class="nx">Util</span><span class="o">::</span><span class="na">set_admin_role</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>In the multisite tests, we use following construct to fetch blogs and
 switch between them. The WordPress function <a href="https://codex.wordpress.org/Function_Reference/wp_get_sites" target="_blank">wp_get_sites()</a> returns an array of blogs i.e. sites in the multisite network.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">        $blogs = wp_get_sites();
-        $this-&gt;assertCount( 2, $blogs );
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">        <span class="nv">$blogs</span> <span class="o">=</span> <span class="nx">wp_get_sites</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">$blogs</span> <span class="p">);</span>
 
-        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
+        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
 
-        .... some test
+        <span class="o">....</span> <span class="nx">some</span> <span class="nx">test</span>
 
-        restore_current_blog();
+        <span class="nx">restore_current_blog</span><span class="p">();</span>
 
-        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
+        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
 
-        .... repeat the test in blog 2
+        <span class="o">....</span> <span class="nx">repeat</span> <span class="nx">the</span> <span class="nx">test</span> <span class="nx">in</span> <span class="nx">blog</span> <span class="mi">2</span>
 
-        restore_current_blog();
+        <span class="nx">restore_current_blog</span><span class="p">();</span>
 </code></pre></div><p>One such multisite test from Test_Sos_Activator is shown in the next
 snippet.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_multisite_activate_by_superadmin () {
-        // list of blogs in site
-        $blogs = wp_get_sites();
-        $this-&gt;assertCount( 2, $blogs );
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_multisite_activate_by_superadmin</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// list of blogs in site
+</span><span class="c1"></span>        <span class="nv">$blogs</span> <span class="o">=</span> <span class="nx">wp_get_sites</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">$blogs</span> <span class="p">);</span>
         
-        // networkwide activation - superadmin
-        $networkwide = true;
+        <span class="c1">// networkwide activation - superadmin
+</span><span class="c1"></span>        <span class="nv">$networkwide</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
         
-        // create locker and no options
-        switch_to_blog( $blogs[ 0 ][ &#39;blog_id&#39; ] );
-        Util::set_activate_plugins_cap( true );
-        $this-&gt;sos-&gt;create_post_type();
-        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
-        $this-&gt;assertTrue( isset( $post_id ) );
-        $options = get_option( &#39;sos_common_options&#39; );
-        $this-&gt;assertFalse( $options );
-        restore_current_blog();
+        <span class="c1">// create locker and no options
+</span><span class="c1"></span>        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nx">Util</span><span class="o">::</span><span class="na">set_activate_plugins_cap</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span><span class="o">-&gt;</span><span class="na">create_post_type</span><span class="p">();</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="nx">restore_current_blog</span><span class="p">();</span>
         
-        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
-        Util::set_activate_plugins_cap( true );
-        $this-&gt;sos-&gt;create_post_type();
-        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
-        $this-&gt;assertTrue( isset( $post_id ) );
-        $options = get_option( &#39;sos_common_options&#39; );
-        $this-&gt;assertFalse( $options );
-        restore_current_blog();
+        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nx">Util</span><span class="o">::</span><span class="na">set_activate_plugins_cap</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span><span class="o">-&gt;</span><span class="na">create_post_type</span><span class="p">();</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="nx">restore_current_blog</span><span class="p">();</span>
         
-        // we can&#39;t remove super admin status from default user so create new
-        // user
-        $user_id = $this-&gt;add_user( &#39;testuser&#39; );
-        wp_set_current_user( $user_id );
+        <span class="c1">// we can&#39;t remove super admin status from default user so create new
+</span><span class="c1"></span>        <span class="c1">// user
+</span><span class="c1"></span>        <span class="nv">$user_id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add_user</span><span class="p">(</span> <span class="s1">&#39;testuser&#39;</span> <span class="p">);</span>
+        <span class="nx">wp_set_current_user</span><span class="p">(</span> <span class="nv">$user_id</span> <span class="p">);</span>
         
-        // grant super admin and activate
-        grant_super_admin( $user_id );
-        $this-&gt;activator-&gt;activate( $networkwide );
+        <span class="c1">// grant super admin and activate
+</span><span class="c1"></span>        <span class="nx">grant_super_admin</span><span class="p">(</span> <span class="nv">$user_id</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activator</span><span class="o">-&gt;</span><span class="na">activate</span><span class="p">(</span> <span class="nv">$networkwide</span> <span class="p">);</span>
         
-        // test activation - locker deleted, options created
-        switch_to_blog( $blogs[ 0 ][ &#39;blog_id&#39; ] );
-        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
-        $this-&gt;assertFalse( isset( $post_id ) );
-        $options = get_option( &#39;sos_common_options&#39; );
-        $this-&gt;assertNotFalse( $options );
-        $this-&gt;assertCount( 1, $options );
-        $this-&gt;assertSame( SOS_VERSION, $options[ &#39;version&#39; ] );
-        restore_current_blog();
+        <span class="c1">// test activation - locker deleted, options created
+</span><span class="c1"></span>        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNotFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nx">SOS_VERSION</span><span class="p">,</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;version&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nx">restore_current_blog</span><span class="p">();</span>
         
-        switch_to_blog( $blogs[ 1 ][ &#39;blog_id&#39; ] );
-        $post_id = Util::get_post_id( &#39;sos&#39;, &#39;locker_id&#39;, &#39;basic&#39; );
-        $this-&gt;assertFalse( isset( $post_id ) );
-        $options = get_option( &#39;sos_common_options&#39; );
-        $this-&gt;assertNotFalse( $options );
-        $this-&gt;assertCount( 1, $options );
-        $this-&gt;assertSame( SOS_VERSION, $options[ &#39;version&#39; ] );
-        restore_current_blog();
-    }
+        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNotFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nx">SOS_VERSION</span><span class="p">,</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;version&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nx">restore_current_blog</span><span class="p">();</span>
+    <span class="p">}</span>
 </code></pre></div><p>Tests in multisite test files - test-activator-multisite.php and
 test-uninstall-multisite.php - follow similar pattern.</p>
 <p>With that, we are at the end of WordPress Plugin Development Tutorial

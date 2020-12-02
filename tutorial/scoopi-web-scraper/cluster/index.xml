@@ -6,11 +6,7 @@
     <description>Recent content in Cluster on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 23:03:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Nov 2020 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</link>
@@ -31,6 +27,18 @@ Java Download the latest release zip file scoopi-x-production.</description>
       <description>Scoopi Cluster Containers We can also run Scoopi Cluster as plain Docker containers.
 Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system. The following command pulls Scoopi image, creates and run container named scoopi.
 docker run --name scoopi codetab/scoopi It executes quick-start example which outputs single record to an output file. However, we will not be able to view the output file nor modify the conf files as they are within the container.</description>
+    </item>
+    
+    <item>
+      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</link>
+      <pubDate>Wed, 02 Dec 2020 01:02:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</guid>
+      <description>Scoopi Cluster on Kubenetes Scoopi jobs can be deployed on Kubernetes Cluster.
+Kubernetes Deployment The sample kubernetes files are available at Scoopi Kubernetes. The scoopi.yaml configures kinds such as ClusterRole, ClusterRoleBinding, Service, PersistentVolume and PersistentVolumeClaim which are essential to run Scoopi and the scoopi jobs are defined in scoopi-job.yaml.
+Download the files and apply them to k8s cluster.
+kubectl apply -f scoopi.yaml kubectl apply -f scoopi-job.yaml It runs /defs/examples/fin/jsoup/ex-13 on Scoopi Cluster spanned across 5 K8s pods.</description>
     </item>
     
   </channel>

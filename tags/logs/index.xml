@@ -6,11 +6,7 @@
     <description>Recent content in logs on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 01:29:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/logs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Nov 2020 01:29:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/logs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Logs - Scoopi Web Scraper - CodeTab</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
-Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs only error, warn and info logs. To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element.
+Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs only error, warn and info logs. To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element.
 Similarly for trace logs. Trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
@@ -30,7 +26,7 @@ Similarly for trace logs. Trace logs output query and parsed html nodes which is
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
-To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
     <item>
@@ -41,7 +37,7 @@ To output debug logs, change root level to debug and un-comment appender-ref ref
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
-To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
   </channel>

@@ -636,34 +636,34 @@ Multisite Installations.</p>
 locker that is left over by the previous installation and also, add
 settings such as plugin version etc.,</p>
 <p>Plugin uses class <code>Sos_Activator</code> of <code>admin/class-activator.php</code> to
-customize the plugins&rsquo; activation and deactivation.</p>
+customize the plugins' activation and deactivation.</p>
 <p>The method, <code>Sos_Activator::setup()</code>, uses WordPress function
 <a href="http://codex.wordpress.org/Function_Reference/register_activation_hook" target="_blank">register_activation_hook()</a>
 to register the method that has to be invoked when plugin is activated.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Activator {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Activator</span> <span class="p">{</span>
 
-    public function setup () {
-        register_activation_hook( SOS_PLUGIN_FILE, 
-                array( $this,&#39;activate&#39; ));
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">register_activation_hook</span><span class="p">(</span> <span class="nx">SOS_PLUGIN_FILE</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;activate&#39;</span> <span class="p">));</span>
+    <span class="p">}</span>
 </code></pre></div><p>This hooks <code>Sos_Activator::activate()</code> as activation method. The first
 parameter to the registration function is the constant
-<strong>SOS_PLUGIN_FILE</strong> defined in the plugins&rsquo; main file. It expands to
+<strong>SOS_PLUGIN_FILE</strong> defined in the plugins' main file. It expands to
 the plugin main file <code>share-on-social.php</code>.</p>
 <p>When admin installs the plugin and activates it, WordPress as part of
 activation process calls <code>Sos_Activator::activate()</code> method.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function activate ( $networkwide ) {        
-        if ( function_exists( &#39;is_multisite&#39; ) <span class="err">&amp;&amp;</span> is_multisite() ) {
-           ....
-        } else {
-            if ( false == current_user_can( &#39;activate_plugins&#39; ) ) {
-                return;
-            }
-            $this-&gt;activate_for_blog();
-        }
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">activate</span> <span class="p">(</span> <span class="nv">$networkwide</span> <span class="p">)</span> <span class="p">{</span>        
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">function_exists</span><span class="p">(</span> <span class="s1">&#39;is_multisite&#39;</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">is_multisite</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+           <span class="o">....</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">current_user_can</span><span class="p">(</span> <span class="s1">&#39;activate_plugins&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activate_for_blog</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>It checks whether it WordPress site is a multisite or single site and if
 single site, it calls <code>Sos_Activator::activate_for_blog()</code>. Multisite
 activation logic is bit more complex and we will deal with it in the
@@ -671,11 +671,11 @@ next chapter.</p>
 <p>The Sos_Activator::activate_for_blog() method calls the method to
 delete any existing basic locker and add settings.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function activate_for_blog () {
-        // if exists remove it
-        $this-&gt;delete_basic_locker();
-        $this-&gt;add_settings();
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">activate_for_blog</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// if exists remove it
+</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">delete_basic_locker</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add_settings</span><span class="p">();</span>
+    <span class="p">}</span>
 </code></pre></div><p>When admin reinstalls the plugin, the default basic locker created in
 the previous installation may still exists in the database and we delete
 it so as to start in a clean state.</p>
@@ -705,24 +705,24 @@ new default locker.</p>
 <p>The method <code>Sos_Activator::add_settings()</code> adds or updates the version
 number of the plugin in <strong>sos_common_options</strong> in WordPress database.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function delete_basic_locker () {
-        $post_id = Sos_Helper::get_locker_post_id( &#39;basic&#39; );
-        if ( $post_id ) {
-            wp_delete_post( $post_id );
-        }
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">delete_basic_locker</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Sos_Helper</span><span class="o">::</span><span class="na">get_locker_post_id</span><span class="p">(</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_delete_post</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    public function add_settings () {
-        $option_group = &#39;sos_common_options&#39;;
-        $options = get_option( $option_group );
-        if ( false == $options ) {
-            $options = array( &#39;version&#39; =&gt; SOS_VERSION );
-            add_option( $option_group, $options );
-        } else {
-            $options[ &#39;version&#39; ] = SOS_VERSION;
-            update_option( $option_group, $options );
-        }
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">add_settings</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$option_group</span> <span class="o">=</span> <span class="s1">&#39;sos_common_options&#39;</span><span class="p">;</span>
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nv">$options</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="nx">SOS_VERSION</span> <span class="p">);</span>
+            <span class="nx">add_option</span><span class="p">(</span> <span class="nv">$option_group</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;version&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">SOS_VERSION</span><span class="p">;</span>
+            <span class="nx">update_option</span><span class="p">(</span> <span class="nv">$option_group</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p><strong>Version Number</strong></p>
 <p>It is highly recommended to store the plugin version number in WordPress
 database and it comes handy either for plugin support calls or during
@@ -732,7 +732,7 @@ store this small bit of information somewhere in the database.</p>
 <h3 id="action-links">Action Links</h3>
 <p>It is useful to add some Call-to-Action links in the plugin section. For
 Share on Social Plugin, we add action link <strong>Settings</strong>, which appears
-once plugin is activated, so as to draw admins&rsquo; attention to do the
+once plugin is activated, so as to draw admins' attention to do the
 essential settings before they use the plugin.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-action-link.png" alt="WordPress Plugin Activation - Action Links" />
@@ -741,23 +741,23 @@ essential settings before they use the plugin.</p>
 <p>WordPress filter hook <strong>plugin_action_links</strong> is used to add the
 action links the plugin activation section.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function setup () {
-        add_filter( &#39;plugin_action_links&#39;, 
-                array( $this,&#39;action_links&#39;), 10, 2 );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;plugin_action_links&#39;</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;action_links&#39;</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>To the filter method <code>Sos_Activator::action_links()</code>, WordPress passes
 the array of links, that will be added to activation section, through
-$links parameter. Through the $file parameter plugins&rsquo; base name is
+$links parameter. Through the $file parameter plugins' base name is
 passed to the filter method.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function action_links ( $links, $file ) {
-        if ( SOS_PLUGIN_BASENAME == $file ) {
-            $settings_link = &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;&#39; . get_bloginfo( &#39;wpurl&#39; ) .
-</span><span class="s">                     &#39;/wp-admin/edit.php?post_type=sos&amp;page=sos_settings_page&#34;</span><span class="p">&gt;</span>Settings<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&#39;;
-            array_unshift( $links, $settings_link );
-        }
-        return $links;
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">action_links</span> <span class="p">(</span> <span class="nv">$links</span><span class="p">,</span> <span class="nv">$file</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">SOS_PLUGIN_BASENAME</span> <span class="o">==</span> <span class="nv">$file</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$settings_link</span> <span class="o">=</span> <span class="s1">&#39;&lt;a href=&#34;&#39;</span> <span class="o">.</span> <span class="nx">get_bloginfo</span><span class="p">(</span> <span class="s1">&#39;wpurl&#39;</span> <span class="p">)</span> <span class="o">.</span>
+                     <span class="s1">&#39;/wp-admin/edit.php?post_type=sos&amp;page=sos_settings_page&#34;&gt;Settings&lt;/a&gt;&#39;</span><span class="p">;</span>
+            <span class="nx">array_unshift</span><span class="p">(</span> <span class="nv">$links</span><span class="p">,</span> <span class="nv">$settings_link</span> <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$links</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div><p>The filter method returns the $links array after adding the new links
 that points to Share on Social <strong>Settings</strong> menu. It is important to
 note that when Installed Plugin page is opened the filter method

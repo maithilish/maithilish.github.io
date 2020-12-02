@@ -633,7 +633,7 @@ menu page.</p>
 developers to add form pages to Admin screen by defining pages, sections
 and fields and partially automates the form and data management.</p>
 <p>But before that, we briefly touch upon WordPress Options API, which we
-use to store plugins&rsquo; settings or options in WordPress database.</p>
+use to store plugins' settings or options in WordPress database.</p>
 <h3 id="wordpress-options">WordPress Options</h3>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-settings.png" alt="WordPress Settings API - Share on Social options" />
@@ -664,33 +664,33 @@ use to store plugins&rsquo; settings or options in WordPress database.</p>
 ID, Google Client ID and Debug boolean flag. This array is saved as as
 WordPress Options under option name <strong>sos_common_options</strong>.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Options {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Options</span> <span class="p">{</span>
 
-    public function setup () {
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
 
-        .... 
+        <span class="o">....</span> 
 
-        add_action( &#39;admin_init&#39;,array($this,&#39;init_common_options&#39;) );
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;init_common_options&#39;</span><span class="p">)</span> <span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 
-    public function init_common_options () {
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">init_common_options</span> <span class="p">()</span> <span class="p">{</span>
 
-        $option_group = &#39;sos_common_options&#39;;
+        <span class="nv">$option_group</span> <span class="o">=</span> <span class="s1">&#39;sos_common_options&#39;</span><span class="p">;</span>
 
-        // no options - create them.
-        if ( false == get_option( $option_group ) ) {
-            add_option( $option_group );
-        }
+        <span class="c1">// no options - create them.
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">get_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">add_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">);</span>
+        <span class="p">}</span>
                 
-        $options = get_option( $option_group );
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">);</span>
 
-        if ( false == isset( $options<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/add_settings_section&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>&#39;fbappid&#39;]) ) ) {
-            $options[&#39;fbappid&#39;]) = &#39;&#39;;
-        }
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$options</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Function_Reference/add_settings_section&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span><span class="s1">&#39;fbappid&#39;</span><span class="p">])</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;fbappid&#39;</span><span class="p">])</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        ...
-    }
+        <span class="o">...</span>
+    <span class="p">}</span>
 </code></pre></div><p>In <code>setup()</code> we add <code>init_common_options()</code> method as action to
 <strong>admin_init</strong> hook. WordPress executes this method when it reaches
 admin_init stage.</p>
@@ -729,35 +729,35 @@ with WordPress as fields using WordPress Settings API.</p>
 <a href="http://codex.wordpress.org/Function_Reference/add_settings_field" target="_blank">add_settings_field().</a>.</p>
 <p>The following snippet shows how FB App ID field is added as settings.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function init_common_options () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">init_common_options</span> <span class="p">()</span> <span class="p">{</span>
 
-        $option_group = &#39;sos_common_options&#39;;
-        $section = &#39;sos_common_options_section&#39;;
+        <span class="nv">$option_group</span> <span class="o">=</span> <span class="s1">&#39;sos_common_options&#39;</span><span class="p">;</span>
+        <span class="nv">$section</span> <span class="o">=</span> <span class="s1">&#39;sos_common_options_section&#39;</span><span class="p">;</span>
 
-        // no options - create them.
-        if ( false == get_option( $option_group ) ) {
-            add_option( $option_group );
-        }
+        <span class="c1">// no options - create them.
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">get_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">add_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">);</span>
+        <span class="p">}</span>
                 
-        $options = get_option( $option_group );
+        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="nv">$option_group</span> <span class="p">);</span>
 
-        if ( false == isset( $options<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/register_setting&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>&#39;fbappid&#39;]) ) ) {
-            $options[&#39;fbappid&#39;]) = &#39;&#39;;
-        }
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$options</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Function_Reference/register_setting&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span><span class="s1">&#39;fbappid&#39;</span><span class="p">])</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;fbappid&#39;</span><span class="p">])</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        add_settings_section( $section, &#39;&#39;, &#39;&#39;, $option_group );
+        <span class="nx">add_settings_section</span><span class="p">(</span> <span class="nv">$section</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$option_group</span> <span class="p">);</span>
         
-        $label = __( &#39;Facebook App ID&#39;, &#39;sos-domain&#39; );        
-        add_settings_field( &#39;fbappid&#39;, $label, array($this,&#39;textinput&#39;), $option_group, $section, 
-                            array(&#39;id&#39; =&gt; &#39;fbappid&#39;,
-                                  &#39;name&#39; =&gt; &#39;sos_common_options[fbappid]&#39;,
-                                  &#39;value&#39; =&gt; $options[&#39;fbappid&#39;]) );
+        <span class="nv">$label</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Facebook App ID&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>        
+        <span class="nx">add_settings_field</span><span class="p">(</span> <span class="s1">&#39;fbappid&#39;</span><span class="p">,</span> <span class="nv">$label</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;textinput&#39;</span><span class="p">),</span> <span class="nv">$option_group</span><span class="p">,</span> <span class="nv">$section</span><span class="p">,</span> 
+                            <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;fbappid&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sos_common_options[fbappid]&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;fbappid&#39;</span><span class="p">])</span> <span class="p">);</span>
 
-        // similarly register other fields of the page
-
-        // finally
-        register_setting( $option_group, $option_group,array($this,&#39;sanitize_options&#39;) );
-    }
+        <span class="c1">// similarly register other fields of the page
+</span><span class="c1"></span>
+        <span class="c1">// finally
+</span><span class="c1"></span>        <span class="nx">register_setting</span><span class="p">(</span> <span class="nv">$option_group</span><span class="p">,</span> <span class="nv">$option_group</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;sanitize_options&#39;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>Section is just grouping of fields. We name section as
 <strong>sos_common_options_section</strong> and add a page
 <strong>sos_common_options</strong> to it. To the page, we add FB App ID field
@@ -792,16 +792,16 @@ rendering happens much later when user clicks the menu item, WordPress
 calls the textinput() method with the said argument which renders the
 text input field for FB App ID.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function textinput ( $args, $echo = true ) {
-        $html = &#39;<span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;&#39; . $args[ &#39;id&#39; ] .
-</span><span class="s">                 &#39;&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;&#39; . $args[ &#39;name&#39; ] . &#39;&#34;</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;30&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#39; .
-</span><span class="s">                 $args[ &#39;value&#39; ] . &#39;&#34;</span><span class="p">/&gt;</span>&#39;;
-        if ( $echo ) {
-            echo $html;
-        } else {
-            return $html;
-        }
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">textinput</span> <span class="p">(</span> <span class="nv">$args</span><span class="p">,</span> <span class="nv">$echo</span> <span class="o">=</span> <span class="k">true</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$html</span> <span class="o">=</span> <span class="s1">&#39;&lt;input class=&#34;text&#34; type=&#34;text&#34; id=&#34;&#39;</span> <span class="o">.</span> <span class="nv">$args</span><span class="p">[</span> <span class="s1">&#39;id&#39;</span> <span class="p">]</span> <span class="o">.</span>
+                 <span class="s1">&#39;&#34; name=&#34;&#39;</span> <span class="o">.</span> <span class="nv">$args</span><span class="p">[</span> <span class="s1">&#39;name&#39;</span> <span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34; size=&#34;30&#34; value=&#34;&#39;</span> <span class="o">.</span>
+                 <span class="nv">$args</span><span class="p">[</span> <span class="s1">&#39;value&#39;</span> <span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;/&gt;&#39;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nv">$echo</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="nv">$html</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$html</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>Method <code>textinput() </code>is just a helper method that echo the HTML input
 element. Parameter $args holds the array passed by
 add_settings_field() and it used as attributes to input element which
@@ -826,17 +826,17 @@ checkbox.</p>
 <p>Finally, we register one more callback function with
 <a href="http://codex.wordpress.org/Function_Reference/register_setting" target="_blank">register_setting()</a> which is used to register <code>sanitize_options()</code> method as callback. When user submit the page, WordPress uses the callback to sanitize the values entered by the user.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    function sanitize_options ( $input ) {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">function</span> <span class="nf">sanitize_options</span> <span class="p">(</span> <span class="nv">$input</span> <span class="p">)</span> <span class="p">{</span>
 
-        $output = array();
-        foreach ( $input as $key =&gt; $val ) {
-            if ( isset( $input<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/wp_filter_nohtml_kses&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> $key ] ) ) {
-                $output[ $key ] = wp_filter_nohtml_kses( $input[ $key ] );
-            }
-        }
-        return apply_filters( &#39;sanitize_options&#39;, $output, $input );
+        <span class="nv">$output</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$input</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$val</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$input</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Function_Reference/wp_filter_nohtml_kses&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="nv">$key</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$output</span><span class="p">[</span> <span class="nv">$key</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">wp_filter_nohtml_kses</span><span class="p">(</span> <span class="nv">$input</span><span class="p">[</span> <span class="nv">$key</span> <span class="p">]</span> <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">apply_filters</span><span class="p">(</span> <span class="s1">&#39;sanitize_options&#39;</span><span class="p">,</span> <span class="nv">$output</span><span class="p">,</span> <span class="nv">$input</span> <span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 </code></pre></div><p>When options are about to be saved to database, WordPress calls this
 method with options as array of key and value pairs. We use WordPress
 function

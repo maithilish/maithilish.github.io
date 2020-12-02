@@ -6,11 +6,7 @@
     <description>Recent content in Java Generics Tutorial - CodeTab on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java Generics - CodeTab</title>
       <link>https://www.codetab.org/tutorial/java-generics/introduction/</link>

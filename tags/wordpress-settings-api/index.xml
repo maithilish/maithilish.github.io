@@ -6,11 +6,7 @@
     <description>Recent content in wordpress settings api on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 09:27:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/wordpress-settings-api/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 09:27:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-settings-api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Settings API - WordPress Plugin Development - CodeTab</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</link>
@@ -19,7 +15,7 @@
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</guid>
       <description>6.2. WordPress Settings API In the previous blog, we add a sub menu to admin menu to accept common settings from users. In this blog, we add sections and fields to the menu page.
 WordPress Settings API allows developers to add form pages to Admin screen by defining pages, sections and fields and partially automates the form and data management.
-But before that, we briefly touch upon WordPress Options API, which we use to store plugins&amp;rsquo; settings or options in WordPress database.</description>
+But before that, we briefly touch upon WordPress Options API, which we use to store plugins&#39; settings or options in WordPress database.</description>
     </item>
     
   </channel>

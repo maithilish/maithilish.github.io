@@ -6,11 +6,7 @@
     <description>Recent content in jdo persistence on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jan 2019 18:45:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/jdo-persistence/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Jan 2019 18:45:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/jdo-persistence/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JDO Persistence - GWT Tutorial - CodeTab</title>
       <link>https://www.codetab.org/tutorial/gwt/database/persist/</link>

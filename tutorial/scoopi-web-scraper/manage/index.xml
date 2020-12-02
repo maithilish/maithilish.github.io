@@ -6,11 +6,7 @@
     <description>Recent content in Manage on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 23:03:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper/manage/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Nov 2020 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper/manage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/persistence/</link>
@@ -40,7 +36,7 @@ Split on Job Types The examples so far scraped BS, PL, snapshot data - price and
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
-To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
     <item>

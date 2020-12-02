@@ -698,7 +698,7 @@ have already created the simple plugin explained in <a href="/tutorial/wordpress
 <p>Create a directory named <code>wp-simple-plugin</code> in some location and add
 plugin main file <code>wp-simple-plugin.php</code> to it with following contents.</p>
 <p><code>wp-simple-plugin/wp-simple-plugin.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="sd">/**
 </span><span class="sd"> * Plugin Name: WordPress Simple Plugin
@@ -780,7 +780,7 @@ Later we add more test files to the <strong>testsuit</strong> element.</p>
 <code>tests/phpunit/bootstrap.php</code> to bootstrap the tests. Add the
 <code>bootstrap.php</code> to <code>wp-simple-plugin/tests/phpunit</code> directory.</p>
 <p><code>wp-simple-plugin/tests/phpunit/bootstrap.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// path to test lib bootstrap.php
 </span><span class="c1"></span><span class="nv">$test_lib_bootstrap_file</span> <span class="o">=</span> <span class="nx">dirname</span><span class="p">(</span> <span class="no">__FILE__</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/includes/bootstrap.php&#39;</span><span class="p">;</span>
@@ -807,7 +807,7 @@ Later we add more test files to the <strong>testsuit</strong> element.</p>
 <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 <span class="k">echo</span> <span class="s1">&#39;Using Wordpress core : &#39;</span> <span class="o">.</span> <span class="nx">ABSPATH</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
-</code></pre></div><p>In bootstrap.php, we first check whether WordPress Tests Libs&rsquo;
+</code></pre></div><p>In bootstrap.php, we first check whether WordPress Tests Libs'
 bootstrap.php exists in includes directory else exit from the test run.
 Next, we create an array which holds details of Simple Plugin as active
 plugins and add the array to  <strong>$GLOBALS[&lsquo;wp_tests_options&rsquo;]</strong>.
@@ -828,7 +828,7 @@ provides the configurations to WordPress test instance. Add the
 <code>wp-tests-config.php</code> to <code>tests/phpunit</code> directory with following
 contents.</p>
 <p><code>wp-simple-plugin/tests/phpunit/wp-tests-config.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// change the next line to points to your wordpress dir
 </span><span class="c1"></span><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;ABSPATH&#39;</span><span class="p">,</span> <span class="s1">&#39;/opt/lampp/wptest/wordpress/&#39;</span> <span class="p">);</span>
@@ -934,7 +934,7 @@ plugin directly from the plugins directory then Test Library finds and
 activates the plugin without any problem.</p>
 <p>Normally, it is much more convenient to develop the plugin from IDE
 workspace or some other location and in such case, we have to create a
-symbolic link to plugins&rsquo; actual location in
+symbolic link to plugins' actual location in
 <code>wordpress/wp-content/plugins/</code> directory.</p>
 <p>For example, if Simple Plugin is at <code>/home/xyz/work/wp-simple-plugin</code>
 and WordPress package is at <code>/opt/lampp/wptest/wordpress</code>, then create

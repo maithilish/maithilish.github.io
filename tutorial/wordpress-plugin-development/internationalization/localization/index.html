@@ -701,48 +701,48 @@ other languages and locale code, refer <a href="https://codex.wordpress.org/Word
 $ msginit -i share-on-social.pot -o sos-domain-eo.po -l eo
 </code></pre><p>GetText&rsquo;s <strong>msginit</strong> generates PO file from the POT file. The output
 file is named as  <strong>sos-domain-eo.po</strong> where <strong>sos-domain</strong> is the
-plugins&rsquo; text domain and <strong>eo</strong> is the locale code of Esperanto.</p>
+plugins' text domain and <strong>eo</strong> is the locale code of Esperanto.</p>
 <p>Next, translate the strings in <code>langs/sos-domain-eo.po</code>.</p>
 <p><code>share-on-social/langs/sos-domain-eo.po</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"># Copyright (C) 2015 Share on Social
-# This file is distributed under the same license as the Share on Social package.
-msgid &#34;&#34;
-msgstr &#34;&#34;
-&#34;Project-Id-Version: Share on Social 1.0.0n&#34;
-&#34;Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-socialn&#34;
-&#34;POT-Creation-Date: 2015-01-21 06:42:09+00:00n&#34;
-&#34;MIME-Version: 1.0n&#34;
-&#34;Content-Type: text/plain; charset=UTF-8n&#34;
-&#34;Content-Transfer-Encoding: 8bitn&#34;
-&#34;PO-Revision-Date: 2015-01-21 12:13+0530n&#34;
-&#34;Last-Translator: m <span class="p">&lt;</span><span class="nt">m</span><span class="err">@</span><span class="na">m</span><span class="p">&gt;</span>n&#34;
-&#34;Language-Team: Esperanton&#34;
-&#34;Language: eon&#34;
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># Copyright (C) 2015 Share on Social
+</span><span class="c1"># This file is distributed under the same license as the Share on Social package.
+</span><span class="c1"></span><span class="nx">msgid</span> <span class="s2">&#34;&#34;</span>
+<span class="nx">msgstr</span> <span class="s2">&#34;&#34;</span>
+<span class="s2">&#34;Project-Id-Version: Share on Social 1.0.0n&#34;</span>
+<span class="s2">&#34;Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-socialn&#34;</span>
+<span class="s2">&#34;POT-Creation-Date: 2015-01-21 06:42:09+00:00n&#34;</span>
+<span class="s2">&#34;MIME-Version: 1.0n&#34;</span>
+<span class="s2">&#34;Content-Type: text/plain; charset=UTF-8n&#34;</span>
+<span class="s2">&#34;Content-Transfer-Encoding: 8bitn&#34;</span>
+<span class="s2">&#34;PO-Revision-Date: 2015-01-21 12:13+0530n&#34;</span>
+<span class="s2">&#34;Last-Translator: m &lt;m@m&gt;n&#34;</span>
+<span class="s2">&#34;Language-Team: Esperanton&#34;</span>
+<span class="s2">&#34;Language: eon&#34;</span>
 
-#: admin/class-sos.php:110
-msgctxt &#34;post type singular name&#34;
-msgid &#34;Share Locker&#34;
-msgstr &#34;&#34;
+<span class="c1">#: admin/class-sos.php:110
+</span><span class="c1"></span><span class="nx">msgctxt</span> <span class="s2">&#34;post type singular name&#34;</span>
+<span class="nx">msgid</span> <span class="s2">&#34;Share Locker&#34;</span>
+<span class="nx">msgstr</span> <span class="s2">&#34;&#34;</span>
 
-#: admin/class-sos.php:112
-msgctxt &#34;admin menu&#34;
-msgid &#34;Share on Social&#34;
-msgstr &#34;&#34;
+<span class="c1">#: admin/class-sos.php:112
+</span><span class="c1"></span><span class="nx">msgctxt</span> <span class="s2">&#34;admin menu&#34;</span>
+<span class="nx">msgid</span> <span class="s2">&#34;Share on Social&#34;</span>
+<span class="nx">msgstr</span> <span class="s2">&#34;&#34;</span>
 
-....
+<span class="o">....</span>
 </code></pre></div><p>For each translatable string, the <strong>msgid</strong> holds the original string
 and <strong>msgstr</strong> will be empty string. Edit the file and enter translated
 string in msgstr as shown in next listing.</p>
 <p><code>share-on-social/langs/sos-domain-eo.po</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">#: admin/class-sos.php:110
-msgctxt &#34;post type singular name&#34;
-msgid &#34;Share Locker&#34;
-msgstr &#34;Konigi Locker&#34;
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="c1">#: admin/class-sos.php:110
+</span><span class="c1"></span><span class="nx">msgctxt</span> <span class="s2">&#34;post type singular name&#34;</span>
+<span class="nx">msgid</span> <span class="s2">&#34;Share Locker&#34;</span>
+<span class="nx">msgstr</span> <span class="s2">&#34;Konigi Locker&#34;</span>
 
-#: admin/class-sos.php:112
-msgctxt &#34;admin menu&#34;
-msgid &#34;Share on Social&#34;
-msgstr &#34;Dividi en Socia&#34;
+<span class="c1">#: admin/class-sos.php:112
+</span><span class="c1"></span><span class="nx">msgctxt</span> <span class="s2">&#34;admin menu&#34;</span>
+<span class="nx">msgid</span> <span class="s2">&#34;Share on Social&#34;</span>
+<span class="nx">msgstr</span> <span class="s2">&#34;Dividi en Socia&#34;</span>
 </code></pre></div><p>Finally, generate MO file from PO using GetText&rsquo;s <strong>msgfmt</strong> command.</p>
 <pre><code class="language-screen" data-lang="screen">$ msgfmt -o sos-domain-eo.mo  sos-domain-eo.po
 </code></pre><p>It generates <code>sos-domain-eo.mo</code> from <code>sos-domain-eo.po</code>. We have to do

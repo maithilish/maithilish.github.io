@@ -681,7 +681,7 @@ methods of Sos_Ajax.</p>
 <p>Let&rsquo;s go through <code>Test_Sos_Ajax</code> to understand how Ajax Test Case is
 defined.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="sd">/**
 </span><span class="sd">*  !!!! ONLY FOR AJAX CALL !!!!
@@ -747,47 +747,47 @@ Let&rsquo;s go through some Ajax tests to understand how it is done.</p>
 $_POST and saves the details in WordPress Option and returns 1 as
 success flag.</p>
 <p><code>share-on-social/admin/class-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function save_stats () {
-        $valid_req = check_ajax_referer( &#39;sos-save-stat&#39;, false, false );
-        if ( false == $valid_req ) {
-            wp_die( &#39;-1&#39; );
-        }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">save_stats</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$valid_req</span> <span class="o">=</span> <span class="nx">check_ajax_referer</span><span class="p">(</span> <span class="s1">&#39;sos-save-stat&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nv">$valid_req</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;-1&#39;</span> <span class="p">);</span>
+        <span class="p">}</span>
         
-        if ( ! isset( $_POST[ &#39;type&#39; ] ) || ! isset( $_POST[ &#39;share_name&#39; ] ) ) {
-            wp_die( &#39;-1&#39; );
-        }
-        $share_on = $_POST[ &#39;type&#39; ];
-        $share_name = $_POST[ &#39;share_name&#39; ];
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;type&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="o">||</span> <span class="o">!</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;share_name&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;-1&#39;</span> <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$share_on</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;type&#39;</span> <span class="p">];</span>
+        <span class="nv">$share_name</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;share_name&#39;</span> <span class="p">];</span>
         
-        $this-&gt;update_sos_stats( $share_on, $share_name );
-        $this-&gt;update_sos_stats_summary( $share_on, $share_name );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">update_sos_stats</span><span class="p">(</span> <span class="nv">$share_on</span><span class="p">,</span> <span class="nv">$share_name</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">update_sos_stats_summary</span><span class="p">(</span> <span class="nv">$share_on</span><span class="p">,</span> <span class="nv">$share_name</span> <span class="p">);</span>
         
-        wp_die( &#39;1&#39; );
-    }
+        <span class="nx">wp_die</span><span class="p">(</span> <span class="s1">&#39;1&#39;</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>To test it, we use test method <code>Test_Sos_Ajax::test_save_stat_stats()</code>.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_save_stat_stats () {
-        global $_POST;
-        $_POST[ &#39;type&#39; ] = &#39;fb&#39;;
-        $_POST[ &#39;share_name&#39; ] = &#39;test&#39;;
-        $_POST[ &#39;_wpnonce&#39; ] = wp_create_nonce( &#39;sos-save-stat&#39; );
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_save_stat_stats</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$_POST</span><span class="p">;</span>
+        <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;type&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;fb&#39;</span><span class="p">;</span>
+        <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;share_name&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
+        <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;_wpnonce&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">wp_create_nonce</span><span class="p">(</span> <span class="s1">&#39;sos-save-stat&#39;</span> <span class="p">);</span>
         
-        try {
-            $this-&gt;sos_ajax-&gt;setup();
-            $this-&gt;_handleAjax( &#39;save-stats&#39; );
-        } catch (WPAjaxDieStopException $e) {}
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_ajax</span><span class="o">-&gt;</span><span class="na">setup</span><span class="p">();</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_handleAjax</span><span class="p">(</span> <span class="s1">&#39;save-stats&#39;</span> <span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">WPAjaxDieStopException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{}</span>
         
-        $this-&gt;assertTrue( isset( $e ) );
-        $this-&gt;assertEquals( &#39;1&#39;, $e-&gt;getMessage() );
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$e</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="p">);</span>
         
-        $stats = get_option( &#39;sos_stats&#39; );
-        $this-&gt;assertCount( 1, $stats );
+        <span class="nv">$stats</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_stats&#39;</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$stats</span> <span class="p">);</span>
         
-        $stat = $stats[ 0 ];
+        <span class="nv">$stat</span> <span class="o">=</span> <span class="nv">$stats</span><span class="p">[</span> <span class="mi">0</span> <span class="p">];</span>
         
-        $this-&gt;assertSame( &#39;fb&#39;, $stat[ &#39;type&#39; ] );
-        $this-&gt;assertSame( &#39;test&#39;, $stat[ &#39;share_name&#39; ] );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;fb&#39;</span><span class="p">,</span> <span class="nv">$stat</span><span class="p">[</span> <span class="s1">&#39;type&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="nv">$stat</span><span class="p">[</span> <span class="s1">&#39;share_name&#39;</span> <span class="p">]</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>After loading the data in $_POST, the test in a try-catch block, calls
 <code>Sos_Ajax::setup()</code> method which wires Ajax on server side as explained
 in <a href="/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/">WordPress Ajax</a>. Next, Ajax call is made using <code>WP_Ajax_UnitTestCase::_handleAjax()</code> by passing
@@ -803,24 +803,24 @@ other types of Ajax method which returns data instead of a flag. One
 such method is <code>Sos_Ajax::get_stats()</code> which returns stats as JSON
 string to the client.</p>
 <p><code>share-on-social/tests/phpunit/tests/test-ajax.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_get_stats_single_stat () {
-        global $_POST;
-        $_POST[ &#39;_wpnonce&#39; ] = wp_create_nonce( &#39;sos-get-stats&#39; );
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_get_stats_single_stat</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">global</span> <span class="nv">$_POST</span><span class="p">;</span>
+        <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;_wpnonce&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">wp_create_nonce</span><span class="p">(</span> <span class="s1">&#39;sos-get-stats&#39;</span> <span class="p">);</span>
         
-        $test_stats = $this-&gt;get_test_stats();
-        $stats[] = $test_stats[ 0 ];
-        add_option( &#39;sos_stats&#39;, $stats );
+        <span class="nv">$test_stats</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_test_stats</span><span class="p">();</span>
+        <span class="nv">$stats</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$test_stats</span><span class="p">[</span> <span class="mi">0</span> <span class="p">];</span>
+        <span class="nx">add_option</span><span class="p">(</span> <span class="s1">&#39;sos_stats&#39;</span><span class="p">,</span> <span class="nv">$stats</span> <span class="p">);</span>
         
-        try {
-            $this-&gt;sos_ajax-&gt;setup();
-            $this-&gt;_handleAjax( &#39;get-stats&#39; );
-        } catch (WPAjaxDieStopException $e) {}
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_ajax</span><span class="o">-&gt;</span><span class="na">setup</span><span class="p">();</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_handleAjax</span><span class="p">(</span> <span class="s1">&#39;get-stats&#39;</span> <span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">WPAjaxDieStopException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{}</span>
         
-        $this-&gt;assertTrue( isset( $e ) );
-        $result = $e-&gt;getMessage();
-        $expected = &#39;{&#34;cols&#34;:[{&#34;label&#34;:&#34;Date&#34;,&#34;type&#34;:&#34;date&#34;},{&#34;label&#34;:&#34;FB&#34;,&#34;type&#34;:&#34;number&#34;}],&#34;rows&#34;:[{&#34;c&#34;:[{&#34;v&#34;:&#34;Date(2014,9,29)&#34;},{&#34;v&#34;:1}]}]}&#39;;
-        $this-&gt;assertSame( $expected, $result );
-    }
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$e</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+        <span class="nv">$expected</span> <span class="o">=</span> <span class="s1">&#39;{&#34;cols&#34;:[{&#34;label&#34;:&#34;Date&#34;,&#34;type&#34;:&#34;date&#34;},{&#34;label&#34;:&#34;FB&#34;,&#34;type&#34;:&#34;number&#34;}],&#34;rows&#34;:[{&#34;c&#34;:[{&#34;v&#34;:&#34;Date(2014,9,29)&#34;},{&#34;v&#34;:1}]}]}&#39;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nv">$expected</span><span class="p">,</span> <span class="nv">$result</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>The test is similar to previous one, but here <code>$e-&gt;getMessage()</code> returns
 the JSON string returned by the Ajax call.</p>
 <h3 id="exception-types-and-die">Exception Types and Die</h3>
@@ -854,7 +854,7 @@ return data or status.</p>
 </li>
 </ul>
 <p>In Share on Social Plugin, we use <code>wp_die()</code> to return data or status
-and so, the plugins&rsquo; tests always use <code>WPAjaxDieStopException</code>.</p>
+and so, the plugins' tests always use <code>WPAjaxDieStopException</code>.</p>
 <p>In the next blog, we explain the configuration and tests for WordPress
 Multisite.</p>
 

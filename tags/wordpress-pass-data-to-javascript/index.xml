@@ -6,11 +6,7 @@
     <description>Recent content in wordpress pass data to javascript on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 10:48:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/wordpress-pass-data-to-javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 10:48:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-pass-data-to-javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pass Data to JavaScript - WordPress Plugin Development - CodeTab</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/</link>

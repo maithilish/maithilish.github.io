@@ -6,11 +6,7 @@
     <description>Recent content on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Jan 2019 12:11:22 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 07 Jan 2019 12:11:22 +0530</lastBuildDate><atom:link href="https://www.codetab.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction - Scoopi Web Scraper - why just scrape when you can scoop</title>
       <link>https://www.codetab.org/tutorial/scoopi-web-scraper/introduction/</link>
@@ -167,7 +163,7 @@ There are enough blogs about WordPress Plugin Development.</description>
       <pubDate>Fri, 11 Jan 2019 06:11:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-wordpress-plugin/</guid>
-      <description>Share on Social WordPress Plugin allows you to lock a part of content on a WordPress Post or Page until user shares your blogs in social media. Plugin posts the shared link - as interactive posts - to users&amp;rsquo; wall and helps you to drive new visitors and increase engagement.</description>
+      <description>Share on Social WordPress Plugin allows you to lock a part of content on a WordPress Post or Page until user shares your blogs in social media. Plugin posts the shared link - as interactive posts - to users&#39; wall and helps you to drive new visitors and increase engagement.</description>
     </item>
     
     <item>
@@ -444,7 +440,7 @@ Maven can manage both internal and external dependencies. For a Java project, ex
       <description>2.1. WordPress Simple Plugin In this section, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
 We use Eclipse IDE with PDT (PHP Development Tools), but you are free to use your favorite PHP IDE.
 Create PHP Project
-In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&amp;rsquo; main file wp-simple-plugin.php in the top folder with the following contents.</description>
+In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&#39; main file wp-simple-plugin.php in the top folder with the following contents.</description>
     </item>
     
     <item>
@@ -854,7 +850,7 @@ The Maven core is small and it&amp;rsquo;s just capable of parsing XML files suc
       <pubDate>Fri, 11 Jan 2019 08:56:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</guid>
-      <description>In this chapter, we step through the plugins&amp;rsquo; main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
+      <description>In this chapter, we step through the plugins&#39; main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
 Plugin Info The main file share-on-social.php starts with header comments. As already described in the Section 2.1, “WordPress Simple Plugin”](wordpress-simple-plugin/), WordPress uses the header comments from the main file to display the Plugin info in plugins page.
 Define Constants Throughout the plugin, we often refer some paths and constants.</description>
     </item>
@@ -933,7 +929,7 @@ For example, Maven uses maven-surefire-plugin to run tests and it comes with two
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</guid>
       <description>WordPress Hooks, Actions and Filters are the pieces which dock plugins to WordPress core. They are at the heart of each and every plugin. In this chapter, we explain this very important aspect of plugin development.
-In the plugins&amp;rsquo; main file, we use add_action() to to load admin module and similarly, many setup() methods of plugin class files use add_action(). Here is a snippet from class-options.php.
+In the plugins&#39; main file, we use add_action() to to load admin module and similarly, many setup() methods of plugin class files use add_action(). Here is a snippet from class-options.php.
 share-on-social/admin/class-options.php
 class Sos_Options { public function setup () { add_action( &amp;#39;admin_init&amp;#39;, array($this,&amp;#39;init_common_options&amp;#39;) ); add_action( &amp;#39;admin_menu&amp;#39;, array($this,&amp;#39;register_settings_page&amp;#39;) ); } Let&amp;rsquo;s understand what they mean.</description>
     </item>
@@ -1210,7 +1206,7 @@ Configure Plugin Execution The element &amp;lt;executions&amp;gt;/&amp;lt;execut
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/</guid>
       <description>6.2. WordPress Settings API In the previous blog, we add a sub menu to admin menu to accept common settings from users. In this blog, we add sections and fields to the menu page.
 WordPress Settings API allows developers to add form pages to Admin screen by defining pages, sections and fields and partially automates the form and data management.
-But before that, we briefly touch upon WordPress Options API, which we use to store plugins&amp;rsquo; settings or options in WordPress database.</description>
+But before that, we briefly touch upon WordPress Options API, which we use to store plugins&#39; settings or options in WordPress database.</description>
     </item>
     
     <item>
@@ -1569,7 +1565,7 @@ $ mvn archetype:generate -DgroupId=com.xyz -DartifactId=my-app -Dversion=1.0 -Dp
       <description>7.2. WordPress Meta Box In the previous blog, we saw how to register a new custom post type named sos and use it as Social Lockers. To manage the custom post type items, in this blog we setup, render and customize Sos Locker editor with WordPress Meta Box.
 While registering the custom post type, we used register_meta_box_cb to register the callback method setup_meta_boxes().
 share-on-social/admin/class-sos.php
-public function create_post_type () { register_post_type( $this-&amp;gt;post_type, // other args &amp;#39;register_meta_box_cb&amp;#39; =&amp;gt; array($this,&amp;#39;setup_meta_boxes&amp;#39;) ) ); .</description>
+public function create_post_type () { register_post_type( $this-&amp;gt;post_type, // other args  &amp;#39;register_meta_box_cb&amp;#39; =&amp;gt; array($this,&amp;#39;setup_meta_boxes&amp;#39;) ) ); .</description>
     </item>
     
     <item>
@@ -1778,7 +1774,7 @@ Open JavaScript - JavaScript generated contents page and view its page source.</
       
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/logs-v094/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
-Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs only error, warn and info logs. To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element.
+Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs only error, warn and info logs. To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element.
 Similarly for trace logs. Trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
@@ -2005,7 +2001,7 @@ Without value attributes - For &amp;lt;f:TitlePanel ui:field=”titlePanel” /&
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
-To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
     <item>
@@ -2016,7 +2012,7 @@ To output debug logs, change root level to debug and un-comment appender-ref ref
       <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</guid>
       <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
-To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;quot;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
     </item>
     
     <item>
@@ -2451,6 +2447,18 @@ When a plugin is uninstalled, it is already in deactivated state and it means th
     </item>
     
     <item>
+      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
+      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</link>
+      <pubDate>Wed, 02 Dec 2020 01:02:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</guid>
+      <description>Scoopi Cluster on Kubenetes Scoopi jobs can be deployed on Kubernetes Cluster.
+Kubernetes Deployment The sample kubernetes files are available at Scoopi Kubernetes. The scoopi.yaml configures kinds such as ClusterRole, ClusterRoleBinding, Service, PersistentVolume and PersistentVolumeClaim which are essential to run Scoopi and the scoopi jobs are defined in scoopi-job.yaml.
+Download the files and apply them to k8s cluster.
+kubectl apply -f scoopi.yaml kubectl apply -f scoopi-job.yaml It runs /defs/examples/fin/jsoup/ex-13 on Scoopi Cluster spanned across 5 K8s pods.</description>
+    </item>
+    
+    <item>
       <title>Database Setup - GWT Tutorial - CodeTab</title>
       <link>https://www.codetab.org/tutorial/gwt/database/setup-database/</link>
       <pubDate>Thu, 10 Jan 2019 12:28:00 +0530</pubDate>
@@ -2491,7 +2499,7 @@ Once database is up, we require to load it with data. For that, we are going to 
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/</guid>
       <description>12.2. WordPress Test Setup In the previous blog, WordPress PHPUnit Setup we put up all the scaffolding necessary to run WordPress Plugin Tests. In this blog, we test the setup by running some test cases.
-Run Test Cases The test cases are placed in plugins&amp;rsquo; tests/phpunit/tests folder. Let&amp;rsquo;s start with a test case to test the constants defined in the wp-simple-plugin.php. Add a test file test-wp-simple-plugin.php to tests/phpunit/tests with following contents.</description>
+Run Test Cases The test cases are placed in plugins&#39; tests/phpunit/tests folder. Let&amp;rsquo;s start with a test case to test the constants defined in the wp-simple-plugin.php. Add a test file test-wp-simple-plugin.php to tests/phpunit/tests with following contents.</description>
     </item>
     
     <item>

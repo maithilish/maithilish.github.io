@@ -431,7 +431,7 @@ follows</p>
  <span class="nt">&lt;/target&gt;</span>
 <span class="nt">&lt;/project&gt;</span>
 </code></pre></div><p>In the resolve target, we have added &lt;ivy:cachepath
-pathid=&quot;default.classpath&rdquo; /&gt; after &lt;ivy:resolve&gt;. After a successful
+pathid=&ldquo;default.classpath&rdquo; /&gt; after &lt;ivy:resolve&gt;. After a successful
 resolve, Ivy constructs Ant classpath named <strong>default.classpath</strong>. This
 classpath points to the resolved artifacts in the cache and in sample
 project it points commons-lang.jar in cache. Next in &lt;javac&gt; task, we
@@ -479,7 +479,7 @@ follows</p>
   <span class="nt">&lt;ivy:retrieve</span> <span class="na">sync=</span><span class="s">&#34;true&#34;</span> <span class="na">type=</span><span class="s">&#34;jar&#34;</span> <span class="nt">/&gt;</span>
  <span class="nt">&lt;/target&gt;</span>
 <span class="nt">&lt;/project&gt;</span>
-</code></pre></div><p>We have added &lt;ivy:retrieve sync=&quot;true&rdquo; type=&quot;jar&rdquo; /&gt; after
+</code></pre></div><p>We have added &lt;ivy:retrieve sync=&ldquo;true&rdquo; type=&ldquo;jar&rdquo; /&gt; after
 &lt;ivy:resolve&gt; which instructs Ivy to copy the resolved artifacts from
 cache to lib directory within the project workspace. Ivy will create the
 lib directory if it is not there.</p>

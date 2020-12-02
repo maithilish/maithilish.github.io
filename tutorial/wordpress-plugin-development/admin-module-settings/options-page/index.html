@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T09:13:00+0530",
         "dateModified" : "2019-01-11T09:13:00+0530",
-        "wordCount" : "462",
+        "wordCount" : "461",
         "keywords" : [ "wordpress options page","Blog" ]
     }
 </script>
@@ -634,27 +634,27 @@ callback function to add_submenu_page() function . The callback method
 has to echo the HTML required to display the page and also, use
 WordPress Settings API functions to output the registered fields.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_settings_page () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">render_settings_page</span> <span class="p">()</span> <span class="p">{</span>
 
-        $heading = __( &#39;Common Options&#39;, &#39;sos-domain&#39; );
-        $desc = __( &#39;These options are applied to all lockers.&#39;, &#39;sos-domain&#39; );
+        <span class="nv">$heading</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Common Options&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="nv">$desc</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;These options are applied to all lockers.&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
 
-        $form = <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
-<span class="err">&lt;</span><span class="na">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;wrap&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;icon-tools&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icon32&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>$heading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>$desc<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;options.php&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 80%;&#34;</span><span class="p">&gt;</span>
-EOD;
-        echo $form;
+        <span class="nv">$form</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOD</span><span class="s">
+</span><span class="s">&lt;div class=&#34;wrap&#34;&gt;
+</span><span class="s">&lt;div id=&#34;icon-tools&#34; class=&#34;icon32&#34;&gt;&lt;/div&gt;
+</span><span class="s">&lt;h2&gt;$heading&lt;/h2&gt;
+</span><span class="s">&lt;/div&gt;
+</span><span class="s">&lt;div&gt;$desc&lt;/div&gt;
+</span><span class="s">&lt;form method=&#34;post&#34; action=&#34;options.php&#34; style=&#34;width: 80%;&#34;&gt;
+</span><span class="s"></span><span class="dl">EOD</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$form</span><span class="p">;</span>
 
-        settings_fields( &#39;sos_common_options&#39; );
-        do_settings_sections( &#39;sos_common_options&#39; );
-        submit_button();
-        echo &#34;<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>&#34;;
+        <span class="nx">settings_fields</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
+        <span class="nx">do_settings_sections</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
+        <span class="nx">submit_button</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="s2">&#34;&lt;/form&gt;&#34;</span><span class="p">;</span>
 
-    }
+    <span class="p">}</span>
 </code></pre></div><p>In rendering function, we do the following.</p>
 <ol>
 <li>

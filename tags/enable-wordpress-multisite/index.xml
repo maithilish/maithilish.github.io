@@ -6,11 +6,7 @@
     <description>Recent content in enable wordpress multisite on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 12:29:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/enable-wordpress-multisite/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 12:29:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/enable-wordpress-multisite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multisite - WordPress Plugin Development - CodeTab</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/</link>

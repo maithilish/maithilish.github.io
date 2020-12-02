@@ -639,23 +639,23 @@ SDK expects a Client ID to share the blogs.</p>
 script URL as shown in the next code snippet.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">
-    function add_sos_scripts () {
+    <span class="k">function</span> <span class="nf">add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
 
-        ....
+        <span class="o">....</span>
         
-        if ( has_shortcode( $post-&gt;post_content, $this-&gt;sos_shortcode ) ) {
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">has_shortcode</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">post_content</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_shortcode</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
 
-            ....
+            <span class="o">....</span>
 
-            if ( false == empty( $options<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Function_Reference/wp_localize_script&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> &#39;fbappid&#39; ] ) ) {
-                $fb_app_id = $options[ &#39;fbappid&#39; ];
-                $fb_sdk = &#34;http://connect.facebook.net/en_US/all.js#xfbml=1<span class="ni">&amp;appId=$fb_app_id&amp;version=v2.0&#34;;</span>
-                wp_enqueue_script( &#39;sos_script_fb&#39;, $fb_sdk, array(&#39;jquery&#39;), &#39;&#39;, false );
-            }
+            <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="k">empty</span><span class="p">(</span> <span class="nv">$options</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Function_Reference/wp_localize_script&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="s1">&#39;fbappid&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$fb_app_id</span> <span class="o">=</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;fbappid&#39;</span> <span class="p">];</span>
+                <span class="nv">$fb_sdk</span> <span class="o">=</span> <span class="s2">&#34;http://connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=</span><span class="si">$fb_app_id</span><span class="s2">&amp;version=v2.0&#34;</span><span class="p">;</span>
+                <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;sos_script_fb&#39;</span><span class="p">,</span> <span class="nv">$fb_sdk</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+            <span class="p">}</span>
         
-            ....
-        }
-    }
+            <span class="o">....</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>However, for Google Plus we have to pass the Client ID to the Google
 Plus API function and to do that, we have to pass the Client ID to the
 plugin script share.js. To pass data to client and attach it to the
@@ -663,29 +663,29 @@ enqueued JavaScript, WordPress provides function -
 [wp_localize_script()</a>.</p>
 <p><code>share-on-social/frontend/class-frontend.php</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">
-    function add_sos_scripts () {
+    <span class="k">function</span> <span class="nf">add_sos_scripts</span> <span class="p">()</span> <span class="p">{</span>
 
-        ....
+        <span class="o">....</span>
         
-        if ( has_shortcode( $post-&gt;post_content, $this-&gt;sos_shortcode ) ) {
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">has_shortcode</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">post_content</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos_shortcode</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
 
-            ....
+            <span class="o">....</span>
         
-            $gplus_client_id = &#34;&#34;;
-            if ( false == empty( $options[ &#39;gplusclientid&#39; ] ) ) {
-                $gplus_client_id = $options[ &#39;gplusclientid&#39; ];
-                $gplus_sdk = &#39;https://apis.google.com/js/plusone.js&#39;;
-                wp_enqueue_script( &#39;sos_script_gplus&#39;, $gplus_sdk, array(&#39;jquery&#39;), &#39;&#39;, false );
-            }
+            <span class="nv">$gplus_client_id</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="k">empty</span><span class="p">(</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;gplusclientid&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$gplus_client_id</span> <span class="o">=</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;gplusclientid&#39;</span> <span class="p">];</span>
+                <span class="nv">$gplus_sdk</span> <span class="o">=</span> <span class="s1">&#39;https://apis.google.com/js/plusone.js&#39;</span><span class="p">;</span>
+                <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;sos_script_gplus&#39;</span><span class="p">,</span> <span class="nv">$gplus_sdk</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+            <span class="p">}</span>
             
-            wp_localize_script( &#39;sos_script&#39;, &#39;sos_data&#39;, 
-                    array(
-                            &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
-                            &#39;nonce&#39; =&gt; wp_create_nonce( &#39;sos-save-stat&#39; ),
-                            &#39;gplus_client_id&#39; =&gt; $gplus_client_id
-                    ) );
-        }
-    }
+            <span class="nx">wp_localize_script</span><span class="p">(</span> <span class="s1">&#39;sos_script&#39;</span><span class="p">,</span> <span class="s1">&#39;sos_data&#39;</span><span class="p">,</span> 
+                    <span class="k">array</span><span class="p">(</span>
+                            <span class="s1">&#39;ajax_url&#39;</span> <span class="o">=&gt;</span> <span class="nx">admin_url</span><span class="p">(</span> <span class="s1">&#39;admin-ajax.php&#39;</span> <span class="p">),</span>
+                            <span class="s1">&#39;nonce&#39;</span> <span class="o">=&gt;</span> <span class="nx">wp_create_nonce</span><span class="p">(</span> <span class="s1">&#39;sos-save-stat&#39;</span> <span class="p">),</span>
+                            <span class="s1">&#39;gplus_client_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$gplus_client_id</span>
+                    <span class="p">)</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>Google Plus SDK doesn&rsquo;t accept Client ID in the script URL. So, we use
 wp_localize_script() and pass data with it. The first parameter is
 script handle name to which the data belongs to and we attach data to

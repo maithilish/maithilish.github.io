@@ -468,8 +468,8 @@ dynamic query.</p>
 <span class="nt">&lt;/dataDef&gt;</span>
 </code></pre></div><p>Here, row axis defines multiple members elements with <strong>name</strong> and
 <strong>match</strong> attributes.</p>
-<p>The previous example defined price as &lt;member name=&quot;Price&rdquo;
-value=&quot;Price&rdquo; /&gt; with value attribute, instead of match. The <strong>value</strong>
+<p>The previous example defined price as &lt;member name=&ldquo;Price&rdquo;
+value=&ldquo;Price&rdquo; /&gt; with value attribute, instead of match. The <strong>value</strong>
 attribute assigns the value directly to the member without any query.</p>
 <p>But the present example uses match attribute</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&#34;FV&#34;</span> <span class="na">match=</span><span class="s">&#34;FACE VALUE&#34;</span> <span class="nt">/&gt;</span>
@@ -490,7 +490,7 @@ the raw query and replaces its %{row.match} with the value of member&rsquo;s
 match attribute and then dispatches the query to JSoup and once JSoup
 returns the content of selected item, it assigns the value to member&rsquo;s
 value field.</p>
-<p>Let&rsquo;s see how match=&quot;BOOK VALUE&rdquo; is handled by each axis. For, HTML
+<p>Let&rsquo;s see how match=&ldquo;BOOK VALUE&rdquo; is handled by each axis. For, HTML
 snippet</p>
 <div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;div&gt;</span>
   <span class="nt">&lt;div&gt;</span>BOOK VALUE<span class="nt">&lt;/div&gt;</span>

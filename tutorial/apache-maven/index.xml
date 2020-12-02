@@ -6,11 +6,7 @@
     <description>Recent content in Apache Maven Tutorial - CodeTab on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 16:03:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tutorial/apache-maven/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 16:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/apache-maven/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction - Apache Maven Tutorial – CodeTab</title>
       <link>https://www.codetab.org/tutorial/apache-maven/introduction/</link>

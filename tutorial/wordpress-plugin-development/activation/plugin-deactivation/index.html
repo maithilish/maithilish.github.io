@@ -635,42 +635,42 @@ for deactivation too. In <code>Sos_Activator::setup()</code> method we register
 function
 <a href="http://codex.wordpress.org/Function_Reference/register_deactivation_hook" target="_blank">register_deactivation_hook()</a>.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Activator {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Activator</span> <span class="p">{</span>
 
-    public function setup () {
-        register_deactivation_hook( SOS_PLUGIN_FILE, 
-                array( $this,&#39;deactivate&#39; ) );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">register_deactivation_hook</span><span class="p">(</span> <span class="nx">SOS_PLUGIN_FILE</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;deactivate&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>In the deactivation method, we use WordPress function is_multisite()
 and parameter $networkwide to call
 <code>Sos_Activator::deactivate_for_blog()</code> method, which deletes the default
 basic locker, for site level deactivation either in multisite or in
 single site installation.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function deactivate ( $networkwide ) {
-        if ( function_exists( &#39;is_multisite&#39; ) <span class="err">&amp;&amp;</span> is_multisite() ) {
-            if ( ! $networkwide ) {
-                if ( false == current_user_can( &#39;activate_plugins&#39; ) ) {
-                    return;
-                }
-                $this-&gt;deactivate_for_blog();
-            }
-        } else {
-            if ( false == current_user_can( &#39;activate_plugins&#39; ) ) {
-                return;
-            }
-            $this-&gt;deactivate_for_blog();
-        }
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">deactivate</span> <span class="p">(</span> <span class="nv">$networkwide</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">function_exists</span><span class="p">(</span> <span class="s1">&#39;is_multisite&#39;</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">is_multisite</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$networkwide</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">current_user_can</span><span class="p">(</span> <span class="s1">&#39;activate_plugins&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">deactivate_for_blog</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">current_user_can</span><span class="p">(</span> <span class="s1">&#39;activate_plugins&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">deactivate_for_blog</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    public function deactivate_for_blog () {
-        $this-&gt;delete_basic_locker();
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">deactivate_for_blog</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">delete_basic_locker</span><span class="p">();</span>
+    <span class="p">}</span>
 </code></pre></div><p>For multsite network wide deactivation, we don&rsquo;t wish to delete the
 basic locker and hence, Sos_Activator::deactivate_for_blog() is not
 called.</p>
 <p><strong>Purge</strong></p>
-<p>During deactivation, customs lockers created by the admins, plugins&rsquo;
+<p>During deactivation, customs lockers created by the admins, plugins'
 settings and stats are not deleted. These plugin entities are purged
 from database only when plugin is uninstalled.</p>
 <p>Purge is deferred till the last stage so that plugin entities are

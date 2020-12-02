@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T11:09:00+0530",
         "dateModified" : "2019-01-11T11:09:00+0530",
-        "wordCount" : "623",
+        "wordCount" : "622",
         "keywords" : [ "wordpress chart page","Blog" ]
     }
 </script>
@@ -653,32 +653,32 @@ snippets.</p>
 <h3 id="add-sub-menu-page">Add Sub Menu Page</h3>
 <p>To add sub menu, <code>Sos_Stats::setup()</code> adds <code>Sos_Stats::register_stats_page()</code> to action hook <strong>admin_menu</strong>.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Stats {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Stats</span> <span class="p">{</span>
 
-    public function setup () {
-        add_action( &#39;admin_menu&#39;, array($this,&#39;register_stats_page&#39;) );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_menu&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;register_stats_page&#39;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>The action method, adds the sub menu <strong>Statistics</strong> to <strong>sos</strong> post type
 menu using the slug <strong>edit.php?post_type=sos</strong>.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function register_stats_page () {
-        $menu_label = __( &#39;Statistics&#39;, &#39;sos-domain&#39; );
-        $page_title = __( &#39;Share on Social Statistics&#39;, &#39;sos-domain&#39; );
-        $stats_page = &#39;sos_stats_page&#39;;
-        $page_hook_suffix = add_submenu_page( &#39;edit.php?post_type=sos&#39;, 
-                $page_title, $menu_label, &#39;administrator&#39;, $stats_page, 
-                array(<span class="err">&amp;</span>$this,&#39;render_stats_page&#39;) );
-        /*
-         * link scripts only on a specific administration screen. see example:
-         * Link Scripts Only on a Plugin Administration Screen in
-         * http://codex.wordpress.org/Function_Reference/wp_enqueue_script
-         */
-        add_action( &#39;admin_print_scripts-&#39; . $page_hook_suffix, 
-                array($this,&#39;enqueue_chart_scripts&#39;) );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">register_stats_page</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$menu_label</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Statistics&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="nv">$page_title</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Share on Social Statistics&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="nv">$stats_page</span> <span class="o">=</span> <span class="s1">&#39;sos_stats_page&#39;</span><span class="p">;</span>
+        <span class="nv">$page_hook_suffix</span> <span class="o">=</span> <span class="nx">add_submenu_page</span><span class="p">(</span> <span class="s1">&#39;edit.php?post_type=sos&#39;</span><span class="p">,</span> 
+                <span class="nv">$page_title</span><span class="p">,</span> <span class="nv">$menu_label</span><span class="p">,</span> <span class="s1">&#39;administrator&#39;</span><span class="p">,</span> <span class="nv">$stats_page</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;render_stats_page&#39;</span><span class="p">)</span> <span class="p">);</span>
+        <span class="cm">/*
+</span><span class="cm">         * link scripts only on a specific administration screen. see example:
+</span><span class="cm">         * Link Scripts Only on a Plugin Administration Screen in
+</span><span class="cm">         * http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+</span><span class="cm">         */</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_print_scripts-&#39;</span> <span class="o">.</span> <span class="nv">$page_hook_suffix</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;enqueue_chart_scripts&#39;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>Normally, plugins use <strong>wp_enqueue_scripts</strong> hook to enqueue scripts,
 but here we use a dynamic hook so that chart scripts are added only to
-plugins&rsquo; admin screens. The <code>add_submenu_page()</code> returns the slug of
+plugins' admin screens. The <code>add_submenu_page()</code> returns the slug of
 newly added sub menu and we use that to add the <code>Sos_Stats::enqueue_chart_scripts()</code> method to action hook
 <strong>admin_print_scripts-&lt;menu slug&gt;</strong>. Refer <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Link_Scripts_Only_on_a_Plugin_Administration_Screen" target="_blank">Link Scripts Only on a Plugin Administration Screen</a> to known more about this.</p>
 <figure class="text-center" >
@@ -689,13 +689,13 @@ newly added sub menu and we use that to add the <code>Sos_Stats::enqueue_chart_s
 <p>Actual enqueue happens in <code>Sos_Stats::enqueue_chart_scripts(</code>) method
 which is called only when we click Statistics sub menu.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function enqueue_chart_scripts () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">enqueue_chart_scripts</span> <span class="p">()</span> <span class="p">{</span>
 
-        wp_enqueue_script( &#39;sos_google_api&#39; );
-        wp_enqueue_script( &#39;sos_chart_script&#39; );
+        <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;sos_google_api&#39;</span> <span class="p">);</span>
+        <span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;sos_chart_script&#39;</span> <span class="p">);</span>
 
-        ....
-    }
+        <span class="o">....</span>
+    <span class="p">}</span>
 </code></pre></div><p>We use script handles to enqueue, so we need to register them before
 they actually enqueue.</p>
 
@@ -718,13 +718,13 @@ they actually enqueue.</p>
 <p>We do that in <code>Sos_Stats::setup()</code> where we add
 <code>Sos_Stats::init_chart_scripts()</code> to <strong>admin_init</strong> action hook.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Stats {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Stats</span> <span class="p">{</span>
 
-    public function setup () {
-        add_action( &#39;admin_init&#39;, array($this,&#39;init_chart_scripts&#39;) );
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;init_chart_scripts&#39;</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 
-....
+<span class="o">....</span>
 </code></pre></div><p>In the action method, we register the two scripts</p>
 <ul>
 <li>
@@ -738,25 +738,25 @@ and draw the chart with Google Chart API.</p>
 </li>
 </ul>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function init_chart_scripts () {       
-        $google_api = &#39;https://www.google.com/jsapi&#39;;
-        wp_register_script( &#39;sos_google_api&#39;, $google_api, 
-                array(&#39;jquery&#39;), null, false );
-        wp_register_script( &#39;sos_chart_script&#39;, SOS_URL . &#39;/js/chart.js&#39; );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">init_chart_scripts</span> <span class="p">()</span> <span class="p">{</span>       
+        <span class="nv">$google_api</span> <span class="o">=</span> <span class="s1">&#39;https://www.google.com/jsapi&#39;</span><span class="p">;</span>
+        <span class="nx">wp_register_script</span><span class="p">(</span> <span class="s1">&#39;sos_google_api&#39;</span><span class="p">,</span> <span class="nv">$google_api</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">),</span> <span class="k">null</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+        <span class="nx">wp_register_script</span><span class="p">(</span> <span class="s1">&#39;sos_chart_script&#39;</span><span class="p">,</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/js/chart.js&#39;</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><h3 id="render-chart-page">Render Chart Page</h3>
 <p>To render the page, <code>add_submenu_page()</code> used <code>Sos_Stats::render_stats_page()</code> method as the callback.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function render_stats_page () {
-        $heading = __( &#39;Share Stats&#39;, &#39;sos-domain&#39; );
-        echo <span class="err">&lt;&lt;</span><span class="p">&lt;</span><span class="nt">EOD</span>
-        <span class="err">&lt;</span><span class="na">h3</span><span class="p">&gt;</span>{$heading}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;summary_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stats_chart&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>        
-EOD;
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">render_stats_page</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$heading</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Share Stats&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">);</span>
+        <span class="k">echo</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOD</span><span class="s">
+</span><span class="s">        &lt;h3&gt;{$heading}&lt;/h3&gt;
+</span><span class="s">        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+</span><span class="s">        &lt;div id=&#34;summary_chart&#34;&gt;&lt;/div&gt;
+</span><span class="s">        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+</span><span class="s">        &lt;div id=&#34;stats_chart&#34;&gt;&lt;/div&gt;        
+</span><span class="s"></span><span class="dl">EOD</span><span class="p">;</span>
+    <span class="p">}</span>
 </code></pre></div><p>In the callback method, apart from the heading, we place two empty
 &lt;div&gt; elements as placeholders, where Google Charts API draws the
 charts. The &lt;div&gt; with id summary_chart is for the chart that shows
@@ -766,17 +766,17 @@ shows share details by date.</p>
 <p>We also use <code>Sos_Stats::enqueue_chart_scripts()</code> method to pass data to
 the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()</code>.</p>
 <p><code>share-on-social/admin/class-stats.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function enqueue_chart_scripts () {
-        ....
-        wp_localize_script( &#39;sos_chart_script&#39;, &#39;sos_chart&#39;, 
-            array(
-                    &#39;ajax_url&#39; =&gt; admin_url( &#39;admin-ajax.php&#39; ),
-                    &#39;stats_nonce&#39; =&gt; wp_create_nonce( &#39;sos-get-stats&#39; ),
-                    &#39;stats_summary_nonce&#39; =&gt; wp_create_nonce(&#39;sos-get-stats-summary&#39; ),
-                    &#39;summary_title&#39; =&gt; __( &#39;Summary&#39;, &#39;sos-domain&#39; ),
-                    &#39;stats_title&#39; =&gt; __( &#39;Shares&#39;, &#39;sos-domain&#39; )
-            ) );
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">enqueue_chart_scripts</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="o">....</span>
+        <span class="nx">wp_localize_script</span><span class="p">(</span> <span class="s1">&#39;sos_chart_script&#39;</span><span class="p">,</span> <span class="s1">&#39;sos_chart&#39;</span><span class="p">,</span> 
+            <span class="k">array</span><span class="p">(</span>
+                    <span class="s1">&#39;ajax_url&#39;</span> <span class="o">=&gt;</span> <span class="nx">admin_url</span><span class="p">(</span> <span class="s1">&#39;admin-ajax.php&#39;</span> <span class="p">),</span>
+                    <span class="s1">&#39;stats_nonce&#39;</span> <span class="o">=&gt;</span> <span class="nx">wp_create_nonce</span><span class="p">(</span> <span class="s1">&#39;sos-get-stats&#39;</span> <span class="p">),</span>
+                    <span class="s1">&#39;stats_summary_nonce&#39;</span> <span class="o">=&gt;</span> <span class="nx">wp_create_nonce</span><span class="p">(</span><span class="s1">&#39;sos-get-stats-summary&#39;</span> <span class="p">),</span>
+                    <span class="s1">&#39;summary_title&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Summary&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                    <span class="s1">&#39;stats_title&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Shares&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">)</span>
+            <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
 </code></pre></div><p>Apart from the standard WordPress Ajax URL, we also pass <strong>title</strong> and
 <strong>nonce</strong> for the two charts.</p>
 

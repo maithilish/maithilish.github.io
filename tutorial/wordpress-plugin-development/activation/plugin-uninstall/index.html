@@ -214,7 +214,7 @@
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/"
-            class="toc-page text-wrap text-danger ">
+            class="toc-page text-wrap text-muted ">
             Install Locally
         </a>
     </div>
@@ -437,7 +437,7 @@
         Activation
     </a>
     
-    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
+    <div id="tutorial-wordpress-plugin-development-activation" class="">
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/"
@@ -465,7 +465,7 @@
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/"
-            class="toc-page dropdown-item text-wrap text-muted">
+            class="toc-page dropdown-item text-wrap text-danger">
             Uninstall
         </a>
         
@@ -636,7 +636,7 @@ plugin code. WordPress do provide a uninstall hook
 but when when a plugin can not be written without running code within
 the plugin there is another mechanism to handle uninstall. When
 uninstall is in progress, WordPress looks for a file named named
-uninstall.php in plugins&rsquo; top directory and if exists, it executes it as
+uninstall.php in plugins' top directory and if exists, it executes it as
 part of uninstall phase. In Share on Social Plugin, we use unistall.php
 instead of uninstall hook.</p>
 <p>When plugin uninstall is initiated by the admin, WordPress sets a
@@ -644,11 +644,11 @@ constant <strong>WP_UNINSTALL_PLUGIN</strong> and share-on-social/uninstall.php
 checks whether this constant is defined and if so, then proceeds to call
 uninstall function <code>sos_uninstall_sos_plugin()</code>.</p>
 <p><code>share-on-social/uninstall.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">if ( ! defined( &#39;WP_UNINSTALL_PLUGIN&#39; ) ) {
-    exit();
-}
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">defined</span><span class="p">(</span> <span class="s1">&#39;WP_UNINSTALL_PLUGIN&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">exit</span><span class="p">();</span>
+<span class="p">}</span>
 
-sos_uninstall_sos_plugin();
+<span class="nx">sos_uninstall_sos_plugin</span><span class="p">();</span>
 </code></pre></div><p>The uninstall function calls functions to delete custom posts of type
 sos and to delete plugin options. If site is multisite and user is super
 admin then it call these functions for all sites in the network
@@ -674,26 +674,26 @@ level.</p>
 
 
 <p><code>share-on-social/uninstall.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function sos_uninstall_sos_plugin () {
-    if ( function_exists( &#39;is_multisite&#39; ) <span class="err">&amp;&amp;</span> is_multisite() ) {
-        if ( false == is_super_admin() ) {
-            return;
-        }
-        $blogs = wp_get_sites();
-        foreach ( $blogs as $blog ) {
-            switch_to_blog( $blog<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://codex.wordpress.org/Class_Reference/WP_Query&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span> &#39;blog_id&#39; ] );
-            sos_delete_sos_posts();
-            sos_delete_sos_options();
-            restore_current_blog();
-        }
-    } else {
-        if ( ! current_user_can( &#39;activate_plugins&#39; ) ) {
-            return;
-        }
-        sos_delete_sos_posts();
-        sos_delete_sos_options();
-    }
-}
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">sos_uninstall_sos_plugin</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">function_exists</span><span class="p">(</span> <span class="s1">&#39;is_multisite&#39;</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">is_multisite</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">is_super_admin</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nv">$blogs</span> <span class="o">=</span> <span class="nx">wp_get_sites</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$blogs</span> <span class="k">as</span> <span class="nv">$blog</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blog</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://codex.wordpress.org/Class_Reference/WP_Query&#34;</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="o">&gt;</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+            <span class="nx">sos_delete_sos_posts</span><span class="p">();</span>
+            <span class="nx">sos_delete_sos_options</span><span class="p">();</span>
+            <span class="nx">restore_current_blog</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">current_user_can</span><span class="p">(</span> <span class="s1">&#39;activate_plugins&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">sos_delete_sos_posts</span><span class="p">();</span>
+        <span class="nx">sos_delete_sos_options</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div><p>Once Share on Social plugin is deactivated, its custom post type sos no
 longer registered but posts of that type may still exist in
 <strong>wp_posts</strong> table. In <code>sos_delete_sos_posts()</code>, we use WordPress
@@ -702,28 +702,28 @@ function
 fetch all posts of type sos and delete them, one by one, using
 <a href="http://codex.wordpress.org/Function_Reference/wp_delete_post" target="_blank">wp_delete_post()</a>.</p>
 <p><code>share-on-social/uninstall.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">function sos_delete_sos_posts () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">sos_delete_sos_posts</span> <span class="p">()</span> <span class="p">{</span>
 
-    // in multisite uninstall, wp_delete_post access post_type_object and to
-    // avoid access on non object we register sos post type
+    <span class="c1">// in multisite uninstall, wp_delete_post access post_type_object and to
+</span><span class="c1"></span>    <span class="c1">// avoid access on non object we register sos post type
+</span><span class="c1"></span>
+    <span class="nx">register_post_type</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span> <span class="p">);</span>
 
-    register_post_type( &#39;sos&#39; );
-
-    // fetch posts of type sos
-    $args = array(
-            &#39;post_type&#39; =&gt; &#39;sos&#39;
-    );
+    <span class="c1">// fetch posts of type sos
+</span><span class="c1"></span>    <span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;post_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sos&#39;</span>
+    <span class="p">);</span>
     
-    $query = new WP_Query( $args );
-    while ($query-&gt;have_posts()) {
-        $query-&gt;the_post();
-        if ( &#39;sos&#39; == get_post_type() ) {
-            $post_id = get_the_ID();
-            wp_delete_post( $post_id, true );
-        }
-    }
-    wp_reset_postdata();
-}
+    <span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WP_Query</span><span class="p">(</span> <span class="nv">$args</span> <span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">have_posts</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">the_post</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="s1">&#39;sos&#39;</span> <span class="o">==</span> <span class="nx">get_post_type</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">get_the_ID</span><span class="p">();</span>
+            <span class="nx">wp_delete_post</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">wp_reset_postdata</span><span class="p">();</span>
+<span class="p">}</span>
 </code></pre></div><p>In multisite installation, wp_delete_post() internally uses
 <strong>post_type</strong> object and it will thrown an exception when it is unable
 to find sos custom type. To overcome this, we temporarily re-register

@@ -49,7 +49,7 @@
         "copyrightYear" : "2020",
         "datePublished": "2020-09-15T11:15:00Z",
         "dateModified" : "2020-09-15T11:15:00Z",
-        "wordCount" : "2898",
+        "wordCount" : "2903",
         "keywords" : [ "kubernetes K8s cluster Fedora CoreOS VirtualBox","Blog" ]
     }
 </script>
@@ -269,43 +269,43 @@
 <h3 id="create-ignition-file">Create Ignition File</h3>
 <p>On first boot, Fcos uses a json file known as Ignition file to configure and provision the new system. With text editor, create yaml file <code>base-config.yaml</code> with following contents,</p>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="w">
-</span><span class="w"></span><span class="k">variant</span><span class="p">:</span><span class="w"> </span>fcos<span class="w">
-</span><span class="w"></span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="m">1.1.0</span><span class="w">
-</span><span class="w"></span><span class="k">passwd</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">users</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>k<span class="w">
-</span><span class="w">      </span><span class="k">groups</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- docker<span class="w">
-</span><span class="w">        </span>- wheel<span class="w">
-</span><span class="w">        </span>- sudo<span class="w">
-</span><span class="w">      </span><span class="k">password_hash</span><span class="p">:</span><span class="w"> </span>&lt;replace-this<span class="sd">&gt;
-</span><span class="sd">      ssh_authorized_keys:</span><span class="w">
-</span><span class="w">        </span>- &lt;replace-this&gt;<span class="w">
-</span><span class="w"></span><span class="k">storage</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">files</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/etc/sysctl.d/<span class="m">20</span>-silence-audit.conf<span class="w">
-</span><span class="w">      </span><span class="k">contents</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">inline</span><span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">          kernel.printk=4</span><span class="w">
-</span><span class="w">    </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/etc/hostname<span class="w">
-</span><span class="w">      </span><span class="k">mode</span><span class="p">:</span><span class="w"> </span><span class="m">420</span><span class="w">
-</span><span class="w">      </span><span class="k">contents</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;data:,fcos&#34;</span><span class="w">
-</span><span class="w">    </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/etc/NetworkManager/system-connections/enp1s0.nmconnection<span class="w">
-</span><span class="w">      </span><span class="k">mode</span><span class="p">:</span><span class="w"> </span><span class="m">0600</span><span class="w">
-</span><span class="w">      </span><span class="k">overwrite</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">      </span><span class="k">contents</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">inline</span><span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">          [connection]</span><span class="w">
-</span><span class="w">          </span>type=ethernet<span class="w">
-</span><span class="w">          </span>id=<span class="s2">&#34;Wired connection 1&#34;</span><span class="w">
-</span><span class="w">          </span>interface-name=enp0s3<span class="w">
-</span><span class="w">
-</span><span class="w">          </span><span class="p">[</span>ipv4<span class="p">]</span><span class="w">
-</span><span class="w">          </span>method=manual<span class="w">
-</span><span class="w">          </span>addresses=<span class="m">192.168.99.100</span>/<span class="m">24</span><span class="w">
-</span><span class="w">          </span>gateway=<span class="m">192.168.99.1</span><span class="w">
-</span><span class="w">          </span>dns=<span class="m">192.168.99.1</span>;<span class="m">8.8.8.8</span><span class="w">
+</span><span class="w"></span><span class="nt">variant</span><span class="p">:</span><span class="w"> </span><span class="l">fcos</span><span class="w">
+</span><span class="w"></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">1.1.0</span><span class="w">
+</span><span class="w"></span><span class="nt">passwd</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">users</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">k</span><span class="w">
+</span><span class="w">      </span><span class="nt">groups</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="l">docker</span><span class="w">
+</span><span class="w">        </span>- <span class="l">wheel</span><span class="w">
+</span><span class="w">        </span>- <span class="l">sudo</span><span class="w">
+</span><span class="w">      </span><span class="nt">password_hash</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;replace-this&gt;</span><span class="w">
+</span><span class="w">      </span><span class="nt">ssh_authorized_keys</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="l">&lt;replace-this&gt;</span><span class="w">
+</span><span class="w"></span><span class="nt">storage</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">files</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/sysctl.d/20-silence-audit.conf</span><span class="w">
+</span><span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">inline</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span><span class="sd">          </span><span class="w">          </span><span class="l">kernel.printk=4</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/hostname</span><span class="w">
+</span><span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="m">420</span><span class="w">
+</span><span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;data:,fcos&#34;</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/NetworkManager/system-connections/enp1s0.nmconnection</span><span class="w">
+</span><span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="m">0600</span><span class="w">
+</span><span class="w">      </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">inline</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span><span class="sd">          [connection]
+</span><span class="sd">          type=ethernet
+</span><span class="sd">          id=&#34;Wired connection 1&#34;
+</span><span class="sd">          interface-name=enp0s3
+</span><span class="sd">
+</span><span class="sd">          [ipv4]
+</span><span class="sd">          method=manual
+</span><span class="sd">          addresses=192.168.99.100/24
+</span><span class="sd">          gateway=192.168.99.1
+</span><span class="sd">          dns=192.168.99.1;8.8.8.8</span><span class="w">          
 </span><span class="w">
 </span></code></pre></div><p>On first boot, the ignition file provisions</p>
 <ul>
@@ -362,7 +362,7 @@ fcct --pretty --strict &lt; base-config.yaml &gt; base-config.ign
 <h3 id="get-ignition-file-to-guest">Get Ignition File to Guest</h3>
 <p>Earlier, we had created Ignition file <code>base-config.ign</code> on host. To install OS, we have to get it from host to guest. Easiest option is to use python http server,</p>
 <div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
-<span class="c1"># on host, run from the ignition file&#39;s directory</span> 
+<span class="c1"># on host, run from the ignition file&#39;s directory </span>
 python3 -m http.server
 
 <span class="c1"># on guest</span>
@@ -513,7 +513,7 @@ sudo rm /etc/machine-id
 sudo systemd-machine-id-setup
 sudo systemd-machine-id-setup --commit
 
-<span class="c1"># change static ip</span> 
+<span class="c1"># change static ip </span>
 sudo nmcli connection   <span class="c1"># find the &lt;connection name&gt;</span>
 
 sudo nmcli connection mod &lt;connection-name&gt; <span class="se">\
@@ -634,10 +634,10 @@ cat <span class="s">&lt;&lt;EOF &gt; kubeadm-join.yaml
 </span><span class="s">    - sha256:${JOIN_CERT_HASH}
 </span><span class="s">EOF</span>
 
-<span class="c1"># verify whether variables are substituted properly</span> 
+<span class="c1"># verify whether variables are substituted properly </span>
 cat kubeadm-join.yaml
 
-<span class="c1"># if variables are not replaced in config file then use envsubst</span> 
+<span class="c1"># if variables are not replaced in config file then use envsubst </span>
 
 </code></pre></div><p>To join the worker1 to cluster, execute <code>sudo kubeadm join --config kubeadm-join.yaml</code> in worker1 node.</p>
 <p>On master run <code>watch kubectl get pods --all-namespaces </code>. It may take about 2 to 3 minutes as it pulls calico and K8s images. Once all pods are up and running, fire <code>kubectl get nodes</code> and both master and worker1 are part of K8s cluster and in <code>Ready</code> state.</p>

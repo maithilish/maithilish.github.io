@@ -664,52 +664,52 @@ related to custom post.</p>
 In the <code>setup()</code> method, we add <code>create_post_type()</code> method as action
 method to action hook <strong>init</strong>.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos</span> <span class="p">{</span>
 
-    var $post_type = &#39;sos&#39;;
+    <span class="k">var</span> <span class="nv">$post_type</span> <span class="o">=</span> <span class="s1">&#39;sos&#39;</span><span class="p">;</span>
 
-    public function setup () {
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
 
-        add_action( &#39;init&#39;,array($this,&#39;create_post_type&#39; ) );
-    ....
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;init&#39;</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;create_post_type&#39;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="o">....</span>
 </code></pre></div><p>In action method, we use WordPress API function
 [register_post_type()</a>
 to register new custom type.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">public function create_post_type () {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">create_post_type</span> <span class="p">()</span> <span class="p">{</span>
 
-    register_post_type( $this-&gt;post_type, 
-        array(
-            &#39;labels&#39; =&gt; array(
-                &#39;name&#39; =&gt; _x( &#39;Sos Lockers&#39;, &#39;post type general name&#39;, &#39;sos-domain&#39; ),
-                &#39;singular_name&#39; =&gt; _x( &#39;Sos Locker&#39;, &#39;post type singular name&#39;, 
-                                       &#39;sos-domain&#39; ),
-                &#39;menu_name&#39; =&gt; _x( &#39;Share on Social&#39;, &#39;admin menu&#39;, &#39;sos-domain&#39; ),
-                &#39;add_new&#39; =&gt; _x( &#39;Add New&#39;, &#39;sos&#39;, &#39;sos-domain&#39; ),
-                &#39;add_new_item&#39; =&gt; __( &#39;Add New Locker&#39;, &#39;sos-domain&#39; ),
-                &#39;edit&#39; =&gt; __( &#39;Edit&#39;, &#39;sos-domain&#39; ),
-                &#39;edit_item&#39; =&gt; __( &#39;Edit Locker&#39;, &#39;sos-domain&#39; ),
-                &#39;new_item&#39; =&gt; __( &#39;New Locker&#39;, &#39;sos-domain&#39; ),
-                &#39;all_items&#39; =&gt; __( &#39;Lockers&#39;, &#39;sos-domain&#39; ),
-                &#39;view&#39; =&gt; &#39;&#39;,
-                &#39;view_item&#39; =&gt; &#39;&#39;
-            ),  
+    <span class="nx">register_post_type</span><span class="p">(</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_type</span><span class="p">,</span> 
+        <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;labels&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nx">_x</span><span class="p">(</span> <span class="s1">&#39;Sos Lockers&#39;</span><span class="p">,</span> <span class="s1">&#39;post type general name&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;singular_name&#39;</span> <span class="o">=&gt;</span> <span class="nx">_x</span><span class="p">(</span> <span class="s1">&#39;Sos Locker&#39;</span><span class="p">,</span> <span class="s1">&#39;post type singular name&#39;</span><span class="p">,</span> 
+                                       <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;menu_name&#39;</span> <span class="o">=&gt;</span> <span class="nx">_x</span><span class="p">(</span> <span class="s1">&#39;Share on Social&#39;</span><span class="p">,</span> <span class="s1">&#39;admin menu&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;add_new&#39;</span> <span class="o">=&gt;</span> <span class="nx">_x</span><span class="p">(</span> <span class="s1">&#39;Add New&#39;</span><span class="p">,</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;add_new_item&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Add New Locker&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;edit&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Edit&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;edit_item&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Edit Locker&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;new_item&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;New Locker&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;all_items&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Lockers&#39;</span><span class="p">,</span> <span class="s1">&#39;sos-domain&#39;</span> <span class="p">),</span>
+                <span class="s1">&#39;view&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;view_item&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span>
+            <span class="p">),</span>  
                         
-            &#39;public&#39; =&gt; false,
-            &#39;show_ui&#39; =&gt; true,
-            &#39;menu_position&#39; =&gt; 15, 
-            &#39;supports&#39; =&gt; array(&#39;title&#39;),
-            &#39;taxonomies&#39; =&gt; array(&#39;&#39;),
-            &#39;menu_icon&#39; =&gt; SOS_URL . &#39;/images/sos-icon.png&#39;,
-            &#39;has_archive&#39; =&gt; true,
-            &#39;register_meta_box_cb&#39; =&gt; array($this,&#39;setup_meta_boxes&#39;)
-        ) );
+            <span class="s1">&#39;public&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+            <span class="s1">&#39;show_ui&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;menu_position&#39;</span> <span class="o">=&gt;</span> <span class="mi">15</span><span class="p">,</span> 
+            <span class="s1">&#39;supports&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;taxonomies&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;menu_icon&#39;</span> <span class="o">=&gt;</span> <span class="nx">SOS_URL</span> <span class="o">.</span> <span class="s1">&#39;/images/sos-icon.png&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;has_archive&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;register_meta_box_cb&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;setup_meta_boxes&#39;</span><span class="p">)</span>
+        <span class="p">)</span> <span class="p">);</span>
 
-    if ( null == Sos_Helper::get_locker_post_id( &#39;basic&#39; ) ) { 
-        $this-&gt;create_basic_locker();
-    }   
+    <span class="k">if</span> <span class="p">(</span> <span class="k">null</span> <span class="o">==</span> <span class="nx">Sos_Helper</span><span class="o">::</span><span class="na">get_locker_post_id</span><span class="p">(</span> <span class="s1">&#39;basic&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span> 
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">create_basic_locker</span><span class="p">();</span>
+    <span class="p">}</span>   
 
-}
+<span class="p">}</span>
 </code></pre></div><p>The first parameter is custom post type name which is set to <strong>sos</strong>.
 The second parameter is an array of arguments. The function defines a
 large number of arguments and we use only some of them. Refer the
@@ -790,27 +790,27 @@ default locker, we check whether locker with same id exists and create
 only if it not found in database. This check is essential otherwise each
 request adds a new locker.</p>
 <p><code>share-on-social/admin/class-sos.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function create_basic_locker () {
-        if ( false == current_user_can( &#39;activate_plugins&#39; ) ) {
-            return;
-        }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">create_basic_locker</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">current_user_can</span><span class="p">(</span> <span class="s1">&#39;activate_plugins&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        $post = array(
-                &#39;post_name&#39; =&gt; &#39;basic&#39;,
-                &#39;post_title&#39; =&gt; &#39;Basic Locker&#39;,
-                &#39;post_status&#39; =&gt; &#39;publish&#39;,
-                &#39;post_type&#39; =&gt; &#39;sos&#39; );
-        $post_id = wp_insert_post( $post );
+        <span class="nv">$post</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;post_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Basic Locker&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;publish&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;post_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sos&#39;</span> <span class="p">);</span>
+        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">wp_insert_post</span><span class="p">(</span> <span class="nv">$post</span> <span class="p">);</span>
 
-        if ( $post_id != 0 ) {
-            add_post_meta( $post_id, &#39;locker_id&#39;, &#39;basic&#39; );
-            add_post_meta( $post_id, &#39;shareon_fb&#39;, &#39;1&#39; );
-            add_post_meta( $post_id, &#39;shareon_gplus&#39;, &#39;1&#39; );
-            add_post_meta( $post_id, &#39;shareon_twitter&#39;, &#39;1&#39; );
-            add_post_meta( $post_id, &#39;share_target&#39;, &#39;page&#39; );
-            add_post_meta( $post_id, &#39;locker_text&#39;, $this-&gt;basic_text() );
-        }
-    }
+        <span class="k">if</span> <span class="p">(</span> <span class="nv">$post_id</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">add_post_meta</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
+            <span class="nx">add_post_meta</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="s1">&#39;shareon_fb&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span> <span class="p">);</span>
+            <span class="nx">add_post_meta</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="s1">&#39;shareon_gplus&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span> <span class="p">);</span>
+            <span class="nx">add_post_meta</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="s1">&#39;shareon_twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span> <span class="p">);</span>
+            <span class="nx">add_post_meta</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="s1">&#39;share_target&#39;</span><span class="p">,</span> <span class="s1">&#39;page&#39;</span> <span class="p">);</span>
+            <span class="nx">add_post_meta</span><span class="p">(</span> <span class="nv">$post_id</span><span class="p">,</span> <span class="s1">&#39;locker_text&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">basic_text</span><span class="p">()</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>While inserting the post, check whether user has the required capability</p>
 <ul>
 <li>

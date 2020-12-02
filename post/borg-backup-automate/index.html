@@ -358,19 +358,19 @@ $ sudo systemctl list-timers
 <p>Finally, add backup entries for monthly backup. Label the backup sets with the label specified in env file.</p>
 <p><code>pybs/backup.yml</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="w">    
-</span><span class="w"></span><span class="k">backups</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">backups</span><span class="p">:</span><span class="w">
 </span><span class="w">    
-</span><span class="w">  </span><span class="k">music</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">label</span><span class="p">:</span><span class="w"> </span>foo<span class="w">
-</span><span class="w">    </span><span class="k">dirs</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- /home/x/Music<span class="w">
-</span><span class="w">    </span><span class="k">excludes</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- /home/x/Music/<span class="cp">*.wmv</span><span class="w">
+</span><span class="w">  </span><span class="nt">music</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">    </span><span class="nt">dirs</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">/home/x/Music</span><span class="w">
+</span><span class="w">    </span><span class="nt">excludes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">/home/x/Music/*.wmv</span><span class="w">
 </span><span class="w">    
-</span><span class="w">  </span><span class="k">picts</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">label</span><span class="p">:</span><span class="w"> </span>weekly<span class="w">
-</span><span class="w">    </span><span class="k">dirs</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- /home/x/Pictures<span class="w">
+</span><span class="w">  </span><span class="nt">picts</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l">weekly</span><span class="w">
+</span><span class="w">    </span><span class="nt">dirs</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">/home/x/Pictures</span><span class="w">
 </span><span class="w">    
 </span></code></pre></div><p>The new backup service backups only the Music dir excluding all wmv files.</p>
 <p>Thats all there is to configure. To run new backup service, copy and enable service and timer units as explained in <a href="#runpybs">Run Pybs</a></p>

@@ -628,12 +628,12 @@
             <h2 id="122wordpress-test-setup">12.2. WordPress Test Setup</h2>
 <p>In the previous blog, <a href="/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/">WordPress PHPUnit Setup</a> we put up all the scaffolding necessary to run WordPress Plugin Tests. In this blog, we test the setup by running some test cases.</p>
 <h3 id="run-test-cases">Run Test Cases</h3>
-<p>The test cases are placed in plugins&rsquo; <code>tests/phpunit/tests</code> folder.
+<p>The test cases are placed in plugins' <code>tests/phpunit/tests</code> folder.
 Let&rsquo;s start with a test case to test the constants defined in the
 <code>wp-simple-plugin.php</code>. Add a test file <code>test-wp-simple-plugin.php</code> to
 <code>tests/phpunit/tests</code> with following contents.</p>
 <p><code>wp-simple-plugin/tests/phpunit/tests/test-wp-simple-plugin.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Test_WP_Simple_Plugin</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
 
@@ -780,12 +780,12 @@ phpunit.phar installed as explained in the previous blog.</p>
 <p>In the previous blog, we used following code in
 <code>tests/phpunit/bootstrap.php</code> to activate and load the plugin.</p>
 <p><code>wp-simple-plugin/tests/phpunit/bootstrap.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">$GLOBALS[ &#39;wp_tests_options&#39; ] = array(
-        &#39;active_plugins&#39; =&gt; array(
-                &#39;wp-simple-plugin/wp-simple-plugin.php&#39;
-        ),
-        &#39;wpsp_test&#39; =&gt; true
-);
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="nv">$GLOBALS</span><span class="p">[</span> <span class="s1">&#39;wp_tests_options&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;active_plugins&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;wp-simple-plugin/wp-simple-plugin.php&#39;</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;wpsp_test&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+<span class="p">);</span>
 </code></pre></div><p>The array at index <strong>active_plugins</strong> is used by Tests Library to
 activate and load the plugin as part of WordPress initialization. The
 subsequent items in the array are used to create WordPress Options that
@@ -796,9 +796,9 @@ Options API.</p>
 <p>To test the option declared in bootstrap.php, add a new test case to the
 test file and re-run the phpunit.</p>
 <p><code>wp-simple-plugin//tests/phpunit/tests/test-wp-simple-plugin.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    public function test_wpsp_option () {
-        $this-&gt;assertTrue(get_option(&#39;wpsp_test&#39;));
-    }
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_wpsp_option</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span><span class="nx">get_option</span><span class="p">(</span><span class="s1">&#39;wpsp_test&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
 </code></pre></div><p>In the next blog, we explain the various patterns used to unit test the
 Share on Social Plugin.</p>
 

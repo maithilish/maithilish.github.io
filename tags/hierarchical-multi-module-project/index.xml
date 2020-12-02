@@ -6,11 +6,7 @@
     <description>Recent content in Hierarchical Multi Module Project on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 21:49:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/hierarchical-multi-module-project/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 21:49:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/hierarchical-multi-module-project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maven Hierarchical Multi Module Project - CodeTab</title>
       <link>https://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/</link>

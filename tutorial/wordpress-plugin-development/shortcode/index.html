@@ -228,14 +228,14 @@
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/"
-            class="toc-page text-wrap text-muted ">
+            class="toc-page text-wrap text-danger ">
             Shortcode
         </a>
     </div>
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/"
-            class="toc-page text-wrap text-danger ">
+            class="toc-page text-wrap text-muted ">
             Plugin Structure
         </a>
     </div>
@@ -650,11 +650,11 @@ handler. In the handler, we append a message to the content and return
 it. WordPress replaces the shortcode and its contents with string
 returned by handler and displays the post.</p>
 <p>We can also add attributes to a shortcode as follows.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">[[our-shortcode message=&#39;Hello&#39; append=&#39;yes&#39;]
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="p">[[</span><span class="nx">our</span><span class="o">-</span><span class="nx">shortcode</span> <span class="nx">message</span><span class="o">=</span><span class="s1">&#39;Hello&#39;</span> <span class="nx">append</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">]</span>
 
-   some content 
+   <span class="nx">some</span> <span class="nx">content</span> 
 
-[/our-shortcode]]
+<span class="p">[</span><span class="o">/</span><span class="nx">our</span><span class="o">-</span><span class="nx">shortcode</span><span class="p">]]</span>
 </code></pre></div><p>WordPress passes attributes in an array to the handler function using
 $atts parameter.</p>
 <p><strong>WordPress Function Reference.</strong></p>

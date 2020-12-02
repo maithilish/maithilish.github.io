@@ -807,27 +807,27 @@ define(&#39;BLOG_ID_CURRENT_SITE&#39;, 1);
 </code></pre></div><p>Copy the second part of the configuration and paste it the
 <code>htdocs/.htaccess</code>. The file, after changes, should look as follows.</p>
 <p><code>/opt/lampp/htdocs/.htaccess</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"># BEGIN WordPress
-<span class="p">&lt;</span><span class="nt">IfModule</span> <span class="na">mod_rewrite</span><span class="err">.</span><span class="na">c</span><span class="p">&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># BEGIN WordPress
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">IfModule</span> <span class="nx">mod_rewrite</span><span class="o">.</span><span class="nx">c</span><span class="o">&gt;</span>
 
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index.php$ - [L]
+<span class="nx">RewriteEngine</span> <span class="nx">On</span>
+<span class="nx">RewriteBase</span> <span class="o">/</span>
+<span class="nx">RewriteRule</span> <span class="o">^</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="err">$</span> <span class="o">-</span> <span class="p">[</span><span class="nx">L</span><span class="p">]</span>
 
-# add a trailing slash to /wp-admin
-RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+<span class="c1"># add a trailing slash to /wp-admin
+</span><span class="c1"></span><span class="nx">RewriteRule</span> <span class="o">^</span><span class="p">([</span><span class="nx">_0</span><span class="o">-</span><span class="mi">9</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z</span><span class="o">-</span><span class="p">]</span><span class="o">+/</span><span class="p">)</span><span class="o">?</span><span class="nx">wp</span><span class="o">-</span><span class="nx">admin</span><span class="err">$</span> <span class="err">$</span><span class="mi">1</span><span class="nx">wp</span><span class="o">-</span><span class="nx">admin</span><span class="o">/</span> <span class="p">[</span><span class="nx">R</span><span class="o">=</span><span class="mi">301</span><span class="p">,</span><span class="nx">L</span><span class="p">]</span>
 
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) wordpress-ms/$2 [L]
-RewriteRule ^([_0-9a-zA-Z-]+/)?(.*.php)$ wordpress-ms/$2 [L]
-RewriteRule . index.php [L]
+<span class="nx">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="nx">REQUEST_FILENAME</span><span class="p">}</span> <span class="o">-</span><span class="nx">f</span> <span class="p">[</span><span class="k">OR</span><span class="p">]</span>
+<span class="nx">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="nx">REQUEST_FILENAME</span><span class="p">}</span> <span class="o">-</span><span class="nx">d</span>
+<span class="nx">RewriteRule</span> <span class="o">^</span> <span class="o">-</span> <span class="p">[</span><span class="nx">L</span><span class="p">]</span>
+<span class="nx">RewriteRule</span> <span class="o">^</span><span class="p">([</span><span class="nx">_0</span><span class="o">-</span><span class="mi">9</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z</span><span class="o">-</span><span class="p">]</span><span class="o">+/</span><span class="p">)</span><span class="o">?</span><span class="p">(</span><span class="nx">wp</span><span class="o">-</span><span class="p">(</span><span class="nx">content</span><span class="o">|</span><span class="nx">admin</span><span class="o">|</span><span class="nx">includes</span><span class="p">)</span><span class="o">.*</span><span class="p">)</span> <span class="nx">wordpress</span><span class="o">-</span><span class="nx">ms</span><span class="o">/</span><span class="err">$</span><span class="mi">2</span> <span class="p">[</span><span class="nx">L</span><span class="p">]</span>
+<span class="nx">RewriteRule</span> <span class="o">^</span><span class="p">([</span><span class="nx">_0</span><span class="o">-</span><span class="mi">9</span><span class="nx">a</span><span class="o">-</span><span class="nx">zA</span><span class="o">-</span><span class="nx">Z</span><span class="o">-</span><span class="p">]</span><span class="o">+/</span><span class="p">)</span><span class="o">?</span><span class="p">(</span><span class="o">.*.</span><span class="nx">php</span><span class="p">)</span><span class="err">$</span> <span class="nx">wordpress</span><span class="o">-</span><span class="nx">ms</span><span class="o">/</span><span class="err">$</span><span class="mi">2</span> <span class="p">[</span><span class="nx">L</span><span class="p">]</span>
+<span class="nx">RewriteRule</span> <span class="o">.</span> <span class="nx">index</span><span class="o">.</span><span class="nx">php</span> <span class="p">[</span><span class="nx">L</span><span class="p">]</span>
 
-<span class="p">&lt;/</span><span class="nt">IfModule</span><span class="p">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">IfModule</span><span class="o">&gt;</span>
 
-# END WordPress
-</code></pre></div><p>Once changes are completed, logout from WordPress and login again. Now,
+<span class="c1"># END WordPress
+</span></code></pre></div><p>Once changes are completed, logout from WordPress and login again. Now,
 admin screen will have a new menu item <strong>My Sites</strong> in the top bar.</p>
 <h3 id="multisite-admin-menu">Multisite Admin Menu</h3>
 <figure class="text-center" >

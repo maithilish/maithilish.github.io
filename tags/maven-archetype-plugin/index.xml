@@ -6,11 +6,7 @@
     <description>Recent content in maven archetype plugin on Codetab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 14:42:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.codetab.org/tags/maven-archetype-plugin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Jan 2019 14:42:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/maven-archetype-plugin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archetype Plugin - Apache Maven Tutorial – CodeTab</title>
       <link>https://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/</link>

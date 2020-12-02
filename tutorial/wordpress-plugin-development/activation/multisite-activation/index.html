@@ -673,36 +673,36 @@ not displayed.</p>
 <p>The plugin activation method uses WordPress function is_multisite() and
 parameter $networkwide to handle the multisite activation.</p>
 <p><code>share-on-social/admin/class-activator.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Activator {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Activator</span> <span class="p">{</span>
 
-    public function setup () {
-        register_activation_hook( SOS_PLUGIN_FILE, 
-                array( $this,&#39;activate&#39; ));
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">register_activation_hook</span><span class="p">(</span> <span class="nx">SOS_PLUGIN_FILE</span><span class="p">,</span> 
+                <span class="k">array</span><span class="p">(</span> <span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;activate&#39;</span> <span class="p">));</span>
+    <span class="p">}</span>
 
-    public function activate ( $networkwide ) {
-        if ( function_exists( &#39;is_multisite&#39; ) <span class="err">&amp;&amp;</span> is_multisite() ) {
-            if ( $networkwide ) {
-                if ( false == is_super_admin() ) {
-                    return;
-                }
-                $blogs = wp_get_sites();
-                foreach ( $blogs as $blog ) {
-                    switch_to_blog( $blog[ &#39;blog_id&#39; ] );
-                    $this-&gt;activate_for_blog();
-                    restore_current_blog();
-                }
-            } else {
-                if ( false == current_user_can( &#39;activate_plugins&#39; ) ) {
-                    return;
-                }
-                $this-&gt;activate_for_blog();
-            }
-        } else {
-            // single site stuff
-            ....            
-        }
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">activate</span> <span class="p">(</span> <span class="nv">$networkwide</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">function_exists</span><span class="p">(</span> <span class="s1">&#39;is_multisite&#39;</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">is_multisite</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="nv">$networkwide</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">is_super_admin</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nv">$blogs</span> <span class="o">=</span> <span class="nx">wp_get_sites</span><span class="p">();</span>
+                <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$blogs</span> <span class="k">as</span> <span class="nv">$blog</span> <span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blog</span><span class="p">[</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activate_for_blog</span><span class="p">();</span>
+                    <span class="nx">restore_current_blog</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="k">false</span> <span class="o">==</span> <span class="nx">current_user_can</span><span class="p">(</span> <span class="s1">&#39;activate_plugins&#39;</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activate_for_blog</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// single site stuff
+</span><span class="c1"></span>            <span class="o">....</span>            
+        <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre></div><p>The WordPress function is <a href="http://codex.wordpress.org/Function_Reference/is_multisite" target="_blank">_multisite()</a> doesn&rsquo;t exist in normal WordPress installation. Hence, we check whether the function exists and then call it to check whether the installation is multisite. If installation is not multisite enabled, then we activate the plugin for the single site as explained in <a href="/tutorial/wordpress-plugin-development/activation/plugin-activation/#sec-activation">Plugin Activation</a>.</p>
 <p>If is_multisite() is true, then we check, with the help of $networkwide
 parameter, whether it is a network wide activation by SA or site level

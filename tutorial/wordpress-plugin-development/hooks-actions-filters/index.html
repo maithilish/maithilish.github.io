@@ -629,17 +629,17 @@
 to WordPress core. They are at the heart of each and every plugin. In
 this chapter, we explain this very important aspect of plugin
 development.</p>
-<p>In the plugins&rsquo; main file, we use add_action() to to load admin module
+<p>In the plugins' main file, we use add_action() to to load admin module
 and similarly, many setup() methods of plugin class files use
 add_action(). Here is a snippet from class-options.php.</p>
 <p><code>share-on-social/admin/class-options.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">class Sos_Options {
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Sos_Options</span> <span class="p">{</span>
 
-    public function setup () {
-        add_action( &#39;admin_init&#39;, array($this,&#39;init_common_options&#39;) );
-        add_action( &#39;admin_menu&#39;, array($this,&#39;register_settings_page&#39;) );
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_init&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;init_common_options&#39;</span><span class="p">)</span> <span class="p">);</span>
+        <span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;admin_menu&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span><span class="s1">&#39;register_settings_page&#39;</span><span class="p">)</span> <span class="p">);</span>
 
-    }
+    <span class="p">}</span>
 </code></pre></div><p>Let&rsquo;s understand what they mean.</p>
 <h2 id="wordpress-hooks">WordPress Hooks</h2>
 <p>The first parameter of add_action() is the name the <strong>Hook</strong>. In the
@@ -654,7 +654,7 @@ WordPress simply runs its core and constructs the response and send it
 to the browser. To extend functionality, WordPress allows plugins and to
 do that it exposes some well defined points in its core and names them
 as hooks. Plugins can latch on to these points so that WordPress
-executes the plugin code and adds plugins&rsquo; output to the response.</p>
+executes the plugin code and adds plugins' output to the response.</p>
 <p>The steps or hooks shown in the figure is just an illustration and there
 are many more hooks in between.</p>
 <p>WordPress provides two types hooks.</p>
@@ -706,7 +706,7 @@ we are wrong. It never happens that way!</p>
 
 <p>Plugin never plugs to a single point or hook. It also means that
 WordPress never executes the plugin fully in a single step.</p>
-<p>When WordPress plugs a plugin to its core then plugins&rsquo; functions and
+<p>When WordPress plugs a plugin to its core then plugins' functions and
 methods are attached to various action hooks. As WordPress execution
 progresses, it execute the attached actions (function or method).</p>
 <figure class="text-center" >
