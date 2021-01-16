@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-07-23T13:54:00+0530",
         "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "994",
+        "wordCount" : "1052",
         "keywords" : [ "java generics tutorial","Blog" ]
     }
 </script>
@@ -345,18 +345,26 @@
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
             <h1 id="java-generics">Java Generics</h1>
-<p>There are enough tutorials on Java Generics. However, many are either too easy or too difficult to get a clear view of the subject. In this series, we focus on confusing aspects and try to explain them with multiple examples.</p>
-<p>If you are new to generics, we suggest you to go through <a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html">Java Tutorial Trail - Generics</a> as we don&rsquo;t cover the basics. Even after going through it if certain aspects are not clear, then try this tutorial.</p>
+<p>There are enough tutorials on Java Generics; however, they are either too basic or too difficult to get a clear understanding of generics. This tutorial focuses on confusing aspects and clarify them with multiple examples.</p>
+<p>If you are new to generics, we suggest you to go through <a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html">Java Tutorial Trail - Generics</a> as this tutorial doesn&rsquo;t explains the basics. After going through it you may end with some doubts; then try this tutorial.</p>
 <p>Except enum types, anonymous inner classes and exception classes, all other types can be generic, but we use classes and interfaces as examples.</p>
-<h2 id="define-a-generic-type">Define a Generic Type</h2>
-<p>A generic type is a type with formal type parameters.</p>
+<h2 id="define-generic-type">Define Generic Type</h2>
+<p>It is easy to define a generic type. A generic type is a type with formal type parameters. For example, the class <code>Box&lt;T&gt;</code> is a <strong>generic type</strong> with single <strong>type parameter</strong> - T.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;{</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span><span class="o">);</span>
-        <span class="kd">public</span> <span class="n">E</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+        
+        <span class="kd">private</span> <span class="n">T</span> <span class="n">t</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">set</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">T</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">t</span><span class="o">;</span>
+        <span class="o">}</span>
     <span class="o">}</span>
 
-</code></pre></div><p>The interface List is a <strong>generic type</strong> with single <strong>type parameter</strong> - E. Type parameters can be more than one. The class Pair, shown below, is a <strong>generic type</strong> with two <strong>type parameters</strong> - T, U.</p>
+</code></pre></div><p>A generic type can have multiple type parameters. The class Pair, shown below, is a <strong>generic type</strong> with two <strong>type parameters</strong> - T, U.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
     <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pair</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="o">{</span>
 
@@ -379,31 +387,46 @@
 
 </code></pre></div><p>The syntax to define Generic class is:</p>
 <p><code>modifiers class className&lt;T1, T2, ..., Tn&gt; { }</code></p>
-<p>The type parameter section is delimited by angle brackets <code>&lt; &gt;</code> which follows the class name and contains the type parameters (also called type variables) T1, T2, &hellip;, and Tn delimited by comma. The scope of type parameters defined at class level is limited to the class. It can referred within the class as method parameters, return type and fields.</p>
+<p>The type parameter section is delimited by angle brackets <code>&lt; &gt;</code> which follows the class name and contains the type parameters (also called type variables) T1, T2, &hellip;, and Tn delimited by comma.</p>
+<p>As shown in above examples, the type parameters defined at class level can referred within the class as class fields, method parameters, return type and local variables. The scope of type parameters defined at class level is limited to the class.</p>
 <h2 id="how-to-use-generic-type">How to use Generic Type</h2>
 <p>To use a generic type, either we have to create a new instance or refer the instance using a variable. Creating and using the generic type is called invocation; to do that, we have to use parameterized type. In parameterized type, the type parameters such as <code>E</code> are replaced with actual type arguments such as <code>String</code></p>
-<p>To create an instance of ArrayList<E>, we use parameterized type ArrayList<String></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="c1">// for generic type List&lt;E&gt;, the parameterized type is
-</span><span class="c1"></span>    <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>  
+<p>To create or refer an instance of generic type, use parameterized type.</p>
+<p>For example, to create instance of <strong>generic type</strong> Box<T> that can hold a String use <strong>parameterized type</strong> Box<String>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">   
+    <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>  
 
-</code></pre></div><p>To refer the instance of a generic type, we need variable with parameterized type</p>
+</code></pre></div><p>Then to refer the instance, we need variable with parameterized type</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+    <span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
-    <span class="c1">// or short form
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="c1">// or short form (Java 1.7 onwards)
+</span><span class="c1"></span>    <span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
 
-</code></pre></div><p>From Java 1.7 onwards, we can skip actual type argument and short it as <code>new ArrayList&lt;&gt;()</code> as compiler can infer it from the parameterized type on the left side.</p>
-<p>Let&rsquo;s create some objects of generic type Pair&lt;T,U&gt;,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">oddPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pairs</span><span class="o">&lt;&gt;(</span><span class="s">&#34;hello&#34;</span><span class="o">,</span><span class="n">10</span><span class="o">);</span>  
+</code></pre></div><p>Let&rsquo;s create some instances of generic type Pair&lt;T,U&gt;,</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">oddPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pairs</span><span class="o">&lt;&gt;(</span><span class="s">&#34;hello&#34;</span><span class="o">,</span><span class="n">10</span><span class="o">);</span>  
 
     <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intPairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="n">1</span><span class="o">,</span><span class="n">7</span><span class="o">);</span> 
     
-</code></pre></div><p>In first example, to instantiate generic type <code>Pair&lt;T, U&gt;</code>, we use parameterized type <code>Pair&lt;String, Integer&gt;</code>. It replaces <strong>type parameter</strong> (T and U) with actual <strong>type arguments</strong> (String and Integer). In second example, we use Integer as actual type argument for both T and U.</p>
-<p>Loosely speaking, to define a generic type use <strong>type parameters</strong>; to refer a generic type instance (either through variables or fields) use <strong>parameterized type</strong>.</p>
+</code></pre></div><p>In first example, to instantiate generic type <code>Pair&lt;T, U&gt;</code>, we use parameterized type <code>Pair&lt;String, Integer&gt;</code>. It replaces <strong>type parameter</strong>, T and U, with actual <strong>type arguments</strong>, String and Integer. In second example, we use Integer as actual type argument for both T and U.</p>
+<p>Loosely speaking,</p>
+<ul>
+<li>to define a generic type use <strong>type parameters</strong></li>
+<li>to refer a generic type instance, either through variables or fields, use <strong>parameterized type</strong>.</li>
+</ul>
+<h2 id="generic-terminology">Generic Terminology</h2>
+<p>For clarity, let&rsquo;s recap the terminologies introduced so far.</p>
+<ul>
+<li>generic type <code>List&lt;T&gt;</code></li>
+<li>type parameter/type variables <code>&lt;T&gt;</code></li>
+<li>type argument <code>&lt;String&gt;</code></li>
+<li>parameterized type <code>List&lt;String&gt; list;</code></li>
+<li>formal parameter <code>foo(String x)</code></li>
+<li>formal type parameter <code>foo(T x) or Bar&lt;T&gt;</code></li>
+</ul>
 <h2 id="naming-the-type-parameters">Naming the Type Parameters</h2>
-<p>There is no hard and fast rule about the type parameter names, however by convention, type parameter names are single, uppercase letters. Most commonly used ones are:</p>
+<p>There are no hard and fast rules about the type parameter names; however, by convention type parameter names are single, uppercase letters. Most commonly used ones are:</p>
 <ul>
 <li>T - Type and U,V etc. - 2nd, 3rd types</li>
 <li>E - Element</li>
@@ -445,18 +468,19 @@
         <span class="o">}</span>
     <span class="o">}</span>
 </code></pre></div><p>The addAll() method adds all elements of array to the collection. It defines type parameter <code>&lt;T&gt;</code> and uses it in methods' formal parameters - <code>T[] elements</code> and <code>Collection&lt;T&gt; coll</code>. In for loop, all the items of elements array are added to Collection coll. The method is called as below,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">String</span><span class="o">[]</span> <span class="n">alphabets</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;b&#34;</span><span class="o">};</span>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="n">String</span><span class="o">[]</span> <span class="n">alphabets</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;b&#34;</span><span class="o">};</span>
     <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span><span class="n">stringList</span><span class="o">);</span>
+    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span> <span class="n">stringList</span><span class="o">);</span>
 
     <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span><span class="n">intList</span><span class="o">);</span>      <span class="c1">// error
+    <span class="n">addAll</span><span class="o">(</span><span class="n">alphabets</span><span class="o">,</span> <span class="n">intList</span><span class="o">);</span>      <span class="c1">// error
 </span><span class="c1"></span>
 </code></pre></div><p>Both the parameters - elements and coll is of same type T, and to invoke the method, we should use array and List of same type otherwise compiler throws error. For example, when try to pass array of String and list of integer code will not compile.</p>
-<p>Syntax to define generic method is:</p>
+<p>Syntax to define a generic method is:</p>
 <p><code>modifiers &lt;T1, T2, ..., Tn&gt; returnType methodName(formal parameters) { }</code></p>
 <p>The type parameter list - <code>&lt;T&gt;, &lt;E&gt;, or &lt;T, U&gt;</code> - is placed just before the method&rsquo;s return type. The scope of type parameters is restricted to the method where it is defined. The type parameters defined at method level can be referred in method parameters, method return type and the method body.</p>
-<p>As explained earlier, to refer a generic object we use parameterized type with actual type arguments such as <code>List&lt;String&gt; list;</code>. However, to call a generic method there is no need to specify actual type as the compiler infers the type argument from the types of the actual arguments. For example to call addAll() method, we simply call it as <code>addAll(alphabets,list)</code>. Compiler infers the most specific type argument that will make the call type-correct.</p>
+<p>As explained earlier, to refer a generic object we use parameterized type with actual type arguments such as <code>List&lt;String&gt; list;</code>; however, to call a generic method there is no need to specify actual type as the compiler infers the type argument from the types of the actual arguments. For example to call addAll() method, we simply call it as <code>addAll(alphabets, list)</code>. Compiler infers the most specific type argument that will make the call type-correct.</p>
 <h2 id="summary">Summary</h2>
 <ul>
 <li>to define a generic type, use type parameters - class <code>Pair&lt;T, U&gt; { }</code></li>
@@ -467,8 +491,9 @@
 <li>when defined at method level its scope is restricted to the method.</li>
 </ul>
 </li>
-<li>type parameters can be referred as fields and methods` formal parameters, body and return type.</li>
+<li>type parameters can be used as fields, methods` formal parameters, local variables and return type.</li>
 </ul>
+<p>The next chapter explains generic subtypes.</p>
 
           </main>
         </div>

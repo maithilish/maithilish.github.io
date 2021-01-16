@@ -15,8 +15,8 @@
       <guid>https://www.codetab.org/tutorial/java-generics/subtype/</guid>
       <description>Generic Inheritance and Subtypes 
 To explain Generic inheritance, subtypes and wildcards, we use following class hierarchy:
- The Food, Snack and Cookie classes are as below. Fruit and Apple classes are similar.
-public class Food { public void foodMethod(){ } } public class Snack extends Food { public void snackMethod(){ } } public class Cookie extends Snack { public void cookieMethod(){ } } We use Java List interface in examples with a focus on its add() and get() methods.</description>
+ The Pet, Bulldog and Bulldog classes are as below. Cat and Persian classes are similar.
+public class Pet { } public class Dog extends Pet { } public class Bulldog extends Dog { } Type parameter and Inheritance Before getting into generic subtype, let&amp;rsquo;s see how inheritance works with generic types. I know this is trivial for those who have already worked with generic types; nevertheless, let&amp;rsquo;s go through it to avoid confusion that kicks-in when we deal with generic subtypes.</description>
     </item>
     
   </channel>

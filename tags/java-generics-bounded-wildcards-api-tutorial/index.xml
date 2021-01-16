@@ -15,7 +15,7 @@
       <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
       <description>Wildcard bounds in Java API The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.
 Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze java.util.Stream.map() method which is normally used along with lambda expression as follows:
-List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList()); At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
+List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList()); At first glance, its map() method signature is bit scarry,</description>
     </item>
     
   </channel>

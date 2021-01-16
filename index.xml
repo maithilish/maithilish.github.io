@@ -43,8 +43,8 @@ Finally, I chose Borg Backup for its sophistication and ease of use; thereupon, 
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid>
-      <description>Java Generics There are enough tutorials on Java Generics. However, many are either too easy or too difficult to get a clear view of the subject. In this series, we focus on confusing aspects and try to explain them with multiple examples.
-If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as we don&amp;rsquo;t cover the basics. Even after going through it if certain aspects are not clear, then try this tutorial.</description>
+      <description>Java Generics There are enough tutorials on Java Generics; however, they are either too basic or too difficult to get a clear understanding of generics. This tutorial focuses on confusing aspects and clarify them with multiple examples.
+If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as this tutorial doesn&amp;rsquo;t explains the basics. After going through it you may end with some doubts; then try this tutorial.</description>
     </item>
     
     <item>
@@ -244,8 +244,8 @@ Pybs, by default, uses Borg repository at $HOME/backup/borgrepo located in user 
       <guid>https://www.codetab.org/tutorial/java-generics/subtype/</guid>
       <description>Generic Inheritance and Subtypes 
 To explain Generic inheritance, subtypes and wildcards, we use following class hierarchy:
- The Food, Snack and Cookie classes are as below. Fruit and Apple classes are similar.
-public class Food { public void foodMethod(){ } } public class Snack extends Food { public void snackMethod(){ } } public class Cookie extends Snack { public void cookieMethod(){ } } We use Java List interface in examples with a focus on its add() and get() methods.</description>
+ The Pet, Bulldog and Bulldog classes are as below. Cat and Persian classes are similar.
+public class Pet { } public class Dog extends Pet { } public class Bulldog extends Dog { } Type parameter and Inheritance Before getting into generic subtype, let&amp;rsquo;s see how inheritance works with generic types. I know this is trivial for those who have already worked with generic types; nevertheless, let&amp;rsquo;s go through it to avoid confusion that kicks-in when we deal with generic subtypes.</description>
     </item>
     
     <item>
@@ -522,9 +522,9 @@ Font Awesome is the top choice for font icons, with more than 650 icons with min
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/java-generics/wildcards/</guid>
-      <description>Wildcards The previous tutorial explained that there is no relationship, what so ever, between List&amp;lt;Food&amp;gt;, List&amp;lt;Snack&amp;gt; and List&amp;lt;Cookie&amp;gt;,even though Food, Snack and Cookie belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
-Unbounded Wildcard Consider a method to display the elements of a List.
-public void display(List&amp;lt;Food&amp;gt; list) { // display the list elements  } display(new ArrayList&amp;lt;Food&amp;gt;()); display(new ArrayList&amp;lt;Snack&amp;gt;()); // error  display(new ArrayList&amp;lt;Cookie&amp;gt;()); // error  display(new ArrayList&amp;lt;Fruit&amp;gt;()); // error  display(new ArrayList&amp;lt;Apple&amp;gt;()); // error  display(new ArrayList&amp;lt;String&amp;gt;()); // error  The method can display only the list of Food and nothing else.</description>
+      <description>Wildcards In the previous tutorial we saw that there is no relationship, what so ever, between List&amp;lt;Pet&amp;gt;, List&amp;lt;Dog&amp;gt; and List&amp;lt;Bulldog&amp;gt;, even though Pet, Dog and Bulldog belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
+In this tutorial we use following class hierarchy:
+ Unbounded Wildcard Consider a method to display the elements of a List.</description>
     </item>
     
     <item>
@@ -666,9 +666,10 @@ The Example 2 extracts ten data points shown below from defs/examples/fin/page/a
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</guid>
-      <description>Bounded Wildcards We can use wildcard ? with either upper or lower bound.
-Extends The &amp;lt;? extends Type&amp;gt; is a wildcard with upper bound. Extends allows us to restrict the unbounded List&amp;lt;?&amp;gt; to some type and its subtypes. For example, we want restrict display method only to Food and its subclasses and for change list parameter as below.
-public void display(List&amp;lt;? extends Food&amp;gt; list) { // display the list elements  } display(new ArrayList&amp;lt;Food&amp;gt;()); display(new ArrayList&amp;lt;Snack&amp;gt;()); display(new ArrayList&amp;lt;Cookie&amp;gt;()); display(new ArrayList&amp;lt;Fruit&amp;gt;()); display(new ArrayList&amp;lt;Apple&amp;gt;()); display(new ArrayList&amp;lt;String&amp;gt;()); // error  display(new ArrayList&amp;lt;Integer&amp;gt;()); // error  Now display() accepts only the list of Food and its subtypes - Snack, Cookie, Fruit, Apple and nothing else.</description>
+      <description>Bounded Wildcards The previous tutorial covered unbounded wildcard, and now we learn to restrict the wildcards with extends (upper bound) or super (lower bound).
+This tutorial uses following class hierarchy:
+ Extends The &amp;lt;? extends Type&amp;gt; is a wildcard with upper bound. Extends allows us to restrict the unbounded List&amp;lt;?&amp;gt; to some type and its subtypes. For example, we want restrict display method only to Pet and its subclasses,
+public void display(List&amp;lt;?</description>
     </item>
     
     <item>
@@ -780,7 +781,7 @@ The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html pa
       <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
       <description>Wildcard bounds in Java API The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.
 Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze java.util.Stream.map() method which is normally used along with lambda expression as follows:
-List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList()); At first glance, its method signature is bit scarry: public &amp;lt;R&amp;gt; Stream&amp;lt;R&amp;gt; map(Function&amp;lt;?</description>
+List&amp;lt;String&amp;gt; list = Stream.of(&amp;#34;USA&amp;#34;, &amp;#34;Japan&amp;#34;, &amp;#34;India&amp;#34;) .map(s -&amp;gt; s.toLowerCase()) .collect(Collectors.toList()); At first glance, its map() method signature is bit scarry,</description>
     </item>
     
     <item>
@@ -883,8 +884,10 @@ dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot;
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
-      <description>Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
-public class FoodList&amp;lt;T extends Food&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } FoodList&amp;lt;Food&amp;gt; foods = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Cookie&amp;gt; cookies = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;Apple&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); FoodList&amp;lt;String&amp;gt; apples = new FoodList&amp;lt;&amp;gt;(); // error  The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</description>
+      <description>In this previous tutorials we gone through wildcard bounds. Similarly, we can set bounds for type parameters, and this tutorial explains its use.
+This tutorial uses following class hierarchy:
+ Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
+public class PetList&amp;lt;T extends Pet&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } PetList&amp;lt;Pet&amp;gt; pets = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Bulldog&amp;gt; bulldogs = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Persian&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;String&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); // error  The PetList accepts Pet or any of its subtype as T extends Pet, but any other type is not accepted.</description>
     </item>
     
     <item>

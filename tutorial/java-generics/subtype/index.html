@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head><meta charset="utf-8">
-<meta name="description" content="Generic has its own rules about subtyping">
+<meta name="description" content="Generic has its own rules for subtypes">
 <meta name="author" content="Maithilish">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -29,7 +29,7 @@
         "name" : "Java Generics Subtype - CodeTab",
         "headline" : "Java Generics Subtype - CodeTab",
         "url" : "https://www.codetab.org/tutorial/java-generics/subtype/",
-        "description" : "Generic has its own rules about subtyping",
+        "description" : "Generic has its own rules for subtypes",
         "inLanguage" : "en",
         "image": "https://www.codetab.org/logo.jpg",
         "author" : "Maithilish",
@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-07-23T13:54:00+0530",
         "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "683",
+        "wordCount" : "918",
         "keywords" : [ "java generics inheritance subtype tutorial","Blog" ]
     }
 </script>
@@ -351,102 +351,112 @@
   <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-class-hierarchy.png" alt="Java Generics Example Class Hierarchy" />
 </figure>
 
-<p>The Food, Snack and Cookie classes are as below. Fruit and Apple classes are similar.</p>
+<p>The Pet, Bulldog and Bulldog classes are as below. Cat and Persian classes are similar.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Food</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">foodMethod</span><span class="o">(){</span>             
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pet</span> <span class="o">{</span>  <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Pet</span> <span class="o">{</span>   <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bulldog</span> <span class="kd">extends</span> <span class="n">Dog</span> <span class="o">{</span>  <span class="o">}</span>
+
+</code></pre></div><h2 id="type-parameter-and-inheritance">Type parameter and Inheritance</h2>
+<p>Before getting into generic subtype, let&rsquo;s see how inheritance works with generic types. I know this is trivial for those who have already worked with generic types; nevertheless, let&rsquo;s go through it to avoid confusion that kicks-in when we deal with generic subtypes.</p>
+<p>Create an instance of <code>Box&lt;Pet&gt;</code> and put Pet, Dog and BullDog, and it accepts Pet and all its subtypes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="n">T</span> <span class="n">pet</span><span class="o">;</span>
+        
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">put</span><span class="o">(</span><span class="kd">final</span> <span class="n">T</span> <span class="n">pet</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">pet</span> <span class="o">=</span> <span class="n">pet</span><span class="o">;</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Snack</span> <span class="kd">extends</span> <span class="n">Food</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">snackMethod</span><span class="o">(){</span>            
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cookie</span> <span class="kd">extends</span> <span class="n">Snack</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cookieMethod</span><span class="o">(){</span>            
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-</code></pre></div><p>We use Java List interface in examples with a focus on its add() and get() methods.</p>
+    <span class="n">Box</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">petBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
+    <span class="n">petBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
+    <span class="n">petBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
+    <span class="n">petBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>
+    
+</code></pre></div><p>Next, the <code>Box&lt;Dog&gt;</code> accepts Dog and its subtype Bulldog, but not <code>Pet</code>, the supertype. Finally, the <code>Box&lt;Bulldog&gt;</code> accepts only the Bulldog but not its supertype Dog and Pet.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
-
-        <span class="kd">public</span> <span class="n">E</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
-            
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span><span class="o">);</span>
-    <span class="o">}</span>
-
-</code></pre></div><h2 id="oop-inheritance">OOP Inheritance</h2>
-<p>We all know that objects of subclass type can be assigned to variables of superclass type.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="n">Snack</span> <span class="n">snack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Snack</span><span class="o">();</span>
-    <span class="n">snack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cookie</span><span class="o">();</span>
-    <span class="n">snack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Food</span><span class="o">()</span>              <span class="c1">// error   
-</span></code></pre></div><p>Let&rsquo;s see how subtype works in the case of generics.</p>
-<h1 id="generic-subtypes">Generic Subtypes</h1>
-<p>A generic class or interface can have subtype by extending or implementing it. Best example of generic subtype is Collection classes.</p>
+    <span class="n">Box</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
+    <span class="n">dogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
+    <span class="n">dogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
+    <span class="n">dogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>          <span class="c1">// Error
+</span><span class="c1"></span>
+    <span class="n">Box</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
+    <span class="n">bulldogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
+    <span class="n">bulldogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>      <span class="c1">// Error
+</span><span class="c1"></span>    <span class="n">bulldogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>      <span class="c1">// Error
+</span><span class="c1"></span>
+</code></pre></div><p>As expected, inheritance in <code>put(T t) </code> is similar to plain types such as <code>put(Pet pet)</code>.</p>
+<p>Now, let&rsquo;s see whether same holds true with generic subtypes.</p>
+<h2 id="generic-subtype-and-type-compatibility">Generic Subtype and Type Compatibility</h2>
+<p>As we do with plain types, we can subtype a generic class or interface by extending or implementing it. The Collection classes from Java library is a good example of this.</p>
 <figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection.png" alt="Java Generics Collection Rawtype" />
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection.png" alt="Java Generics Collection" />
 </figure>
 
-<p>The <code>ArrayList&lt;E&gt; implements List&lt;E&gt;</code> which inturn extends <code>Collection&lt;E&gt;</code>. Similarly, the <code>HashSet&lt;E&gt;</code> and <code>Set&lt;E&gt;</code>.</p>
+<p>The <code>ArrayList&lt;E&gt;</code> implements <code>List&lt;E&gt;</code> which inturn extends <code>Collection&lt;E&gt;</code>. Similarly, the <code>HashSet&lt;E&gt;</code> implements <code>Set&lt;E&gt;</code> which extends <code>Collection&lt;E&gt;</code>.</p>
+<p>In plain types we can assign an instance Bulldog or Dog to Pet variable.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+    <span class="n">Pet</span> <span class="n">pet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pet</span><span class="o">();</span>
+    <span class="n">pet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+    <span class="n">pet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
+
+</code></pre></div><p>Whether same holds good with the generic types, i.e can we assign a <code>List&lt;E&gt;</code> to <code>Collection&lt;E&gt;</code>.</p>
 <p>As long as type arguments are same, the inheritance is allowed.</p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection-parameterized.png" alt="Java Generics Collection Subtype" />
 </figure>
 
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="c1">// list
-</span><span class="c1"></span>    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>                
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogList</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>
     
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snackList</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>
+    <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogHashSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogSet</span> <span class="o">=</span> <span class="n">dogHashSet</span><span class="o">;</span>
     
-    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snackCollection</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>  
-    <span class="c1">// or
-</span><span class="c1"></span>    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snackCollection</span> <span class="o">=</span> <span class="n">snackList</span><span class="o">;</span>  
+    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogCollection</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>          
+    <span class="n">dogCollection</span> <span class="o">=</span> <span class="n">dogList</span><span class="o">;</span>  
+    <span class="n">dogCollection</span> <span class="o">=</span> <span class="n">dogHashSet</span><span class="o">;</span>  
+    <span class="n">dogCollection</span> <span class="o">=</span> <span class="n">dogSet</span><span class="o">;</span>  
 
-    <span class="c1">// set
-</span><span class="c1"></span>    <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snackHashSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>                
-    
-    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snackSet</span> <span class="o">=</span> <span class="n">snackHashSet</span><span class="o">;</span>
-    
-    <span class="n">snackCollection</span> <span class="o">=</span> <span class="n">snackHashSet</span><span class="o">;</span>  
-    <span class="n">snackCollection</span> <span class="o">=</span> <span class="n">snackSet</span><span class="o">;</span>  
-
-</code></pre></div><p>As type argument is <code>Snack</code> in all three generic variables, we can assign generic subtypes (ArrayList or List) to its supertypes (Collection) variable. Same way, we can assign <code>HashSet&lt;Snack&gt;</code> or <code>Set&lt;Snack&gt;</code> to <code>Collection&lt;Snack&gt;</code>.</p>
-<h2 id="parameterized-types-compatibility">Parameterized Types Compatibility</h2>
-<p>As explained above, generic subtyping is allowed as long as type argument is same. But, when type arguments are different then rules are stricter. Forget subtyping, even same generic type with different type arguments (parameterized with different type argument) are not compatible with each other. Consider the following</p>
+</code></pre></div><p>In all parameterized types, the type argument is <code>Dog</code> and we can assign generic subtypes (ArrayList or List) to its supertype (Collection). Same way, we can assign <code>HashSet&lt;Dog&gt;</code> or <code>Set&lt;Dog&gt;</code> to <code>Collection&lt;Dog&gt;</code>.</p>
+<p>When type arguments are different, the rules are quite strict. Forget subtypes even same parameterized types with different type arguments are not compatible with each other. Consider the following</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;&gt;();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>     <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="n">snacks</span><span class="o">;</span>         <span class="c1">// error
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>  <span class="c1">// not allowed, error
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>          <span class="c1">// not allowed, error
 </span><span class="c1"></span>
-</code></pre></div><p>When we try to assign <code>List&lt;Snack&gt;</code> to <code>List&lt;Food&gt;</code> compiler throws error</p>
+</code></pre></div><p>When we try to assign <code>List&lt;Dog&gt;</code> to <code>List&lt;Pet&gt;</code> compiler throws error</p>
 <ul>
-<li>Type mismatch: cannot convert from List&lt;Snack&gt; to List&lt;Food&gt;</li>
+<li>Type mismatch: cannot convert from List&lt;Dog&gt; to List&lt;Pet&gt;</li>
 </ul>
-<p>This restriction ensures that list of Snack can contain only the Snack objects and nothing else, neither the Cookie (subtype) nor the Food (supertype). Let&rsquo;s consider another example.</p>
+<p>Let&rsquo;s consider another example to understand its significance.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;&gt;();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="n">cookies</span><span class="o">;</span>              <span class="c1">// error
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="n">bulldogs</span><span class="o">;</span>  <span class="c1">// not allowed, error
 </span><span class="c1"></span>
-</code></pre></div><p>Why <code>List&lt;Cookie&gt;</code> is not assignable to <code>List&lt;Snack&gt;</code>? The original intent with <code>List&lt;Cookie&gt;</code> is that it should hold only the Cookie and nothing else. However, when it is assigned to <code>List&lt;Snack&gt;</code>, Java has to allow it to hold both Cookie and Snack objects which messes the list. Hence, they are not compatible.</p>
+</code></pre></div><p>Why <code>List&lt;Bulldog&gt;</code> is not assignable to <code>List&lt;Dog&gt;</code>: the original intent with <code>List&lt;Bulldog&gt;</code> is that it should hold only the Bulldog and nothing else. However, when it is assigned to <code>List&lt;Dog&gt;</code>, JVM has to allow it to hold both Bulldog and Dog objects and this messes the list. Hence, they are not compatible.</p>
+<p>Following diagram summarizes these two rules. In the LHS hierarchy, the parameter types are all <code>Dog</code> and inheritance works as expected. In the RHS hierarchy, the parameter types are all <code>Bulldog</code> and again, inheritance works as expected. But, the left side is not compatible with right side as parameter types are different.</p>
+<p> </p>
 <figure class="text-center" >
   <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-subtype-collection-error.png" alt="Java Generics Collection Subtype" />
 </figure>
 
-<p>Same is true while calling the methods that has parameters with generic type.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+<p> </p>
+<p>Same is true while calling the methods that has generic types as parameters. In the following example, we can&rsquo;t pass <code>List&lt;Bulldog&gt;</code> to the method as its parameter is <code>List&lt;Dog&gt;</code>. Again, <code>List&lt;Bulldog&gt;</code> is not compatible with <code>List&lt;Dog&gt;</code> even though Bulldog is subtype of Dog.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bark</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>    
 
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookie</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        
-        <span class="n">someMethod</span><span class="o">(</span><span class="n">snack</span><span class="o">);</span>         
-        <span class="n">someMethod</span><span class="o">(</span><span class="n">cookie</span><span class="o">);</span>             <span class="c1">// error
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">bark</span><span class="o">(</span><span class="n">dog</span><span class="o">);</span>         
+    <span class="n">bark</span><span class="o">(</span><span class="n">bulldog</span><span class="o">);</span>             <span class="c1">// Error
 </span><span class="c1"></span>
-</code></pre></div><p>As this one of the important concepts of generic, let&rsquo;s go through one more example to drive home the point.</p>
+</code></pre></div><p>This is a one of the important aspects while working with generics subtypes. Let&rsquo;s go through one more example to drive home the point.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
     <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
     <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
@@ -456,19 +466,32 @@
 </span><span class="c1"></span>
     <span class="n">strings</span> <span class="o">=</span> <span class="n">objects</span><span class="o">;</span>                      <span class="c1">// error
 </span><span class="c1"></span>
-</code></pre></div><p>String is subclass of Object, however there is no relationship whatsoever between the two lists - <code>List&lt;Object&gt;</code> and <code>List&lt;String</code>. The <code>List&lt;Object&gt;</code> can hold objects of type Object as well as String (also objects of any Java type as every class is subclass of Object), but we can&rsquo;t assign list of any other type to it.</p>
-<p>We can overcome this restriction with <strong>wildcards</strong> and in the next tutorial, we see how to use it.</p>
+</code></pre></div><p>String is subclass of Object, and we can add an object or a string to <code>List&lt;Object&gt;</code>; however, there is no relationship whatsoever between the two lists - <code>List&lt;Object&gt;</code> and <code>List&lt;String&gt;</code>. That is to say, the <code>List&lt;Object&gt;</code> can hold objects of type Object as well as instances of any Java type as every class is subclass of Object, but we can&rsquo;t assign list of another type to it.</p>
 <h2 id="summary">Summary</h2>
 <ul>
-<li>as long as type arguments are same, we can assign generic subtypes to supertypes variable. For example, <code>ArrayList&lt;Snack&gt;</code> is assignable to <code>List&lt;Snack&gt;</code> or <code>Collection&lt;Snack&gt;</code>.</li>
-<li>when type arguments are different:
+<li>
+<p><code>List&lt;Pet&gt;</code> can hold a Pet, Dog or Bulldog, but we can&rsquo;t assign <code>List&lt;Bulldog&gt;</code> or <code>List&lt;Dog&gt;</code> to <code>List&lt;Pet&gt;</code>.</p>
+</li>
+<li>
+<p>when type arguments are same: <strong>we can assign generic subtypes to supertype variable</strong>.</p>
 <ul>
-<li>then inheritance ceases to exist. The <code>ArrayList&lt;Cookie&gt;</code> is not subtype of <code>List&lt;Snack&gt;</code>, even though Cookie is subtype of Snack and ArrayList is subtype of List.
-The <code>ArrayList&lt;Cookie&gt;</code> is not assignable to <code>List&lt;Snack&gt;</code> or <code>Collection&lt;Snack&gt;</code>.</li>
-<li>then even generics of same type are not compatible with each other. The <code>List&lt;Cookie&gt;</code> is not subtype of <code>List&lt;Snack&gt;</code>, even though Cookie is subtype of Snack and  there is no relationship between these lists. The <code>List&lt;Cookie&gt;</code> is not assignable to <code>List&lt;Snack&gt;</code>.</li>
+<li>For example, <code>ArrayList&lt;Dog&gt;</code> is assignable to <code>List&lt;Dog&gt;</code> or <code>Collection&lt;Dog&gt;</code>. Similarly, we can assign <code>HashSet&lt;Dog&gt;</code> or <code>Set&lt;Dog&gt;</code> to <code>Collection&lt;Dog&gt;</code>.</li>
+</ul>
+</li>
+<li>
+<p>when type arguments are different: <strong>generics of same type are not compatible with each other</strong>.</p>
+<ul>
+<li>The <code>List&lt;Bulldog&gt;</code> is not subtype of <code>List&lt;Dog&gt;</code>, even though Bulldog is subtype of Dog. There is no relationship between these lists and <code>List&lt;Bulldog&gt;</code> is not assignable to <code>List&lt;Dog&gt;</code>.</li>
+</ul>
+</li>
+<li>
+<p>when type arguments are different: <strong>inheritance ceases to exist</strong>.</p>
+<ul>
+<li>The <code>ArrayList&lt;Bulldog&gt;</code> is not subtype of <code>List&lt;Dog&gt;</code>, even though Bulldog is subtype of Dog and ArrayList is subtype of List. The <code>ArrayList&lt;Bulldog&gt;</code> is not assignable to <code>List&lt;Dog&gt;</code> or <code>Collection&lt;Dog&gt;</code>. Same is true for any other combination.</li>
 </ul>
 </li>
 </ul>
+<p>We can overcome these restrictions with <strong>wildcards</strong>, and the next tutorial explains its use.</p>
 
           </main>
         </div>

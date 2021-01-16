@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-07-23T13:54:00+0530",
         "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "425",
+        "wordCount" : "453",
         "keywords" : [ "java generics type parameter bounds tutorial","Blog" ]
     }
 </script>
@@ -344,10 +344,16 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            <h1 id="type-parameter-bound">Type Parameter Bound</h1>
+            <p>In this previous tutorials we gone through wildcard bounds. Similarly, we can set bounds for type parameters, and this tutorial explains its use.</p>
+<p>This tutorial uses following class hierarchy:</p>
+<figure class="text-center" >
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-class-hierarchy.png" alt="Java Generics Type Parameter Bound" />
+</figure>
+
+<h1 id="type-parameter-bound">Type Parameter Bound</h1>
 <p>The <code>List&lt;E&gt;</code> can take any type as type argument. With Type Parameter Bound we can restrict accepted types.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FoodList</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Food</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PetList</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="o">{</span>
 
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">T</span> <span class="n">element</span><span class="o">)</span> <span class="o">{</span>
         <span class="o">}</span>
@@ -357,20 +363,20 @@
 </span><span class="c1"></span>        <span class="o">}</span>
     <span class="o">}</span>
 
-    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">Apple</span><span class="o">&gt;</span> <span class="n">apples</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">PetList</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PetList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">PetList</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PetList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">PetList</span><span class="o">&lt;</span><span class="n">Persian</span><span class="o">&gt;</span> <span class="n">persians</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PetList</span><span class="o">&lt;&gt;();</span>
 
-    <span class="n">FoodList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">apples</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FoodList</span><span class="o">&lt;&gt;();</span>     <span class="c1">// error
+    <span class="n">PetList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">persians</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PetList</span><span class="o">&lt;&gt;();</span>     <span class="c1">// error
 </span><span class="c1"></span>
-</code></pre></div><p>The FoodList accepts Food or any of its subtype as T extends Food, but any other type is not accepted.</p>
+</code></pre></div><p>The PetList accepts Pet or any of its subtype as T extends Pet, but any other type is not accepted.</p>
 <h2 id="member-visibility">Member Visibility</h2>
 <p>First let&rsquo;s consider type which is not bounded.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
     <span class="kd">public</span> <span class="kd">class</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">(</span><span class="n">T</span> <span class="n">element</span><span class="o">){</span>
-            <span class="c1">// on element, we can access only the members (fields and methods)
-</span><span class="c1"></span>            <span class="c1">// of Object class such as getClass() etc.,
+            <span class="c1">// on element, we can access only the members
+</span><span class="c1"></span>            <span class="c1">// (fields and methods) of Object class such as getClass() 
 </span><span class="c1"></span>            <span class="n">element</span><span class="o">.</span><span class="na">getClass</span><span class="o">();</span>
         <span class="o">}</span>
     <span class="o">}</span>
@@ -378,26 +384,26 @@
 </code></pre></div><p>The actual type that replaces T can be anything and only thing that is known is that it is subtype of Java Object class. Because of this, we can only access methods such as getClass(), hashCode() and equals() etc., of Object class on element variable.</p>
 <p>Now consider,</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SnackList</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Snack</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DogList</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">(</span><span class="n">T</span> <span class="n">element</span><span class="o">){</span>            
-             <span class="c1">// we can access members of Snack and its supertypes - Food and Object.             
-</span><span class="c1"></span>             <span class="n">element</span><span class="o">.</span><span class="na">snackMethod</span><span class="o">();</span>
-             <span class="n">element</span><span class="o">.</span><span class="na">foodMethod</span><span class="o">();</span>
+             <span class="c1">// we can access members of Dog and its supertype - Pet and Object.             
+</span><span class="c1"></span>             <span class="n">element</span><span class="o">.</span><span class="na">someMethodOfDog</span><span class="o">();</span>
+             <span class="n">element</span><span class="o">.</span><span class="na">someMethodOfPet</span><span class="o">();</span>
              <span class="n">element</span><span class="o">.</span><span class="na">getClass</span><span class="o">();</span>
 
-             <span class="n">element</span><span class="o">.</span><span class="na">cookieMethod</span><span class="o">();</span> <span class="c1">// error
+             <span class="n">element</span><span class="o">.</span><span class="na">someMethodOfBulldog</span><span class="o">();</span> <span class="c1">// error
 </span><span class="c1"></span>        <span class="o">}</span>        
     <span class="o">}</span>
 
-</code></pre></div><p>By extending T with Snack, all methods of Snack and its supertypes - Food and Object are visible.</p>
+</code></pre></div><p>By extending T with Dog, all methods of Dog and its supertype - Pet and Object are visible.</p>
 <p>There is a small twist here.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Snack</span><span class="o">&gt;</span> <span class="n">snacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span> <span class="n">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">DogList</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DogList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">DogList</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DogList</span><span class="o">&lt;&gt;();</span>
 
-    <span class="n">SnackList</span><span class="o">&lt;</span><span class="n">Food</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SnackList</span><span class="o">&lt;&gt;();</span>  <span class="c1">// error
+    <span class="n">DogList</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DogList</span><span class="o">&lt;&gt;();</span>  <span class="c1">// error
 </span><span class="c1"></span>
-</code></pre></div><p>We can create SnackList of Snack or Cookie but not Food as <code>&lt;T extends Snack&gt;</code> allows only Snack and its subtypes. But, within the SnackList we can access members of Snack, Food and Object but not Cookie.</p>
+</code></pre></div><p>We can create DogList of Dog or Bulldog but not Pet as <code>&lt;T extends Dog&gt;</code> allows only Dog and its subtypes. But, within the DogList we can access members of Dog, Pet and Object but not Bulldog.</p>
 <h2 id="recursive-type-bound">Recursive Type Bound</h2>
 <p>A type parameter bounded by an expression may contain type parameter itself. This is known as recursive type bound. The max() method from javax.util.Collection which used recursive type bound is shown below:</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
@@ -407,7 +413,7 @@
 <h2 id="summary">Summary</h2>
 <ul>
 <li>the <code>&lt;T extends type&gt;</code> restricts the generic type to a type and its subtypes.</li>
-<li>type parameter bound also make members of type and all its supertypes visible within the generic type.</li>
+<li>type parameter bound also make members of type and all its supertype visible within the generic type.</li>
 <li>there is no type parameter bound <code>&lt;T super type&gt;</code>.</li>
 <li>recursive type bound <code>&lt;T extends Comparable&lt;T&gt;&gt;</code> is read as &ldquo;for every type T that can be compared to itself&rdquo;.</li>
 </ul>

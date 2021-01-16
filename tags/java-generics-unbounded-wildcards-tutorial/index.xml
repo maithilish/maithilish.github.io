@@ -13,9 +13,9 @@
       <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/java-generics/wildcards/</guid>
-      <description>Wildcards The previous tutorial explained that there is no relationship, what so ever, between List&amp;lt;Food&amp;gt;, List&amp;lt;Snack&amp;gt; and List&amp;lt;Cookie&amp;gt;,even though Food, Snack and Cookie belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
-Unbounded Wildcard Consider a method to display the elements of a List.
-public void display(List&amp;lt;Food&amp;gt; list) { // display the list elements  } display(new ArrayList&amp;lt;Food&amp;gt;()); display(new ArrayList&amp;lt;Snack&amp;gt;()); // error  display(new ArrayList&amp;lt;Cookie&amp;gt;()); // error  display(new ArrayList&amp;lt;Fruit&amp;gt;()); // error  display(new ArrayList&amp;lt;Apple&amp;gt;()); // error  display(new ArrayList&amp;lt;String&amp;gt;()); // error  The method can display only the list of Food and nothing else.</description>
+      <description>Wildcards In the previous tutorial we saw that there is no relationship, what so ever, between List&amp;lt;Pet&amp;gt;, List&amp;lt;Dog&amp;gt; and List&amp;lt;Bulldog&amp;gt;, even though Pet, Dog and Bulldog belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
+In this tutorial we use following class hierarchy:
+ Unbounded Wildcard Consider a method to display the elements of a List.</description>
     </item>
     
   </channel>
