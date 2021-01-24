@@ -437,7 +437,7 @@
 <li><code>List&lt;? extends Dog&gt;</code> is a producer; producer extends</li>
 <li><code>List&lt;? super Dog&gt;</code> is a consumer; consumer super</li>
 </ul>
-<p>Next, let&rsquo;s divide methods of List into two groups - get and add methods.</p>
+<p>Next, let&rsquo;s divide methods of List into two groups - get and put methods.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
 
@@ -483,7 +483,7 @@
 </tr>
 </tbody>
 </table>
-<p>The other group consists of methods that have one or more formal type parameters. For example, the method <code>E set​(int index, E element)</code> and <code>void add(E element)</code> have formal type parameter <code>element</code> whose type is E. Again informally, we call all such methods as <strong>add</strong> methods. Some examples of add methods are shown below:</p>
+<p>The other group consists of methods that have one or more formal type parameters. For example, the method <code>E set​(int index, E element)</code> and <code>void add(E element)</code> have formal type parameter <code>element</code> whose type is E. Again informally, we call all such methods as <strong>put</strong> methods. Some examples of put methods are shown below:</p>
 <table>
 <thead>
 <tr>
@@ -495,30 +495,30 @@
 <tbody>
 <tr>
 <td>void add​(int index, E element)</td>
-<td>add</td>
+<td>put</td>
 <td>parameter has E (type parameter)</td>
 </tr>
 <tr>
 <td>boolean add(​E element)</td>
-<td>add</td>
+<td>put</td>
 <td>parameter has E</td>
 </tr>
 <tr>
 <td>boolean addAll​(Collection&lt;? extends E&gt; c)</td>
-<td>add</td>
+<td>put</td>
 <td>parameter has E</td>
 </tr>
 <tr>
 <td>E set​(int index, E element)</td>
-<td>add</td>
+<td>put</td>
 <td>parameter has E</td>
 </tr>
 </tbody>
 </table>
-<p>Now, let&rsquo;s know the rules about invoking methods (get and add) on plain, unbounded, and bounded types (consumers and producers).</p>
+<p>Now, let&rsquo;s know the rules about invoking methods (get and put) on plain, unbounded, and bounded types (consumers and producers).</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
     <span class="c1">// no wildcard, acts as producer and consumer
-</span><span class="c1"></span>    <span class="c1">// can call get and add methods
+</span><span class="c1"></span>    <span class="c1">// can call get and put methods
 </span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>    
     
     <span class="c1">// unbound,  acts as producer
@@ -530,7 +530,7 @@
 </span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>   
 
     <span class="c1">// lower bound, acts as producer and consumer
-</span><span class="c1"></span>    <span class="c1">// can call get and add methods
+</span><span class="c1"></span>    <span class="c1">// can call get and put methods
 </span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">consumer</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>     
 
     <span class="c1">// can call get group of methods on all the above
@@ -539,20 +539,20 @@
     <span class="n">producer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
     <span class="n">consumer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
 
-    <span class="c1">// can call add group of methods only on consumers
+    <span class="c1">// can call put group of methods only on consumers
 </span><span class="c1"></span>    <span class="n">dogs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
     <span class="n">unbounded</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>    <span class="c1">// error    
 </span><span class="c1"></span>    <span class="n">producer</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>     <span class="c1">// error
 </span><span class="c1"></span>    <span class="n">consumer</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>    
     
-</code></pre></div><p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?&gt;</code> and <code>List&lt;? extends Dogs&gt;</code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>add</strong> group of methods (methods with one or more type parameters) on them.</p>
+</code></pre></div><p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?&gt;</code> and <code>List&lt;? extends Dogs&gt;</code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>put</strong> group of methods (methods with one or more type parameters) on them.</p>
 <p>Yet another way to remember is</p>
 <ul>
 <li>can call get methods (methods without type parameter) on any type of variables.</li>
-<li>can&rsquo;t invoke add methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with <strong>extends</strong> (<code>List&lt;? extends Dog&gt;</code> etc.,).</li>
+<li>can&rsquo;t invoke put methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with <strong>extends</strong> (<code>List&lt;? extends Dog&gt;</code> etc.,).</li>
 </ul>
 <h2 id="final-twist">Final Twist</h2>
-<p>Above, we told that <code>List&lt;? super Dog&gt;</code> acts as consumer and call add methods on it. Now, consider this,</p>
+<p>Above, we told that <code>List&lt;? super Dog&gt;</code> acts as consumer and call put methods on it. Now, consider this,</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Pets</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>          
     <span class="n">pets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>
     <span class="n">pets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
@@ -572,7 +572,7 @@
 <li><code>List&lt;? super T&gt;</code> accepts list of type and all its supertypes.</li>
 <li>PECS is acronym for Producer Extends Consumer Super which denotes that variable which uses extends act as producer whereas variable that use super is a consumer.</li>
 <li>can call <strong>get</strong> methods (methods without type parameter) on all type of variables.</li>
-<li>can&rsquo;t invoke <strong>add</strong> methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with super (<code>List&lt;? extends Dog&gt;</code> etc.,).</li>
+<li>can&rsquo;t invoke <strong>put</strong> methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with super (<code>List&lt;? extends Dog&gt;</code> etc.,).</li>
 <li>Compiler considers, <code>List&lt;Pet&gt;</code> assigned to <code>List&lt;? super Dog&gt;</code>, as  <code>List&lt;Dog&gt;</code> and allows to add only the Dog or Bulldog, but not the Pet.</li>
 </ul>
 <p>In the next tutorial we will go through wildcards in Java API to reinforce the concepts learned here.</p>

@@ -399,7 +399,7 @@
 <li>replace bounded type parameter with bounded wildcard. Example: <code>List&lt;T extends Food&gt; list</code> with <code>List&lt;? extends Food&gt; list</code></li>
 </ul>
 <h2 id="helper-methods">Helper Methods</h2>
-<p>The above rules creates another problem. We have already learned that, add group of methods are not allowed on wildcard list. To overcome it, the swap() uses raw type. The source code of the method is here:</p>
+<p>The above rules creates another problem. We have already learned that, put group of methods are not allowed on wildcard list. To overcome it, the swap() uses raw type. The source code of the method is here:</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
     <span class="nd">@SuppressWarnings</span><span class="o">({</span><span class="s">&#34;rawtypes&#34;</span><span class="o">,</span> <span class="s">&#34;unchecked&#34;</span><span class="o">})</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>

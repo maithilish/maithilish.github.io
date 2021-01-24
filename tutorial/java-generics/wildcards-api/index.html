@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-11-01T12:32:00+0530",
         "dateModified" : "2019-11-01T12:32:00+0530",
-        "wordCount" : "593",
+        "wordCount" : "948",
         "keywords" : [ "java generics bounded wildcards api tutorial","Blog" ]
     }
 </script>
@@ -344,68 +344,116 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            <h1 id="wildcard-bounds-in-java-api">Wildcard bounds in Java API</h1>
-<p>The previous tutorial covered wildcard bounds in detail, and this tutorial explorers its use in Java API.</p>
-<p>Java API extensively uses wildcard bounds, and it is essential to understand them thoroughly. As an example, we analyze <code>java.util.Stream.map()</code> method which is normally used along with lambda expression as follows:</p>
+            <p>The previous tutorial covered wildcard bounds, producers, consumers, get and put methods; this tutorial explorers wildcard bounds in Java API.</p>
+<p>Following class hierarchy is used in explanation:</p>
+<figure class="text-center" >
+  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-class-hierarchy.png" alt="Java Generics Bounded Wildcard" />
+</figure>
+
+<h1 id="wildcard-bounds-in-java-api">Wildcard bounds in Java API</h1>
+<p>Java API extensively uses wildcard bounds, and we should learn to tackle them. We start with couple of easy ones from <code>java.util.Collections</code>, and then move on to a difficult one in <code>java.util.Stream</code>.</p>
+<p>Take the <code>&lt;T&gt; void fill(List&lt;? super T&gt; list, T obj)</code> method of Collections class. If wildcard bound is not there, then we can fill a Dog instance to list of Dog and nothing else. But with <code>List&lt;? super T&gt;</code>, we can fill a Dog not only to <code>List&lt;Dog&gt;</code> but also to <code>List&lt;Pet&gt;</code>.</p>
+<p>The <code>List&lt;? super T&gt;</code> acts as consumer, which allows put (write) operations.</p>
+<div class="highlight"><pre class="chroma"><code class="language-JAVA" data-lang="JAVA">
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">Collections</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">dogs</span><span class="o">,</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
+<span class="n">Collections</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">pets</span><span class="o">,</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
+
+</code></pre></div><p>Next, take the <code>Collections.copy(List&lt;? super T&gt; dest, List&lt;? extends T&gt; src)</code> method. If wildcards is not used then we can copy list of a type to another list of same type.</p>
+<div class="highlight"><pre class="chroma"><code class="language-JAVA" data-lang="JAVA">
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">allPets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">allPets</span><span class="o">,</span> <span class="n">pets</span><span class="o">);</span>
+
+</code></pre></div><p>However, with wildcards bounds; if T is Dog, then we can copy list of Dog or Bulldog to list of Dog or Pet. The <code>List&lt;? extends T&gt; src</code> acts as producer that allows only the get (read) group of operations, while <code>List&lt;? super T&gt; dst</code> acts as consumer which allows put (write) operations.</p>
+<div class="highlight"><pre class="chroma"><code class="language-JAVA" data-lang="JAVA">
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">pets</span><span class="o">,</span> <span class="n">pets</span><span class="o">);</span>
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">pets</span><span class="o">,</span> <span class="n">dogs</span><span class="o">);</span>
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">pets</span><span class="o">,</span> <span class="n">bulldogs</span><span class="o">);</span>
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">pets</span><span class="o">,</span> <span class="n">cats</span><span class="o">);</span>
+
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">dogs</span><span class="o">,</span> <span class="n">dogs</span><span class="o">);</span>
+<span class="n">Collections</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">dogs</span><span class="o">,</span> <span class="n">bulldogs</span><span class="o">);</span>
+
+</code></pre></div><p>The final example is quizzical <code>java.util.Stream.map()</code> method which is normally used with lambda expression as follows:</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  
 <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;USA&#34;</span><span class="o">,</span> <span class="s">&#34;Japan&#34;</span><span class="o">,</span> <span class="s">&#34;India&#34;</span><span class="o">)</span>
                         <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">())</span>
                         <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
   
-</code></pre></div><p>At first glance, its map() method signature is bit scarry,</p>
+</code></pre></div><p>At first glance, its map() method signature is quite cryptic.</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="nf">map</span><span class="o">(</span><span class="n">Function</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">R</span><span class="o">&gt;</span> <span class="n">mapper</span><span class="o">)</span>
+<span class="kd">public</span> <span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="nf">map</span><span class="o">(</span><span class="n">Function</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">R</span><span class="o">&gt;</span> <span class="n">mapper</span><span class="o">)</span>
 
 </code></pre></div><p>which broadly means:</p>
 <ul>
-<li>map() expects a <code>Function</code> which accepts input of type T and returns an object of type R.</li>
-<li>map() returns a <code>Stream</code> of objects of type R.</li>
+<li>map input parameter is a <code>Function</code> that accepts input of type T and returns an object of type R.</li>
+<li>map returns a <code>Stream</code> of objects of type R.</li>
+<li>R is the type parameter defined at method level, so function can return instance of any type.</li>
 </ul>
-<p>But, what does <code>Function&lt;? super T, ? extends R&gt;</code> really signifies? To understand it, we need to understand the implications had it been designed without any wildcards: <code>public &lt;R&gt; Stream&lt;R&gt; map(Function&lt;T, R&gt; mapper)</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  
-<span class="n">Function</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">,</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+<p>But, what does <code>Function&lt;? super T, ? extends R&gt;</code> really signifies? To know that, we need to understand the implications had it been designed without any wildcards as <code>public &lt;R&gt; Stream&lt;R&gt; map(Function&lt;T, R&gt; mapper)</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>    
 
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>    
-<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">mappedDogs</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">,</span> <span class="n">Cat</span><span class="o">&gt;</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Cat</span><span class="o">();</span>
+
+<span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn</span><span class="o">);</span>
   
-</code></pre></div><p>In the above code, the Function takes Dog as input and returns a new Dog, which is then used with map method on a stream of Dog. If map api has not used any wildcards, then map method in above code accepts only the <code>Function&lt;Dog, Dog&gt;</code> and nothing else. If we try to pass <code>Function&lt;Pet, Bulldog&gt;</code> or any other combination, results in error.</p>
-<p>To be more flexible, API uses wildcard bounds. For input there are two options: <code>Function&lt;? extents T, R&gt;</code> and <code>Function&lt;? super T, R&gt;</code>. The first option <code>? extents T</code> is most flexible but makes the input as a Producer. To execute the lambda expression, map() calls the functional method <code>Function.apply(T t)</code>, which is a add group method as it has type parameter in parameter. As we have seen in the previous tutorial, calling the add type methods on Producers is not allowed.</p>
-<p>The only option left is <code>? super T</code> which acts as Consumer, and there is no bar on calling <code>apply(T t)</code> on it. It allows T and all its superclass as input, and we are free to use not only Dog but also its super class, Pet, as input. Following combinations are valid:</p>
+</code></pre></div><p>The above code, defines a Function that takes Dog as input and returns a new Cat and use it to map a stream of Dog. If map api is without any wildcards then it accepts only the Function with input as Dog and nothing else. If we try to pass <code>Function&lt;Pet, Cat&gt;</code> or any other input type results in compiler error. Return type R can be any type.</p>
+<p>To be more flexible, API uses wildcard bounds. For input, there are two options: <code>Function&lt;? extends T, R&gt;</code> or <code>Function&lt;? super T, R&gt;</code>. The first option <code>? extents T</code> is most flexible, but it makes the input as a Producer. To execute the lambda expression, map() calls the functional method <code>Function.apply(T t)</code>, which is a put method as it parameter T is a type parameter. As we have seen in the previous tutorial, put (write) methods are not allowed on Producers. So, extends is ruled out.</p>
+<p>The other option, <code>? super T</code> acts as Consumer, and there is no bar on calling <code>apply(T t)</code> on it. It allows T and all its supertype as input. Now, we are free to use not only Dog but also its super class, Pet, as input. Following combinations are valid:</p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-<span class="c1">// on List&lt;Dog&gt; we can use 
-</span><span class="c1"></span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">,</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
-<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 
-<span class="c1">// conversely, Function&lt;Pet, Dog&gt; can be used on
-</span><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span><span class="o">;</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="o">;</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span><span class="o">;</span>
-    
-</code></pre></div><p>Next, let&rsquo;s tackle the functions return type. If map api doesn&rsquo;t use <code>? extends R</code> then for <code>Function&lt;Pet, Bulldog&gt;</code> the returned stream has to be <code>Stream&lt;Bulldog&gt;</code> and nothing else.</p>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">fn1</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="s">&#34;foo&#34;</span><span class="o">;</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">fn2</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="s">&#34;bar&#34;</span><span class="o">;</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">fn3</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="s">&#34;zoo&#34;</span><span class="o">;</span>
+
+<span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn1</span><span class="o">);</span>     <span class="c1">// fn2 and f3 - compiler error
+</span><span class="c1"></span>
+<span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn1</span><span class="o">);</span>     <span class="c1">// f3 - compiler error
+</span><span class="c1"></span><span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn2</span><span class="o">);</span>
+        
+<span class="n">bulldogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn1</span><span class="o">);</span>
+<span class="n">bulldogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn2</span><span class="o">);</span>
+<span class="n">bulldogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn3</span><span class="o">);</span>
+
+<span class="c1">// we can use 
+</span><span class="c1">// Function&lt;Pet, String&gt; on list of Pet, Dog and Bulldog
+</span><span class="c1">// Function&lt;Dog, String&gt; on list of Pet and Dog
+</span><span class="c1"></span>    
+</code></pre></div><p>Next, let&rsquo;s tackle the function return type if function is specified as <code>Function&lt;? super T, R&gt;</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">  
-<span class="n">Function</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">,</span> <span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
-<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>    <span class="c1">// ok
-</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>    <span class="c1">// error
-</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>     <span class="c1">// error
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="n">fn1</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">fn2</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">fn3</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
+
+<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">fn1</span><span class="o">);</span>   <span class="c1">// allowed: only fn1
+</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">fn2</span><span class="o">);</span>   <span class="c1">// allowed: only fn2
+</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">fn3</span><span class="o">);</span>   <span class="c1">// allowed: only fn3
 </span><span class="c1"></span>  
-</code></pre></div><p>For return type, again there are two options: <code>Function&lt;? super T, ? extends R&gt;</code> and <code>Function&lt;? super T, ? super R&gt;</code>. As producer and consumer is not applicable for return type, the most flexible type, <code>? extends R</code>, is chosen. With this, we can use the returned stream of Pet, Dog or Bulldog as <code>Stream&lt;Pet&gt;</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-<span class="n">Function</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">,</span> <span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
-<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>    <span class="c1">// ok
-</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>    <span class="c1">// ok
-</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">newStream</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>     <span class="c1">// ok
+</code></pre></div><p>When map is assigned to <code>Stream&lt;Pet&gt;</code>, <code>R</code> is set to Pet; only fn1 is allowed and we can neither use fn2 nor fn3. Similarly, for <code>Stream&lt;Dog&gt;</code> we can use a Function with return type Dog and nothing else.</p>
+<p>To make things more flexible, API uses wildcard bounds. For return type, again there are two options: <code>? extends R</code> and <code>? super R</code>. As producer and consumer is not applicable for return type, the most flexible type, <code>? extends R</code>, is chosen.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="n">fn1</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Cat</span><span class="o">();</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">fn2</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">fn3</span> <span class="o">=</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
+
+<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn3</span><span class="o">);</span> <span class="c1">// allowed: fn1, fn2, fn3
+</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn3</span><span class="o">);</span> <span class="c1">// allowed: fn2, fn3
+</span><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">fn3</span><span class="o">);</span> <span class="c1">// allowed: fn3
 </span><span class="c1"></span>
-<span class="c1">// conversely
-</span><span class="c1"></span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Pet</span><span class="o">();</span>
-<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>     <span class="c1">// ok
-</span><span class="c1"></span>
-<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
-<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>     <span class="c1">// ok
-</span><span class="c1"></span>
-<span class="n">Function</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">,</span> <span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Bulldog</span><span class="o">();</span>
-<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">func</span><span class="o">);</span>     <span class="c1">// ok
-</span><span class="c1"></span>
-</code></pre></div><p>Just like wildcard bounds, we can bound the type parameter itself and the next tutorial explains it.</p>
+</code></pre></div><p>In the first map statement, R is Pet so then functions (fn1, fn2 and f3) that returns Pet or its subtypes are allowed. In the second map call, R is Dog and functions (f3 and f3) that returns Dog or Bulldog is allowed.</p>
+<p>Just like wildcard bounds, we can bind the type parameter itself and the next tutorial explains it.</p>
 
           </main>
         </div>

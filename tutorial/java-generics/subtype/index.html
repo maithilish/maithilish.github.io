@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-07-23T13:54:00+0530",
         "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "918",
+        "wordCount" : "956",
         "keywords" : [ "java generics inheritance subtype tutorial","Blog" ]
     }
 </script>
@@ -375,21 +375,16 @@
     <span class="n">petBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
     <span class="n">petBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
     <span class="n">petBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>
-    
-</code></pre></div><p>Next, the <code>Box&lt;Dog&gt;</code> accepts Dog and its subtype Bulldog, but not <code>Pet</code>, the supertype. Finally, the <code>Box&lt;Bulldog&gt;</code> accepts only the Bulldog but not its supertype Dog and Pet.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
+
     <span class="n">Box</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
     <span class="n">dogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
     <span class="n">dogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
     <span class="n">dogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>          <span class="c1">// Error
-</span><span class="c1"></span>
-    <span class="n">Box</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
-    <span class="n">bulldogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
-    <span class="n">bulldogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>      <span class="c1">// Error
-</span><span class="c1"></span>    <span class="n">bulldogBox</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>      <span class="c1">// Error
-</span><span class="c1"></span>
-</code></pre></div><p>As expected, inheritance in <code>put(T t) </code> is similar to plain types such as <code>put(Pet pet)</code>.</p>
-<p>Now, let&rsquo;s see whether same holds true with generic subtypes.</p>
+</span><span class="c1"></span>    
+</code></pre></div><p>Substitution Principle allows us to add subtypes to a list. We can add Bulldog, Dog and Pet to <code>Box&lt;Pet&gt;</code> as all are subtype of Pet. To <code>Box&lt;Dog&gt;</code> accepts only the Dog and its subtype Bulldog but not the supertype Pet.</p>
+<pre><code>Substitution Principle: a variable of a given type may be assigned a value of any subtype of that type, and a method with a parameter of a given type may be invoked with an argument of any subtype of that type.
+</code></pre>
+<p>As expected, inheritance in <code>put(T t) </code> is similar to plain types such as <code>put(Pet pet)</code>. Now, let&rsquo;s see whether same holds true with generic subtypes.</p>
 <h2 id="generic-subtype-and-type-compatibility">Generic Subtype and Type Compatibility</h2>
 <p>As we do with plain types, we can subtype a generic class or interface by extending or implementing it. The Collection classes from Java library is a good example of this.</p>
 <figure class="text-center" >
