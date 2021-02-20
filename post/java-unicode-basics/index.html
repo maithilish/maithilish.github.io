@@ -49,7 +49,7 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-09-29T11:00:00Z",
         "dateModified" : "2019-09-29T11:00:00Z",
-        "wordCount" : "1841",
+        "wordCount" : "1210",
         "keywords" : [ "java unicode encode decode transcode linux","Blog" ]
     }
 </script>
@@ -171,7 +171,7 @@
     <div id="contentspace" class="col-md-8 post-basic order-md-2">
       <h2>Fun with Unicode in Java</h2>
       <small class="text-muted">
-        Sep 29, 2019 . 9 min read
+        Sep 29, 2019 . 6 min read
       </small>
       <div id="share" class="row mx-0 justify-content-end">
 
@@ -414,113 +414,7 @@
 <li>Code Point is an integer assigned to a character in a coded character set.</li>
 <li>Character encoding maps between code points of a coded character set and sequences of bytes. One coded character set may have one or more character encodings . For example, ASCII has one encoding scheme while Unicode has multiple encoding schemes - UTF-8, UTF-16, UTF_16BE, UTF_16LE etc.</li>
 </ul>
-<h2 id="java-io">Java IO</h2>
-<p>Use char stream IO classes <code>Reader</code> and <code>Writer</code> while dealing with text and text files. As already explained, the default charset of Java platform is UTF-8 and text written using Writer class is encoded in UTF-8 and Reader class reads the text in UTF-8.</p>
-<p>Using java.io package, we can write and read a text file in default charset as below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;a Z â Δ 你 好 ಡ ತ ع&#34;</span><span class="o">;</span>
-    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;x-utf8.txt&#34;</span><span class="o">);</span>
-
-    <span class="c1">// write file in default charset (UTF-8)
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="n">file</span><span class="o">)))</span> <span class="o">{</span>
-        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="c1">// read file in default charset (UTF-8)
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">file</span><span class="o">)))</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    
-</code></pre></div><p>The above example, uses char stream classes - Writer and Reader - directly   that uses default character set (UTF-8).</p>
-<p>To encode/decode in non-default charset use byte oriented classes and use a bridge class to convert it char oriented class. For example, to read file as raw bytes use <code>FileInputStream</code> and wrap it with <code>InputStreamReader</code>, a bridge that can encode the bytes to chars in specified charset. Similarly for output, use <code>OutputStreamWriter</code> (bridge) and <code>FileOutputWriter</code> (byte output)</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="c1">// read in UTF_16LE
-</span><span class="c1"></span>    <span class="n">InputStream</span> <span class="n">byteInStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-    <span class="n">Reader</span> <span class="n">encodedCharStream</span> <span class="o">=</span> 
-        <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">byteInStream</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16LE</span><span class="o">);</span>
-
-    <span class="c1">// write in UTF_16LE
-</span><span class="c1"></span>    <span class="n">OutputStream</span> <span class="n">byteOutStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-    <span class="n">Writer</span> <span class="n">decodedCharStream</span> <span class="o">=</span> 
-        <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">byteOutStream</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16LE</span><span class="o">);</span>
-
-</code></pre></div><p>Following example, writes a file in UTF_16BE charset and reads it back.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;a Z â Δ 你 好 ಡ ತ ع&#34;</span><span class="o">;</span>
-    <span class="n">Charset</span> <span class="n">charset</span> <span class="o">=</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_16BE</span><span class="o">;</span>
-    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;x-utf16be.txt&#34;</span><span class="o">);</span>
-
-    <span class="c1">// write file in non default charset
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span>
-        <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">charset</span><span class="o">)))</span> <span class="o">{</span>
-      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="c1">// read file in non default charset
-</span><span class="c1"></span>    <span class="k">try</span> <span class="o">(</span><span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-            <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">charset</span><span class="o">)))</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
-        <span class="o">}</span>      
-    <span class="o">}</span>
-
-</code></pre></div><h2 id="transcoding">Transcoding</h2>
-<p>Transcoding is the direct digital-to-digital conversion from an encoding to another, such as UTF-8 to UTF-16. We regularly encounter transcoding in video, audio and image files but rarely with text files.</p>
-<p>Imagine, we receive a stream of bytes over the network encoded in CP-1252 (Windows-1252) or ISO 8859-1 and want to save it to text file in UTF 8.</p>
-<p>There are couple of options to transcode from one charset to another. The easiest way to transcode it to use String class.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">bytes</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">ISO_8859_1</span><span class="o">);</span>
-    <span class="kt">byte</span><span class="o">[]</span> <span class="n">toBytes</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
-
-</code></pre></div><p>While this quite fast, it suffers when we deal with large set of byte as heap memory gets allocated to multiple large strings. Better option is to use java.io classes as shown below:</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/post/java-unicode-basics/media/transcode-io.png" alt="Java Unicode charset convert " />
-</figure>
-
-<p>See <a href="https://github.com/maithilish/codefs/blob/master/misc/transcode/Transcode.java" target="_blank">Transcode.java</a> for transcoding example and <a href="https://github.com/maithilish/codefs/tree/master/misc/char-server" target="_blank">Char Server</a> for a rough take on encoding between server and socket.</p>
-<h2 id="play-with-unicode-in-linux-terminal">Play with Unicode in Linux terminal</h2>
-<p>We can work with text encoding in Linux terminal with some simple commands. Note that Linux terminal can display ASCII and UTF-8 files but not UTF-16.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Bash" data-lang="Bash">
-    <span class="c1"># create a text file from encoded bytes</span>
-    $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xce\x94&#39;</span> &gt; delta-8.txt
-    $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xfe\xff\x03\x94&#39;</span> &gt; delta-16.txt
-    $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xe4\xbd\xa0\x20\xe5\xa5\xbd&#39;</span> &gt; nihou-8.txt
-    $ <span class="nb">echo</span> -n -e <span class="s1">&#39;\xfe\xff\x4f\x60\xfe\xff\x20\x59\x7d&#39;</span> &gt; nihou-16.txt
-
-    <span class="c1"># debug a text file as hex</span>
-    $ hd nihou-16.txt
-
-    <span class="m">00000000</span>  fe ff 4f <span class="m">60</span> fe ff <span class="m">20</span> <span class="m">59</span> 7d  <span class="p">|</span>..O<span class="sb">`</span>.. Y<span class="o">}</span><span class="p">|</span>
-    <span class="m">00000009</span>
-
-    <span class="c1"># know file encoding scheme</span>
-    $ file -i *.txt
-
-    delta-16.txt: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-16be
-    delta-8.txt:  text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-    nihou-16.txt: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-16be
-    nihou-8.txt:  text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-
-    <span class="c1"># transcode from UTF 8 to UTF 16LE</span>
-    $ iconv -f UTF8 -t UTF16LE &lt; nihou-8.txt &gt; nihou-16le.txt
-
-    <span class="c1"># list encoding schemes </span>
-    $ iconv -l
-
-    <span class="c1"># read a file in default charset</span>
-    $ gedit nihou-8.txt     
-    <span class="c1"># non-default</span>
-    $ gedit --encoding UTF-16LE nihou-16le.txt
-
-</code></pre></div><h2 id="further-reading">Further Reading</h2>
-<p>Some good posts about Unicode usage in Java.</p>
-<p><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">The Absolute Minimum Developers should know about Unicode and Character Sets</a></p>
-<p><a href="http://illegalargumentexception.blogspot.com/2009/05/java-rough-guide-to-character-encoding.html" target="_blank">Java: a rough guide to character encoding</a></p>
-<p><a href="https://wiki.sei.cmu.edu/confluence/display/java/STR00-J.+Don%27t+form+strings+containing+partial+characters+from+variable-width+encodings" target="_blank">Don&rsquo;t form strings containing partial characters from variable-width encodings</a></p>
+<p>The next post, <a href="/post/java-io-charset">Java IO and Charsets</a>, covers usage of charsets with Java IO classes.</p>
 
       </main>
     </div>

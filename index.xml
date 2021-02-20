@@ -2742,6 +2742,17 @@ Install IvyDE In Eclipse select Help → Install New Software. Add IvyDE update 
     </item>
     
     <item>
+      <title>Java IO Classes and Charsets</title>
+      <link>https://www.codetab.org/post/java-io-charset/</link>
+      <pubDate>Sun, 29 Sep 2019 11:00:00 +0000</pubDate>
+      
+      <guid>https://www.codetab.org/post/java-io-charset/</guid>
+      <description>Java IO Unicode In the previous post, we covered unicode basics. This post explains charset handling while working with Java IO classes.
+Char IO Use char stream IO classes Reader and Writer while dealing with text and text files. As already explained, the default charset of Java platform is UTF-8 and text written using Writer class is encoded in UTF-8 and Reader class reads the text in UTF-8.
+Using java.io package, we can write and read a text file in default charset as below.</description>
+    </item>
+    
+    <item>
       <title>Project Code - GWT Tutorial - CodeTab</title>
       <link>https://www.codetab.org/tutorial/gwt/gwt-project-code/</link>
       <pubDate>Thu, 10 Jan 2019 20:33:00 +0530</pubDate>
