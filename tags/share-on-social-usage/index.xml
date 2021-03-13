@@ -9,11 +9,12 @@
     <lastBuildDate>Fri, 11 Jan 2019 06:55:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/share-on-social-usage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Usage - Share on Social WordPress Plugin - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</link>
+      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/usage/</link>
       <pubDate>Fri, 11 Jan 2019 06:55:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</guid>
-      <description>Usage In this blog, we explain Share on Social WordPress Plugin usage through examples. Share on Social lockers can be placed on WordPress Posts and Pages. For ease of explanation, we refer WordPress Posts and Pages as page. Basic Locker Simply by placing the content between shortcode [[share-on-social] [/share-on-social]] we can activate lockers. It uses default locker named Basic and shares the URL of the page (post or page) where locker is placed.</description>
+      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/usage/</guid>
+      <description>Share on Social WordPress Plugin allows you to lock a part of content on a WordPress Post or Page until user shares your blogs in social media. Plugin posts the shared link - as interactive posts - to users&#39; wall and helps you to drive new visitors and increase engagement.
+Usage Share on Social lockers can be placed on WordPress Posts and Pages. For ease of explanation, we refer both Posts and Pages as page.</description>
     </item>
     
   </channel>

@@ -158,12 +158,13 @@ There are enough blogs about WordPress Plugin Development.</description>
     </item>
     
     <item>
-      <title>Introduction - Share on Social WordPress Plugin - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-wordpress-plugin/</link>
-      <pubDate>Fri, 11 Jan 2019 06:11:00 +0530</pubDate>
+      <title>Usage - Share on Social WordPress Plugin - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/usage/</link>
+      <pubDate>Fri, 11 Jan 2019 06:55:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-wordpress-plugin/</guid>
-      <description>Share on Social WordPress Plugin allows you to lock a part of content on a WordPress Post or Page until user shares your blogs in social media. Plugin posts the shared link - as interactive posts - to users&#39; wall and helps you to drive new visitors and increase engagement.</description>
+      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/usage/</guid>
+      <description>Share on Social WordPress Plugin allows you to lock a part of content on a WordPress Post or Page until user shares your blogs in social media. Plugin posts the shared link - as interactive posts - to users&#39; wall and helps you to drive new visitors and increase engagement.
+Usage Share on Social lockers can be placed on WordPress Posts and Pages. For ease of explanation, we refer both Posts and Pages as page.</description>
     </item>
     
     <item>
@@ -318,12 +319,13 @@ XAMPP is probably the easiest way to install WordPress locally. XAMPP by Apache 
     </item>
     
     <item>
-      <title>Usage - Share on Social WordPress Plugin - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</link>
-      <pubDate>Fri, 11 Jan 2019 06:55:00 +0530</pubDate>
+      <title>Setup Apps - Share on Social WordPress Plugin - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/create-facebook-app/</link>
+      <pubDate>Fri, 11 Jan 2019 06:39:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-on-social-usage/</guid>
-      <description>Usage In this blog, we explain Share on Social WordPress Plugin usage through examples. Share on Social lockers can be placed on WordPress Posts and Pages. For ease of explanation, we refer WordPress Posts and Pages as page. Basic Locker Simply by placing the content between shortcode [[share-on-social] [/share-on-social]] we can activate lockers. It uses default locker named Basic and shares the URL of the page (post or page) where locker is placed.</description>
+      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/create-facebook-app/</guid>
+      <description>Facebook App ID for Share on Social Plugin To create the FB App, you must to register as developer with Facebook. Open Facebook Developers and sign in with your Facebook account. Clicks Apps in top menu bar and select Register as Developer from the drop down menu. Complete the developer registration process by PIN verification via SMS or Phone call.
+After registering as developer, open Facebook Developers and select My Apps.</description>
     </item>
     
     <item>
@@ -444,12 +446,12 @@ In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the 
     </item>
     
     <item>
-      <title>Setup Apps - Share on Social WordPress Plugin - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/create-facebook-google-plus-apps/</link>
-      <pubDate>Fri, 11 Jan 2019 06:39:00 +0530</pubDate>
+      <title>Screenshots - Share on Social WordPress Plugin - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/screenshots/</link>
+      <pubDate>Fri, 11 Jan 2019 06:26:00 +0530</pubDate>
       
-      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/create-facebook-google-plus-apps/</guid>
-      <description>Facebook App ID for Share on Social First we need to register as developer with Facebook. Open Facebook Developers and sign in with your Facebook account. Clicks Apps in top menu bar and select Register as Developer from the drop down menu. Complete the developer registration process by PIN verification via SMS or Phone call. After registering as developer go back to Facebook Developers and select Add a New App from Apps drop down menu.</description>
+      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/screenshots/</guid>
+      <description>Share on Social Locker in action.  FB Post shared by the Plugin.  Share on Social Menu and Lockers.  Add and customize your own lockers  Share details by date.  Summary stats.  </description>
     </item>
     
     <item>
@@ -594,15 +596,6 @@ Maven Lifecycles and Phases To understand the concepts of lifecycle and phase, l
 This is our first brush with WordPress API and we go with Shortcode because they are easy to understand and implement.
 WordPress Shortcode are macros that can be placed in posts. When processing the posts, WordPress replaces the shortcode with contents returned by a handler function.
 Add following code to wp-simple-plugin.php after defined( &#39;ABSPATH&#39; ) or die.</description>
-    </item>
-    
-    <item>
-      <title>Screenshots - Share on Social WordPress Plugin - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-social-screenshots/</link>
-      <pubDate>Fri, 11 Jan 2019 06:26:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/share-on-social-wordpress-plugin/share-social-screenshots/</guid>
-      <description> Share on Social Locker in action.  Google Plus Interactive Post shared by the Plugin.  Share on Social Menu and Lockers.  Add and customize your own lockers  Share details by date.  Summary stats. </description>
     </item>
     
     <item>
