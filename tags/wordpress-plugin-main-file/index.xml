@@ -14,7 +14,7 @@
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</guid>
       <description>In this chapter, we step through the plugins&#39; main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
-Plugin Info The main file share-on-social.php starts with header comments. As already described in the Section 2.1, “WordPress Simple Plugin”](wordpress-simple-plugin/), WordPress uses the header comments from the main file to display the Plugin info in plugins page.
+Plugin Info The main file share-on-social.php starts with header comments. As already described in the “WordPress Simple Plugin”, WordPress uses the header comments from the main file to display the Plugin info in plugins page.
 Define Constants Throughout the plugin, we often refer some paths and constants.</description>
     </item>
     

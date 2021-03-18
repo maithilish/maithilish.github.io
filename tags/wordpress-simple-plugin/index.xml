@@ -13,10 +13,10 @@
       <pubDate>Fri, 11 Jan 2019 08:04:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</guid>
-      <description>2.1. WordPress Simple Plugin In this section, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
-We use Eclipse IDE with PDT (PHP Development Tools), but you are free to use your favorite PHP IDE.
-Create PHP Project
-In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&#39; main file wp-simple-plugin.php in the top folder with the following contents.</description>
+      <description>2.1. WordPress Simple Plugin In this tutorial, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
+We use VSCode as IDE, but you are free to use your favorite PHP IDE.
+To begin, create a new folder named wp-simple-plugin in wp-content/plugins. Change to wordpress directory and run,
+sudo mkdir wp-content/plugins/wp-simple-plugin sudo chown m.www-data wp-content/plugins/wp-simple-plugin -R sudo chmod 755 wp-content/plugins/wp-simple-plugin -R The wp-content/plugins folder is owned by www-data user, so we are using sudo (in linux) to create the new folder and then change its ownership to user id m (my user id).</description>
     </item>
     
   </channel>

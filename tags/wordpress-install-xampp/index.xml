@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wordpress install Xampp on Codetab</title>
+    <link>https://www.codetab.org/tags/wordpress-install-xampp/</link>
+    <description>Recent content in wordpress install Xampp on Codetab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Jan 2019 08:22:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-install-xampp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wordpress Xampp - WordPress Plugin Development - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/install-xampp-wordpress/</link>
+      <pubDate>Fri, 11 Jan 2019 08:22:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/install-xampp-wordpress/</guid>
+      <description>WordPress with XAMPP While Docker is the easiest way to install and run Wordpress, another option is XAMPP. Xampp by Apache Friends bundles Apache, MySQL, PHP and Pearl as an installer. Xampp comes as separate package for Linux, Windows and Mac. Download the appropriate package for your system from Xampp Download page. We explain how to install it on Linux and Windows.
+For Docker method, see Install Wordpress on Docker; it is much easier than Xampp.</description>
+    </item>
+    
+  </channel>
+</rss>

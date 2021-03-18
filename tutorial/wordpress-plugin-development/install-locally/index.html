@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head><meta charset="utf-8">
-<meta name="description" content="WordPress Install Locally - In this tutorial we explain the steps to install WordPress on local system. XAMPP is probably the easiest way to do that.">
+<meta name="description" content="This tutorial explains the steps to install WordPress for Plugin development as Docker containers">
 <meta name="author" content="Maithilish">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,10 +26,10 @@
              "@id": "https://google.com/article"
         },
         "articleSection" : "tutorial",
-        "name" : "Local Install - WordPress Plugin Development - CodeTab",
-        "headline" : "Local Install - WordPress Plugin Development - CodeTab",
+        "name" : "WP Local Install - WordPress Plugin Development - CodeTab",
+        "headline" : "WP Local Install - WordPress Plugin Development - CodeTab",
         "url" : "https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/",
-        "description" : "WordPress Install Locally - In this tutorial we explain the steps to install WordPress on local system. XAMPP is probably the easiest way to do that.",
+        "description" : "This tutorial explains the steps to install WordPress for Plugin development as Docker containers",
         "inLanguage" : "en",
         "image": "https://www.codetab.org/logo.jpg",
         "author" : "Maithilish",
@@ -49,8 +49,8 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-01-11T08:22:00+0530",
         "dateModified" : "2019-01-11T08:22:00+0530",
-        "wordCount" : "1169",
-        "keywords" : [ "wordpress install locally","Blog" ]
+        "wordCount" : "409",
+        "keywords" : [ "wordpress install locally docker compose container","Blog" ]
     }
 </script>
 <link rel="icon" href="/favicon.ico">
@@ -62,7 +62,7 @@
 
 <link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
 
-<title>Local Install - WordPress Plugin Development - CodeTab</title></head>
+<title>WP Local Install - WordPress Plugin Development - CodeTab</title></head>
 
 <body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
 
@@ -205,6 +205,7 @@
 
 <div id="WordPress Plugin Development - CodeTab">
     
+    
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/"
             class="toc-page text-wrap text-muted ">
@@ -212,12 +213,16 @@
         </a>
     </div>
     
+    
+    
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/"
             class="toc-page text-wrap text-danger ">
-            Install Locally
+            Install WP on Docker
         </a>
     </div>
+    
+    
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/"
@@ -226,12 +231,16 @@
         </a>
     </div>
     
+    
+    
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/"
             class="toc-page text-wrap text-muted ">
             Shortcode
         </a>
     </div>
+    
+    
     
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/"
@@ -240,6 +249,8 @@
         </a>
     </div>
     
+    
+    
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/"
             class="toc-page text-wrap text-muted ">
@@ -247,12 +258,17 @@
         </a>
     </div>
     
+    
+    
     <div>
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/"
             class="toc-page text-wrap text-muted ">
             Hooks, Actions, Filters
         </a>
     </div>
+    
+    
+    
     
 </div>
 
@@ -265,10 +281,11 @@
 <div class="dropdown show mt-2">
     <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
         data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Admin Module - Settings
+        Admin - Settings
     </a>
     
     <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/"
@@ -277,16 +294,21 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/"
             class="toc-page dropdown-item text-wrap text-muted">
             Settings API
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/"
             class="toc-page dropdown-item text-wrap text-muted">
             Options Page
         </a>
+        
         
         
         
@@ -300,10 +322,11 @@
 <div class="dropdown show mt-2">
     <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
         data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Admin Module - Posts
+        Admin - Posts
     </a>
     
     <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/"
@@ -312,16 +335,21 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/"
             class="toc-page dropdown-item text-wrap text-muted">
             Meta Box
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/"
             class="toc-page dropdown-item text-wrap text-muted">
             Save Post
         </a>
+        
         
         
         
@@ -341,10 +369,13 @@
     <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
         
         
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/"
             class="toc-page dropdown-item text-wrap text-muted">
             Plugin Enqueue Scripts
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/"
@@ -353,10 +384,13 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/"
             class="toc-page dropdown-item text-wrap text-muted">
             Debug Info
         </a>
+        
         
         
         
@@ -376,10 +410,13 @@
     <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
         
         
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/"
             class="toc-page dropdown-item text-wrap text-muted">
             Ajax
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/"
@@ -388,10 +425,13 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/"
             class="toc-page dropdown-item text-wrap text-muted">
             Google Charts
         </a>
+        
         
         
         
@@ -411,16 +451,20 @@
     <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
         
         
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/"
             class="toc-page dropdown-item text-wrap text-muted">
             Internationalization
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/"
             class="toc-page dropdown-item text-wrap text-muted">
             Localization
         </a>
+        
         
         
         
@@ -440,10 +484,13 @@
     <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
         
         
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/"
             class="toc-page dropdown-item text-wrap text-muted">
             Activation
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/"
@@ -452,10 +499,14 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/"
             class="toc-page dropdown-item text-wrap text-muted">
             Multi site Activation
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/"
@@ -464,10 +515,13 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/"
             class="toc-page dropdown-item text-wrap text-muted">
             Uninstall
         </a>
+        
         
         
         
@@ -487,10 +541,13 @@
     <div id="tutorial-wordpress-plugin-development-unit-test" class="collapse">
         
         
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/"
             class="toc-page dropdown-item text-wrap text-muted">
             Unit Test
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/"
@@ -499,10 +556,14 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/"
             class="toc-page dropdown-item text-wrap text-muted">
             Simple Unit Tests
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/"
@@ -511,10 +572,14 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/"
             class="toc-page dropdown-item text-wrap text-muted">
             Advanced Unit Tests
         </a>
+        
+        
         
         
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/"
@@ -523,16 +588,21 @@
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/"
             class="toc-page dropdown-item text-wrap text-muted">
             Ajax Unit Tests
         </a>
         
         
+        
+        
         <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/"
             class="toc-page dropdown-item text-wrap text-muted">
             Multi site Plugin Unit Tests
         </a>
+        
         
         
         
@@ -560,7 +630,7 @@
 
 
 <div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;text=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
+    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;text=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
         <i class="icon-twitter-squared text-secondary"></i>
     </a>
 </div>
@@ -569,7 +639,7 @@
 
 
 <div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;t=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
+    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;t=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
         <i class="icon-facebook-squared text-secondary"></i>
     </a>
 </div>
@@ -578,7 +648,7 @@
 
 
 <div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;title=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
+    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;title=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
         <i class="icon-linkedin-squared text-secondary"></i>
     </a>
 </div>
@@ -587,7 +657,7 @@
 
 
 <div title=email>
-    <a href="mailto:?subject=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" target="_blank" rel="noopener">
+    <a href="mailto:?subject=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" target="_blank" rel="noopener">
         <i class="icon-mail-squared text-secondary"></i>
     </a>
 </div>
@@ -596,7 +666,7 @@
 
 
 <div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" target="_blank" rel="noopener">
+    <a href="https://web.whatsapp.com/send?text=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/" target="_blank" rel="noopener">
         <i class="icon-whatsapp text-secondary"></i>
     </a>
 </div>
@@ -605,7 +675,7 @@
 
 
 <div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;title=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
+    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;title=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
         <i class="icon-reddit-alien text-secondary"></i>
     </a>
 </div>
@@ -614,7 +684,7 @@
 
 
 <div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;title=Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
+    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/&amp;title=WP%20Local%20Install%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
         <i class="icon-weibo text-secondary"></i>
     </a>
 </div>
@@ -625,91 +695,32 @@
 <i class="icon-blank ctab-transparent"></i></div>
         <div class="row">
           <main id="content" class="col-md-11 post-basic">
-            <h2 id="install-wordpress-locally">Install WordPress locally</h2>
-<p>While it is possible to develop WordPress Plugin on a WordPress
-installation hosted on server or cloud, it is much more convenient to do
-that on local machine.In this section, we explain the steps to install
-WordPress on local system.</p>
-<p>XAMPP is probably the easiest way to install WordPress locally.
-<a href="http://www.apachefriends.org/index.html" target="_blank">XAMPP</a> by Apache Friends
-bundles Apache, MySQL, PHP and Pearl as an installer. XAMPP comes as
-separate package for Linux, Windows and Mac. Download the appropriate
-package for your system from <a href="http://www.apachefriends.org/download.html" target="_blank">XAMPP Download
-page</a>. We explain how to
-install it on Linux and Windows.</p>
-<h3 id="install-xampp-on-linux">Install XAMPP on Linux.</h3>
-<p>Download XAMPP version 5.5.19 as it contains PHP 5.5 and MySQL 5.6
-instead of the latest 5.6.3 with PHP 5.6. We need root access to run the
-XAMPP installer.</p>
-<p>Change mode of the downloaded file and run XAMPP installer.</p>
-<pre><code class="language-screen" data-lang="screen"># chmod 755 xampp-linux-5.5.19-0-installer.run
+            <h2 id="install-wordpress-for-plugin-development">Install WordPress for Plugin Development</h2>
+<p>For plugin development we need a local installation of Wordpress. There are multiple ways to do this, however our preferred choice is to go with Docker; probably, the most elegant way to run Wordpress locally.</p>
+<p>If you are new to Docker, then we suggest you to get familiarize with it as docker or similar technologies is the modern way of doing things in cloud platforms; it is not that difficult. Running Wordpress with Docker is breeze, just couple of commands and you get it up and running as everything is pre-configured.</p>
+<p>Still, you like to do things in old fashion, then you may install <a href="/tutorial/wordpress-plugin-development/install-xampp-wordpress" target="_blank">Wordpress using XAMPP</a>.</p>
+<h2 id="install-docker-components">Install Docker Components</h2>
+<p>We need Docker and Docker Compose to run Wordpress and MySQL containers.
+Refer <a href="https://docs.docker.com/engine/install/">Install Docker Engine</a> and <a href="https://docs.docker.com/compose/install/">Install Docker Compose</a> and choose appropriate platform such as Windows, Linux or Mac.</p>
+<p>After installation, test it by running following commands,</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+docker run hello-world
+docker-compose -version
 
-# ./xampp-linux-5.5.19-0-installer.run
-</code></pre><p>In the Setup screen, select both core and dev components.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-comps.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP setup" />
-</figure>
+</code></pre></div><h2 id="run-wordpress">Run WordPress</h2>
+<p>We are ready to run and install WordPress. First download <a href="https://github.com/maithilish/codefs/blob/master/share-on-social/docker-compose.yml">docker-compose.yml file</a> from our project page and copy it some <strong>work folder</strong> where you want to develop on your plugin; any location is fine. This folder will be used by Docker to place Wordpress and database data files. Run following command from the work folder,</p>
+<div class="highlight"><pre class="chroma"><code class="language-BASH" data-lang="BASH">
+docker-compose up
 
-<p>XAMPP installer unpack all components under <code>/opt/lampp</code> directory.</p>
-<p>After installation, use following commands to start and stop the
-servers.</p>
-<pre><code class="language-screen" data-lang="screen">[root@m m]# /opt/lampp/lampp start
+</code></pre></div><p>Docker will download Wordpress and MySQL images from Docker Hub and create and run two containers. This process may take couple of minutes as the download size is about 600MB. Wait for image download to complete and then check status of containers with</p>
+<pre><code class="language-Screen" data-lang="Screen">
+$ docker ps
 
-Starting XAMPP for Linux 5.5.19...
-XAMPP: Starting Apache...ok.
-XAMPP: Starting MySQL...ok.
-XAMPP: Starting ProFTPD...ok.
-</code></pre><p>To stop servers, use <code>/opt/lampp/lampp stop</code></p>
-<p><strong>libc.so error.</strong></p>
-<p>In Fedora 19, when we start the XAMPP we got lib.c not found
-error.</p>
-<pre><code class="language-screen" data-lang="screen">error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory.
-</code></pre><p>To resolve this, we need to edit <code>/opt/lampp/lampp</code> file and change line
-436 and pass proper kernel version of our system.</p>
-<pre><code class="language-screen" data-lang="screen">    export LD_ASSUME_KERNEL=3.9.5
-</code></pre><h3 id="install-xampp-on-windows">Install XAMPP on Windows.</h3>
-<p>Download XAMPP Windows version xampp-win32-5.5.19-0-VC11-installer.exe,
-which bundles PHP 5.5 and MySQL 5.6.</p>
-<p>Run downloaded installer and in the Setup screen select all components.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-win-comps.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP Windows components" />
-</figure>
+CONTAINER ID   IMAGE              STATUS         PORTS                               NAMES
+5978b42efabc   wordpress:latest   Up 3 minutes   0.0.0.0:8000-&gt;80/tcp                wp
+08c08ebc263f   mysql:5.7          Up 3 minutes   0.0.0.0:3306-&gt;3306/tcp, 33060/tcp   wp-db
 
-<p>In Windows, by default XAMPP installs under <code>C:xampp</code> directory. Go with
-the default path to avoid further setup.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-win-path.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP Windows default path." />
-</figure>
-
-<p>Run C:xampp/xampp-control.exe to bring up the XAMPP Control Panel. Start
-and stop the servers through the control panel.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-win-panel.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP Windows Control Panel." />
-</figure>
-
-<h3 id="test-xampp-setup">Test XAMPP Setup.</h3>
-<p>From here on steps are same for Linux and Windows. Before installing
-WordPress on XAMPP we need to test the setup. To do that, start MySQL
-and Apache servers and then open <code>http://localhost</code> in the browser and
-click <strong>Status</strong> in the left menu.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-xampp-status.png" alt="WordPress Plugin Development Tutorial - WordPress Install locally - XAMPP check status." />
-</figure>
-
-<p>To run WordPress, we need components MySQL and PHP as activated.</p>
-<h3 id="install-wordpress">Install WordPress.</h3>
-<p>We are ready to install WordPress.</p>
-<p><strong>XAMPP Document Root</strong></p>
-<p>In XAMPP, <strong>Document Root,</strong> the directory that holds web site is
-directory named <code>htdocs</code>.</p>
-<p>In Linux, it defaults to <code>/opts/lampp/htdocs</code> and in Windows it is
-<code>c:xampphtdocs</code>.</p>
-<p>For sake of brevity, we explain the installation process on Linux. For
-Windows, we have to adjust the paths slightly. The Linux path
-<code>/opt/lampp</code> is <code>c:xampp</code> in Windows and likewise <code>/opt/lampp/htdocs</code> is
-<code>c:xampphtdocs</code>. Apart from this, development steps are same under Linux
-and Windows.</p>
-
+</code></pre>
 
 <div>&nbsp;</div>
 
@@ -727,147 +738,18 @@ and Windows.</p>
 
 
 
-<p>Normally WordPress is installed directly under <strong>Document Root</strong>
-directory. But document root, htdocs, already contains some XAMPP
-example files. Rather than deleting those files, we can install
-WordPress under a subdirectory. This also allows us to install multiple
-versions of WordPress and switch version to test the plugin against
-different versions. With this strategy, we can even configure WordPress
-to run as Multi Site and switch between single or multi site.</p>
-<p>First rename the index.php that comes with XAMPP as xampp.php with a
-move or rename command.</p>
-<pre><code class="language-screen" data-lang="screen">$ mv index.php xampp.php
-</code></pre><p>Next, download the latest WordPress.zip from <a href="http://wordpress.org" target="_blank">WordPress</a> and install it in <code>/opt/lampp/htdocs</code></p>
-<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs
-$ unzip wordpress-4.0.1.zip
-$ mv wordpress wordpress-4.0.1     // rename the dir
-</code></pre><p>We rename the <code>wordpress</code> directory as <code>wordpress-4.0.1</code> so that we are
-free to install other versions later.</p>
-<p>Apache should redirect all access to <code>http://localhost/</code> to files in
-WordPress directory and for that add following files to
-<code>/opt/lampp/htdocs</code>.</p>
-<p><code>/opt/lampp/htdocs/index.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="err">&lt;</span>?php
-/**
- * Front to the WordPress application. This file doesn&#39;t do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
+<p>With containers up and running, open <code>http://localhost:8000</code> in the browser to get WordPress Installation screen. Complete the WordPress installation.</p>
+<p>Once WP Installation is complete, you will have following folders in your work directory.</p>
+<pre><code class="language-Screen" data-lang="Screen">
+m@m:mywp$ ls -lrt
+total 12
+-rwxrwxr-x 1 m                m         693 Mar  9 16:56 docker-compose.yml
+drwxr-xr-x 7 systemd-coredump root     4096 Mar 14 17:10 db
+drwxr-xr-x 5 www-data         www-data 4096 Mar 14 17:10 wp
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define(&#39;WP_USE_THEMES&#39;, true);
 
-/** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . &#39;/wordpress-4.0.1/wp-blog-header.php&#39; );
-</code></pre></div><p><code>/opt/lampp/htdocs/.htaccess</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">
-# BEGIN WordPress
-<span class="nt">&lt;IfModule</span> <span class="err">mod_rewrite.c</span><span class="nt">&gt;</span>
-
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index.php$ - <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#34;https://api.wordpress.org/secret-key/1.1/salt/&#34;</span> <span class="na">target=</span><span class="s">&#34;_blank&#34;</span><span class="nt">&gt;</span>L]
-
-# add a trailing slash to /wp-admin
-RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
-
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) wordpress-4.0.1/$2 [L]
-RewriteRule ^([_0-9a-zA-Z-]+/)?(.*.php)$ wordpress-4.0.1/$2 [L]
-RewriteRule . index.php [L]
-
-<span class="nt">&lt;/IfModule&gt;</span>
-
-# END WordPress
-</code></pre></div><p>To switch to the another version, we have to replace the wordpress-4.0.1
-strings in these files to the new directory.</p>
-<p>Next add WordPress Configuration file <code>wp-config.php</code> to
-<code>/opt/lampp/htdocs/wordpress-4.0.1</code> by copying and editing the sample
-config file that comes with WordPress.</p>
-<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp/htdocs/wordpress-4.0.1
-$ cp wp-config-sample.php wp-config.php
-</code></pre><p>Edit MySQL config section as follows.</p>
-<p><code>/opt/lampp/htdocs/wordpress-4.0.1/wp-config.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">/** The name of the database for WordPress */
-define(&#39;DB_NAME&#39;, &#39;wordpress&#39;);
-
-/** MySQL database username */
-define(&#39;DB_USER&#39;, &#39;wp&#39;);
-
-/** MySQL database password */
-define(&#39;DB_PASSWORD&#39;, &#39;wp&#39;);
-
-/** MySQL hostname */
-define(&#39;DB_HOST&#39;, &#39;localhost&#39;);
-</code></pre></div><p>In the WP Config file, we also need to enter some unique phrases for the
-items in Authentication Keys and Salts section. From wp-config.php,
-remove the lines shown in the next screenshot.</p>
-<p><code>/opt/lampp/htdocs/wordpress-4.0.1/wp-config.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML">define(&#39;AUTH_KEY&#39;,         &#39;put your unique phrase here&#39;);
-define(&#39;SECURE_AUTH_KEY&#39;,  &#39;put your unique phrase here&#39;);
-define(&#39;LOGGED_IN_KEY&#39;,    &#39;put your unique phrase here&#39;);
-define(&#39;NONCE_KEY&#39;,        &#39;put your unique phrase here&#39;);
-define(&#39;AUTH_SALT&#39;,        &#39;put your unique phrase here&#39;);
-define(&#39;SECURE_AUTH_SALT&#39;, &#39;put your unique phrase here&#39;);
-define(&#39;LOGGED_IN_SALT&#39;,   &#39;put your unique phrase here&#39;);
-define(&#39;NONCE_SALT&#39;,       &#39;put your unique phrase here&#39;);
-</code></pre></div><p>We can get random unique keys and salts from WordPress Org. Open
-<a href="https://api.wordpress.org/secret-key/1.1/salt/" target="_blank">WordPress API</a> in a
-browser tab, which generates and displays random keys and salts. Copy
-the contents, paste it to the WP Config file&rsquo;s and save the changes.</p>
-<p>Final step is to create new database in MySQL to hold WordPress tables.
-Login to MySQL create a database named <strong>wordpress</strong> and grant
-privileges on the database to user named <strong>wp</strong> with password <strong>wp</strong> as
-shown below.</p>
-<pre><code class="language-screen" data-lang="screen">$ cd /opt/lampp
-$ bin/mysql -u root
-mysql&gt; create database wordpress;
-mysql&gt; GRANT ALL PRIVILEGES ON wordpress.* TO wp@localhost IDENTIFIED BY 'wp';
-mysql&gt; flush privileges;
-mysql&gt; exit
-</code></pre><p>With everything in place, open <code>http://localhost</code> in the browser to get
-WordPress installation screen. Complete the WordPress installation.</p>
-<p><strong>Multiple WordPress Versions</strong></p>
-<p>As we installed WordPress under a separate directory in htdoc, we can
-keep multiple versions of WordPress and switch between them. To install
-new version, follow these steps.</p>
-<ul>
-<li>
-<p>Extract required version of wordpress zip in htdocs and rename the
-wordpress directory with a version number such as wordpress-x.x.x
-where x.x.x is the version number.</p>
-</li>
-<li>
-<p>Edit <code>/opt/lampp/htdocs/index.php</code> and <code>/opt/lampp/htdocs/.htaccess</code>
-and change existing WordPress paths to new path.</p>
-</li>
-<li>
-<p>Copy the wp-config.php from a existing setup and change the line
-<code>define('DB_NAME', 'wordpress-x.x.x')</code>with a new database name. This
-is essential else WordPress uses an existing database of an earlier
-version.</p>
-</li>
-<li>
-<p>In MySQL, create new a database and grant privileges as done
-earlier.</p>
-</li>
-<li>
-<p>In browser, access the site and complete WordPress installation.</p>
-</li>
-<li>
-<p>To switch back to an earlier version, edit
-<code>/opt/lampp/htdocs/index.php</code> and <code>/opt/lampp/htdocs/.htaccess</code> and
-change WordPress paths.</p>
-</li>
-</ul>
-<p>In the next section, we start with WordPress plugin basics.</p>
+</code></pre><p>Docker places wordpress files in <code>wp</code> folder and database files in <code>db</code>. Here onwards, we refer <code>wp</code> as the wordpress directory. We are going to place the our plugin folder in <code>wp/wp-content/plugins</code> dir in the next tutorial.</p>
+<p>In the next tutorial, we start with WordPress plugin basics by start coding a simple plugin.</p>
 
           </main>
         </div>

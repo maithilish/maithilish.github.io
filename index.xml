@@ -153,8 +153,8 @@ export M2_HOME=/opt/apache-maven/maven export PATH=$M2_HOME/bin:${PATH} To persi
       <pubDate>Fri, 11 Jan 2019 07:12:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/</guid>
-      <description>&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; CodeTab WordPress Plugin Development Tutorial Some time back, we released Share on Social, a social media sharing plugin. In this WordPress Plugin Development Tutorial, we go through the construction of the plugin and also other essentials to develop a robust WordPress plugin, so as to share the experience with aspiring WordPress Plugin developers.
-There are enough blogs about WordPress Plugin Development.</description>
+      <description>CodeTab WordPress Plugin Development Tutorial Some time back, we released Share on Social, a social media sharing plugin. To share the experience with aspiring plugin developers, this guide explains plugin coding and unit testing to develop a production level plugin.
+&amp;nbsp;   (adsbygoogle = window.adsbygoogle || []).push({});  &amp;nbsp; There are enough blogs about WordPress Plugin Development. However, it is difficult to find a complete tutorial that explains structure and working of a production ready plugin.</description>
     </item>
     
     <item>
@@ -309,13 +309,13 @@ Work Dir Throughout the guide, we use a work directory to run Apache Maven examp
     </item>
     
     <item>
-      <title>Local Install - WordPress Plugin Development - CodeTab</title>
+      <title>WP Local Install - WordPress Plugin Development - CodeTab</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</link>
       <pubDate>Fri, 11 Jan 2019 08:22:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</guid>
-      <description>Install WordPress locally While it is possible to develop WordPress Plugin on a WordPress installation hosted on server or cloud, it is much more convenient to do that on local machine.In this section, we explain the steps to install WordPress on local system.
-XAMPP is probably the easiest way to install WordPress locally. XAMPP by Apache Friends bundles Apache, MySQL, PHP and Pearl as an installer. XAMPP comes as separate package for Linux, Windows and Mac.</description>
+      <description>Install WordPress for Plugin Development For plugin development we need a local installation of Wordpress. There are multiple ways to do this, however our preferred choice is to go with Docker; probably, the most elegant way to run Wordpress locally.
+If you are new to Docker, then we suggest you to get familiarize with it as docker or similar technologies is the modern way of doing things in cloud platforms; it is not that difficult.</description>
     </item>
     
     <item>
@@ -439,10 +439,10 @@ Maven can manage both internal and external dependencies. For a Java project, ex
       <pubDate>Fri, 11 Jan 2019 08:04:00 +0530</pubDate>
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</guid>
-      <description>2.1. WordPress Simple Plugin In this section, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
-We use Eclipse IDE with PDT (PHP Development Tools), but you are free to use your favorite PHP IDE.
-Create PHP Project
-In Eclipse, create a new empty PHP project named wp-simple-plugin. Next add the plugins&#39; main file wp-simple-plugin.php in the top folder with the following contents.</description>
+      <description>2.1. WordPress Simple Plugin In this tutorial, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
+We use VSCode as IDE, but you are free to use your favorite PHP IDE.
+To begin, create a new folder named wp-simple-plugin in wp-content/plugins. Change to wordpress directory and run,
+sudo mkdir wp-content/plugins/wp-simple-plugin sudo chown m.www-data wp-content/plugins/wp-simple-plugin -R sudo chmod 755 wp-content/plugins/wp-simple-plugin -R The wp-content/plugins folder is owned by www-data user, so we are using sudo (in linux) to create the new folder and then change its ownership to user id m (my user id).</description>
     </item>
     
     <item>
@@ -846,7 +846,7 @@ The Maven core is small and it&amp;rsquo;s just capable of parsing XML files suc
       
       <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</guid>
       <description>In this chapter, we step through the plugins&#39; main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
-Plugin Info The main file share-on-social.php starts with header comments. As already described in the Section 2.1, “WordPress Simple Plugin”](wordpress-simple-plugin/), WordPress uses the header comments from the main file to display the Plugin info in plugins page.
+Plugin Info The main file share-on-social.php starts with header comments. As already described in the “WordPress Simple Plugin”, WordPress uses the header comments from the main file to display the Plugin info in plugins page.
 Define Constants Throughout the plugin, we often refer some paths and constants.</description>
     </item>
     
@@ -2763,6 +2763,16 @@ Source code of the GWT project is archived into part-1.zip, part-2.zip etc., cor
       <guid>https://www.codetab.org/tutorial/gwt/gwt-demo/</guid>
       <description>Welcome to the Fins demo !
  GWT Tutorial Demo showcases Fins, the application developed in the tutorial, hosted on Google App Engine Google App Engine</description>
+    </item>
+    
+    <item>
+      <title>Wordpress Xampp - WordPress Plugin Development - CodeTab</title>
+      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/install-xampp-wordpress/</link>
+      <pubDate>Fri, 11 Jan 2019 08:22:00 +0530</pubDate>
+      
+      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/install-xampp-wordpress/</guid>
+      <description>WordPress with XAMPP While Docker is the easiest way to install and run Wordpress, another option is XAMPP. Xampp by Apache Friends bundles Apache, MySQL, PHP and Pearl as an installer. Xampp comes as separate package for Linux, Windows and Mac. Download the appropriate package for your system from Xampp Download page. We explain how to install it on Linux and Windows.
+For Docker method, see Install Wordpress on Docker; it is much easier than Xampp.</description>
     </item>
     
   </channel>

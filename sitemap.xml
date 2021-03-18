@@ -134,7 +134,7 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/</loc>
-    <lastmod>2019-01-11T07:12:00+05:30</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
@@ -269,7 +269,7 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/</loc>
-    <lastmod>2019-01-11T08:22:00+05:30</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
@@ -359,7 +359,7 @@
   
   <url>
     <loc>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</loc>
-    <lastmod>2019-01-11T08:04:00+05:30</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
@@ -1503,18 +1503,23 @@
   </url>
   
   <url>
+    <loc>https://www.codetab.org/tutorial/wordpress-plugin-development/install-xampp-wordpress/</loc>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.codetab.org/tags/scoopi-scraper-cluster/</loc>
     <lastmod>2020-12-02T01:02:00+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tags/</loc>
-    <lastmod>2020-12-02T01:02:00+05:30</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tutorial/</loc>
-    <lastmod>2020-12-02T01:02:00+05:30</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
@@ -1764,7 +1769,7 @@
   
   <url>
     <loc>https://www.codetab.org/tags/wordpress-plugin-development/</loc>
-    <lastmod>2019-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
@@ -2103,13 +2108,18 @@
   </url>
   
   <url>
-    <loc>https://www.codetab.org/tags/wordpress-install-locally/</loc>
-    <lastmod>2019-01-11T08:22:00+05:30</lastmod>
+    <loc>https://www.codetab.org/tags/wordpress-install-locally-docker-compose-container/</loc>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.codetab.org/tags/wordpress-install-xampp/</loc>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://www.codetab.org/tags/wordpress-simple-plugin/</loc>
-    <lastmod>2019-01-11T08:04:00+05:30</lastmod>
+    <lastmod>2021-03-15T07:13:10+05:30</lastmod>
   </url>
   
   <url>

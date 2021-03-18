@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-plugin-development-tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Admin Module - Settings</title>
+      <title>Admin - Settings</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/</link>
       <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>Admin Module - Posts</title>
+      <title>Admin - Posts</title>
       <link>https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/</link>
       <pubDate>Fri, 11 Jan 2019 23:03:00 +0530</pubDate>
       
