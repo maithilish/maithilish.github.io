@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>java generics bounded wildcards api tutorial on Codetab</title>
-    <link>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</link>
-    <description>Recent content in java generics bounded wildcards api tutorial on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java Generics Wildcards in API - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link>
-      <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
-      <description>The previous tutorial covered wildcard bounds, producers, consumers, get and put methods; this tutorial explorers wildcard bounds in Java API.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>java generics bounded wildcards api tutorial on Codetab</title><link>https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/</link><description>Recent content in java generics bounded wildcards api tutorial on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/java-generics-bounded-wildcards-api-tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Java Generics Wildcards in API - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link><pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid><description>The previous tutorial covered wildcard bounds, producers, consumers, get and put methods; this tutorial explorers wildcard bounds in Java API.
 Following class hierarchy is used in explanation:
- Wildcard bounds in Java API Java API extensively uses wildcard bounds, and we should learn to tackle them. We start with couple of easy ones from java.util.Collections, and then move on to a difficult one in java.util.Stream.
-Take the &amp;lt;T&amp;gt; void fill(List&amp;lt;? super T&amp;gt; list, T obj) method of Collections class.</description>
-    </item>
-    
-  </channel>
-</rss>
+Wildcard bounds in Java API Java API extensively uses wildcard bounds, and we should learn to tackle them. We start with couple of easy ones from java.util.Collections, and then move on to a difficult one in java.util.Stream.
+Take the &amp;lt;T&amp;gt; void fill(List&amp;lt;? super T&amp;gt; list, T obj) method of Collections class.</description></item></channel></rss>

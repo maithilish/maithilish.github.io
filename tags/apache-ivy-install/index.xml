@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>apache ivy install on Codetab</title>
-    <link>https://www.codetab.org/tags/apache-ivy-install/</link>
-    <description>Recent content in apache ivy install on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jan 2019 21:29:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/apache-ivy-install/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Install Task - Local Repository - Apache Ivy Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</link>
-      <pubDate>Thu, 10 Jan 2019 21:29:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</guid>
-      <description>To build private repository like local or shared repositories we have to copy the module&amp;rsquo;s files and artifacts from public repository to private repository and we have to use Apache Ivy Install task for this. It resolves a module and its dependencies from a repository and install them in another repository. Apache Ivy Install task copies module&amp;rsquo;s ivy file and artifacts from a source repository to a target repository.
-Let&amp;rsquo;s see Apache Ivy Install task in action by building some private repositories.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>apache ivy install on Codetab</title><link>https://www.codetab.org/tags/apache-ivy-install/</link><description>Recent content in apache ivy install on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 10 Jan 2019 21:29:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/apache-ivy-install/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Task - Local Repository - Apache Ivy Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</link><pubDate>Thu, 10 Jan 2019 21:29:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/</guid><description>To build private repository like local or shared repositories we have to copy the module&amp;rsquo;s files and artifacts from public repository to private repository and we have to use Apache Ivy Install task for this. It resolves a module and its dependencies from a repository and install them in another repository. Apache Ivy Install task copies module&amp;rsquo;s ivy file and artifacts from a source repository to a target repository.
+Let&amp;rsquo;s see Apache Ivy Install task in action by building some private repositories.</description></item></channel></rss>

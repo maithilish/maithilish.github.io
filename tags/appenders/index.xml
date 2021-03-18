@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>appenders on Codetab</title>
-    <link>https://www.codetab.org/tags/appenders/</link>
-    <description>Recent content in appenders on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 21:17:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/appenders/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Appenders Encoders - Gotz ETL - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gotz-etl/appenders-encoders/</link>
-      <pubDate>Fri, 11 Jan 2019 21:17:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gotz-etl/appenders-encoders/</guid>
-      <description>Gotz uses appenders to append data to output and encoders to encode (alter the output format) the output. At present, it comes with two appenders - FileAppender and DbAppender.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>appenders on Codetab</title><link>https://www.codetab.org/tags/appenders/</link><description>Recent content in appenders on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 21:17:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/appenders/index.xml" rel="self" type="application/rss+xml"/><item><title>Appenders Encoders - Gotz ETL - CodeTab</title><link>https://www.codetab.org/tutorial/gotz-etl/appenders-encoders/</link><pubDate>Fri, 11 Jan 2019 21:17:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gotz-etl/appenders-encoders/</guid><description>Gotz uses appenders to append data to output and encoders to encode (alter the output format) the output. At present, it comes with two appenders - FileAppender and DbAppender.
 FileAppender So far, all examples use FileAppender which is defined as follows
-&amp;lt;steps name=&amp;#34;commonSteps&amp;#34;&amp;gt; ... other steps ... &amp;lt;step name=&amp;#34;appender&amp;#34; class=&amp;#34;org.codetab.gotz.step.load.DataAppender&amp;#34;&amp;gt; &amp;lt;nextStep&amp;gt;end&amp;lt;/nextStep&amp;gt; &amp;lt;appender name=&amp;#34;file&amp;#34; class=&amp;#34;org.codetab.gotz.step.load.appender.FileAppender&amp;#34;&amp;gt; &amp;lt;encoder name=&amp;#34;csv&amp;#34; class=&amp;#34;org.codetab.gotz.step.load.encoder.CsvEncoder&amp;#34;&amp;gt; &amp;lt;delimiter&amp;gt;,&amp;lt;/delimter&amp;gt; &amp;lt;/encoder&amp;gt; &amp;lt;file&amp;gt;output/data.txt&amp;lt;/file&amp;gt; &amp;lt;/appender&amp;gt; &amp;lt;/step&amp;gt; &amp;lt;/steps&amp;gt; To use appenders, first we must define a step that uses class DataAppender and this class is responsible for creation of appenders.</description>
-    </item>
-    
-  </channel>
-</rss>
+&amp;lt;steps name=&amp;#34;commonSteps&amp;#34;&amp;gt; ... other steps ... &amp;lt;step name=&amp;#34;appender&amp;#34; class=&amp;#34;org.codetab.gotz.step.load.DataAppender&amp;#34;&amp;gt; &amp;lt;nextStep&amp;gt;end&amp;lt;/nextStep&amp;gt; &amp;lt;appender name=&amp;#34;file&amp;#34; class=&amp;#34;org.codetab.gotz.step.load.appender.FileAppender&amp;#34;&amp;gt; &amp;lt;encoder name=&amp;#34;csv&amp;#34; class=&amp;#34;org.codetab.gotz.step.load.encoder.CsvEncoder&amp;#34;&amp;gt; &amp;lt;delimiter&amp;gt;,&amp;lt;/delimter&amp;gt; &amp;lt;/encoder&amp;gt; &amp;lt;file&amp;gt;output/data.txt&amp;lt;/file&amp;gt; &amp;lt;/appender&amp;gt; &amp;lt;/step&amp;gt; &amp;lt;/steps&amp;gt; To use appenders, first we must define a step that uses class DataAppender and this class is responsible for creation of appenders.</description></item></channel></rss>

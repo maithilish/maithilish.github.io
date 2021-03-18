@@ -1,65 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Manage on Codetab</title>
-    <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/</link>
-    <description>Recent content in Manage on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</link>
-      <pubDate>Sat, 12 Jan 2019 01:02:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</guid>
-      <description>Persistence With persistence, Scoopi offers following benefits.
- reduce network usage by reusing the downloaded pages recover from the aborted run by skipping the tasks already completed avoid expensive parse operation by reuse of persisted data set expiry date for each page  Setup Database If you running Scoopi from docker image then no database setup is required as docker image contains pre-configured MariaDB container. Please refer Scoopi Installation to run Scoopi with MariaDB using docker-compose.</description>
-    </item>
-    
-    <item>
-      <title>Split Definitions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</link>
-      <pubDate>Sat, 12 Jan 2019 01:18:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</guid>
-      <description>Split Definitions The Scoopi definition file tends to grow as you scrape multiple types of data or large set of links. This chapter explains how to split the definitions into multiple files for easy maintenance.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manage on Codetab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/</link><description>Recent content in Manage on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/index.xml" rel="self" type="application/rss+xml"/><item><title>Persistence - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</link><pubDate>Sat, 12 Jan 2019 01:02:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/persistence/</guid><description>Persistence With persistence, Scoopi offers following benefits.
+reduce network usage by reusing the downloaded pages recover from the aborted run by skipping the tasks already completed avoid expensive parse operation by reuse of persisted data set expiry date for each page Setup Database If you running Scoopi from docker image then no database setup is required as docker image contains pre-configured MariaDB container. Please refer Scoopi Installation to run Scoopi with MariaDB using docker-compose.</description></item><item><title>Split Definitions - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</link><pubDate>Sat, 12 Jan 2019 01:18:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/split-definitions/</guid><description>Split Definitions The Scoopi definition file tends to grow as you scrape multiple types of data or large set of links. This chapter explains how to split the definitions into multiple files for easy maintenance.
 Scoopi allows you to split the definitions either on job types or on top level elements.
-Split on Job Types The examples so far scraped BS, PL, snapshot data - price and snapshot - of Acme.</description>
-    </item>
-    
-    <item>
-      <title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</link>
-      <pubDate>Sat, 12 Jan 2019 01:29:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</guid>
-      <description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
+Split on Job Types The examples so far scraped BS, PL, snapshot data - price and snapshot - of Acme.</description></item><item><title>Logs - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</link><pubDate>Sat, 12 Jan 2019 01:29:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/logs/</guid><description>Logs Scoopi uses Logback library for logging. By default, it logs info message to console and log errors to logs/error.log file.
 Debug and Trace logs The logback configuration file logback.xml is located in conf folder. By default root log level is info which outputs error, warn and info logs.
-To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description>
-    </item>
-    
-    <item>
-      <title>Dashboard - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</link>
-      <pubDate>Sat, 12 Jan 2019 01:36:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</guid>
-      <description>Dashboard Scoopi Dashboard is an nice little Angular web app that displays useful information such as system, task and pool stats.
+To output debug logs, change root level to debug and un-comment appender-ref ref=&amp;ldquo;debuglog&amp;rdquo; element. and similarly, for trace logs. The trace logs output query and parsed html nodes which is helpful to construct query strings.</description></item><item><title>Dashboard - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</link><pubDate>Sat, 12 Jan 2019 01:36:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/dashboard/</guid><description>Dashboard Scoopi Dashboard is an nice little Angular web app that displays useful information such as system, task and pool stats.
 The screenshot of the Scoopi dashboard is
- Embedded Jetty Web Server serves the dashboard and we can access the Scoopi dashboard at http://localhost:9010 while Scoopi is running. The dashboard can kept running even after scoopi is finished and use the same one for next run as it stops when scoopi terminates and refreshes itself once it detects that scoopi is running again.</description>
-    </item>
-    
-    <item>
-      <title>DB Setup - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</link>
-      <pubDate>Sat, 12 Jan 2019 00:46:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</guid>
-      <description>Setup HSQLDB Database for Scoopi To run examples with persistence we need HSQLDB up and running. Download HSQLDB version 2.3 and extract it to some folder. To create database and start HSQLDB server, run
-cd hsqldb-2.3.0/hsqldb java -cp lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:data/scoopi --dbname.0 scoopi  This creates database named scoopi and places database files in data directory.
-Use HSQLDB client to connect running database and to do that run following from another console</description>
-    </item>
-    
-  </channel>
-</rss>
+Embedded Jetty Web Server serves the dashboard and we can access the Scoopi dashboard at http://localhost:9010 while Scoopi is running. The dashboard can kept running even after scoopi is finished and use the same one for next run as it stops when scoopi terminates and refreshes itself once it detects that scoopi is running again.</description></item><item><title>DB Setup - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</link><pubDate>Sat, 12 Jan 2019 00:46:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/manage/db-setup/</guid><description>Setup HSQLDB Database for Scoopi To run examples with persistence we need HSQLDB up and running. Download HSQLDB version 2.3 and extract it to some folder. To create database and start HSQLDB server, run
+cd hsqldb-2.3.0/hsqldb java -cp lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:data/scoopi --dbname.0 scoopi This creates database named scoopi and places database files in data directory.
+Use HSQLDB client to connect running database and to do that run following from another console</description></item></channel></rss>

@@ -1,24 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>apache ivy publish on Codetab</title>
-    <link>https://www.codetab.org/tags/apache-ivy-publish/</link>
-    <description>Recent content in apache ivy publish on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jan 2019 22:00:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/apache-ivy-publish/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Publish - Apache Ivy Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-ivy/publish/</link>
-      <pubDate>Thu, 10 Jan 2019 22:00:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-ivy/publish/</guid>
-      <description>Occasionally we may want to add modules developed by us to the repository. This chapter explains the Apache Ivy Publish Task which publishes modules to Ivy Repository.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>apache ivy publish on Codetab</title><link>https://www.codetab.org/tags/apache-ivy-publish/</link><description>Recent content in apache ivy publish on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 10 Jan 2019 22:00:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/apache-ivy-publish/index.xml" rel="self" type="application/rss+xml"/><item><title>Publish - Apache Ivy Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/apache-ivy/publish/</link><pubDate>Thu, 10 Jan 2019 22:00:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-ivy/publish/</guid><description>Occasionally we may want to add modules developed by us to the repository. This chapter explains the Apache Ivy Publish Task which publishes modules to Ivy Repository.
 Apache Ivy Publish Task
 &amp;lt;ivy:publish&amp;gt; task publishes module&amp;rsquo;s artifacts and resolved descriptor to a repository. It is used to publish our own modules or even modules developed by others which are not available in any repository.
 Install v/s Publish
-&amp;lt;ivy:install&amp;gt; copies modules from a source repository to a destination repository.</description>
-    </item>
-    
-  </channel>
-</rss>
+&amp;lt;ivy:install&amp;gt; copies modules from a source repository to a destination repository.</description></item></channel></rss>

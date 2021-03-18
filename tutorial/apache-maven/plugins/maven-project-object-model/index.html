@@ -1,873 +1,173 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="In this tutorial, we introduce Maven Project Object Model (POM), one of the central concept of Maven. In POM, we declare project’s identity and structure">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "Project Object Model - POM - Apache Maven Tutorial – CodeTab",
-        "headline" : "Project Object Model - POM - Apache Maven Tutorial – CodeTab",
-        "url" : "https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/",
-        "description" : "In this tutorial, we introduce Maven Project Object Model (POM), one of the central concept of Maven. In POM, we declare project’s identity and structure",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-11T17:00:00+0530",
-        "dateModified" : "2019-01-11T17:00:00+0530",
-        "wordCount" : "844",
-        "keywords" : [ "maven project object model","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>Project Object Model - POM - Apache Maven Tutorial – CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">Apache Maven Tutorial</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="Apache Maven Tutorial - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/apache-maven/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/apache-maven/install-apache-maven/"
-            class="toc-page text-wrap text-muted ">
-            Installation
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/apache-maven/simple-project/"
-            class="toc-page text-wrap text-muted ">
-            Simple Project
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/apache-maven/dependency-management/"
-            class="toc-page text-wrap text-muted ">
-            Dependency Management
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/apache-maven/lifecycle-phases/"
-            class="toc-page text-wrap text-muted ">
-            Lifecycle Phases
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-plugins" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Plugins
-    </a>
-    
-    <div id="tutorial-apache-maven-plugins" class="">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugins/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Plugins
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Plugin Goals
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Lifecycle and Goals
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-configuration/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Plugin Configuration
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Plugin Execution
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/"
-            class="toc-page dropdown-item text-wrap text-danger">
-            POM – Project Object Model
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Resources Plugin
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/manage-maven-directories/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Manage Directories
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Archetype Plugin
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/plugins/useful-maven-help-commands/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Useful Help Commands
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-distribution" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Project Distribution
-    </a>
-    
-    <div id="tutorial-apache-maven-distribution" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Project Distribution
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/distribution/maven-assembly-plugin/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Assembly Plugin
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-profile" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Profile
-    </a>
-    
-    <div id="tutorial-apache-maven-profile" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/profile/maven-profiles/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Profiles
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-multi-module" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Multi Module
-    </a>
-    
-    <div id="tutorial-apache-maven-multi-module" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Multi Module Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Hierarchical Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Inheritance
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Dependency Management
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-apache-maven-eclipse" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Eclipse
-    </a>
-    
-    <div id="tutorial-apache-maven-eclipse" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Install Eclipse Maven Plugin
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Manage Eclipse Maven Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Eclipse Multi Module
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&amp;text=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&amp;t=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&amp;title=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab&amp;body=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab%20https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&amp;title=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&amp;title=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <h1 id="maven-project-object-model">Maven Project Object Model</h1>
-<p>So far in the handbook, we used bit and pieces of Maven POM (pom.xml)
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="In this tutorial, we introduce Maven Project Object Model (POM), one of the central concept of Maven. In POM, we declare project’s identity and structure"><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Project Object Model - POM - Apache Maven Tutorial – CodeTab","headline":"Project Object Model - POM - Apache Maven Tutorial – CodeTab","url":"https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/","description":"In this tutorial, we introduce Maven Project Object Model (POM), one of the central concept of Maven. In POM, we declare project’s identity and structure","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T17:00:00+0530","dateModified":"2019-01-11T17:00:00+0530","wordCount":"844","keywords":["maven project object model","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>Project Object Model - POM - Apache Maven Tutorial – CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">Apache Maven Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="Apache Maven Tutorial - CodeTab"><div><a href=https://www.codetab.org/tutorial/apache-maven/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/apache-maven/install-apache-maven/ class="toc-page text-wrap text-muted">Installation</a></div><div><a href=https://www.codetab.org/tutorial/apache-maven/simple-project/ class="toc-page text-wrap text-muted">Simple Project</a></div><div><a href=https://www.codetab.org/tutorial/apache-maven/dependency-management/ class="toc-page text-wrap text-muted">Dependency Management</a></div><div><a href=https://www.codetab.org/tutorial/apache-maven/lifecycle-phases/ class="toc-page text-wrap text-muted">Lifecycle Phases</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-apache-maven-plugins id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Plugins</a><div id=tutorial-apache-maven-plugins><a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugins/ class="toc-page dropdown-item text-wrap text-muted">Plugins</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-goals/ class="toc-page dropdown-item text-wrap text-muted">Plugin Goals</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-lifecycle-goals/ class="toc-page dropdown-item text-wrap text-muted">Lifecycle and Goals</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-configuration/ class="toc-page dropdown-item text-wrap text-muted">Plugin Configuration</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/ class="toc-page dropdown-item text-wrap text-muted">Plugin Execution</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/ class="toc-page dropdown-item text-wrap text-danger">POM – Project Object Model</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/ class="toc-page dropdown-item text-wrap text-muted">Resources Plugin</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/manage-maven-directories/ class="toc-page dropdown-item text-wrap text-muted">Manage Directories</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/maven-archetype-plugin/ class="toc-page dropdown-item text-wrap text-muted">Archetype Plugin</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/plugins/useful-maven-help-commands/ class="toc-page dropdown-item text-wrap text-muted">Useful Help Commands</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-apache-maven-distribution id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Project Distribution</a><div id=tutorial-apache-maven-distribution class=collapse><a href=https://www.codetab.org/tutorial/apache-maven/distribution/maven-project-distribution/ class="toc-page dropdown-item text-wrap text-muted">Project Distribution</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/distribution/maven-assembly-plugin/ class="toc-page dropdown-item text-wrap text-muted">Assembly Plugin</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-apache-maven-profile id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Profile</a><div id=tutorial-apache-maven-profile class=collapse><a href=https://www.codetab.org/tutorial/apache-maven/profile/maven-profiles/ class="toc-page dropdown-item text-wrap text-muted">Profiles</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-apache-maven-multi-module id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Multi Module</a><div id=tutorial-apache-maven-multi-module class=collapse><a href=https://www.codetab.org/tutorial/apache-maven/multi-module/multi-module-project/ class="toc-page dropdown-item text-wrap text-muted">Multi Module Project</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/multi-module/hierarchical-project/ class="toc-page dropdown-item text-wrap text-muted">Hierarchical Project</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/multi-module/inheritance/ class="toc-page dropdown-item text-wrap text-muted">Inheritance</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/multi-module/dependency-management/ class="toc-page dropdown-item text-wrap text-muted">Dependency Management</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-apache-maven-eclipse id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Eclipse</a><div id=tutorial-apache-maven-eclipse class=collapse><a href=https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/ class="toc-page dropdown-item text-wrap text-muted">Install Eclipse Maven Plugin</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/ class="toc-page dropdown-item text-wrap text-muted">Manage Eclipse Maven Project</a>
+<a href=https://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/ class="toc-page dropdown-item text-wrap text-muted">Eclipse Multi Module</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&text=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&t=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&title=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab&body=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab%20https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&title=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/apache-maven/plugins/maven-project-object-model/&title=Project%20Object%20Model%20-%20POM%20-%20Apache%20Maven%20Tutorial%20%e2%80%93%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><h1 id=maven-project-object-model>Maven Project Object Model</h1><p>So far in the handbook, we used bit and pieces of Maven POM (pom.xml)
 without going to deep into the subject. In this section, we formally
 introduce Maven Project Object Model (POM), one of the central concept
 of Maven. Having gone through other concepts such as lifecycle phase,
 plugins and goals, we can now put many aspects of POM into perspective
-than before.</p>
-<p>In POM, we declare project&rsquo;s identity and structure, configure builds,
+than before.</p><p>In POM, we declare project&rsquo;s identity and structure, configure builds,
 and relate projects to one another. The presence of a pom.xml file
-defines a Maven project.</p>
-<h2 id="overview-of-pom-elements-and-structure">Overview of POM Elements and Structure</h2>
-<p>The next listing shows the sections or blocks of Maven POM and the top
-level elements within the project element.</p>
-<p><code>pom.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
-  <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-  <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0
-</span><span class="s">                      http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+defines a Maven project.</p><h2 id=overview-of-pom-elements-and-structure>Overview of POM Elements and Structure</h2><p>The next listing shows the sections or blocks of Maven POM and the top
+level elements within the project element.</p><p><code>pom.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+  <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+  <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0
+</span><span class=s>                      http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class=nt>&gt;</span>
+  <span class=nt>&lt;modelVersion&gt;</span>4.0.0<span class=nt>&lt;/modelVersion&gt;</span>
 
-  <span class="c">&lt;!-- The Basics --&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>...<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>...<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>...<span class="nt">&lt;/version&gt;</span>
-  <span class="nt">&lt;packaging&gt;</span>...<span class="nt">&lt;/packaging&gt;</span>
+  <span class=c>&lt;!-- The Basics --&gt;</span>
+  <span class=nt>&lt;groupId&gt;</span>...<span class=nt>&lt;/groupId&gt;</span>
+  <span class=nt>&lt;artifactId&gt;</span>...<span class=nt>&lt;/artifactId&gt;</span>
+  <span class=nt>&lt;version&gt;</span>...<span class=nt>&lt;/version&gt;</span>
+  <span class=nt>&lt;packaging&gt;</span>...<span class=nt>&lt;/packaging&gt;</span>
 
-  <span class="nt">&lt;dependencies&gt;</span>...<span class="nt">&lt;/dependencies&gt;</span>
-  <span class="nt">&lt;parent&gt;</span>...<span class="nt">&lt;/parent&gt;</span>
-  <span class="nt">&lt;dependencyManagement&gt;</span>...<span class="nt">&lt;/dependencyManagement&gt;</span>
-  <span class="nt">&lt;modules&gt;</span>...<span class="nt">&lt;/modules&gt;</span>
-  <span class="nt">&lt;properties&gt;</span>...<span class="nt">&lt;/properties&gt;</span>
+  <span class=nt>&lt;dependencies&gt;</span>...<span class=nt>&lt;/dependencies&gt;</span>
+  <span class=nt>&lt;parent&gt;</span>...<span class=nt>&lt;/parent&gt;</span>
+  <span class=nt>&lt;dependencyManagement&gt;</span>...<span class=nt>&lt;/dependencyManagement&gt;</span>
+  <span class=nt>&lt;modules&gt;</span>...<span class=nt>&lt;/modules&gt;</span>
+  <span class=nt>&lt;properties&gt;</span>...<span class=nt>&lt;/properties&gt;</span>
 
-  <span class="c">&lt;!-- Build Settings --&gt;</span>
-  <span class="nt">&lt;build&gt;</span>...<span class="nt">&lt;/build&gt;</span>
-  <span class="nt">&lt;reporting&gt;</span>...<span class="nt">&lt;/reporting&gt;</span>
+  <span class=c>&lt;!-- Build Settings --&gt;</span>
+  <span class=nt>&lt;build&gt;</span>...<span class=nt>&lt;/build&gt;</span>
+  <span class=nt>&lt;reporting&gt;</span>...<span class=nt>&lt;/reporting&gt;</span>
 
-  <span class="c">&lt;!-- More Project Information --&gt;</span>
-  <span class="nt">&lt;name&gt;</span>...<span class="nt">&lt;/name&gt;</span>
-  <span class="nt">&lt;description&gt;</span>...<span class="nt">&lt;/description&gt;</span>
-  <span class="nt">&lt;url&gt;</span>...<span class="nt">&lt;/url&gt;</span>
-  <span class="nt">&lt;inceptionYear&gt;</span>...<span class="nt">&lt;/inceptionYear&gt;</span>
-  <span class="nt">&lt;licenses&gt;</span>...<span class="nt">&lt;/licenses&gt;</span>
-  <span class="nt">&lt;organization&gt;</span>...<span class="nt">&lt;/organization&gt;</span>
-  <span class="nt">&lt;developers&gt;</span>...<span class="nt">&lt;/developers&gt;</span>
-  <span class="nt">&lt;contributors&gt;</span>...<span class="nt">&lt;/contributors&gt;</span>
+  <span class=c>&lt;!-- More Project Information --&gt;</span>
+  <span class=nt>&lt;name&gt;</span>...<span class=nt>&lt;/name&gt;</span>
+  <span class=nt>&lt;description&gt;</span>...<span class=nt>&lt;/description&gt;</span>
+  <span class=nt>&lt;url&gt;</span>...<span class=nt>&lt;/url&gt;</span>
+  <span class=nt>&lt;inceptionYear&gt;</span>...<span class=nt>&lt;/inceptionYear&gt;</span>
+  <span class=nt>&lt;licenses&gt;</span>...<span class=nt>&lt;/licenses&gt;</span>
+  <span class=nt>&lt;organization&gt;</span>...<span class=nt>&lt;/organization&gt;</span>
+  <span class=nt>&lt;developers&gt;</span>...<span class=nt>&lt;/developers&gt;</span>
+  <span class=nt>&lt;contributors&gt;</span>...<span class=nt>&lt;/contributors&gt;</span>
 
-  <span class="c">&lt;!-- Environment Settings --&gt;</span>
-  <span class="nt">&lt;issueManagement&gt;</span>...<span class="nt">&lt;/issueManagement&gt;</span>
-  <span class="nt">&lt;ciManagement&gt;</span>...<span class="nt">&lt;/ciManagement&gt;</span>
-  <span class="nt">&lt;mailingLists&gt;</span>...<span class="nt">&lt;/mailingLists&gt;</span>
-  <span class="nt">&lt;scm&gt;</span>...<span class="nt">&lt;/scm&gt;</span>
-  <span class="nt">&lt;prerequisites&gt;</span>...<span class="nt">&lt;/prerequisites&gt;</span>
-  <span class="nt">&lt;repositories&gt;</span>...<span class="nt">&lt;/repositories&gt;</span>
-  <span class="nt">&lt;pluginRepositories&gt;</span>...<span class="nt">&lt;/pluginRepositories&gt;</span>
-  <span class="nt">&lt;distributionManagement&gt;</span>...<span class="nt">&lt;/distributionManagement&gt;</span>
-  <span class="nt">&lt;profiles&gt;</span>...<span class="nt">&lt;/profiles&gt;</span>
-<span class="nt">&lt;/project&gt;</span>
+  <span class=c>&lt;!-- Environment Settings --&gt;</span>
+  <span class=nt>&lt;issueManagement&gt;</span>...<span class=nt>&lt;/issueManagement&gt;</span>
+  <span class=nt>&lt;ciManagement&gt;</span>...<span class=nt>&lt;/ciManagement&gt;</span>
+  <span class=nt>&lt;mailingLists&gt;</span>...<span class=nt>&lt;/mailingLists&gt;</span>
+  <span class=nt>&lt;scm&gt;</span>...<span class=nt>&lt;/scm&gt;</span>
+  <span class=nt>&lt;prerequisites&gt;</span>...<span class=nt>&lt;/prerequisites&gt;</span>
+  <span class=nt>&lt;repositories&gt;</span>...<span class=nt>&lt;/repositories&gt;</span>
+  <span class=nt>&lt;pluginRepositories&gt;</span>...<span class=nt>&lt;/pluginRepositories&gt;</span>
+  <span class=nt>&lt;distributionManagement&gt;</span>...<span class=nt>&lt;/distributionManagement&gt;</span>
+  <span class=nt>&lt;profiles&gt;</span>...<span class=nt>&lt;/profiles&gt;</span>
+<span class=nt>&lt;/project&gt;</span>
 </code></pre></div><p>For now, it&rsquo;s suffice to know the overall structure and once you through
-with the guide you may refer official <a href="http://maven.apache.org/pom.html" target="_blank">POM Reference</a> to know more about it.</p>
-<h2 id="super-pom">Super POM</h2>
-<p>Maven installation comes with a pom.xml which is known as Super POM. As
+with the guide you may refer official <a href=http://maven.apache.org/pom.html target=_blank>POM Reference</a> to know more about it.</p><h2 id=super-pom>Super POM</h2><p>Maven installation comes with a pom.xml which is known as Super POM. As
 in Java, where every other class extends java.lang.Object, all Maven
 projects extends Super POM. The pom.xml we create in our project is
-child or decedent of the Super POM.</p>
-<p>The Super POM declares location of Maven central repository, Plugins
+child or decedent of the Super POM.</p><p>The Super POM declares location of Maven central repository, Plugins
 repository, build element which sets the standard locations of the
-directories, plugin configuration and execution etc.,</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<h2 id="effective-pom">Effective POM</h2>
-<p>At the start of every build, Maven internally merges project pomx.ml
-with Super POM and constructs a new POM which is known as  <strong>Effective
-POM</strong>.</p>
-<p>Earlier in <a href="/tutorial/apache-maven/plugins/maven-lifecycle-goals/">Maven Lifecycle and Plugin Goals</a>, we learned
+directories, plugin configuration and execution etc.,</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h2 id=effective-pom>Effective POM</h2><p>At the start of every build, Maven internally merges project pomx.ml
+with Super POM and constructs a new POM which is known as <strong>Effective
+POM</strong>.</p><p>Earlier in <a href=/tutorial/apache-maven/plugins/maven-lifecycle-goals/>Maven Lifecycle and Plugin Goals</a>, we learned
 that Maven binds plugins goals to lifecycle phases. Actually, this magic
 happens in effective POM and it is highly instructive to go through the
-effective POM to know the what goes on under the hood.</p>
-<p>Let&rsquo;s generate the effective POM and analyze it. To get a clear picture,
+effective POM to know the what goes on under the hood.</p><p>Let&rsquo;s generate the effective POM and analyze it. To get a clear picture,
 replace the simple-app pom.xml with a basic POM - just project
 coordinates and project
-dependencies.</p>
-<p><code>simple-app/pom.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-        <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class="nt">&gt;</span>
+dependencies.</p><p><code>simple-app/pom.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+        <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class=nt>&gt;</span>
 
-        <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+        <span class=nt>&lt;modelVersion&gt;</span>4.0.0<span class=nt>&lt;/modelVersion&gt;</span>
 
-        <span class="c">&lt;!-- project coordinates --&gt;</span>
-        <span class="nt">&lt;groupId&gt;</span>com.xyz<span class="nt">&lt;/groupId&gt;</span>
-        <span class="nt">&lt;artifactId&gt;</span>simple-app<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+        <span class=c>&lt;!-- project coordinates --&gt;</span>
+        <span class=nt>&lt;groupId&gt;</span>com.xyz<span class=nt>&lt;/groupId&gt;</span>
+        <span class=nt>&lt;artifactId&gt;</span>simple-app<span class=nt>&lt;/artifactId&gt;</span>
+        <span class=nt>&lt;version&gt;</span>1.0<span class=nt>&lt;/version&gt;</span>
 
-        <span class="c">&lt;!-- project dependencies --&gt;</span>
-        <span class="nt">&lt;dependencies&gt;</span>
-                <span class="nt">&lt;dependency&gt;</span>
-                        <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
-                        <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
-                        <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
-                        <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-                <span class="nt">&lt;/dependency&gt;</span>
-                <span class="nt">&lt;dependency&gt;</span>
-                        <span class="nt">&lt;groupId&gt;</span>commons-lang<span class="nt">&lt;/groupId&gt;</span>
-                        <span class="nt">&lt;artifactId&gt;</span>commons-lang<span class="nt">&lt;/artifactId&gt;</span>
-                        <span class="nt">&lt;version&gt;</span>2.4<span class="nt">&lt;/version&gt;</span>
-                <span class="nt">&lt;/dependency&gt;</span>
-        <span class="nt">&lt;/dependencies&gt;</span>
+        <span class=c>&lt;!-- project dependencies --&gt;</span>
+        <span class=nt>&lt;dependencies&gt;</span>
+                <span class=nt>&lt;dependency&gt;</span>
+                        <span class=nt>&lt;groupId&gt;</span>junit<span class=nt>&lt;/groupId&gt;</span>
+                        <span class=nt>&lt;artifactId&gt;</span>junit<span class=nt>&lt;/artifactId&gt;</span>
+                        <span class=nt>&lt;version&gt;</span>4.12<span class=nt>&lt;/version&gt;</span>
+                        <span class=nt>&lt;scope&gt;</span>test<span class=nt>&lt;/scope&gt;</span>
+                <span class=nt>&lt;/dependency&gt;</span>
+                <span class=nt>&lt;dependency&gt;</span>
+                        <span class=nt>&lt;groupId&gt;</span>commons-lang<span class=nt>&lt;/groupId&gt;</span>
+                        <span class=nt>&lt;artifactId&gt;</span>commons-lang<span class=nt>&lt;/artifactId&gt;</span>
+                        <span class=nt>&lt;version&gt;</span>2.4<span class=nt>&lt;/version&gt;</span>
+                <span class=nt>&lt;/dependency&gt;</span>
+        <span class=nt>&lt;/dependencies&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span>
+<span class=nt>&lt;/project&gt;</span>
 </code></pre></div><p>Next, use Maven Help Plugin to dump the effective POM to a file for
-investigation.</p>
-<pre><code class="language-screen" data-lang="screen">$ cd simple-app
+investigation.</p><pre><code class=language-screen data-lang=screen>$ cd simple-app
 $ mvn help:effective-pom -Doutput=target/effective-pom.xml
 </code></pre><p>It creates a file <code>effective-pom.xml</code> in target directory. If -Doutput
-is omitted then command outputs the effective POM to console.</p>
-<p>We explained that Maven merges project pom.xml with Super POM and
+is omitted then command outputs the effective POM to console.</p><p>We explained that Maven merges project pom.xml with Super POM and
 internally creates an effective POM which it uses to build the project.
 In the example pom.xml, we defined project coordinates, a property
 related to resource encoding and project dependencies. The effective POM
 contains these items from pom.xml and also, many more items from Super
-POM.</p>
-<p>The effective POM starts with coordinates of our project and then goes
+POM.</p><p>The effective POM starts with coordinates of our project and then goes
 on to define Maven central and plugin repositories. Next, in build
-section, it defines project and build directories.</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;build&gt;</span>
-  <span class="nt">&lt;sourceDirectory&gt;</span>/home/m/work/simple-app/src/main/java<span class="nt">&lt;/sourceDirectory&gt;</span>  
-  <span class="nt">&lt;scriptSourceDirectory&gt;</span>/home/m/work/simple-app/src/main/scripts<span class="nt">&lt;/scriptSourceDirectory&gt;</span>  
-  <span class="nt">&lt;testSourceDirectory&gt;</span>/home/m/work/simple-app/src/test/java<span class="nt">&lt;/testSourceDirectory&gt;</span>  
-  <span class="nt">&lt;outputDirectory&gt;</span>/home/m/work/simple-app/target/classes<span class="nt">&lt;/outputDirectory&gt;</span>  
-  <span class="nt">&lt;testOutputDirectory&gt;</span>/home/m/work/simple-app/target/test-classes<span class="nt">&lt;/testOutputDirectory&gt;</span>  
+section, it defines project and build directories.</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;build&gt;</span>
+  <span class=nt>&lt;sourceDirectory&gt;</span>/home/m/work/simple-app/src/main/java<span class=nt>&lt;/sourceDirectory&gt;</span>  
+  <span class=nt>&lt;scriptSourceDirectory&gt;</span>/home/m/work/simple-app/src/main/scripts<span class=nt>&lt;/scriptSourceDirectory&gt;</span>  
+  <span class=nt>&lt;testSourceDirectory&gt;</span>/home/m/work/simple-app/src/test/java<span class=nt>&lt;/testSourceDirectory&gt;</span>  
+  <span class=nt>&lt;outputDirectory&gt;</span>/home/m/work/simple-app/target/classes<span class=nt>&lt;/outputDirectory&gt;</span>  
+  <span class=nt>&lt;testOutputDirectory&gt;</span>/home/m/work/simple-app/target/test-classes<span class=nt>&lt;/testOutputDirectory&gt;</span>  
   ....  
 
-  <span class="nt">&lt;directory&gt;</span>/home/m/work/simple-app/target<span class="nt">&lt;/directory&gt;</span>  
-  <span class="nt">&lt;finalName&gt;</span>simple-app-1.0<span class="nt">&lt;/finalName&gt;</span>
+  <span class=nt>&lt;directory&gt;</span>/home/m/work/simple-app/target<span class=nt>&lt;/directory&gt;</span>  
+  <span class=nt>&lt;finalName&gt;</span>simple-app-1.0<span class=nt>&lt;/finalName&gt;</span>
 
 </code></pre></div><p>In the plugins section, Maven binds default goals for lifecycle phases.
 Though we have not defined build section in the project pom.xml, Maven
 constructs the effective POM with all sections which are essential to
-build the project.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-pom-package.png" alt="Maven Project Object Model - package phase" />
-</figure>
-
-<p>As sample, the next screenshot shows the plugin definition for Maven Jar
+build the project.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/apache-maven/media/mvn-plugins-pom-package.png alt="Maven Project Object Model - package phase"></figure><p>As sample, the next screenshot shows the plugin definition for Maven Jar
 Plugin. It defines plugin execution with id <strong>default-jar</strong>
-(default-&lt;goal-name&gt;) which binds jar:jar goal to the package phase.
+(default-&lt;goal-name>) which binds jar:jar goal to the package phase.
 If we go through the effective POM, we can find other default goals
-which binds to various lifecycle phases.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-<h2 id="project-pom-and-effective-pom">Project POM and Effective POM</h2>
-<p>Let&rsquo;s add some plugin configuration to pom.xml and see how they get
-merged into effective POM.</p>
-<p>So far, we saw many examples where single goal is executed in a
+which binds to various lifecycle phases.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h2 id=project-pom-and-effective-pom>Project POM and Effective POM</h2><p>Let&rsquo;s add some plugin configuration to pom.xml and see how they get
+merged into effective POM.</p><p>So far, we saw many examples where single goal is executed in a
 lifecycle phase. However, it is also possible to execute multiple goals
 a single phase. For example, the package phase, by default, creates a
 Jar of application class and resource files using jar:jar goal. Suppose,
 we also require a separate Jar that contains only the test classes and
 resources. The Maven Jar Plugin has another goal jar:test-jar which
 creates the Jar of test files and to bind it to package phase, add
-following snippet to the pom.xml.</p>
-<p><code>simple-app/pom.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"> ...
- <span class="c">&lt;!-- project build --&gt;</span>
- <span class="nt">&lt;build&gt;</span>
-    <span class="nt">&lt;plugins&gt;</span>
-        <span class="nt">&lt;plugin&gt;</span>
-           <span class="nt">&lt;artifactId&gt;</span>maven-jar-plugin<span class="nt">&lt;/artifactId&gt;</span>
-           <span class="nt">&lt;version&gt;</span>2.4<span class="nt">&lt;/version&gt;</span>
-           <span class="nt">&lt;executions&gt;</span>
-              <span class="nt">&lt;execution&gt;</span>
-                 <span class="nt">&lt;id&gt;</span>test-jar<span class="nt">&lt;/id&gt;</span>
-                 <span class="nt">&lt;phase&gt;</span>package<span class="nt">&lt;/phase&gt;</span>
-                 <span class="nt">&lt;goals&gt;</span>
-                    <span class="nt">&lt;goal&gt;</span>test-jar<span class="nt">&lt;/goal&gt;</span>
-                 <span class="nt">&lt;/goals&gt;</span>
-              <span class="nt">&lt;/execution&gt;</span>
-           <span class="nt">&lt;/executions&gt;</span>
-        <span class="nt">&lt;/plugin&gt;</span>
-    <span class="nt">&lt;/plugins&gt;</span>
- <span class="nt">&lt;/build&gt;</span>
+following snippet to the pom.xml.</p><p><code>simple-app/pom.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML> ...
+ <span class=c>&lt;!-- project build --&gt;</span>
+ <span class=nt>&lt;build&gt;</span>
+    <span class=nt>&lt;plugins&gt;</span>
+        <span class=nt>&lt;plugin&gt;</span>
+           <span class=nt>&lt;artifactId&gt;</span>maven-jar-plugin<span class=nt>&lt;/artifactId&gt;</span>
+           <span class=nt>&lt;version&gt;</span>2.4<span class=nt>&lt;/version&gt;</span>
+           <span class=nt>&lt;executions&gt;</span>
+              <span class=nt>&lt;execution&gt;</span>
+                 <span class=nt>&lt;id&gt;</span>test-jar<span class=nt>&lt;/id&gt;</span>
+                 <span class=nt>&lt;phase&gt;</span>package<span class=nt>&lt;/phase&gt;</span>
+                 <span class=nt>&lt;goals&gt;</span>
+                    <span class=nt>&lt;goal&gt;</span>test-jar<span class=nt>&lt;/goal&gt;</span>
+                 <span class=nt>&lt;/goals&gt;</span>
+              <span class=nt>&lt;/execution&gt;</span>
+           <span class=nt>&lt;/executions&gt;</span>
+        <span class=nt>&lt;/plugin&gt;</span>
+    <span class=nt>&lt;/plugins&gt;</span>
+ <span class=nt>&lt;/build&gt;</span>
  ...
-</code></pre></div><figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/apache-maven/media/mvn-plugins-pom-jar-multi.png" alt="Maven Project Object Model - Jar Multi goals" />
-</figure>
-
-<p>Run <code>mvn package</code> and build, in package phase, executes two goals -
+</code></pre></div><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/apache-maven/media/mvn-plugins-pom-jar-multi.png alt="Maven Project Object Model - Jar Multi goals"></figure><p>Run <code>mvn package</code> and build, in package phase, executes two goals -
 jar:jar and jar:test-jar - and creates two jars - simple-app-1.0.jar and
-simple-app-1.0-tests.jar - in target directory.</p>
-<p>Generate effective POM with <code>mvn help:effective-pom</code> and in it, for
+simple-app-1.0-tests.jar - in target directory.</p><p>Generate effective POM with <code>mvn help:effective-pom</code> and in it, for
 Maven Jar Plugin we can find two executions - default one defined by
-Super POM and another one defined by us in pom.xml.</p>
-<p>In the next chapter, we describe project resources and the Maven
-Resources Plugin.</p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+Super POM and another one defined by us in pom.xml.</p><p>In the next chapter, we describe project resources and the Maven
+Resources Plugin.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

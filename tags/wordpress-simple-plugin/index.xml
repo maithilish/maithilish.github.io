@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress simple plugin on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-simple-plugin/</link>
-    <description>Recent content in wordpress simple plugin on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 08:04:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-simple-plugin/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Simple Plugin - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</link>
-      <pubDate>Fri, 11 Jan 2019 08:04:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</guid>
-      <description>2.1. WordPress Simple Plugin In this tutorial, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress simple plugin on Codetab</title><link>https://www.codetab.org/tags/wordpress-simple-plugin/</link><description>Recent content in wordpress simple plugin on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 08:04:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-simple-plugin/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Plugin - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</link><pubDate>Fri, 11 Jan 2019 08:04:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/</guid><description>2.1. WordPress Simple Plugin In this tutorial, we setup a simple WordPress Plugin and also explain an easy way to deploy it during development phase.
 We use VSCode as IDE, but you are free to use your favorite PHP IDE.
 To begin, create a new folder named wp-simple-plugin in wp-content/plugins. Change to wordpress directory and run,
-sudo mkdir wp-content/plugins/wp-simple-plugin sudo chown m.www-data wp-content/plugins/wp-simple-plugin -R sudo chmod 755 wp-content/plugins/wp-simple-plugin -R The wp-content/plugins folder is owned by www-data user, so we are using sudo (in linux) to create the new folder and then change its ownership to user id m (my user id).</description>
-    </item>
-    
-  </channel>
-</rss>
+sudo mkdir wp-content/plugins/wp-simple-plugin sudo chown m.www-data wp-content/plugins/wp-simple-plugin -R sudo chmod 755 wp-content/plugins/wp-simple-plugin -R The wp-content/plugins folder is owned by www-data user, so we are using sudo (in linux) to create the new folder and then change its ownership to user id m (my user id).</description></item></channel></rss>

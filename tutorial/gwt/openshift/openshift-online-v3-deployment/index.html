@@ -1,818 +1,48 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="OpenShift Online V3 Deployment tutorial explains the configuration and deployment process to host the GWT application on OpenShift V3.">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "OpenShift V3 - GWT Tutorial - CodeTab",
-        "headline" : "OpenShift V3 - GWT Tutorial - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/",
-        "description" : "OpenShift Online V3 Deployment tutorial explains the configuration and deployment process to host the GWT application on OpenShift V3.",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-11T18:33:00+0530",
-        "dateModified" : "2019-01-11T18:33:00+0530",
-        "wordCount" : "903",
-        "keywords" : [ "OpenShift Online V3 Deployment","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>OpenShift V3 - GWT Tutorial - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">GWT Tutorial</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="GWT Tutorial - Complete Project - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/install/"
-            class="toc-page text-wrap text-muted ">
-            Install GWT in Eclipse
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/create-project/"
-            class="toc-page text-wrap text-muted ">
-            Project Setup
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-project-code/"
-            class="toc-page text-wrap text-muted ">
-            GWT Project Code
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-demo/"
-            class="toc-page text-wrap text-muted ">
-            GWT Tutorial Demo
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-shell" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Shell
-    </a>
-    
-    <div id="tutorial-gwt-shell" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/finsshell/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UIBinder and Custom Widget
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/contentpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TabLayoutPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/gwt-logging/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Logging
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-menu" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Menu
-    </a>
-    
-    <div id="tutorial-gwt-menu" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            ClientBundle
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu-parts/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Anchor 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus Example
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-model" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Modle
-    </a>
-    
-    <div id="tutorial-gwt-model" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/model/model/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Model
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-content" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Content
-    </a>
-    
-    <div id="tutorial-gwt-content" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/content/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GWT Tutorial - Content
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-celltable/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            CellTable
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            SuggestBox
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/titlepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TitlePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UiFactory
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/factpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            FactPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DisclosurePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/toolbar/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Toolbar
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DataGrid
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-chart/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Chart
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Close Tabs
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-rpc" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        RPC
-    </a>
-    
-    <div id="tutorial-gwt-rpc" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            RPC
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Rest of RPC
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-database" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Database
-    </a>
-    
-    <div id="tutorial-gwt-database" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/setup-database/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Database Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/persist/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO Persistence 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/retrieve/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO and Hibernate
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/gwt-dao/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DAO
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-google-app-engine" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Goolge App Engine
-    </a>
-    
-    <div id="tutorial-gwt-google-app-engine" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google App Engine
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Data Upload
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Cache
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Task Queue
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Backends
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-openshift" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        OpenShift
-    </a>
-    
-    <div id="tutorial-gwt-openshift" class="">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Prepare Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Configure
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Build and Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-development/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Development
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/"
-            class="toc-page dropdown-item text-wrap text-danger">
-            OpenShift Online V3 Deployment
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-build" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Apache Ivy
-    </a>
-    
-    <div id="tutorial-gwt-build" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/build/apache-ivy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Apache Ivy
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&amp;text=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&amp;t=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&amp;title=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&amp;title=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&amp;title=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <p> </p>
-<h2 id="126-openshift-online-v3-deployment">12.6. OpenShift Online V3 Deployment</h2>
-<p>The earlier chapters explained configuration and deployment of GWT
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="OpenShift Online V3 Deployment tutorial explains the configuration and deployment process to host the GWT application on OpenShift V3."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"OpenShift V3 - GWT Tutorial - CodeTab","headline":"OpenShift V3 - GWT Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/","description":"OpenShift Online V3 Deployment tutorial explains the configuration and deployment process to host the GWT application on OpenShift V3.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T18:33:00+0530","dateModified":"2019-01-11T18:33:00+0530","wordCount":"903","keywords":["OpenShift Online V3 Deployment","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>OpenShift V3 - GWT Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">GWT Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="GWT Tutorial - Complete Project - CodeTab"><div><a href=https://www.codetab.org/tutorial/gwt/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/gwt/install/ class="toc-page text-wrap text-muted">Install GWT in Eclipse</a></div><div><a href=https://www.codetab.org/tutorial/gwt/create-project/ class="toc-page text-wrap text-muted">Project Setup</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-project-code/ class="toc-page text-wrap text-muted">GWT Project Code</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-demo/ class="toc-page text-wrap text-muted">GWT Tutorial Demo</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-shell id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Shell</a><div id=tutorial-gwt-shell class=collapse><a href=https://www.codetab.org/tutorial/gwt/shell/finsshell/ class="toc-page dropdown-item text-wrap text-muted">UIBinder and Custom Widget</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/contentpanel/ class="toc-page dropdown-item text-wrap text-muted">TabLayoutPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/gwt-logging/ class="toc-page dropdown-item text-wrap text-muted">Logging</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-menu id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Menu</a><div id=tutorial-gwt-menu class=collapse><a href=https://www.codetab.org/tutorial/gwt/menu/menu/ class="toc-page dropdown-item text-wrap text-muted">ClientBundle</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/menu-parts/ class="toc-page dropdown-item text-wrap text-muted">Anchor</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/ class="toc-page dropdown-item text-wrap text-muted">EventBus</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/ class="toc-page dropdown-item text-wrap text-muted">EventBus Example</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-model id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Modle</a><div id=tutorial-gwt-model class=collapse><a href=https://www.codetab.org/tutorial/gwt/model/model/ class="toc-page dropdown-item text-wrap text-muted">Model</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-content id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Content</a><div id=tutorial-gwt-content class=collapse><a href=https://www.codetab.org/tutorial/gwt/content/content/ class="toc-page dropdown-item text-wrap text-muted">GWT Tutorial - Content</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-celltable/ class="toc-page dropdown-item text-wrap text-muted">CellTable</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/ class="toc-page dropdown-item text-wrap text-muted">SuggestBox</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/titlepanel/ class="toc-page dropdown-item text-wrap text-muted">TitlePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/ class="toc-page dropdown-item text-wrap text-muted">UiFactory</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/factpanel/ class="toc-page dropdown-item text-wrap text-muted">FactPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/ class="toc-page dropdown-item text-wrap text-muted">DisclosurePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/toolbar/ class="toc-page dropdown-item text-wrap text-muted">Toolbar</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/ class="toc-page dropdown-item text-wrap text-muted">DataGrid</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-chart/ class="toc-page dropdown-item text-wrap text-muted">Google Chart</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/ class="toc-page dropdown-item text-wrap text-muted">Close Tabs</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-rpc id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>RPC</a><div id=tutorial-gwt-rpc class=collapse><a href=https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/ class="toc-page dropdown-item text-wrap text-muted">RPC</a>
+<a href=https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/ class="toc-page dropdown-item text-wrap text-muted">Rest of RPC</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-database id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Database</a><div id=tutorial-gwt-database class=collapse><a href=https://www.codetab.org/tutorial/gwt/database/setup-database/ class="toc-page dropdown-item text-wrap text-muted">Database Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/persist/ class="toc-page dropdown-item text-wrap text-muted">JDO Persistence</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/retrieve/ class="toc-page dropdown-item text-wrap text-muted">JDO and Hibernate</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/gwt-dao/ class="toc-page dropdown-item text-wrap text-muted">DAO</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-google-app-engine id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Goolge App Engine</a><div id=tutorial-gwt-google-app-engine class=collapse><a href=https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/ class="toc-page dropdown-item text-wrap text-muted">Google App Engine</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/ class="toc-page dropdown-item text-wrap text-muted">App Engine Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/ class="toc-page dropdown-item text-wrap text-muted">GAE Data Upload</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/ class="toc-page dropdown-item text-wrap text-muted">App Engine Cache</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/ class="toc-page dropdown-item text-wrap text-muted">App Engine Task Queue</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/ class="toc-page dropdown-item text-wrap text-muted">GAE Backends</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-openshift id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>OpenShift</a><div id=tutorial-gwt-openshift><a href=https://www.codetab.org/tutorial/gwt/openshift/openshift/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/ class="toc-page dropdown-item text-wrap text-muted">Prepare Project</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/ class="toc-page dropdown-item text-wrap text-muted">Configure</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/ class="toc-page dropdown-item text-wrap text-muted">Build and Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-development/ class="toc-page dropdown-item text-wrap text-muted">Development</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/ class="toc-page dropdown-item text-wrap text-danger">OpenShift Online V3 Deployment</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-build id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Apache Ivy</a><div id=tutorial-gwt-build class=collapse><a href=https://www.codetab.org/tutorial/gwt/build/apache-ivy/ class="toc-page dropdown-item text-wrap text-muted">Apache Ivy</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&text=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&t=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&title=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab&body=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&title=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/&title=OpenShift%20V3%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><p> </p><h2 id=126-openshift-online-v3-deployment>12.6. OpenShift Online V3 Deployment</h2><p>The earlier chapters explained configuration and deployment of GWT
 applications on OpenShift V2 using RHC command line tool. OpenShift V2
 is discontinued from October 2017 and replaced with OpenShift V3 which
 is no longer free for production applications. However, for development
 there is free starters account with limited resources. This tutorial,
 OpenShift Online V3 Deployment, explains the configuration and
-deployment process to host the GWT application on OpenShift V3.</p>
-<p>Red Hat OpenShift Online (v3) is public cloud application development
+deployment process to host the GWT application on OpenShift V3.</p><p>Red Hat OpenShift Online (v3) is public cloud application development
 and hosting platform that automates the provisioning, management and
 scaling of applications. It has been completely rewritten and uses
 Docker-formatted containers for builds and deployments, and Kubernetes
-for container orchestration.</p>
-<p>To understand the OpenShift V3 build and deployment process, refer
-<a href="https://docs.openshift.com/online/getting_started/index.html" target="_blank">Getting Started with OpenShift Online
+for container orchestration.</p><p>To understand the OpenShift V3 build and deployment process, refer
+<a href=https://docs.openshift.com/online/getting_started/index.html target=_blank>Getting Started with OpenShift Online
 V3</a> which
 walks through a simple Nodejs project with Mongo DB as back-end to
 explain project build and deployment process. No need to know anything
@@ -823,63 +53,31 @@ public Git hosting sites such as GitHub or GitLab etc., and to complete
 the walk through example, we need to have an account in GitHub. Once we
 know the basics of OpenShift web console, OC command line tool and
 concepts such as builds, deployments, pods and services etc., we are
-ready to deploy our GWT application to OpenShift.</p>
-<h5 id="prepare-git-repository">Prepare Git repository</h5>
-<p>In GitHub, create a new repository named fins. Next, clone it your
-system with</p>
-<pre><code class="language-screen" data-lang="screen"># git clone https://github.com//fins.git
-</code></pre><p>Create deployments directory in local <code>fins</code> directory.</p>
-<pre><code class="language-screen" data-lang="screen"># cd fins
+ready to deploy our GWT application to OpenShift.</p><h5 id=prepare-git-repository>Prepare Git repository</h5><p>In GitHub, create a new repository named fins. Next, clone it your
+system with</p><pre><code class=language-screen data-lang=screen># git clone https://github.com//fins.git
+</code></pre><p>Create deployments directory in local <code>fins</code> directory.</p><pre><code class=language-screen data-lang=screen># cd fins
 # mkdir deployments
 </code></pre><p>Copy GWT application war file, fins.war or ROOT.war, to the
-<code>fins/deployments</code> directory. Commit and push the changes to GitHub.</p>
-<pre><code class="language-screen" data-lang="screen"># git add deployments
+<code>fins/deployments</code> directory. Commit and push the changes to GitHub.</p><pre><code class=language-screen data-lang=screen># git add deployments
 # git commit -m “gwt war file added”
 # git push -u origin master
-</code></pre>
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<h5 id="deploy-to-openshift">Deploy to OpenShift</h5>
-<p>To begin deployment, delete the example NodeJs project and create a new
+</code></pre><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h5 id=deploy-to-openshift>Deploy to OpenShift</h5><p>To begin deployment, delete the example NodeJs project and create a new
 project with some unique name. Next in <strong>Add to Project</strong> → <strong>Browse
 Catalog</strong> screen choose Java and then Red Hat JBoss Web Server (Tomcat)
 and finally select Red Hat JBoss Web Server 3.0 Tomcat 7 version 1.3. In
 JBoss EWS screen, enter name as fins and Git Hub URL of your git hub
 repository. OpenShift pulls the project (either source or binary) from
 GitHub and merge it with JBoss EWS image and prepare docker image using
-S2I tool and deploys it as container in OpenShift.</p>
-<p>Go to Application Overview page to view the build progress. Once build
+S2I tool and deploys it as container in OpenShift.</p><p>Go to Application Overview page to view the build progress. Once build
 is complete, OpenShift deploys the build as pod. Once Jboss EWS pod is
 up and running, install MySQL database. To do that, select <strong>Add to
 Project</strong> drop down menu from top bar and open <strong>Browse Catalog</strong>.
 Scroll down and choose Data Stores and select MySQL Persistence. In
 database configuration screen, enter database name, user name and
-password for the new database. Leave other fields to default.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/os-v3-db-conf.png" alt="OpenShift Online V3 Deployment mysql database configuration" />
-</figure>
-
-<h6 id="figure126database-configuration">Figure 12.6. Database Configuration</h6>
-<p>Now the app can be accessed through the URL generated by OpenShift which
+password for the new database. Leave other fields to default.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/os-v3-db-conf.png alt="OpenShift Online V3 Deployment mysql database configuration"></figure><h6 id=figure126database-configuration>Figure 12.6. Database Configuration</h6><p>Now the app can be accessed through the URL generated by OpenShift which
 is available in <strong>Overview</strong> screen or under <strong>Applications</strong> →
 <strong>Routes</strong>. At this point you should be able to access the application
-but not any data as we are yet link database with the app.</p>
-<p>Before proceeding further, we need to add a webhook to the Git
+but not any data as we are yet link database with the app.</p><p>Before proceeding further, we need to add a webhook to the Git
 repository so that whenever we push changes to GitHub it trigger a new
 build and deployment in OpenShift. To copy the webhook, go to <strong>Builds</strong>
 and select fins from displayed items and select <strong>Configuration</strong> tab
@@ -888,127 +86,42 @@ repository in another tab and select <strong>Settings</strong> → <strong>Webho
 Webhook</strong>. Paste the copied content to Payload URL field and select
 content type as application/json and click Create Webhook. A green tick
 mark displayed next to the webhook indicates that GitHub is successful
-in communicating with your OpenShift app.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-<p>In the app, we used mysqlDS as datasource and ds is configured in
+in communicating with your OpenShift app.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>In the app, we used mysqlDS as datasource and ds is configured in
 context.xml file which normally placed in jbossews/conf directory. As
 our app is merged with JBoss image which runs as container in OpenShift
 it is not possible to place the context.xml in conf directory of JBoss
 EWS. Instead, we can add it to our git repository which gets merged into
 image. To do that, go to fins directory in your local system which we
-cloned earlier and add context.xml to configuration directory.</p>
-<pre><code class="language-screen" data-lang="screen"># cd fins
+cloned earlier and add context.xml to configuration directory.</p><pre><code class=language-screen data-lang=screen># cd fins
 # mkdir configuration
-</code></pre><p>Add context.xml with following contents to configuration directory.</p>
-<p><code>fins/configuration/context.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+</code></pre><p>Add context.xml with following contents to configuration directory.</p><p><code>fins/configuration/context.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=cp>&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
 
-<span class="c">&lt;!-- The contents of this file will be loaded for each web application --&gt;</span>
-<span class="nt">&lt;Context&gt;</span>
+<span class=c>&lt;!-- The contents of this file will be loaded for each web application --&gt;</span>
+<span class=nt>&lt;Context&gt;</span>
 
-    <span class="nt">&lt;WatchedResource&gt;</span>WEB-INF/web.xml<span class="nt">&lt;/WatchedResource&gt;</span>
+    <span class=nt>&lt;WatchedResource&gt;</span>WEB-INF/web.xml<span class=nt>&lt;/WatchedResource&gt;</span>
 
-    <span class="nt">&lt;Resource</span> <span class="na">name=</span><span class="s">&#34;jdbc/MysqlDS&#34;</span>
-              <span class="na">url=</span><span class="s">&#34;jdbc:mysql://mysql.fins.svc:3306/fins&#34;</span>
-              <span class="na">driverClassName=</span><span class="s">&#34;com.mysql.jdbc.Driver&#34;</span>
-              <span class="na">username=</span><span class="s">&#34;adminCy54hSs&#34;</span>
-              <span class="na">password=</span><span class="s">&#34;I6pun7WULg5h&#34;</span>
-              <span class="na">auth=</span><span class="s">&#34;Container&#34;</span>
-              <span class="na">type=</span><span class="s">&#34;javax.sql.DataSource&#34;</span>
-              <span class="na">maxActive=</span><span class="s">&#34;20&#34;</span>
-              <span class="na">maxIdle=</span><span class="s">&#34;5&#34;</span>
-              <span class="na">maxWait=</span><span class="s">&#34;10000&#34;</span>
-              <span class="na">validationQuery=</span><span class="s">&#34;select 1&#34;</span>
-              <span class="na">testOnBorrow=</span><span class="s">&#34;true&#34;</span>
-              <span class="nt">/&gt;</span>
-<span class="nt">&lt;/Context&gt;</span>
+    <span class=nt>&lt;Resource</span> <span class=na>name=</span><span class=s>&#34;jdbc/MysqlDS&#34;</span>
+              <span class=na>url=</span><span class=s>&#34;jdbc:mysql://mysql.fins.svc:3306/fins&#34;</span>
+              <span class=na>driverClassName=</span><span class=s>&#34;com.mysql.jdbc.Driver&#34;</span>
+              <span class=na>username=</span><span class=s>&#34;adminCy54hSs&#34;</span>
+              <span class=na>password=</span><span class=s>&#34;I6pun7WULg5h&#34;</span>
+              <span class=na>auth=</span><span class=s>&#34;Container&#34;</span>
+              <span class=na>type=</span><span class=s>&#34;javax.sql.DataSource&#34;</span>
+              <span class=na>maxActive=</span><span class=s>&#34;20&#34;</span>
+              <span class=na>maxIdle=</span><span class=s>&#34;5&#34;</span>
+              <span class=na>maxWait=</span><span class=s>&#34;10000&#34;</span>
+              <span class=na>validationQuery=</span><span class=s>&#34;select 1&#34;</span>
+              <span class=na>testOnBorrow=</span><span class=s>&#34;true&#34;</span>
+              <span class=nt>/&gt;</span>
+<span class=nt>&lt;/Context&gt;</span>
 </code></pre></div><p>Replace url,username and password. URL is constructed from the hostname
 and port of MySQL service. We can get mysql hostname and port from
 OpenShift Web Console. Go to <strong>Applications</strong> → <strong>Services</strong> → <strong>mysql</strong>
 which contains Hostname (something like mysql.finsdemo.svc) and Service
-Port (normally 3306).</p>
-<p>Now commit the changes and push it to Github.</p>
-<pre><code class="language-screen" data-lang="screen"># git add configuration
+Port (normally 3306).</p><p>Now commit the changes and push it to Github.</p><pre><code class=language-screen data-lang=screen># git add configuration
 # git commit -m “mysql config added”
 # git push
 </code></pre><p>Webhook will trigger build and deployment cycle in OpenShift. Once
 completed, you can upload data to the app using upload option as
-discussed in earlier chapters.</p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+discussed in earlier chapters.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

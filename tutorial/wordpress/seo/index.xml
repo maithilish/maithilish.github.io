@@ -1,33 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Search Engine Optimization on Codetab</title>
-    <link>https://www.codetab.org/tutorial/wordpress/seo/</link>
-    <description>Recent content in Search Engine Optimization on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/seo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SEO Tips - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/seo/seo-tips/</link>
-      <pubDate>Fri, 11 Jan 2019 04:08:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/seo/seo-tips/</guid>
-      <description>WordPress SEO Tips In the previous chapter, we learned about WordPress performance optimization. While performance is an important aspect that influences the page ranking, search engines also look at various other factors to rank a page. In this chapter, we use WordPress SEO Plugin and look at Search Engine Optimization (SEO) techniques to improve the ranking.
-Before getting into the WordPress SEO Plugin, let&amp;rsquo;s focus on contents of the posts and pages and improve them for search engines.</description>
-    </item>
-    
-    <item>
-      <title>SEO Plugin - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/</link>
-      <pubDate>Fri, 11 Jan 2019 05:14:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/</guid>
-      <description>8.2. WordPress SEO Plugin In the previous section, we learned some of the important SEO recommendations to improve page rank. In this section, we put those recommendations into action with the help of WordPress SEO Plugin.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Search Engine Optimization on Codetab</title><link>https://www.codetab.org/tutorial/wordpress/seo/</link><description>Recent content in Search Engine Optimization on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/seo/index.xml" rel="self" type="application/rss+xml"/><item><title>SEO Tips - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/seo/seo-tips/</link><pubDate>Fri, 11 Jan 2019 04:08:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/seo/seo-tips/</guid><description>WordPress SEO Tips In the previous chapter, we learned about WordPress performance optimization. While performance is an important aspect that influences the page ranking, search engines also look at various other factors to rank a page. In this chapter, we use WordPress SEO Plugin and look at Search Engine Optimization (SEO) techniques to improve the ranking.
+Before getting into the WordPress SEO Plugin, let&amp;rsquo;s focus on contents of the posts and pages and improve them for search engines.</description></item><item><title>SEO Plugin - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/</link><pubDate>Fri, 11 Jan 2019 05:14:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/</guid><description>8.2. WordPress SEO Plugin In the previous section, we learned some of the important SEO recommendations to improve page rank. In this section, we put those recommendations into action with the help of WordPress SEO Plugin.
 WordPress SEO Plugin by Yoast is one the leading search engine optimization (SEO) plugins for WordPress. WordPress SEO Plugin helps us to:
-  Set SEO Title for the page.
-  Set Meta Description for the page.</description>
-    </item>
-    
-  </channel>
-</rss>
+Set SEO Title for the page.
+Set Meta Description for the page.</description></item></channel></rss>

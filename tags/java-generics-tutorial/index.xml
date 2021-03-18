@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>java generics tutorial on Codetab</title>
-    <link>https://www.codetab.org/tags/java-generics-tutorial/</link>
-    <description>Recent content in java generics tutorial on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/java-generics-tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java Generics - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/introduction/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid>
-      <description>Java Generics There are enough tutorials on Java Generics; however, they are either too basic or too difficult to get a clear understanding of generics. This tutorial focuses on confusing aspects and clarify them with multiple examples.
-If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as this tutorial doesn&amp;rsquo;t explains the basics. After going through it you may end with some doubts; then try this tutorial.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>java generics tutorial on Codetab</title><link>https://www.codetab.org/tags/java-generics-tutorial/</link><description>Recent content in java generics tutorial on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/java-generics-tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Java Generics - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/introduction/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid><description>Java Generics There are enough tutorials on Java Generics; however, they are either too basic or too difficult to get a clear understanding of generics. This tutorial focuses on confusing aspects and clarify them with multiple examples.
+If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as this tutorial doesn&amp;rsquo;t explains the basics. After going through it you may end with some doubts; then try this tutorial.</description></item></channel></rss>

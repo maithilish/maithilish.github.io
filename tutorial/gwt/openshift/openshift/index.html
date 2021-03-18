@@ -1,912 +1,83 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="This chapter of GWT Tutorial explains the OpenShift setup and shows how to create, develop, build and deploy applications to OpenShift.">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "OpenShift Setup - GWT Tutorial - CodeTab",
-        "headline" : "OpenShift Setup - GWT Tutorial - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/gwt/openshift/openshift/",
-        "description" : "This chapter of GWT Tutorial explains the OpenShift setup and shows how to create, develop, build and deploy applications to OpenShift.",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-10T13:47:00+0530",
-        "dateModified" : "2019-01-10T13:47:00+0530",
-        "wordCount" : "1814",
-        "keywords" : [ "openshift setup","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>OpenShift Setup - GWT Tutorial - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">GWT Tutorial</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="GWT Tutorial - Complete Project - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/install/"
-            class="toc-page text-wrap text-muted ">
-            Install GWT in Eclipse
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/create-project/"
-            class="toc-page text-wrap text-muted ">
-            Project Setup
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-project-code/"
-            class="toc-page text-wrap text-muted ">
-            GWT Project Code
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-demo/"
-            class="toc-page text-wrap text-muted ">
-            GWT Tutorial Demo
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-shell" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Shell
-    </a>
-    
-    <div id="tutorial-gwt-shell" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/finsshell/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UIBinder and Custom Widget
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/contentpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TabLayoutPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/gwt-logging/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Logging
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-menu" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Menu
-    </a>
-    
-    <div id="tutorial-gwt-menu" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            ClientBundle
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu-parts/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Anchor 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus Example
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-model" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Modle
-    </a>
-    
-    <div id="tutorial-gwt-model" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/model/model/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Model
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-content" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Content
-    </a>
-    
-    <div id="tutorial-gwt-content" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/content/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GWT Tutorial - Content
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-celltable/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            CellTable
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            SuggestBox
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/titlepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TitlePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UiFactory
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/factpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            FactPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DisclosurePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/toolbar/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Toolbar
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DataGrid
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-chart/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Chart
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Close Tabs
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-rpc" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        RPC
-    </a>
-    
-    <div id="tutorial-gwt-rpc" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            RPC
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Rest of RPC
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-database" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Database
-    </a>
-    
-    <div id="tutorial-gwt-database" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/setup-database/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Database Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/persist/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO Persistence 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/retrieve/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO and Hibernate
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/gwt-dao/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DAO
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-google-app-engine" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Goolge App Engine
-    </a>
-    
-    <div id="tutorial-gwt-google-app-engine" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google App Engine
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Data Upload
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Cache
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Task Queue
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Backends
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-openshift" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        OpenShift
-    </a>
-    
-    <div id="tutorial-gwt-openshift" class="">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift/"
-            class="toc-page dropdown-item text-wrap text-danger">
-            OpenShift Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Prepare Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Configure
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Build and Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-development/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Development
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Online V3 Deployment
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-build" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Apache Ivy
-    </a>
-    
-    <div id="tutorial-gwt-build" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/build/apache-ivy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Apache Ivy
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&amp;text=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/openshift/openshift/&amp;t=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&amp;title=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/gwt/openshift/openshift/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/openshift/openshift/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&amp;title=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&amp;title=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <h1 id="openshift">OpenShift</h1>
-<p>OpenShift is a cloud computing platform as a service (PaaS) product from
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="This chapter of GWT Tutorial explains the OpenShift setup and shows how to create, develop, build and deploy applications to OpenShift."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"OpenShift Setup - GWT Tutorial - CodeTab","headline":"OpenShift Setup - GWT Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/gwt/openshift/openshift/","description":"This chapter of GWT Tutorial explains the OpenShift setup and shows how to create, develop, build and deploy applications to OpenShift.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T13:47:00+0530","dateModified":"2019-01-10T13:47:00+0530","wordCount":"1814","keywords":["openshift setup","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>OpenShift Setup - GWT Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">GWT Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="GWT Tutorial - Complete Project - CodeTab"><div><a href=https://www.codetab.org/tutorial/gwt/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/gwt/install/ class="toc-page text-wrap text-muted">Install GWT in Eclipse</a></div><div><a href=https://www.codetab.org/tutorial/gwt/create-project/ class="toc-page text-wrap text-muted">Project Setup</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-project-code/ class="toc-page text-wrap text-muted">GWT Project Code</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-demo/ class="toc-page text-wrap text-muted">GWT Tutorial Demo</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-shell id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Shell</a><div id=tutorial-gwt-shell class=collapse><a href=https://www.codetab.org/tutorial/gwt/shell/finsshell/ class="toc-page dropdown-item text-wrap text-muted">UIBinder and Custom Widget</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/contentpanel/ class="toc-page dropdown-item text-wrap text-muted">TabLayoutPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/gwt-logging/ class="toc-page dropdown-item text-wrap text-muted">Logging</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-menu id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Menu</a><div id=tutorial-gwt-menu class=collapse><a href=https://www.codetab.org/tutorial/gwt/menu/menu/ class="toc-page dropdown-item text-wrap text-muted">ClientBundle</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/menu-parts/ class="toc-page dropdown-item text-wrap text-muted">Anchor</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/ class="toc-page dropdown-item text-wrap text-muted">EventBus</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/ class="toc-page dropdown-item text-wrap text-muted">EventBus Example</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-model id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Modle</a><div id=tutorial-gwt-model class=collapse><a href=https://www.codetab.org/tutorial/gwt/model/model/ class="toc-page dropdown-item text-wrap text-muted">Model</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-content id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Content</a><div id=tutorial-gwt-content class=collapse><a href=https://www.codetab.org/tutorial/gwt/content/content/ class="toc-page dropdown-item text-wrap text-muted">GWT Tutorial - Content</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-celltable/ class="toc-page dropdown-item text-wrap text-muted">CellTable</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/ class="toc-page dropdown-item text-wrap text-muted">SuggestBox</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/titlepanel/ class="toc-page dropdown-item text-wrap text-muted">TitlePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/ class="toc-page dropdown-item text-wrap text-muted">UiFactory</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/factpanel/ class="toc-page dropdown-item text-wrap text-muted">FactPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/ class="toc-page dropdown-item text-wrap text-muted">DisclosurePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/toolbar/ class="toc-page dropdown-item text-wrap text-muted">Toolbar</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/ class="toc-page dropdown-item text-wrap text-muted">DataGrid</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-chart/ class="toc-page dropdown-item text-wrap text-muted">Google Chart</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/ class="toc-page dropdown-item text-wrap text-muted">Close Tabs</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-rpc id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>RPC</a><div id=tutorial-gwt-rpc class=collapse><a href=https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/ class="toc-page dropdown-item text-wrap text-muted">RPC</a>
+<a href=https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/ class="toc-page dropdown-item text-wrap text-muted">Rest of RPC</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-database id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Database</a><div id=tutorial-gwt-database class=collapse><a href=https://www.codetab.org/tutorial/gwt/database/setup-database/ class="toc-page dropdown-item text-wrap text-muted">Database Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/persist/ class="toc-page dropdown-item text-wrap text-muted">JDO Persistence</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/retrieve/ class="toc-page dropdown-item text-wrap text-muted">JDO and Hibernate</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/gwt-dao/ class="toc-page dropdown-item text-wrap text-muted">DAO</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-google-app-engine id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Goolge App Engine</a><div id=tutorial-gwt-google-app-engine class=collapse><a href=https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/ class="toc-page dropdown-item text-wrap text-muted">Google App Engine</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/ class="toc-page dropdown-item text-wrap text-muted">App Engine Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/ class="toc-page dropdown-item text-wrap text-muted">GAE Data Upload</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/ class="toc-page dropdown-item text-wrap text-muted">App Engine Cache</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/ class="toc-page dropdown-item text-wrap text-muted">App Engine Task Queue</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/ class="toc-page dropdown-item text-wrap text-muted">GAE Backends</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-openshift id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>OpenShift</a><div id=tutorial-gwt-openshift><a href=https://www.codetab.org/tutorial/gwt/openshift/openshift/ class="toc-page dropdown-item text-wrap text-danger">OpenShift Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/ class="toc-page dropdown-item text-wrap text-muted">Prepare Project</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/ class="toc-page dropdown-item text-wrap text-muted">Configure</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/ class="toc-page dropdown-item text-wrap text-muted">Build and Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-development/ class="toc-page dropdown-item text-wrap text-muted">Development</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Online V3 Deployment</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-build id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Apache Ivy</a><div id=tutorial-gwt-build class=collapse><a href=https://www.codetab.org/tutorial/gwt/build/apache-ivy/ class="toc-page dropdown-item text-wrap text-muted">Apache Ivy</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&text=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/openshift/openshift/&t=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&title=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab&body=https://www.codetab.org/tutorial/gwt/openshift/openshift/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/openshift/openshift/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&title=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/openshift/openshift/&title=OpenShift%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><h1 id=openshift>OpenShift</h1><p>OpenShift is a cloud computing platform as a service (PaaS) product from
 Red Hat. Unlike App Engine which restricts it self to select set of
 languages and databases, OpenShift gives you a wide range of choice
 programming languages including Java, Ruby, PHP, Node.js, Python and
 Perl. It supports variety of databases like MySQL, MangoDB, PostgreSQL
-etc.,</p>
-<p>OpenShift also comes with a free account which allows you to host three
+etc.,</p><p>OpenShift also comes with a free account which allows you to host three
 applications. While there is detailed quota on resources, free account
-limits the resources like memory, and storage.</p>
-<p>This chapter explains the OpenShift setup and shows how to create,
+limits the resources like memory, and storage.</p><p>This chapter explains the OpenShift setup and shows how to create,
 develop, build and deploy applications to OpenShift. In the previous
 chapters, while Fins was modified to run on App Engine we took care to
 keep the changes platform independent and no further changes are
 required at code level to deploy the Fins on to OpenShift. This chapter
 is more about stuffs like setup, configure, build, deploy, and it is
-light on code.</p>
-<h2 id="121setup">12.1. Setup</h2>
-<p>This section explains the steps to create a free OpenShift account and
-OpenShift setup to deploy GWT application.</p>
-<h5 id="create-openshift-account">Create OpenShift account</h5>
-<p>First task is to create a free account on OpenShift.</p>
-<ol>
-<li>
-<p>go to <a href="https://www.openshift.com/" target="_blank">OpenShift</a> and choose Sign up for
+light on code.</p><h2 id=121setup>12.1. Setup</h2><p>This section explains the steps to create a free OpenShift account and
+OpenShift setup to deploy GWT application.</p><h5 id=create-openshift-account>Create OpenShift account</h5><p>First task is to create a free account on OpenShift.</p><ol><li><p>go to <a href=https://www.openshift.com/ target=_blank>OpenShift</a> and choose Sign up for
 Free. In the <strong>Sign Up</strong> page, enter a valid Email. After entering
 other details, Sign up to receive verification mail. Complete the
-verification process.</p>
-</li>
-<li>
-<p>once verification is over, go to <strong>Sign Up</strong> page, and login using
-<strong>Sign In</strong> link.</p>
-</li>
-<li>
-<p>on login, accept the Legal Terms to complete the account creation,
-and OpenShift displays the Management Console.</p>
-</li>
-</ol>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/webconsole.png" alt="OpenShift Management Console" />
-</figure>
-
-<h6 id="figure121openshift-management-console">Figure 12.1. OpenShift Management Console</h6>
-<p>Web console lists instant applications - WordPress, Drupal, and Java
+verification process.</p></li><li><p>once verification is over, go to <strong>Sign Up</strong> page, and login using
+<strong>Sign In</strong> link.</p></li><li><p>on login, accept the Legal Terms to complete the account creation,
+and OpenShift displays the Management Console.</p></li></ol><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/webconsole.png alt="OpenShift Management Console"></figure><h6 id=figure121openshift-management-console>Figure 12.1. OpenShift Management Console</h6><p>Web console lists instant applications - WordPress, Drupal, and Java
 servers - JBoss, Tomcat and some of the popular frameworks. It also
 contains many quickstarts, which are preconfigured code and libraries to
-try out a set of technologies.</p>
-<p>We leave the web console for the time being as we are going to use a
-client tool to create and manage our application.</p>
-<h5 id="install-client-tools">Install client tools</h5>
-<p>OpenShift client tool is CLI tool set to manage the OpenShift account
+try out a set of technologies.</p><p>We leave the web console for the time being as we are going to use a
+client tool to create and manage our application.</p><h5 id=install-client-tools>Install client tools</h5><p>OpenShift client tool is CLI tool set to manage the OpenShift account
 and applications. Client tools known as RHC are built and packaged using
-the Ruby.</p>
-<p>Here, we show how to install and setup RHC on Fedora systems. For other
-systems, refer <a href="https://developers.openshift.com/en/getting-started-overview.html" target="_blank">Installing OpenShift RHC Client
+the Ruby.</p><p>Here, we show how to install and setup RHC on Fedora systems. For other
+systems, refer <a href=https://developers.openshift.com/en/getting-started-overview.html target=_blank>Installing OpenShift RHC Client
 Tools</a>
-.</p>
-<p>RHC requires Ruby 1.8.7 or higher. It also requires Git to synchronize
+.</p><p>RHC requires Ruby 1.8.7 or higher. It also requires Git to synchronize
 the local application source and OpenShift application. All these comes
-as a Ruby Gem package.</p>
-<pre><code class="language-screen" data-lang="screen">$ sudo yum install rubygem-rhc
+as a Ruby Gem package.</p><pre><code class=language-screen data-lang=screen>$ sudo yum install rubygem-rhc
 </code></pre><p>This installs Ruby, Git, RHC and other dependencies required to run the
-OpenShift client tool RHC.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-<h5 id="setup">Setup</h5>
-<p>Before using RHC, you have to run a wizard to configure certain items.
-Setup wizard saves the configuration in <code>$HOME/.openshift</code>.</p>
-<ul>
-<li>
-<p>generates an authorization token for the client, which enables the
+OpenShift client tool RHC.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h5 id=setup>Setup</h5><p>Before using RHC, you have to run a wizard to configure certain items.
+Setup wizard saves the configuration in <code>$HOME/.openshift</code>.</p><ul><li><p>generates an authorization token for the client, which enables the
 client to have password-less interactions with server. Token last
 for a day and after that, rhc asks for the credentials to generate a
-new token.</p>
-</li>
-<li>
-<p>uploads the public key to the server.</p>
-</li>
-<li>
-<p>creates namespace and setup domain for the account.</p>
-</li>
-</ul>
-<p>Namespace is unique to an account and forms a part of an application
+new token.</p></li><li><p>uploads the public key to the server.</p></li><li><p>creates namespace and setup domain for the account.</p></li></ul><p>Namespace is unique to an account and forms a part of an application
 URL. It may contain a maximum 16 alphanumeric characters and may not
 have spaces or symbols. In this chapter, we are going to use
 <strong>finsdemo</strong> as our namespace. If we name our app as <strong>testapp</strong> then
 the URL of the application would be
 <code>http://testapp-finsdemo.rhcloud.com</code>. Needless to say, you will not
 be able to use <strong>finsdemo</strong> as namespace for your account as this
-namespace is already tagged to our account.</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc setup
+namespace is already tagged to our account.</p><pre><code class=language-screen data-lang=screen>$ rhc setup
 </code></pre><p>In the setup wizard, enter your account id (Email id used to create the
 account) and password to continue. Screen-shot of a typical interaction
-is as follows.</p>
-<pre><code class="language-screen" data-lang="screen">Generate a token now? (yes|no) yes
+is as follows.</p><pre><code class=language-screen data-lang=screen>Generate a token now? (yes|no) yes
 Generating an authorization token for this client ... lasts about 1 day
 
 Saving configuration to /home/m/.openshift/express.conf ... done
@@ -936,49 +107,28 @@ Your domain name 'finsdemo' has been successfully created
 </code></pre><p>In case, your chosen namespace is unavailable, then you have to select
 another one. At this stage, you may skip the namespace by entering none
 and create it later (but, it has to be before you create your first
-application) with</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc domain create &lt;namespace&gt;
+application) with</p><pre><code class=language-screen data-lang=screen>$ rhc domain create &lt;namespace&gt;
 </code></pre><p>There is no harm in running the setup again, and during subsequent
 setups, wizard reuses the configuration saved in <code>$HOME/.openshift</code>. In
 case, this directory is messed-up, then delete the directory and run
-setup again to recreate fresh configuration.</p>
-<h2 id="important">Important</h2>
-<p>In this chapter, we use <strong>demo</strong> as app name and <strong>finsdemo</strong> as
+setup again to recreate fresh configuration.</p><h2 id=important>Important</h2><p>In this chapter, we use <strong>demo</strong> as app name and <strong>finsdemo</strong> as
 namespace in all examples. Replace them with your own app name and
-namespace when you are trying out OpenShift.</p>
-<h5 id="create-application">Create application</h5>
-<p>An OpenShift application is your application code, plus one or more
+namespace when you are trying out OpenShift.</p><h5 id=create-application>Create application</h5><p>An OpenShift application is your application code, plus one or more
 Cartridges. OpenShift comes with many built-in cartridges like languages
 (Java, Ruby etc.), environment (JBoss, Tomcat etc.,) and services
 (MySQL, MangoDB etc.,). <strong>Cartridges</strong> are deployed to one or more
-secure containers for your code known as gears.</p>
-<p><strong>Gear</strong> is a resource-constrained container or virtual host that runs
+secure containers for your code known as gears.</p><p><strong>Gear</strong> is a resource-constrained container or virtual host that runs
 one or more user-specified software stacks (cartridges) and application
 code. Small gear comes with 512MB of RAM and 1GB storage while Medium
-gear has 1GB RAM and 1GB storage. Free plan comes with 3 small gears.</p>
-<p>To begin with, let&rsquo;s create an application named <strong>demo</strong> in our
+gear has 1GB RAM and 1GB storage. Free plan comes with 3 small gears.</p><p>To begin with, let&rsquo;s create an application named <strong>demo</strong> in our
 namespace <strong>finsdemo</strong> with a Tomcat 6 cartridge. We are free to name
-the application with any name.</p>
-<pre><code class="language-screen" data-lang="screen">$ cd &lt;some workdir&gt;  // !!! rhc creates folder in work dir
+the application with any name.</p><pre><code class=language-screen data-lang=screen>$ cd &lt;some workdir&gt;  // !!! rhc creates folder in work dir
 $ rhc app create demo jbossews-1.0
 </code></pre><p>JBoss EWS is a web server built on Apache and Tomcat. JBoss EWS version
 1.0 uses Tomcat 6. RHC creates an application named demo and completes
-the following.</p>
-<ul>
-<li>
-<p>registers a domain name  <strong>demo-finsdemo.rhcloud.com</strong> with DNS.</p>
-</li>
-<li>
-<p>a copy of the application code is checked out (cloned) to your work
-directory to a folder named <strong>demo</strong>.</p>
-</li>
-<li>
-<p>runs the components of the application (application code plus
-cartridge) on virtual server, referred to as Gear.</p>
-</li>
-</ul>
-<!-- end list -->
-<pre><code class="language-screen" data-lang="screen">Your application code is now in 'demo'
+the following.</p><ul><li><p>registers a domain name <strong>demo-finsdemo.rhcloud.com</strong> with DNS.</p></li><li><p>a copy of the application code is checked out (cloned) to your work
+directory to a folder named <strong>demo</strong>.</p></li><li><p>runs the components of the application (application code plus
+cartridge) on virtual server, referred to as Gear.</p></li></ul><pre><code class=language-screen data-lang=screen>Your application code is now in 'demo'
 
 demo @ `http://demo-finsdemo.rhcloud.com/` (uuid: 51fa####################)
 -------------------------------------------------------------------------
@@ -996,39 +146,28 @@ Application demo was created.
 </code></pre><p>App is accessible at <code>http://demo-finsdemo.rhcloud.com</code>, which displays
 OpenShift Welcome page. Create action clones the application source to a
 folder named demo in your work directory, which we require later to
-deploy Fins.</p>
-<p>Application may be deleted with following command, which permanently
+deploy Fins.</p><p>Application may be deleted with following command, which permanently
 deletes the application from OpenShift server and frees the allocated
-gear.</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc app delete demo
-</code></pre><h2 id="rhc-help">RHC help</h2>
-<p>See - <strong>rhc help</strong> for available commands and <strong>rhc help &lt;command&gt;</strong>
-for more information on a specific command.</p>
-<p>One of the frequently used command is app and <code>rhc help app</code> lists
-actions.</p>
-<pre><code class="language-screen" data-lang="screen">List of Actions
+gear.</p><pre><code class=language-screen data-lang=screen>$ rhc app delete demo
+</code></pre><h2 id=rhc-help>RHC help</h2><p>See - <strong>rhc help</strong> for available commands and <strong>rhc help &lt;command></strong>
+for more information on a specific command.</p><p>One of the frequently used command is app and <code>rhc help app</code> lists
+actions.</p><pre><code class=language-screen data-lang=screen>List of Actions
   create        Create an application
   delete        Delete an application from the server
   start         Start the application
   stop          Stop the application
   .....
-</code></pre><p>rhc help app create shows more info about create action.</p>
-<h5 id="cartridges">Cartridges</h5>
-<p>OpenShift cartridges are pluggable components that can be added to an
-application to extend its functionality.</p>
-<p>OpenShift comes with several built-in cartridges based on the popular
+</code></pre><p>rhc help app create shows more info about create action.</p><h5 id=cartridges>Cartridges</h5><p>OpenShift cartridges are pluggable components that can be added to an
+application to extend its functionality.</p><p>OpenShift comes with several built-in cartridges based on the popular
 languages, servers, frameworks and databases. To list the available
-cartridges use</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc cartridges
+cartridges use</p><pre><code class=language-screen data-lang=screen>$ rhc cartridges
 </code></pre><p>Out of the listed cartridges, we need MySQL cartridge - mysql-5.1 and
 database admin cartridge - phpmyadmin-3.4. Add these cartridges to demo
-application with</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc cartridge add mysql-5.1 -a demo
+application with</p><pre><code class=language-screen data-lang=screen>$ rhc cartridge add mysql-5.1 -a demo
 $ rhc cartridge add phpmyadmin-3.4 -a demo
-</code></pre><p>Output shows <strong>Connection URL</strong>, <strong>Root User</strong>,  <strong>Password</strong> for MySQL
+</code></pre><p>Output shows <strong>Connection URL</strong>, <strong>Root User</strong>, <strong>Password</strong> for MySQL
 and URL for phpmyadmin. There is no need to note down the details as
-they are retrievable through rhc at any time. View app details with</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc app show demo
+they are retrievable through rhc at any time. View app details with</p><pre><code class=language-screen data-lang=screen>$ rhc app show demo
 demo @ `http://demo-finsdemo.rhcloud.com/` (uuid: 51fa####################)
 -------------------------------------------------------------------------
   Created: Aug 01  7:41 PM
@@ -1054,48 +193,20 @@ demo @ `http://demo-finsdemo.rhcloud.com/` (uuid: 51fa####################)
     Connection URL: https://demo-finsdemo.rhcloud.com/phpmyadmin/
 </code></pre><p>It shows the details of cartridges, Connection URL, User and Password
 for database. MySQL and PhpMyAdmin cartridges shares the existing
-application Gear without consuming additional gears.</p>
-<h5 id="shell">Shell</h5>
-<p>OpenShift provides access to the virtual host (gear) on which your
-application is running.</p>
-<h2 id="warning">Warning</h2>
-<p>Here is the waring snippet from the welcome message. !!!</p>
-<p><strong>Shell access is quite powerful and it is possible for you to
+application Gear without consuming additional gears.</p><h5 id=shell>Shell</h5><p>OpenShift provides access to the virtual host (gear) on which your
+application is running.</p><h2 id=warning>Warning</h2><p>Here is the waring snippet from the welcome message. !!!</p><p><strong>Shell access is quite powerful and it is possible for you to
 accidentally damage your application. Proceed with care!</strong> <strong>If worse
 comes to worst, delete your application with rhc app delete and recreate
-it.</strong></p>
-<p>SSH to the application shell with</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc app ssh demo
+it.</strong></p><p>SSH to the application shell with</p><pre><code class=language-screen data-lang=screen>$ rhc app ssh demo
 </code></pre><p>Free plan Gears comes with 1GB of gear storage, and it is used for code,
 logs, cache, config files, and databases. From the shell you may check
-the usage.</p>
-<pre><code class="language-screen" data-lang="screen">&gt; quota -s
+the usage.</p><pre><code class=language-screen data-lang=screen>&gt; quota -s
 Disk quotas for user 51fa#################### (uid 3###):
      Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
 /dev/mapper/EBSStore01-user_home01
                   30640       0   1024M             416       0   40000
-</code></pre>
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<h5 id="application-code">Application Code</h5>
-<p>When we create the application, RHC clones the application to a folder
-with application name. Contents of this folder are</p>
-<pre><code class="language-screen" data-lang="screen">$ tree demo
+</code></pre><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h5 id=application-code>Application Code</h5><p>When we create the application, RHC clones the application to a folder
+with application name. Contents of this folder are</p><pre><code class=language-screen data-lang=screen>$ tree demo
 
 demo
 ├── pom.xml
@@ -1116,9 +227,8 @@ demo
 </code></pre><p>We are not interested in its content, but we require this folder to
 deploy the application back to OpenShift. There is no harm if the folder
 is deleted on local system, as we can always clone it from the
-OpenShift. Command - <code>rhc app show &lt;app name&gt;</code> displays the Git
-repository address.</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc app show demo
+OpenShift. Command - <code>rhc app show &lt;app name></code> displays the Git
+repository address.</p><pre><code class=language-screen data-lang=screen>$ rhc app show demo
 demo @ `http://demo-finsdemo.rhcloud.com/` (uuid: 51fa####################)
 -------------------------------------------------------------------------
   Created: Aug 01  7:41 PM
@@ -1126,78 +236,8 @@ demo @ `http://demo-finsdemo.rhcloud.com/` (uuid: 51fa####################)
   Git URL: ssh://51fa####################@demo-finsdemo.rhcloud.com/~/git/demo.git/
    .....
 </code></pre><p>Clones the application from repository into a folder demo
-with</p>
-<pre><code class="language-screen" data-lang="screen">$ git clone ssh://51fa####################@demo-finsdemo.rhcloud.com/~/git/demo.git/
-</code></pre><h5 id="web-console">Web console</h5>
-<p>Many of the tasks performed so far with RHC may also be done through web
-console.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/appinwebconsole.png" alt="Manage app in Web Console" />
-</figure>
-
-<h6 id="figure122manage-app-in-web-console">Figure 12.2. Manage app in Web Console</h6>
-<p>OpenShift application demo is ready with required cartridges and only
+with</p><pre><code class=language-screen data-lang=screen>$ git clone ssh://51fa####################@demo-finsdemo.rhcloud.com/~/git/demo.git/
+</code></pre><h5 id=web-console>Web console</h5><p>Many of the tasks performed so far with RHC may also be done through web
+console.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/appinwebconsole.png alt="Manage app in Web Console"></figure><h6 id=figure122manage-app-in-web-console>Figure 12.2. Manage app in Web Console</h6><p>OpenShift application demo is ready with required cartridges and only
 thing left out is the code. The next section prepares the project and
-code for deployment.</p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+code for deployment.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

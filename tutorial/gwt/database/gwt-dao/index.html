@@ -1,914 +1,77 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="This chapter of GWT Tutorial explores the design of GWT DAO layer. With Data Access Object layer app may flip between JDO and Hibernate ORM effortlessly.">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "DAO - GWT Tutorial - CodeTab",
-        "headline" : "DAO - GWT Tutorial - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/gwt/database/gwt-dao/",
-        "description" : "This chapter of GWT Tutorial explores the design of GWT DAO layer. With Data Access Object layer app may flip between JDO and Hibernate ORM effortlessly.",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-10T12:11:00+0530",
-        "dateModified" : "2019-01-10T12:11:00+0530",
-        "wordCount" : "1918",
-        "keywords" : [ "gwt dao","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>DAO - GWT Tutorial - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">GWT Tutorial</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="GWT Tutorial - Complete Project - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/install/"
-            class="toc-page text-wrap text-muted ">
-            Install GWT in Eclipse
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/create-project/"
-            class="toc-page text-wrap text-muted ">
-            Project Setup
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-project-code/"
-            class="toc-page text-wrap text-muted ">
-            GWT Project Code
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-demo/"
-            class="toc-page text-wrap text-muted ">
-            GWT Tutorial Demo
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-shell" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Shell
-    </a>
-    
-    <div id="tutorial-gwt-shell" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/finsshell/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UIBinder and Custom Widget
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/contentpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TabLayoutPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/gwt-logging/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Logging
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-menu" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Menu
-    </a>
-    
-    <div id="tutorial-gwt-menu" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            ClientBundle
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu-parts/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Anchor 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus Example
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-model" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Modle
-    </a>
-    
-    <div id="tutorial-gwt-model" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/model/model/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Model
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-content" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Content
-    </a>
-    
-    <div id="tutorial-gwt-content" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/content/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GWT Tutorial - Content
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-celltable/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            CellTable
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            SuggestBox
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/titlepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TitlePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UiFactory
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/factpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            FactPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DisclosurePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/toolbar/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Toolbar
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DataGrid
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-chart/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Chart
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Close Tabs
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-rpc" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        RPC
-    </a>
-    
-    <div id="tutorial-gwt-rpc" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            RPC
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Rest of RPC
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-database" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Database
-    </a>
-    
-    <div id="tutorial-gwt-database" class="">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/setup-database/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Database Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/persist/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO Persistence 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/retrieve/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO and Hibernate
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/gwt-dao/"
-            class="toc-page dropdown-item text-wrap text-danger">
-            DAO
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-google-app-engine" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Goolge App Engine
-    </a>
-    
-    <div id="tutorial-gwt-google-app-engine" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google App Engine
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Data Upload
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Cache
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Task Queue
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Backends
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-openshift" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        OpenShift
-    </a>
-    
-    <div id="tutorial-gwt-openshift" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Prepare Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Configure
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Build and Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-development/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Development
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Online V3 Deployment
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-build" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Apache Ivy
-    </a>
-    
-    <div id="tutorial-gwt-build" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/build/apache-ivy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Apache Ivy
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&amp;text=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&amp;t=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&amp;title=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=DAO%20-%20GWT%20Tutorial%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/gwt/database/gwt-dao/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=DAO%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/database/gwt-dao/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&amp;title=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&amp;title=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <h2 id="chapter9dao">Chapter 9. DAO</h2>
-<p>This chapter explores the design of GWT Dao. Data Access Object (DAO)
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="This chapter of GWT Tutorial explores the design of GWT DAO layer. With Data Access Object layer app may flip between JDO and Hibernate ORM effortlessly."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"DAO - GWT Tutorial - CodeTab","headline":"DAO - GWT Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/gwt/database/gwt-dao/","description":"This chapter of GWT Tutorial explores the design of GWT DAO layer. With Data Access Object layer app may flip between JDO and Hibernate ORM effortlessly.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T12:11:00+0530","dateModified":"2019-01-10T12:11:00+0530","wordCount":"1918","keywords":["gwt dao","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>DAO - GWT Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">GWT Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="GWT Tutorial - Complete Project - CodeTab"><div><a href=https://www.codetab.org/tutorial/gwt/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/gwt/install/ class="toc-page text-wrap text-muted">Install GWT in Eclipse</a></div><div><a href=https://www.codetab.org/tutorial/gwt/create-project/ class="toc-page text-wrap text-muted">Project Setup</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-project-code/ class="toc-page text-wrap text-muted">GWT Project Code</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-demo/ class="toc-page text-wrap text-muted">GWT Tutorial Demo</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-shell id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Shell</a><div id=tutorial-gwt-shell class=collapse><a href=https://www.codetab.org/tutorial/gwt/shell/finsshell/ class="toc-page dropdown-item text-wrap text-muted">UIBinder and Custom Widget</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/contentpanel/ class="toc-page dropdown-item text-wrap text-muted">TabLayoutPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/gwt-logging/ class="toc-page dropdown-item text-wrap text-muted">Logging</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-menu id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Menu</a><div id=tutorial-gwt-menu class=collapse><a href=https://www.codetab.org/tutorial/gwt/menu/menu/ class="toc-page dropdown-item text-wrap text-muted">ClientBundle</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/menu-parts/ class="toc-page dropdown-item text-wrap text-muted">Anchor</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/ class="toc-page dropdown-item text-wrap text-muted">EventBus</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/ class="toc-page dropdown-item text-wrap text-muted">EventBus Example</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-model id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Modle</a><div id=tutorial-gwt-model class=collapse><a href=https://www.codetab.org/tutorial/gwt/model/model/ class="toc-page dropdown-item text-wrap text-muted">Model</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-content id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Content</a><div id=tutorial-gwt-content class=collapse><a href=https://www.codetab.org/tutorial/gwt/content/content/ class="toc-page dropdown-item text-wrap text-muted">GWT Tutorial - Content</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-celltable/ class="toc-page dropdown-item text-wrap text-muted">CellTable</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/ class="toc-page dropdown-item text-wrap text-muted">SuggestBox</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/titlepanel/ class="toc-page dropdown-item text-wrap text-muted">TitlePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/ class="toc-page dropdown-item text-wrap text-muted">UiFactory</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/factpanel/ class="toc-page dropdown-item text-wrap text-muted">FactPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/ class="toc-page dropdown-item text-wrap text-muted">DisclosurePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/toolbar/ class="toc-page dropdown-item text-wrap text-muted">Toolbar</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/ class="toc-page dropdown-item text-wrap text-muted">DataGrid</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-chart/ class="toc-page dropdown-item text-wrap text-muted">Google Chart</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/ class="toc-page dropdown-item text-wrap text-muted">Close Tabs</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-rpc id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>RPC</a><div id=tutorial-gwt-rpc class=collapse><a href=https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/ class="toc-page dropdown-item text-wrap text-muted">RPC</a>
+<a href=https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/ class="toc-page dropdown-item text-wrap text-muted">Rest of RPC</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-database id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Database</a><div id=tutorial-gwt-database><a href=https://www.codetab.org/tutorial/gwt/database/setup-database/ class="toc-page dropdown-item text-wrap text-muted">Database Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/persist/ class="toc-page dropdown-item text-wrap text-muted">JDO Persistence</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/retrieve/ class="toc-page dropdown-item text-wrap text-muted">JDO and Hibernate</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/gwt-dao/ class="toc-page dropdown-item text-wrap text-danger">DAO</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-google-app-engine id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Goolge App Engine</a><div id=tutorial-gwt-google-app-engine class=collapse><a href=https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/ class="toc-page dropdown-item text-wrap text-muted">Google App Engine</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/ class="toc-page dropdown-item text-wrap text-muted">App Engine Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/ class="toc-page dropdown-item text-wrap text-muted">GAE Data Upload</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/ class="toc-page dropdown-item text-wrap text-muted">App Engine Cache</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/ class="toc-page dropdown-item text-wrap text-muted">App Engine Task Queue</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/ class="toc-page dropdown-item text-wrap text-muted">GAE Backends</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-openshift id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>OpenShift</a><div id=tutorial-gwt-openshift class=collapse><a href=https://www.codetab.org/tutorial/gwt/openshift/openshift/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/ class="toc-page dropdown-item text-wrap text-muted">Prepare Project</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/ class="toc-page dropdown-item text-wrap text-muted">Configure</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/ class="toc-page dropdown-item text-wrap text-muted">Build and Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-development/ class="toc-page dropdown-item text-wrap text-muted">Development</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Online V3 Deployment</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-build id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Apache Ivy</a><div id=tutorial-gwt-build class=collapse><a href=https://www.codetab.org/tutorial/gwt/build/apache-ivy/ class="toc-page dropdown-item text-wrap text-muted">Apache Ivy</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&text=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&t=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&title=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=DAO%20-%20GWT%20Tutorial%20-%20CodeTab&body=https://www.codetab.org/tutorial/gwt/database/gwt-dao/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=DAO%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/database/gwt-dao/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&title=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/database/gwt-dao/&title=DAO%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><h2 id=chapter9dao>Chapter 9. DAO</h2><p>This chapter explores the design of GWT Dao. Data Access Object (DAO)
 layer allows the app flip between ORM effortlessly. In the last chapter,
 we introduced three ORM, and now they help us to verify the design of
-GWT DAO layer.</p>
-<h5 id="dao-design">DAO design</h5>
-<p>Service layer of the application interacts with the database through DAO
+GWT DAO layer.</p><h5 id=dao-design>DAO design</h5><p>Service layer of the application interacts with the database through DAO
 layer. To accomodate multiple ORM, DAO layer consists of an Abstract
-Factory and an Interface to access data.</p>
-<p>DAO layer is split into following packages</p>
-<ul>
-<li>
-<p>abstract classes and interfaces are in package <code>in.fins.server.dao</code>.</p>
-</li>
-<li>
-<p>implementation are in ORM wise packages <code>in.fins.server.dao.jdo</code>,
-<code>in.fins.server.dao.hibernate</code> and <code>in.fins.server.dao.mybatis</code>,</p>
-</li>
-</ul>
-<p>Following figure shows the SymbolService interactions with DAO layer.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/daodesign.png" alt="DAO design" />
-</figure>
-
-<h6 id="figure91dao-design">Figure 9.1. DAO design</h6>
-<ol>
-<li>
-<p><code>SymbolService</code> requests abstract factory,
+Factory and an Interface to access data.</p><p>DAO layer is split into following packages</p><ul><li><p>abstract classes and interfaces are in package <code>in.fins.server.dao</code>.</p></li><li><p>implementation are in ORM wise packages <code>in.fins.server.dao.jdo</code>,
+<code>in.fins.server.dao.hibernate</code> and <code>in.fins.server.dao.mybatis</code>,</p></li></ul><p>Following figure shows the SymbolService interactions with DAO layer.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/daodesign.png alt="DAO design"></figure><h6 id=figure91dao-design>Figure 9.1. DAO design</h6><ol><li><p><code>SymbolService</code> requests abstract factory,
 <code>in.fins.server.dao.DaoFactory</code>, for an instance of DaoFactory
-specific to an ORM.</p>
-<ul>
-<li>When ORM is set to JDO, abstract factory
+specific to an ORM.</p><ul><li>When ORM is set to JDO, abstract factory
 <code>in.fins.server.dao.DaoFactory</code> returns JDO DaoFactory which is
 <code>in.fins.server.dao.jdo.DaoFactory</code>. Please note that abstract
 DaoFactory is <code>in in.fins.server.dao</code> package, and JDO
 DaoFactory which extends abstract DaoFactory is in
-<code>in.fins.server.dao.jdo</code> package.</li>
-</ul>
-</li>
-<li>
-<p>Interaction between service layer and data layer happens through an
-Interface <code>IDao&lt;T&gt;</code>. ORM specific Dao, like
-<code>in.fins.server.dao.jdo.Dao&lt;T&gt;</code> and <code>in.fins.server.dao.hibernate.Dao&lt;T&gt;</code> etc., implements the <code>IDao</code>
+<code>in.fins.server.dao.jdo</code> package.</li></ul></li><li><p>Interaction between service layer and data layer happens through an
+Interface <code>IDao&lt;T></code>. ORM specific Dao, like
+<code>in.fins.server.dao.jdo.Dao&lt;T></code> and <code>in.fins.server.dao.hibernate.Dao&lt;T></code> etc., implements the <code>IDao</code>
 interface. These Dao classes use ORM specific constructs to interact
-with the database.</p>
-<ul>
-<li>
-<p>When ORM is set to JDO, SymbolService gets the JDO DaoFactory,
-it calls <code>DaoFactory.getDao&lt;T&gt;()</code> method which returns
-<code>in.fins.server.dao.jdo.Dao&lt;T&gt;</code> which implements IDao&lt;T&gt; and
-uses JDO to interact with database.</p>
-</li>
-<li>
-<p>When ORM is set to Hibernate, then Step 2 returns
+with the database.</p><ul><li><p>When ORM is set to JDO, SymbolService gets the JDO DaoFactory,
+it calls <code>DaoFactory.getDao&lt;T>()</code> method which returns
+<code>in.fins.server.dao.jdo.Dao&lt;T></code> which implements IDao&lt;T> and
+uses JDO to interact with database.</p></li><li><p>When ORM is set to Hibernate, then Step 2 returns
 <code>in.fins.server.dao.hibernate.DaoFactory</code>, and in Step 3, when
 SymbolService calls its <code>getDao()</code> method, it returns
-<code>in.fins.server.dao.hibernate.Dao&lt;T&gt;</code> which uses Hibernate to
-interact with the database.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Based on Type &lt;T&gt;, method <code>DaoFactory.getDao()</code> returns following
-variants of Dao ( when ORM is set to JDO )</p>
-<ul>
-<li>
-<p><code>getDao&lt;Symbol&gt;()</code> returns <code>in.fins.server.dao.jdo.SymbolDao</code>.</p>
-</li>
-<li>
-<p><code>getDao&lt;DataGroup&gt;()</code> returns
-<code>in.fins.server.dao.jdo.DataGroupDao</code>.</p>
-</li>
-<li>
-<p><code>getDao&lt;Data&gt;()</code> returns <code>in.fins.server.dao.jdo.DataDao</code>.</p>
-</li>
-<li>
-<p>for any other types, <code>getDao()</code> returns
+<code>in.fins.server.dao.hibernate.Dao&lt;T></code> which uses Hibernate to
+interact with the database.</p></li></ul></li><li><p>Based on Type &lt;T>, method <code>DaoFactory.getDao()</code> returns following
+variants of Dao ( when ORM is set to JDO )</p><ul><li><p><code>getDao&lt;Symbol>()</code> returns <code>in.fins.server.dao.jdo.SymbolDao</code>.</p></li><li><p><code>getDao&lt;DataGroup>()</code> returns
+<code>in.fins.server.dao.jdo.DataGroupDao</code>.</p></li><li><p><code>getDao&lt;Data>()</code> returns <code>in.fins.server.dao.jdo.DataDao</code>.</p></li><li><p>for any other types, <code>getDao()</code> returns
 <code>in.fins.server.dao.jdo.Dao</code> which is generic Dao capable of
-handling any type.</p>
-</li>
-</ul>
-<p>They all implements <code>IDao</code> interface. Even though generic Dao is
+handling any type.</p></li></ul><p>They all implements <code>IDao</code> interface. Even though generic Dao is
 able to handle any type, including Symbol,DataGroup and Data types,
 we require type specific Dao as we do some post processing for
-Symbol, DataGroup and Data.</p>
-</li>
-<li>
-<p>SymbolService call <code> Dao&lt;T&gt;</code> methods to access database.</p>
-</li>
-</ol>
-<h2 id="datanucleus-plugin">DataNucleus Plugin</h2>
-<p>In the last chapter, we enhanced persistence classes through an Ant
+Symbol, DataGroup and Data.</p></li><li><p>SymbolService call <code>Dao&lt;T></code> methods to access database.</p></li></ol><h2 id=datanucleus-plugin>DataNucleus Plugin</h2><p>In the last chapter, we enhanced persistence classes through an Ant
 target. DataNucleus has a plugin for this. Install the plugin using
-update site <a href="http://www.datanucleus.org/downloads/eclipse-update/,">http://www.datanucleus.org/downloads/eclipse-update/,</a> before
-running the example code.</p>
-<p>To enable DataNucleus support, invoke project context menu and select
+update site <a href=http://www.datanucleus.org/downloads/eclipse-update/,>http://www.datanucleus.org/downloads/eclipse-update/,</a> before
+running the example code.</p><p>To enable DataNucleus support, invoke project context menu and select
 <strong>DataNucleus</strong> → <strong>Add DataNucleus Support</strong> . To run enhancer, invoke
 project context menu and select DataNucleus and choose Run Enhancer Tool
-or Enable Auto-Enhancement</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/plugin.png" alt="" />
-</figure>
-
-<p>When persistence classes are not enhanced, Dao throws
-NucleusUserException.</p>
-<p>Let&rsquo;s explore the actual implementation of the design by taking JDO as
-ORM.</p>
-<h5 id="orm-selection">ORM selection</h5>
-<p>ORM type is set in the application configuration file
-<code>META-INF/fins.properties</code>.</p>
-<p><code>src/META-INF/fins.properties</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"># allowed values JDO|MyBatis|Hibernate
+or Enable Auto-Enhancement</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/plugin.png alt></figure><p>When persistence classes are not enhanced, Dao throws
+NucleusUserException.</p><p>Let&rsquo;s explore the actual implementation of the design by taking JDO as
+ORM.</p><h5 id=orm-selection>ORM selection</h5><p>ORM type is set in the application configuration file
+<code>META-INF/fins.properties</code>.</p><p><code>src/META-INF/fins.properties</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML># allowed values JDO|MyBatis|Hibernate
 
 orm=JDO
 </code></pre></div><p>Fins uses <code>in.fins.server.listener/FinsContextListener</code>, which
@@ -917,381 +80,146 @@ application startup and set the ORM name as a global attribute in
 <code>ServletContext</code>. SymbolService, which is also a servlet, retrieves ORM
 name through <code>ServletContext.getAttribute() </code>method and initializes the
 appropriate appropriate DaoFactory. Listener entry in <code>web.xml</code> enables
-<code>FinsContextListener</code>.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-<h5 id="configuration-files">Configuration files</h5>
-<p>ORM configuration files are placed in <code>src/META-INF</code> directory which is
+<code>FinsContextListener</code>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h5 id=configuration-files>Configuration files</h5><p>ORM configuration files are placed in <code>src/META-INF</code> directory which is
 standard place for web application conf files. Hibernate and MyBatis
-configuration files are same ones from RStore.</p>
-<p>But for JDO, instead of <code>datanucleus.properties</code>, we use <code>jdoconfig.xml</code>
+configuration files are same ones from RStore.</p><p>But for JDO, instead of <code>datanucleus.properties</code>, we use <code>jdoconfig.xml</code>
 which is xml version of property file which defines
 persistence-manager-factory named &ldquo;datastore&rdquo;. This feature, known as
 Named PMF, is the preferred way to configure JDO for web applications.
 <code>JDOHelper.getPersistenceManagerFactory()</code> constructs the factory by
-using properties set in <code>jdoconfig.xml</code> file.</p>
-<p><code>in.fins.server.dao.jdo/PMF.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">PMF</span> <span class="o">{</span>
-        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">PersistenceManagerFactory</span> <span class="n">pmfInstance</span> <span class="o">=</span> <span class="n">JDOHelper</span>
-                        <span class="o">.</span><span class="na">getPersistenceManagerFactory</span><span class="o">(</span><span class="s">&#34;datastore&#34;</span><span class="o">);</span>
+using properties set in <code>jdoconfig.xml</code> file.</p><p><code>in.fins.server.dao.jdo/PMF.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=kd>public</span> <span class=kd>final</span> <span class=kd>class</span> <span class=nc>PMF</span> <span class=o>{</span>
+        <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>PersistenceManagerFactory</span> <span class=n>pmfInstance</span> <span class=o>=</span> <span class=n>JDOHelper</span>
+                        <span class=o>.</span><span class=na>getPersistenceManagerFactory</span><span class=o>(</span><span class=s>&#34;datastore&#34;</span><span class=o>);</span>
 
-        <span class="kd">public</span> <span class="kd">static</span> <span class="n">PersistenceManagerFactory</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="n">pmfInstance</span><span class="o">;</span>
-        <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><h5 id="mapping-files">Mapping files</h5>
-<p>Mapping files are placed along with domain class in package
-<code>in.fins.shared</code> and are the same as ones from RStore.</p>
-<h5 id="dao-layer">DAO Layer</h5>
-<p>Abstract classes and interfaces are in package <code>in.fins.server.dao</code>.
+        <span class=kd>public</span> <span class=kd>static</span> <span class=n>PersistenceManagerFactory</span> <span class=nf>get</span><span class=o>()</span> <span class=o>{</span>
+                <span class=k>return</span> <span class=n>pmfInstance</span><span class=o>;</span>
+        <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><h5 id=mapping-files>Mapping files</h5><p>Mapping files are placed along with domain class in package
+<code>in.fins.shared</code> and are the same as ones from RStore.</p><h5 id=dao-layer>DAO Layer</h5><p>Abstract classes and interfaces are in package <code>in.fins.server.dao</code>.
 Service layer interact through the classes and interfaces of this
 package to ensure portability between various. ORM. This package
-contains three class/interface.</p>
-<ul>
-<li>
-<p><code>DaoFactory</code> - is an abstract class with two methods,
+contains three class/interface.</p><ul><li><p><code>DaoFactory</code> - is an abstract class with two methods,
 <code>getDaoFactory()</code> and <code>getDao()</code>. The method <code>getDaoFactory()</code>
 creates and returns appropriate DaoFactory based on ORM
-type.</p>
-<p><code>in.fins.server.dao/DaoFactory.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoFactory</span> <span class="nf">getDaoFactory</span><span class="o">(</span><span class="n">ORM</span> <span class="n">orm</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="k">switch</span> <span class="o">(</span><span class="n">orm</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="k">case</span> <span class="n">JDO</span><span class="o">:</span>
-                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">in</span><span class="o">.</span><span class="na">fins</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">dao</span><span class="o">.</span><span class="na">jdo</span><span class="o">.</span><span class="na">DaoFactory</span><span class="o">();</span>
-                                <span class="k">break</span><span class="o">;</span>
-                        <span class="k">case</span> <span class="n">MyBatis</span><span class="o">:</span>
-                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">in</span><span class="o">.</span><span class="na">fins</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">dao</span><span class="o">.</span><span class="na">mybatis</span><span class="o">.</span><span class="na">DaoFactory</span><span class="o">();</span>
-                                <span class="k">break</span><span class="o">;</span>
-                        <span class="k">case</span> <span class="n">Hibernate</span><span class="o">:</span>
-                                <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span>
-                                    <span class="n">in</span><span class="o">.</span><span class="na">fins</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">dao</span><span class="o">.</span><span class="na">hibernate</span><span class="o">.</span><span class="na">DaoFactory</span><span class="o">();</span>
-                                <span class="k">break</span><span class="o">;</span>
-                        <span class="o">}</span>
-                <span class="o">}</span>
-                <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">;</span>
-        <span class="o">}</span>
+type.</p><p><code>in.fins.server.dao/DaoFactory.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>        <span class=kd>public</span> <span class=kd>static</span> <span class=n>DaoFactory</span> <span class=nf>getDaoFactory</span><span class=o>(</span><span class=n>ORM</span> <span class=n>orm</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>
+                <span class=k>if</span> <span class=o>(</span><span class=n>INSTANCE</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=k>switch</span> <span class=o>(</span><span class=n>orm</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=k>case</span> <span class=n>JDO</span><span class=o>:</span>
+                                <span class=n>INSTANCE</span> <span class=o>=</span> <span class=k>new</span> <span class=n>in</span><span class=o>.</span><span class=na>fins</span><span class=o>.</span><span class=na>server</span><span class=o>.</span><span class=na>dao</span><span class=o>.</span><span class=na>jdo</span><span class=o>.</span><span class=na>DaoFactory</span><span class=o>();</span>
+                                <span class=k>break</span><span class=o>;</span>
+                        <span class=k>case</span> <span class=n>MyBatis</span><span class=o>:</span>
+                                <span class=n>INSTANCE</span> <span class=o>=</span> <span class=k>new</span> <span class=n>in</span><span class=o>.</span><span class=na>fins</span><span class=o>.</span><span class=na>server</span><span class=o>.</span><span class=na>dao</span><span class=o>.</span><span class=na>mybatis</span><span class=o>.</span><span class=na>DaoFactory</span><span class=o>();</span>
+                                <span class=k>break</span><span class=o>;</span>
+                        <span class=k>case</span> <span class=n>Hibernate</span><span class=o>:</span>
+                                <span class=n>INSTANCE</span> <span class=o>=</span> <span class=k>new</span>
+                                    <span class=n>in</span><span class=o>.</span><span class=na>fins</span><span class=o>.</span><span class=na>server</span><span class=o>.</span><span class=na>dao</span><span class=o>.</span><span class=na>hibernate</span><span class=o>.</span><span class=na>DaoFactory</span><span class=o>();</span>
+                                <span class=k>break</span><span class=o>;</span>
+                        <span class=o>}</span>
+                <span class=o>}</span>
+                <span class=k>return</span> <span class=n>INSTANCE</span><span class=o>;</span>
+        <span class=o>}</span>
 </code></pre></div><p><code>DaoFactory.getDao()</code> is an abstract method and it&rsquo;s implementation
-is delegated to subclasses like <code>in.fins.server.dao.jdo.DaoFactory</code>.</p>
-</li>
-<li>
-<p><code>IDao&lt;T&gt;</code> - service layer uses IDao&lt;T&gt; interface, which defines
-two methods, to interact with DAO layer.</p>
-<ul>
-<li>
-<p><code>selectById()</code> - selects object like Symbol, DataGroup and Data
-by its ID (primary key)</p>
-</li>
-<li>
-<p><code>select()</code> - selects using some statement or query, for example,
-to select a list of symbol names.</p>
-</li>
-</ul>
-<p>Generally, this interface also defines methods like create, insert,
+is delegated to subclasses like <code>in.fins.server.dao.jdo.DaoFactory</code>.</p></li><li><p><code>IDao&lt;T></code> - service layer uses IDao&lt;T> interface, which defines
+two methods, to interact with DAO layer.</p><ul><li><p><code>selectById()</code> - selects object like Symbol, DataGroup and Data
+by its ID (primary key)</p></li><li><p><code>select()</code> - selects using some statement or query, for example,
+to select a list of symbol names.</p></li></ul><p>Generally, this interface also defines methods like create, insert,
 delete and other varieties of select etc., but at this juncture
 these two methods are sufficient for Fins, and we add insert method
 in a later chapter. Readers may add and implement other methods as
-an exercise.</p>
-</li>
-<li>
-<p><code>DaoHelper</code> - Dao uses this utility class which has methods, to
+an exercise.</p></li><li><p><code>DaoHelper</code> - Dao uses this utility class which has methods, to
 filter the object contents based on FilterMap sent by the client. We
-will explain this concept shortly.</p>
-</li>
-</ul>
-<h5 id="jdo-dao">JDO DAO</h5>
-<p>JDO specific DAO implementation are in <code>in.fins.server.dao.jdo</code> package.
+will explain this concept shortly.</p></li></ul><h5 id=jdo-dao>JDO DAO</h5><p>JDO specific DAO implementation are in <code>in.fins.server.dao.jdo</code> package.
 Hibernate and MyBatis are in <code>in.fins.server.dao.hibernate</code> and
 <code>in.fins.server.dao.mybatis</code> respectively and their classes are similar
-to JDO except that they make use Hibernate and MyBatis constructs.</p>
-<p>Package <code>in.fins.server.dao.jdo</code> contains following classes.</p>
-<p><code>DaoFactory</code> - extends abstract <code>DaoFactory</code> and implements the abstract
-method <code>getDao()</code></p>
-<p><code>in.fins.server.dao/DaoFactory.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="kd">private</span> <span class="n">PersistenceManagerFactory</span> <span class="n">pmf</span><span class="o">;</span>
+to JDO except that they make use Hibernate and MyBatis constructs.</p><p>Package <code>in.fins.server.dao.jdo</code> contains following classes.</p><p><code>DaoFactory</code> - extends abstract <code>DaoFactory</code> and implements the abstract
+method <code>getDao()</code></p><p><code>in.fins.server.dao/DaoFactory.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>        <span class=kd>private</span> <span class=n>PersistenceManagerFactory</span> <span class=n>pmf</span><span class=o>;</span>
 
-        <span class="kd">public</span> <span class="nf">DaoFactory</span><span class="o">()</span> <span class="o">{</span>
-                <span class="n">pmf</span> <span class="o">=</span> <span class="n">PMF</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
-        <span class="o">}</span>
+        <span class=kd>public</span> <span class=nf>DaoFactory</span><span class=o>()</span> <span class=o>{</span>
+                <span class=n>pmf</span> <span class=o>=</span> <span class=n>PMF</span><span class=o>.</span><span class=na>get</span><span class=o>();</span>
+        <span class=o>}</span>
 
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getDao</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">clz</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO SymbolDao returned&#34;</span><span class="o">);</span>
-                        <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">SymbolDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">Data</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO DataDao returned&#34;</span><span class="o">);</span>
-                        <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">DataDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">clz</span> <span class="o">==</span> <span class="n">DataGroup</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO DataGroupDao returned&#34;</span><span class="o">);</span>
-                        <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">DataGroupDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="n">log</span><span class="o">.</span><span class="na">fine</span><span class="o">(</span><span class="s">&#34;JDO Generic Dao returned&#34;</span><span class="o">);</span>
-                <span class="k">return</span> <span class="o">(</span><span class="n">IDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">Dao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;(</span><span class="n">pmf</span><span class="o">);</span>
-        <span class="o">}</span>
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=n>IDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=nf>getDao</span><span class=o>(</span><span class=n>Class</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=n>clz</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>
+                <span class=k>if</span> <span class=o>(</span><span class=n>clz</span> <span class=o>==</span> <span class=n>Symbol</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;JDO SymbolDao returned&#34;</span><span class=o>);</span>
+                        <span class=k>return</span> <span class=o>(</span><span class=n>IDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;)</span> <span class=k>new</span> <span class=n>SymbolDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;(</span><span class=n>pmf</span><span class=o>);</span>
+                <span class=o>}</span>
+                <span class=k>if</span> <span class=o>(</span><span class=n>clz</span> <span class=o>==</span> <span class=n>Data</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;JDO DataDao returned&#34;</span><span class=o>);</span>
+                        <span class=k>return</span> <span class=o>(</span><span class=n>IDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;)</span> <span class=k>new</span> <span class=n>DataDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;(</span><span class=n>pmf</span><span class=o>);</span>
+                <span class=o>}</span>
+                <span class=k>if</span> <span class=o>(</span><span class=n>clz</span> <span class=o>==</span> <span class=n>DataGroup</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;JDO DataGroupDao returned&#34;</span><span class=o>);</span>
+                        <span class=k>return</span> <span class=o>(</span><span class=n>IDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;)</span> <span class=k>new</span> <span class=n>DataGroupDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;(</span><span class=n>pmf</span><span class=o>);</span>
+                <span class=o>}</span>
+                <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;JDO Generic Dao returned&#34;</span><span class=o>);</span>
+                <span class=k>return</span> <span class=o>(</span><span class=n>IDao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;)</span> <span class=k>new</span> <span class=n>Dao</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;(</span><span class=n>pmf</span><span class=o>);</span>
+        <span class=o>}</span>
 </code></pre></div><p>JDO DaoFactory constructor creates JDO <code>PersistenceManagerFactory</code> and
 assigns it to a field. Method <code>getDao()</code> returns type specific Dao or
 generic Dao depending on the clz parameter. PersistenceManagerFactory is
 passed to Dao, so that, Dao can obtain PersistenceManager from it to
-interact with the database.</p>
-<p><code>Dao</code> - Dao class, which implements <code>IDao&lt;T&gt;</code>, is a generic Dao. It is
-generally used select objects like String, Date etc. from the database.</p>
-<p><code>SymbolDao</code>, <code>DataGroupDao</code> and <code>DataDao</code> - even though, generic Dao is
+interact with the database.</p><p><code>Dao</code> - Dao class, which implements <code>IDao&lt;T></code>, is a generic Dao. It is
+generally used select objects like String, Date etc. from the database.</p><p><code>SymbolDao</code>, <code>DataGroupDao</code> and <code>DataDao</code> - even though, generic Dao is
 capable of handling any object, we use type specific Dao SymbolDao,
 DataGroupDao and DataDao for Symbol, DataGroup and Data as we do some
-post processing like filtering.</p>
-<p>Let&rsquo;s go through <code>SymbolDao</code> to understand the reasons for type specific
-Dao.</p>
-<p><code>in.fins.server.dao.jdo/SymbolDao.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">       
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="n">T</span> <span class="nf">selectById</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">clz</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;?,</span> <span class="o">?&gt;</span> <span class="n">parameters</span><span class="o">)</span>
-                        <span class="kd">throws</span> <span class="n">PersistenceException</span> <span class="o">{</span>
-                <span class="n">PersistenceManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="na">getPersistenceManager</span><span class="o">();</span>                
-                <span class="n">Symbol</span> <span class="n">symbol</span><span class="o">;</span>
-                <span class="k">try</span> <span class="o">{</span>
-                        <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">parameters</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;symbolName&#34;</span><span class="o">);</span>          
-                        <span class="n">Symbol</span> <span class="n">sym</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">getObjectById</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span><span class="n">id</span><span class="o">);</span>             
-                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&#34;http://www.datanucleus.org/products/accessplatform_3_2/jdo/pmf_named.html&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="o">&gt;]&gt;</span> <span class="n">filterMap</span> <span class="o">=</span> 
-                            <span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;)</span> <span class="n">parameters</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;filterMap&#34;</span><span class="o">);</span>    
-                        <span class="n">symbol</span> <span class="o">=</span> <span class="n">DaoHelper</span><span class="o">.</span><span class="na">applyFilter</span><span class="o">(</span><span class="n">sym</span><span class="o">,</span> <span class="n">filterMap</span><span class="o">);</span>             
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">PersistenceException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">log</span><span class="o">.</span><span class="na">severe</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-                        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
-                <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                        <span class="n">pm</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="o">}</span>
-                <span class="k">return</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">symbol</span><span class="o">;</span>                                                  
-        <span class="o">}</span>
-</code></pre></div><table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><p><img src="../media/1.png" alt="1" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-get <code class="classname">PersistenceManager</code> (PM) from the factory to interact with database.
-</div></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><p><img src="../media/2.png" alt="2" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-get symbolName from the parameters.
-</div></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><p><img src="../media/3.png" alt="3" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-call <code class="methodname">PersistenceManager.getObjectById()</code>, with parameters Symbol.class and String id, to get a Symbol object whose name is equal to id.
-</div>
-<div class="para">
-JDO lazily loads persistence objects collection fields. While, it loads simple fields like String, Date etc. immediately, it defers loading of Collection, List, Set etc. until they are accessed. In the returned Symbol object, only name and label are set and List&lt;DataGroup&gt; field is not set. When we start accessing the List, internally JDO fires the SQL to fetch DataGroups and constructs the list.
-</div>
-<div class="para">
-Further, in JDO persistence object is available only when PM is open. For example, if SymbolService tries to access the Symbol, JDO throws <code class="classname"> PersistenceException</code> as PM is already closed. Way out of this is to use <code class="methodname">PersistenceManager.detachCopy()</code> and <code class="methodname">detachCopyAll()</code> methods. These methods, eagerly load all fields and return a copy of that object which may be used by SymbolService even after PM is closed.
-</div>
-<div class="para">
-For us, these detach methods are of not much use as they load all the data for all previous days, months and years and for all Facts. It results in Cartesian product of periods and facts which is about 800 facts for a Symbol in sample data. This results into two problems, JDO has to retrieve all the rows from multiple tables which puts unnecessary load on the database and when we send the fully loaded symbol object to the client it consumes quite a bit of network bandwidth. Actually, we require only a small set of about 50 facts for Snapshot page and that too only for latest date in each category. When requesting for data, client had sent a filterMap which contains the required fact keys, and we are going use that to get a slim Symbol object from JDO.
-</div></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><p><img src="../media/4.png" alt="4" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-get Map&lt;String,String&gt; filterMap from parameters.
-</div></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><p><img src="../media/5.png" alt="5" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-call <code class="methodname">DaoHelper.applyFilter()</code> with unfiltered Symbol object and filterMap as parameters. This method access only the required DataGroup and Data, and filters them further using filterMap keys. It creates a new Symbol object, and copies required values from unfiltered Symbol, and returns the new symbol object. In a way, <code class="methodname">applyFilter()</code> is an optimized equivalent of <code class="methodname">detachCopy()</code>.
-</div></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><p><img src="../media/6.png" alt="6" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-close PM and return the copy of symbol to caller.
-</div></td>
-</tr>
-</tbody>
-</table>
-<p>Method <code>applyFilter()</code> accomplishes three things; detaches the object,
+post processing like filtering.</p><p>Let&rsquo;s go through <code>SymbolDao</code> to understand the reasons for type specific
+Dao.</p><p><code>in.fins.server.dao.jdo/SymbolDao.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>       
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=n>T</span> <span class=nf>selectById</span><span class=o>(</span><span class=n>Class</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=n>clz</span><span class=o>,</span> <span class=n>Map</span><span class=o>&lt;?,</span> <span class=o>?&gt;</span> <span class=n>parameters</span><span class=o>)</span>
+                        <span class=kd>throws</span> <span class=n>PersistenceException</span> <span class=o>{</span>
+                <span class=n>PersistenceManager</span> <span class=n>pm</span> <span class=o>=</span> <span class=n>pmf</span><span class=o>.</span><span class=na>getPersistenceManager</span><span class=o>();</span>                
+                <span class=n>Symbol</span> <span class=n>symbol</span><span class=o>;</span>
+                <span class=k>try</span> <span class=o>{</span>
+                        <span class=n>String</span> <span class=n>id</span> <span class=o>=</span> <span class=o>(</span><span class=n>String</span><span class=o>)</span> <span class=n>parameters</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=s>&#34;symbolName&#34;</span><span class=o>);</span>          
+                        <span class=n>Symbol</span> <span class=n>sym</span> <span class=o>=</span> <span class=n>pm</span><span class=o>.</span><span class=na>getObjectById</span><span class=o>(</span><span class=n>Symbol</span><span class=o>.</span><span class=na>class</span><span class=o>,</span><span class=n>id</span><span class=o>);</span>             
+                        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&lt;</span><span class=n>a</span> <span class=n>href</span><span class=o>=</span><span class=s>&#34;http://www.datanucleus.org/products/accessplatform_3_2/jdo/pmf_named.html&#34;</span> <span class=n>target</span><span class=o>=</span><span class=s>&#34;_blank&#34;</span><span class=o>&gt;]&gt;</span> <span class=n>filterMap</span> <span class=o>=</span> 
+                            <span class=o>(</span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>[]&gt;)</span> <span class=n>parameters</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=s>&#34;filterMap&#34;</span><span class=o>);</span>    
+                        <span class=n>symbol</span> <span class=o>=</span> <span class=n>DaoHelper</span><span class=o>.</span><span class=na>applyFilter</span><span class=o>(</span><span class=n>sym</span><span class=o>,</span> <span class=n>filterMap</span><span class=o>);</span>             
+                <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>PersistenceException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=n>log</span><span class=o>.</span><span class=na>severe</span><span class=o>(</span><span class=n>e</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
+                        <span class=k>throw</span> <span class=n>e</span><span class=o>;</span>
+                <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>
+                        <span class=n>pm</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>
+                <span class=o>}</span>
+                <span class=k>return</span> <span class=o>(</span><span class=n>T</span><span class=o>)</span> <span class=n>symbol</span><span class=o>;</span>                                                  
+        <span class=o>}</span>
+</code></pre></div><table><col style=width:50%><col style=width:50%><tbody><tr class=odd><td style=text-align:left><p><img src=../media/1.png alt=1 class=callout></p></td><td style=text-align:left><div class=para>get <code class=classname>PersistenceManager</code> (PM) from the factory to interact with database.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/2.png alt=2 class=callout></p></td><td style=text-align:left><div class=para>get symbolName from the parameters.</div></td></tr><tr class=odd><td style=text-align:left><p><img src=../media/3.png alt=3 class=callout></p></td><td style=text-align:left><div class=para>call <code class=methodname>PersistenceManager.getObjectById()</code>, with parameters Symbol.class and String id, to get a Symbol object whose name is equal to id.</div><div class=para>JDO lazily loads persistence objects collection fields. While, it loads simple fields like String, Date etc. immediately, it defers loading of Collection, List, Set etc. until they are accessed. In the returned Symbol object, only name and label are set and List&lt;DataGroup> field is not set. When we start accessing the List, internally JDO fires the SQL to fetch DataGroups and constructs the list.</div><div class=para>Further, in JDO persistence object is available only when PM is open. For example, if SymbolService tries to access the Symbol, JDO throws <code class=classname>PersistenceException</code> as PM is already closed. Way out of this is to use <code class=methodname>PersistenceManager.detachCopy()</code> and <code class=methodname>detachCopyAll()</code> methods. These methods, eagerly load all fields and return a copy of that object which may be used by SymbolService even after PM is closed.</div><div class=para>For us, these detach methods are of not much use as they load all the data for all previous days, months and years and for all Facts. It results in Cartesian product of periods and facts which is about 800 facts for a Symbol in sample data. This results into two problems, JDO has to retrieve all the rows from multiple tables which puts unnecessary load on the database and when we send the fully loaded symbol object to the client it consumes quite a bit of network bandwidth. Actually, we require only a small set of about 50 facts for Snapshot page and that too only for latest date in each category. When requesting for data, client had sent a filterMap which contains the required fact keys, and we are going use that to get a slim Symbol object from JDO.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/4.png alt=4 class=callout></p></td><td style=text-align:left><div class=para>get Map&lt;String,String> filterMap from parameters.</div></td></tr><tr class=odd><td style=text-align:left><p><img src=../media/5.png alt=5 class=callout></p></td><td style=text-align:left><div class=para>call <code class=methodname>DaoHelper.applyFilter()</code> with unfiltered Symbol object and filterMap as parameters. This method access only the required DataGroup and Data, and filters them further using filterMap keys. It creates a new Symbol object, and copies required values from unfiltered Symbol, and returns the new symbol object. In a way, <code class=methodname>applyFilter()</code> is an optimized equivalent of <code class=methodname>detachCopy()</code>.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/6.png alt=6 class=callout></p></td><td style=text-align:left><div class=para>close PM and return the copy of symbol to caller.</div></td></tr></tbody></table><p>Method <code>applyFilter()</code> accomplishes three things; detaches the object,
 optimizes the database access and trims down the symbol size. This sort
 of post processing is not possible with the generic Dao. DataGroupDao
 and DataDao follow a similar pattern and focus on much smaller set of
-data.</p>
-<h2 id="detach-and-rpc">Detach and RPC</h2>
-<p>While making copy of persistence objects, we should bear in mind that we
+data.</p><h2 id=detach-and-rpc>Detach and RPC</h2><p>While making copy of persistence objects, we should bear in mind that we
 are dealing with the enhanced classes where many java types are changed
 to DataNucleus types. For example, <code>java.util.Date</code> is enhanced to
 <code>org.datanucleus.sco.simple.Date</code> and in case, we assign the Date from
 persistence object to the copy, then GWT RPC throws <code>Serialization</code>
 exception as GWT doesn&rsquo;t know about DataNucleus date types. Way out is
-to create a new Date object with <code>copyOfData.setDate(new Date(data.getDate().getTime()))</code> and assign it the copy.</p>
-<p><code>DaoHelper</code> - the last class of <code>in.fins.server.dao.jdo</code> contains post
-processing static helper methods.</p>
-<h5 id="service">Service</h5>
-<p>Classes from service layer like SymbolService interacts with DAO layer
+to create a new Date object with <code>copyOfData.setDate(new Date(data.getDate().getTime()))</code> and assign it the copy.</p><p><code>DaoHelper</code> - the last class of <code>in.fins.server.dao.jdo</code> contains post
+processing static helper methods.</p><h5 id=service>Service</h5><p>Classes from service layer like SymbolService interacts with DAO layer
 using abstract DaoFactory and IDao and thus they are totally isolated
 from underlying ORM layer. Following code snippet from SymbolService
-shows a typical interaction with DAO.</p>
-<p><code>in.fins.server.dao.jdo/SymbolDao.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="n">Symbol</span> <span class="nf">getSymbol</span><span class="o">(</span><span class="n">String</span> <span class="n">symbolName</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">[]&gt;</span> <span class="n">filterMap</span><span class="o">)</span>
-                        <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                <span class="k">try</span> <span class="o">{</span>
-                        <span class="n">initDaoFactory</span><span class="o">();</span>                                              
-                        <span class="n">IDao</span><span class="o">&lt;</span><span class="n">Symbol</span><span class="o">&gt;</span> <span class="n">dao</span> <span class="o">=</span> <span class="n">daoFactory</span><span class="o">.</span><span class="na">getDao</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>            
-                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">parameters</span> <span class="o">=</span> 
-                                            <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-                        <span class="n">parameters</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;symbolName&#34;</span><span class="o">,</span> <span class="n">symbolName</span><span class="o">);</span>
-                        <span class="n">parameters</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;filterMap&#34;</span><span class="o">,</span> <span class="n">filterMap</span><span class="o">);</span>                        <span class="k">return</span> <span class="n">dao</span><span class="o">.</span><span class="na">selectById</span><span class="o">(</span><span class="n">Symbol</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">parameters</span><span class="o">);</span>               
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">log</span><span class="o">.</span><span class="na">warning</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-                        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
-                <span class="o">}</span>
-        <span class="o">}</span>
-</code></pre></div><table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><p><img src="../media/1.png" alt="1" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-initialize the DaoFactory which gets the orm name from ServletContext and calls getDaoFactory() method of abstract DaoFactory which returns appropriate DaoFactory based on orm name and returned DaoFactory is assigned to daoFactory field.
-</div></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><p><img src="../media/2.png" alt="2" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-get instance of Dao and assign it to IDao. DaoFactory return type specific or generic dao based into class parameter.
-</div></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><p><img src="../media/3.png" alt="3" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-create parameter map and set symbolName and filterMap parameters.
-</div></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><p><img src="../media/4.png" alt="4" class="callout" /></p></td>
-<td style="text-align: left;"><div class="para">
-call selectById() method IDao to get the result.
-</div></td>
-</tr>
-</tbody>
-</table>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<h5 id="logging">Logging</h5>
-<p>In server side classes we are using java.util.logging framework as we
+shows a typical interaction with DAO.</p><p><code>in.fins.server.dao.jdo/SymbolDao.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=n>Symbol</span> <span class=nf>getSymbol</span><span class=o>(</span><span class=n>String</span> <span class=n>symbolName</span><span class=o>,</span> <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>[]&gt;</span> <span class=n>filterMap</span><span class=o>)</span>
+                        <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>
+                <span class=k>try</span> <span class=o>{</span>
+                        <span class=n>initDaoFactory</span><span class=o>();</span>                                              
+                        <span class=n>IDao</span><span class=o>&lt;</span><span class=n>Symbol</span><span class=o>&gt;</span> <span class=n>dao</span> <span class=o>=</span> <span class=n>daoFactory</span><span class=o>.</span><span class=na>getDao</span><span class=o>(</span><span class=n>Symbol</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>            
+                        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;</span> <span class=n>parameters</span> <span class=o>=</span> 
+                                            <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Object</span><span class=o>&gt;();</span>
+                        <span class=n>parameters</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;symbolName&#34;</span><span class=o>,</span> <span class=n>symbolName</span><span class=o>);</span>
+                        <span class=n>parameters</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;filterMap&#34;</span><span class=o>,</span> <span class=n>filterMap</span><span class=o>);</span>                        <span class=k>return</span> <span class=n>dao</span><span class=o>.</span><span class=na>selectById</span><span class=o>(</span><span class=n>Symbol</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>parameters</span><span class=o>);</span>               
+                <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+                        <span class=n>log</span><span class=o>.</span><span class=na>warning</span><span class=o>(</span><span class=n>e</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
+                        <span class=k>throw</span> <span class=n>e</span><span class=o>;</span>
+                <span class=o>}</span>
+        <span class=o>}</span>
+</code></pre></div><table><col style=width:50%><col style=width:50%><tbody><tr class=odd><td style=text-align:left><p><img src=../media/1.png alt=1 class=callout></p></td><td style=text-align:left><div class=para>initialize the DaoFactory which gets the orm name from ServletContext and calls getDaoFactory() method of abstract DaoFactory which returns appropriate DaoFactory based on orm name and returned DaoFactory is assigned to daoFactory field.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/2.png alt=2 class=callout></p></td><td style=text-align:left><div class=para>get instance of Dao and assign it to IDao. DaoFactory return type specific or generic dao based into class parameter.</div></td></tr><tr class=odd><td style=text-align:left><p><img src=../media/3.png alt=3 class=callout></p></td><td style=text-align:left><div class=para>create parameter map and set symbolName and filterMap parameters.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/4.png alt=4 class=callout></p></td><td style=text-align:left><div class=para>call selectById() method IDao to get the result.</div></td></tr></tbody></table><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h5 id=logging>Logging</h5><p>In server side classes we are using java.util.logging framework as we
 used the same framework on client side and GAE supports this logging
-framework.</p>
-<p>To output log messages of DataNucleus, Hibernate and MyBatis we find
+framework.</p><p>To output log messages of DataNucleus, Hibernate and MyBatis we find
 configuring Log4J is much easier than java.util.logging. For that we
 have to place the log4j.properties in src directory and add log4j jar to
 war/WEB-INF/lib directory. With all these ORM packages output messages
-to file dao.log in war/logs dir.</p>
-<h5 id="forward-pointers">Forward Pointers</h5>
-<p><em>Named PMF</em> - refer [JDO : Named
-PersistenceManagerFactory</a></p>
-<p><em>Detach</em> - refer <a href="http://www.datanucleus.org/products/accessplatform_5_1/jdo/persistence.html#pm_detach" target="_blank">JDO :
-Attach/Detach</a></p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+to file dao.log in war/logs dir.</p><h5 id=forward-pointers>Forward Pointers</h5><p><em>Named PMF</em> - refer [JDO : Named
+PersistenceManagerFactory</a></p><p><em>Detach</em> - refer <a href=http://www.datanucleus.org/products/accessplatform_5_1/jdo/persistence.html#pm_detach target=_blank>JDO :
+Attach/Detach</a></p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress plugin simple unit tests on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-plugin-simple-unit-tests/</link>
-    <description>Recent content in wordpress plugin simple unit tests on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 13:07:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-plugin-simple-unit-tests/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Simple Unit Test - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/</link>
-      <pubDate>Fri, 11 Jan 2019 13:07:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/</guid>
-      <description>12.3. WordPress Plugin Simple Unit Tests In the previous blog, we setup PHPUnit for WordPress Plugin and verified the setup with a Simple Plugin. The rest of the blog explains various types of unit tests we used to test the Share on Social Plugin.
-The real hurdle in testing a plugin is to understand the WordPress architecture and write the appropriate tests for it. For better understanding, we selected various types of methods that are typical to a plugin and explain how to test them.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress plugin simple unit tests on Codetab</title><link>https://www.codetab.org/tags/wordpress-plugin-simple-unit-tests/</link><description>Recent content in wordpress plugin simple unit tests on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 13:07:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-plugin-simple-unit-tests/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Unit Test - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/</link><pubDate>Fri, 11 Jan 2019 13:07:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/</guid><description>12.3. WordPress Plugin Simple Unit Tests In the previous blog, we setup PHPUnit for WordPress Plugin and verified the setup with a Simple Plugin. The rest of the blog explains various types of unit tests we used to test the Share on Social Plugin.
+The real hurdle in testing a plugin is to understand the WordPress architecture and write the appropriate tests for it. For better understanding, we selected various types of methods that are typical to a plugin and explain how to test them.</description></item></channel></rss>

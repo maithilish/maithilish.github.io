@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>multiple task on Codetab</title>
-    <link>https://www.codetab.org/tags/multiple-task/</link>
-    <description>Recent content in multiple task on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 20:43:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/multiple-task/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Multiple Tasks - Gotz ETL - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/</link>
-      <pubDate>Fri, 11 Jan 2019 20:43:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/</guid>
-      <description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>multiple task on Codetab</title><link>https://www.codetab.org/tags/multiple-task/</link><description>Recent content in multiple task on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 20:43:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/multiple-task/index.xml" rel="self" type="application/rss+xml"/><item><title>Multiple Tasks - Gotz ETL - CodeTab</title><link>https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/</link><pubDate>Fri, 11 Jan 2019 20:43:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/</guid><description>We can define multiple task for tasks and also, multiple tasks are allowed in a job file.
 The Example-1 scrapes Price data from acme-quote.html page while Example-2 extracts Snapshot data from the same page. We can add these two task within tasks element.
 But before doing that let&amp;rsquo;s introduce one more feature - steps reference - which extracts steps into separate entity which can be used by both tasks.
-&amp;nbsp;   (adsbygoogle = window.</description>
-    </item>
-    
-  </channel>
-</rss>
+&amp;nbsp; (adsbygoogle = window.</description></item></channel></rss>

@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress performance on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-performance/</link>
-    <description>Recent content in wordpress performance on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 04:20:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-performance/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Performance Analyze - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</link>
-      <pubDate>Fri, 11 Jan 2019 04:20:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</guid>
-      <description>7.4. Analyze Performance In this previous sections, we setup W3 Total Cache to boost the WordPress performance. In this section, we cover one more WordPress Optimization technique and also explore the tools that help us to analyze the WordPress Performance and pinpoint areas that need tuning.
-WordPress Optimize Images We use a lot of PNG images in our pages instead of JPG as PNG supports more colors and livelier than JPG images.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress performance on Codetab</title><link>https://www.codetab.org/tags/wordpress-performance/</link><description>Recent content in wordpress performance on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 04:20:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Performance Analyze - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</link><pubDate>Fri, 11 Jan 2019 04:20:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</guid><description>7.4. Analyze Performance In this previous sections, we setup W3 Total Cache to boost the WordPress performance. In this section, we cover one more WordPress Optimization technique and also explore the tools that help us to analyze the WordPress Performance and pinpoint areas that need tuning.
+WordPress Optimize Images We use a lot of PNG images in our pages instead of JPG as PNG supports more colors and livelier than JPG images.</description></item></channel></rss>

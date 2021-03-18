@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>scoopi, scraper, cluster on Codetab</title>
-    <link>https://www.codetab.org/tags/scoopi-scraper-cluster/</link>
-    <description>Recent content in scoopi, scraper, cluster on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 02 Dec 2020 01:02:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/scoopi-scraper-cluster/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</link>
-      <pubDate>Wed, 02 Dec 2020 01:02:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</guid>
-      <description>Scoopi Cluster on Kubenetes Scoopi jobs can be deployed on Kubernetes Cluster.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>scoopi, scraper, cluster on Codetab</title><link>https://www.codetab.org/tags/scoopi-scraper-cluster/</link><description>Recent content in scoopi, scraper, cluster on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 02 Dec 2020 01:02:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/scoopi-scraper-cluster/index.xml" rel="self" type="application/rss+xml"/><item><title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</link><pubDate>Wed, 02 Dec 2020 01:02:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-kubernetes/</guid><description>Scoopi Cluster on Kubenetes Scoopi jobs can be deployed on Kubernetes Cluster.
 Kubernetes Deployment The sample kubernetes files are available at Scoopi Kubernetes. The scoopi.yaml configures kinds such as ClusterRole, ClusterRoleBinding, Service, PersistentVolume and PersistentVolumeClaim which are essential to run Scoopi and the scoopi jobs are defined in scoopi-job.yaml.
 Download the files and apply them to k8s cluster.
-kubectl apply -f scoopi.yaml kubectl apply -f scoopi-job.yaml It runs /defs/examples/fin/jsoup/ex-13 on Scoopi Cluster spanned across 5 K8s pods.</description>
-    </item>
-    
-  </channel>
-</rss>
+kubectl apply -f scoopi.yaml kubectl apply -f scoopi-job.yaml It runs /defs/examples/fin/jsoup/ex-13 on Scoopi Cluster spanned across 5 K8s pods.</description></item></channel></rss>

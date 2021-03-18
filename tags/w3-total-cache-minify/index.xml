@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>w3 total cache minify on Codetab</title>
-    <link>https://www.codetab.org/tags/w3-total-cache-minify/</link>
-    <description>Recent content in w3 total cache minify on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 05:53:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/w3-total-cache-minify/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>W3 Total Minify - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</link>
-      <pubDate>Fri, 11 Jan 2019 05:53:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</guid>
-      <description>7.3. W3 Total Cache - Minify In the previous sections, we installed W3 Total Cache Plugin and enabled its two cache modules - Page cache and Browser cache. In this section, we show how go about the W3 Total Cache Minify Settings.
-W3 Total Cache Minify Usually, HTML pages contain links to JavaScript, Stylesheet and Media. When we view the source of a WordPress page, in the header section, we find links to a number of JavaScript and CSS files.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>w3 total cache minify on Codetab</title><link>https://www.codetab.org/tags/w3-total-cache-minify/</link><description>Recent content in w3 total cache minify on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 05:53:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/w3-total-cache-minify/index.xml" rel="self" type="application/rss+xml"/><item><title>W3 Total Minify - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</link><pubDate>Fri, 11 Jan 2019 05:53:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</guid><description>7.3. W3 Total Cache - Minify In the previous sections, we installed W3 Total Cache Plugin and enabled its two cache modules - Page cache and Browser cache. In this section, we show how go about the W3 Total Cache Minify Settings.
+W3 Total Cache Minify Usually, HTML pages contain links to JavaScript, Stylesheet and Media. When we view the source of a WordPress page, in the header section, we find links to a number of JavaScript and CSS files.</description></item></channel></rss>

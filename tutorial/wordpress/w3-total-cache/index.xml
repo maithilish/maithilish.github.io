@@ -1,51 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>W3 Total Cache on Codetab</title>
-    <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/</link>
-    <description>Recent content in W3 Total Cache on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/w3-total-cache/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>W3 Cache Settings - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</link>
-      <pubDate>Fri, 11 Jan 2019 01:55:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</guid>
-      <description>W3 Total Cache - Page Cache In the previous chapter, we installed essential plugins to extend the functionality of the WordPress. In this chapters, we optimize the site to boost the performance.
-Out of the box, WordPress performance is suboptimal. Performance penalty stems from the dynamic nature of the pages and the scripting language used to develop the WordPress. Unlike regular programming languages, scripting languages like PHP interpret the code on the fly.</description>
-    </item>
-    
-    <item>
-      <title>W3 Total Browser Cache - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/</link>
-      <pubDate>Fri, 11 Jan 2019 05:39:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/</guid>
-      <description>7.2. W3 Total Cache Browser Cache In the previous section, we installed W3 Total Cache and enabled its Page Cache module. This section shows the best W3 Total Cache Browser Cache Settings to boost the WordPress performance and page speed.
-W3 Total Cache Browser Cache Browser can cache the pages, JavaScript, CSS and media when user views a web page and on subsequent visits to the page or site, reuse the cached objects instead of repeated fetches from the site.</description>
-    </item>
-    
-    <item>
-      <title>W3 Total Minify - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</link>
-      <pubDate>Fri, 11 Jan 2019 05:53:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</guid>
-      <description>7.3. W3 Total Cache - Minify In the previous sections, we installed W3 Total Cache Plugin and enabled its two cache modules - Page cache and Browser cache. In this section, we show how go about the W3 Total Cache Minify Settings.
-W3 Total Cache Minify Usually, HTML pages contain links to JavaScript, Stylesheet and Media. When we view the source of a WordPress page, in the header section, we find links to a number of JavaScript and CSS files.</description>
-    </item>
-    
-    <item>
-      <title>Performance Analyze - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</link>
-      <pubDate>Fri, 11 Jan 2019 04:20:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</guid>
-      <description>7.4. Analyze Performance In this previous sections, we setup W3 Total Cache to boost the WordPress performance. In this section, we cover one more WordPress Optimization technique and also explore the tools that help us to analyze the WordPress Performance and pinpoint areas that need tuning.
-WordPress Optimize Images We use a lot of PNG images in our pages instead of JPG as PNG supports more colors and livelier than JPG images.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>W3 Total Cache on Codetab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/</link><description>Recent content in W3 Total Cache on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/w3-total-cache/index.xml" rel="self" type="application/rss+xml"/><item><title>W3 Cache Settings - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</link><pubDate>Fri, 11 Jan 2019 01:55:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/</guid><description>W3 Total Cache - Page Cache In the previous chapter, we installed essential plugins to extend the functionality of the WordPress. In this chapters, we optimize the site to boost the performance.
+Out of the box, WordPress performance is suboptimal. Performance penalty stems from the dynamic nature of the pages and the scripting language used to develop the WordPress. Unlike regular programming languages, scripting languages like PHP interpret the code on the fly.</description></item><item><title>W3 Total Browser Cache - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/</link><pubDate>Fri, 11 Jan 2019 05:39:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/</guid><description>7.2. W3 Total Cache Browser Cache In the previous section, we installed W3 Total Cache and enabled its Page Cache module. This section shows the best W3 Total Cache Browser Cache Settings to boost the WordPress performance and page speed.
+W3 Total Cache Browser Cache Browser can cache the pages, JavaScript, CSS and media when user views a web page and on subsequent visits to the page or site, reuse the cached objects instead of repeated fetches from the site.</description></item><item><title>W3 Total Minify - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</link><pubDate>Fri, 11 Jan 2019 05:53:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/</guid><description>7.3. W3 Total Cache - Minify In the previous sections, we installed W3 Total Cache Plugin and enabled its two cache modules - Page cache and Browser cache. In this section, we show how go about the W3 Total Cache Minify Settings.
+W3 Total Cache Minify Usually, HTML pages contain links to JavaScript, Stylesheet and Media. When we view the source of a WordPress page, in the header section, we find links to a number of JavaScript and CSS files.</description></item><item><title>Performance Analyze - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</link><pubDate>Fri, 11 Jan 2019 04:20:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/</guid><description>7.4. Analyze Performance In this previous sections, we setup W3 Total Cache to boost the WordPress performance. In this section, we cover one more WordPress Optimization technique and also explore the tools that help us to analyze the WordPress Performance and pinpoint areas that need tuning.
+WordPress Optimize Images We use a lot of PNG images in our pages instead of JPG as PNG supports more colors and livelier than JPG images.</description></item></channel></rss>

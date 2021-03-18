@@ -1,24 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Apache Ivy on Codetab</title>
-    <link>https://www.codetab.org/tutorial/gwt/build/</link>
-    <description>Recent content in Apache Ivy on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/gwt/build/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Apache Ivy - GWT Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gwt/build/apache-ivy/</link>
-      <pubDate>Thu, 10 Jan 2019 10:47:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gwt/build/apache-ivy/</guid>
-      <description>IvyDE is Apache Ivy plugin for Eclipse and using IvyDE plugin, with just two steps you will be able to migrate your projects to auto dependency management.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Ivy on Codetab</title><link>https://www.codetab.org/tutorial/gwt/build/</link><description>Recent content in Apache Ivy on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/gwt/build/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache Ivy - GWT Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/gwt/build/apache-ivy/</link><pubDate>Thu, 10 Jan 2019 10:47:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gwt/build/apache-ivy/</guid><description>IvyDE is Apache Ivy plugin for Eclipse and using IvyDE plugin, with just two steps you will be able to migrate your projects to auto dependency management.
 Install IvyDE In Eclipse select Help → Install New Software. Add IvyDE update site http://www.apache.org/dist/ant/ivyde/updatesite/. Following softwares are available for installation.
-  Apache Ivy library
-  Apache IvyDE Eclipse plugin
-  Select both and complete the installation. On Eclipse restart, menu bar will have IvyDE&amp;rsquo;s Resove button.</description>
-    </item>
-    
-  </channel>
-</rss>
+Apache Ivy library
+Apache IvyDE Eclipse plugin
+Select both and complete the installation. On Eclipse restart, menu bar will have IvyDE&amp;rsquo;s Resove button.</description></item></channel></rss>

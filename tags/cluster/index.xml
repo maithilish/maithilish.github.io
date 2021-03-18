@@ -1,33 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>cluster on Codetab</title>
-    <link>https://www.codetab.org/tags/cluster/</link>
-    <description>Recent content in cluster on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 01:02:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/cluster/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</link>
-      <pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</guid>
-      <description>Scoopi Cluster Scoopi Cluster scale horizontally by distributing tasks across the cluster nodes. It is designed to run in various environments; in bare JVM or in Docker containers or even on high end container orchestration platforms such as Kubernetes. Scoopi Cluster uses Hazelcast IMDG, a fault-tolerant distributed in-memory computing platform, as its clustering library.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cluster on Codetab</title><link>https://www.codetab.org/tags/cluster/</link><description>Recent content in cluster on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 01:02:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/cluster/index.xml" rel="self" type="application/rss+xml"/><item><title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</link><pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-quick-start/</guid><description>Scoopi Cluster Scoopi Cluster scale horizontally by distributing tasks across the cluster nodes. It is designed to run in various environments; in bare JVM or in Docker containers or even on high end container orchestration platforms such as Kubernetes. Scoopi Cluster uses Hazelcast IMDG, a fault-tolerant distributed in-memory computing platform, as its clustering library.
 Let&amp;rsquo;s see Scoopi Cluster in action with multiple JVM on single host.
-Java Download the latest release zip file scoopi-x-production.</description>
-    </item>
-    
-    <item>
-      <title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</link>
-      <pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</guid>
-      <description>Scoopi Cluster Containers We can also run Scoopi Cluster as plain Docker containers.
+Java Download the latest release zip file scoopi-x-production.</description></item><item><title>Scoopi Cluster - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</link><pubDate>Thu, 05 Nov 2020 01:02:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/cluster/scoopi-cluster-docker/</guid><description>Scoopi Cluster Containers We can also run Scoopi Cluster as plain Docker containers.
 Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system. The following command pulls Scoopi image, creates and run container named scoopi.
-docker run --name scoopi codetab/scoopi It executes quick-start example which outputs single record to an output file. However, we will not be able to view the output file nor modify the conf files as they are within the container.</description>
-    </item>
-    
-  </channel>
-</rss>
+docker run --name scoopi codetab/scoopi It executes quick-start example which outputs single record to an output file. However, we will not be able to view the output file nor modify the conf files as they are within the container.</description></item></channel></rss>

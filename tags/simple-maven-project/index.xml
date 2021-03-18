@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>simple maven project on Codetab</title>
-    <link>https://www.codetab.org/tags/simple-maven-project/</link>
-    <description>Recent content in simple maven project on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 15:53:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/simple-maven-project/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Simple Project - Apache Maven Tutorial – CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/simple-project/</link>
-      <pubDate>Fri, 11 Jan 2019 15:53:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/simple-project/</guid>
-      <description>Simple Maven Project In the previous chapter we introduced Apache Maven and installed it. In this chapter, we create a simple Maven project and build it with Maven.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>simple maven project on Codetab</title><link>https://www.codetab.org/tags/simple-maven-project/</link><description>Recent content in simple maven project on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 15:53:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/simple-maven-project/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Project - Apache Maven Tutorial – CodeTab</title><link>https://www.codetab.org/tutorial/apache-maven/simple-project/</link><pubDate>Fri, 11 Jan 2019 15:53:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-maven/simple-project/</guid><description>Simple Maven Project In the previous chapter we introduced Apache Maven and installed it. In this chapter, we create a simple Maven project and build it with Maven.
 Maven comes with wizard to create various type of projects, but for now we are not going to use Maven to create project for us. Instead, we hand code the project as beginners can learn more from the process.
-Work Dir Throughout the guide, we use a work directory to run Apache Maven examples.</description>
-    </item>
-    
-  </channel>
-</rss>
+Work Dir Throughout the guide, we use a work directory to run Apache Maven examples.</description></item></channel></rss>

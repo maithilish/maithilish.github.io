@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress plugin main file on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-plugin-main-file/</link>
-    <description>Recent content in wordpress plugin main file on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 08:56:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-plugin-main-file/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Main File - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</link>
-      <pubDate>Fri, 11 Jan 2019 08:56:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</guid>
-      <description>In this chapter, we step through the plugins&#39; main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress plugin main file on Codetab</title><link>https://www.codetab.org/tags/wordpress-plugin-main-file/</link><description>Recent content in wordpress plugin main file on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 08:56:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-plugin-main-file/index.xml" rel="self" type="application/rss+xml"/><item><title>Main File - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</link><pubDate>Fri, 11 Jan 2019 08:56:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/</guid><description>In this chapter, we step through the plugins' main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.
 Plugin Info The main file share-on-social.php starts with header comments. As already described in the “WordPress Simple Plugin”, WordPress uses the header comments from the main file to display the Plugin info in plugins page.
-Define Constants Throughout the plugin, we often refer some paths and constants.</description>
-    </item>
-    
-  </channel>
-</rss>
+Define Constants Throughout the plugin, we often refer some paths and constants.</description></item></channel></rss>

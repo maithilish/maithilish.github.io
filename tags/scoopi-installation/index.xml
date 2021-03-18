@@ -1,41 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Scoopi installation on Codetab</title>
-    <link>https://www.codetab.org/tags/scoopi-installation/</link>
-    <description>Recent content in Scoopi installation on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 22:25:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/scoopi-installation/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</link>
-      <pubDate>Thu, 05 Nov 2020 22:25:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</guid>
-      <description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
-Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system.</description>
-    </item>
-    
-    <item>
-      <title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</link>
-      <pubDate>Fri, 11 Jan 2019 22:25:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</guid>
-      <description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8 and Maria DB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
-Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with MariaDB database, you also need Docker Compose.</description>
-    </item>
-    
-    <item>
-      <title>Installation - Scoopi Web Scraper - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/</link>
-      <pubDate>Sat, 12 Jan 2019 05:26:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/</guid>
-      <description>Scoopi Installation and Quick Start The easiest way to use Scoopi is to pull the docker image from DockerHub and run it straight away which comes with pre-configured MariaDB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
-Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with database, you also need Docker Compose.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scoopi installation on Codetab</title><link>https://www.codetab.org/tags/scoopi-installation/</link><description>Recent content in Scoopi installation on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 22:25:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/scoopi-installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</link><pubDate>Thu, 05 Nov 2020 22:25:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/installation-quick-start/</guid><description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
+Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system.</description></item><item><title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</link><pubDate>Fri, 11 Jan 2019 22:25:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</guid><description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8 and Maria DB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
+Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with MariaDB database, you also need Docker Compose.</description></item><item><title>Installation - Scoopi Web Scraper - CodeTab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/</link><pubDate>Sat, 12 Jan 2019 05:26:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/installation-quick-start-v094/</guid><description>Scoopi Installation and Quick Start The easiest way to use Scoopi is to pull the docker image from DockerHub and run it straight away which comes with pre-configured MariaDB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
+Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with database, you also need Docker Compose.</description></item></channel></rss>

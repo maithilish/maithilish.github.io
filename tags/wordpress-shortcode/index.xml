@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>WordPress shortcode on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-shortcode/</link>
-    <description>Recent content in WordPress shortcode on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 07:46:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-shortcode/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Shortcode - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/</link>
-      <pubDate>Fri, 11 Jan 2019 07:46:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/</guid>
-      <description>2.2. WordPress Shortcode Let&amp;rsquo;s add some functionality to our plugin using WordPress Shortcode API.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WordPress shortcode on Codetab</title><link>https://www.codetab.org/tags/wordpress-shortcode/</link><description>Recent content in WordPress shortcode on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 07:46:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-shortcode/index.xml" rel="self" type="application/rss+xml"/><item><title>Shortcode - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/</link><pubDate>Fri, 11 Jan 2019 07:46:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/</guid><description>2.2. WordPress Shortcode Let&amp;rsquo;s add some functionality to our plugin using WordPress Shortcode API.
 This is our first brush with WordPress API and we go with Shortcode because they are easy to understand and implement.
 WordPress Shortcode are macros that can be placed in posts. When processing the posts, WordPress replaces the shortcode with contents returned by a handler function.
-Add following code to wp-simple-plugin.php after defined( &#39;ABSPATH&#39; ) or die.</description>
-    </item>
-    
-  </channel>
-</rss>
+Add following code to wp-simple-plugin.php after defined( 'ABSPATH' ) or die.</description></item></channel></rss>

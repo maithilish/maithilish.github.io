@@ -1,91 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Java Generics Tutorial - CodeTab on Codetab</title>
-    <link>https://www.codetab.org/tutorial/java-generics/</link>
-    <description>Recent content in Java Generics Tutorial - CodeTab on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java Generics - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/introduction/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid>
-      <description>Java Generics There are enough tutorials on Java Generics; however, they are either too basic or too difficult to get a clear understanding of generics. This tutorial focuses on confusing aspects and clarify them with multiple examples.
-If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as this tutorial doesn&amp;rsquo;t explains the basics. After going through it you may end with some doubts; then try this tutorial.</description>
-    </item>
-    
-    <item>
-      <title>Java Generics Subtype - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/subtype/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/subtype/</guid>
-      <description>Generic Inheritance and Subtypes 
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java Generics Tutorial - CodeTab on Codetab</title><link>https://www.codetab.org/tutorial/java-generics/</link><description>Recent content in Java Generics Tutorial - CodeTab on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2019 12:32:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/java-generics/index.xml" rel="self" type="application/rss+xml"/><item><title>Java Generics - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/introduction/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/introduction/</guid><description>Java Generics There are enough tutorials on Java Generics; however, they are either too basic or too difficult to get a clear understanding of generics. This tutorial focuses on confusing aspects and clarify them with multiple examples.
+If you are new to generics, we suggest you to go through Java Tutorial Trail - Generics as this tutorial doesn&amp;rsquo;t explains the basics. After going through it you may end with some doubts; then try this tutorial.</description></item><item><title>Java Generics Subtype - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/subtype/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/subtype/</guid><description>Generic Inheritance and Subtypes
 To explain Generic inheritance, subtypes and wildcards, we use following class hierarchy:
- The Pet, Bulldog and Bulldog classes are as below. Cat and Persian classes are similar.
-public class Pet { } public class Dog extends Pet { } public class Bulldog extends Dog { } Type parameter and Inheritance Before getting into generic subtype, let&amp;rsquo;s see how inheritance works with generic types. I know this is trivial for those who have already worked with generic types; nevertheless, let&amp;rsquo;s go through it to avoid confusion that kicks-in when we deal with generic subtypes.</description>
-    </item>
-    
-    <item>
-      <title>Java Generics Wildcards - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/wildcards/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/wildcards/</guid>
-      <description>Wildcards In the previous tutorial we saw that there is no relationship, what so ever, between List&amp;lt;Pet&amp;gt;, List&amp;lt;Dog&amp;gt; and List&amp;lt;Bulldog&amp;gt;, even though Pet, Dog and Bulldog belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
+The Pet, Bulldog and Bulldog classes are as below. Cat and Persian classes are similar.
+public class Pet { } public class Dog extends Pet { } public class Bulldog extends Dog { } Type parameter and Inheritance Before getting into generic subtype, let&amp;rsquo;s see how inheritance works with generic types. I know this is trivial for those who have already worked with generic types; nevertheless, let&amp;rsquo;s go through it to avoid confusion that kicks-in when we deal with generic subtypes.</description></item><item><title>Java Generics Wildcards - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/wildcards/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/wildcards/</guid><description>Wildcards In the previous tutorial we saw that there is no relationship, what so ever, between List&amp;lt;Pet&amp;gt;, List&amp;lt;Dog&amp;gt; and List&amp;lt;Bulldog&amp;gt;, even though Pet, Dog and Bulldog belongs to same family. Each of these list is distinct and doesn&amp;rsquo;t belongs to any single group or family; moreover, we can&amp;rsquo;t assign one to another. The wildcards helps us to overcome this restriction.
 In this tutorial we use following class hierarchy:
- Unbounded Wildcard Consider a method to display the elements of a List.</description>
-    </item>
-    
-    <item>
-      <title>Java Generics Bounded Wildcards - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</guid>
-      <description>Bounded Wildcards The previous tutorial covered unbounded wildcard, and now we learn to restrict the wildcards with extends (upper bound) or super (lower bound).
+Unbounded Wildcard Consider a method to display the elements of a List.</description></item><item><title>Java Generics Bounded Wildcards - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/bounded-wildcards/</guid><description>Bounded Wildcards The previous tutorial covered unbounded wildcard, and now we learn to restrict the wildcards with extends (upper bound) or super (lower bound).
 This tutorial uses following class hierarchy:
- Extends The &amp;lt;? extends Type&amp;gt; is a wildcard with upper bound. Extends allows us to restrict the unbounded List&amp;lt;?&amp;gt; to some type and its subtypes. For example, we want restrict display method only to Pet and its subclasses,
-public void display(List&amp;lt;?</description>
-    </item>
-    
-    <item>
-      <title>Java Generics Wildcards in API - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link>
-      <pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid>
-      <description>The previous tutorial covered wildcard bounds, producers, consumers, get and put methods; this tutorial explorers wildcard bounds in Java API.
+Extends The &amp;lt;? extends Type&amp;gt; is a wildcard with upper bound. Extends allows us to restrict the unbounded List&amp;lt;?&amp;gt; to some type and its subtypes. For example, we want restrict display method only to Pet and its subclasses,
+public void display(List&amp;lt;?</description></item><item><title>Java Generics Wildcards in API - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/wildcards-api/</link><pubDate>Fri, 01 Nov 2019 12:32:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/wildcards-api/</guid><description>The previous tutorial covered wildcard bounds, producers, consumers, get and put methods; this tutorial explorers wildcard bounds in Java API.
 Following class hierarchy is used in explanation:
- Wildcard bounds in Java API Java API extensively uses wildcard bounds, and we should learn to tackle them. We start with couple of easy ones from java.util.Collections, and then move on to a difficult one in java.util.Stream.
-Take the &amp;lt;T&amp;gt; void fill(List&amp;lt;? super T&amp;gt; list, T obj) method of Collections class.</description>
-    </item>
-    
-    <item>
-      <title>Java Generics Type Parameter Bounds - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
-      <description>In this previous tutorials we gone through wildcard bounds. Similarly, we can set bounds for type parameters, and this tutorial explains its use.
+Wildcard bounds in Java API Java API extensively uses wildcard bounds, and we should learn to tackle them. We start with couple of easy ones from java.util.Collections, and then move on to a difficult one in java.util.Stream.
+Take the &amp;lt;T&amp;gt; void fill(List&amp;lt;? super T&amp;gt; list, T obj) method of Collections class.</description></item><item><title>Java Generics Type Parameter Bounds - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid><description>In this previous tutorials we gone through wildcard bounds. Similarly, we can set bounds for type parameters, and this tutorial explains its use.
 This tutorial uses following class hierarchy:
- Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
-public class PetList&amp;lt;T extends Pet&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } PetList&amp;lt;Pet&amp;gt; pets = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Bulldog&amp;gt; bulldogs = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Persian&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;String&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); // error  The PetList accepts Pet or any of its subtype as T extends Pet, but any other type is not accepted.</description>
-    </item>
-    
-    <item>
-      <title>Java Generics Design - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/design/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/design/</guid>
-      <description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
+Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
+public class PetList&amp;lt;T extends Pet&amp;gt; { public void add(T element) { } public T get(int index) { // return element } } PetList&amp;lt;Pet&amp;gt; pets = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Bulldog&amp;gt; bulldogs = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Persian&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;String&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); // error The PetList accepts Pet or any of its subtype as T extends Pet, but any other type is not accepted.</description></item><item><title>Java Generics Design - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/design/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/design/</guid><description>Design Generic Types The earlier tutorials covered generic subtypes, wildcards and type bounds focusing mainly on usage. In this concluding post, we discuss guidelines to follow while designing a new generic type or method.
 Use wildcards on input parameters For flexibility, use wildcard types on input parameters to make them either producers or consumers.
-The union method, for example, takes two sets and returns a new set which is union of two.</description>
-    </item>
-    
-  </channel>
-</rss>
+The union method, for example, takes two sets and returns a new set which is union of two.</description></item></channel></rss>

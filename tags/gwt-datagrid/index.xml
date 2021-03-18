@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>gwt datagrid on Codetab</title>
-    <link>https://www.codetab.org/tags/gwt-datagrid/</link>
-    <description>Recent content in gwt datagrid on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jan 2019 18:06:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/gwt-datagrid/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>DataGrid - GWT Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</link>
-      <pubDate>Thu, 10 Jan 2019 18:06:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</guid>
-      <description>6.9. FactGrid FactGrid uses GWT DataGrid widget to display the data in a tabular view. Instead of adding it to Snapshot which already full with widgets, a GWT PopupPanel comes handy to display more data without forcing the user to leave the page.
- Figure 6.13. FactGrid Like the CellTable, which we used earlier in FactTable, GWT DataGrid also displays data in tabular view. Both are subclasses of AbstractCellTable and supports columns, sorting, paging whereas DataGrid additionally has a Header, Footer and a scrollable content area in the center.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gwt datagrid on Codetab</title><link>https://www.codetab.org/tags/gwt-datagrid/</link><description>Recent content in gwt datagrid on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 10 Jan 2019 18:06:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/gwt-datagrid/index.xml" rel="self" type="application/rss+xml"/><item><title>DataGrid - GWT Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</link><pubDate>Thu, 10 Jan 2019 18:06:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/</guid><description>6.9. FactGrid FactGrid uses GWT DataGrid widget to display the data in a tabular view. Instead of adding it to Snapshot which already full with widgets, a GWT PopupPanel comes handy to display more data without forcing the user to leave the page.
+Figure 6.13. FactGrid Like the CellTable, which we used earlier in FactTable, GWT DataGrid also displays data in tabular view. Both are subclasses of AbstractCellTable and supports columns, sorting, paging whereas DataGrid additionally has a Header, Footer and a scrollable content area in the center.</description></item></channel></rss>

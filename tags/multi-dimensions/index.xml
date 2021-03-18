@@ -1,35 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>multi dimensions on Codetab</title>
-    <link>https://www.codetab.org/tags/multi-dimensions/</link>
-    <description>Recent content in multi dimensions on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 06:14:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/multi-dimensions/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</link>
-      <pubDate>Thu, 05 Nov 2020 06:14:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</guid>
-      <description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>multi dimensions on Codetab</title><link>https://www.codetab.org/tags/multi-dimensions/</link><description>Recent content in multi dimensions on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 06:14:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/multi-dimensions/index.xml" rel="self" type="application/rss+xml"/><item><title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</link><pubDate>Thu, 05 Nov 2020 06:14:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/multi-dimensions/</guid><description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
 The defs/examples/book/page/page-1.html page lists details of 20 books similar to an e-commerce site. The Example 1 extracts one book and its related data.
 The snippet of HTML of a book item is
-&amp;lt;article class=&amp;#34;product_pod&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;image_container&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.html&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;media/cache/cc35693c.jpg&amp;#34; alt=&amp;#34;A Light in the Attic&amp;#34; class=&amp;#34;thumbnail&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;p class=&amp;#34;star-rating Three&amp;#34;&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.</description>
-    </item>
-    
-    <item>
-      <title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</link>
-      <pubDate>Sat, 12 Jan 2019 06:14:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</guid>
-      <description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
+&amp;lt;article class=&amp;#34;product_pod&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;image_container&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.html&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;media/cache/cc35693c.jpg&amp;#34; alt=&amp;#34;A Light in the Attic&amp;#34; class=&amp;#34;thumbnail&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;p class=&amp;#34;star-rating Three&amp;#34;&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.</description></item><item><title>Multi Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</link><pubDate>Sat, 12 Jan 2019 06:14:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/multi-dimensions/</guid><description>Multiple Dimensions In this chapter, we use an example of a Book Store listing page to explain multiple dimensions.
 The defs/examples/book/page/page-1.html page lists details of 20 books similar to an e-commerce site. The Example 1 extracts one book and its related data.
 The snippet of HTML of a book item is
-&amp;lt;article class=&amp;#34;product_pod&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;image_container&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.html&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;media/cache/cc35693c.jpg&amp;#34; alt=&amp;#34;A Light in the Attic&amp;#34; class=&amp;#34;thumbnail&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;p class=&amp;#34;star-rating Three&amp;#34;&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.</description>
-    </item>
-    
-  </channel>
-</rss>
+&amp;lt;article class=&amp;#34;product_pod&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;image_container&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.html&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;media/cache/cc35693c.jpg&amp;#34; alt=&amp;#34;A Light in the Attic&amp;#34; class=&amp;#34;thumbnail&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;p class=&amp;#34;star-rating Three&amp;#34;&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;icon-star&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;catalogue/a-light-in-the-attic_1000/index.</description></item></channel></rss>

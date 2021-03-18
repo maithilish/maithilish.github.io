@@ -1,24 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>maven plugin execution on Codetab</title>
-    <link>https://www.codetab.org/tags/maven-plugin-execution/</link>
-    <description>Recent content in maven plugin execution on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 16:48:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/maven-plugin-execution/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Plugin Execution - Apache Maven Tutorial – CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/</link>
-      <pubDate>Fri, 11 Jan 2019 16:48:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/</guid>
-      <description>Maven Plugin Execution In the previous tutorial, we saw plugin configuration. In this tutorial, we cover the Maven Plugin execution configuration.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>maven plugin execution on Codetab</title><link>https://www.codetab.org/tags/maven-plugin-execution/</link><description>Recent content in maven plugin execution on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 16:48:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/maven-plugin-execution/index.xml" rel="self" type="application/rss+xml"/><item><title>Plugin Execution - Apache Maven Tutorial – CodeTab</title><link>https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/</link><pubDate>Fri, 11 Jan 2019 16:48:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-maven/plugins/maven-plugin-execution/</guid><description>Maven Plugin Execution In the previous tutorial, we saw plugin configuration. In this tutorial, we cover the Maven Plugin execution configuration.
 Configure Plugin Execution The element &amp;lt;executions&amp;gt;/&amp;lt;execution&amp;gt; allows you to configure the execution of a plugin goal. With it, you can accomplish the following things.
-  bind a plugin goal to a lifecycle phase.
-  configure plugin parameters of a specific goal.
-  configure plugin parameters of a specific goal such as compiler:compile, surefire:test etc.</description>
-    </item>
-    
-  </channel>
-</rss>
+bind a plugin goal to a lifecycle phase.
+configure plugin parameters of a specific goal.
+configure plugin parameters of a specific goal such as compiler:compile, surefire:test etc.</description></item></channel></rss>

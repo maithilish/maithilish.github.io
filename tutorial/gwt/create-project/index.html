@@ -1,1058 +1,114 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="In this chapter of GWT Tutorial, we create a bare bone GWT Project and then add other essential GWT components, those makes up a GWT project, by hand.">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "Project Setup - GWT Tutorial - CodeTab",
-        "headline" : "Project Setup - GWT Tutorial - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/gwt/create-project/",
-        "description" : "In this chapter of GWT Tutorial, we create a bare bone GWT Project and then add other essential GWT components, those makes up a GWT project, by hand.",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-10T14:01:00+0530",
-        "dateModified" : "2019-01-10T14:01:00+0530",
-        "wordCount" : "942",
-        "keywords" : [ "gwt project","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>Project Setup - GWT Tutorial - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">GWT Tutorial</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="GWT Tutorial - Complete Project - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/install/"
-            class="toc-page text-wrap text-muted ">
-            Install GWT in Eclipse
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/create-project/"
-            class="toc-page text-wrap text-danger ">
-            Project Setup
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-project-code/"
-            class="toc-page text-wrap text-muted ">
-            GWT Project Code
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/gwt/gwt-demo/"
-            class="toc-page text-wrap text-muted ">
-            GWT Tutorial Demo
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-shell" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Shell
-    </a>
-    
-    <div id="tutorial-gwt-shell" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/finsshell/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UIBinder and Custom Widget
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/contentpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TabLayoutPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/shell/gwt-logging/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Logging
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-menu" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Menu
-    </a>
-    
-    <div id="tutorial-gwt-menu" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            ClientBundle
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/menu-parts/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Anchor 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            EventBus Example
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-model" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Modle
-    </a>
-    
-    <div id="tutorial-gwt-model" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/model/model/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Model
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-content" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Content
-    </a>
-    
-    <div id="tutorial-gwt-content" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/content/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GWT Tutorial - Content
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-celltable/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            CellTable
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            SuggestBox
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/titlepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            TitlePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            UiFactory
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/factpanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            FactPanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DisclosurePanel
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/toolbar/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Toolbar
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DataGrid
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-chart/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Chart
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Close Tabs
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-rpc" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        RPC
-    </a>
-    
-    <div id="tutorial-gwt-rpc" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            RPC
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Rest of RPC
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-database" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Database
-    </a>
-    
-    <div id="tutorial-gwt-database" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/setup-database/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Database Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/persist/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO Persistence 
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/retrieve/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            JDO and Hibernate
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/database/gwt-dao/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            DAO
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-google-app-engine" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Goolge App Engine
-    </a>
-    
-    <div id="tutorial-gwt-google-app-engine" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google App Engine
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Data Upload
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Cache
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            App Engine Task Queue
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            GAE Backends
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-openshift" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        OpenShift
-    </a>
-    
-    <div id="tutorial-gwt-openshift" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Prepare Project
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Configure
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Build and Deploy
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-development/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Development
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Online V3 Deployment
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-gwt-build" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Apache Ivy
-    </a>
-    
-    <div id="tutorial-gwt-build" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/gwt/build/apache-ivy/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Apache Ivy
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/create-project/&amp;text=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/create-project/&amp;t=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/create-project/&amp;title=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/gwt/create-project/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/create-project/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/create-project/&amp;title=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/create-project/&amp;title=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <h2 id="chapter2create-project">Chapter 2. Create Project</h2>
-<p>In this chapter, we are going to create a plain GWT Project and then add
-other components, those makes up a GWT project, by hand.</p>
-<h5 id="create-barebone-gwt-project">Create barebone GWT project</h5>
-<p>GWT project can be created in two ways, command line tool webAppCreator
-or Eclipse New Web Application Project wizard .</p>
-<p>Let&rsquo;s use New Web Application wizard to create GWT project. Choose
-<strong><figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/googlemenu.png" alt="" />
-</figure>
- GDT Pulldown</strong> → <strong>New Web Application
-Project &hellip;</strong>  or  <strong>File</strong> → <strong>New</strong> → <strong>Web Application Project</strong> and
-fill details as below</p>
-<p>Project Name - <strong><code>fins</code></strong></p>
-<p>Package - <strong><code>in.fins</code></strong></p>
-<p>Use Google Web Toolkit - <strong><code>select</code></strong></p>
-<p>Use Google App Engine - <strong><code>deselect</code></strong></p>
-<p>Google App Marketplace - <strong><code>deselect</code></strong></p>
-<p>Generate Sample Code - <strong><code>deselect</code></strong></p>
-<h2 id="short-package-names">Short Package Names</h2>
-<p>Short Package names are easy to read and reduce clutter in the sample
-code and Package Explorer, but in real project use proper package names.</p>
-<p>In part III when we deal with deployment, Google App Engine (GAE) will
-be enabled and for now Google Web Toolkit (GWT) feature is sufficient.</p>
-<p>As we are going to add GWT files manually we have deselected Generate
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="In this chapter of GWT Tutorial, we create a bare bone GWT Project and then add other essential GWT components, those makes up a GWT project, by hand."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Project Setup - GWT Tutorial - CodeTab","headline":"Project Setup - GWT Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/gwt/create-project/","description":"In this chapter of GWT Tutorial, we create a bare bone GWT Project and then add other essential GWT components, those makes up a GWT project, by hand.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T14:01:00+0530","dateModified":"2019-01-10T14:01:00+0530","wordCount":"942","keywords":["gwt project","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>Project Setup - GWT Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">GWT Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="GWT Tutorial - Complete Project - CodeTab"><div><a href=https://www.codetab.org/tutorial/gwt/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/gwt/install/ class="toc-page text-wrap text-muted">Install GWT in Eclipse</a></div><div><a href=https://www.codetab.org/tutorial/gwt/create-project/ class="toc-page text-wrap text-danger">Project Setup</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-project-code/ class="toc-page text-wrap text-muted">GWT Project Code</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-demo/ class="toc-page text-wrap text-muted">GWT Tutorial Demo</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-shell id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Shell</a><div id=tutorial-gwt-shell class=collapse><a href=https://www.codetab.org/tutorial/gwt/shell/finsshell/ class="toc-page dropdown-item text-wrap text-muted">UIBinder and Custom Widget</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/contentpanel/ class="toc-page dropdown-item text-wrap text-muted">TabLayoutPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/shell/gwt-logging/ class="toc-page dropdown-item text-wrap text-muted">Logging</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-menu id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Menu</a><div id=tutorial-gwt-menu class=collapse><a href=https://www.codetab.org/tutorial/gwt/menu/menu/ class="toc-page dropdown-item text-wrap text-muted">ClientBundle</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/menu-parts/ class="toc-page dropdown-item text-wrap text-muted">Anchor</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-events/ class="toc-page dropdown-item text-wrap text-muted">EventBus</a>
+<a href=https://www.codetab.org/tutorial/gwt/menu/gwt-eventbus-example/ class="toc-page dropdown-item text-wrap text-muted">EventBus Example</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-model id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Modle</a><div id=tutorial-gwt-model class=collapse><a href=https://www.codetab.org/tutorial/gwt/model/model/ class="toc-page dropdown-item text-wrap text-muted">Model</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-content id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Content</a><div id=tutorial-gwt-content class=collapse><a href=https://www.codetab.org/tutorial/gwt/content/content/ class="toc-page dropdown-item text-wrap text-muted">GWT Tutorial - Content</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-celltable/ class="toc-page dropdown-item text-wrap text-muted">CellTable</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-autosuggest/ class="toc-page dropdown-item text-wrap text-muted">SuggestBox</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/titlepanel/ class="toc-page dropdown-item text-wrap text-muted">TitlePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-uifactory/ class="toc-page dropdown-item text-wrap text-muted">UiFactory</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/factpanel/ class="toc-page dropdown-item text-wrap text-muted">FactPanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-disclosepanel/ class="toc-page dropdown-item text-wrap text-muted">DisclosurePanel</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/toolbar/ class="toc-page dropdown-item text-wrap text-muted">Toolbar</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-datagrid/ class="toc-page dropdown-item text-wrap text-muted">DataGrid</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-chart/ class="toc-page dropdown-item text-wrap text-muted">Google Chart</a>
+<a href=https://www.codetab.org/tutorial/gwt/content/gwt-close-tabs/ class="toc-page dropdown-item text-wrap text-muted">Close Tabs</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-rpc id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>RPC</a><div id=tutorial-gwt-rpc class=collapse><a href=https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/ class="toc-page dropdown-item text-wrap text-muted">RPC</a>
+<a href=https://www.codetab.org/tutorial/gwt/rpc/rest-of-rpc/ class="toc-page dropdown-item text-wrap text-muted">Rest of RPC</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-database id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Database</a><div id=tutorial-gwt-database class=collapse><a href=https://www.codetab.org/tutorial/gwt/database/setup-database/ class="toc-page dropdown-item text-wrap text-muted">Database Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/persist/ class="toc-page dropdown-item text-wrap text-muted">JDO Persistence</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/retrieve/ class="toc-page dropdown-item text-wrap text-muted">JDO and Hibernate</a>
+<a href=https://www.codetab.org/tutorial/gwt/database/gwt-dao/ class="toc-page dropdown-item text-wrap text-muted">DAO</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-google-app-engine id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Goolge App Engine</a><div id=tutorial-gwt-google-app-engine class=collapse><a href=https://www.codetab.org/tutorial/gwt/google-app-engine/google-app-engine/ class="toc-page dropdown-item text-wrap text-muted">Google App Engine</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-deploy/ class="toc-page dropdown-item text-wrap text-muted">App Engine Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-manage-data/ class="toc-page dropdown-item text-wrap text-muted">GAE Data Upload</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-cache/ class="toc-page dropdown-item text-wrap text-muted">App Engine Cache</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-task-queue/ class="toc-page dropdown-item text-wrap text-muted">App Engine Task Queue</a>
+<a href=https://www.codetab.org/tutorial/gwt/google-app-engine/app-engine-backends/ class="toc-page dropdown-item text-wrap text-muted">GAE Backends</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-openshift id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>OpenShift</a><div id=tutorial-gwt-openshift class=collapse><a href=https://www.codetab.org/tutorial/gwt/openshift/openshift/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Setup</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/prepare-openshift-project/ class="toc-page dropdown-item text-wrap text-muted">Prepare Project</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-configure/ class="toc-page dropdown-item text-wrap text-muted">Configure</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-build-deploy/ class="toc-page dropdown-item text-wrap text-muted">Build and Deploy</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-development/ class="toc-page dropdown-item text-wrap text-muted">Development</a>
+<a href=https://www.codetab.org/tutorial/gwt/openshift/openshift-online-v3-deployment/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Online V3 Deployment</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-build id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Apache Ivy</a><div id=tutorial-gwt-build class=collapse><a href=https://www.codetab.org/tutorial/gwt/build/apache-ivy/ class="toc-page dropdown-item text-wrap text-muted">Apache Ivy</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gwt/create-project/&text=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gwt/create-project/&t=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gwt/create-project/&title=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab&body=https://www.codetab.org/tutorial/gwt/create-project/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/gwt/create-project/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gwt/create-project/&title=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/gwt/create-project/&title=Project%20Setup%20-%20GWT%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><h2 id=chapter2create-project>Chapter 2. Create Project</h2><p>In this chapter, we are going to create a plain GWT Project and then add
+other components, those makes up a GWT project, by hand.</p><h5 id=create-barebone-gwt-project>Create barebone GWT project</h5><p>GWT project can be created in two ways, command line tool webAppCreator
+or Eclipse New Web Application Project wizard .</p><p>Let&rsquo;s use New Web Application wizard to create GWT project. Choose
+<strong><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/googlemenu.png alt></figure>GDT Pulldown</strong> → <strong>New Web Application
+Project &mldr;</strong> or <strong>File</strong> → <strong>New</strong> → <strong>Web Application Project</strong> and
+fill details as below</p><p>Project Name - <strong><code>fins</code></strong></p><p>Package - <strong><code>in.fins</code></strong></p><p>Use Google Web Toolkit - <strong><code>select</code></strong></p><p>Use Google App Engine - <strong><code>deselect</code></strong></p><p>Google App Marketplace - <strong><code>deselect</code></strong></p><p>Generate Sample Code - <strong><code>deselect</code></strong></p><h2 id=short-package-names>Short Package Names</h2><p>Short Package names are easy to read and reduce clutter in the sample
+code and Package Explorer, but in real project use proper package names.</p><p>In part III when we deal with deployment, Google App Engine (GAE) will
+be enabled and for now Google Web Toolkit (GWT) feature is sufficient.</p><p>As we are going to add GWT files manually we have deselected Generate
 Sample Code option. This will provide better clarity about GWT project
-layout and files.</p>
-<p>Wizard creates directory structure and files as show in the figure.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/projectdir.png" alt="" />
-</figure>
-
-<p>Dir and files are just like any other web app structure with standard
+layout and files.</p><p>Wizard creates directory structure and files as show in the figure.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/projectdir.png alt></figure><p>Dir and files are just like any other web app structure with standard
 fixtures like WEB-INF and web.xml. Wizard has placed gwt-servlet.jar in
 <code>WEB-INF/lib</code> dir so that our project can use GWT and it adds this jar
-to build path of the project.</p>
-<p>Let us add other pieces of GWT to our barebone GWT Project.</p>
-<script>
-    console.log("slot C"); 
-</script>
-<h5 id="module">Module</h5>
-<p>A module bundles together all the configuration settings of GWT project
+to build path of the project.</p><p>Let us add other pieces of GWT to our barebone GWT Project.</p><script>console.log("slot C");</script><h5 id=module>Module</h5><p>A module bundles together all the configuration settings of GWT project
 like inherited modules, an entry point class, source and public paths
 etc. To add a GWT module to the project select package in.fins and then
 choose <strong>File</strong> → <strong>New</strong> → <strong>Module</strong>. In <strong>New GWT Module</strong> window
 enter module name as <strong>fins</strong> and using <strong>Add</strong> button inherit following
-modules, in addition to com.google.gwt.user.User</p>
-<ul>
-<li>
-<p>com.google.gwt.user.theme.clean.Clean  <em>&ndash; use Clean theme</em></p>
-</li>
-<li>
-<p>com.google.gwt.uibinder.UiBinder  <em>&ndash; use UiBinder module</em></p>
-</li>
-</ul>
-<p>This will add module file <code>fins.gwt.xml</code> to <code>src/in/fins</code> dir and
-creates new package <code>in.fins.client</code></p>
-<p><code>in.fins/fins.gwt.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;module&gt;</span>
-  <span class="nt">&lt;inherits</span> <span class="na">name=</span><span class="s">&#34;com.google.gwt.user.User&#34;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;inherits</span> <span class="na">name=</span><span class="s">&#34;com.google.gwt.user.theme.clean.Clean&#34;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;inherits</span> <span class="na">name=</span><span class="s">&#34;com.google.gwt.uibinder.UiBinder&#34;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">path=</span><span class="s">&#34;client&#34;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/module&gt;</span>
+modules, in addition to com.google.gwt.user.User</p><ul><li><p>com.google.gwt.user.theme.clean.Clean <em>&ndash; use Clean theme</em></p></li><li><p>com.google.gwt.uibinder.UiBinder <em>&ndash; use UiBinder module</em></p></li></ul><p>This will add module file <code>fins.gwt.xml</code> to <code>src/in/fins</code> dir and
+creates new package <code>in.fins.client</code></p><p><code>in.fins/fins.gwt.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;module&gt;</span>
+  <span class=nt>&lt;inherits</span> <span class=na>name=</span><span class=s>&#34;com.google.gwt.user.User&#34;</span> <span class=nt>/&gt;</span>
+  <span class=nt>&lt;inherits</span> <span class=na>name=</span><span class=s>&#34;com.google.gwt.user.theme.clean.Clean&#34;</span> <span class=nt>/&gt;</span>
+  <span class=nt>&lt;inherits</span> <span class=na>name=</span><span class=s>&#34;com.google.gwt.uibinder.UiBinder&#34;</span> <span class=nt>/&gt;</span>
+  <span class=nt>&lt;source</span> <span class=na>path=</span><span class=s>&#34;client&#34;</span><span class=nt>/&gt;</span>
+<span class=nt>&lt;/module&gt;</span>
 </code></pre></div><p><code>source </code>element indicates that files in path client are translatable
 source and they are to be translated into javascript. Edit fins.gwt.xml
-and add rename-to=”fins” attribute to module element.</p>
-<div class="highlight"><pre class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;module</span> <span class="na">rename-to=</span><span class="s">&#34;fins&#34;</span> <span class="nt">&gt;</span>
+and add rename-to=”fins” attribute to module element.</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;module</span> <span class=na>rename-to=</span><span class=s>&#34;fins&#34;</span> <span class=nt>&gt;</span>
   ....
-</code></pre></div><h2 id="module-rename">Module rename</h2>
-<p>Web app will not run if this step is missed. GWT compiles java classes,
+</code></pre></div><h2 id=module-rename>Module rename</h2><p>Web app will not run if this step is missed. GWT compiles java classes,
 found in directories designated as source, to javascript and creates a
-file named &lt;&lt;module_name&gt;&gt;.nocache.js and places it in
-war/&lt;&lt;module_name&gt; dir. rename-to shorten the lengthy module name</p>
-<ul>
-<li>
-<p>without the rename-to element, module name will be <code>in.fins.fins</code>
-and path of js file is <code>war/in.fins.fins/in.fins.fins.nocache.js</code></p>
-</li>
-<li>
-<p>use of rename-to=&ldquo;fins&rdquo;, results in module name <code>fins</code> and js file <code>war/fins/fins.nocache.js</code></p>
-</li>
-</ul>
-<h5 id="html-page">HTML Page</h5>
-<p>To add HTML Page to the project, select project and then choose <strong>File</strong>
-→ <strong>New</strong> → <strong>HTML Page</strong>. In <strong>HTML Page</strong>  window enter File name as
+file named &lt;&lt;module_name>>.nocache.js and places it in
+war/&lt;&lt;module_name> dir. rename-to shorten the lengthy module name</p><ul><li><p>without the rename-to element, module name will be <code>in.fins.fins</code>
+and path of js file is <code>war/in.fins.fins/in.fins.fins.nocache.js</code></p></li><li><p>use of rename-to=&ldquo;fins&rdquo;, results in module name <code>fins</code> and js file <code>war/fins/fins.nocache.js</code></p></li></ul><h5 id=html-page>HTML Page</h5><p>To add HTML Page to the project, select project and then choose <strong>File</strong>
+→ <strong>New</strong> → <strong>HTML Page</strong>. In <strong>HTML Page</strong> window enter File name as
 <strong>Fins</strong> and add module <strong>fins</strong> using <strong>Add</strong> button. As we are not
-going to use history feature in this project deselect  <strong>Support for
-browser history</strong> . This will add HTML file <code>Fins.html</code> to war dir.</p>
-<h5 id="entry-point-class">Entry Point class</h5>
-<p>To add Entry Point class select <code>in.fins.client</code> package and then choose
+going to use history feature in this project deselect <strong>Support for
+browser history</strong> . This will add HTML file <code>Fins.html</code> to war dir.</p><h5 id=entry-point-class>Entry Point class</h5><p>To add Entry Point class select <code>in.fins.client</code> package and then choose
 <strong>File</strong> → <strong>New</strong> → <strong>Entry Point Class</strong>. In <strong>Entry Point Class</strong>
 window enter Class Name as <strong>Fins</strong> and click <strong>Finish</strong>. This will
 create <code>Fins.java</code> and adds an <code>entry-point</code> element to <code>fins.gwt.xml.</code>
-Modify <code>Fins.java</code> to add a GWT Label to display a test string.</p>
-<p><code>in.fins.client/Fins.java</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.Label</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.google.gwt.user.client.ui.RootPanel</span><span class="o">;</span>
+Modify <code>Fins.java</code> to add a GWT Label to display a test string.</p><p><code>in.fins.client/Fins.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=kn>import</span> <span class=nn>com.google.gwt.user.client.ui.Label</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>com.google.gwt.user.client.ui.RootPanel</span><span class=o>;</span>
 
-<span class="o">....</span>
+<span class=o>....</span>
 
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onModuleLoad</span><span class="o">()</span> <span class="o">{</span>
-      <span class="n">RootPanel</span> <span class="n">root</span> <span class="o">=</span> <span class="n">RootPanel</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
-      <span class="n">root</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Label</span><span class="o">(</span><span class="s">&#34;Test Label&#34;</span><span class="o">));</span>
+<span class=kd>public</span> <span class=kt>void</span> <span class=nf>onModuleLoad</span><span class=o>()</span> <span class=o>{</span>
+      <span class=n>RootPanel</span> <span class=n>root</span> <span class=o>=</span> <span class=n>RootPanel</span><span class=o>.</span><span class=na>get</span><span class=o>();</span>
+      <span class=n>root</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Label</span><span class=o>(</span><span class=s>&#34;Test Label&#34;</span><span class=o>));</span>
 
-<span class="o">....</span>
+<span class=o>....</span>
 </code></pre></div><p>With required GWT components in place Fins is ready display the test
-label. Choose  <strong><figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/gwt/media/runmenu.png" alt="" />
-</figure>
- Run</strong>  → <strong>Run As</strong>  → <strong>Web
-Application</strong>  and open the URL displayed by Development Mode View in
-the browser to verify whether the module is loaded without any errors.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<p>As explained earlier, <strong>source</strong> element in <code>fins.gwt.xml</code> indicates
+label. Choose <strong><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/runmenu.png alt></figure>Run</strong> → <strong>Run As</strong> → <strong>Web
+Application</strong> and open the URL displayed by Development Mode View in
+the browser to verify whether the module is loaded without any errors.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>As explained earlier, <strong>source</strong> element in <code>fins.gwt.xml</code> indicates
 that files in <code>in.fins.client </code>are translatable source. On first run,
 GWT translates objects in these files into a javascript file named
 <code>fins.nocache.js</code>. and places it in <code>war/fins</code> dir. On subsequent runs,
 modified files are recompiled and fresh files are served to the browser.
 Any changes to client side code don&rsquo;t require a restart of browser or
-server as the application reloads with just browser refresh.</p>
-<h2 id="gwt-developer-plugin">GWT Developer Plugin</h2>
-<p>To use GWT Development Mode features, GWT Developers Plugin has to be
+server as the application reloads with just browser refresh.</p><h2 id=gwt-developer-plugin>GWT Developer Plugin</h2><p>To use GWT Development Mode features, GWT Developers Plugin has to be
 installed for the browser which is available for Safari, Firefox, IE,
 and Chrome. If Plugin is not installed in your browser, then you will
-get a prompt for its installation when you first access the application.</p>
-<h2 id="eclipse-templates">Eclipse Templates</h2>
-<p>Client side files frequently use some boiler plate code like logging and
+get a prompt for its installation when you first access the application.</p><h2 id=eclipse-templates>Eclipse Templates</h2><p>Client side files frequently use some boiler plate code like logging and
 UIBinder initialization. Instead of typing them each time, we can add
 them to templates and use auto complete feature to insert them to our
 classes. To add templates choose <strong>Window</strong> → <strong>Preferences</strong> → <strong>Java</strong>
 → <strong>Editor</strong> → <strong>Templates</strong> and use <strong>New</strong> button to add following
-templates</p>
-<p><strong>UIBinder</strong></p>
-<ul>
-<li>
-<p>Name - <strong><code>uibinder</code></strong></p>
-</li>
-<li>
-<p>Context - <strong><code>java</code></strong></p>
-</li>
-<li>
-<p>Auto insert -
-<strong><code>select</code></strong></p>
-</li>
-<li>
-<p>Pattern</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">$</span><span class="o">{</span><span class="n">enclosing_type</span><span class="o">}</span><span class="n">Binder</span> <span class="kd">extends</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">$</span><span class="o">{</span><span class="n">enclosing_type</span><span class="o">}&gt;</span> <span class="o">{}</span>
-<span class="kd">private</span> <span class="kd">static</span> <span class="n">UiBinder</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">,</span> <span class="n">$</span><span class="o">{</span><span class="n">enclosing_type</span><span class="o">}&gt;</span> <span class="n">binder</span> <span class="o">=</span> 
-           <span class="n">GWT</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">$</span><span class="o">{</span><span class="n">enclosing_type</span><span class="o">}</span><span class="n">Binder</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</code></pre></div></li>
-</ul>
-<p><strong>Logging</strong></p>
-<ul>
-<li>
-<p>Name - <strong><code>logger util</code></strong></p>
-</li>
-<li>
-<p>Context - <strong><code>java</code></strong></p>
-</li>
-<li>
-<p>Auto insert -
-<strong><code>select</code></strong></p>
-</li>
-<li>
-<p>Pattern</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">$</span><span class="o">{</span><span class="n">enclosing_type</span><span class="o">}.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-</code></pre></div></li>
-</ul>
-<p>In Java files, all that is required is to type <em>uib</em> or <em>logge</em> and
-press <strong>Ctrl</strong>+<strong>Space</strong> to auto complete.</p>
-<h5 id="forward-pointers">Forward Pointers</h5>
-<p><em>Organizing Projects</em> - To know more about structure of GWT Project
-refer GWT Development Guide - <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideOrganizingProjects" target="_blank">Organize
+templates</p><p><strong>UIBinder</strong></p><ul><li><p>Name - <strong><code>uibinder</code></strong></p></li><li><p>Context - <strong><code>java</code></strong></p></li><li><p>Auto insert -
+<strong><code>select</code></strong></p></li><li><p>Pattern</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=kd>interface</span> <span class=nc>$</span><span class=o>{</span><span class=n>enclosing_type</span><span class=o>}</span><span class=n>Binder</span> <span class=kd>extends</span> <span class=n>UiBinder</span><span class=o>&lt;</span><span class=n>Widget</span><span class=o>,</span> <span class=n>$</span><span class=o>{</span><span class=n>enclosing_type</span><span class=o>}&gt;</span> <span class=o>{}</span>
+<span class=kd>private</span> <span class=kd>static</span> <span class=n>UiBinder</span><span class=o>&lt;</span><span class=n>Widget</span><span class=o>,</span> <span class=n>$</span><span class=o>{</span><span class=n>enclosing_type</span><span class=o>}&gt;</span> <span class=n>binder</span> <span class=o>=</span> 
+           <span class=n>GWT</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=n>$</span><span class=o>{</span><span class=n>enclosing_type</span><span class=o>}</span><span class=n>Binder</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+</code></pre></div></li></ul><p><strong>Logging</strong></p><ul><li><p>Name - <strong><code>logger util</code></strong></p></li><li><p>Context - <strong><code>java</code></strong></p></li><li><p>Auto insert -
+<strong><code>select</code></strong></p></li><li><p>Pattern</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Logger</span> <span class=n>log</span> <span class=o>=</span> <span class=n>Logger</span><span class=o>.</span><span class=na>getLogger</span><span class=o>(</span><span class=n>$</span><span class=o>{</span><span class=n>enclosing_type</span><span class=o>}.</span><span class=na>class</span><span class=o>.</span><span class=na>getName</span><span class=o>());</span>
+</code></pre></div></li></ul><p>In Java files, all that is required is to type <em>uib</em> or <em>logge</em> and
+press <strong>Ctrl</strong>+<strong>Space</strong> to auto complete.</p><h5 id=forward-pointers>Forward Pointers</h5><p><em>Organizing Projects</em> - To know more about structure of GWT Project
+refer GWT Development Guide - <a href=https://developers.google.com/web-toolkit/doc/latest/DevGuideOrganizingProjects target=_blank>Organize
 Projects</a>
-.</p>
-<p><em>Development Mode</em> - <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideCompilingAndDebugging" target="_blank">Compile &amp;
+.</p><p><em>Development Mode</em> - <a href=https://developers.google.com/web-toolkit/doc/latest/DevGuideCompilingAndDebugging target=_blank>Compile &
 Debug</a>
 section of Development Guide provides good insight into development mode
-and compile process.</p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+and compile process.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

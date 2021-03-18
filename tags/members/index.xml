@@ -1,35 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>members on Codetab</title>
-    <link>https://www.codetab.org/tags/members/</link>
-    <description>Recent content in members on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 03:40:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/members/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Members Dynamic Query - Gotz ETL - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/</link>
-      <pubDate>Fri, 11 Jan 2019 19:44:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/</guid>
-      <description>This chapter explores extracting multiple values with members and dynamic query.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>members on Codetab</title><link>https://www.codetab.org/tags/members/</link><description>Recent content in members on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 12 Jan 2019 03:40:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/members/index.xml" rel="self" type="application/rss+xml"/><item><title>Members Dynamic Query - Gotz ETL - CodeTab</title><link>https://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/</link><pubDate>Fri, 11 Jan 2019 19:44:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/</guid><description>This chapter explores extracting multiple values with members and dynamic query.
 The Example 2 extracts snapshot data from defs/examples/page/acme-quote.html page
- MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is
-&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.89&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; .... The datadef used to extract data from this page is</description>
-    </item>
-    
-    <item>
-      <title>Members - Scoopi Web Scraper - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/</link>
-      <pubDate>Sat, 12 Jan 2019 03:40:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/</guid>
-      <description>Members This chapter explores extracting multiple values with members, match property and dynamic query.
+MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E The snippet of HTML from the page is
+&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.89&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; .... The datadef used to extract data from this page is</description></item><item><title>Members - Scoopi Web Scraper - CodeTab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/</link><pubDate>Sat, 12 Jan 2019 03:40:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/members-v094/</guid><description>Members This chapter explores extracting multiple values with members, match property and dynamic query.
 The Example 2 extracts ten data points shown below from defs/examples/page/acme-quote.html page.
- MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is
-&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.</description>
-    </item>
-    
-  </channel>
-</rss>
+MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E The snippet of HTML from the page is
+&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.</description></item></channel></rss>

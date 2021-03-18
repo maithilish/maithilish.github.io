@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress google charts on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-google-charts/</link>
-    <description>Recent content in wordpress google charts on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 11:22:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-google-charts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Google Charts - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/</link>
-      <pubDate>Fri, 11 Jan 2019 11:22:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/</guid>
-      <description>9.3. WordPress Google Charts In the previous blog, we setup a new sub menu page to display the charts and enqueue Google Chart API scripts. In this blog, we explain the steps to load Google Chart API, fetch chart data with Ajax and draw WordPress Google Charts.
-Load Google Charts API Google Charts is a versatile package to present data as charts. It is robust and provides large number of ready to use chart types.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress google charts on Codetab</title><link>https://www.codetab.org/tags/wordpress-google-charts/</link><description>Recent content in wordpress google charts on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 11:22:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-google-charts/index.xml" rel="self" type="application/rss+xml"/><item><title>Google Charts - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/</link><pubDate>Fri, 11 Jan 2019 11:22:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/</guid><description>9.3. WordPress Google Charts In the previous blog, we setup a new sub menu page to display the charts and enqueue Google Chart API scripts. In this blog, we explain the steps to load Google Chart API, fetch chart data with Ajax and draw WordPress Google Charts.
+Load Google Charts API Google Charts is a versatile package to present data as charts. It is robust and provides large number of ready to use chart types.</description></item></channel></rss>

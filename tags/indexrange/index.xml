@@ -1,41 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>indexrange on Codetab</title>
-    <link>https://www.codetab.org/tags/indexrange/</link>
-    <description>Recent content in indexrange on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 23:34:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/indexrange/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</link>
-      <pubDate>Thu, 05 Nov 2020 23:34:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</guid>
-      <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>indexrange on Codetab</title><link>https://www.codetab.org/tags/indexrange/</link><description>Recent content in indexrange on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 23:34:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/indexrange/index.xml" rel="self" type="application/rss+xml"/><item><title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</link><pubDate>Thu, 05 Nov 2020 23:34:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/index-indexrange-breakafter/</guid><description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
 The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
-   Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
-    </item>
-    
-    <item>
-      <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</link>
-      <pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</guid>
-      <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
+Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12 Total Share Capital 804.</description></item><item><title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</link><pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</guid><description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
 The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
-   Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
-    </item>
-    
-    <item>
-      <title>IndexRange Index BreakAfter - Gotz ETL - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gotz-etl/indexrange-index/</link>
-      <pubDate>Fri, 11 Jan 2019 20:02:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gotz-etl/indexrange-index/</guid>
-      <description>This chapter explains the use of index, indexRange and dynamic query to extract set of data without using multiple queries.
+Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12 Total Share Capital 804.</description></item><item><title>IndexRange Index BreakAfter - Gotz ETL - CodeTab</title><link>https://www.codetab.org/tutorial/gotz-etl/indexrange-index/</link><pubDate>Fri, 11 Jan 2019 20:02:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gotz-etl/indexrange-index/</guid><description>This chapter explains the use of index, indexRange and dynamic query to extract set of data without using multiple queries.
 Example 3 extracts data from defs/examples/page/acme-bs.html page, which contains Balance Sheet data of Acme for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
 Dec &amp;lsquo;16
 Dec &amp;lsquo;15
@@ -44,19 +11,6 @@ Dec &amp;lsquo;13
 Dec &amp;lsquo;12
 Equity
 804.72
-801.55</description>
-    </item>
-    
-    <item>
-      <title>Index BreakAfter - Scoopi Web Scraper - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/</link>
-      <pubDate>Sat, 12 Jan 2019 03:23:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/</guid>
-      <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract set of data without using multiple queries.
+801.55</description></item><item><title>Index BreakAfter - Scoopi Web Scraper - CodeTab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/</link><pubDate>Sat, 12 Jan 2019 03:23:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/index-indexrange-breakafter-v094/</guid><description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract set of data without using multiple queries.
 The Example 3 extracts multiple data from defs/examples/page/acme-bs.html page, which contains Balance Sheet data of Acme for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
-   Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
-    </item>
-    
-  </channel>
-</rss>
+Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12 Total Share Capital 804.</description></item></channel></rss>

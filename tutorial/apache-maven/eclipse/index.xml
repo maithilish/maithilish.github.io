@@ -1,46 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Eclipse on Codetab</title>
-    <link>https://www.codetab.org/tutorial/apache-maven/eclipse/</link>
-    <description>Recent content in Eclipse on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/apache-maven/eclipse/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Eclipse Plugin - Apache Maven Tutorial – CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/</link>
-      <pubDate>Fri, 11 Jan 2019 18:01:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/</guid>
-      <description>Maven Eclipse Plugin So far, we worked with Maven CLI. In this chapter, we install Eclipse Maven Plugin and learn to manage Maven Project in Eclipse IDE.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eclipse on Codetab</title><link>https://www.codetab.org/tutorial/apache-maven/eclipse/</link><description>Recent content in Eclipse on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/apache-maven/eclipse/index.xml" rel="self" type="application/rss+xml"/><item><title>Eclipse Plugin - Apache Maven Tutorial – CodeTab</title><link>https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/</link><pubDate>Fri, 11 Jan 2019 18:01:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-maven/eclipse/maven-eclipse-plugin/</guid><description>Maven Eclipse Plugin So far, we worked with Maven CLI. In this chapter, we install Eclipse Maven Plugin and learn to manage Maven Project in Eclipse IDE.
 Eclipse Maven Plugin, M2Eclipse or simply M2E, provides integration between Eclipse IDE and Maven. Among other things, it assists in the following aspects of Maven.
-  view contents of local and remote Maven repositories.
-  provides wizards to create single module project or multi module Maven Projects.</description>
-    </item>
-    
-    <item>
-      <title>Eclipse Maven Project - Apache Maven Tutorial – CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/</link>
-      <pubDate>Fri, 11 Jan 2019 18:15:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/</guid>
-      <description>Manage Eclipse Maven Project In the previous tutorial we installed M2E Plugin and created Maven Project with it. In this tutorial, we describe the features of M2E that are useful to manage Eclipse Maven Project.
+view contents of local and remote Maven repositories.
+provides wizards to create single module project or multi module Maven Projects.</description></item><item><title>Eclipse Maven Project - Apache Maven Tutorial – CodeTab</title><link>https://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/</link><pubDate>Fri, 11 Jan 2019 18:15:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-maven/eclipse/manage-eclipse-maven-project/</guid><description>Manage Eclipse Maven Project In the previous tutorial we installed M2E Plugin and created Maven Project with it. In this tutorial, we describe the features of M2E that are useful to manage Eclipse Maven Project.
 POM Editor When we open pom.xml in Eclipse, M2E opens it in GUI POM Editor shown in the screenshot.
- The Overview tab is useful to manage project coordinates, parent or modules of the project and properties.</description>
-    </item>
-    
-    <item>
-      <title>Eclipse Maven Multi Module - Apache Maven Tutorial – CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/</link>
-      <pubDate>Fri, 21 Jun 2019 22:12:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/</guid>
-      <description>Eclipse Maven Multi Module In this tutorial we explain steps to create a Maven Multi Module Project using Eclipse Maven Plugin (M2E) Wizard.
+The Overview tab is useful to manage project coordinates, parent or modules of the project and properties.</description></item><item><title>Eclipse Maven Multi Module - Apache Maven Tutorial – CodeTab</title><link>https://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/</link><pubDate>Fri, 21 Jun 2019 22:12:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-maven/eclipse/eclipse-maven-multi-module/</guid><description>Eclipse Maven Multi Module In this tutorial we explain steps to create a Maven Multi Module Project using Eclipse Maven Plugin (M2E) Wizard.
 The main steps are
- create top level maven project add modules to top level project  Create Top Level Maven Project Open Maven Project Wizard with File → New → Others → Maven → Maven Project.
- The wizard opens Select project name and location window. Check the Create a simple project checkbox to create a bare bone project and click Next.</description>
-    </item>
-    
-  </channel>
-</rss>
+create top level maven project add modules to top level project Create Top Level Maven Project Open Maven Project Wizard with File → New → Others → Maven → Maven Project.
+The wizard opens Select project name and location window. Check the Create a simple project checkbox to create a bare bone project and click Next.</description></item></channel></rss>

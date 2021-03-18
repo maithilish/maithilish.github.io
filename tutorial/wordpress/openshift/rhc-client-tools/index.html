@@ -1,883 +1,110 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server.">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "RHC Client Tools - WordPress Tutorial - CodeTab",
-        "headline" : "RHC Client Tools - WordPress Tutorial - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/",
-        "description" : "In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server.",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-11T00:53:00+0530",
-        "dateModified" : "2019-01-11T00:53:00+0530",
-        "wordCount" : "1201",
-        "keywords" : [ "openshift rhc","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>RHC Client Tools - WordPress Tutorial - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">WordPress Guide</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="WordPress Tutorial - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/wordpress/"
-            class="toc-page text-wrap text-muted ">
-            About WordPress
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/openshift-wordpress/"
-            class="toc-page text-wrap text-muted ">
-            OpenShift WordPress Tutorial
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/wordpress-installation/"
-            class="toc-page text-wrap text-muted ">
-            Installation
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/wordpress-settings/"
-            class="toc-page text-wrap text-muted ">
-            Settings
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/"
-            class="toc-page text-wrap text-muted ">
-            Posts Vs Pages
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/wordpress-themes/"
-            class="toc-page text-wrap text-muted ">
-            Themes
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress/wordpress-plugins/"
-            class="toc-page text-wrap text-muted ">
-            Plugins
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-w3-total-cache" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        W3 Total Cache
-    </a>
-    
-    <div id="tutorial-wordpress-w3-total-cache" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            W3 Total Cache Settings
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            W3 Total Cache Browser Cache
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            W3 Total Cache Minify Settings
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Performance Analyze
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-seo" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Search Engine Optimization
-    </a>
-    
-    <div id="tutorial-wordpress-seo" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/seo/seo-tips/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            SEO Tips
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            SEO Plugin
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-webmaster-tools" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Web Master Tools
-    </a>
-    
-    <div id="tutorial-wordpress-webmaster-tools" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Analytics
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/webmaster-tools/google-webmaster-tools/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Webmaster Tools
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-import" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Import Static Site
-    </a>
-    
-    <div id="tutorial-wordpress-import" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/import/import-static-html-site/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Import Static HTML Site
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/import/child-theme/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Child Theme
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/import/dynamic-stylesheets/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Dynamic Stylesheets
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-backup" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Backup
-    </a>
-    
-    <div id="tutorial-wordpress-backup" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Backup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Dropbox Backup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Restore, Clone, Migrate
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-openshift" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        OpenShift Cloud
-    </a>
-    
-    <div id="tutorial-wordpress-openshift" class="">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/openshift/install-source/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift WordPress Install Source
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/openshift/dns-setup/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift DNS Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/"
-            class="toc-page dropdown-item text-wrap text-danger">
-            OpenShift RHC Client Tools
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            OpenShift Linux Primer
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&amp;text=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&amp;t=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&amp;title=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&amp;title=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&amp;title=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <p>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"RHC Client Tools - WordPress Tutorial - CodeTab","headline":"RHC Client Tools - WordPress Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/","description":"In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T00:53:00+0530","dateModified":"2019-01-11T00:53:00+0530","wordCount":"1201","keywords":["openshift rhc","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>RHC Client Tools - WordPress Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">WordPress Guide</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="WordPress Tutorial - CodeTab"><div><a href=https://www.codetab.org/tutorial/wordpress/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/wordpress/ class="toc-page text-wrap text-muted">About WordPress</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/openshift-wordpress/ class="toc-page text-wrap text-muted">OpenShift WordPress Tutorial</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/wordpress-installation/ class="toc-page text-wrap text-muted">Installation</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/wordpress-settings/ class="toc-page text-wrap text-muted">Settings</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/ class="toc-page text-wrap text-muted">Posts Vs Pages</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/wordpress-themes/ class="toc-page text-wrap text-muted">Themes</a></div><div><a href=https://www.codetab.org/tutorial/wordpress/wordpress-plugins/ class="toc-page text-wrap text-muted">Plugins</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-w3-total-cache id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>W3 Total Cache</a><div id=tutorial-wordpress-w3-total-cache class=collapse><a href=https://www.codetab.org/tutorial/wordpress/w3-total-cache/settings/ class="toc-page dropdown-item text-wrap text-muted">W3 Total Cache Settings</a>
+<a href=https://www.codetab.org/tutorial/wordpress/w3-total-cache/browser-cache/ class="toc-page dropdown-item text-wrap text-muted">W3 Total Cache Browser Cache</a>
+<a href=https://www.codetab.org/tutorial/wordpress/w3-total-cache/minify-settings/ class="toc-page dropdown-item text-wrap text-muted">W3 Total Cache Minify Settings</a>
+<a href=https://www.codetab.org/tutorial/wordpress/w3-total-cache/performance-analyze/ class="toc-page dropdown-item text-wrap text-muted">Performance Analyze</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-seo id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Search Engine Optimization</a><div id=tutorial-wordpress-seo class=collapse><a href=https://www.codetab.org/tutorial/wordpress/seo/seo-tips/ class="toc-page dropdown-item text-wrap text-muted">SEO Tips</a>
+<a href=https://www.codetab.org/tutorial/wordpress/seo/wordpress-seo-plugin/ class="toc-page dropdown-item text-wrap text-muted">SEO Plugin</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-webmaster-tools id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Web Master Tools</a><div id=tutorial-wordpress-webmaster-tools class=collapse><a href=https://www.codetab.org/tutorial/wordpress/webmaster-tools/google-analytics/ class="toc-page dropdown-item text-wrap text-muted">Google Analytics</a>
+<a href=https://www.codetab.org/tutorial/wordpress/webmaster-tools/google-webmaster-tools/ class="toc-page dropdown-item text-wrap text-muted">Google Webmaster Tools</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-import id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Import Static Site</a><div id=tutorial-wordpress-import class=collapse><a href=https://www.codetab.org/tutorial/wordpress/import/import-static-html-site/ class="toc-page dropdown-item text-wrap text-muted">Import Static HTML Site</a>
+<a href=https://www.codetab.org/tutorial/wordpress/import/child-theme/ class="toc-page dropdown-item text-wrap text-muted">Child Theme</a>
+<a href=https://www.codetab.org/tutorial/wordpress/import/dynamic-stylesheets/ class="toc-page dropdown-item text-wrap text-muted">Dynamic Stylesheets</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-backup id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Backup</a><div id=tutorial-wordpress-backup class=collapse><a href=https://www.codetab.org/tutorial/wordpress/backup/wordpress-backup/ class="toc-page dropdown-item text-wrap text-muted">Backup</a>
+<a href=https://www.codetab.org/tutorial/wordpress/backup/dropbox-backup/ class="toc-page dropdown-item text-wrap text-muted">Dropbox Backup</a>
+<a href=https://www.codetab.org/tutorial/wordpress/backup/restore-clone-migrate/ class="toc-page dropdown-item text-wrap text-muted">Restore, Clone, Migrate</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-openshift id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>OpenShift Cloud</a><div id=tutorial-wordpress-openshift><a href=https://www.codetab.org/tutorial/wordpress/openshift/install-source/ class="toc-page dropdown-item text-wrap text-muted">OpenShift WordPress Install Source</a>
+<a href=https://www.codetab.org/tutorial/wordpress/openshift/dns-setup/ class="toc-page dropdown-item text-wrap text-muted">OpenShift DNS Setup</a>
+<a href=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/ class="toc-page dropdown-item text-wrap text-danger">OpenShift RHC Client Tools</a>
+<a href=https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/ class="toc-page dropdown-item text-wrap text-muted">OpenShift Linux Primer</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&text=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&t=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&title=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab&body=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&title=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/&title=RHC%20Client%20Tools%20-%20WordPress%20Tutorial%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><p>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and
 place WordPress Tutorial scripts and sample pages in OpenShift server.
 OpenShift RHC Client Tools is useful to manage OpenShift applications
 and to access OpenShift Shell. We have to access OpenShift Shell for a
 couple of tasks: to backup the site and to place the sample HTML in the
-server.</p>
-<h2 id="openshift-rhc-client-tools">OpenShift RHC Client Tools</h2>
-<p>OpenShift Client tools also called as RHC is a command line tool used to
+server.</p><h2 id=openshift-rhc-client-tools>OpenShift RHC Client Tools</h2><p>OpenShift Client tools also called as RHC is a command line tool used to
 create and manage the OpenShift applications. We require RHC to log in
-to OpenShift Shell using SSH. RHC is built in Ruby.</p>
-<p>Windows</p>
-<p>To install OpenShift RHC Client Tools on Windows, we have to install
-three items - RubyInstaller, Git and OpenShift RHC.</p>
-<p>Install RubyInstaller</p>
-<p>RubyInstaller is a self-contained Windows-based installer that includes
+to OpenShift Shell using SSH. RHC is built in Ruby.</p><p>Windows</p><p>To install OpenShift RHC Client Tools on Windows, we have to install
+three items - RubyInstaller, Git and OpenShift RHC.</p><p>Install RubyInstaller</p><p>RubyInstaller is a self-contained Windows-based installer that includes
 the Ruby language and execution environment. Download the stable release
-from <a href="http://rubyinstaller.org/downloads/" target="_blank">RubyInstaller Org</a> and
+from <a href=http://rubyinstaller.org/downloads/ target=_blank>RubyInstaller Org</a> and
 install. During the installation accept all of the defaults, but it is
 mandatory to select the <strong>Add Ruby executables to your PATH</strong> check box
-in order to run Ruby from the command line.</p>
-<p>After the installation, verify the installation. Open <strong>command prompt</strong>
+in order to run Ruby from the command line.</p><p>After the installation, verify the installation. Open <strong>command prompt</strong>
 using <strong>Start</strong> → <strong>Run</strong> and enter <strong>cmd</strong> and click OK. In the command
-prompt, execute the following command.</p>
-<pre><code class="language-screen" data-lang="screen">C:&gt; ruby -e 'puts &quot;Welcome to Ruby&quot;'
+prompt, execute the following command.</p><pre><code class=language-screen data-lang=screen>C:&gt; ruby -e 'puts &quot;Welcome to Ruby&quot;'
 Welcome to Ruby
-</code></pre><p>Install Git</p>
-<p>Git is a software configuration management (SCM) that keeps track of
+</code></pre><p>Install Git</p><p>Git is a software configuration management (SCM) that keeps track of
 changes to software source code. With Git, we can manage the OpenShift
-application source repository. Download latest release from <a href="http://msysgit.github.io/" target="_blank">Git
+application source repository. Download latest release from <a href=http://msysgit.github.io/ target=_blank>Git
 Hub</a> and install with all defaults. Open
-command prompt and verify Git installation.</p>
-<pre><code class="language-screen" data-lang="screen">C:&gt; git --version
+command prompt and verify Git installation.</p><pre><code class=language-screen data-lang=screen>C:&gt; git --version
 git version 1.9.2
-</code></pre><p>Install RHC</p>
-<p>To install OpenShift RHC Client Tools, open command prompt and run the
-following command.</p>
-<pre><code class="language-screen" data-lang="screen">C:&gt; gem install rhc
-</code></pre><p>Next we have to setup RHC and to do that, proceed to <a href="#setup-rhc">Setup RHC</a></p>
-<h2 id="linux">Linux</h2>
-<p>Here we explain the installation of RHC on Fedora. For other
+</code></pre><p>Install RHC</p><p>To install OpenShift RHC Client Tools, open command prompt and run the
+following command.</p><pre><code class=language-screen data-lang=screen>C:&gt; gem install rhc
+</code></pre><p>Next we have to setup RHC and to do that, proceed to <a href=#setup-rhc>Setup RHC</a></p><h2 id=linux>Linux</h2><p>Here we explain the installation of RHC on Fedora. For other
 distributions, install Ruby (full), Ruby Gems, GIT and RHC as explained
-for Windows.</p>
-<p>Install RHC</p>
-<p>On Fedora Linux, we have to install <strong>rubygem-rhc</strong>, which installs
+for Windows.</p><p>Install RHC</p><p>On Fedora Linux, we have to install <strong>rubygem-rhc</strong>, which installs
 Ruby, GIT and other dependencies required to run OpenShift RHC client
-tools.</p>
-<pre><code class="language-screen" data-lang="screen">$ sudo yum install rubygem-rhc
+tools.</p><pre><code class=language-screen data-lang=screen>$ sudo yum install rubygem-rhc
 </code></pre><p>It installs Ruby, Git, and the other dependencies. Next we have to setup
-RHC.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<p><a name="setup-rhc"></a></p>
-<h2 id="setup-openshift-rhc">Setup OpenShift RHC</h2>
-<p>We have to configure OpenShift RHC to work with the OpenShift account.
-RHC setup goes through following steps:</p>
-<ul>
-<li>
-<p>Prompts for the OpenShift account User ID and password. For User ID,
+RHC.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p><a name=setup-rhc></a></p><h2 id=setup-openshift-rhc>Setup OpenShift RHC</h2><p>We have to configure OpenShift RHC to work with the OpenShift account.
+RHC setup goes through following steps:</p><ul><li><p>Prompts for the OpenShift account User ID and password. For User ID,
 we have to enter the e-mail ID we used to create the OpenShift
-account.</p>
-</li>
-<li>
-<p>RHC creates and stores a token on disk, which allows us to carry out
+account.</p></li><li><p>RHC creates and stores a token on disk, which allows us to carry out
 application management and access the OpenShift Shell without using
 a password. Authentication tokens last for a month and after the
 expiry of tokens, we are forced to re-authenticate again with the
-e-mail id and password to generate fresh tokens.</p>
-</li>
-<li>
-<p>Checks whether there are any SSH Public-Private key pairs in the
+e-mail id and password to generate fresh tokens.</p></li><li><p>Checks whether there are any SSH Public-Private key pairs in the
 <code>.ssh</code> folder. If a key pair exists, then rhc uploads the public key
 to the OpenShift server else rhc creates a new pair and uploads the
 newly created public key. SSH keys are used encrypt the traffic
-between PC and OpenShift server.</p>
-</li>
-</ul>
-<p>To setup RHC, execute the following command from the command prompt.
+between PC and OpenShift server.</p></li></ul><p>To setup RHC, execute the following command from the command prompt.
 Even though we show commands for Windows, Linux users have to run the
-same setup commands.</p>
-<pre><code class="language-screen" data-lang="screen">C:&gt; rhc setup
+same setup commands.</p><pre><code class=language-screen data-lang=screen>C:&gt; rhc setup
 </code></pre><p>RHC interactive setup wizard displays and prompts us to complete the
 rest of the process. When prompted for OpenShift User ID and password,
 we have to enter the e-mail ID and password used to create the OpenShift
-account.</p>
-<p><strong>Note</strong></p>
-<p>It is safe to run rhc setup any number of times. During reruns, setup
+account.</p><p><strong>Note</strong></p><p>It is safe to run rhc setup any number of times. During reruns, setup
 reads existing configuration and completes the setup. To do a fresh
 setup; delete openshift (or .openshift) directory from the user&rsquo;s home
-directory and run rhc setup again.</p>
-<p>Test the RHC setup by running following command, which connects to
-OpenShift server and displays the apps configured in our account.</p>
-<pre><code class="language-screen" data-lang="screen">C:&gt; rhc apps
-</code></pre><figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-rhc-apps.png" alt="OpenShift RHC Client Tools - apps output" />
-</figure>
-
-<h2 id="install-putty-ssh-client-for-windows">Install PuTTY SSH Client for Windows</h2>
-<p>Windows users require an additional tool - <strong>PuTTY</strong>. To access to
+directory and run rhc setup again.</p><p>Test the RHC setup by running following command, which connects to
+OpenShift server and displays the apps configured in our account.</p><pre><code class=language-screen data-lang=screen>C:&gt; rhc apps
+</code></pre><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress/media/wp-rhc-apps.png alt="OpenShift RHC Client Tools - apps output"></figure><h2 id=install-putty-ssh-client-for-windows>Install PuTTY SSH Client for Windows</h2><p>Windows users require an additional tool - <strong>PuTTY</strong>. To access to
 OpenShift Shell and also to copy files over SSH, windows user have to
-install PuTTY.</p>
-<h2 id="openshift-shell">OpenShift Shell</h2>
-<p>OpenShift provides access to the terminal of the virtual host (gear) on
+install PuTTY.</p><h2 id=openshift-shell>OpenShift Shell</h2><p>OpenShift provides access to the terminal of the virtual host (gear) on
 which our application is running. OpenShift terminal is also known as
-OpenShift Shell.</p>
-<p>Linux users can log in to OpenShift Shell using the following command
-from the command prompt. Replace &lt;your app name&gt; with the name of the
-OpenShift WordPress application.</p>
-<pre><code class="language-screen" data-lang="screen">$ rhc ssh &lt;app name&gt;
+OpenShift Shell.</p><p>Linux users can log in to OpenShift Shell using the following command
+from the command prompt. Replace &lt;your app name> with the name of the
+OpenShift WordPress application.</p><pre><code class=language-screen data-lang=screen>$ rhc ssh &lt;app name&gt;
 </code></pre><p>Windows user have two options to login to shell. They can either use RHC
 or PuTTY. To use rhc, we need to know the path to SSH executable file in
-our PC and use RHC as follows. Replace &lt;path_to_ssh_executable&gt;
-with the actual path to SSH executable file.</p>
-<pre><code class="language-screen" data-lang="screen">C:&gt; rhc ssh --ssh &lt;path_to_ssh_executable&gt; &lt;app name&gt;
+our PC and use RHC as follows. Replace &lt;path_to_ssh_executable>
+with the actual path to SSH executable file.</p><pre><code class=language-screen data-lang=screen>C:&gt; rhc ssh --ssh &lt;path_to_ssh_executable&gt; &lt;app name&gt;
 </code></pre><p>Use Putty to login and OpenShift Shell displays welcome message and the prompt
-as shown in the screenshot.</p>
-<p><strong>Warning</strong></p>
-<p>Shell access is quite powerful, so be extra careful while we are in the
+as shown in the screenshot.</p><p><strong>Warning</strong></p><p>Shell access is quite powerful, so be extra careful while we are in the
 shell. If something goes wrong, then only option is to <strong>delete and
-create a new application</strong>.</p>
-<p>!OpenShift RHC Client Tools - OpenShift Shell.](../media/rhc-console.png)</p>
-<p><strong>OpenShift IDs.</strong></p>
-<p>At this point, let&rsquo;s clarify the various frequently encountered items
+create a new application</strong>.</p><p>!OpenShift RHC Client Tools - OpenShift Shell.](../media/rhc-console.png)</p><p><strong>OpenShift IDs.</strong></p><p>At this point, let&rsquo;s clarify the various frequently encountered items
 when we work with OpenShift. It is important understand their meaning
-and usage.</p>
-<ul>
-<li>
-<p><strong>OpenShift Account</strong>: we use an e-mail ID to create an OpenShift
-account, and we use it to login to OpenShift server.</p>
-<ul>
-<li>
-<p>We use the e-mail id to log in to OpenShift Web Console.</p>
-</li>
-<li>
-<p>RHC uses our e-mail id and tokens (created during RHC setup)
-when we log in to OpenShift Shell.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Application Public URL</strong>: when we create an application, OpenShift
+and usage.</p><ul><li><p><strong>OpenShift Account</strong>: we use an e-mail ID to create an OpenShift
+account, and we use it to login to OpenShift server.</p><ul><li><p>We use the e-mail id to log in to OpenShift Web Console.</p></li><li><p>RHC uses our e-mail id and tokens (created during RHC setup)
+when we log in to OpenShift Shell.</p></li></ul></li><li><p><strong>Application Public URL</strong>: when we create an application, OpenShift
 allots a public URL to like
 <code>http://quickstart-wordpressguide.rhcloud.com</code>, and we use this to
-access the application.</p>
-</li>
-<li>
-<p><strong>Application User ID</strong>: For each application, OpenShift creates a
+access the application.</p></li><li><p><strong>Application User ID</strong>: For each application, OpenShift creates a
 virtual Linux server, and we need a User ID to access this virtual
 server. UUID, a 24 chars hex decimal string, is a unique ID allotted
 to our virtual server, which is also the User ID. When we see a long
 hex string, we know that its is our unique user id in OpenShift
-cloud.</p>
-</li>
-</ul>
-<p><strong>a word about Prompts</strong></p>
-<p>In the tutorial, we run commands from a Windows Prompt or Linux Console
+cloud.</p></li></ul><p><strong>a word about Prompts</strong></p><p>In the tutorial, we run commands from a Windows Prompt or Linux Console
 or OpenShift Shell. We use following prompts to distinguish between the
-three systems.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress/media/wp-rhc-prompts.png" alt="OpenShift RHC Client Tools - WordPress Tutorial Prompts" />
-</figure>
-
-<h2 id="download-tutorial-code-to-openshift">Download Tutorial Code to OpenShift</h2>
-<p>To complete the tasks in some of the chapters, we need scripts and
+three systems.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress/media/wp-rhc-prompts.png alt="OpenShift RHC Client Tools - WordPress Tutorial Prompts"></figure><h2 id=download-tutorial-code-to-openshift>Download Tutorial Code to OpenShift</h2><p>To complete the tasks in some of the chapters, we need scripts and
 sample pages from the <code>wordpress tutorial sample zip</code>, which is
-available at <a href="https://github.com/maithilish/codefs/tree/master/wordpress" target="_blank">GitHub</a>.</p>
-<p>We can directly download the file to OpenShift server and for that, log
+available at <a href=https://github.com/maithilish/codefs/tree/master/wordpress target=_blank>GitHub</a>.</p><p>We can directly download the file to OpenShift server and for that, log
 in to OpenShift Shell using RHC (Linux users) or PuTTY (Windows users).
-In the OpenShift Shell, change the directory to <code>app-root/data</code>.</p>
-<pre><code class="language-screen" data-lang="screen">&gt; cd app-root/data
+In the OpenShift Shell, change the directory to <code>app-root/data</code>.</p><pre><code class=language-screen data-lang=screen>&gt; cd app-root/data
 </code></pre><p>In OpenShift, we can use the <strong>Wget</strong> to download the
-<code>wordpress-tutorial-sample.zip</code> from CodeTab.</p>
-<pre><code class="language-screen" data-lang="screen">&gt; wget ../media/wordpress-tutorial-sample.zip
+<code>wordpress-tutorial-sample.zip</code> from CodeTab.</p><pre><code class=language-screen data-lang=screen>&gt; wget ../media/wordpress-tutorial-sample.zip
 </code></pre><p>Curl downloads the wordpress-tutorial-sample.zip from CodeTab and save
-it. Next, use unzip command to extract the wordpress-tutorials.zip.</p>
-<pre><code class="language-screen" data-lang="screen">&gt; unzip wordpress-tutorial-sample.zip
-</code></pre><script>
-    console.log("slot C"); 
-</script>
-<p>The zip file contains two folders:</p>
-<ul>
-<li>
-<p><strong>htmlimport</strong> folder contains sample HTML files with distinct
+it. Next, use unzip command to extract the wordpress-tutorials.zip.</p><pre><code class=language-screen data-lang=screen>&gt; unzip wordpress-tutorial-sample.zip
+</code></pre><script>console.log("slot C");</script><p>The zip file contains two folders:</p><ul><li><p><strong>htmlimport</strong> folder contains sample HTML files with distinct
 stylesheets and images, which we use to describe WordPress static
-page import.</p>
-</li>
-<li>
-<p><strong>backup</strong> folder contains WordPress Backup and Dropbox setup
-scripts.</p>
-</li>
-</ul>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+page import.</p></li><li><p><strong>backup</strong> folder contains WordPress Backup and Dropbox setup
+scripts.</p></li></ul></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

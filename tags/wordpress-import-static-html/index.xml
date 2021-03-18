@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress import static html on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-import-static-html/</link>
-    <description>Recent content in wordpress import static html on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 01:28:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-import-static-html/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Import Static Site - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/import/import-static-html-site/</link>
-      <pubDate>Fri, 11 Jan 2019 01:28:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/import/import-static-html-site/</guid>
-      <description>10.1. WordPress Import Static HTML site In the previous chapters, we saw WordPress installation and optimization. In this chapter, we cover importing Static HTML site and pages as WordPress Posts or Pages and managing dynamic stylesheets of web pages in WordPress.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress import static html on Codetab</title><link>https://www.codetab.org/tags/wordpress-import-static-html/</link><description>Recent content in wordpress import static html on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 01:28:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-import-static-html/index.xml" rel="self" type="application/rss+xml"/><item><title>Import Static Site - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/import/import-static-html-site/</link><pubDate>Fri, 11 Jan 2019 01:28:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/import/import-static-html-site/</guid><description>10.1. WordPress Import Static HTML site In the previous chapters, we saw WordPress installation and optimization. In this chapter, we cover importing Static HTML site and pages as WordPress Posts or Pages and managing dynamic stylesheets of web pages in WordPress.
 Sample HTML Files
-To import static HTML site or pages, we need to access OpenShift Shell through RHC or PuTTY (for Windows users). OpenShift RHC Client Tools explains RHC and PuTTY setup.</description>
-    </item>
-    
-  </channel>
-</rss>
+To import static HTML site or pages, we need to access OpenShift Shell through RHC or PuTTY (for Windows users). OpenShift RHC Client Tools explains RHC and PuTTY setup.</description></item></channel></rss>

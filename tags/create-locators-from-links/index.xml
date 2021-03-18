@@ -1,41 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>create locators from links on Codetab</title>
-    <link>https://www.codetab.org/tags/create-locators-from-links/</link>
-    <description>Recent content in create locators from links on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 00:29:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/create-locators-from-links/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Link Locator - Scoopi Web Scraper - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/</link>
-      <pubDate>Sat, 12 Jan 2019 05:16:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/</guid>
-      <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, we can use Scoopi to scrape links from a start page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
-Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-quote.html page. Links snippet in the html page is as below.</description>
-    </item>
-    
-    <item>
-      <title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</link>
-      <pubDate>Thu, 05 Nov 2020 00:29:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</guid>
-      <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
-Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-snapshot.html page. Links snippet in the html page is as below.</description>
-    </item>
-    
-    <item>
-      <title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</link>
-      <pubDate>Sat, 12 Jan 2019 00:29:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</guid>
-      <description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
-Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-snapshot.html page. Links snippet in the html page is as below.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>create locators from links on Codetab</title><link>https://www.codetab.org/tags/create-locators-from-links/</link><description>Recent content in create locators from links on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 00:29:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/create-locators-from-links/index.xml" rel="self" type="application/rss+xml"/><item><title>Link Locator - Scoopi Web Scraper - CodeTab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/</link><pubDate>Sat, 12 Jan 2019 05:16:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/create-locators-links-v094/</guid><description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, we can use Scoopi to scrape links from a start page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
+Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-quote.html page. Links snippet in the html page is as below.</description></item><item><title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</link><pubDate>Thu, 05 Nov 2020 00:29:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/advanced/create-locators-links/</guid><description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
+Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-snapshot.html page. Links snippet in the html page is as below.</description></item><item><title>Scrape Links - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</link><pubDate>Sat, 12 Jan 2019 00:29:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/advanced/create-locators-links/</guid><description>Create Locators from Links The definitions would become lengthy when we define each and every link in job.xml. Instead, Scoopi can scrape links from any page and dynamically create locators. This feature allows you to recursively scrape the web pages. Let&amp;rsquo;s see how to create locators from scraped links.
+Link Scrape Step The Example 9 scrapes Balance Sheet and Profit &amp;amp; Loss links from acme-snapshot.html page. Links snippet in the html page is as below.</description></item></channel></rss>

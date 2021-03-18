@@ -1,53 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>OpenShift Cloud on Codetab</title>
-    <link>https://www.codetab.org/tutorial/wordpress/openshift/</link>
-    <description>Recent content in OpenShift Cloud on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/openshift/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>OpenShift Install WordPress - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/openshift/install-source/</link>
-      <pubDate>Fri, 11 Jan 2019 02:52:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/openshift/install-source/</guid>
-      <description>Through out the WordPress Tutorial, we stick with the WordPress installed from OpenShift Instant App bundled by OpenShift team. While, OpenShift Instant Apps are stable and updated frequently, we still prefer to do a OpenShift WordPress install from its source.
-Consider this scenario. We have a site with WordPress 3.8.3 and every week, on Sunday, we take the backup. Meanwhile, WordPress releases version 3.9 and next Wednesday, OpenShift updates the Instant App to 3.</description>
-    </item>
-    
-    <item>
-      <title>OpenShift DNS Setup - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/openshift/dns-setup/</link>
-      <pubDate>Fri, 11 Jan 2019 00:40:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/openshift/dns-setup/</guid>
-      <description>In this appendix OpenShift DNS Setup, we describe the steps to setup a Domain name or DNS name for an OpenShift WordPress application.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenShift Cloud on Codetab</title><link>https://www.codetab.org/tutorial/wordpress/openshift/</link><description>Recent content in OpenShift Cloud on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/openshift/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenShift Install WordPress - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/openshift/install-source/</link><pubDate>Fri, 11 Jan 2019 02:52:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/openshift/install-source/</guid><description>Through out the WordPress Tutorial, we stick with the WordPress installed from OpenShift Instant App bundled by OpenShift team. While, OpenShift Instant Apps are stable and updated frequently, we still prefer to do a OpenShift WordPress install from its source.
+Consider this scenario. We have a site with WordPress 3.8.3 and every week, on Sunday, we take the backup. Meanwhile, WordPress releases version 3.9 and next Wednesday, OpenShift updates the Instant App to 3.</description></item><item><title>OpenShift DNS Setup - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/openshift/dns-setup/</link><pubDate>Fri, 11 Jan 2019 00:40:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/openshift/dns-setup/</guid><description>In this appendix OpenShift DNS Setup, we describe the steps to setup a Domain name or DNS name for an OpenShift WordPress application.
 WordPress site that is behind a custom domain name is easy to migrate to another hosting platform without affecting the search ranking and traffic.
-Take the case of codetab.org and its real URL tuts-codedrops.rhcloud.com. To popularize the site we publish its link in various popular forums like Redit, DZone, Serverside, etc.</description>
-    </item>
-    
-    <item>
-      <title>RHC Client Tools - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</link>
-      <pubDate>Fri, 11 Jan 2019 00:53:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</guid>
-      <description>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server. OpenShift RHC Client Tools is useful to manage OpenShift applications and to access OpenShift Shell. We have to access OpenShift Shell for a couple of tasks: to backup the site and to place the sample HTML in the server.
-OpenShift RHC Client Tools OpenShift Client tools also called as RHC is a command line tool used to create and manage the OpenShift applications.</description>
-    </item>
-    
-    <item>
-      <title>OpenShift Linux Primer - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</link>
-      <pubDate>Fri, 11 Jan 2019 01:11:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</guid>
-      <description>In this appendix, we start with some of the basic Linux commands so that Windows users feel comfortable working with the OpenShift Linux Shell. After that, we show how to copy files from the PC to OpenShift Linux server using secure copy feature of SSH.
+Take the case of codetab.org and its real URL tuts-codedrops.rhcloud.com. To popularize the site we publish its link in various popular forums like Redit, DZone, Serverside, etc.</description></item><item><title>RHC Client Tools - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</link><pubDate>Fri, 11 Jan 2019 00:53:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/openshift/rhc-client-tools/</guid><description>In this Appendix, we install OpenShift RHC Client Tools, setup RHC and place WordPress Tutorial scripts and sample pages in OpenShift server. OpenShift RHC Client Tools is useful to manage OpenShift applications and to access OpenShift Shell. We have to access OpenShift Shell for a couple of tasks: to backup the site and to place the sample HTML in the server.
+OpenShift RHC Client Tools OpenShift Client tools also called as RHC is a command line tool used to create and manage the OpenShift applications.</description></item><item><title>OpenShift Linux Primer - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</link><pubDate>Fri, 11 Jan 2019 01:11:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/openshift/linux-primer/</guid><description>In this appendix, we start with some of the basic Linux commands so that Windows users feel comfortable working with the OpenShift Linux Shell. After that, we show how to copy files from the PC to OpenShift Linux server using secure copy feature of SSH.
 Note
-To go through this Appendix, we have to complete the RHC (OpenShift Client Tools) installation. To work from a Windows system, we also require PuTTY.</description>
-    </item>
-    
-  </channel>
-</rss>
+To go through this Appendix, we have to complete the RHC (OpenShift Client Tools) installation. To work from a Windows system, we also require PuTTY.</description></item></channel></rss>

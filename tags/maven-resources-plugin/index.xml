@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>maven resources plugin on Codetab</title>
-    <link>https://www.codetab.org/tags/maven-resources-plugin/</link>
-    <description>Recent content in maven resources plugin on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 15:41:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/maven-resources-plugin/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Resources Plugin - Apache Maven Tutorial – CodeTab</title>
-      <link>https://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/</link>
-      <pubDate>Fri, 11 Jan 2019 15:41:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/</guid>
-      <description>Maven Resource Plugin The previous chapter of the guide covered basics of Maven Plugins. This chapter explains Maven Resources Plugin which Maven uses to handle the project resources.
-Resources are non source files of the project such as properties files, XML configuration files, shell scripts files and also, binary files like images etc., Maven Resources Plugin (plugin prefix resources) copies resource files from source directories to output directory. Apart from the standard resources:help goal, the plugin has three goals:</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>maven resources plugin on Codetab</title><link>https://www.codetab.org/tags/maven-resources-plugin/</link><description>Recent content in maven resources plugin on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 15:41:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/maven-resources-plugin/index.xml" rel="self" type="application/rss+xml"/><item><title>Resources Plugin - Apache Maven Tutorial – CodeTab</title><link>https://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/</link><pubDate>Fri, 11 Jan 2019 15:41:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/apache-maven/plugins/maven-resources-plugin/</guid><description>Maven Resource Plugin The previous chapter of the guide covered basics of Maven Plugins. This chapter explains Maven Resources Plugin which Maven uses to handle the project resources.
+Resources are non source files of the project such as properties files, XML configuration files, shell scripts files and also, binary files like images etc., Maven Resources Plugin (plugin prefix resources) copies resource files from source directories to output directory. Apart from the standard resources:help goal, the plugin has three goals:</description></item></channel></rss>

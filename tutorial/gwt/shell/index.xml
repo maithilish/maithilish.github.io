@@ -1,42 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Shell on Codetab</title>
-    <link>https://www.codetab.org/tutorial/gwt/shell/</link>
-    <description>Recent content in Shell on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/gwt/shell/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>UIBinder – Custom Widgets - GWT Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gwt/shell/finsshell/</link>
-      <pubDate>Thu, 10 Jan 2019 10:57:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gwt/shell/finsshell/</guid>
-      <description>Part I of the GWT Tutorial explains the GWT UI design aspects and covers client side coding. It explains a menu driven multi tabbed front end and in doing so, it covers the use of essential GWT Panels, widgets,custom widgets, and a simple but effective way of handling GWT Events, and using EventBus architecture introduced in GWT ™2.x, and the benefits of @UIFactory to create the widgets. GWT Tutorial extensively uses UIBinder concept introduced in Google Web Toolkit 2.</description>
-    </item>
-    
-    <item>
-      <title>TabLayoutPanel - GWT Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gwt/shell/contentpanel/</link>
-      <pubDate>Thu, 10 Jan 2019 11:14:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gwt/shell/contentpanel/</guid>
-      <description>3.3. ContentPanel ContentPanel Next task is to design custom widgets and dock them in DockLayoutPanel of FinsShell. Let us start with ContentPanel which displays the contents of the application. GWT comes with a stock tab panel, GWT TabLayoutPanel, which can display contents in multiple tabs and it is a perfect panel for content area.
-Just for convenience, place all the custom widgets in a separate package. Go ahead and create a package  in.</description>
-    </item>
-    
-    <item>
-      <title>Logging - GWT Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gwt/shell/gwt-logging/</link>
-      <pubDate>Thu, 10 Jan 2019 11:22:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gwt/shell/gwt-logging/</guid>
-      <description>3.4. LogTab In GWT, client side log messages may be sent to the server or log them in the client itself. LogTab composite displays log messages on the client side.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on Codetab</title><link>https://www.codetab.org/tutorial/gwt/shell/</link><description>Recent content in Shell on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/gwt/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>UIBinder – Custom Widgets - GWT Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/gwt/shell/finsshell/</link><pubDate>Thu, 10 Jan 2019 10:57:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gwt/shell/finsshell/</guid><description>Part I of the GWT Tutorial explains the GWT UI design aspects and covers client side coding. It explains a menu driven multi tabbed front end and in doing so, it covers the use of essential GWT Panels, widgets,custom widgets, and a simple but effective way of handling GWT Events, and using EventBus architecture introduced in GWT ™2.x, and the benefits of @UIFactory to create the widgets. GWT Tutorial extensively uses UIBinder concept introduced in Google Web Toolkit 2.</description></item><item><title>TabLayoutPanel - GWT Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/gwt/shell/contentpanel/</link><pubDate>Thu, 10 Jan 2019 11:14:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gwt/shell/contentpanel/</guid><description>3.3. ContentPanel ContentPanel Next task is to design custom widgets and dock them in DockLayoutPanel of FinsShell. Let us start with ContentPanel which displays the contents of the application. GWT comes with a stock tab panel, GWT TabLayoutPanel, which can display contents in multiple tabs and it is a perfect panel for content area.
+Just for convenience, place all the custom widgets in a separate package. Go ahead and create a package in.</description></item><item><title>Logging - GWT Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/gwt/shell/gwt-logging/</link><pubDate>Thu, 10 Jan 2019 11:22:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gwt/shell/gwt-logging/</guid><description>3.4. LogTab In GWT, client side log messages may be sent to the server or log them in the client itself. LogTab composite displays log messages on the client side.
 Add LogTab.java and LogTab.ui.xml to in.fins.client.content package. Please note that content related classes are placed in in.fins.client.content whereas custom widgets are placed in in.fins.client.widget.
 in.fins.client.content/LogTab.ui.xml
-&amp;lt;!DOCTYPE ui:UiBinder SYSTEM &amp;#34;http://dl.google.com/gwt/DTD/xhtml.ent&amp;#34;&amp;gt; &amp;lt;ui:UiBinder xmlns:ui=&amp;#34;urn:ui:com.google.gwt.uibinder&amp;#34; xmlns:g=&amp;#34;urn:import:com.google.gwt.user.client.ui&amp;#34;&amp;gt; &amp;lt;g:ScrollPanel&amp;gt; &amp;lt;g:VerticalPanel ui:field=&amp;#34;logArea&amp;#34;&amp;gt; &amp;lt;g:Label text=&amp;#34;Client Log&amp;#34; styleName=&amp;#34;fins-ContentHeader-Label&amp;#34; /&amp;gt; &amp;lt;/g:VerticalPanel&amp;gt; &amp;lt;/g:ScrollPanel&amp;gt; &amp;lt;/ui:UiBinder&amp;gt; in.</description>
-    </item>
-    
-  </channel>
-</rss>
+&amp;lt;!DOCTYPE ui:UiBinder SYSTEM &amp;#34;http://dl.google.com/gwt/DTD/xhtml.ent&amp;#34;&amp;gt; &amp;lt;ui:UiBinder xmlns:ui=&amp;#34;urn:ui:com.google.gwt.uibinder&amp;#34; xmlns:g=&amp;#34;urn:import:com.google.gwt.user.client.ui&amp;#34;&amp;gt; &amp;lt;g:ScrollPanel&amp;gt; &amp;lt;g:VerticalPanel ui:field=&amp;#34;logArea&amp;#34;&amp;gt; &amp;lt;g:Label text=&amp;#34;Client Log&amp;#34; styleName=&amp;#34;fins-ContentHeader-Label&amp;#34; /&amp;gt; &amp;lt;/g:VerticalPanel&amp;gt; &amp;lt;/g:ScrollPanel&amp;gt; &amp;lt;/ui:UiBinder&amp;gt; in.</description></item></channel></rss>

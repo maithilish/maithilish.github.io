@@ -1,654 +1,104 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="Bounded wildcards restricts the wildcard domain to specific hierarchy"><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Java Generics Bounded Wildcards - CodeTab","headline":"Java Generics Bounded Wildcards - CodeTab","url":"https://www.codetab.org/tutorial/java-generics/bounded-wildcards/","description":"Bounded wildcards restricts the wildcard domain to specific hierarchy","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-07-23T13:54:00+0530","dateModified":"2019-07-23T13:54:00+0530","wordCount":"1351","keywords":["java generics bounded wildcards tutorial","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>Java Generics Bounded Wildcards - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">Java Generics Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="Java Generics Tutorial - CodeTab"><div><a href=https://www.codetab.org/tutorial/java-generics/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/java-generics/subtype/ class="toc-page text-wrap text-muted">Subtypes</a></div><div><a href=https://www.codetab.org/tutorial/java-generics/wildcards/ class="toc-page text-wrap text-muted">Wildcards</a></div><div><a href=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/ class="toc-page text-wrap text-danger">Bounded Wildcards</a></div><div><a href=https://www.codetab.org/tutorial/java-generics/wildcards-api/ class="toc-page text-wrap text-muted">Wildcards in API</a></div><div><a href=https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/ class="toc-page text-wrap text-muted">Type Parameter Bounds</a></div><div><a href=https://www.codetab.org/tutorial/java-generics/design/ class="toc-page text-wrap text-muted">Guidelines</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&text=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&t=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&title=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab&body=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab%20https://www.codetab.org/tutorial/java-generics/bounded-wildcards/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&title=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&title=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><h1 id=bounded-wildcards>Bounded Wildcards</h1><p>The previous tutorial covered unbounded wildcard, and now we learn to restrict the wildcards with <strong>extends</strong> (upper bound) or <strong>super</strong> (lower bound).</p><p>This tutorial uses following class hierarchy:</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/java-generics/media/generics-class-hierarchy.png alt="Java Generics Bounded Wildcard"></figure><h2 id=extends>Extends</h2><p>The <code>&lt;? extends Type></code> is a wildcard with upper bound. Extends allows us to restrict the unbounded <code>List&lt;?></code> to some type and its subtypes. For example, we want restrict display method only to Pet and its subclasses,</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>
+    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>display</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>Pet</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+        <span class=c1>// display the list elements
+</span><span class=c1></span>    <span class=o>}</span>
 
-<head><meta charset="utf-8">
-<meta name="description" content="Bounded wildcards restricts the wildcard domain to specific hierarchy">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Pet</span><span class=o>&gt;());</span>         
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Dog</span><span class=o>&gt;());</span>      
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Bulldog</span><span class=o>&gt;());</span>
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Cat</span><span class=o>&gt;());</span>      
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Persian</span><span class=o>&gt;());</span>      
 
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;());</span>    <span class=c1>// error
+</span><span class=c1></span>    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;());</span>   <span class=c1>// error         
+</span><span class=c1></span>
+</code></pre></div><p>The <code>display(List&lt;? extends Pet> list)</code> accepts only the list of Pet, Dog, Bulldog, Cat, Persian and nothing else. Compiler throws error if we try to pass list of String or Integer as they are not subclasses of Pet.</p><p>We can use extends in variable declarations too as shown below:</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>    <span class=n>List</span><span class=o>&lt;</span><span class=n>Cat</span><span class=o>&gt;</span> <span class=n>cats</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+    <span class=n>List</span><span class=o>&lt;</span><span class=n>Bulldog</span><span class=o>&gt;</span> <span class=n>bulldogs</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+    <span class=n>List</span><span class=o>&lt;</span><span class=n>Persian</span><span class=o>&gt;</span> <span class=n>persians</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
 
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>Pet</span><span class=o>&gt;</span> <span class=n>p</span> <span class=o>=</span> <span class=n>cats</span><span class=o>;</span>
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>Dog</span><span class=o>&gt;</span> <span class=n>d</span> <span class=o>=</span> <span class=n>bulldogs</span><span class=o>;</span>        
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>Persian</span><span class=o>&gt;</span> <span class=n>p</span> <span class=o>=</span> <span class=n>persians</span><span class=o>;</span>
+</code></pre></div><p>Various <strong>extends</strong> and allowed lists for our example class hierarchy are,</p><ul><li>List&lt;? extends Pet>   :   <code>List&lt;Pet>, List&lt;Dog>, List&lt;Cat>, List&lt;Bulldog> or List&lt;Persian></code></li><li>List&lt;? extends Dog>   :   <code>List&lt;Dog> or List&lt;Bulldog></code></li><li>List&lt;? extends Bulldog>   :   <code>List&lt;Bulldog></code></li><li>List&lt;? extends Cat>   :   <code>List&lt;Cat> or List&lt;Persian></code></li><li>List&lt;? extends Persian>   :   <code>List&lt;Persian></code></li></ul><p>To sum up, extends allows type and its subtypes.</p><h2 id=super>Super</h2><p>The <code>&lt;? super Type></code> is the wildcard with lower bound. Suppose, we want a parameter that allows Pet, Dog and Bulldog. As we have seen earlier, the <code>List&lt;? extends Pet></code> allows not only the list of Pet, Dog and Bulldog but also Cat and Persian, whereas the <code>List&lt;? extends Dog></code> allows only list of Dog and Bulldog but not the list of Pet. So top-down <strong>extends</strong> doesn&rsquo;t met the requirement and we should use bottom-up <strong>super</strong> keyword.</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>
+    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>display</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Bulldog</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+        <span class=c1>// display the list elements
+</span><span class=c1></span>    <span class=o>}</span>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Pet</span><span class=o>&gt;());</span>         
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Dog</span><span class=o>&gt;());</span>      
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Bulldog</span><span class=o>&gt;());</span>
 
-  gtag('config', 'UA-42139846-3');
-</script>
+    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Cat</span><span class=o>&gt;());</span>          <span class=c1>// error
+</span><span class=c1></span>    <span class=n>display</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Persian</span><span class=o>&gt;());</span>      <span class=c1>// error
+</span><span class=c1></span>
+</code></pre></div><p>The <code>List&lt;? super Bulldog></code> allows list of Bulldog and all its supertypes i.e. list of Dog and Pet which is exactly what we want.</p><p>As usual, we can use <strong>super</strong> in variable declarations as bellow:</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>    
+    <span class=n>List</span><span class=o>&lt;</span><span class=n>Pet</span><span class=o>&gt;</span> <span class=n>pets</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+    <span class=n>List</span><span class=o>&lt;</span><span class=n>Cat</span><span class=o>&gt;</span> <span class=n>cats</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
 
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "Java Generics Bounded Wildcards - CodeTab",
-        "headline" : "Java Generics Bounded Wildcards - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/java-generics/bounded-wildcards/",
-        "description" : "Bounded wildcards restricts the wildcard domain to specific hierarchy",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-07-23T13:54:00+0530",
-        "dateModified" : "2019-07-23T13:54:00+0530",
-        "wordCount" : "1351",
-        "keywords" : [ "java generics bounded wildcards tutorial","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Pet</span><span class=o>&gt;</span> <span class=n>p</span> <span class=o>=</span> <span class=n>pets</span><span class=o>;</span>
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Dog</span><span class=o>&gt;</span> <span class=n>d</span> <span class=o>=</span> <span class=n>pets</span><span class=o>;</span>        
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Persian</span><span class=o>&gt;</span> <span class=n>p</span> <span class=o>=</span> <span class=n>cats</span><span class=o>;</span>
 
+</code></pre></div><p>Various super and allowed lists for our example class hierarchy are,</p><ul><li>List&lt;? super Pet>   :   <code>List&lt;Pet></code></li><li>List&lt;? super Dog>   :   <code>List&lt;Pet> or List&lt;Dog></code></li><li>List&lt;? super Bulldog>   :   <code>List&lt;Pet> or List&lt;Dog> or List&lt;Bulldog></code></li><li>List&lt;? super Cat>   :   <code>List&lt;Pet> or List&lt;Cat></code></li><li>List&lt;? super Persian>   :   <code>List&lt;Pet> or List&lt;Cat> or List&lt;Persian></code></li></ul><p>To sum up, super allows type and its super types.</p><h2 id=producer-and-consumer>Producer and Consumer</h2><p>So far, we saw how wildcards sets upper or lower bounds of variables and method parameters. In addition to that, wildcards also restricts the methods can be invoked and to understand that, we categorize parameterized types based on their behavior - producers and consumers.</p><p>When we get an item from list then it acts as producer and when an item is added then it acts as consumer. Let&rsquo;s see how a list changes its nature when assigned to unbounded, upper bounded or lower bounded wildcards variables.</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>    <span class=c1>// acts both as producer and consumer    
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;</span><span class=n>Dog</span><span class=o>&gt;</span> <span class=n>dogs</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>         
 
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>Java Generics Bounded Wildcards - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
+    <span class=c1>// now dogs act as producer 
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;?&gt;</span> <span class=n>unbounded</span> <span class=o>=</span> <span class=n>dogs</span><span class=o>;</span>                 
     
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
+    <span class=c1>// now dogs act as producer
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>Dogs</span><span class=o>&gt;</span> <span class=n>upperBounded</span> <span class=o>=</span> <span class=n>dogs</span><span class=o>;</span> 
     
+    <span class=c1>// now dogs act both as producer and consumer
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Dogs</span><span class=o>&gt;</span> <span class=n>lowerBounded</span> <span class=o>=</span> <span class=n>dogs</span><span class=o>;</span>   
+</code></pre></div><p>The same instance of <code>List&lt;Dog></code> changes its nature when we assign it different wildcard variables. To remember this, use acronym <strong>PECS</strong> which is abbreviation for <strong>Producer extends, Consumer super</strong>.</p><ul><li><code>List&lt;? extends Dog></code> is a producer; producer extends</li><li><code>List&lt;? super Dog></code> is a consumer; consumer super</li></ul><p>Next, let&rsquo;s divide methods of List into two groups - get and put methods.</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>
+<span class=kd>public</span> <span class=kd>interface</span> <span class=nc>List</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=o>{</span>
+
+    <span class=kd>public</span> <span class=n>E</span> <span class=nf>get</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>);</span>        <span class=c1>// method without formal type parameter
+</span><span class=c1></span>    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>add</span><span class=o>(</span><span class=n>E</span> <span class=n>element</span><span class=o>);</span>  <span class=c1>// method with formal type parameter
+</span><span class=c1></span>
+<span class=o>}</span>
+
+</code></pre></div><p>The methods such as <code>E get(int index)</code> or <code>E remove​(int index)</code> have no formal type parameter with E. We can ignore the return type even if it is type parameter. Similarly, <code>boolean remove​(Object o)</code> is also a method with no formal type parameter with E. For convenience, we call all such methods as <strong>get</strong> methods. Some more examples are:</p><table><thead><tr><th>Method</th><th>Group</th><th>Reason</th></tr></thead><tbody><tr><td>E get​(int index)</td><td>get</td><td>no E in parameter, even though return type is E</td></tr><tr><td>E remove​(int index)</td><td>get</td><td>no E in parameter, even though return type is E</td></tr><tr><td>boolean remove​(Object o)</td><td>get</td><td>no E in parameter</td></tr><tr><td>boolean removeAll​(Collection&lt;?> c)</td><td>get</td><td>no E in parameter</td></tr><tr><td>boolean retainAll​(Collection&lt;?> c)</td><td>get</td><td>no E in parameter</td></tr></tbody></table><p>The other group consists of methods that have one or more formal type parameters. For example, the method <code>E set​(int index, E element)</code> and <code>void add(E element)</code> have formal type parameter <code>element</code> whose type is E. Again informally, we call all such methods as <strong>put</strong> methods. Some examples of put methods are shown below:</p><table><thead><tr><th>Method</th><th>Group</th><th>Reason</th></tr></thead><tbody><tr><td>void add​(int index, E element)</td><td>put</td><td>parameter has E (type parameter)</td></tr><tr><td>boolean add(​E element)</td><td>put</td><td>parameter has E</td></tr><tr><td>boolean addAll​(Collection&lt;? extends E> c)</td><td>put</td><td>parameter has E</td></tr><tr><td>E set​(int index, E element)</td><td>put</td><td>parameter has E</td></tr></tbody></table><p>Now, let&rsquo;s know the rules about invoking methods (get and put) on plain, unbounded, and bounded types (consumers and producers).</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>    
+    <span class=c1>// no wildcard, acts as producer and consumer
+</span><span class=c1></span>    <span class=c1>// can call get and put methods
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;</span><span class=n>Dog</span><span class=o>&gt;</span> <span class=n>dogs</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>    
     
-
+    <span class=c1>// unbound,  acts as producer
+</span><span class=c1></span>    <span class=c1>// can call only the get methods
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;?&gt;</span> <span class=n>unbounded</span> <span class=o>=</span> <span class=n>dogs</span><span class=o>;</span>              
     
+    <span class=c1>// upper bound, acts as producer
+</span><span class=c1></span>    <span class=c1>// can call only the get methods
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>Dog</span><span class=o>&gt;</span> <span class=n>producer</span> <span class=o>=</span> <span class=n>dogs</span><span class=o>;</span>   
 
+    <span class=c1>// lower bound, acts as producer and consumer
+</span><span class=c1></span>    <span class=c1>// can call get and put methods
+</span><span class=c1></span>    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Dog</span><span class=o>&gt;</span> <span class=n>consumer</span> <span class=o>=</span> <span class=n>dogs</span><span class=o>;</span>     
+
+    <span class=c1>// can call get group of methods on all the above
+</span><span class=c1></span>    <span class=n>dogs</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>0</span><span class=o>);</span>
+    <span class=n>unbounded</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>0</span><span class=o>);</span>
+    <span class=n>producer</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>0</span><span class=o>);</span>
+    <span class=n>consumer</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>0</span><span class=o>);</span>
+
+    <span class=c1>// can call put group of methods only on consumers
+</span><span class=c1></span>    <span class=n>dogs</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Dog</span><span class=o>());</span>
+    <span class=n>unbounded</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Dog</span><span class=o>());</span>    <span class=c1>// error    
+</span><span class=c1></span>    <span class=n>producer</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Dog</span><span class=o>());</span>     <span class=c1>// error
+</span><span class=c1></span>    <span class=n>consumer</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Dog</span><span class=o>());</span>    
     
+</code></pre></div><p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?></code> and <code>List&lt;? extends Dogs></code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>put</strong> group of methods (methods with one or more type parameters) on them.</p><p>Yet another way to remember is</p><ul><li>can call get methods (methods without type parameter) on any type of variables.</li><li>can&rsquo;t invoke put methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?></code> etc.,) and wildcard with <strong>extends</strong> (<code>List&lt;? extends Dog></code> etc.,).</li></ul><h2 id=final-twist>Final Twist</h2><p>Above, we told that <code>List&lt;? super Dog></code> acts as consumer and call put methods on it. Now, consider this,</p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>    <span class=n>List</span><span class=o>&lt;</span><span class=n>Pets</span><span class=o>&gt;</span> <span class=n>pets</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>          
+    <span class=n>pets</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Pet</span><span class=o>());</span>
+    <span class=n>pets</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Dog</span><span class=o>());</span>
+    <span class=n>pets</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Bulldog</span><span class=o>());</span>
+
+    <span class=n>List</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Dog</span><span class=o>&gt;</span> <span class=n>superDog</span> <span class=o>=</span> <span class=n>pets</span><span class=o>;</span>
+    <span class=n>superDog</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Pet</span><span class=o>());</span>           <span class=c1>// error
+</span><span class=c1></span>    <span class=n>superDog</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Dog</span><span class=o>());</span>
+    <span class=n>superDog</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Bulldog</span><span class=o>());</span>
     
-
-    
-
-    <h4 class="text-muted bg-white pl-2">Java Generics Tutorial</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="Java Generics Tutorial - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/subtype/"
-            class="toc-page text-wrap text-muted ">
-            Subtypes
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/wildcards/"
-            class="toc-page text-wrap text-muted ">
-            Wildcards
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/bounded-wildcards/"
-            class="toc-page text-wrap text-danger ">
-            Bounded Wildcards
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/wildcards-api/"
-            class="toc-page text-wrap text-muted ">
-            Wildcards in API
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/"
-            class="toc-page text-wrap text-muted ">
-            Type Parameter Bounds
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/java-generics/design/"
-            class="toc-page text-wrap text-muted ">
-            Guidelines
-        </a>
-    </div>
-    
-    
-</div>
-
-
-
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&amp;text=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&amp;t=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&amp;title=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab%20https://www.codetab.org/tutorial/java-generics/bounded-wildcards/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&amp;title=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/java-generics/bounded-wildcards/&amp;title=Java%20Generics%20Bounded%20Wildcards%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <h1 id="bounded-wildcards">Bounded Wildcards</h1>
-<p>The previous tutorial covered unbounded wildcard, and now we learn to restrict the wildcards with <strong>extends</strong> (upper bound) or <strong>super</strong> (lower bound).</p>
-<p>This tutorial uses following class hierarchy:</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/java-generics/media/generics-class-hierarchy.png" alt="Java Generics Bounded Wildcard" />
-</figure>
-
-<h2 id="extends">Extends</h2>
-<p>The <code>&lt;? extends Type&gt;</code> is a wildcard with upper bound. Extends allows us to restrict the unbounded <code>List&lt;?&gt;</code> to some type and its subtypes. For example, we want restrict display method only to Pet and its subclasses,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// display the list elements
-</span><span class="c1"></span>    <span class="o">}</span>
-
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;());</span>         
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;());</span>      
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;());</span>
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;());</span>      
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persian</span><span class="o">&gt;());</span>      
-
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>    <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;());</span>   <span class="c1">// error         
-</span><span class="c1"></span>
-</code></pre></div><p>The <code>display(List&lt;? extends Pet&gt; list)</code> accepts only the list of Pet, Dog, Bulldog, Cat, Persian and nothing else. Compiler throws error if we try to pass list of String or Integer as they are not subclasses of Pet.</p>
-<p>We can use extends in variable declarations too as shown below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">bulldogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Persian</span><span class="o">&gt;</span> <span class="n">persians</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">cats</span><span class="o">;</span>
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">bulldogs</span><span class="o">;</span>        
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Persian</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">persians</span><span class="o">;</span>
-</code></pre></div><p>Various <strong>extends</strong> and allowed lists for our example class hierarchy are,</p>
-<ul>
-<li>List&lt;? extends Pet&gt;    :   <code>List&lt;Pet&gt;, List&lt;Dog&gt;, List&lt;Cat&gt;, List&lt;Bulldog&gt; or List&lt;Persian&gt;</code></li>
-<li>List&lt;? extends Dog&gt;    :   <code>List&lt;Dog&gt; or List&lt;Bulldog&gt;</code></li>
-<li>List&lt;? extends Bulldog&gt;   :   <code>List&lt;Bulldog&gt;</code></li>
-<li>List&lt;? extends Cat&gt;    :   <code>List&lt;Cat&gt; or List&lt;Persian&gt;</code></li>
-<li>List&lt;? extends Persian&gt;   :   <code>List&lt;Persian&gt;</code></li>
-</ul>
-<p>To sum up, extends allows type and its subtypes.</p>
-<h2 id="super">Super</h2>
-<p>The <code>&lt;? super Type&gt;</code> is the wildcard with lower bound. Suppose, we want a parameter that allows Pet, Dog and Bulldog. As we have seen earlier, the <code>List&lt;? extends Pet&gt;</code> allows not only the list of Pet, Dog and Bulldog but also Cat and Persian, whereas the <code>List&lt;? extends Dog&gt;</code> allows only list of Dog and Bulldog but not the list of Pet. So top-down <strong>extends</strong> doesn&rsquo;t met the requirement and we should use bottom-up <strong>super</strong> keyword.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Bulldog</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// display the list elements
-</span><span class="c1"></span>    <span class="o">}</span>
-
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;());</span>         
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;());</span>      
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Bulldog</span><span class="o">&gt;());</span>
-
-    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;());</span>          <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">display</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persian</span><span class="o">&gt;());</span>      <span class="c1">// error
-</span><span class="c1"></span>
-</code></pre></div><p>The <code>List&lt;? super Bulldog&gt;</code> allows list of Bulldog and all its supertypes i.e. list of Dog and Pet which is exactly what we want.</p>
-<p>As usual, we can use <strong>super</strong> in variable declarations as bellow:</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Pet</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Pet</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pets</span><span class="o">;</span>
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">pets</span><span class="o">;</span>        
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Persian</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">cats</span><span class="o">;</span>
-
-</code></pre></div><p>Various super and allowed lists for our example class hierarchy are,</p>
-<ul>
-<li>List&lt;? super Pet&gt;    :   <code>List&lt;Pet&gt;</code></li>
-<li>List&lt;? super Dog&gt;    :   <code>List&lt;Pet&gt; or List&lt;Dog&gt;</code></li>
-<li>List&lt;? super Bulldog&gt;   :   <code>List&lt;Pet&gt; or List&lt;Dog&gt; or List&lt;Bulldog&gt;</code></li>
-<li>List&lt;? super Cat&gt;    :   <code>List&lt;Pet&gt; or List&lt;Cat&gt;</code></li>
-<li>List&lt;? super Persian&gt;   :   <code>List&lt;Pet&gt; or List&lt;Cat&gt; or List&lt;Persian&gt;</code></li>
-</ul>
-<p>To sum up, super allows type and its super types.</p>
-<h2 id="producer-and-consumer">Producer and Consumer</h2>
-<p>So far, we saw how wildcards sets upper or lower bounds of variables and method parameters. In addition to that, wildcards also restricts the methods can be invoked and to understand that, we categorize parameterized types based on their behavior - producers and consumers.</p>
-<p>When we get an item from list then it acts as producer and when an item is added then it acts as consumer. Let&rsquo;s see how a list changes its nature when assigned to unbounded, upper bounded or lower bounded wildcards variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="c1">// acts both as producer and consumer    
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>         
-
-    <span class="c1">// now dogs act as producer 
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unbounded</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>                 
-    
-    <span class="c1">// now dogs act as producer
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Dogs</span><span class="o">&gt;</span> <span class="n">upperBounded</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span> 
-    
-    <span class="c1">// now dogs act both as producer and consumer
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Dogs</span><span class="o">&gt;</span> <span class="n">lowerBounded</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>   
-</code></pre></div><p>The same instance of <code>List&lt;Dog&gt;</code> changes its nature when we assign it different wildcard variables. To remember this, use acronym <strong>PECS</strong> which is abbreviation for <strong>Producer extends, Consumer super</strong>.</p>
-<ul>
-<li><code>List&lt;? extends Dog&gt;</code> is a producer; producer extends</li>
-<li><code>List&lt;? super Dog&gt;</code> is a consumer; consumer super</li>
-</ul>
-<p>Next, let&rsquo;s divide methods of List into two groups - get and put methods.</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="n">E</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>        <span class="c1">// method without formal type parameter
-</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">add</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span><span class="o">);</span>  <span class="c1">// method with formal type parameter
-</span><span class="c1"></span>
-<span class="o">}</span>
-
-</code></pre></div><p>The methods such as <code>E get(int index)</code> or <code>E remove​(int index)</code> have no formal type parameter with E. We can ignore the return type even if it is type parameter.  Similarly, <code>boolean remove​(Object o)</code> is also a method with no formal type parameter with E. For convenience, we call all such methods as  <strong>get</strong> methods. Some more examples are:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Group</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E get​(int index)</td>
-<td>get</td>
-<td>no E in parameter, even though return type is E</td>
-</tr>
-<tr>
-<td>E remove​(int index)</td>
-<td>get</td>
-<td>no E in parameter, even though return type is E</td>
-</tr>
-<tr>
-<td>boolean remove​(Object o)</td>
-<td>get</td>
-<td>no E in parameter</td>
-</tr>
-<tr>
-<td>boolean removeAll​(Collection&lt;?&gt; c)</td>
-<td>get</td>
-<td>no E in parameter</td>
-</tr>
-<tr>
-<td>boolean retainAll​(Collection&lt;?&gt; c)</td>
-<td>get</td>
-<td>no E in parameter</td>
-</tr>
-</tbody>
-</table>
-<p>The other group consists of methods that have one or more formal type parameters. For example, the method <code>E set​(int index, E element)</code> and <code>void add(E element)</code> have formal type parameter <code>element</code> whose type is E. Again informally, we call all such methods as <strong>put</strong> methods. Some examples of put methods are shown below:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Group</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>void add​(int index, E element)</td>
-<td>put</td>
-<td>parameter has E (type parameter)</td>
-</tr>
-<tr>
-<td>boolean add(​E element)</td>
-<td>put</td>
-<td>parameter has E</td>
-</tr>
-<tr>
-<td>boolean addAll​(Collection&lt;? extends E&gt; c)</td>
-<td>put</td>
-<td>parameter has E</td>
-</tr>
-<tr>
-<td>E set​(int index, E element)</td>
-<td>put</td>
-<td>parameter has E</td>
-</tr>
-</tbody>
-</table>
-<p>Now, let&rsquo;s know the rules about invoking methods (get and put) on plain, unbounded, and bounded types (consumers and producers).</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    
-    <span class="c1">// no wildcard, acts as producer and consumer
-</span><span class="c1"></span>    <span class="c1">// can call get and put methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>    
-    
-    <span class="c1">// unbound,  acts as producer
-</span><span class="c1"></span>    <span class="c1">// can call only the get methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">unbounded</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>              
-    
-    <span class="c1">// upper bound, acts as producer
-</span><span class="c1"></span>    <span class="c1">// can call only the get methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>   
-
-    <span class="c1">// lower bound, acts as producer and consumer
-</span><span class="c1"></span>    <span class="c1">// can call get and put methods
-</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">consumer</span> <span class="o">=</span> <span class="n">dogs</span><span class="o">;</span>     
-
-    <span class="c1">// can call get group of methods on all the above
-</span><span class="c1"></span>    <span class="n">dogs</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
-    <span class="n">unbounded</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
-    <span class="n">producer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
-    <span class="n">consumer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
-
-    <span class="c1">// can call put group of methods only on consumers
-</span><span class="c1"></span>    <span class="n">dogs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
-    <span class="n">unbounded</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>    <span class="c1">// error    
-</span><span class="c1"></span>    <span class="n">producer</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>     <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">consumer</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>    
-    
-</code></pre></div><p>All generic variables can act as producers i.e. we can call <strong>get</strong> group of methods on all of them. But <code>List&lt;?&gt;</code> and <code>List&lt;? extends Dogs&gt;</code> can&rsquo;t act as consumers, that means we can&rsquo;t call <strong>put</strong> group of methods (methods with one or more type parameters) on them.</p>
-<p>Yet another way to remember is</p>
-<ul>
-<li>can call get methods (methods without type parameter) on any type of variables.</li>
-<li>can&rsquo;t invoke put methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with <strong>extends</strong> (<code>List&lt;? extends Dog&gt;</code> etc.,).</li>
-</ul>
-<h2 id="final-twist">Final Twist</h2>
-<p>Above, we told that <code>List&lt;? super Dog&gt;</code> acts as consumer and call put methods on it. Now, consider this,</p>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Pets</span><span class="o">&gt;</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>          
-    <span class="n">pets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>
-    <span class="n">pets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
-    <span class="n">pets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
-
-    <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Dog</span><span class="o">&gt;</span> <span class="n">superDog</span> <span class="o">=</span> <span class="n">pets</span><span class="o">;</span>
-    <span class="n">superDog</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Pet</span><span class="o">());</span>           <span class="c1">// error
-</span><span class="c1"></span>    <span class="n">superDog</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
-    <span class="n">superDog</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Bulldog</span><span class="o">());</span>
-    
-</code></pre></div><p>To <code>List&lt;Pet&gt;</code> we can add Pet, Dog or Bulldog. But, why compiler is not allowing us to add a Pet to <code>List&lt;? super Dog&gt;</code> even though it points to the same <code>List&lt;Pet&gt;</code>.</p>
-<p>Reason being, when <code>List&lt;Pets&gt;</code> is assigned to <code>List&lt;? super Dog&gt;</code>,compiler treats it as <code>List&lt;Dog&gt;</code> which can hold only the Dog or Bulldog but not Pet.</p>
-<h2 id="summary">Summary</h2>
-<ul>
-<li><code>List&lt;?&gt;</code> accepts list of any type.</li>
-<li><code>List&lt;? extends T&gt;</code> accepts list of type and all its subtypes.</li>
-<li><code>List&lt;? super T&gt;</code> accepts list of type and all its supertypes.</li>
-<li>PECS is acronym for Producer Extends Consumer Super which denotes that variable which uses extends act as producer whereas variable that use super is a consumer.</li>
-<li>can call <strong>get</strong> methods (methods without type parameter) on all type of variables.</li>
-<li>can&rsquo;t invoke <strong>put</strong> methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?&gt;</code> etc.,) and wildcard with super (<code>List&lt;? extends Dog&gt;</code> etc.,).</li>
-<li>Compiler considers, <code>List&lt;Pet&gt;</code> assigned to <code>List&lt;? super Dog&gt;</code>, as  <code>List&lt;Dog&gt;</code> and allows to add only the Dog or Bulldog, but not the Pet.</li>
-</ul>
-<p>In the next tutorial we will go through wildcards in Java API to reinforce the concepts learned here.</p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+</code></pre></div><p>To <code>List&lt;Pet></code> we can add Pet, Dog or Bulldog. But, why compiler is not allowing us to add a Pet to <code>List&lt;? super Dog></code> even though it points to the same <code>List&lt;Pet></code>.</p><p>Reason being, when <code>List&lt;Pets></code> is assigned to <code>List&lt;? super Dog></code>,compiler treats it as <code>List&lt;Dog></code> which can hold only the Dog or Bulldog but not Pet.</p><h2 id=summary>Summary</h2><ul><li><code>List&lt;?></code> accepts list of any type.</li><li><code>List&lt;? extends T></code> accepts list of type and all its subtypes.</li><li><code>List&lt;? super T></code> accepts list of type and all its supertypes.</li><li>PECS is acronym for Producer Extends Consumer Super which denotes that variable which uses extends act as producer whereas variable that use super is a consumer.</li><li>can call <strong>get</strong> methods (methods without type parameter) on all type of variables.</li><li>can&rsquo;t invoke <strong>put</strong> methods (methods with one or more type parameter) on variables with wildcard (<code>List&lt;?></code> etc.,) and wildcard with super (<code>List&lt;? extends Dog></code> etc.,).</li><li>Compiler considers, <code>List&lt;Pet></code> assigned to <code>List&lt;? super Dog></code>, as <code>List&lt;Dog></code> and allows to add only the Dog or Bulldog, but not the Pet.</li></ul><p>In the next tutorial we will go through wildcards in Java API to reinforce the concepts learned here.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

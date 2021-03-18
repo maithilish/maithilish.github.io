@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress pass data to javascript on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-pass-data-to-javascript/</link>
-    <description>Recent content in wordpress pass data to javascript on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 10:48:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-pass-data-to-javascript/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Pass Data to JavaScript - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/</link>
-      <pubDate>Fri, 11 Jan 2019 10:48:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/</guid>
-      <description>8.2. WordPress Pass Data to JavaScript In the previous blog, we saw how to enqueue plugin scripts and stylesheets. We also enqueued an external JavaScript - Twitter API script. In this tutorial, we explain the steps to pass data to JavaScript.
-WordPress Pass Data to Scripts Share on Social Plugin can share the blogs to Facebook, Google Plus and Twitter. Out of the three, Twitter API is the easiest as it doesn&amp;rsquo;t require an App, while Facebook SDK requries an APP ID and Google Plus SDK expects a Client ID to share the blogs.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress pass data to javascript on Codetab</title><link>https://www.codetab.org/tags/wordpress-pass-data-to-javascript/</link><description>Recent content in wordpress pass data to javascript on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 10:48:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-pass-data-to-javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Pass Data to JavaScript - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/</link><pubDate>Fri, 11 Jan 2019 10:48:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/</guid><description>8.2. WordPress Pass Data to JavaScript In the previous blog, we saw how to enqueue plugin scripts and stylesheets. We also enqueued an external JavaScript - Twitter API script. In this tutorial, we explain the steps to pass data to JavaScript.
+WordPress Pass Data to Scripts Share on Social Plugin can share the blogs to Facebook, Google Plus and Twitter. Out of the three, Twitter API is the easiest as it doesn&amp;rsquo;t require an App, while Facebook SDK requires an APP ID and Google Plus SDK expects a Client ID to share the blogs.</description></item></channel></rss>

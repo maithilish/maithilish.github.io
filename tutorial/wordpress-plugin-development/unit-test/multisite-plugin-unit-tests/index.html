@@ -1,982 +1,186 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head><meta charset="utf-8">
-<meta name="description" content="WordPress Multisite Plugin Unit Tests Tutorial explains PHPUnit configuration to force Test Library to use WordPress Multisite instance for multisite tests.">
-<meta name="author" content="Maithilish">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-42139846-3');
-</script>
-
-<script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://google.com/article"
-        },
-        "articleSection" : "tutorial",
-        "name" : "Multi Site Unit Test - WordPress Plugin Development - CodeTab",
-        "headline" : "Multi Site Unit Test - WordPress Plugin Development - CodeTab",
-        "url" : "https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/",
-        "description" : "WordPress Multisite Plugin Unit Tests Tutorial explains PHPUnit configuration to force Test Library to use WordPress Multisite instance for multisite tests.",
-        "inLanguage" : "en",
-        "image": "https://www.codetab.org/logo.jpg",
-        "author" : "Maithilish",
-        "creator" : "Maithilish",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Maithilish",
-            "url": "https://www.codetab.org/",
-            "logo": {
-               "@type": "ImageObject",
-               "url": "https://www.codetab.org/logo.png",
-               "width":"200",
-               "height":"200"
-            }
-        },
-        "copyrightHolder" : "Maithilish",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-01-11T14:12:00+0530",
-        "dateModified" : "2019-01-11T14:12:00+0530",
-        "wordCount" : "898",
-        "keywords" : [ "WordPress Multisite Plugin Unit Tests","Blog" ]
-    }
-</script>
-<link rel="icon" href="/favicon.ico">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css" integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes=">
-
-<title>Multi Site Unit Test - WordPress Plugin Development - CodeTab</title></head>
-
-<body id="top"><header><nav id="navbar-main" class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm">
-
-    <div class="container-fluid">
-
-        
-        <a class="navbar-brand" href="/">Codetab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
-            
-            
-            <ul class="navbar-nav ml-auto">
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#tutorials"  >
-                        
-                        <span>Home</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#projects"  >
-                        
-                        <span>Projects</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/post"  >
-                        
-                        <span>Posts</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-                
-
-                
-                
-                
-                
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/#about"  >
-                        
-                        <span>About</span>
-                        
-                    </a>
-                </li>
-
-                
-                
-
-            </ul>
-
-        </div>
-    </div>
-</nav></header>
-
-<div class="container-fluid">
-  <div class="row">&nbsp;</div>
-
-  <div class="row">
-    
-    <aside id="sidebar" class="col-md-3">
-      <div class="row"><nav id="navbar-side" class="bg-light text-secondary">
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    <h4 class="text-muted bg-white pl-2">WP Plugin Development</h4>
-
-    <nav class="navbar navbar-light bg-white navbar-expand-md">
-
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bookmenu"
-            aria-controls="bookmenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bookmenu">
-            <div>
-                
-                
-
-
-
-
-
-
-
-
-
-<div id="WordPress Plugin Development - CodeTab">
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/"
-            class="toc-page text-wrap text-muted ">
-            Introduction
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/"
-            class="toc-page text-wrap text-muted ">
-            Install WP on Docker
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/"
-            class="toc-page text-wrap text-muted ">
-            Simple Plugin
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/"
-            class="toc-page text-wrap text-muted ">
-            Shortcode
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/"
-            class="toc-page text-wrap text-muted ">
-            Plugin Structure
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/"
-            class="toc-page text-wrap text-muted ">
-            Main File
-        </a>
-    </div>
-    
-    
-    
-    <div>
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/"
-            class="toc-page text-wrap text-muted ">
-            Hooks, Actions, Filters
-        </a>
-    </div>
-    
-    
-    
-    
-</div>
-
-
-
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-settings" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Admin - Settings
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-admin-module-settings" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Add Menu
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Settings API
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Options Page
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-admin-module-custom-posts" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Admin - Posts
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-admin-module-custom-posts" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Custom Post Type
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Meta Box
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Save Post
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-frontend" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Frontend
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-frontend" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Plugin Enqueue Scripts
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Pass Data to JavaScript
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Debug Info
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-ajax" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Ajax
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-ajax" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Ajax
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Chart Page
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Google Charts
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-internationalization" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Internationalization
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-internationalization" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Internationalization
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Localization
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-activation" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Activation
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-activation" class="collapse">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Activation
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Multi site
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Multi site Activation
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Deactivation
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Uninstall
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-<div class="dropdown show mt-2">
-    <a class="no-collapse-on-click card-link toc-section text-dark" href="#tutorial-wordpress-plugin-development-unit-test" id="dropdownheader"
-        data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-        Testing
-    </a>
-    
-    <div id="tutorial-wordpress-plugin-development-unit-test" class="">
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Unit Test
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Test Setup
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Simple Unit Tests
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Unit Test Scripts, Actions, Filters
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Advanced Unit Tests
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Test Internationalization Functions
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/"
-            class="toc-page dropdown-item text-wrap text-muted">
-            Ajax Unit Tests
-        </a>
-        
-        
-        
-        
-        <a href="https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/"
-            class="toc-page dropdown-item text-wrap text-danger">
-            Multi site Plugin Unit Tests
-        </a>
-        
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-                
-            </div>
-        </div>
-    </nav>
-
-</nav>
-
-</div>
-    </aside>
-
-    <div id="contentbar" class="col-md-7">
-        <div id="share" class="row justify-content-end">
-
-
-
-
-
-<div title=twitter>
-    <a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&amp;text=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-twitter-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=facebook>
-    <a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&amp;t=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-facebook-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=linkedin>
-    <a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&amp;title=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-linkedin-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=email>
-    <a href="mailto:?subject=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab&amp;body=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" target="_blank" rel="noopener">
-        <i class="icon-mail-squared text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=whatsapp>
-    <a href="https://web.whatsapp.com/send?text=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" target="_blank" rel="noopener">
-        <i class="icon-whatsapp text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=reddit>
-    <a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&amp;title=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-reddit-alien text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<div title=weibo>
-    <a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&amp;title=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target="_blank" rel="noopener">
-        <i class="icon-weibo text-secondary"></i>
-    </a>
-</div>
-
-
-
-
-<i class="icon-blank ctab-transparent"></i></div>
-        <div class="row">
-          <main id="content" class="col-md-11 post-basic">
-            <h2 id="128wordpress-multisite-plugin-unit-tests">12.8. WordPress Multisite Plugin Unit Tests</h2>
-<p>In the previous blogs we covered single site unit tests. In this
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="WordPress Multisite Plugin Unit Tests Tutorial explains PHPUnit configuration to force Test Library to use WordPress Multisite instance for multisite tests."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Multi Site Unit Test - WordPress Plugin Development - CodeTab","headline":"Multi Site Unit Test - WordPress Plugin Development - CodeTab","url":"https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/","description":"WordPress Multisite Plugin Unit Tests Tutorial explains PHPUnit configuration to force Test Library to use WordPress Multisite instance for multisite tests.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T14:12:00+0530","dateModified":"2019-01-11T14:12:00+0530","wordCount":"898","keywords":["WordPress Multisite Plugin Unit Tests","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>Multi Site Unit Test - WordPress Plugin Development - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">WP Plugin Development</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="WordPress Plugin Development - CodeTab"><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/ class="toc-page text-wrap text-muted">Install WP on Docker</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/ class="toc-page text-wrap text-muted">Simple Plugin</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/ class="toc-page text-wrap text-muted">Shortcode</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/ class="toc-page text-wrap text-muted">Plugin Structure</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/ class="toc-page text-wrap text-muted">Main File</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/ class="toc-page text-wrap text-muted">Hooks, Actions, Filters</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-admin-module-settings id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Admin - Settings</a><div id=tutorial-wordpress-plugin-development-admin-module-settings class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/ class="toc-page dropdown-item text-wrap text-muted">Add Menu</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/ class="toc-page dropdown-item text-wrap text-muted">Settings API</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/ class="toc-page dropdown-item text-wrap text-muted">Options Page</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-admin-module-custom-posts id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Admin - Posts</a><div id=tutorial-wordpress-plugin-development-admin-module-custom-posts class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/ class="toc-page dropdown-item text-wrap text-muted">Custom Post Type</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/ class="toc-page dropdown-item text-wrap text-muted">Meta Box</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/save-post/ class="toc-page dropdown-item text-wrap text-muted">Save Post</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-frontend id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Frontend</a><div id=tutorial-wordpress-plugin-development-frontend class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/enqueue-scripts/ class="toc-page dropdown-item text-wrap text-muted">Plugin Enqueue Scripts</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/pass-data-to-javascript/ class="toc-page dropdown-item text-wrap text-muted">Pass Data to JavaScript</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/frontend/debug-info/ class="toc-page dropdown-item text-wrap text-muted">Debug Info</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-ajax id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Ajax</a><div id=tutorial-wordpress-plugin-development-ajax class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/wordpress-ajax/ class="toc-page dropdown-item text-wrap text-muted">Ajax</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/chart-page/ class="toc-page dropdown-item text-wrap text-muted">Chart Page</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/ajax/google-charts/ class="toc-page dropdown-item text-wrap text-muted">Google Charts</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-internationalization id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Internationalization</a><div id=tutorial-wordpress-plugin-development-internationalization class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/internationalize/ class="toc-page dropdown-item text-wrap text-muted">Internationalization</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/internationalization/localization/ class="toc-page dropdown-item text-wrap text-muted">Localization</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-activation id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Activation</a><div id=tutorial-wordpress-plugin-development-activation class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-activation/ class="toc-page dropdown-item text-wrap text-muted">Activation</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/activation/enable-multisite/ class="toc-page dropdown-item text-wrap text-muted">Multi site</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/activation/multisite-activation/ class="toc-page dropdown-item text-wrap text-muted">Multi site Activation</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-deactivation/ class="toc-page dropdown-item text-wrap text-muted">Deactivation</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/activation/plugin-uninstall/ class="toc-page dropdown-item text-wrap text-muted">Uninstall</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-unit-test id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Testing</a><div id=tutorial-wordpress-plugin-development-unit-test><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/plugin-unit-testing/ class="toc-page dropdown-item text-wrap text-muted">Unit Test</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/setup/ class="toc-page dropdown-item text-wrap text-muted">Test Setup</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/simple-unit-tests/ class="toc-page dropdown-item text-wrap text-muted">Simple Unit Tests</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/scripts-actions-filters/ class="toc-page dropdown-item text-wrap text-muted">Unit Test Scripts, Actions, Filters</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/ class="toc-page dropdown-item text-wrap text-muted">Advanced Unit Tests</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/ class="toc-page dropdown-item text-wrap text-muted">Test Internationalization Functions</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/ class="toc-page dropdown-item text-wrap text-muted">Ajax Unit Tests</a>
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/ class="toc-page dropdown-item text-wrap text-danger">Multi site Plugin Unit Tests</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&text=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&t=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&title=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab&body=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&title=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><div title=weibo><a href="https://service.weibo.com/share/share.php?url=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/&title=Multi%20Site%20Unit%20Test%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-weibo text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><h2 id=128wordpress-multisite-plugin-unit-tests>12.8. WordPress Multisite Plugin Unit Tests</h2><p>In the previous blogs we covered single site unit tests. In this
 concluding blog of the series, we explain WordPress Multisite Plugin
-unit tests.</p>
-<p>As explained earlier, WordPress Test Lib creates an in-memory WordPress
+unit tests.</p><p>As explained earlier, WordPress Test Lib creates an in-memory WordPress
 instance to run unit tests. The test instance is actually a WordPress
 single site installation and it is not useful to carryout the multisite
-tests.</p>
-<p>In <a href="/tutorial/wordpress-plugin-development/activation/enable-multisite/">Enable WordPress
+tests.</p><p>In <a href=/tutorial/wordpress-plugin-development/activation/enable-multisite/>Enable WordPress
 Multisite</a>,
 we saw how to go about WordPress Multisite Installation wherein we used
 wp-config.php to convert WordPress installation into multisite
 installation. The process makes extensive changes to WordPress database
 and then multisite logic kicks in. This also means that we can&rsquo;t have
-both plain installation and multisite installation side by side.</p>
-<p>Similarly, WordPress Test Lib has features to create Multisite instance
+both plain installation and multisite installation side by side.</p><p>Similarly, WordPress Test Lib has features to create Multisite instance
 for multisite tests. As with actual installation, here too, we can&rsquo;t
 have both single and multisite instance active at the same time. This
 essentially means that Test Lib can create and handle only one instance
-during test run - either plain site or a multisite.</p>
-<p>Because of this, we need an entirely new PHPUnit configuration to force
-WordPress Test Lib to create and use WordPress Multisite Installation.</p>
-
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-<h3 id="configure-phpunit-for-multisite">Configure PHPUnit for Multisite</h3>
-<p>For WordPress Test Lib to create multisite installation, we have to set
-a PHP constant <strong>WP_TESTS_MULTISITE</strong> in PHPUnit configuration file.</p>
-<p>Earlier, for single site tests, we placed PHPUnit configuration file
+during test run - either plain site or a multisite.</p><p>Because of this, we need an entirely new PHPUnit configuration to force
+WordPress Test Lib to create and use WordPress Multisite Installation.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h3 id=configure-phpunit-for-multisite>Configure PHPUnit for Multisite</h3><p>For WordPress Test Lib to create multisite installation, we have to set
+a PHP constant <strong>WP_TESTS_MULTISITE</strong> in PHPUnit configuration file.</p><p>Earlier, for single site tests, we placed PHPUnit configuration file
 <code>phpunit.xml</code> in top folder of the plugin and we reserve this file
 exclusively for single site testing. For multisite testing, we use a new
 PHPUnit configuration file named <code>multisite.xml</code> under <code>tests/phpunit</code>
 folder. The multisite.xml file is similar to phpunit.xml except that in
-multisite.xml we define the constant WP_TESTS_MULTISITE.</p>
-<p><code>share-on-social/tests/phpunit/multisite.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">phpunit</span> <span class="nx">bootstrap</span><span class="o">=</span><span class="s2">&#34;bootstrap.php&#34;</span> <span class="nx">backupGlobals</span><span class="o">=</span><span class="s2">&#34;false&#34;</span> <span class="nx">colors</span><span class="o">=</span><span class="s2">&#34;false&#34;</span>
-<span class="nx">convertErrorsToExceptions</span><span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nx">convertNoticesToExceptions</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>
-<span class="nx">convertWarningsToExceptions</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">php</span><span class="o">&gt;</span>
-     <span class="o">&lt;</span><span class="k">const</span> <span class="no">name</span><span class="o">=</span><span class="s2">&#34;WP_TESTS_MULTISITE&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;1&#34;</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;/</span><span class="nx">php</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">testsuites</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">testsuite</span><span class="o">&gt;</span>
-    <span class="o">&lt;!--</span> <span class="nx">don</span><span class="err">&#39;</span><span class="nx">t</span> <span class="nx">change</span> <span class="nx">order</span> <span class="nx">of</span> <span class="nx">next</span> <span class="nx">two</span> <span class="nx">files</span> <span class="o">--&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">share</span><span class="o">-</span><span class="nx">on</span><span class="o">-</span><span class="nx">social</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">admin</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+multisite.xml we define the constant WP_TESTS_MULTISITE.</p><p><code>share-on-social/tests/phpunit/multisite.xml</code></p><div class=highlight><pre class=chroma><code class=language-php data-lang=php><span class=o>&lt;</span><span class=nx>phpunit</span> <span class=nx>bootstrap</span><span class=o>=</span><span class=s2>&#34;bootstrap.php&#34;</span> <span class=nx>backupGlobals</span><span class=o>=</span><span class=s2>&#34;false&#34;</span> <span class=nx>colors</span><span class=o>=</span><span class=s2>&#34;false&#34;</span>
+<span class=nx>convertErrorsToExceptions</span><span class=o>=</span><span class=s2>&#34;true&#34;</span> <span class=nx>convertNoticesToExceptions</span><span class=o>=</span><span class=s2>&#34;true&#34;</span>
+<span class=nx>convertWarningsToExceptions</span><span class=o>=</span><span class=s2>&#34;true&#34;</span><span class=o>&gt;</span>
+  <span class=o>&lt;</span><span class=nx>php</span><span class=o>&gt;</span>
+     <span class=o>&lt;</span><span class=k>const</span> <span class=no>name</span><span class=o>=</span><span class=s2>&#34;WP_TESTS_MULTISITE&#34;</span> <span class=nx>value</span><span class=o>=</span><span class=s2>&#34;1&#34;</span> <span class=o>/&gt;</span>
+  <span class=o>&lt;/</span><span class=nx>php</span><span class=o>&gt;</span>
+  <span class=o>&lt;</span><span class=nx>testsuites</span><span class=o>&gt;</span>
+    <span class=o>&lt;</span><span class=nx>testsuite</span><span class=o>&gt;</span>
+    <span class=o>&lt;!--</span> <span class=nx>don</span><span class=err>&#39;</span><span class=nx>t</span> <span class=nx>change</span> <span class=nx>order</span> <span class=nx>of</span> <span class=nx>next</span> <span class=nx>two</span> <span class=nx>files</span> <span class=o>--&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>share</span><span class=o>-</span><span class=nx>on</span><span class=o>-</span><span class=nx>social</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>admin</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
 
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">ajax</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>ajax</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
 
-      <span class="o">&lt;!--</span> <span class="nx">no</span> <span class="nx">order</span> <span class="o">--&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">sos</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">options</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">stats</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">help</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">frontend</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">helper</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">ajax</span><span class="o">-</span><span class="nx">others</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">uninstall</span><span class="o">-</span><span class="nx">multisite</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class=o>&lt;!--</span> <span class=nx>no</span> <span class=nx>order</span> <span class=o>--&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>sos</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>options</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>stats</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>help</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>frontend</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>helper</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>ajax</span><span class=o>-</span><span class=nx>others</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>uninstall</span><span class=o>-</span><span class=nx>multisite</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
 
-      <span class="o">&lt;!--</span> <span class="nx">need</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">last</span> <span class="k">as</span> <span class="nx">it</span> <span class="nx">breaks</span> <span class="nx">mysqli</span> <span class="o">--&gt;</span>
-      <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span><span class="nx">tests</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nx">activator</span><span class="o">-</span><span class="nx">multisite</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">file</span><span class="o">&gt;</span>
+      <span class=o>&lt;!--</span> <span class=nx>need</span> <span class=nx>to</span> <span class=nx>be</span> <span class=nx>last</span> <span class=k>as</span> <span class=nx>it</span> <span class=nx>breaks</span> <span class=nx>mysqli</span> <span class=o>--&gt;</span>
+      <span class=o>&lt;</span><span class=nx>file</span><span class=o>&gt;</span><span class=nx>tests</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nx>activator</span><span class=o>-</span><span class=nx>multisite</span><span class=o>.</span><span class=nx>php</span><span class=o>&lt;/</span><span class=nx>file</span><span class=o>&gt;</span>
 
-    <span class="o">&lt;/</span><span class="nx">testsuite</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="nx">testsuites</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">groups</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">exclude</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">group</span><span class="o">&gt;</span><span class="nx">ajax</span><span class="o">&lt;/</span><span class="nx">group</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">exclude</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="nx">groups</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nx">phpunit</span><span class="o">&gt;</span>
+    <span class=o>&lt;/</span><span class=nx>testsuite</span><span class=o>&gt;</span>
+  <span class=o>&lt;/</span><span class=nx>testsuites</span><span class=o>&gt;</span>
+  <span class=o>&lt;</span><span class=nx>groups</span><span class=o>&gt;</span>
+    <span class=o>&lt;</span><span class=nx>exclude</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>group</span><span class=o>&gt;</span><span class=nx>ajax</span><span class=o>&lt;/</span><span class=nx>group</span><span class=o>&gt;</span>
+    <span class=o>&lt;/</span><span class=nx>exclude</span><span class=o>&gt;</span>
+  <span class=o>&lt;/</span><span class=nx>groups</span><span class=o>&gt;</span>
+<span class=o>&lt;/</span><span class=nx>phpunit</span><span class=o>&gt;</span>
 </code></pre></div><p>Multisite tests are defined in separate test case files - <code>tests/test-uninstall-multisite.php</code> and
 <code>tests/test-activator-multisite.php</code>. We add these test files in
-<strong>&lt;testsuite&gt;</strong> element of <code>multisite.xml</code>.</p>
-<p><strong>Note</strong></p>
-<p>We can also define WP_TESTS_MULTISITE in WordPress Test Lib config
-file <code>tests/phpunit/wp-tests-config.php</code> as explained in <a href="https://make.wordpress.org/core/handbook/automated-testing/" target="_blank">WordPress Core Handbook</a>. But we prefer multisite.xml as it allows us to add separate set of multisite test files to test suite.</p>
-<p>When you run phpunit for single site it shows the message - <strong>To run
+<strong>&lt;testsuite></strong> element of <code>multisite.xml</code>.</p><p><strong>Note</strong></p><p>We can also define WP_TESTS_MULTISITE in WordPress Test Lib config
+file <code>tests/phpunit/wp-tests-config.php</code> as explained in <a href=https://make.wordpress.org/core/handbook/automated-testing/ target=_blank>WordPress Core Handbook</a>. But we prefer multisite.xml as it allows us to add separate set of multisite test files to test suite.</p><p>When you run phpunit for single site it shows the message - <strong>To run
 multisite, use -c tests/phpunit/multisite.xml</strong>. For this reason, we
 place multisite.xml in tests/phpunit directory. Tests will go through
 even when it is in top folder, but we go with the WordPress standard and
-place it in <code>tests/phpunit</code> folder.</p>
-<figure class="text-center" >
-  <img class="lazy img-fluid" data-src="/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-ms-usage.png" alt="WordPress Multisite Plugin Unit Tests" />
-</figure>
-
-<p>Execute Multisite tests with following command.</p>
-<pre><code class="language-screen" data-lang="screen">$ phpunit -c tests/phpunit/multisite.xml
-</code></pre>
-
-<div>&nbsp;</div>
-
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="6135368983"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-
-
-
-<h3 id="multisite-tests">Multisite Tests</h3>
-<p>When we run PHPUnit using multisite.xml, WordPress Test Lib creates an
+place it in <code>tests/phpunit</code> folder.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-ms-usage.png alt="WordPress Multisite Plugin Unit Tests"></figure><p>Execute Multisite tests with following command.</p><pre><code class=language-screen data-lang=screen>$ phpunit -c tests/phpunit/multisite.xml
+</code></pre><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h3 id=multisite-tests>Multisite Tests</h3><p>When we run PHPUnit using multisite.xml, WordPress Test Lib creates an
 instance of WordPress Multisite. However, it will have only one default
 site. For tests, we require one more site in the network and to add
 additional site, we use <code>WP_UnitTestCase::add_blog()</code> method in test
-case <code>setup()</code> method.</p>
-<p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Test_Sos_Activator</span> <span class="k">extends</span> <span class="nx">WP_UnitTestCase</span> <span class="p">{</span>
+case <code>setup()</code> method.</p><p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p><div class=highlight><pre class=chroma><code class=language-php data-lang=php><span class=k>class</span> <span class=nc>Test_Sos_Activator</span> <span class=k>extends</span> <span class=nx>WP_UnitTestCase</span> <span class=p>{</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setup</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">setup</span><span class="p">();</span>
+    <span class=k>public</span> <span class=k>function</span> <span class=nf>setup</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=k>parent</span><span class=o>::</span><span class=na>setup</span><span class=p>();</span>
         
-        <span class="c1">// create sos post type
-</span><span class="c1"></span>        <span class="k">require_once</span> <span class="s1">&#39;admin/class-sos.php&#39;</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sos</span><span class="p">();</span>
+        <span class=c1>// create sos post type
+</span><span class=c1></span>        <span class=k>require_once</span> <span class=s1>&#39;admin/class-sos.php&#39;</span><span class=p>;</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>sos</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Sos</span><span class=p>();</span>
         
-        <span class="k">require_once</span> <span class="s1">&#39;admin/class-activator.php&#39;</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sos_Activator</span><span class="p">();</span>
+        <span class=k>require_once</span> <span class=s1>&#39;admin/class-activator.php&#39;</span><span class=p>;</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>activator</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Sos_Activator</span><span class=p>();</span>
         
-        <span class="c1">// add one more blog to the site
-</span><span class="c1"></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add_blog</span><span class="p">(</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="s1">&#39;Test 1&#39;</span> <span class="p">);</span>
+        <span class=c1>// add one more blog to the site
+</span><span class=c1></span>        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>add_blog</span><span class=p>(</span> <span class=s1>&#39;test1&#39;</span><span class=p>,</span> <span class=s1>&#39;Test 1&#39;</span> <span class=p>);</span>
         
-        <span class="c1">// set default admin - some test change user
-</span><span class="c1"></span>        <span class="nx">wp_set_current_user</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
-        <span class="nx">Util</span><span class="o">::</span><span class="na">set_admin_role</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
-    <span class="p">}</span>
+        <span class=c1>// set default admin - some test change user
+</span><span class=c1></span>        <span class=nx>wp_set_current_user</span><span class=p>(</span> <span class=mi>1</span> <span class=p>);</span>
+        <span class=nx>Util</span><span class=o>::</span><span class=na>set_admin_role</span><span class=p>(</span> <span class=k>true</span> <span class=p>);</span>
+    <span class=p>}</span>
 </code></pre></div><p>In the multisite tests, we use following construct to fetch blogs and
-switch between them. The WordPress function <a href="https://codex.wordpress.org/Function_Reference/wp_get_sites" target="_blank">wp_get_sites()</a> returns an array of blogs i.e. sites in the multisite network.</p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">        <span class="nv">$blogs</span> <span class="o">=</span> <span class="nx">wp_get_sites</span><span class="p">();</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">$blogs</span> <span class="p">);</span>
+switch between them. The WordPress function <a href=https://codex.wordpress.org/Function_Reference/wp_get_sites target=_blank>wp_get_sites()</a> returns an array of blogs i.e. sites in the multisite network.</p><div class=highlight><pre class=chroma><code class=language-php data-lang=php>        <span class=nv>$blogs</span> <span class=o>=</span> <span class=nx>wp_get_sites</span><span class=p>();</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertCount</span><span class=p>(</span> <span class=mi>2</span><span class=p>,</span> <span class=nv>$blogs</span> <span class=p>);</span>
 
-        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class=nx>switch_to_blog</span><span class=p>(</span> <span class=nv>$blogs</span><span class=p>[</span> <span class=mi>1</span> <span class=p>][</span> <span class=s1>&#39;blog_id&#39;</span> <span class=p>]</span> <span class=p>);</span>
 
-        <span class="o">....</span> <span class="nx">some</span> <span class="nx">test</span>
+        <span class=o>....</span> <span class=nx>some</span> <span class=nx>test</span>
 
-        <span class="nx">restore_current_blog</span><span class="p">();</span>
+        <span class=nx>restore_current_blog</span><span class=p>();</span>
 
-        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
+        <span class=nx>switch_to_blog</span><span class=p>(</span> <span class=nv>$blogs</span><span class=p>[</span> <span class=mi>1</span> <span class=p>][</span> <span class=s1>&#39;blog_id&#39;</span> <span class=p>]</span> <span class=p>);</span>
 
-        <span class="o">....</span> <span class="nx">repeat</span> <span class="nx">the</span> <span class="nx">test</span> <span class="nx">in</span> <span class="nx">blog</span> <span class="mi">2</span>
+        <span class=o>....</span> <span class=nx>repeat</span> <span class=nx>the</span> <span class=nx>test</span> <span class=nx>in</span> <span class=nx>blog</span> <span class=mi>2</span>
 
-        <span class="nx">restore_current_blog</span><span class="p">();</span>
+        <span class=nx>restore_current_blog</span><span class=p>();</span>
 </code></pre></div><p>One such multisite test from Test_Sos_Activator is shown in the next
-snippet.</p>
-<p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php">    <span class="k">public</span> <span class="k">function</span> <span class="nf">test_multisite_activate_by_superadmin</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// list of blogs in site
-</span><span class="c1"></span>        <span class="nv">$blogs</span> <span class="o">=</span> <span class="nx">wp_get_sites</span><span class="p">();</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">$blogs</span> <span class="p">);</span>
+snippet.</p><p><code>share-on-social/tests/phpunit/tests/test-activator-multisite.php</code></p><div class=highlight><pre class=chroma><code class=language-php data-lang=php>    <span class=k>public</span> <span class=k>function</span> <span class=nf>test_multisite_activate_by_superadmin</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=c1>// list of blogs in site
+</span><span class=c1></span>        <span class=nv>$blogs</span> <span class=o>=</span> <span class=nx>wp_get_sites</span><span class=p>();</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertCount</span><span class=p>(</span> <span class=mi>2</span><span class=p>,</span> <span class=nv>$blogs</span> <span class=p>);</span>
         
-        <span class="c1">// networkwide activation - superadmin
-</span><span class="c1"></span>        <span class="nv">$networkwide</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class=c1>// networkwide activation - superadmin
+</span><span class=c1></span>        <span class=nv>$networkwide</span> <span class=o>=</span> <span class=k>true</span><span class=p>;</span>
         
-        <span class="c1">// create locker and no options
-</span><span class="c1"></span>        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
-        <span class="nx">Util</span><span class="o">::</span><span class="na">set_activate_plugins_cap</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span><span class="o">-&gt;</span><span class="na">create_post_type</span><span class="p">();</span>
-        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
-        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
-        <span class="nx">restore_current_blog</span><span class="p">();</span>
+        <span class=c1>// create locker and no options
+</span><span class=c1></span>        <span class=nx>switch_to_blog</span><span class=p>(</span> <span class=nv>$blogs</span><span class=p>[</span> <span class=mi>0</span> <span class=p>][</span> <span class=s1>&#39;blog_id&#39;</span> <span class=p>]</span> <span class=p>);</span>
+        <span class=nx>Util</span><span class=o>::</span><span class=na>set_activate_plugins_cap</span><span class=p>(</span> <span class=k>true</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>sos</span><span class=o>-&gt;</span><span class=na>create_post_type</span><span class=p>();</span>
+        <span class=nv>$post_id</span> <span class=o>=</span> <span class=nx>Util</span><span class=o>::</span><span class=na>get_post_id</span><span class=p>(</span> <span class=s1>&#39;sos&#39;</span><span class=p>,</span> <span class=s1>&#39;locker_id&#39;</span><span class=p>,</span> <span class=s1>&#39;basic&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertTrue</span><span class=p>(</span> <span class=nx>isset</span><span class=p>(</span> <span class=nv>$post_id</span> <span class=p>)</span> <span class=p>);</span>
+        <span class=nv>$options</span> <span class=o>=</span> <span class=nx>get_option</span><span class=p>(</span> <span class=s1>&#39;sos_common_options&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertFalse</span><span class=p>(</span> <span class=nv>$options</span> <span class=p>);</span>
+        <span class=nx>restore_current_blog</span><span class=p>();</span>
         
-        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
-        <span class="nx">Util</span><span class="o">::</span><span class="na">set_activate_plugins_cap</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sos</span><span class="o">-&gt;</span><span class="na">create_post_type</span><span class="p">();</span>
-        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
-        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
-        <span class="nx">restore_current_blog</span><span class="p">();</span>
+        <span class=nx>switch_to_blog</span><span class=p>(</span> <span class=nv>$blogs</span><span class=p>[</span> <span class=mi>1</span> <span class=p>][</span> <span class=s1>&#39;blog_id&#39;</span> <span class=p>]</span> <span class=p>);</span>
+        <span class=nx>Util</span><span class=o>::</span><span class=na>set_activate_plugins_cap</span><span class=p>(</span> <span class=k>true</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>sos</span><span class=o>-&gt;</span><span class=na>create_post_type</span><span class=p>();</span>
+        <span class=nv>$post_id</span> <span class=o>=</span> <span class=nx>Util</span><span class=o>::</span><span class=na>get_post_id</span><span class=p>(</span> <span class=s1>&#39;sos&#39;</span><span class=p>,</span> <span class=s1>&#39;locker_id&#39;</span><span class=p>,</span> <span class=s1>&#39;basic&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertTrue</span><span class=p>(</span> <span class=nx>isset</span><span class=p>(</span> <span class=nv>$post_id</span> <span class=p>)</span> <span class=p>);</span>
+        <span class=nv>$options</span> <span class=o>=</span> <span class=nx>get_option</span><span class=p>(</span> <span class=s1>&#39;sos_common_options&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertFalse</span><span class=p>(</span> <span class=nv>$options</span> <span class=p>);</span>
+        <span class=nx>restore_current_blog</span><span class=p>();</span>
         
-        <span class="c1">// we can&#39;t remove super admin status from default user so create new
-</span><span class="c1"></span>        <span class="c1">// user
-</span><span class="c1"></span>        <span class="nv">$user_id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add_user</span><span class="p">(</span> <span class="s1">&#39;testuser&#39;</span> <span class="p">);</span>
-        <span class="nx">wp_set_current_user</span><span class="p">(</span> <span class="nv">$user_id</span> <span class="p">);</span>
+        <span class=c1>// we can&#39;t remove super admin status from default user so create new
+</span><span class=c1></span>        <span class=c1>// user
+</span><span class=c1></span>        <span class=nv>$user_id</span> <span class=o>=</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>add_user</span><span class=p>(</span> <span class=s1>&#39;testuser&#39;</span> <span class=p>);</span>
+        <span class=nx>wp_set_current_user</span><span class=p>(</span> <span class=nv>$user_id</span> <span class=p>);</span>
         
-        <span class="c1">// grant super admin and activate
-</span><span class="c1"></span>        <span class="nx">grant_super_admin</span><span class="p">(</span> <span class="nv">$user_id</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">activator</span><span class="o">-&gt;</span><span class="na">activate</span><span class="p">(</span> <span class="nv">$networkwide</span> <span class="p">);</span>
+        <span class=c1>// grant super admin and activate
+</span><span class=c1></span>        <span class=nx>grant_super_admin</span><span class=p>(</span> <span class=nv>$user_id</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>activator</span><span class=o>-&gt;</span><span class=na>activate</span><span class=p>(</span> <span class=nv>$networkwide</span> <span class=p>);</span>
         
-        <span class="c1">// test activation - locker deleted, options created
-</span><span class="c1"></span>        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
-        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
-        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNotFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nx">SOS_VERSION</span><span class="p">,</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;version&#39;</span> <span class="p">]</span> <span class="p">);</span>
-        <span class="nx">restore_current_blog</span><span class="p">();</span>
+        <span class=c1>// test activation - locker deleted, options created
+</span><span class=c1></span>        <span class=nx>switch_to_blog</span><span class=p>(</span> <span class=nv>$blogs</span><span class=p>[</span> <span class=mi>0</span> <span class=p>][</span> <span class=s1>&#39;blog_id&#39;</span> <span class=p>]</span> <span class=p>);</span>
+        <span class=nv>$post_id</span> <span class=o>=</span> <span class=nx>Util</span><span class=o>::</span><span class=na>get_post_id</span><span class=p>(</span> <span class=s1>&#39;sos&#39;</span><span class=p>,</span> <span class=s1>&#39;locker_id&#39;</span><span class=p>,</span> <span class=s1>&#39;basic&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertFalse</span><span class=p>(</span> <span class=nx>isset</span><span class=p>(</span> <span class=nv>$post_id</span> <span class=p>)</span> <span class=p>);</span>
+        <span class=nv>$options</span> <span class=o>=</span> <span class=nx>get_option</span><span class=p>(</span> <span class=s1>&#39;sos_common_options&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertNotFalse</span><span class=p>(</span> <span class=nv>$options</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertCount</span><span class=p>(</span> <span class=mi>1</span><span class=p>,</span> <span class=nv>$options</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertSame</span><span class=p>(</span> <span class=nx>SOS_VERSION</span><span class=p>,</span> <span class=nv>$options</span><span class=p>[</span> <span class=s1>&#39;version&#39;</span> <span class=p>]</span> <span class=p>);</span>
+        <span class=nx>restore_current_blog</span><span class=p>();</span>
         
-        <span class="nx">switch_to_blog</span><span class="p">(</span> <span class="nv">$blogs</span><span class="p">[</span> <span class="mi">1</span> <span class="p">][</span> <span class="s1">&#39;blog_id&#39;</span> <span class="p">]</span> <span class="p">);</span>
-        <span class="nv">$post_id</span> <span class="o">=</span> <span class="nx">Util</span><span class="o">::</span><span class="na">get_post_id</span><span class="p">(</span> <span class="s1">&#39;sos&#39;</span><span class="p">,</span> <span class="s1">&#39;locker_id&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertFalse</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$post_id</span> <span class="p">)</span> <span class="p">);</span>
-        <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span> <span class="s1">&#39;sos_common_options&#39;</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNotFalse</span><span class="p">(</span> <span class="nv">$options</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCount</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span> <span class="nx">SOS_VERSION</span><span class="p">,</span> <span class="nv">$options</span><span class="p">[</span> <span class="s1">&#39;version&#39;</span> <span class="p">]</span> <span class="p">);</span>
-        <span class="nx">restore_current_blog</span><span class="p">();</span>
-    <span class="p">}</span>
+        <span class=nx>switch_to_blog</span><span class=p>(</span> <span class=nv>$blogs</span><span class=p>[</span> <span class=mi>1</span> <span class=p>][</span> <span class=s1>&#39;blog_id&#39;</span> <span class=p>]</span> <span class=p>);</span>
+        <span class=nv>$post_id</span> <span class=o>=</span> <span class=nx>Util</span><span class=o>::</span><span class=na>get_post_id</span><span class=p>(</span> <span class=s1>&#39;sos&#39;</span><span class=p>,</span> <span class=s1>&#39;locker_id&#39;</span><span class=p>,</span> <span class=s1>&#39;basic&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertFalse</span><span class=p>(</span> <span class=nx>isset</span><span class=p>(</span> <span class=nv>$post_id</span> <span class=p>)</span> <span class=p>);</span>
+        <span class=nv>$options</span> <span class=o>=</span> <span class=nx>get_option</span><span class=p>(</span> <span class=s1>&#39;sos_common_options&#39;</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertNotFalse</span><span class=p>(</span> <span class=nv>$options</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertCount</span><span class=p>(</span> <span class=mi>1</span><span class=p>,</span> <span class=nv>$options</span> <span class=p>);</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>assertSame</span><span class=p>(</span> <span class=nx>SOS_VERSION</span><span class=p>,</span> <span class=nv>$options</span><span class=p>[</span> <span class=s1>&#39;version&#39;</span> <span class=p>]</span> <span class=p>);</span>
+        <span class=nx>restore_current_blog</span><span class=p>();</span>
+    <span class=p>}</span>
 </code></pre></div><p>Tests in multisite test files - test-activator-multisite.php and
-test-uninstall-multisite.php - follow similar pattern.</p>
-<p>With that, we are at the end of WordPress Plugin Development Tutorial
-series.</p>
-
-          </main>
-        </div>
-      </div>
-  
-    <aside id="sidebar-right" class="col-md-2">
-      <div class="row my-5 justify-content-center border">
-<div>&nbsp;</div>
-
-
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-1281079745125126"
-     data-ad-slot="8963022093"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>&nbsp;</div>
-</div>
-    </aside>
-
-  </div>
-
-</div>
-
-<footer class="container-fluid mt-5">
-
-    <div class="row">
-        <div class="col ml-auto">
-            <div class="row mb-1 ml-2">
-                <a class="text-muted" href="/privacy-policy">Privacy</a>
-            </div>
-            <div class="row text-muted mb-2 ml-2">
-                <span>&copy; 2019 &middot;Powered by <a href="https://gohugo.io" target="_blank"
-                        rel="noopener">Hugo</a></span>
-            </div>
-        </div>
-        <div class="col mr-auto">
-            <span class="float-right">
-                <a href="#" id="back_to_top">
-                    <i class="icon-up-open h1 text-secondary"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-
-</footer>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-
-
-
-
-
-
-<script src="/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js"></script>
-</body>
-
-</html>
+test-uninstall-multisite.php - follow similar pattern.</p><p>With that, we are at the end of WordPress Plugin Development Tutorial
+series.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>

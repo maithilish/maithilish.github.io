@@ -1,99 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Basics on Codetab</title>
-    <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/</link>
-    <description>Recent content in Basics on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</link>
-      <pubDate>Fri, 11 Jan 2019 22:25:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</guid>
-      <description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8 and Maria DB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
-Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with MariaDB database, you also need Docker Compose.</description>
-    </item>
-    
-    <item>
-      <title>Definition files - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</link>
-      <pubDate>Fri, 11 Jan 2019 22:37:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</guid>
-      <description>Defs, Locators and Tasks Scoopi uses YML definition files to extract data from HTML pages. To learn the YML elements used by the definition files, Scoopi distribution comes with a set of examples which are under def/examples folder.
-Scoopi Definition Files Scoopi creates the data model based on YML definition files. We can specify the definition file using scoopi.defs.dir configuration property, which is normally set in scoopi.properties file located in conf folder.</description>
-    </item>
-    
-    <item>
-      <title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</link>
-      <pubDate>Fri, 11 Jan 2019 22:47:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</guid>
-      <description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basics on Codetab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/</link><description>Recent content in Basics on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index.xml" rel="self" type="application/rss+xml"/><item><title>Installation - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</link><pubDate>Fri, 11 Jan 2019 22:25:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/installation-quick-start/</guid><description>Scoopi Installation and Quick Start The easiest way to get start with Scoopi is to pull the image from DockerHub and run it straight away. Scoopi docker image comes pre-configured with JRE 8 and Maria DB. In case, you are not using Docker then download the release from GitHub. We explain both the options here.
+Install Scoopi from Docker Image Scoopi releases are available as docker image from DockerHub. To run the image you need Docker installed in the system and additionally, to run it with MariaDB database, you also need Docker Compose.</description></item><item><title>Definition files - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</link><pubDate>Fri, 11 Jan 2019 22:37:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/definition-file/</guid><description>Defs, Locators and Tasks Scoopi uses YML definition files to extract data from HTML pages. To learn the YML elements used by the definition files, Scoopi distribution comes with a set of examples which are under def/examples folder.
+Scoopi Definition Files Scoopi creates the data model based on YML definition files. We can specify the definition file using scoopi.defs.dir configuration property, which is normally set in scoopi.properties file located in conf folder.</description></item><item><title>DataDef - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</link><pubDate>Fri, 11 Jan 2019 22:47:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/datadef/</guid><description>DataDef Scoopi uses datadef to define data. Datadef contains query, items and dims which collectively defines the data to be scrapped from the HTML page.
 In this chapter, we go through Quickstart job.xml to explain dataDef. This job.yml uses a simple DataDef which scrape one data point i.e. price of the company share from defs/examples/fin/page/acme-snapshot.html page.
 The datadefs snippet from defs/examples/fin/jsoup/quickstart/job.yml is as below
-dataDefs: price: query: block: &amp;quot;div#price_tick&amp;quot; selector: &amp;quot;*&amp;quot; items: [ item: { name: &amp;quot;Price&amp;quot;, value: &amp;quot;Price&amp;quot; }, ] It defines a simple dataDef named price which has two elements - query and items.</description>
-    </item>
-    
-    <item>
-      <title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</link>
-      <pubDate>Sat, 12 Jan 2019 05:41:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</guid>
-      <description>DataDef Dimensions The previous quickstart example scrapes stock price data from the page and associates it with the item named price. However, we are also interested to know on what date the price was scraped. The dims allows Scoopi to add multiple dimensions to scraped data.
+dataDefs: price: query: block: &amp;quot;div#price_tick&amp;quot; selector: &amp;quot;*&amp;quot; items: [ item: { name: &amp;quot;Price&amp;quot;, value: &amp;quot;Price&amp;quot; }, ] It defines a simple dataDef named price which has two elements - query and items.</description></item><item><title>Dimensions - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</link><pubDate>Sat, 12 Jan 2019 05:41:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/dimensions/</guid><description>DataDef Dimensions The previous quickstart example scrapes stock price data from the page and associates it with the item named price. However, we are also interested to know on what date the price was scraped. The dims allows Scoopi to add multiple dimensions to scraped data.
 In this chapter, we go through Example 1 job.xml to explain dimensions. The example adds date dimension to scraped price data.
-Dimensions The datadefs snippet from defs/examples/fin/jsoup/ex-1/job.</description>
-    </item>
-    
-    <item>
-      <title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</link>
-      <pubDate>Sat, 12 Jan 2019 05:57:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</guid>
-      <description>Data Items and Dynamic Query This chapter explores extracting multiple data points by defining multiple items and dynamic query.
+Dimensions The datadefs snippet from defs/examples/fin/jsoup/ex-1/job.</description></item><item><title>Dynamic Query Items - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</link><pubDate>Sat, 12 Jan 2019 05:57:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/data-items-dynamic-query/</guid><description>Data Items and Dynamic Query This chapter explores extracting multiple data points by defining multiple items and dynamic query.
 The Example 2 extracts ten data points shown below from defs/examples/fin/page/acme-snapshot.html page.
- MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E  The snippet of HTML from the page is
-&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.</description>
-    </item>
-    
-    <item>
-      <title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</link>
-      <pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</guid>
-      <description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
+MARKET CAP EPS (TTM) P/E P/C BOOK VALUE PRICE/BOOK DIV (%) DIV YIELD FACE VALUE INDUSTRY P/E The snippet of HTML from the page is
+&amp;lt;div id=&amp;#34;snapshot&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;MARKET CAP&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;382,642.57&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;P/E&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;-&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div&amp;gt;BOOK VALUE&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;27.</description></item><item><title>Index BreakAfter - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</link><pubDate>Fri, 11 Jan 2019 23:34:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/index-indexrange-breakafter/</guid><description>Index, IndexRange and BreakAfter This chapter explains the use of index, indexRange and breakAfter to extract large set of data.
 The Example 3 extracts multiple data from defs/examples/fin/page/acme-bs.html page, which contains Balance Sheet data of company for past five years in a HTML table with 27 rows and 5 columns. The partial contents of the table is shown below.
-   Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12     Total Share Capital 804.</description>
-    </item>
-    
-    <item>
-      <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</link>
-      <pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</guid>
-      <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
+Item Dec &amp;lsquo;16 Dec &amp;lsquo;15 Dec &amp;lsquo;14 Dec &amp;lsquo;13 Dec &amp;lsquo;12 Total Share Capital 804.</description></item><item><title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</link><pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</guid><description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml
-dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
-    </item>
-    
-    <item>
-      <title>Selector - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</link>
-      <pubDate>Fri, 11 Jan 2019 23:10:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</guid>
-      <description>Query, Block and Selector So far in this guide, we have covered the basics locators, tasks and datadefs. In this chapter we review selectors and also, show how to get selector or xpath using Firefox or Chrome browsers and fine tune it with Query Analyzer.
-Selector In Scoopi, selector is a common term which refers either to the selector (Jsoup) or to the xpath (HtmlUnit or Selenium driver) that is used to scrape data from the page.</description>
-    </item>
-    
-  </channel>
-</rss>
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description></item><item><title>Selector - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</link><pubDate>Fri, 11 Jan 2019 23:10:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/selector-query-analyzer/</guid><description>Query, Block and Selector So far in this guide, we have covered the basics locators, tasks and datadefs. In this chapter we review selectors and also, show how to get selector or xpath using Firefox or Chrome browsers and fine tune it with Query Analyzer.
+Selector In Scoopi, selector is a common term which refers either to the selector (Jsoup) or to the xpath (HtmlUnit or Selenium driver) that is used to scrape data from the page.</description></item></channel></rss>

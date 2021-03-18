@@ -1,25 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Modle on Codetab</title>
-    <link>https://www.codetab.org/tutorial/gwt/model/</link>
-    <description>Recent content in Modle on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/gwt/model/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Model - GWT Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gwt/model/model/</link>
-      <pubDate>Thu, 10 Jan 2019 13:35:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gwt/model/model/</guid>
-      <description>Chapter 5. Model Domain Model Data model of the application consists of following classes
-  Symbol – holds details about a symbol
-  DataGroup – holds various categories of data like BS (Balance Sheet), PL (Profit and Loss), CF (Cash Flow) etc
-  Data - segregates the data into different time periods.
-  Fact - holds key and value for each item of financial indicator
-  UML diagram of the model is as shown in figure</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Modle on Codetab</title><link>https://www.codetab.org/tutorial/gwt/model/</link><description>Recent content in Modle on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 23:03:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/gwt/model/index.xml" rel="self" type="application/rss+xml"/><item><title>Model - GWT Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/gwt/model/model/</link><pubDate>Thu, 10 Jan 2019 13:35:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gwt/model/model/</guid><description>Chapter 5. Model Domain Model Data model of the application consists of following classes
+Symbol – holds details about a symbol
+DataGroup – holds various categories of data like BS (Balance Sheet), PL (Profit and Loss), CF (Cash Flow) etc
+Data - segregates the data into different time periods.
+Fact - holds key and value for each item of financial indicator
+UML diagram of the model is as shown in figure</description></item></channel></rss>

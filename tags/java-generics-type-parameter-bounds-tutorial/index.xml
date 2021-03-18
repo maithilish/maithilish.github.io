@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>java generics type parameter bounds tutorial on Codetab</title>
-    <link>https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/</link>
-    <description>Recent content in java generics type parameter bounds tutorial on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java Generics Type Parameter Bounds - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link>
-      <pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid>
-      <description>In this previous tutorials we gone through wildcard bounds. Similarly, we can set bounds for type parameters, and this tutorial explains its use.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>java generics type parameter bounds tutorial on Codetab</title><link>https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/</link><description>Recent content in java generics type parameter bounds tutorial on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Jul 2019 13:54:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/java-generics-type-parameter-bounds-tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Java Generics Type Parameter Bounds - CodeTab</title><link>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</link><pubDate>Tue, 23 Jul 2019 13:54:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/java-generics/type-parameter-bounds/</guid><description>In this previous tutorials we gone through wildcard bounds. Similarly, we can set bounds for type parameters, and this tutorial explains its use.
 This tutorial uses following class hierarchy:
- Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
-public class PetList&amp;lt;T extends Pet&amp;gt; { public void add(T element) { } public T get(int index) { // return element  } } PetList&amp;lt;Pet&amp;gt; pets = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Bulldog&amp;gt; bulldogs = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Persian&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;String&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); // error  The PetList accepts Pet or any of its subtype as T extends Pet, but any other type is not accepted.</description>
-    </item>
-    
-  </channel>
-</rss>
+Type Parameter Bound The List&amp;lt;E&amp;gt; can take any type as type argument. With Type Parameter Bound we can restrict accepted types.
+public class PetList&amp;lt;T extends Pet&amp;gt; { public void add(T element) { } public T get(int index) { // return element } } PetList&amp;lt;Pet&amp;gt; pets = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Bulldog&amp;gt; bulldogs = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;Persian&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); PetList&amp;lt;String&amp;gt; persians = new PetList&amp;lt;&amp;gt;(); // error The PetList accepts Pet or any of its subtype as T extends Pet, but any other type is not accepted.</description></item></channel></rss>

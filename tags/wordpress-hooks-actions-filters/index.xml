@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wordpress hooks, actions, filters on Codetab</title>
-    <link>https://www.codetab.org/tags/wordpress-hooks-actions-filters/</link>
-    <description>Recent content in wordpress hooks, actions, filters on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 08:33:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-hooks-actions-filters/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hooks Actions Filters - WordPress Plugin Development - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</link>
-      <pubDate>Fri, 11 Jan 2019 08:33:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</guid>
-      <description>WordPress Hooks, Actions and Filters are the pieces which dock plugins to WordPress core. They are at the heart of each and every plugin. In this chapter, we explain this very important aspect of plugin development.
-In the plugins&#39; main file, we use add_action() to to load admin module and similarly, many setup() methods of plugin class files use add_action(). Here is a snippet from class-options.php.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wordpress hooks, actions, filters on Codetab</title><link>https://www.codetab.org/tags/wordpress-hooks-actions-filters/</link><description>Recent content in wordpress hooks, actions, filters on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 08:33:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/wordpress-hooks-actions-filters/index.xml" rel="self" type="application/rss+xml"/><item><title>Hooks Actions Filters - WordPress Plugin Development - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</link><pubDate>Fri, 11 Jan 2019 08:33:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/</guid><description>WordPress Hooks, Actions and Filters are the pieces which dock plugins to WordPress core. They are at the heart of each and every plugin. In this chapter, we explain this very important aspect of plugin development.
+In the plugins' main file, we use add_action() to to load admin module and similarly, many setup() methods of plugin class files use add_action(). Here is a snippet from class-options.php.
 share-on-social/admin/class-options.php
-class Sos_Options { public function setup () { add_action( &amp;#39;admin_init&amp;#39;, array($this,&amp;#39;init_common_options&amp;#39;) ); add_action( &amp;#39;admin_menu&amp;#39;, array($this,&amp;#39;register_settings_page&amp;#39;) ); } Let&amp;rsquo;s understand what they mean.</description>
-    </item>
-    
-  </channel>
-</rss>
+class Sos_Options { public function setup () { add_action( &amp;#39;admin_init&amp;#39;, array($this,&amp;#39;init_common_options&amp;#39;) ); add_action( &amp;#39;admin_menu&amp;#39;, array($this,&amp;#39;register_settings_page&amp;#39;) ); } Let&amp;rsquo;s understand what they mean.</description></item></channel></rss>

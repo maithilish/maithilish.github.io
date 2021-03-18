@@ -1,94 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>WordPress Tutorial - CodeTab on Codetab</title>
-    <link>https://www.codetab.org/tutorial/wordpress/</link>
-    <description>Recent content in WordPress Tutorial - CodeTab on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jan 2019 00:18:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Introduction - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/introduction/</link>
-      <pubDate>Fri, 11 Jan 2019 00:18:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/introduction/</guid>
-      <description>CodeTab WordPress Tutorial CodeTab WordPress Tutorial is a complete, step-by-step, guide to assist beginners as well as intermediate users to install, customize and maintain a High Performance WordPress Site on RedHat OpenShift Cloud Platform.
-WordPress Tutorial quickly introduces the beginners to WordPress basics and then moves on to cover some of the Must Have Plugins and essential tools required to maintain the WordPress site. The later chapters on importing the static HTML site or pages, use of Child Themes, Dynamic Style management, structuring the site for Search Engine Optimization, WordPress Backup and Restore, WordPress clone for staging site etc.</description>
-    </item>
-    
-    <item>
-      <title>About WordPress - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/wordpress/</link>
-      <pubDate>Fri, 11 Jan 2019 00:29:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/wordpress/</guid>
-      <description>WordPress is one the leading content management software that powers roughly 22% of top 10 million websites. WordPress was founded by Matt Mullenweg and Mike Little in 2003. Latest release 3.8 downloaded more than 20 million times speaks much about the popularity of the WordPress.
-There are enough WordPress tutorials available on the net and you may wonder why one more. To answer that, we recap our experience in setting up the site - www.</description>
-    </item>
-    
-    <item>
-      <title>OpenShift - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/openshift-wordpress/</link>
-      <pubDate>Fri, 11 Jan 2019 01:46:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/openshift-wordpress/</guid>
-      <description>In the OpenShift WordPress Tutorial, we cover the steps to create a free OpenShift account and a WordPress application.
-OpenShift is a cloud computing Platform as a Service (PaaS) from Red Hat, which, in simple terms, means it offers a virtual server with all the server components we need to run an application. In other words, OpenShift offers a virtual development environment - Linux OS with Internet connectivity - where we are free to deploy, develop and run various types of application written in supported languages.</description>
-    </item>
-    
-    <item>
-      <title>Installation - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/wordpress-installation/</link>
-      <pubDate>Fri, 11 Jan 2019 03:06:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-installation/</guid>
-      <description>In the previous chapter, we created a WordPress application on OpenShift platform. In this chapter, we go through WordPress installation and Admin Dashboard.
-WordPress Installation WordPress Installation is a simple affair. Open the app&amp;rsquo;s Public URL in the browser. If you forget to note the URL, then you need to revisit the Application Overview Screen in OpenShift Web Console and find out the Public URL. On the first access, WordPress displays the Welcome screen where we have to fill site&amp;rsquo;s title and also, information about an administrator user.</description>
-    </item>
-    
-    <item>
-      <title>Settings - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/wordpress-settings/</link>
-      <pubDate>Fri, 11 Jan 2019 03:29:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-settings/</guid>
-      <description>In the previous chapter, we completed the WordPress Installation. In this chapter, we go through some of the important WordPress Settings that affect the site and some of them may become difficult to change in the future.
-WordPress Settings As objective of this tutorial is to guide beginners quickly to build a high performance WordPress site, we avoid discussion on each and every setting. WordPress Settings are well documented in WordPress official Codex - WordPress Administration Screen.</description>
-    </item>
-    
-    <item>
-      <title>Posts vs Pages - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</link>
-      <pubDate>Fri, 11 Jan 2019 03:20:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</guid>
-      <description>In earlier chapters, we learned how to install and setup WordPress site on OpenShift cloud platform. Now, we are ready to add contents - Posts, Pages and Media - to the WordPress site.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WordPress Tutorial - CodeTab on Codetab</title><link>https://www.codetab.org/tutorial/wordpress/</link><description>Recent content in WordPress Tutorial - CodeTab on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jan 2019 00:18:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tutorial/wordpress/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/introduction/</link><pubDate>Fri, 11 Jan 2019 00:18:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/introduction/</guid><description>CodeTab WordPress Tutorial CodeTab WordPress Tutorial is a complete, step-by-step, guide to assist beginners as well as intermediate users to install, customize and maintain a High Performance WordPress Site on RedHat OpenShift Cloud Platform.
+WordPress Tutorial quickly introduces the beginners to WordPress basics and then moves on to cover some of the Must Have Plugins and essential tools required to maintain the WordPress site. The later chapters on importing the static HTML site or pages, use of Child Themes, Dynamic Style management, structuring the site for Search Engine Optimization, WordPress Backup and Restore, WordPress clone for staging site etc.</description></item><item><title>About WordPress - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/wordpress/</link><pubDate>Fri, 11 Jan 2019 00:29:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/wordpress/</guid><description>WordPress is one the leading content management software that powers roughly 22% of top 10 million websites. WordPress was founded by Matt Mullenweg and Mike Little in 2003. Latest release 3.8 downloaded more than 20 million times speaks much about the popularity of the WordPress.
+There are enough WordPress tutorials available on the net and you may wonder why one more. To answer that, we recap our experience in setting up the site - www.</description></item><item><title>OpenShift - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/openshift-wordpress/</link><pubDate>Fri, 11 Jan 2019 01:46:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/openshift-wordpress/</guid><description>In the OpenShift WordPress Tutorial, we cover the steps to create a free OpenShift account and a WordPress application.
+OpenShift is a cloud computing Platform as a Service (PaaS) from Red Hat, which, in simple terms, means it offers a virtual server with all the server components we need to run an application. In other words, OpenShift offers a virtual development environment - Linux OS with Internet connectivity - where we are free to deploy, develop and run various types of application written in supported languages.</description></item><item><title>Installation - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/wordpress-installation/</link><pubDate>Fri, 11 Jan 2019 03:06:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/wordpress-installation/</guid><description>In the previous chapter, we created a WordPress application on OpenShift platform. In this chapter, we go through WordPress installation and Admin Dashboard.
+WordPress Installation WordPress Installation is a simple affair. Open the app&amp;rsquo;s Public URL in the browser. If you forget to note the URL, then you need to revisit the Application Overview Screen in OpenShift Web Console and find out the Public URL. On the first access, WordPress displays the Welcome screen where we have to fill site&amp;rsquo;s title and also, information about an administrator user.</description></item><item><title>Settings - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/wordpress-settings/</link><pubDate>Fri, 11 Jan 2019 03:29:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/wordpress-settings/</guid><description>In the previous chapter, we completed the WordPress Installation. In this chapter, we go through some of the important WordPress Settings that affect the site and some of them may become difficult to change in the future.
+WordPress Settings As objective of this tutorial is to guide beginners quickly to build a high performance WordPress site, we avoid discussion on each and every setting. WordPress Settings are well documented in WordPress official Codex - WordPress Administration Screen.</description></item><item><title>Posts vs Pages - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</link><pubDate>Fri, 11 Jan 2019 03:20:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/wordpress-posts-vs-pages/</guid><description>In earlier chapters, we learned how to install and setup WordPress site on OpenShift cloud platform. Now, we are ready to add contents - Posts, Pages and Media - to the WordPress site.
 Let&amp;rsquo;s add a Post to know the process and then, understand the differences between WordPress Posts and WordPress Pages.
 WordPress Posts Open Dashboard → Posts to display the list of posts from the site.
- Use Add New to add a new post.</description>
-    </item>
-    
-    <item>
-      <title>Themes - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/wordpress-themes/</link>
-      <pubDate>Fri, 11 Jan 2019 03:45:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-themes/</guid>
-      <description>In the previous chapter, we saw how to add and manage contents - Posts, Pages and Media - in the WordPress. In this chapter, we install a new WordPress Theme and customize.
-WordPress theme customizes the look and feel of the site. WordPress, being one of the leading CMS, attracts hundreds of designers and developers who contribute themes and plugins to WordPress ecosystem. There is no dearth themes to meet one&amp;rsquo;s need and on last count, there are about 2500 themes.</description>
-    </item>
-    
-    <item>
-      <title>Plugins - WordPress Tutorial - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/wordpress/wordpress-plugins/</link>
-      <pubDate>Fri, 11 Jan 2019 03:13:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/wordpress/wordpress-plugins/</guid>
-      <description>In the previous chapter, we customized the appearance of the site with a new theme. In this chapter, we cover some of the must have WordPress Plugins for any WordPress installation.
+Use Add New to add a new post.</description></item><item><title>Themes - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/wordpress-themes/</link><pubDate>Fri, 11 Jan 2019 03:45:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/wordpress-themes/</guid><description>In the previous chapter, we saw how to add and manage contents - Posts, Pages and Media - in the WordPress. In this chapter, we install a new WordPress Theme and customize.
+WordPress theme customizes the look and feel of the site. WordPress, being one of the leading CMS, attracts hundreds of designers and developers who contribute themes and plugins to WordPress ecosystem. There is no dearth themes to meet one&amp;rsquo;s need and on last count, there are about 2500 themes.</description></item><item><title>Plugins - WordPress Tutorial - CodeTab</title><link>https://www.codetab.org/tutorial/wordpress/wordpress-plugins/</link><pubDate>Fri, 11 Jan 2019 03:13:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/wordpress/wordpress-plugins/</guid><description>In the previous chapter, we customized the appearance of the site with a new theme. In this chapter, we cover some of the must have WordPress Plugins for any WordPress installation.
 WordPress Plugins add and extend the functionality of WordPress. There are more than thirty thousand plugins in WordPress Plugins Directory to meet every need of a site.
-Must Have WordPress Plugins Choice of plugins for a WordPress site is highly dependent on contents of the site and also on personal preferences.</description>
-    </item>
-    
-  </channel>
-</rss>
+Must Have WordPress Plugins Choice of plugins for a WordPress site is highly dependent on contents of the site and also on personal preferences.</description></item></channel></rss>

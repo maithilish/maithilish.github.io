@@ -1,58 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>filters on Codetab</title>
-    <link>https://www.codetab.org/tags/filters/</link>
-    <description>Recent content in filters on Codetab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 23:40:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/filters/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</link>
-      <pubDate>Thu, 05 Nov 2020 23:40:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</guid>
-      <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>filters on Codetab</title><link>https://www.codetab.org/tags/filters/</link><description>Recent content in filters on Codetab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 23:40:00 +0530</lastBuildDate><atom:link href="https://www.codetab.org/tags/filters/index.xml" rel="self" type="application/rss+xml"/><item><title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</link><pubDate>Thu, 05 Nov 2020 23:40:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper/basic/filters/</guid><description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml
-dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
-    </item>
-    
-    <item>
-      <title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</link>
-      <pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</guid>
-      <description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description></item><item><title>Filters - Scoopi Web Scraper - why just scrape when you can scoop</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</link><pubDate>Fri, 11 Jan 2019 23:40:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v097/basic/filters/</guid><description>Filters The extracted data of the previous example contains many junk items and use filters to remove them from output.
 The filter is normally applied after parse is over and data is created. The Example 5 uses filter for items/item. The filter snippet is as below
 defs/examples/fin/jsoup/ex-5/job.yml
-dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description>
-    </item>
-    
-    <item>
-      <title>Filters - Gotz ETL - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/gotz-etl/filters/</link>
-      <pubDate>Fri, 11 Jan 2019 20:14:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/gotz-etl/filters/</guid>
-      <description>In the previous example, which extracted balance sheet data there are some unwanted items and we use filter to remove them from output.
+dataDefs: bs: query: block: &amp;quot;table:contains(Sources Of Funds)&amp;quot; selector: &amp;quot;tr:nth-child(%{item.index}) &amp;gt; td:nth-child(%{dim.year.index})&amp;quot; items: - item: name: item selector: &amp;quot;tr:nth-child(%{index}) &amp;gt; td:nth-child(1)&amp;quot; index: 5 breakAfter: - &amp;quot;Book Value (Rs)&amp;quot; filters: - filter: { type: value, pattern: &amp;quot;&amp;quot; } - filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; } - filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; } dims: - item: name: year selector: &amp;quot;tr:nth-child(1) &amp;gt; td:nth-child(%{index})&amp;quot; indexRange: 2-6 The filter definition remove the members whose axis item (item) value is</description></item><item><title>Filters - Gotz ETL - CodeTab</title><link>https://www.codetab.org/tutorial/gotz-etl/filters/</link><pubDate>Fri, 11 Jan 2019 20:14:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/gotz-etl/filters/</guid><description>In the previous example, which extracted balance sheet data there are some unwanted items and we use filter to remove them from output.
 The filter is normally applied after parse is over and members are constructed. The Example-5, which loads defs/examples/jsoup/ex-5/job.xml uses filter in row axis and the filter snippet from the dataDef is as below
-&amp;lt;axis name=&amp;#34;row&amp;#34;&amp;gt; .... &amp;lt;filter axis=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;xf:fields&amp;gt; &amp;lt;xf:filters type=&amp;#34;value&amp;#34;&amp;gt; &amp;lt;xf:filter name=&amp;#34;blank&amp;#34; pattern=&amp;#34;&amp;#34; /&amp;gt; &amp;lt;xf:filter name=&amp;#34;f1&amp;#34; pattern=&amp;#34;Sources Of Funds&amp;#34; /&amp;gt; &amp;lt;xf:filter name=&amp;#34;f2&amp;#34; pattern=&amp;#34;Application Of Funds&amp;#34; /&amp;gt; &amp;lt;/xf:filters&amp;gt; &amp;lt;/xf:fields&amp;gt; &amp;lt;/filter&amp;gt; &amp;lt;/axis&amp;gt; This filter definition remove the members whose row axis value is blank, null or &amp;ldquo;Sources Of Funds&amp;rdquo; or &amp;ldquo;Application Of Funds&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Filters - Scoopi Web Scraper - CodeTab</title>
-      <link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/</link>
-      <pubDate>Sat, 12 Jan 2019 03:12:00 +0530</pubDate>
-      
-      <guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/</guid>
-      <description>Filters The extracted data of the previous example contains many unwanted items and Scoopi provides filters to remove them from output.
+&amp;lt;axis name=&amp;#34;row&amp;#34;&amp;gt; .... &amp;lt;filter axis=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;xf:fields&amp;gt; &amp;lt;xf:filters type=&amp;#34;value&amp;#34;&amp;gt; &amp;lt;xf:filter name=&amp;#34;blank&amp;#34; pattern=&amp;#34;&amp;#34; /&amp;gt; &amp;lt;xf:filter name=&amp;#34;f1&amp;#34; pattern=&amp;#34;Sources Of Funds&amp;#34; /&amp;gt; &amp;lt;xf:filter name=&amp;#34;f2&amp;#34; pattern=&amp;#34;Application Of Funds&amp;#34; /&amp;gt; &amp;lt;/xf:filters&amp;gt; &amp;lt;/xf:fields&amp;gt; &amp;lt;/filter&amp;gt; &amp;lt;/axis&amp;gt; This filter definition remove the members whose row axis value is blank, null or &amp;ldquo;Sources Of Funds&amp;rdquo; or &amp;ldquo;Application Of Funds&amp;rdquo;.</description></item><item><title>Filters - Scoopi Web Scraper - CodeTab</title><link>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/</link><pubDate>Sat, 12 Jan 2019 03:12:00 +0530</pubDate><guid>https://www.codetab.org/tutorial/scoopi-web-scraper-v094/filters-v094/</guid><description>Filters The extracted data of the previous example contains many unwanted items and Scoopi provides filters to remove them from output.
 The filter is normally applied after parse is over and members are created. The Example 5 uses filter for row axis. The filter snippet is as below
 defs/examples/jsoup/ex-5/job.yml
-row: query: region: &amp;quot;table:contains(Sources Of Funds)&amp;quot; field: &amp;quot;tr:nth-child(%{row.index}) &amp;gt; td:nth-child(1)&amp;quot; members: [ member: {name: item, index: 5, breakAfter: [&amp;quot;Book Value (Rs)&amp;quot;] }, ] filters: [ filter: { type: value, pattern: &amp;quot;&amp;quot; }, filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; }, filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; }, ] The filter definition remove the members whose row axis value</description>
-    </item>
-    
-  </channel>
-</rss>
+row: query: region: &amp;quot;table:contains(Sources Of Funds)&amp;quot; field: &amp;quot;tr:nth-child(%{row.index}) &amp;gt; td:nth-child(1)&amp;quot; members: [ member: {name: item, index: 5, breakAfter: [&amp;quot;Book Value (Rs)&amp;quot;] }, ] filters: [ filter: { type: value, pattern: &amp;quot;&amp;quot; }, filter: { type: value, pattern: &amp;quot;Sources Of Funds&amp;quot; }, filter: { type: value, pattern: &amp;quot;Application Of Funds&amp;quot; }, ] The filter definition remove the members whose row axis value</description></item></channel></rss>
