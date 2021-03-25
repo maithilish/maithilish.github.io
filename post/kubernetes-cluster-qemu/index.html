@@ -48,12 +48,12 @@ docker run -i --rm quay.io/coreos/fcct:release --pretty --strict &lt; base-confi
 fcct --pretty --strict &lt; base-config.yaml &gt; base-config.ign
 
 </code></pre></div><p>For some reason, you are unable to compile the file; then as workaround, you can download the compiled version from <a href=https://github.com/maithilish/codefs/blob/master/fcos/base-config-qemu.ign target=_blank>GitHub repo</a>. As mentioned earlier, replace fields - <code>password_hash</code>, <code>sshAuthorizedKeys</code>.</p><p>Once you are ready with the file, move on to create base VM.</p><p><a id=create-base-vm></a></p><h3 id=create-base-vm>Create Base VM</h3><p>Start Virtual Machine Manager (VMM) and open File -> Add Connection and select Qemu/KVM Hypervisor, enable auto-connect and create the connection. Next, open the connection details and go to Virtual Network tab. Add a network interface with a following configuration,</p><ul><li>Name - network1</li><li>Mode - NAT</li><li>Forward to - any physical device</li><li>IPv4 Configuration<ul><li>Network - 192.168.99.0/24</li><li>DHCP - disable</li></ul></li></ul><p>This network is able to connect both to host and internet. Unlike VirtualBox, the Qemu DHCP allots random IP to interface where as K8s master node need fixed IP, so we have to disable DHCP and go with static IP. Network name <code>network1</code> is hardcoded in base-config.ign, so don&rsquo;t change the name.</p><p>Next, create a new VM, choose <code>Local Install Media</code> and browse and select the downloaded Fedora CoreOS iso image and in os type generic and select <code>Generic default</code>. Set memory to 2048MB and cpu to 2. In Storage dialog, choose <code>Create custom storage</code> and create a disk of size 8GB and qcow2 format. In network selection dropdown, select the <code>network1</code> that we have created earlier. Name the VM as <code>fcos</code> Click <code>Finish</code> to start Fedora CoreOS. Once os boots, it auto login to Fedora CoreOS Live Environment.</p><h3 id=get-ignition-file-to-guest>Get Ignition File to Guest</h3><p>Earlier, we had created Ignition file <code>base-config.ign</code> on host. To install OS, we have to get it from host to guest. Easiest option is to use python http server,</p><div class=highlight><pre class=chroma><code class=language-BASH data-lang=BASH>
-<span class=c1># on host, run from the ignition file&#39;s directory </span>
+<span class=c1># on host, run from the ignition file&#39;s directory</span>
 python3 -m http.server
 
 <span class=c1># on guest</span>
 <span class=c1># find the interface name, normally ens3</span>
-ip a      
+ip a
 
 <span class=c1># temporarily allot static IP in guest</span>
 sudo ip addr add 192.168.99.100/24 dev ens3
@@ -66,7 +66,7 @@ sudo systemctl start ssh
 
 <span class=c1># on guest</span>
 <span class=c1># find the interface name, normally ens3</span>
-ip a      
+ip a
 
 <span class=c1># temporarily allot static IP in guest</span>
 sudo ip addr add 192.168.99.100/24 dev ens3
@@ -162,7 +162,7 @@ sudo rm /etc/machine-id
 sudo systemd-machine-id-setup
 sudo systemd-machine-id-setup --commit
 
-<span class=c1># change static ip </span>
+<span class=c1># change static ip</span>
 sudo nmcli connection   <span class=c1># find the &lt;connection name&gt;</span>
 
 sudo nmcli connection mod network1 <span class=se>\
@@ -174,7 +174,7 @@ sudo nmcli connection mod network1 <span class=se>\
 </span><span class=se></span>     connection.autoconnect yes
 
 sudo systemctl restart NetworkManager
-sudo systemctl reboot   
+sudo systemctl reboot
 
 </code></pre></div><p>After VM reboot, login to master with the new ip <code>ssh k@192.168.99.101</code>.</p><h2 id=setup-master-node-with-control-plane>Setup Master Node with Control Plane</h2><p>On master node, we initialize the kubeadm so that it works as K8s API Server and control plane. Normally, master node is initialized with <code>sudo kubeadm init --apiserver-advertise-address=192.168.99.101 --pod-network-cidr=192.168.0.0/16 </code>. In FCOS, this is not going to work as the Fcos <code>/usr</code> directory is read-only and kublet-plugins are not able to write to it. To change kubelet plugins directory, we need to use a config file to pass initialization configs to kubeadm. Create config file, kubeadm-init.yaml, by executing following command in master node.</p><div class=highlight><pre class=chroma><code class=language-BASH data-lang=BASH>
 cat <span class=s>&lt;&lt; EOF &gt; kubeadm-init.yaml
@@ -207,7 +207,7 @@ mkdir -p <span class=nv>$HOME</span>/.kube
 sudo cp -i /etc/kubernetes/admin.conf <span class=nv>$HOME</span>/.kube/config
 sudo chown <span class=k>$(</span>id -u<span class=k>)</span>:<span class=k>$(</span>id -g<span class=k>)</span> <span class=nv>$HOME</span>/.kube/config
 
-watch kubectl get pods --all-namespaces 
+watch kubectl get pods --all-namespaces
 
 </code></pre></div><p>Watch cluster creation till all pods reach <code>Running</code> state except coredns pods which reach <code>ClusterCreating</code> or <code>Pending</code> state.</p><p>For more info: <a href=https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/ target=_blank>Creating a cluster with kubeadm</a> and <a href=https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file target=_blank>Using kubeadm init with a configuration file</a></p><h3 id=install-pod-network-add-on>Install Pod Network Add-on</h3><p>Pods communicates through <code>Container Network Interface (CNI)</code> based Pod Network Add-on and Calico is one such add-on. To install calico, download <code>calico.yaml</code> and apply in master node.</p><div class=highlight><pre class=chroma><code class=language-BASH data-lang=BASH>
 curl https://docs.projectcalico.org/manifests/calico.yaml -O
@@ -217,7 +217,7 @@ sed -i <span class=s1>&#39;s/usr\/libexec/opt\/libexec/g&#39;</span> calico.yaml
 
 kubectl apply -f calico.yaml
 
-watch kubectl get pods --all-namespaces 
+watch kubectl get pods --all-namespaces
 
 </code></pre></div><p>It pulls calico container images. Once Calico pods are up and running the coredns pods should change to <code>Running</code> state.</p><p>Now, master node, with K8s api server and control-plane, is ready and <code>kubectl get nodes</code> should now show one node cluster with master in <code>Ready</code> state.</p><p>If something goes wrong during init, clean up and revert back with <code>sudo kubeadm reset</code> and try init again.</p><p>For more info: <a href=https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises target=_blank>Calico Add on</a></p><h2 id=setup-worker-node>Setup worker node</h2><p>Create second clone of <code>fcos</code> and name it <code>worker1</code>. Steps are same as explained when we cloned master, but with following changes,</p><p>In virt-clone command,</p><ul><li>clone name: worker1</li><li>file: worker1.qcow2</li></ul><p>In hostnamectl command</p><ul><li>host name: worker1</li></ul><p>In nmcli connection mod command,</p><ul><li>ipv4.addresses: 192.168.99.102/24</li></ul><p>Don&rsquo;t init control plane on worker nodes and also, don&rsquo;t install calico addon.</p><p>Reboot worker1 and login with <code>ssh k@192.168.99.102</code>.</p><h2 id=join-the-k8s-cluster>Join the K8s Cluster</h2><p>As already explained in master node section, we can&rsquo;t use kubeadm join cli method; so, we go with config file method.</p><p>To join the cluster, worker node needs <code>token</code> and <code>discovery-token-ca-cert-hash</code> which was part of join command displayed when we setup master. If you haven&rsquo;t noted down the join command, then find out token and cert-hash with these commands in the <code>master</code> node.</p><div class=highlight><pre class=chroma><code class=language-BASH data-lang=BASH>
 <span class=c1># run in master node to get token</span>
@@ -244,10 +244,10 @@ cat <span class=s>&lt;&lt;EOF &gt; kubeadm-join.yaml
 </span><span class=s>    - sha256:${JOIN_CERT_HASH}
 </span><span class=s>EOF</span>
 
-<span class=c1># verify whether variables are substituted properly </span>
+<span class=c1># verify whether variables are substituted properly</span>
 cat kubeadm-join.yaml
 
-<span class=c1># if variables are not replaced in config file then use envsubst </span>
+<span class=c1># if variables are not replaced in config file then use envsubst</span>
 
 </code></pre></div><p>Node is ready to join the cluster; to join execute following commands in the worker node.</p><div class=highlight><pre class=chroma><code class=language-BASH data-lang=BASH>
 sudo systemctl <span class=nb>enable</span> kubelet.service
