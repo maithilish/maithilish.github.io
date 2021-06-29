@@ -62,23 +62,23 @@ $ mv wordpress wordpress-4.0.1     // rename the dir
 </code></pre><p>We rename the <code>wordpress</code> directory as <code>wordpress-4.0.1</code> so that we are
 free to install other versions later.</p><p>Apache should redirect all access to <code>http://localhost/</code> to files in
 WordPress directory and for that add following files to
-<code>/opt/lampp/htdocs</code>.</p><p><code>/opt/lampp/htdocs/index.php</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=err>&lt;</span>?php
-/**
- * Front to the WordPress application. This file doesn&#39;t do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
+<code>/opt/lampp/htdocs</code>.</p><p><code>/opt/lampp/htdocs/index.php</code></p><div class=highlight><pre class=chroma><code class=language-PHP data-lang=PHP><span class=o>&lt;?</span><span class=nx>php</span>
+<span class=sd>/**
+</span><span class=sd> * Front to the WordPress application. This file doesn&#39;t do anything, but loads
+</span><span class=sd> * wp-blog-header.php which does and tells WordPress to load the theme.
+</span><span class=sd> *
+</span><span class=sd> * @package WordPress
+</span><span class=sd> */</span>
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define(&#39;WP_USE_THEMES&#39;, true);
+<span class=sd>/**
+</span><span class=sd> * Tells WordPress to load the WordPress theme and output it.
+</span><span class=sd> *
+</span><span class=sd> * @var bool
+</span><span class=sd> */</span>
+<span class=nx>define</span><span class=p>(</span><span class=s1>&#39;WP_USE_THEMES&#39;</span><span class=p>,</span> <span class=k>true</span><span class=p>);</span>
 
-/** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . &#39;/wordpress-4.0.1/wp-blog-header.php&#39; );
+<span class=sd>/** Loads the WordPress Environment and Template */</span>
+<span class=k>require</span><span class=p>(</span> <span class=nx>dirname</span><span class=p>(</span> <span class=no>__FILE__</span> <span class=p>)</span> <span class=o>.</span> <span class=s1>&#39;/wordpress-4.0.1/wp-blog-header.php&#39;</span> <span class=p>);</span>
 </code></pre></div><p><code>/opt/lampp/htdocs/.htaccess</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>
 # BEGIN WordPress
 <span class=nt>&lt;IfModule</span> <span class=err>mod_rewrite.c</span><span class=nt>&gt;</span>
