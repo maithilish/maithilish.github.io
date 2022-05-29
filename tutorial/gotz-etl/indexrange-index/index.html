@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="IndexRange, Index and BreakAfter, This chapter explains the use of index, indexRange and breakAfter to extract set of data without using multiple queries."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"IndexRange Index BreakAfter - Gotz ETL - CodeTab","headline":"IndexRange Index BreakAfter - Gotz ETL - CodeTab","url":"https://www.codetab.org/tutorial/gotz-etl/indexrange-index/","description":"IndexRange, Index and BreakAfter, This chapter explains the use of index, indexRange and breakAfter to extract set of data without using multiple queries.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T20:02:00+0530","dateModified":"2019-01-11T20:02:00+0530","wordCount":"689","keywords":["indexrange","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>IndexRange Index BreakAfter - Gotz ETL - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="IndexRange, Index and BreakAfter, This chapter explains the use of index, indexRange and breakAfter to extract set of data without using multiple queries."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-42139846-3")</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"IndexRange Index BreakAfter - Gotz ETL - CodeTab","headline":"IndexRange Index BreakAfter - Gotz ETL - CodeTab","url":"https://www.codetab.org/tutorial/gotz-etl/indexrange-index/","description":"IndexRange, Index and BreakAfter, This chapter explains the use of index, indexRange and breakAfter to extract set of data without using multiple queries.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T20:02:00+0530","dateModified":"2019-01-11T20:02:00+0530","wordCount":"689","keywords":["indexrange","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.36dba173dca94f4b9fca7c6a1c3d15560f7a96c6ab0c0042dcd000f8469a9dc1.css integrity="sha256-Ntuhc9ypT0ufynxqHD0VVg96lsarDABC3NAA+EaancE="><title>IndexRange Index BreakAfter - Gotz ETL - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
 <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">Gotz ETL</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="Gotz ETL - Gotz ETL - CodeTab"><div><a href=https://www.codetab.org/tutorial/gotz-etl/gotz-installation-quick-start/ class="toc-page text-wrap text-muted">Installation and Quick Start</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/bean-locator/ class="toc-page text-wrap text-muted">Bean and Locator</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/datadef-axis-member/ class="toc-page text-wrap text-muted">DataDef, Axis and Member</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/query-region-field/ class="toc-page text-wrap text-muted">Query, Region and Field</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/members-dynamic-query/ class="toc-page text-wrap text-muted">Members and Dynamic Query</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/indexrange-index/ class="toc-page text-wrap text-danger">IndexRange, Index and BreakAfter</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/filters/ class="toc-page text-wrap text-muted">Filters</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/namespace/ class="toc-page text-wrap text-muted">Namespace</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/tasks-steps/ class="toc-page text-wrap text-muted">Tasks and Steps</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/multiple-task-tasks/ class="toc-page text-wrap text-muted">Multiple Task and Tasks</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/converters/ class="toc-page text-wrap text-muted">Converters</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/persistence/ class="toc-page text-wrap text-muted">Persistence</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/appenders-encoders/ class="toc-page text-wrap text-muted">Appenders and Encoders</a></div><div><a href=https://www.codetab.org/tutorial/gotz-etl/split-definitions/ class="toc-page text-wrap text-muted">Split Definitions</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/gotz-etl/indexrange-index/&text=IndexRange%20Index%20BreakAfter%20-%20Gotz%20ETL%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/gotz-etl/indexrange-index/&t=IndexRange%20Index%20BreakAfter%20-%20Gotz%20ETL%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/gotz-etl/indexrange-index/&title=IndexRange%20Index%20BreakAfter%20-%20Gotz%20ETL%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=IndexRange%20Index%20BreakAfter%20-%20Gotz%20ETL%20-%20CodeTab&body=https://www.codetab.org/tutorial/gotz-etl/indexrange-index/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=IndexRange%20Index%20BreakAfter%20-%20Gotz%20ETL%20-%20CodeTab%20https://www.codetab.org/tutorial/gotz-etl/indexrange-index/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/gotz-etl/indexrange-index/&title=IndexRange%20Index%20BreakAfter%20-%20Gotz%20ETL%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><p>This chapter explains the use of index, indexRange and dynamic query to
@@ -8,76 +8,78 @@ which contains Balance Sheet data of Acme for past five years in a HTML
 table with 27 rows and 5 columns. The partial contents of the table is
 shown below.</p><p>Dec &lsquo;16</p><p>Dec &lsquo;15</p><p>Dec &lsquo;14</p><p>Dec &lsquo;13</p><p>Dec &lsquo;12</p><p>Equity</p><p>804.72</p><p>801.55</p><p>795.32</p><p>790.18</p><p>781.84</p><p>Reserves</p><p>32,071.87</p><p>29,881.73</p><p>25,414.29</p><p>21,444.92</p><p>17,957.00</p><p>&mldr;.</p><p>The datadef to extract data from the table is specified in
 <strong>defs/examples/jsoup/ex-3/job.xml</strong> which extracts three rows of data
-for the first column (Dec 2016). DataDef is as below</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;dataDef</span> <span class=na>name=</span><span class=s>&#34;bs&#34;</span><span class=nt>&gt;</span>
-   <span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;col&#34;</span><span class=nt>&gt;</span>
-       <span class=nt>&lt;xf:fields&gt;</span>
-           <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
-               <span class=na>field=</span><span class=s>&#34;tr:nth-child(1) &gt; td:nth-child(%{col.index})&#34;</span> <span class=nt>/&gt;</span>
-       <span class=nt>&lt;/xf:fields&gt;</span>
-       <span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;year&#34;</span> <span class=na>index=</span><span class=s>&#34;2&#34;</span> <span class=nt>/&gt;</span>
-   <span class=nt>&lt;/axis&gt;</span>
-   <span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;row&#34;</span><span class=nt>&gt;</span>
-       <span class=nt>&lt;xf:fields&gt;</span>
-           <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
-               <span class=na>field=</span><span class=s>&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</span> <span class=nt>/&gt;</span>
-       <span class=nt>&lt;/xf:fields&gt;</span>
-       <span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;item&#34;</span><span class=nt>&gt;</span>
-           <span class=nt>&lt;xf:fields&gt;</span>
-               <span class=nt>&lt;xf:indexRange</span> <span class=na>value=</span><span class=s>&#34;6-8&#34;</span> <span class=nt>/&gt;</span>
-           <span class=nt>&lt;/xf:fields&gt;</span>
-       <span class=nt>&lt;/member&gt;</span>
-   <span class=nt>&lt;/axis&gt;</span>
-   <span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;fact&#34;</span><span class=nt>&gt;</span>
-       <span class=nt>&lt;xf:fields&gt;</span>
-           <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
-               <span class=na>field=</span><span class=s>&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(%{col.index})&#34;</span> <span class=nt>/&gt;</span>
-       <span class=nt>&lt;/xf:fields&gt;</span>
-   <span class=nt>&lt;/axis&gt;</span>
-<span class=nt>&lt;/dataDef&gt;</span>
-</code></pre></div><p>Index can be specified in two ways - <strong>index</strong> or <strong>indexRange</strong>. The
+for the first column (Dec 2016). DataDef is as below</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;dataDef</span> <span class=na>name=</span><span class=s>&#34;bs&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;col&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>           <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>field=</span><span class=s>&#34;tr:nth-child(1) &gt; td:nth-child(%{col.index})&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;year&#34;</span> <span class=na>index=</span><span class=s>&#34;2&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;/axis&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;row&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>           <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>field=</span><span class=s>&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;item&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>           <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>               <span class=nt>&lt;xf:indexRange</span> <span class=na>value=</span><span class=s>&#34;6-8&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>           <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;/member&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;/axis&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;fact&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>           <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>field=</span><span class=s>&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(%{col.index})&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>       <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;/axis&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dataDef&gt;</span>
+</span></span></code></pre></div><p>Index can be specified in two ways - <strong>index</strong> or <strong>indexRange</strong>. The
 above dataDef uses index in col axis and indexRange in row axis. It is
 important to note that the <strong>index is attribute</strong> of the member whereas
-<strong>indexRange is &lt;xf:fields></strong>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>The col axis uses index attribute in member element with the index value
+<strong>indexRange is &lt;xf:fields></strong>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>The col axis uses index attribute in member element with the index value
 of 2. The query selector td:nth-child(%{col.index}) uses substitution
 variable %{col.index} which is replaced by index value 2 and content of
 second &lt;td> which is nothing but data for Dec &lsquo;16 is returned by the
-selector for each row.</p><p>For axis row, we use indexRange</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;item&#34;</span><span class=nt>&gt;</span>
-    <span class=nt>&lt;xf:fields&gt;</span>
-        <span class=nt>&lt;xf:indexRange</span> <span class=na>value=</span><span class=s>&#34;6-8&#34;</span> <span class=nt>/&gt;</span>
-    <span class=nt>&lt;/xf:fields&gt;</span>
-<span class=nt>&lt;/member&gt;</span>
-</code></pre></div><p>and for its selector, tr:nth-child(%{row.index}) > td:nth-child(1),
-Gotz creates 3 members and allots index 6, 7 and 8 respectively.</p><p>The Fact axis selector uses both the col and row indexes</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>tr:nth-child(%{row.index}) &gt;  td:nth-child(%{col.index})
-</code></pre></div><p>The selector for three members after variables are substituted is as
-follows (index value is shown inside the [ ])</p><p>Member 1</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>col [2] : tr:nth-child(1) &gt; td:nth-child(2)
-row [6] : tr:nth-child(6) &gt; td:nth-child(1)
-fact [] :  tr:nth-child(6) &gt;  td:nth-child(2)
-</code></pre></div><p>Member 2</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>col [2] : tr:nth-child(1) &gt; td:nth-child(2)
-row [7] : tr:nth-child(7) &gt; td:nth-child(1)
-fact []:  tr:nth-child(7) &gt;  td:nth-child(2)
-</code></pre></div><p>Member 3</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>col [2] : tr:nth-child(1) &gt; td:nth-child(2)
-row [8] : tr:nth-child(8) &gt; td:nth-child(1)
-fact []:  tr:nth-child(8) &gt;  td:nth-child(2)
-</code></pre></div><p>Get all data from table</p><p>To get all data for one year, change the indexRange of row axis from 6-8
+selector for each row.</p><p>For axis row, we use indexRange</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;item&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;xf:indexRange</span> <span class=na>value=</span><span class=s>&#34;6-8&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/member&gt;</span>
+</span></span></code></pre></div><p>and for its selector, tr:nth-child(%{row.index}) > td:nth-child(1),
+Gotz creates 3 members and allots index 6, 7 and 8 respectively.</p><p>The Fact axis selector uses both the col and row indexes</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>tr:nth-child(%{row.index}) &gt;  td:nth-child(%{col.index})
+</span></span></code></pre></div><p>The selector for three members after variables are substituted is as
+follows (index value is shown inside the [ ])</p><p>Member 1</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>col [2] : tr:nth-child(1) &gt; td:nth-child(2)
+</span></span><span class=line><span class=cl>row [6] : tr:nth-child(6) &gt; td:nth-child(1)
+</span></span><span class=line><span class=cl>fact [] :  tr:nth-child(6) &gt;  td:nth-child(2)
+</span></span></code></pre></div><p>Member 2</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>col [2] : tr:nth-child(1) &gt; td:nth-child(2)
+</span></span><span class=line><span class=cl>row [7] : tr:nth-child(7) &gt; td:nth-child(1)
+</span></span><span class=line><span class=cl>fact []:  tr:nth-child(7) &gt;  td:nth-child(2)
+</span></span></code></pre></div><p>Member 3</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>col [2] : tr:nth-child(1) &gt; td:nth-child(2)
+</span></span><span class=line><span class=cl>row [8] : tr:nth-child(8) &gt; td:nth-child(1)
+</span></span><span class=line><span class=cl>fact []:  tr:nth-child(8) &gt;  td:nth-child(2)
+</span></span></code></pre></div><p>Get all data from table</p><p>To get all data for one year, change the indexRange of row axis from 6-8
 to 6-38 and run Gotz. The output data should have 33 rows of data for
 the one year i.e. Dec 2016.</p><p>Next, in col axis, remove index attribute from member and copy the
 xf:fields which contains indexRange from row axis to col axis member and
 change its range to 2-7. Now, run Gotz and you should have about 198
-rows of data in output. We leave these as exercise.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h2 id=breakafter>BreakAfter</h2><p>In the previous example, finding indexRange for col was easy because of
+rows of data in output. We leave these as exercise.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=breakafter>BreakAfter</h2><p>In the previous example, finding indexRange for col was easy because of
 limited number of columns, but for row, it was tedious.</p><p>The <strong>breakAfter</strong> feature comes handy when rows or columns are more or
 when in-between data grows or contracts.</p><p>The job.xml file of Example-4 is same as the third example, but for row
-axis, it uses <strong>breakAfter</strong> along with index instead of IndexRange.</p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;row&#34;</span><span class=nt>&gt;</span>
-   <span class=nt>&lt;xf:fields&gt;</span>
-      <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
-            <span class=na>field=</span><span class=s>&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</span> <span class=nt>/&gt;</span>
-   <span class=nt>&lt;/xf:fields&gt;</span>
-   <span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;item&#34;</span> <span class=na>index=</span><span class=s>&#34;5&#34;</span><span class=nt>&gt;</span>
-        <span class=nt>&lt;xf:fields&gt;</span>
-            <span class=nt>&lt;xf:breakAfter</span> <span class=na>value=</span><span class=s>&#34;Book Value&#34;</span> <span class=nt>/&gt;</span>
-          <span class=nt>&lt;/xf:fields&gt;</span>
-    <span class=nt>&lt;/member&gt;</span>
-<span class=nt>&lt;/axis&gt;</span>
-</code></pre></div><p>Member begins with index 5 and loops until selector returns &ldquo;Book Value&rdquo;
+axis, it uses <strong>breakAfter</strong> along with index instead of IndexRange.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;row&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=na>field=</span><span class=s>&#34;tr:nth-child(%{row.index}) &gt; td:nth-child(1)&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;member</span> <span class=na>name=</span><span class=s>&#34;item&#34;</span> <span class=na>index=</span><span class=s>&#34;5&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;xf:breakAfter</span> <span class=na>value=</span><span class=s>&#34;Book Value&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=nt>&lt;/xf:fields&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/member&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/axis&gt;</span>
+</span></span></code></pre></div><p>Member begins with index 5 and loops until selector returns &ldquo;Book Value&rdquo;
 and outputs full set of Balance sheet data. In case, index attribute is
 not set then index begins with 1.</p><p>The breakAfter is also useful when first and last item is constant and
 in-between rows or cols shrinks or expands. Using breakAfter, we can
@@ -85,4 +87,6 @@ consume all data between them without bothering about the index.</p><p>If we go 
 such as sub-headings, texts such as &ldquo;12 months&rdquo;, nulls and blanks etc.,
 and this is a common problem when dealing with unstructured sources. To
 handle this, Gotz allows us to define filters and the next chapter
-covers it.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>
+covers it.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script src=/js/vendor.min.6426da8436d34406d4c00f2275c86cf1747a900b1609a0b04e1b68d542f60f72.js></script></body></html>

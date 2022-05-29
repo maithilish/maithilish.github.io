@@ -1,8 +1,8 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="In this chapter, we step through the WordPress Plugin main file. We also explain the benefits of PHP Classes to code the plugin instead of functions."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Main File - WordPress Plugin Development - CodeTab","headline":"Main File - WordPress Plugin Development - CodeTab","url":"https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/","description":"In this chapter, we step through the WordPress Plugin main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T08:56:00+0530","dateModified":"2019-01-11T08:56:00+0530","wordCount":"800","keywords":["wordpress plugin main file","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>Main File - WordPress Plugin Development - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="In this chapter, we step through the WordPress Plugin main file. We also explain the benefits of PHP Classes to code the plugin instead of functions."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-42139846-3")</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Main File - WordPress Plugin Development - CodeTab","headline":"Main File - WordPress Plugin Development - CodeTab","url":"https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/","description":"In this chapter, we step through the WordPress Plugin main file. We also explain the benefits of PHP Classes to code the plugin instead of functions.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-11T08:56:00+0530","dateModified":"2019-01-11T08:56:00+0530","wordCount":"800","keywords":["wordpress plugin main file","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.36dba173dca94f4b9fca7c6a1c3d15560f7a96c6ab0c0042dcd000f8469a9dc1.css integrity="sha256-Ntuhc9ypT0ufynxqHD0VVg96lsarDABC3NAA+EaancE="><title>Main File - WordPress Plugin Development - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
 <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">WP Plugin Development</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
-<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="WordPress Plugin Development - CodeTab"><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/ class="toc-page text-wrap text-danger">Install WP on Docker</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/ class="toc-page text-wrap text-muted">Simple Plugin</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/ class="toc-page text-wrap text-muted">Shortcode</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/ class="toc-page text-wrap text-muted">Plugin Structure</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/ class="toc-page text-wrap text-muted">Main File</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/ class="toc-page text-wrap text-muted">Hooks, Actions, Filters</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-admin-module-settings id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Admin - Settings</a><div id=tutorial-wordpress-plugin-development-admin-module-settings class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/ class="toc-page dropdown-item text-wrap text-muted">Add Menu</a>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="WordPress Plugin Development - CodeTab"><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/install-locally/ class="toc-page text-wrap text-muted">Install WP on Docker</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/simple-plugin/ class="toc-page text-wrap text-muted">Simple Plugin</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/shortcode/ class="toc-page text-wrap text-muted">Shortcode</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-structure/ class="toc-page text-wrap text-muted">Plugin Structure</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/ class="toc-page text-wrap text-danger">Main File</a></div><div><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/hooks-actions-filters/ class="toc-page text-wrap text-muted">Hooks, Actions, Filters</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-admin-module-settings id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Admin - Settings</a><div id=tutorial-wordpress-plugin-development-admin-module-settings class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/add-menu/ class="toc-page dropdown-item text-wrap text-muted">Add Menu</a>
 <a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/settings-api/ class="toc-page dropdown-item text-wrap text-muted">Settings API</a>
 <a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-settings/options-page/ class="toc-page dropdown-item text-wrap text-muted">Options Page</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-wordpress-plugin-development-admin-module-custom-posts id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Admin - Posts</a><div id=tutorial-wordpress-plugin-development-admin-module-custom-posts class=collapse><a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/post-type/ class="toc-page dropdown-item text-wrap text-muted">Custom Post Type</a>
 <a href=https://www.codetab.org/tutorial/wordpress-plugin-development/admin-module-custom-posts/meta-box/ class="toc-page dropdown-item text-wrap text-muted">Meta Box</a>
@@ -22,25 +22,25 @@ gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=appli
 <a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/advanced-unit-tests/ class="toc-page dropdown-item text-wrap text-muted">Advanced Unit Tests</a>
 <a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/internationalization-functions/ class="toc-page dropdown-item text-wrap text-muted">Test Internationalization Functions</a>
 <a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/ajax/ class="toc-page dropdown-item text-wrap text-muted">Ajax Unit Tests</a>
-<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/ class="toc-page dropdown-item text-wrap text-muted">Multi site Plugin Unit Tests</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&text=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&t=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&title=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab&body=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&title=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><p>In this chapter, we step through the plugins' main file. We also explain
+<a href=https://www.codetab.org/tutorial/wordpress-plugin-development/unit-test/multisite-plugin-unit-tests/ class="toc-page dropdown-item text-wrap text-muted">Multi site Plugin Unit Tests</a></div></div></div></div></nav></nav></div></aside><div id=contentbar class=col-md-7><div id=share class="row justify-content-end"><div title=twitter><a href="https://twitter.com/intent/tweet?url=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&text=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-twitter-squared text-secondary"></i></a></div><div title=facebook><a href="https://www.facebook.com/sharer.php?u=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&t=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-facebook-squared text-secondary"></i></a></div><div title=linkedin><a href="https://www.linkedin.com/shareArticle?url=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&title=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-linkedin-squared text-secondary"></i></a></div><div title=email><a href="mailto:?subject=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab&body=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" target=_blank rel=noopener><i class="icon-mail-squared text-secondary"></i></a></div><div title=whatsapp><a href="https://web.whatsapp.com/send?text=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab%20https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/" target=_blank rel=noopener><i class="icon-whatsapp text-secondary"></i></a></div><div title=reddit><a href="https://reddit.com/submit?url=https://www.codetab.org/tutorial/wordpress-plugin-development/plugin-main-file/&title=Main%20File%20-%20WordPress%20Plugin%20Development%20-%20CodeTab" target=_blank rel=noopener><i class="icon-reddit-alien text-secondary"></i></a></div><i class="icon-blank ctab-transparent"></i></div><div class=row><main id=content class="col-md-11 post-basic"><p>In this chapter, we step through the plugins&rsquo; main file. We also explain
 the benefits of PHP Classes to code the plugin instead of functions.</p><h2 id=plugin-info>Plugin Info</h2><p>The main file <code>share-on-social.php</code> starts with header comments. As
 already described in the <a href=wordpress-simple-plugin/>“WordPress Simple Plugin”</a>, WordPress uses the header comments
 from the main file to display the Plugin info in plugins page.</p><h2 id=define-constants>Define Constants</h2><p>Throughout the plugin, we often refer some paths and constants.
 Normally, the constants are defined at the start of plugins. In Share on
-Social, we define following constants.</p><p><code>share-on-social/share-on-social.php</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>define( &#39;SOS_NAME&#39;, &#39;share-on-social&#39; );
-define( &#34;SOS_VERSION&#34;, &#39;1.0.0&#39; );
-
-define( &#34;SOS_URL&#34;, trailingslashit( plugin_dir_url( __FILE__ ) ) );
-
-// plugin path
-define( &#34;SOS_PATH&#34;, plugin_dir_path( __FILE__ ) );
-
-//basename share-on-social/share-on-social.php
-define( &#34;SOS_PLUGIN_BASENAME&#34;, plugin_basename( __FILE__ ) );
-
-// main file - share-on-social.php
-define( &#34;SOS_PLUGIN_FILE&#34;, __FILE__ );
-</code></pre></div><p>We prefix constants with <strong>SOS</strong> so that names don&rsquo;t clash with
+Social, we define following constants.</p><p><code>share-on-social/share-on-social.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>define( &#39;SOS_NAME&#39;, &#39;share-on-social&#39; );
+</span></span><span class=line><span class=cl>define( &#34;SOS_VERSION&#34;, &#39;1.0.0&#39; );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>define( &#34;SOS_URL&#34;, trailingslashit( plugin_dir_url( __FILE__ ) ) );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// plugin path
+</span></span><span class=line><span class=cl>define( &#34;SOS_PATH&#34;, plugin_dir_path( __FILE__ ) );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//basename share-on-social/share-on-social.php
+</span></span><span class=line><span class=cl>define( &#34;SOS_PLUGIN_BASENAME&#34;, plugin_basename( __FILE__ ) );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// main file - share-on-social.php
+</span></span><span class=line><span class=cl>define( &#34;SOS_PLUGIN_FILE&#34;, __FILE__ );
+</span></span></code></pre></div><p>We prefix constants with <strong>SOS</strong> so that names don&rsquo;t clash with
 constants from theme and other plugins. Always prefix the constants with
 the plugin name or some unique abbreviation.</p><h2 id=functions-and-classes>Functions and Classes</h2><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-sos-classfiles.png alt="WordPress Plugin Main File and Class files."></figure><p>It is easy to code the plugin functionality with PHP functions. But this
 approach may results in name conflict either with functions defined by
@@ -49,37 +49,37 @@ which eliminates the name conflict.</p><p>In Share on Social Plugin, we use clas
 main file and uninstall.php where we use regular functions. Rest of the
 code is split into class files which are included in main file.</p><p>Let&rsquo;s see how this is done with two class files; one for front end and
 another for admin module. In the following code snippet, we include two
-class files class-frontend.php and class-admin.php.</p><p><code>share-on-social/share-on-social.php</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>// plugin entry point
-setup_sos_plugin();
-
-function setup_sos_plugin () {
-
-    require_once SOS_PATH . &#39;include/class-helper.php&#39;;
-
-    if ( is_admin() ) {
-
-        require_once SOS_PATH . &#39;admin/class-admin.php&#39;;
-        add_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; );
-
-    } else {
-
-        require_once SOS_PATH . &#39;frontend/class-frontend.php&#39;;
-        add_action( &#39;plugins_loaded&#39;, &#39;load_sos_frontend&#39; );
-
-    }
-}
-
-function load_sos_admin () {
-    $sos_admin = new Sos_Admin();
-    $sos_admin-&gt;setup();
-}
-
-
-function load_sos_frontend () {
-    $sos_frontend = new Sos_Frontend();
-    $sos_frontend-&gt;setup();
-}
-</code></pre></div><ul><li><p>in the main file, we call a single function <code>setup_sos_plugin()</code>
+class files class-frontend.php and class-admin.php.</p><p><code>share-on-social/share-on-social.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>// plugin entry point
+</span></span><span class=line><span class=cl>setup_sos_plugin();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>function setup_sos_plugin () {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    require_once SOS_PATH . &#39;include/class-helper.php&#39;;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    if ( is_admin() ) {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        require_once SOS_PATH . &#39;admin/class-admin.php&#39;;
+</span></span><span class=line><span class=cl>        add_action( &#39;plugins_loaded&#39;, &#39;load_sos_admin&#39; );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        require_once SOS_PATH . &#39;frontend/class-frontend.php&#39;;
+</span></span><span class=line><span class=cl>        add_action( &#39;plugins_loaded&#39;, &#39;load_sos_frontend&#39; );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>function load_sos_admin () {
+</span></span><span class=line><span class=cl>    $sos_admin = new Sos_Admin();
+</span></span><span class=line><span class=cl>    $sos_admin-&gt;setup();
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>function load_sos_frontend () {
+</span></span><span class=line><span class=cl>    $sos_frontend = new Sos_Frontend();
+</span></span><span class=line><span class=cl>    $sos_frontend-&gt;setup();
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><ul><li><p>in the main file, we call a single function <code>setup_sos_plugin()</code>
 which is also the the entry point of the plugin.</p></li><li><p>in the function, we check whether we are in admin screen or in site
 with the help of <code>is_admin()</code>. WordPress function
 <a href=http://codex.wordpress.org/Function_Reference/is_admin target=_blank>is_admin()</a> return true when we are in the admin screen. Please note that we should not use this function to check whether the user has admin privileges or not.</p></li><li><p>if we are in admin screen, then include <code>class-admin.php</code> and attach
@@ -90,7 +90,8 @@ are loaded, WordPress calls our function load_sos_admin().</p></li><li><p>in <co
 <code>Sos_Admin</code> and call its <code>setup()</code> method.</p></li><li><p>when is_admin is false, we include class-frontend.php and load its
 class.</p></li></ul><p>It is important to note that <code>load_sos_admin()</code> and
 <code>load_sos_frontend()</code> are not called immediately by add_action() in
-<code>setup_sos_plugin()</code>, but their execution is deferred.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>Just for the sake of explanation, we split this into two phases. When we
+<code>setup_sos_plugin()</code>, but their execution is deferred.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Just for the sake of explanation, we split this into two phases. When we
 access the site, as part of phase one, WordPress processes all activated
 plugins. When <code>share-on-social.php</code> is processed its
 <code>setup_sos_plugin()</code> function is called. In this function, WordPress
@@ -102,35 +103,37 @@ active plugins are processed, WordPress triggers second phase by calling
 the hook plugins_loaded. At this point, WordPress calls registered
 callback methods <code>load_sos_admin()</code> or <code>load_sos_frontend()</code> and
 executes the code they contain.</p><p>Next, let&rsquo;s go through a plugin class file to see how classes are
-defined with a snippet from class-frontend.php .</p><p><code>share-on-social/frontend/class-frontend.php</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=err>&lt;</span>?php
-
-defined( &#39;ABSPATH&#39; ) or die( &#34;Access denied !&#34; );
-
-class Sos_Frontend {
-
-    var $sos_shortcode = &#39;share-on-social&#39;;
-
-    public function setup () {
-
-        // enable shortcode
-        add_shortcode( $this-&gt;sos_shortcode,
-                array(
-                        $this,
-                        &#39;enable_sos_shortcode&#39;
-                ) );
-    }
-
-
-    // other methods of the class
-
-}
-</code></pre></div><p>In the class file, we define class <code>Sos_Frontend</code> and its method. At the
+defined with a snippet from class-frontend.php .</p><p><code>share-on-social/frontend/class-frontend.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=err>&lt;</span>?php
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>defined( &#39;ABSPATH&#39; ) or die( &#34;Access denied !&#34; );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>class Sos_Frontend {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    var $sos_shortcode = &#39;share-on-social&#39;;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    public function setup () {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        // enable shortcode
+</span></span><span class=line><span class=cl>        add_shortcode( $this-&gt;sos_shortcode,
+</span></span><span class=line><span class=cl>                array(
+</span></span><span class=line><span class=cl>                        $this,
+</span></span><span class=line><span class=cl>                        &#39;enable_sos_shortcode&#39;
+</span></span><span class=line><span class=cl>                ) );
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    // other methods of the class
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p>In the class file, we define class <code>Sos_Frontend</code> and its method. At the
 top, we define variables which have class scope such as
 <code>$sos_shortcode</code>. In classes, we use <code>setup()</code> to carry out
 initializations tasks such as add actions, filters, shortcodes and also
 to include other class files and modules etc., Other class files of the
 plugin follow similar pattern. For the moment, it is enough to
 understand the overall structure of the plugin and its files as
-throughout the tutorial, we cover its code in detail.</p><script>console.log("slot C");</script><p>In the next chapter, we explain the the important WordPress concepts
+throughout the tutorial, we cover its code in detail.</p><script>console.log("slot C")</script><p>In the next chapter, we explain the the important WordPress concepts
 Actions, Filters and Hooks which allows plugins to plug to the WordPress
-core.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>
+core.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script src=/js/vendor.min.6426da8436d34406d4c00f2275c86cf1747a900b1609a0b04e1b68d542f60f72.js></script></body></html>

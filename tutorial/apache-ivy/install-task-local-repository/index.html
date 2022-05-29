@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="We use Apache Ivy Install task to build private repository like local or shared repositories which copies the module from public to private repository."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Install Task - Local Repository - Apache Ivy Tutorial - CodeTab","headline":"Install Task - Local Repository - Apache Ivy Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/","description":"We use Apache Ivy Install task to build private repository like local or shared repositories which copies the module from public to private repository.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T21:29:00+0530","dateModified":"2019-01-10T21:29:00+0530","wordCount":"1288","keywords":["apache ivy install","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>Install Task - Local Repository - Apache Ivy Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="We use Apache Ivy Install task to build private repository like local or shared repositories which copies the module from public to private repository."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-42139846-3")</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"Install Task - Local Repository - Apache Ivy Tutorial - CodeTab","headline":"Install Task - Local Repository - Apache Ivy Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/","description":"We use Apache Ivy Install task to build private repository like local or shared repositories which copies the module from public to private repository.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T21:29:00+0530","dateModified":"2019-01-10T21:29:00+0530","wordCount":"1288","keywords":["apache ivy install","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.36dba173dca94f4b9fca7c6a1c3d15560f7a96c6ab0c0042dcd000f8469a9dc1.css integrity="sha256-Ntuhc9ypT0ufynxqHD0VVg96lsarDABC3NAA+EaancE="><title>Install Task - Local Repository - Apache Ivy Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
 <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">Apache Ivy Guide</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="Apache Ivy Tutorial - Apache Ivy Tutorial - CodeTab"><div><a href=https://www.codetab.org/tutorial/apache-ivy/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/installation/ class="toc-page text-wrap text-muted">Installation</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/ant-tasks/ class="toc-page text-wrap text-muted">Ant Tasks</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/resolve/ class="toc-page text-wrap text-muted">Resolve</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/cachepath-retrieve/ class="toc-page text-wrap text-muted">Cachepath and Retrieve</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/pattern/ class="toc-page text-wrap text-muted">Pattern</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/repository-resolvers/ class="toc-page text-wrap text-muted">Resolvers and Repository</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/install-task-local-repository/ class="toc-page text-wrap text-danger">Install Task and Local Repositories</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/shared-repository/ class="toc-page text-wrap text-muted">Shared Repository</a></div><div><a href=https://www.codetab.org/tutorial/apache-ivy/publish/ class="toc-page text-wrap text-muted">Publish</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-apache-ivy-ivyde id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Eclipse Ivy Plugin</a><div id=tutorial-apache-ivy-ivyde class=collapse><a href=https://www.codetab.org/tutorial/apache-ivy/ivyde/eclipse-ivyde-plugin-resolve/ class="toc-page dropdown-item text-wrap text-muted">IvyDE Plugin for Eclipse</a>
@@ -14,84 +14,84 @@ the owner. By default, the local repository is
 <code>${ivy.default.ivy.user.dir}/local</code>. Built-in variable
 <code>${ivy.default.ivy.user.dir}</code> points to $HOME/.ivy2 and hence local
 repository resides in <code>$HOME/.ivy2/local</code> folder.</p><p>Add following file build file to work
-dir.</p><p><code>build.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;localrepository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
- <span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;install&#34;</span> <span class=na>description=</span><span class=s>&#34;--&gt; install modules to localreporsitory&#34;</span><span class=nt>&gt;</span>
-  <span class=nt>&lt;ivy:install</span> <span class=na>organisation=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>module=</span><span class=s>&#34;commons-lang&#34;</span> 
-   <span class=na>revision=</span><span class=s>&#34;2.6&#34;</span> <span class=na>transitive=</span><span class=s>&#34;true&#34;</span> <span class=na>overwrite=</span><span class=s>&#34;false&#34;</span> 
-   <span class=na>from=</span><span class=s>&#34;public&#34;</span> <span class=na>to=</span><span class=s>&#34;local&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;/target&gt;</span>
-<span class=nt>&lt;/project&gt;</span>
-</code></pre></div><p>This &lt;ivy:install> definition installs commons-lang 2.6 from public
+dir.</p><p><code>build.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;localrepository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;install&#34;</span> <span class=na>description=</span><span class=s>&#34;--&gt; install modules to localreporsitory&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;ivy:install</span> <span class=na>organisation=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>module=</span><span class=s>&#34;commons-lang&#34;</span> 
+</span></span><span class=line><span class=cl>   <span class=na>revision=</span><span class=s>&#34;2.6&#34;</span> <span class=na>transitive=</span><span class=s>&#34;true&#34;</span> <span class=na>overwrite=</span><span class=s>&#34;false&#34;</span> 
+</span></span><span class=line><span class=cl>   <span class=na>from=</span><span class=s>&#34;public&#34;</span> <span class=na>to=</span><span class=s>&#34;local&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/target&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></div><p>This &lt;ivy:install> definition installs commons-lang 2.6 from public
 repository to local file system repository. Run Ant and Ivy Install task
 creates a new local directory in $HOME/.ivy2. Repository layout is shown
 in the next figure.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/apache-ivy/media/cachefiles.png alt="Apache Ivy Local Repository"></figure><p><strong>Figure 6.1. Local Repository layout</strong></p><p>We have not provided any info about local, public resolver and pattern
 to Ivy, to install the files and artifacts in the local repository. From
 where Ivy gets details about the repository. We get a clue from the
 following lines of the build
-output.</p><pre><code class=language-screen data-lang=screen>[ivy:resolve] :: loading settings :: url = jar:file:/opt/ant/apache-ant-1.8.2/lib/ivy-.2.0.jar!
+output.</p><pre tabindex=0><code class=language-screen data-lang=screen>[ivy:resolve] :: loading settings :: url = jar:file:/opt/ant/apache-ant-1.8.2/lib/ivy-.2.0.jar!
 /org/apache/ivy/core/settings/ivysettings.xml
 </code></pre><p>So, Apache Ivy uses a default setting file - ivysettings.xml packaged in
 ivy-2.0.jar. To know what&rsquo;s there in this file, extract ivy-2.0.jar
 archive some temporary location, and you will find <code>ivysettings.xml</code>
 in <code>org/apache/ivy/core/settings</code>. Contents of this file is are
-follows.</p><p><code>/org/apache/ivy/core/settings/ivysettings.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;ivysettings&gt;</span>
- <span class=nt>&lt;settings</span> <span class=na>defaultResolver=</span><span class=s>&#34;default&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-public.xml&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-shared.xml&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-local.xml&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-main-chain.xml&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-default-chain.xml&#34;</span> <span class=nt>/&gt;</span>
-<span class=nt>&lt;/ivysettings&gt;</span>
-</code></pre></div><p>By default, Apache Ivy comes with <strong>shared</strong>, <strong>default</strong>, <strong>local</strong>,
+follows.</p><p><code>/org/apache/ivy/core/settings/ivysettings.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;ivysettings&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;settings</span> <span class=na>defaultResolver=</span><span class=s>&#34;default&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-public.xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-shared.xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-local.xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-main-chain.xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;include</span> <span class=na>url=</span><span class=s>&#34;${ivy.default.settings.dir}/ivysettings-default-chain.xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/ivysettings&gt;</span>
+</span></span></code></pre></div><p>By default, Apache Ivy comes with <strong>shared</strong>, <strong>default</strong>, <strong>local</strong>,
 <strong>public</strong>, <strong>main</strong> resolvers. Definition of each of this resolvers is
 contained in separate settings file. In <code>org/apache/ivy/core/settings</code>
 folder you find these five settings files. Let&rsquo;s go through the contents
-of <code>ivysettings-public.xml</code> and <code>ivysettings-local.xml.</code></p><p><code>/org/apache/ivy/core/settings/ivysettings-public.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;ivysettings&gt;</span>
- <span class=nt>&lt;resolvers&gt;</span>
-  <span class=nt>&lt;ibiblio</span> <span class=na>name=</span><span class=s>&#34;public&#34;</span> <span class=na>m2compatible=</span><span class=s>&#34;true&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;/resolvers&gt;</span>
-<span class=nt>&lt;/ivysettings&gt;</span>
-</code></pre></div><p>For public repository, Ivy uses built-in resolver &lt;ibiblio>.</p><p><code>/org/apache/ivy/core/settings/ivysettings-local.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;ivysettings&gt;</span>
- <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.root&#34;</span> 
-              <span class=na>value=</span><span class=s>&#34;${ivy.default.ivy.user.dir}/local&#34;</span> 
-              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
-              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[revision]/[type]s/[artifact].[ext]&#34;</span> 
-              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
-              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[revision]/[type]s/[artifact].[ext]&#34;</span> 
-              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;resolvers&gt;</span>
-  <span class=nt>&lt;filesystem</span> <span class=na>name=</span><span class=s>&#34;local&#34;</span><span class=nt>&gt;</span>
-   <span class=nt>&lt;ivy</span> <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/${ivy.local.default.ivy.pattern}&#34;</span> <span class=nt>/&gt;</span>
-   <span class=nt>&lt;artifact</span> <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/$ivy.local.default.artifact.pattern}&#34;</span> <span class=nt>/&gt;</span>
-  <span class=nt>&lt;/filesystem&gt;</span>
- <span class=nt>&lt;/resolvers&gt;</span>
-<span class=nt>&lt;/ivysettings&gt;</span>
-</code></pre></div><p>For local repository Ivy pattern and Artifact pattern
+of <code>ivysettings-public.xml</code> and <code>ivysettings-local.xml.</code></p><p><code>/org/apache/ivy/core/settings/ivysettings-public.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;ivysettings&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;resolvers&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;ibiblio</span> <span class=na>name=</span><span class=s>&#34;public&#34;</span> <span class=na>m2compatible=</span><span class=s>&#34;true&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/resolvers&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/ivysettings&gt;</span>
+</span></span></code></pre></div><p>For public repository, Ivy uses built-in resolver &lt;ibiblio>.</p><p><code>/org/apache/ivy/core/settings/ivysettings-local.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;ivysettings&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.root&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;${ivy.default.ivy.user.dir}/local&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[revision]/[type]s/[artifact].[ext]&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[revision]/[type]s/[artifact].[ext]&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;resolvers&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;filesystem</span> <span class=na>name=</span><span class=s>&#34;local&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;ivy</span> <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/${ivy.local.default.ivy.pattern}&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;artifact</span> <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/$ivy.local.default.artifact.pattern}&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/filesystem&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/resolvers&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/ivysettings&gt;</span>
+</span></span></code></pre></div><p>For local repository Ivy pattern and Artifact pattern
 <code>[organisation]/[module]/[revision]/[type]s/[artifact].[ext]</code> defines
 the layout of Local repository.</p><p>Once, local repository is successfully created, it is always a good idea
 to do a quick resolve to ensure that Ivy is able to retrieve artifacts
 from our new repository without any naming conflicts. To do that, add
-ivy.xml to work directory</p><p><code>ivy.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&gt;</span>
-<span class=nt>&lt;ivy-module</span> <span class=na>version=</span><span class=s>&#34;2.0&#34;</span> <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
-         <span class=na>xsi:noNamespaceSchemaLocation=</span><span class=s>&#34;http://ant.apache.org/ivy/schemas/ivy.xsd&#34;</span><span class=nt>&gt;</span>
- <span class=nt>&lt;info</span> <span class=na>organisation=</span><span class=s>&#34;in.ex&#34;</span> <span class=na>module=</span><span class=s>&#34;simpleivy&#34;</span> <span class=na>status=</span><span class=s>&#34;integration&#34;</span><span class=nt>&gt;</span>
- <span class=nt>&lt;/info&gt;</span>
- <span class=nt>&lt;dependencies&gt;</span>
-  <span class=nt>&lt;dependency</span> <span class=na>org=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>name=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>rev=</span><span class=s>&#34;2.6&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;/dependencies&gt;</span>
-<span class=nt>&lt;/ivy-module&gt;</span>
-</code></pre></div><p>This is the same old ivy.xml file which we used earlier for resolve
-task. Add following snippet to build.xml and run ant.</p><p><code>buil.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>....
-
-<span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;resolve&#34;</span> <span class=na>description=</span><span class=s>&#34;resolve dependencies with ivy&#34;</span><span class=nt>&gt;</span>
-             <span class=nt>&lt;ivy:retrieve</span> <span class=nt>/&gt;</span>
-<span class=nt>&lt;/target&gt;</span>
-
-....
-</code></pre></div><p>Ivy should do a resolve and retrieve and place the retrieved artifacts
-in the lib directory without any protest.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/apache-ivy/media/libfiles.png alt="Apache Ivy Local Repository retrieval to lib"></figure><p><strong>Figure 6.2. Retrieval from Local Repository</strong></p><p>Prime Ivy cache from Local Repository</p><p>Our local repository is now good to go. But observe the output.</p><pre><code class=language-screen data-lang=screen>[ivy:resolve] confs: [default]
+ivy.xml to work directory</p><p><code>ivy.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;ivy-module</span> <span class=na>version=</span><span class=s>&#34;2.0&#34;</span> <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
+</span></span><span class=line><span class=cl>         <span class=na>xsi:noNamespaceSchemaLocation=</span><span class=s>&#34;http://ant.apache.org/ivy/schemas/ivy.xsd&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;info</span> <span class=na>organisation=</span><span class=s>&#34;in.ex&#34;</span> <span class=na>module=</span><span class=s>&#34;simpleivy&#34;</span> <span class=na>status=</span><span class=s>&#34;integration&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/info&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;dependency</span> <span class=na>org=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>name=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>rev=</span><span class=s>&#34;2.6&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/dependencies&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/ivy-module&gt;</span>
+</span></span></code></pre></div><p>This is the same old ivy.xml file which we used earlier for resolve
+task. Add following snippet to build.xml and run ant.</p><p><code>buil.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>....
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;resolve&#34;</span> <span class=na>description=</span><span class=s>&#34;resolve dependencies with ivy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>             <span class=nt>&lt;ivy:retrieve</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/target&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>....
+</span></span></code></pre></div><p>Ivy should do a resolve and retrieve and place the retrieved artifacts
+in the lib directory without any protest.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/apache-ivy/media/libfiles.png alt="Apache Ivy Local Repository retrieval to lib"></figure><p><strong>Figure 6.2. Retrieval from Local Repository</strong></p><p>Prime Ivy cache from Local Repository</p><p>Our local repository is now good to go. But observe the output.</p><pre tabindex=0><code class=language-screen data-lang=screen>[ivy:resolve] confs: [default]
 [ivy:resolve] found commons-lang#commons-lang;2.6 in public
 [ivy:resolve] :: resolution report :: resolve 172ms :: artifacts dl 25ms
 </code></pre><p>It indicates that commons-lang is found in public. By default, Ivy first
@@ -105,34 +105,35 @@ the <code>$HOME/.ivy2/cache</code> directory. If your cache contains a large num
 of modules then you will lose them. Just to explain the resolve
 mechanism, we are going to clean the cache. So, try this when you have a
 small cache.</p><p>Use &lt;ivy:cleancache> task to clear the cache. Add following snippet to
-build.xml and run ant clean-cache</p><p><code>build.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>....
-
-<span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;clean-cache&#34;</span> <span class=na>description=</span><span class=s>&#34;--&gt; clean the cache&#34;</span><span class=nt>&gt;</span>
-<span class=nt>&lt;ivy:cleancache</span> <span class=nt>/&gt;</span>
-<span class=nt>&lt;/target&gt;</span>
-
-....
-</code></pre></div><p>&lt;ivy:cleancache> task deletes the $HOME/.ivy2/cache directory and that
+build.xml and run ant clean-cache</p><p><code>build.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>....
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;clean-cache&#34;</span> <span class=na>description=</span><span class=s>&#34;--&gt; clean the cache&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;ivy:cleancache</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/target&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>....
+</span></span></code></pre></div><p>&lt;ivy:cleancache> task deletes the $HOME/.ivy2/cache directory and that
 clears the cache. Next, run &lt;ivy:resolve> task and resolve happens
 from the local repository. Output indicates that commons-lang is found
 in local and triggers a download to the cache.</p><p><strong>Local Resolve</strong></p><p>It is important to note that in case of local resolve too Ivy first
 searches the cache for artifacts and if it is not found, then, it copies
 the artifacts from the local repository to cache and then say the module
 is resolved and downloaded.</p><p>Sequence of download or copy during a resolve from any type of the
-repository is as follows:</p><p>Public -> cache -> project build path</p><p>Local -> cache -> project build path</p><p> </p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>Ivy Local Repository - Overriding the default settings</p><p>There are two ways to override the default settings, either through
+repository is as follows:</p><p>Public -> cache -> project build path</p><p>Local -> cache -> project build path</p><p> </p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Ivy Local Repository - Overriding the default settings</p><p>There are two ways to override the default settings, either through
 setting the properties in Ant target or through ivysettings.xml file.</p><p>As an exercise, let&rsquo;s change the layout of the local repository. Modify
-the build.xml.</p><p><code>build.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;shared repository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> 
- <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
- <span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;install&#34;</span> <span class=na>description=</span><span class=s>&#34;local at non default location&#34;</span><span class=nt>&gt;</span>
-  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
-         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/ivys/ivy-[revision].xml&#34;</span> <span class=nt>/&gt;</span>
-  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
-         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[type]s/[artifact]-[revision].[ext]&#34;</span> <span class=nt>/&gt;</span>
-  <span class=nt>&lt;ivy:install</span> <span class=na>organisation=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>module=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>revision=</span><span class=s>&#34;2.6&#34;</span> 
-            <span class=na>transitive=</span><span class=s>&#34;true&#34;</span> <span class=na>overwrite=</span><span class=s>&#34;false&#34;</span> <span class=na>from=</span><span class=s>&#34;public&#34;</span> <span class=na>to=</span><span class=s>&#34;local&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;/target&gt;</span>
-<span class=nt>&lt;/project&gt;</span>
-</code></pre></div><p>We have used Ant property to change ivy pattern and artifact pattern.
+the build.xml.</p><p><code>build.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;shared repository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> 
+</span></span><span class=line><span class=cl> <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;install&#34;</span> <span class=na>description=</span><span class=s>&#34;local at non default location&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/ivys/ivy-[revision].xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[type]s/[artifact]-[revision].[ext]&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;ivy:install</span> <span class=na>organisation=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>module=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>revision=</span><span class=s>&#34;2.6&#34;</span> 
+</span></span><span class=line><span class=cl>            <span class=na>transitive=</span><span class=s>&#34;true&#34;</span> <span class=na>overwrite=</span><span class=s>&#34;false&#34;</span> <span class=na>from=</span><span class=s>&#34;public&#34;</span> <span class=na>to=</span><span class=s>&#34;local&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/target&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></div><p>We have used Ant property to change ivy pattern and artifact pattern.
 Install still uses default local resolver, but layout of repository is
 changed to the new pattern.</p><p><strong>Delete Local Repository</strong></p><p>Before running this example, you may have to clear the local repository
 as commons-lang module is already installed on local. Deleting the local
@@ -142,29 +143,29 @@ settings. Following ivysettings.xml defines a chain resolver named
 myresolver which points to <code>$HOME/.ivy2/local</code> but layout pattern is
 different from the default local resolver. Place <code>ivysettings.xml</code> file
 along with <code>build.xml</code> and Ivy loads it instead of default file that
-comes with Ivy.</p><p><code>ivysettings.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;ivysettings&gt;</span>
- <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.root&#34;</span> 
-              <span class=na>value=</span><span class=s>&#34;${ivy.default.ivy.user.dir}/local&#34;</span> <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
-              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/ivys/ivy-[revision].xml&#34;</span> 
-              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
-              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[type]s/[artifact]-[revision].[ext]&#34;</span> 
-              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;settings</span> <span class=na>defaultResolver=</span><span class=s>&#34;myresolver&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;resolvers&gt;</span>
-  <span class=nt>&lt;chain</span> <span class=na>name=</span><span class=s>&#34;myresolver&#34;</span><span class=nt>&gt;</span>
-   <span class=nt>&lt;filesystem</span> <span class=na>name=</span><span class=s>&#34;mylocal&#34;</span><span class=nt>&gt;</span>
-    <span class=nt>&lt;ivy</span> 
-                 <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/${ivy.local.default.ivy.pattern}&#34;</span> <span class=nt>/&gt;</span>
-    <span class=nt>&lt;artifact</span> 
-                 <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/${ivy.local.default.artifact.pattern}&#34;</span> <span class=nt>/&gt;</span>
-   <span class=nt>&lt;/filesystem&gt;</span>
-   <span class=nt>&lt;ibiblio</span> <span class=na>name=</span><span class=s>&#34;mypublic&#34;</span> <span class=na>m2compatible=</span><span class=s>&#34;true&#34;</span> <span class=nt>/&gt;</span>
-  <span class=nt>&lt;/chain&gt;</span>
- <span class=nt>&lt;/resolvers&gt;</span>
-<span class=nt>&lt;/ivysettings&gt;</span>
-</code></pre></div><p>Our ivysettings.xml defines two resolvers within chain resolver</p><ul><li><p>mylocal – filesystem based repository with root at $HOME/.ivy2/local
+comes with Ivy.</p><p><code>ivysettings.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;ivysettings&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.root&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;${ivy.default.ivy.user.dir}/local&#34;</span> <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/ivys/ivy-[revision].xml&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[type]s/[artifact]-[revision].[ext]&#34;</span> 
+</span></span><span class=line><span class=cl>              <span class=na>override=</span><span class=s>&#34;false&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;settings</span> <span class=na>defaultResolver=</span><span class=s>&#34;myresolver&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;resolvers&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;chain</span> <span class=na>name=</span><span class=s>&#34;myresolver&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;filesystem</span> <span class=na>name=</span><span class=s>&#34;mylocal&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;ivy</span> 
+</span></span><span class=line><span class=cl>                 <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/${ivy.local.default.ivy.pattern}&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifact</span> 
+</span></span><span class=line><span class=cl>                 <span class=na>pattern=</span><span class=s>&#34;${ivy.local.default.root}/${ivy.local.default.artifact.pattern}&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;/filesystem&gt;</span>
+</span></span><span class=line><span class=cl>   <span class=nt>&lt;ibiblio</span> <span class=na>name=</span><span class=s>&#34;mypublic&#34;</span> <span class=na>m2compatible=</span><span class=s>&#34;true&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/chain&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/resolvers&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/ivysettings&gt;</span>
+</span></span></code></pre></div><p>Our ivysettings.xml defines two resolvers within chain resolver</p><ul><li><p>mylocal – filesystem based repository with root at $HOME/.ivy2/local
 as defined by variable ivy.local.default.root.</p></li><li><p>mypublic – default maven2 public repository.</p></li></ul><p>Ivy pattern <code>[organisation]/[module]/ivys/ivy-[revision].xml</code> places
 ivy.xml in ivys directory. Artifact pattern
 <code>[organisation]/[module]/[type]s/[artifact]-[revision].[ext]</code> places
@@ -174,19 +175,22 @@ commons-lang-2.6.jar, Ivy distinguishes them from the directory where
 they are placed.</p><p>With those changes in settings, Ivy now has only three resolvers
 myresolver (chain), mylocal and mypublic. As default ivysettings.xml is
 not loaded, default resolver default, main, local, shared and public are
-not available.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>In &lt;ivy:install> task, we have to use <strong>mylocal</strong> and <strong>mypublic</strong> in
+not available.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>In &lt;ivy:install> task, we have to use <strong>mylocal</strong> and <strong>mypublic</strong> in
 <strong>from</strong> and <strong>to</strong> attributes. Add build.xml with these changes to work
-dir</p><p><code>build.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;shared repository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> 
- <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
- <span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;install&#34;</span> <span class=na>description=</span><span class=s>&#34;local at non default location&#34;</span><span class=nt>&gt;</span>
-  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
-         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/ivys/ivy-[revision].xml&#34;</span> <span class=nt>/&gt;</span>
-  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
-         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[type]s/[artifact]-[revision].[ext]&#34;</span> <span class=nt>/&gt;</span>
-  <span class=nt>&lt;ivy:install</span> <span class=na>organisation=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>module=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>revision=</span><span class=s>&#34;2.6&#34;</span> 
-            <span class=na>transitive=</span><span class=s>&#34;true&#34;</span> <span class=na>overwrite=</span><span class=s>&#34;false&#34;</span> <span class=na>from=</span><span class=s>&#34;mypublic&#34;</span> <span class=na>to=</span><span class=s>&#34;mylocal&#34;</span> <span class=nt>/&gt;</span>
- <span class=nt>&lt;/target&gt;</span>
-<span class=nt>&lt;/project&gt;</span>
-</code></pre></div><p>Delete the local repository and run Ant. Ivy Install task creates and
+dir</p><p><code>build.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;shared repository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> 
+</span></span><span class=line><span class=cl> <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;target</span> <span class=na>name=</span><span class=s>&#34;install&#34;</span> <span class=na>description=</span><span class=s>&#34;local at non default location&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.ivy.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/ivys/ivy-[revision].xml&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;ivy.local.default.artifact.pattern&#34;</span> 
+</span></span><span class=line><span class=cl>         <span class=na>value=</span><span class=s>&#34;[organisation]/[module]/[type]s/[artifact]-[revision].[ext]&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;ivy:install</span> <span class=na>organisation=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>module=</span><span class=s>&#34;commons-lang&#34;</span> <span class=na>revision=</span><span class=s>&#34;2.6&#34;</span> 
+</span></span><span class=line><span class=cl>            <span class=na>transitive=</span><span class=s>&#34;true&#34;</span> <span class=na>overwrite=</span><span class=s>&#34;false&#34;</span> <span class=na>from=</span><span class=s>&#34;mypublic&#34;</span> <span class=na>to=</span><span class=s>&#34;mylocal&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;/target&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></div><p>Delete the local repository and run Ant. Ivy Install task creates and
 populate the local repository using the custom resolvers from our
-ivysettings.xml.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>
+ivysettings.xml.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script src=/js/vendor.min.6426da8436d34406d4c00f2275c86cf1747a900b1609a0b04e1b68d542f60f72.js></script></body></html>

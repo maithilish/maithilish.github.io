@@ -1,5 +1,5 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="GWT RPC Tutorial GWT StockWatcher tutorial has a gentle introduction to client-server communication. This chapter of GWT Tutorial explains GWT RPC in detail."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-42139846-3');</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"RPC - GWT Tutorial - CodeTab","headline":"RPC - GWT Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/","description":"GWT RPC Tutorial GWT StockWatcher tutorial has a gentle introduction to client-server communication. This chapter of GWT Tutorial explains GWT RPC in detail.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T14:09:00+0530","dateModified":"2019-01-10T14:09:00+0530","wordCount":"1236","keywords":["gwt rpc","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.e7fd2d89f73c680873529a110a9007503a1bda864a3a3a6c53c4eb02a54c35eb.css integrity="sha256-5/0tifc8aAhzUpoRCpAHUDob2oZKOjpsU8TrAqVMNes="><title>RPC - GWT Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=description content="GWT RPC Tutorial GWT StockWatcher tutorial has a gentle introduction to client-server communication. This chapter of GWT Tutorial explains GWT RPC in detail."><meta name=author content="Maithilish"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-42139846-3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-42139846-3")</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"articleSection":"tutorial","name":"RPC - GWT Tutorial - CodeTab","headline":"RPC - GWT Tutorial - CodeTab","url":"https://www.codetab.org/tutorial/gwt/rpc/gwt-remote-procedure-calls/","description":"GWT RPC Tutorial GWT StockWatcher tutorial has a gentle introduction to client-server communication. This chapter of GWT Tutorial explains GWT RPC in detail.","inLanguage":"en","image":"https://www.codetab.org/logo.jpg","author":"Maithilish","creator":"Maithilish","publisher":{"@type":"Organization","name":"Maithilish","url":"https://www.codetab.org/","logo":{"@type":"ImageObject","url":"https://www.codetab.org/logo.png","width":"200","height":"200"}},"copyrightHolder":"Maithilish","copyrightYear":"2019","datePublished":"2019-01-10T14:09:00+0530","dateModified":"2019-01-10T14:09:00+0530","wordCount":"1236","keywords":["gwt rpc","Blog"]}</script><link rel=icon href=/favicon.ico><link rel=stylesheet href=/css/vendor.min.36dba173dca94f4b9fca7c6a1c3d15560f7a96c6ab0c0042dcd000f8469a9dc1.css integrity="sha256-Ntuhc9ypT0ufynxqHD0VVg96lsarDABC3NAA+EaancE="><title>RPC - GWT Tutorial - CodeTab</title></head><body id=top><header><nav id=navbar-main class="navbar fixed-top navbar-light navbar-expand-lg bg-white border-bottom shadow-sm"><div class=container-fluid><a class=navbar-brand href=/>Codetab</a>
 <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/#tutorials><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#about><span>About</span></a></li></ul></div></div></nav></header><div class=container-fluid><div class=row>&nbsp;</div><div class=row><aside id=sidebar class=col-md-3><div class=row><nav id=navbar-side class="bg-light text-secondary"><h4 class="text-muted bg-white pl-2">GWT Tutorial</h4><nav class="navbar navbar-light bg-white navbar-expand-md"><button class="navbar-toggler ml-auto" type=button data-toggle=collapse data-target=#bookmenu aria-controls=bookmenu aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=bookmenu><div><div id="GWT Tutorial - Complete Project - CodeTab"><div><a href=https://www.codetab.org/tutorial/gwt/introduction/ class="toc-page text-wrap text-muted">Introduction</a></div><div><a href=https://www.codetab.org/tutorial/gwt/install/ class="toc-page text-wrap text-muted">Install GWT in Eclipse</a></div><div><a href=https://www.codetab.org/tutorial/gwt/create-project/ class="toc-page text-wrap text-muted">Project Setup</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-project-code/ class="toc-page text-wrap text-muted">GWT Project Code</a></div><div><a href=https://www.codetab.org/tutorial/gwt/gwt-demo/ class="toc-page text-wrap text-muted">GWT Tutorial Demo</a></div></div><div class="dropdown show mt-2"><a class="no-collapse-on-click card-link toc-section text-dark" href=#tutorial-gwt-shell id=dropdownheader data-toggle=collapse aria-haspopup=true aria-expanded=false>Shell</a><div id=tutorial-gwt-shell class=collapse><a href=https://www.codetab.org/tutorial/gwt/shell/finsshell/ class="toc-page dropdown-item text-wrap text-muted">UIBinder and Custom Widget</a>
@@ -52,11 +52,11 @@ Eclipse&rsquo;s Refactor-Move feature.</p><ul><li><p>in.fins.client.Symbol</p></
 choose <strong>Refactor</strong> → <strong>Move</strong>. In Move dialog select in.fins.shared
 package as destination and click OK button.</p><p>GWT allow the clients to access these classes only if they are
 translatable to javascript. Modify GWT module file - <code>fins.gwt.xml</code> and
-add the following to make <code>in.fins.shared</code> package as translatable.</p><p><code>in.fins/fins.gwt.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML>....
-
-        <span class=nt>&lt;source</span> <span class=na>path=</span><span class=s>&#34;shared&#34;</span> <span class=nt>/&gt;</span>
-....
-</code></pre></div><h5 id=rpc>RPC</h5><p>GWT Remote Procedure call (RPC) involves four steps.</p><ul><li><p>define client side interfaces.</p></li><li><p>implement server side service.</p></li><li><p>configure service.</p></li><li><p>invoke service from client through async interface.</p></li></ul><h5 id=client-side-interfaces>Client side interfaces</h5><p>On the client side, we require an interface to interact with the service
+add the following to make <code>in.fins.shared</code> package as translatable.</p><p><code>in.fins/fins.gwt.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>....
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;source</span> <span class=na>path=</span><span class=s>&#34;shared&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>....
+</span></span></code></pre></div><h5 id=rpc>RPC</h5><p>GWT Remote Procedure call (RPC) involves four steps.</p><ul><li><p>define client side interfaces.</p></li><li><p>implement server side service.</p></li><li><p>configure service.</p></li><li><p>invoke service from client through async interface.</p></li></ul><h5 id=client-side-interfaces>Client side interfaces</h5><p>On the client side, we require an interface to interact with the service
 available on the server which provides a list of symbol names and let&rsquo;s
 name the interface as ISymbolService as the task is loosely relates to
 symbol.</p><p>As a good practice, place client side RPC interfaces in a separate
@@ -68,84 +68,85 @@ add a annotation <strong>@RemoteServiceRelativePath(&ldquo;symbolService&rdquo;)
 Annotation associates the service with a default path relative to the
 module base URL which we are going to use to configure the service
 later. Next, add a service method, <code>getSymbolNames()</code> to the interface,
-which clients invoke to get the list of symbol.</p><p><code>in.fins.client.rpc/ISymbolService.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=kn>package</span> <span class=nn>in.fins.client.rpc</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>com.google.gwt.user.client.rpc.RemoteService</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>com.google.gwt.user.client.rpc.RemoteServiceRelativePath</span><span class=o>;</span>
-
-<span class=nd>@RemoteServiceRelativePath</span><span class=o>(</span><span class=s>&#34;symbolService&#34;</span><span class=o>)</span>
-<span class=kd>public</span> <span class=kd>interface</span> <span class=nc>ISymbolService</span> <span class=kd>extends</span> <span class=n>RemoteService</span> <span class=o>{</span>
-
-    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>getSymbolNames</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>Exception</span><span class=o>;</span>
-    
-<span class=o>}</span>
-</code></pre></div><p>Server side service implements <code>ISymbolService</code> and client use the
+which clients invoke to get the list of symbol.</p><p><code>in.fins.client.rpc/ISymbolService.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>in.fins.client.rpc</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.google.gwt.user.client.rpc.RemoteService</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.google.gwt.user.client.rpc.RemoteServiceRelativePath</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@RemoteServiceRelativePath</span><span class=o>(</span><span class=s>&#34;symbolService&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>ISymbolService</span> <span class=kd>extends</span> <span class=n>RemoteService</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>getSymbolNames</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>Exception</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>Server side service implements <code>ISymbolService</code> and client use the
 interface to create a proxy service, and we require one more async
 interface to make RPC calls.</p><p>Eclipse Quick Fix feature comes handy to define the async interface.
 ISymbolService shows an error, Missing asynchronous interface
 ISymbolServiceAsync, go ahead, and click on error icon to get drop down
 with four fixes.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/quickfix.png alt="Quick Fix"></figure><h6 id=figure71quick-fix>Figure 7.1. Quick Fix</h6><p>Choose - Create asynchronous RemoteService interface to create
 <code>ISymbolServiceAsync</code>. Async interface is a plain interface which
-slightly redefines ISymbolService methods.</p><p><code>in.fins.client.rpc/ISymbolServiceAsync.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=kn>package</span> <span class=nn>in.fins.client.rpc</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>com.google.gwt.user.client.rpc.AsyncCallback</span><span class=o>;</span>
-
-<span class=kd>public</span> <span class=kd>interface</span> <span class=nc>ISymbolServiceAsync</span> <span class=o>{</span>
-
-    <span class=kt>void</span> <span class=nf>getSymbolNames</span><span class=o>(</span><span class=n>AsyncCallback</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=n>callback</span><span class=o>);</span>
-
-<span class=o>}</span>
-</code></pre></div><p>While the name and parameters are identical, the async methods have no
+slightly redefines ISymbolService methods.</p><p><code>in.fins.client.rpc/ISymbolServiceAsync.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>in.fins.client.rpc</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.google.gwt.user.client.rpc.AsyncCallback</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>ISymbolServiceAsync</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>getSymbolNames</span><span class=o>(</span><span class=n>AsyncCallback</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=n>callback</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>While the name and parameters are identical, the async methods have no
 return type and last parameter is an AsyncCallback object. We will soon
 explain the significance of <code>AsyncCallback</code>, and for the moment it is
 suffice to know the differences in method definitions.</p><p>To summarize, we defined two interfaces; <code>ISymbolService</code> with required
 service methods and its companion an async interface
 <code>ISymbolServiceAsync</code>. While service implements ISymbolService, clients
 use it to create a proxy service and use ISymbolServiceAsync to invoke
-the service method.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><h5 id=server-side-service>Server side service</h5><p>Create a new package<figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/package.png alt></figure><code>in.fins.server.service</code>
+the service method.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=server-side-service>Server side service</h5><p>Create a new package<figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/package.png alt></figure><code>in.fins.server.service</code>
 to place services. Please note that, there is no source entry in
 fins.gwt.xml for this package. Hence this package is not translatable to
 javascript and only, server has access to it.</p><p>Create service class <code>SymbolService</code> and let it implement the interface
-<code>ISymbolService</code>.</p><p><code>in.fins.server.service/SymbolService.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java><span class=kn>package</span> <span class=nn>in.fins.server.service</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>in.fins.client.rpc.ISymbolService</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>in.fins.shared.SymbolDatabase</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
-<span class=kn>import</span> <span class=nn>java.util.logging.Logger</span><span class=o>;</span>
-
-<span class=kn>import</span> <span class=nn>com.google.gwt.user.server.rpc.RemoteServiceServlet</span><span class=o>;</span>
-
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>SymbolService</span> <span class=kd>extends</span> <span class=n>RemoteServiceServlet</span> <span class=kd>implements</span>
-        <span class=n>ISymbolService</span> <span class=o>{</span>
-
-    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Logger</span> <span class=n>log</span> <span class=o>=</span> <span class=n>Logger</span><span class=o>.</span><span class=na>getLogger</span><span class=o>(</span><span class=n>SymbolService</span><span class=o>.</span><span class=na>class</span>
-            <span class=o>.</span><span class=na>getName</span><span class=o>());</span>
-
-    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>long</span> <span class=n>serialVersionUID</span> <span class=o>=</span> <span class=n>1L</span><span class=o>;</span>
-    
-    <span class=kd>public</span> <span class=nf>SymbolService</span><span class=o>()</span> <span class=o>{</span>
-        <span class=kd>super</span><span class=o>();</span>
-    <span class=o>}</span>
-
-    <span class=nd>@Override</span>
-    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>getSymbolNames</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>
-        <span class=k>try</span> <span class=o>{</span>
-            <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=n>SymbolDatabase</span><span class=o>.</span><span class=na>getSymbolNames</span><span class=o>();</span>
-            <span class=n>log</span><span class=o>.</span><span class=na>info</span><span class=o>(</span><span class=s>&#34;Symbol Names : &#34;</span> <span class=o>+</span> <span class=n>list</span><span class=o>.</span><span class=na>size</span><span class=o>());</span>
-            <span class=k>return</span> <span class=n>list</span><span class=o>;</span>
-        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
-            <span class=n>log</span><span class=o>.</span><span class=na>warning</span><span class=o>(</span><span class=n>e</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
-            <span class=k>throw</span> <span class=n>e</span><span class=o>;</span>
-        <span class=o>}</span>
-    <span class=o>}</span>
-
-<span class=o>}</span>
-</code></pre></div><p>GWT RPC service has to extend <code>RemoteServiceServlet</code> which takes care of
+<code>ISymbolService</code>.</p><p><code>in.fins.server.service/SymbolService.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>in.fins.server.service</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>in.fins.client.rpc.ISymbolService</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>in.fins.shared.SymbolDatabase</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.logging.Logger</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.google.gwt.user.server.rpc.RemoteServiceServlet</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>SymbolService</span> <span class=kd>extends</span> <span class=n>RemoteServiceServlet</span> <span class=kd>implements</span>
+</span></span><span class=line><span class=cl>        <span class=n>ISymbolService</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Logger</span> <span class=n>log</span> <span class=o>=</span> <span class=n>Logger</span><span class=o>.</span><span class=na>getLogger</span><span class=o>(</span><span class=n>SymbolService</span><span class=o>.</span><span class=na>class</span>
+</span></span><span class=line><span class=cl>            <span class=o>.</span><span class=na>getName</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>long</span> <span class=n>serialVersionUID</span> <span class=o>=</span> <span class=n>1L</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>SymbolService</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>super</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>getSymbolNames</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=n>SymbolDatabase</span><span class=o>.</span><span class=na>getSymbolNames</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=n>log</span><span class=o>.</span><span class=na>info</span><span class=o>(</span><span class=s>&#34;Symbol Names : &#34;</span> <span class=o>+</span> <span class=n>list</span><span class=o>.</span><span class=na>size</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>list</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>log</span><span class=o>.</span><span class=na>warning</span><span class=o>(</span><span class=n>e</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>            <span class=k>throw</span> <span class=n>e</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>GWT RPC service has to extend <code>RemoteServiceServlet</code> which takes care of
 deserialize incoming requests from the client and serialize outgoing
 responses. Service method <code>getSymbolNames()</code> obtains list of symbol
 names from SymbolDatabase and RemoteServiceServlet serializes the list
@@ -157,52 +158,55 @@ Symbol, Data, DataGroup and Fact implements Serializable interface.</p><p>Refer 
 objects</a>
 to know more.</p><h5 id=configure-service>Configure service</h5><p>SymbolService is a servlet as it extends RemoteServiceServlet and we
 have to configure the servlet in <code>web.xml</code> like any other servlet.
-Modify <code>web.xml</code> as follows.</p><p><code>war/WEB-INF/web.xml</code></p><div class=highlight><pre class=chroma><code class=language-XML data-lang=XML><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; standalone=&#34;no&#34;?&gt;</span>
-<span class=nt>&lt;web-app</span> <span class=na>xmlns=</span><span class=s>&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
-  <span class=na>xmlns:web=</span><span class=s>&#34;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span>
-  <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class=na>version=</span><span class=s>&#34;2.5&#34;</span>
-  <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span class=nt>&gt;</span>
-
-    <span class=nt>&lt;welcome-file-list&gt;</span>
-        <span class=nt>&lt;welcome-file&gt;</span>Fins.html<span class=nt>&lt;/welcome-file&gt;</span>
-    <span class=nt>&lt;/welcome-file-list&gt;</span>
-
-    <span class=nt>&lt;servlet&gt;</span>
-        <span class=nt>&lt;servlet-name&gt;</span>symbolService<span class=nt>&lt;/servlet-name&gt;</span>
-        <span class=nt>&lt;servlet-class&gt;</span>in.fins.server.service.SymbolService<span class=nt>&lt;/servlet-class&gt;</span>
-    <span class=nt>&lt;/servlet&gt;</span>
-    <span class=nt>&lt;servlet-mapping&gt;</span>
-        <span class=nt>&lt;servlet-name&gt;</span>symbolService<span class=nt>&lt;/servlet-name&gt;</span>
-        <span class=nt>&lt;url-pattern&gt;</span>/fins/symbolService<span class=nt>&lt;/url-pattern&gt;</span>
-    <span class=nt>&lt;/servlet-mapping&gt;</span>
-
-<span class=nt>&lt;/web-app&gt;</span>
-</code></pre></div><p>ISymbolService contains @RemoteServiceRelativePath(&ldquo;symbolService&rdquo;)
+Modify <code>web.xml</code> as follows.</p><p><code>war/WEB-INF/web.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; standalone=&#34;no&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;web-app</span> <span class=na>xmlns=</span><span class=s>&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=na>xmlns:web=</span><span class=s>&#34;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class=na>version=</span><span class=s>&#34;2.5&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;welcome-file-list&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;welcome-file&gt;</span>Fins.html<span class=nt>&lt;/welcome-file&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/welcome-file-list&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;servlet&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;servlet-name&gt;</span>symbolService<span class=nt>&lt;/servlet-name&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;servlet-class&gt;</span>in.fins.server.service.SymbolService<span class=nt>&lt;/servlet-class&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/servlet&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;servlet-mapping&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;servlet-name&gt;</span>symbolService<span class=nt>&lt;/servlet-name&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;url-pattern&gt;</span>/fins/symbolService<span class=nt>&lt;/url-pattern&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/servlet-mapping&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/web-app&gt;</span>
+</span></span></code></pre></div><p>ISymbolService contains @RemoteServiceRelativePath(&ldquo;symbolService&rdquo;)
 annotation, and we use the path i.e. symbolService in url-pattern which
 assists GWT to link the service to a specific servlet.</p><h5 id=invoke-service>Invoke service</h5><p>With all that RPC scaffolding in place, we are finally ready to invoke
 the service. Modification to <code>AutoSuggest.setSymbolNames()</code> method
-involves three parts.</p><ul><li><p>create an instance of service proxy class.</p></li><li><p>setup the callback object.</p></li><li><p>call the service method.</p></li></ul><p><code>in.fins.client.widget/AutoSuggest.java</code></p><div class=highlight><pre class=chroma><code class=language-Java data-lang=Java>    <span class=kd>private</span> <span class=kt>void</span> <span class=nf>setSymbolNames</span><span class=o>()</span> <span class=o>{</span>
-
-                <span class=c1>// create service Proxy                                            ISymbolServiceAsync symbolService = GWT.create(ISymbolService.class);
-</span><span class=c1></span>
-                <span class=c1>// call service method                                             symbolService.getSymbolNames(new AsyncCallback&lt;List&lt;String&gt;&gt;() {
-</span><span class=c1></span>                     
-                        <span class=c1>// setup callback object                                       @Override
-</span><span class=c1></span>            <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onSuccess</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
-              <span class=o>((</span><span class=n>MultiWordSuggestOracle</span><span class=o>)</span> <span class=n>suggestBox</span><span class=o>.</span><span class=na>getSuggestOracle</span><span class=o>())</span>
-                        <span class=o>.</span><span class=na>addAll</span><span class=o>(</span><span class=n>list</span><span class=o>);</span>
-                <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;Received symbol names via RPC&#34;</span><span class=o>);</span>
-            <span class=o>}</span>
-
-            <span class=nd>@Override</span>
-            <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onFailure</span><span class=o>(</span><span class=n>Throwable</span> <span class=n>caught</span><span class=o>)</span> <span class=o>{</span>
-                <span class=n>log</span><span class=o>.</span><span class=na>warning</span><span class=o>(</span><span class=n>caught</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
-            <span class=o>}</span>
-        <span class=o>});</span>
-    <span class=o>}</span>
-</code></pre></div><table><col style=width:50%><col style=width:50%><tbody><tr class=odd><td style=text-align:left><p><img src=../media/1.png alt=1 class=callout></p></td><td style=text-align:left><div class=para><code class=methodname>GWT.create()</code> method creates the service proxy. Note that we use ISymbolService in create() method but returned proxy object is assigned to ISymbolServiceAsync. <code class=methodname>GWT.create()</code> does this trick via a concept known as deferred binding.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/2.png alt=2 class=callout></p></td><td style=text-align:left><div class=para>Remote call is async in nature as clients doesn't know when server returns the service request. To accomodate this, you have to specify a callback method which executes when remote call completes. Callback object is anonymous inner type <code class=classname>AsyncCallBack</code> with two overloaded methods <code class=methodname>onSuccess()</code> and <code class=methodname>onFailure()</code>. Success method receives the object returned by the service and failure method receives any exception encountered by the server or RPC call.</div></td></tr><tr class=odd><td style=text-align:left><p><img src=../media/3.png alt=3 class=callout></p></td><td style=text-align:left><div class=para>Service method <code class=methodname>getSymbolNames()</code> is called. Method <code class=methodname>onSuccess()</code> receives the <code class=classname>List&lt;String></code> that is set to <code class=classname>SuggestionOracle</code>.</div></td></tr></tbody></table><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div><p>On app access, a log message in Eclipse console displays the size of the
+involves three parts.</p><ul><li><p>create an instance of service proxy class.</p></li><li><p>setup the callback object.</p></li><li><p>call the service method.</p></li></ul><p><code>in.fins.client.widget/AutoSuggest.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>void</span> <span class=nf>setSymbolNames</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=c1>// create service Proxy                                            ISymbolServiceAsync symbolService = GWT.create(ISymbolService.class);
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>                <span class=c1>// call service method                                             symbolService.getSymbolNames(new AsyncCallback&lt;List&lt;String&gt;&gt;() {
+</span></span></span><span class=line><span class=cl><span class=c1></span>                     
+</span></span><span class=line><span class=cl>                        <span class=c1>// setup callback object                                       @Override
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onSuccess</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>              <span class=o>((</span><span class=n>MultiWordSuggestOracle</span><span class=o>)</span> <span class=n>suggestBox</span><span class=o>.</span><span class=na>getSuggestOracle</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>                        <span class=o>.</span><span class=na>addAll</span><span class=o>(</span><span class=n>list</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;Received symbol names via RPC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>            <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onFailure</span><span class=o>(</span><span class=n>Throwable</span> <span class=n>caught</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>log</span><span class=o>.</span><span class=na>warning</span><span class=o>(</span><span class=n>caught</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>});</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span></code></pre></div><table><col style=width:50%><col style=width:50%><tbody><tr class=odd><td style=text-align:left><p><img src=../media/1.png alt=1 class=callout></p></td><td style=text-align:left><div class=para><code class=methodname>GWT.create()</code> method creates the service proxy. Note that we use ISymbolService in create() method but returned proxy object is assigned to ISymbolServiceAsync. <code class=methodname>GWT.create()</code> does this trick via a concept known as deferred binding.</div></td></tr><tr class=even><td style=text-align:left><p><img src=../media/2.png alt=2 class=callout></p></td><td style=text-align:left><div class=para>Remote call is async in nature as clients doesn't know when server returns the service request. To accomodate this, you have to specify a callback method which executes when remote call completes. Callback object is anonymous inner type <code class=classname>AsyncCallBack</code> with two overloaded methods <code class=methodname>onSuccess()</code> and <code class=methodname>onFailure()</code>. Success method receives the object returned by the service and failure method receives any exception encountered by the server or RPC call.</div></td></tr><tr class=odd><td style=text-align:left><p><img src=../media/3.png alt=3 class=callout></p></td><td style=text-align:left><div class=para>Service method <code class=methodname>getSymbolNames()</code> is called. Method <code class=methodname>onSuccess()</code> receives the <code class=classname>List&lt;String></code> that is set to <code class=classname>SuggestionOracle</code>.</div></td></tr></tbody></table><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>On app access, a log message in Eclipse console displays the size of the
 list and another message in the log tab confirms that client has indeed
 received the list via RPC. Server side logs are sent to console while
 client logs are sent to three locations; console, Development Mode view
 and log tab. Console distinguishes logs by showing server logs in red
-font and client logs in black font.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=/js/vendor.min.8489448e4e75ceb388a38abde3871de9485502974c5feddcf04a3d413dc6e103.js></script></body></html>
+font and client logs in black font.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><ins class=adsbygoogle style=display:inline-block;width:160px;height:600px data-ad-client=ca-pub-1281079745125126 data-ad-slot=8963022093></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script src=/js/vendor.min.6426da8436d34406d4c00f2275c86cf1747a900b1609a0b04e1b68d542f60f72.js></script></body></html>
