@@ -4,4 +4,4 @@ Options Page
 Plugin Enqueue Scripts
 Pass Data to JavaScript
 Ajax
-The plugin uses two files admin/class-stats.php and js/chart.</description></item></channel></rss>
+The plugin uses two files admin/class-stats.php and js/chart.js. As many of the concepts are already covered in the tutorial we will not get into the detail, instead explain the overall flow with the relevant code snippets.</description></item></channel></rss>

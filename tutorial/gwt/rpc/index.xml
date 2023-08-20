@@ -5,4 +5,4 @@ in.fins.client.action/SymbolAction.java
 in.fins.client.action/DataGroupAction.java
 in.fins.client.action/DataAction.java
 Shift them to RPC with following steps.
-define method in ISymbolService interface.</description></item></channel></rss>
+define method in ISymbolService interface. Use method names - getSymbol(), getDataGroup() and getData() with proper parameters and return type.</description></item></channel></rss>

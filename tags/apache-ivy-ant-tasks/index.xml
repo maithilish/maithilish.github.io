@@ -2,4 +2,4 @@
 Apache Ivy Ant Tasks
 Apache Ivy comes with its own set of Ant Tasks which can be called from Ant build file. In this tutorial, we cover following Ivy Tasks
 Table 2.1. Ivy Ant tasks
-Task Description Resolve Resolves the dependencies described in ivy.</description></item></channel></rss>
+Task Description Resolve Resolves the dependencies described in ivy.xml and places the resolved dependencies in ivy cache.</description></item></channel></rss>

@@ -3,4 +3,4 @@ MenuItem
 MenuHeader
 MenuBar
 Figure 4.1. Menu parts MenuHeader is a stylish header that display menu categories. MenuItem is GWT Anchor widget and the user clicks them to invoke menu options. MenuBar is a StackLayoutPanel with MenuHeader as header and MenuItem as content.
-console.log("slot C"</description></item></channel></rss>
+4.1. ClientBundle MenuBar, MenuHeader and MenuItem widgets use icons for a stylish look.</description></item></channel></rss>
