@@ -7,8 +7,7 @@ allowed in a job file.</p><p>The Example-1 scrapes Price data from acme-quote.ht
 Example-2 extracts Snapshot data from the same page. We can add these
 two task within tasks element.</p><p>But before doing that let&rsquo;s introduce one more feature - <strong>steps
 reference</strong> - which extracts steps into separate entity which can be
-used by both tasks.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=steps-reference>Steps Reference</h2><p>In Example-6, steps is moved out of task element as a standalone element
+used by both tasks.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=steps-reference>Steps Reference</h2><p>In Example-6, steps is moved out of task element as a standalone element
 under &lt;fields></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;fields</span> <span class=na>name=</span><span class=s>&#34;locator&#34;</span> <span class=na>class=</span><span class=s>&#34;org.codetab.gotz.model.Locator&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=na>xmlns=</span><span class=s>&#34;http://codetab.org/xfields&#34;</span><span class=nt>&gt;</span>
 </span></span><span class=line><span class=cl>
@@ -39,8 +38,7 @@ define tasks as show below</p><div class=highlight><pre tabindex=0 class=chroma>
 </span></span></code></pre></div><p>The above snippet defines two task, first one applies snapshot dataDef
 and second one price dataDef on locators of group quote i.e.
 acme-quote.html page and both task use commonSteps through <strong>&lt;steps
-ref=&ldquo;commonSteps&rdquo; /></strong></p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=multiple-tasks>Multiple tasks</h2><p>The Example-7 extends on previous one which executes multiple tasks on
+ref=&ldquo;commonSteps&rdquo; /></strong></p><div>&nbsp;</div><div>&nbsp;</div><h2 id=multiple-tasks>Multiple tasks</h2><p>The Example-7 extends on previous one which executes multiple tasks on
 multiple locators group. It scrapes price and snapshot data from
 acme-quote.html and bs data from acme-bs.html. Relevant snippet from the
 example is show below.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;locators</span> <span class=na>group=</span><span class=s>&#34;quote&#34;</span><span class=nt>&gt;</span>

@@ -60,8 +60,7 @@ PHPUnit x.y.z by Sebastian Bergmann and contributors.
 </code></pre><p>For Windows, refer <a href=https://phpunit.de/manual/current/en/installation.html#installation.phar.windows target=_blank>PHPUnit Installation for
 Windows</a>.
 PHPUnit requires PHP 5.3.3 or above, and Windows users also have to
-install PHP, if not installed.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=create-simple-plugin>Create Simple Plugin</h3><p>To understand the unit test setup, we require a simple plugin. If you
+install PHP, if not installed.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=create-simple-plugin>Create Simple Plugin</h3><p>To understand the unit test setup, we require a simple plugin. If you
 have already created the simple plugin explained in <a href=/tutorial/wordpress-plugin-development/simple-plugin/>WordPress Simple Plugin</a> then you can reuse it, otherwise create a new one as explained here.</p><p>Create a directory named <code>wp-simple-plugin</code> in some location and add
 plugin main file <code>wp-simple-plugin.php</code> to it with following contents.</p><p><code>wp-simple-plugin/wp-simple-plugin.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span>
 </span></span><span class=line><span class=cl>
@@ -195,8 +194,7 @@ mysql&gt; create database wptest;
 mysql&gt; GRANT ALL PRIVILEGES ON wptest.* TO wptest@localhost IDENTIFIED BY &#39;wptest&#39;;
 mysql&gt; flush privileges;
 mysql&gt; exit
-</code></pre><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=install-wordpress>Install WordPress</h3><p>WordPress Tests Library requires WordPress software to create an test
+</code></pre><div>&nbsp;</div><div>&nbsp;</div><h3 id=install-wordpress>Install WordPress</h3><p>WordPress Tests Library requires WordPress software to create an test
 instance. In <code>wp-tests-config.php</code>, we defined ABSPATH pointing it the
 location of WordPress at <code>/opt/lampp/wptest/wordpress/</code>, but you are
 free to install WordPress in any other location. While defining ABSPATH

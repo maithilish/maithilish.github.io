@@ -6,8 +6,7 @@
 dataDef which defines data to scrape from the pages. But, we haven&rsquo;t
 defined how that work has to be carried out. This chapter defines
 <strong>Tasks and Steps</strong> which executes series of steps that use dataDef to
-scrape data from locator.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=tasks-and-task>Tasks and Task</h2><p>The <strong>defs/examples/jsoup/ex-5/job.xml</strong> defines one task which applies
+scrape data from locator.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=tasks-and-task>Tasks and Task</h2><p>The <strong>defs/examples/jsoup/ex-5/job.xml</strong> defines one task which applies
 dataDef named bs to locators of same group.</p><p>In job.xml, the tasks are defined inside a <strong>&lt;fields></strong> element. As
 exaplined in the previous chapter, the namespace specification
 xmlns=&ldquo;<a href=http://codetab.org/xfields%22>http://codetab.org/xfields"</a> in fields allows us to define tasks
@@ -27,8 +26,7 @@ and step fields without xf: prefix.</p><div class=highlight><pre tabindex=0 clas
 </span></span></code></pre></div><p>The tasks group attribute is used to link tasks with the a group of
 locators. In the example, tasks defined for group bs is executed for all
 locators of same group.</p><p>Tasks may contain any number of task definitions. Here we are defining
-single task which applies dataDef named bs to the locator of same group.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=steps>Steps</h2><p>Each task should define steps that needs to be executed.</p><p>Task <strong>&lt;steps></strong> element defines sequence of <strong>&lt;step></strong> elements.
+single task which applies dataDef named bs to the locator of same group.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=steps>Steps</h2><p>Each task should define steps that needs to be executed.</p><p>Task <strong>&lt;steps></strong> element defines sequence of <strong>&lt;step></strong> elements.
 The steps snippet from job.xml is shown below</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;fields</span> <span class=na>name=</span><span class=s>&#34;locator&#34;</span> <span class=na>class=</span><span class=s>&#34;org.codetab.gotz.model.Locator&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=na>xmlns=</span><span class=s>&#34;http://codetab.org/xfields&#34;</span><span class=nt>&gt;</span>
 </span></span><span class=line><span class=cl>

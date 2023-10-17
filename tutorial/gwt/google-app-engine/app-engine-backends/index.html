@@ -78,8 +78,7 @@ as Backend Name : test-backend</p></li></ul><p>Even though we are able to run se
 appropriate use of backends is with GAE services like Task Queues, Cron
 jobs etc.,</p><p>Once you are through with the concept, remove TestServlet related
 changes from the project and we are ready to move <code>GaePersistTask</code> to
-Backend.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=configure-backend>Configure Backend</h5><p>Backend configuration file, <code>WEB-INF/backends.xml</code> , configures and adds
+Backend.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=configure-backend>Configure Backend</h5><p>Backend configuration file, <code>WEB-INF/backends.xml</code> , configures and adds
 backend instances.</p><p><code>war/WEB-INF/backends.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;backends&gt;</span>
 </span></span><span class=line><span class=cl>  <span class=nt>&lt;backend</span> <span class=na>name=</span><span class=s>&#34;task-backend&#34;</span><span class=nt>&gt;</span>
 </span></span><span class=line><span class=cl>  <span class=nt>&lt;class&gt;</span>B2<span class=nt>&lt;/class&gt;</span>
@@ -125,8 +124,7 @@ port.</p><pre tabindex=0><code class=language-screen data-lang=screen>May 26, 20
 INFO: server: -1.task-backend is running on port 47589
 May 26, 2013 4:40:09 PM com.google.appengine.tools.development.DevAppServerImpl start
 INFO: Dev App Server is now running
-</code></pre><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>If this workaround fails to bring up the Backend, then only option is to
+</code></pre><div>&nbsp;</div><div>&nbsp;</div><p>If this workaround fails to bring up the Backend, then only option is to
 test Backends on live setup.</p><p>Admin console has options to manage the Backends instances.</p><p>In the next section, we list the steps to switch the app to run on
 regular app servers.</p><h5 id=forward-pointers>Forward Pointers</h5><p><em>App Engine Services</em> - Details about various service provided by App
 Engine <a href=https://cloud.google.com/appengine/docs/java/apis target=_blank>Java Service

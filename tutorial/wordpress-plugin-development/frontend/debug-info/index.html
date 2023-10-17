@@ -61,8 +61,7 @@ debug data array with a global array $sos_debug_data.</p><p><code>share-on-socia
 </span></span><span class=line><span class=cl>        <span class=nv>$sos_debug_data</span> <span class=o>=</span> <span class=nx>array_merge</span><span class=p>(</span> <span class=nv>$sos_debug_data</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>                <span class=k>array</span><span class=p>(</span><span class=nv>$debug_data</span> <span class=p>)</span> <span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Once page is fully generated, WordPress has to dump the debug info
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>Once page is fully generated, WordPress has to dump the debug info
 collected in global $sos_debug_data. To do that, at the start in the
 plugin main file, we hook <code>Sos_Helper::output_debug_data() </code>method to
 <strong>shutdown</strong> action hook. WordPress executes shutdown hook when it

@@ -74,8 +74,7 @@ domain which we explain in a later blog when we cover the WordPress
 Internationalization testing. In the above test case, we also remove a
 user capability which is enabled by some test in this particular test
 case.</p><p>The things we do in setup() and teardown() methods varies for each test
-case, but they are easy to understand once you go through test class.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=methods-with-return-value>Methods with Return Value</h3><p>The simplest type of plugin tests are of the methods that return some
+case, but they are easy to understand once you go through test class.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=methods-with-return-value>Methods with Return Value</h3><p>The simplest type of plugin tests are of the methods that return some
 value. For example, the <code>Sos_Options::sanitize_options()</code> method takes
 an array as input which hold key, value pairs and the method sanitize
 the values using WP function <a href=http://codex.wordpress.org/Function_Reference/wp_filter_nohtml_kses target=_blank>wp_filter_nohtml_kses()</a> and add the sanitized value to an output array. The method returns the output array which holds the sanitized values.</p><p><code>share-on-social/admin/class-options.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>sanitize_options</span> <span class=p>(</span> <span class=nv>$input</span> <span class=p>)</span> <span class=p>{</span>
@@ -105,8 +104,7 @@ element and whether the method has sanitized the value by removing the
 PHP tags from the input value. The instance of class <code>Sos_Options</code> is
 instantiated in test case setup() method and assigned to the variable
 $this->sos_options.</p><p><strong>Always Count</strong></p><p>When testing an array, always assert the size of the array with
-<a href=https://phpunit.de/manual/current/en/appendixes.assertions.html target=_blank>assertCount()</a>. It ensures that test fails whenever you make changes to the code that affects the size of the array, and failure alerts you to write additional assertions to test the changes.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=methods-that-echo-output>Methods that Echo Output</h3><p>One more type of frequently used methods are those which echo output
+<a href=https://phpunit.de/manual/current/en/appendixes.assertions.html target=_blank>assertCount()</a>. It ensures that test fails whenever you make changes to the code that affects the size of the array, and failure alerts you to write additional assertions to test the changes.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=methods-that-echo-output>Methods that Echo Output</h3><p>One more type of frequently used methods are those which echo output
 without return value. Plugin uses such methods as callbacks to render
 pages, menu etc.,</p><p>One such example is <code>Sos_Stats::render_stats_page()</code> method from
 <code>admin/class-stats.php</code>.</p><p><code>share-on-social/admin/class-stats.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>render_stats_page</span> <span class=p>()</span> <span class=p>{</span>

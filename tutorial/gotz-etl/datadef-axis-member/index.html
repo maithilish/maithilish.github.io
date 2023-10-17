@@ -23,8 +23,7 @@ below</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-
 </span></span><span class=line><span class=cl>        <span class=nt>&lt;/xf:fields&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;/axis&gt;</span>
 </span></span><span class=line><span class=cl><span class=nt>&lt;/dataDef&gt;</span>
-</span></span></code></pre></div><p>It defines a dataDef named price with three axes.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=axis>Axis</h2><p>In Gotz, data is defined by axis which is similar in concept to that of
+</span></span></code></pre></div><p>It defines a dataDef named price with three axes.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=axis>Axis</h2><p>In Gotz, data is defined by axis which is similar in concept to that of
 spreadsheet.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gotz-etl/media/gotz-datadef-axis.png alt="Gotz DataDef Axis"></figure><p>In datadef, we define three axis - COL, ROW and FACT. The value we are
 interested in is called as Fact which is same as value held by a cell in
 spreadsheet. The other two axes, Col and Row say something about the
@@ -33,8 +32,7 @@ Price and if price of company share is say, 121.80 then the axis values
 are as below</p><p>COL : 01-01-2018 ROW : Price FACT : 121.80</p><p>From the combination of three axes we can deduce that price is 121.80 as
 on Jan 1st 2018.</p><p>The concept of axis and fact is borrowed Multidimensional Expression
 (MDX) language used in Data Warehouse which allows us in future to add
-more axis to construct multidimensional data.</p><p><strong>As of now only allowed axis names are - col, row and fact.</strong></p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=fields-queries-and-scripts>Fields, Queries and Scripts</h2><p>Axis can contain queries or scripts and they defined within
+more axis to construct multidimensional data.</p><p><strong>As of now only allowed axis names are - col, row and fact.</strong></p><div>&nbsp;</div><div>&nbsp;</div><h2 id=fields-queries-and-scripts>Fields, Queries and Scripts</h2><p>Axis can contain queries or scripts and they defined within
 <strong>&lt;xf:fields></strong> element. In dataDef, only <strong>fields</strong> element and its
 children are prefixed with <strong>xf:</strong> prefix while all other elements are
 without prefix. Later chapter on namspaces explains this in detail.</p><p>The fact axis, defines following query.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;fact&#34;</span><span class=nt>&gt;</span>

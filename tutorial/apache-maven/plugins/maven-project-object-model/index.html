@@ -73,8 +73,7 @@ in Java, where every other class extends java.lang.Object, all Maven
 projects extends Super POM. The pom.xml we create in our project is
 child or decedent of the Super POM.</p><p>The Super POM declares location of Maven central repository, Plugins
 repository, build element which sets the standard locations of the
-directories, plugin configuration and execution etc.,</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=effective-pom>Effective POM</h2><p>At the start of every build, Maven internally merges project pomx.ml
+directories, plugin configuration and execution etc.,</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=effective-pom>Effective POM</h2><p>At the start of every build, Maven internally merges project pomx.ml
 with Super POM and constructs a new POM which is known as <strong>Effective
 POM</strong>.</p><p>Earlier in <a href=/tutorial/apache-maven/plugins/maven-lifecycle-goals/>Maven Lifecycle and Plugin Goals</a>, we learned
 that Maven binds plugins goals to lifecycle phases. Actually, this magic
@@ -136,8 +135,7 @@ build the project.</p><figure class=text-center><img class="lazy img-fluid" data
 Plugin. It defines plugin execution with id <strong>default-jar</strong>
 (default-&lt;goal-name>) which binds jar:jar goal to the package phase.
 If we go through the effective POM, we can find other default goals
-which binds to various lifecycle phases.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=project-pom-and-effective-pom>Project POM and Effective POM</h2><p>Let&rsquo;s add some plugin configuration to pom.xml and see how they get
+which binds to various lifecycle phases.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=project-pom-and-effective-pom>Project POM and Effective POM</h2><p>Let&rsquo;s add some plugin configuration to pom.xml and see how they get
 merged into effective POM.</p><p>So far, we saw many examples where single goal is executed in a
 lifecycle phase. However, it is also possible to execute multiple goals
 a single phase. For example, the package phase, by default, creates a

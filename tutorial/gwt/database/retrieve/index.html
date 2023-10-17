@@ -71,8 +71,7 @@ enables JDO to keep track of modifications to persistence objects so as
 to trigger database update only on changes. In RStore, ant target
 <strong>enhance</strong> takes care of enhancement. DataNucleus throws
 <code>ClassNotPersistenceCapableException</code> when we try to persist classes
-which are not enhanced.</p><p>Hibernate and MyBatis require no class enhancement.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=hibernate>Hibernate</h5><p>Configuration file of Hibernate is <code>hibernate.cfg.xml</code> in which we
+which are not enhanced.</p><p>Hibernate and MyBatis require no class enhancement.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=hibernate>Hibernate</h5><p>Configuration file of Hibernate is <code>hibernate.cfg.xml</code> in which we
 define session factory, one for each database connection, using
 <strong>session-factory</strong> element. JDBC properties are set within the
 <strong>session-factory</strong> element. Whereas JDO loads the mapping file from
@@ -146,8 +145,7 @@ element specifies named query.</p><p>Typical Hibernate session is as shown in th
 classpath and configures the <code>SessionFactory</code>. <code>Session</code> obtained from
 SessionFactory is used to interact with the database.
 <code>Session.getNamedQuery()</code> and <code>Query.list()</code> methods are used to query
-the database through NamedQuery.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=mybatis>MyBatis</h5><p>MyBatis is altogether a different class of ORM, which relays heavily on
+the database through NamedQuery.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=mybatis>MyBatis</h5><p>MyBatis is altogether a different class of ORM, which relays heavily on
 SQL to map object to tables. One has to have a fair degree of SQL skill
 to work with MyBatis. This section is optional and you may skip this if
 you aren&rsquo;t planning to use MyBatis in your project.</p><p>JDO and Hibernate are the leaders in open source ORM softwares. For some

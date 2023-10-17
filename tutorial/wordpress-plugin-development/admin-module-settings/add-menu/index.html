@@ -63,8 +63,7 @@ method. Let&rsquo;s see what happens in Sos_Options::setup().</p><p><code>share-
 hook <strong>admin_menu</strong>.</p></li></ol><p>When we access admin screen, WordPress core after executing typical
 hooks such as plugins_loaded, init etc., encounters <strong>admin_menu</strong>
 hook and it will call Sos_Options::register_settings_page(). We use
-this to add a new menu item to admin menu.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=add-administration-menu-item>Add Administration Menu item</h3><p>The action functions of <strong>admin_menu</strong> hook are used to add new menu
+this to add a new menu item to admin menu.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=add-administration-menu-item>Add Administration Menu item</h3><p>The action functions of <strong>admin_menu</strong> hook are used to add new menu
 item or sub menu item to WordPress Admin menu. In the function, we use
 WordPress function <code>add_submenu_page()</code> to add a new sub menu item and
 link it to a menu page.</p><p><code>share-on-social/admin/class-options.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>register_settings_page</span> <span class=p>()</span> <span class=p>{</span>

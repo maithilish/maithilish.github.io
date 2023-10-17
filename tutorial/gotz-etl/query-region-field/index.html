@@ -23,8 +23,7 @@ be constructed with different elements.</p><p>JSoup Selector Syntax</p><p>To acc
 item. Learn more about selector in <a href=https://jsoup.org/cookbook/extracting-data/selector-syntax target=_blank>Selector
 Syntax</a> and
 <a href=https://jsoup.org/apidocs/org/jsoup/select/Selector.html target=_blank>JSoup Selector
-API</a>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=query---region-and-field>Query - Region and Field</h2><p>Selector has to be further split into region and field to optimize the
+API</a>.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=query---region-and-field>Query - Region and Field</h2><p>Selector has to be further split into region and field to optimize the
 query performance.</p><p>For example, take the case of table</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>....
 </span></span><span class=line><span class=cl>....    
 </span></span><span class=line><span class=cl><span class=nt>&lt;table&gt;</span>
@@ -60,8 +59,7 @@ we are interested in region attribute and the selector to access its
 children in the field attribute. In the above example, it is quite
 natural to select and cache the table as it is top most element of the
 area we are interested in and subsequently, access its children
-repeatedly with field selector.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=dynamic-query>Dynamic Query</h2><p>When scraping single data point, we can hard code the selector as</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
+repeatedly with field selector.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=dynamic-query>Dynamic Query</h2><p>When scraping single data point, we can hard code the selector as</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;xf:query</span> <span class=na>region=</span><span class=s>&#34;table:contains(Sources Of Funds)&#34;</span>
 </span></span><span class=line><span class=cl>          <span class=na>field=</span><span class=s>&#34;tr:nth-child(2) &gt; td:nth-child(1)&#34;</span> <span class=nt>/&gt;</span>
 </span></span></code></pre></div><p>But, to access next &lt;tr> we need another query with field as
 <strong>tr:nth-child(3) > td:nth-child(1)</strong>. To access a table with 5 cols

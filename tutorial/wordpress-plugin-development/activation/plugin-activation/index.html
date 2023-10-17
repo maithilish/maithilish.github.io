@@ -67,8 +67,7 @@ it so as to start in a clean state.</p><p>The method <code>Sos_Activator::delete
 of the locker id &lsquo;basic&rsquo; and delete the post using WordPress function
 <a href=http://codex.wordpress.org/Function_Reference/wp_delete_post target=_blank>wp_delete_post()</a>.
 After plugin is fully activated, as we have already seen, the method <code>Sos::create_post_type()</code> registers sos custom post type and creates a
-new default locker.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>The method <code>Sos_Activator::add_settings()</code> adds or updates the version
+new default locker.</p><div>&nbsp;</div><div>&nbsp;</div><p>The method <code>Sos_Activator::add_settings()</code> adds or updates the version
 number of the plugin in <strong>sos_common_options</strong> in WordPress database.</p><p><code>share-on-social/admin/class-activator.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>delete_basic_locker</span> <span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$post_id</span> <span class=o>=</span> <span class=nx>Sos_Helper</span><span class=o>::</span><span class=na>get_locker_post_id</span><span class=p>(</span> <span class=s1>&#39;basic&#39;</span> <span class=p>);</span>
 </span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span> <span class=nv>$post_id</span> <span class=p>)</span> <span class=p>{</span>
@@ -114,7 +113,6 @@ that points to Share on Social <strong>Settings</strong> menu. It is important t
 note that when Installed Plugin page is opened the filter method
 <code>Sos_Activator::action_links()</code> is called for each and every active
 plugin. By using $file parameter, we add action link only when base name
-is share-on-social so that the link is added only for Share on Plugin.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p> </p><p>In the next section, we install WordPress Multisite and learn to code
+is share-on-social so that the link is added only for Share on Plugin.</p><div>&nbsp;</div><div>&nbsp;</div><p> </p><p>In the next section, we install WordPress Multisite and learn to code
 plugin activation for Multisites.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
 <script src=/js/vendor.min.e0afe83ba5579b9676fc5f849c1becff1395739520a7c0bc45535f04acd819c3.js></script></body></html>

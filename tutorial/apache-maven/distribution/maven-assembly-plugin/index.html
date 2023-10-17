@@ -55,8 +55,7 @@ assembly:single goal to package phase.</p><p>Add following snippet to Simple App
 source archives in zip, gz and bz2 formats.</p><p>Maven Assembly Plugin is highly configurable and allows you to define
 custom <a href=http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html target=_blank>Assembly Descriptors</a>.</p><p>Pre-defined Descriptor Files are sufficient for majority of the projects
 and as such custom assemblies are not covered in this guide. For more
-information on custom descriptor, refer <a href=http://books.sonatype.com/mvnref-book/reference/assemblies-sect-overview-descriptor.html target=_blank>Maven Reference Book</a>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=javadoc>Javadoc</h2><p>Many Open Source Java Projects typically ships source and javadoc jars
+information on custom descriptor, refer <a href=http://books.sonatype.com/mvnref-book/reference/assemblies-sect-overview-descriptor.html target=_blank>Maven Reference Book</a>.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=javadoc>Javadoc</h2><p>Many Open Source Java Projects typically ships source and javadoc jars
 along with the application jar. While, custom assembly descriptor can be
 configured to package javadoc, there is much easier alternative.</p><p>Add following snippet to pom.xml and run <code>mvn package</code>.</p><p><code>simple-app/pom.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>  ...
 </span></span><span class=line><span class=cl>  <span class=nt>&lt;build&gt;</span>
@@ -90,8 +89,7 @@ configured to package javadoc, there is much easier alternative.</p><p>Add follo
 </span></span><span class=line><span class=cl>  ...
 </span></span></code></pre></div><p>As part of package phase, it produces source and javadoc jars along with
 the regular jar. The example is from the <a href=https://maven.apache.org/plugin-developers/cookbook/ target=_blank>Maven
-Cookbook</a>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=uber-jar>Uber Jar</h2><p>While covering assembly, Maven documentation often uses a term uber-jar.
+Cookbook</a>.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=uber-jar>Uber Jar</h2><p>While covering assembly, Maven documentation often uses a term uber-jar.
 Uber is a German word for above or over and an uber-jar contains not
 only the project packages and resources but also all its dependencies in
 one single JAR file.</p><p>The assembly plugin provides only basic support for uber-jar and for

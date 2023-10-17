@@ -52,8 +52,7 @@ plugin development, we suggest to have a cursory look at <a href=http://codex.wo
 Reference</a> and
 <a href=http://codex.wordpress.org/Plugin_API/Filter_Reference target=_blank>Filters
 Reference</a> which
-lists the hooks defined by WordPress.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=wordpress-actions>WordPress Actions</h2><p>WordPress Actions are triggered by specific events at specified points
+lists the hooks defined by WordPress.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=wordpress-actions>WordPress Actions</h2><p>WordPress Actions are triggered by specific events at specified points
 in execution. We can attach or bind plugin functions to an action hook
 and these functions are known as action functions.</p><p>If we think that plugin is glued fully at a single point or hook, then
 we are wrong. It never happens that way!</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-actions-no.png alt="WordPress Hooks, Actions, Filters."></figure><p>Plugin never plugs to a single point or hook. It also means that
@@ -85,8 +84,7 @@ must be returned so that other plugins can continue to filter the data.</p><p>Pl
 function to attach a function or method to the filter hook.</p><p><a href=http://codex.wordpress.org/Plugin_API/Filter_Reference target=_blank>Filters
 Reference</a>
 provides information about the parameters and the type of data passed by
-WordPress to filter function.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=wordpress-actions-vs-filters>WordPress Actions vs Filters.</h2><p>For clarity, we list the features and differences of WordPress Actions
+WordPress to filter function.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=wordpress-actions-vs-filters>WordPress Actions vs Filters.</h2><p>For clarity, we list the features and differences of WordPress Actions
 and Filters.</p><p><strong>Table 5.1. WordPress Actions vs
 Filters.</strong></p><table><thead><tr><th>Actions</th><th>Filters</th></tr></thead><tbody><tr><td>Action is triggered when a specific event takes place.</td><td>Filter passes data through an function which can modify or filter the data.</td></tr><tr><td>Usually post id or comment id is passed to action function.</td><td>Some unmodified data is passed as input to the filter function.</td></tr><tr><td>Action functions call WordPress API to carry out some action such as database update, post meta data update, or echo some output so that it adds to the response.</td><td>Filter functions modify or filter the data that is passed to the function by WordPress.</td></tr><tr><td>In most cases, returns post id or comment id and in some cases without any return value.</td><td>Returns filtered data. If no change to data, then original data is returned. In some cases, null is returned to indicate that data has to be deleted or disregarded.</td></tr></tbody></table><p>As further reading, we suggest you to refer <a href=http://codex.wordpress.org/Plugin_API target=_blank>WordPress Plugin
 API</a> which is an excellent

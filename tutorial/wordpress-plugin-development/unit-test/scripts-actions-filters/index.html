@@ -51,8 +51,7 @@ the user and capability to run the tests.</p><p><code>share-on-social/tests/phpu
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span></code></pre></div><p>Having gone through the utility class and its methods, let&rsquo;s get back to
 the tests that uses WordPress API functions to assert the outcome of
-method under test.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=test-actions-and-filters>Test Actions and Filters</h3><p>In Share on Social Plugin classes we use setup() method to add actions
+method under test.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=test-actions-and-filters>Test Actions and Filters</h3><p>In Share on Social Plugin classes we use setup() method to add actions
 and filters.</p><p>For example, <code>Sos_Options::setup()</code> method adds actions for
 <strong>admin_init</strong> and <strong>admin_menu</strong> hooks.</p><p><code>share-on-social/admin/class-options.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=k>class</span> <span class=nc>Sos_Options</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
@@ -179,8 +178,7 @@ WordPress function
 [setup_postdata()</a>
 . In the test, when add_sos_scripts() is called, it obtains the
 current post from global $post and checks whether it has the shortcode
-or not and enqueue scripts accordingly.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p><strong>Factory Methods</strong></p><p>WordPress Test Library class <code>WP_UnitTestCase</code> comes with a set of
+or not and enqueue scripts accordingly.</p><div>&nbsp;</div><div>&nbsp;</div><p><strong>Factory Methods</strong></p><p>WordPress Test Library class <code>WP_UnitTestCase</code> comes with a set of
 factory methods to create WordPress objects such as Post, Attachment,
 Comment, User, Term, Category and Tag.</p><p>For example, in a test case, we use following construct to create a post
 object using factory method..</p><pre tabindex=0><code class=language-screen data-lang=screen>        $args = array(

@@ -20,8 +20,7 @@ example, we are indicating that Gotz should load <strong>job.xml</strong> which 
 located in same folder as bean.xml.</p><p>Job file</p><p>The job file defines the model objects required to run Gotz. The broad
 outline of the job file is :</p><ul><li>&lt;gotz><ul><li>&lt;locators></li><li>&lt;dataDefs></li><li>&lt;fields></li></ul></li></ul><p>The root element &lt;gotz>, its XML Namespace and &lt;fields> are
 explained in the later chapters. For now, we focus on locators and
-datadefs.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=locators>Locators</h2><p>In Gotz, locator is used to specify the HTML page either to fetch from
+datadefs.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=locators>Locators</h2><p>In Gotz, locator is used to specify the HTML page either to fetch from
 the Internet or to load from local file system.</p><p>The element <strong>&lt;locators></strong> specifies the list of locator and the its
 group.</p><p>In the example job.xml, the locators are defined as</p><p><code>defs/examples/jsoup/ex-1/job.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;locators</span> <span class=na>group=</span><span class=s>&#34;quote&#34;</span><span class=nt>&gt;</span>
 </span></span><span class=line><span class=cl>   <span class=nt>&lt;locator</span> <span class=na>name=</span><span class=s>&#34;acme&#34;</span> <span class=na>url=</span><span class=s>&#34;/defs/examples/page/acme-quote.html&#34;</span> <span class=nt>/&gt;</span>

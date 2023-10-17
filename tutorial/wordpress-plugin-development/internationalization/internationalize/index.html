@@ -53,8 +53,7 @@ translation functions.</p><p><code>share-on-social/share-on-social.php</code></p
 But, it is recommended to use slug of the plugin as the text domain. If
 your plugin main file is my-plugin.php or it is contained in a folder
 called my-plugin the text domain should be my-plugin. The text domain
-must use dashes and not underscores.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Next we have to load the text domain as soon as plugin is loaded and in
+must use dashes and not underscores.</p><div>&nbsp;</div><div>&nbsp;</div><p>Next we have to load the text domain as soon as plugin is loaded and in
 Share on Social, we do that in <code>setup_sos_plugin()</code> function.</p><p><code>share-on-social/share-on-social.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=k>function</span> <span class=nf>setup_sos_plugin</span> <span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>   
 </span></span><span class=line><span class=cl>    <span class=nx>load_plugin_textdomain</span><span class=p>(</span> <span class=s1>&#39;sos-domain&#39;</span><span class=p>,</span> <span class=k>false</span><span class=p>,</span> <span class=s1>&#39;share-on-social/langs&#39;</span> <span class=p>);</span>
@@ -78,8 +77,7 @@ translated string for the text domain.</p><p><code>share-on-social/admin/class-s
 </span></span></code></pre></div><p>For example, __( &lsquo;Page&rsquo;, &lsquo;sos-domain&rsquo; ) returns string <strong>Página</strong> when
 Site language is set to Spanish provided language file for Spanish
 exists in share-on-social/langs directory. For default language or if,
-language file is not available then default string <strong>Page</strong> is returned.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>The next function [_x(
+language file is not available then default string <strong>Page</strong> is returned.</p><div>&nbsp;</div><div>&nbsp;</div><p>The next function [_x(
 )</a> same as the __(
 ), but provides additional information to translators to assist them in
 proper translation.</p><p><code>share-on-social/admin/class-sos.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=k>public</span> <span class=k>function</span> <span class=nf>create_post_type</span> <span class=p>()</span> <span class=p>{</span>

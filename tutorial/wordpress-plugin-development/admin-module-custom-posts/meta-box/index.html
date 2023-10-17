@@ -66,8 +66,7 @@ core, default and low.</p></li><li><p><strong>callback_args</strong> - arguments
 other standard meta boxes - Layout and Slider - to the editor. Sos
 Lockers editor doesn&rsquo;t require these two meta boxes. We use
 remove_meta_box() function to remove these meta boxes for sos custom
-post type.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Let&rsquo;s get back to Share Locker meta box and see how it is rendered by
+post type.</p><div>&nbsp;</div><div>&nbsp;</div><p>Let&rsquo;s get back to Share Locker meta box and see how it is rendered by
 the callback.</p><p><code>share-on-social/admin/class-sos.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>render_locker_meta_box</span> <span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        <span class=nx>wp_nonce_field</span><span class=p>(</span> <span class=s1>&#39;save_locker&#39;</span><span class=p>,</span> <span class=s1>&#39;locker_nonce&#39;</span> <span class=p>);</span>
@@ -106,8 +105,7 @@ feature of WordPress to authenticate the requests. Next, we echo a HTML
 table containing the the required text fields, check boxes and radio
 buttons.</p><p>When we edit a locker, WordPress sets the locker object which is a sos
 custom post of type in the global variable $post and we use the $post
-object to get the post_id of the locker as <code>$post->ID</code>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Locker edit page also has TINY MCE Visual Editor at the bottom to enter
+object to get the post_id of the locker as <code>$post->ID</code>.</p><div>&nbsp;</div><div>&nbsp;</div><p>Locker edit page also has TINY MCE Visual Editor at the bottom to enter
 the display text of the locker. Rendering method calls <code>add_editor()</code>
 method to add the TINY MCE editor.</p><p><code>share-on-social/admin/class-sos.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>add_editor</span> <span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=k>global</span> <span class=nv>$post</span><span class=p>;</span>

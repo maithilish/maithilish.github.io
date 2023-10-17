@@ -119,8 +119,7 @@ in local and triggers a download to the cache.</p><p><strong>Local Resolve</stro
 searches the cache for artifacts and if it is not found, then, it copies
 the artifacts from the local repository to cache and then say the module
 is resolved and downloaded.</p><p>Sequence of download or copy during a resolve from any type of the
-repository is as follows:</p><p>Public -> cache -> project build path</p><p>Local -> cache -> project build path</p><p> </p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Ivy Local Repository - Overriding the default settings</p><p>There are two ways to override the default settings, either through
+repository is as follows:</p><p>Public -> cache -> project build path</p><p>Local -> cache -> project build path</p><p> </p><div>&nbsp;</div><div>&nbsp;</div><p>Ivy Local Repository - Overriding the default settings</p><p>There are two ways to override the default settings, either through
 setting the properties in Ant target or through ivysettings.xml file.</p><p>As an exercise, let&rsquo;s change the layout of the local repository. Modify
 the build.xml.</p><p><code>build.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;shared repository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> 
 </span></span><span class=line><span class=cl> <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>
@@ -175,8 +174,7 @@ commons-lang-2.6.jar, Ivy distinguishes them from the directory where
 they are placed.</p><p>With those changes in settings, Ivy now has only three resolvers
 myresolver (chain), mylocal and mypublic. As default ivysettings.xml is
 not loaded, default resolver default, main, local, shared and public are
-not available.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>In &lt;ivy:install> task, we have to use <strong>mylocal</strong> and <strong>mypublic</strong> in
+not available.</p><div>&nbsp;</div><div>&nbsp;</div><p>In &lt;ivy:install> task, we have to use <strong>mylocal</strong> and <strong>mypublic</strong> in
 <strong>from</strong> and <strong>to</strong> attributes. Add build.xml with these changes to work
 dir</p><p><code>build.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>name=</span><span class=s>&#34;shared repository&#34;</span> <span class=na>default=</span><span class=s>&#34;install&#34;</span> 
 </span></span><span class=line><span class=cl> <span class=na>xmlns:ivy=</span><span class=s>&#34;antlib:org.apache.ivy.ant&#34;</span><span class=nt>&gt;</span>

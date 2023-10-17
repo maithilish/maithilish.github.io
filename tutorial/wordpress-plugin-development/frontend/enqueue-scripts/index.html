@@ -70,8 +70,7 @@ and stylesheets.</p><p><code>share-on-social/frontend/class-frontend.php</code><
 </span></span></code></pre></div><p>In the action method, we register plugins stylesheet <code>css/style.css</code> and
 script <code>js/share.js</code>. If the page contains <strong>share-on-social</strong>
 shortcode, then we enqueue the registered items and also the Twitter API
-script.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>The script enqueue functions wp_register_script() and
+script.</p><div>&nbsp;</div><div>&nbsp;</div><p>The script enqueue functions wp_register_script() and
 wp_enqueue_script() takes following parameters.</p><ul><li><p><strong>handle</strong> - name used as handle to the script.</p></li><li><p><strong>src</strong> - URL of the script.</p></li><li><p><strong>deps</strong> - array of handles of the registered scripts that this
 script depends on.</p></li><li><p><strong>ver</strong> - string to specify the script version number.</p></li><li><p><strong>in_footer</strong> - if true, then script is added to footer.</p></li></ul><p>These functions links script files at the right time according to the
 script dependencies. While registering js/share.js, we passed <code>array( 'jquey')</code> in the third parameter - deps. It indicates that our script
@@ -93,8 +92,7 @@ enqueue bar.js links both foo.js and bar.js, in the order, to the page.</p><p>St
 functions, except that stylesheets are always linked in &lt;header> so
 there is in_footer parameter. Instead style functions has parameter -
 <strong>media</strong>, which specifying the media for which the stylesheet is
-defined.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>The functions referred here are only for use with frontend and there are
+defined.</p><div>&nbsp;</div><div>&nbsp;</div><p>The functions referred here are only for use with frontend and there are
 equivalent functions for admin screen and login screen.</p><p><strong>WordPress jQuery</strong></p><p>jQuery library included with WordPress is set to noConflict mode and in
 that mode, we are allowed to use jQuery(#somefunction) and not the
 normal jQuery shorthand $(#somefunction). For more information on this

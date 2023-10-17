@@ -53,8 +53,7 @@ clear that Javac <strong>debug</strong> is still true and <strong>optimize</stro
 means that the <strong>production</strong> profile is not activated by Maven and it
 is still using default configurations.</p><p>To activate the production profile use command <code>mvn compile -Pproduction -X</code>. The option <strong>-P</strong> activates the profile. From the Maven debug
 messages, we can confirm that profile is activated and Javac flags debug
-and optimize are set as configured in the profile.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=profile-elements>Profile Elements</h2><p>By defining a profile we override the values defined by project&rsquo;s
+and optimize are set as configured in the profile.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=profile-elements>Profile Elements</h2><p>By defining a profile we override the values defined by project&rsquo;s
 Effective POM. Maven allows following elements in an Profile.</p><p><code>pom.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;profiles&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=nt>&lt;profile&gt;</span>
@@ -81,8 +80,7 @@ override dependencies and the behavior of a build via plugin
 configuration. It can also override the configuration of distribution
 settings; for example, we can define a staging profile and use
 distributionManagement element to publish the artifacts to a staging
-repository.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=profile-activation>Profile Activation</h2><p>In the previous example, we activated the <strong>production</strong> profile by
+repository.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=profile-activation>Profile Activation</h2><p>In the previous example, we activated the <strong>production</strong> profile by
 using option <strong>-P</strong>, but Maven provides other ways to activate the
 profiles.</p><p>Maven Profile can also be activated through profile/activation element
 based on state of build environment such as</p><ul><li><p>JDK versions.</p></li><li><p>environment variables.</p></li><li><p>OS settings.</p></li><li><p>present or missing files.</p></li></ul><p>Some of the profile activation examples are provided below.</p><p><code>pom.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl> <span class=nt>&lt;profiles&gt;</span>

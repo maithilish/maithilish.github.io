@@ -78,8 +78,7 @@ server, implements <code>ICache</code>.</p><p><code>in.fins.server.cache/ICache.
 </span></span><span class=line><span class=cl><span class=o>}</span>
 </span></span></code></pre></div><p>ICache provide access to cache through a map-like interface, where
 method <code>put()</code> stores key and value in the cache, and method <code>get()</code>
-retrieves the value object for a key.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p><code>GaeCache</code> obtains reference to MemCache through, <code>CacheManager</code> and
+retrieves the value object for a key.</p><div>&nbsp;</div><div>&nbsp;</div><p><code>GaeCache</code> obtains reference to MemCache through, <code>CacheManager</code> and
 <code>CacheFactory</code>.</p><p><code>in.fins.server.cache/GaeCache.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>GaeCache</span> <span class=kd>implements</span> <span class=n>ICache</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>Cache</span> <span class=n>cache</span><span class=o>;</span>
@@ -188,8 +187,7 @@ used as key set.</p><p><code>in.fins.server.cache/GaeCache.java</code></p><div c
 </span></span><span class=line><span class=cl>                  <span class=s>&#34;Cache inconsistency. Try this option again to rectify.&#34;</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
 </span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>status</span><span class=o>;</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>For some unknown reasons, occasionally, we could not find the some of
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>For some unknown reasons, occasionally, we could not find the some of
 the symbols in cache even though they were handed over to the cache. In
 such cases, inconsistency is reported back to the user and invoking the
 option again usually rectify the inconsistency.</p><p>Once symbols are in cache, we can go ahead with the task of persisting

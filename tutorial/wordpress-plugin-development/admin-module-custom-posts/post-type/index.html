@@ -104,8 +104,7 @@ and Display Text have to be stored as meta data of the post. To input
 meta data, we need meta boxes in post editor and for this use argument
 <strong>register_meta_box_cb</strong> to register callback function that setup
 meta boxes in the edit form. We cover meta box callback function in next
-blog.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>All-in-one function, register_post_type(), accomplishes many things.</p><ul><li><p>registers the sos custom post type.</p></li><li><p>sets labels for add new item, edit item, custom post admin menu and
+blog.</p><div>&nbsp;</div><div>&nbsp;</div><p>All-in-one function, register_post_type(), accomplishes many things.</p><ul><li><p>registers the sos custom post type.</p></li><li><p>sets labels for add new item, edit item, custom post admin menu and
 view items etc.,</p></li><li><p>enables admin panel to manage custom post items - Sos Lockers.</p></li><li><p>enable or disable fields in post editor.</p></li><li><p>provides callback to customize meta boxes in post editor.</p></li></ul><p><strong>Custom Post Type Scope</strong></p><p>Don&rsquo;t assume that custom type registration is one time affair in
 WordPress.</p><p>Instead, whenever we access admin screen or any of its menu, as part of
 request cycle, init hook executes register_post_type(). In other

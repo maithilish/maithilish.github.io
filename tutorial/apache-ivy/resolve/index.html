@@ -64,8 +64,7 @@ name=&ldquo;log4j&rdquo; rev=&ldquo;1.2.16&rdquo;/> will download log4j plus fou
 modules. By adding <strong>transitive=&ldquo;false&rdquo;</strong> to dependency line, we can
 force the Ivy not to download the other transitive dependencies.
 Dependency line &lt;dependency org=&ldquo;log4j&rdquo; name=&ldquo;log4j&rdquo; rev=&ldquo;1.2.16&rdquo;
-transitive=&ldquo;false&rdquo; /> downloads just log4j.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Ivy dependency line</p><p>The dependency line &lt;dependency org=&ldquo;commons-lang&rdquo; name=&ldquo;commons-lang&rdquo;
+transitive=&ldquo;false&rdquo; /> downloads just log4j.</p><div>&nbsp;</div><div>&nbsp;</div><p>Ivy dependency line</p><p>The dependency line &lt;dependency org=&ldquo;commons-lang&rdquo; name=&ldquo;commons-lang&rdquo;
 rev=&ldquo;2.6&rdquo; /> in ivy.xml requires some explanation. First is how to
 construct this line. When module developers publish the modules to
 public repositories they define these values and from these repositories
@@ -85,8 +84,7 @@ always easy to do a search in maven repository and copy the dependency
 line as provided there.</p><p><strong>Clean the Work Dir</strong></p><p>Before trying out the next example, delete all files from work dir,
 except src dir, to avoid errors and confusion. We require src dir which
 contains the example class to run some examples and so, don&rsquo;t delete
-that.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Apache Ivy Cache</p><p>On first run, &lt;ivy:resolve> fetches the artifacts from the public
+that.</p><div>&nbsp;</div><div>&nbsp;</div><p>Apache Ivy Cache</p><p>On first run, &lt;ivy:resolve> fetches the artifacts from the public
 repository and place them in the cache. During subsequent calls to
 &lt;ivy:resolve> either from this project or any other project, Ivy finds
 the module in cache and will not download it from public repository.

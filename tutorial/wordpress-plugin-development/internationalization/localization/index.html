@@ -32,8 +32,7 @@ $ ln -s . src
 download the tools. It will download tools from WordPress source
 repository and save it your local WordPress directory. We also create a
 symbolic link <code>src</code> pointing to <code>wordpress</code> directory, which is for the
-hard coded paths in tools php files.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>To generate PO and MO files, we require <a href=https://www.gnu.org/software/gettext/ target=_blank>GNU
+hard coded paths in tools php files.</p><div>&nbsp;</div><div>&nbsp;</div><p>To generate PO and MO files, we require <a href=https://www.gnu.org/software/gettext/ target=_blank>GNU
 gettext</a>. Normally, GNU gettext
 is shipped with standard Linux distributions and you may check whether
 it is available in your system with <code>msginit -V</code> command. If not
@@ -93,8 +92,7 @@ string in msgstr as shown in next listing.</p><p><code>share-on-social/langs/sos
 </code></pre><p>It generates <code>sos-domain-eo.mo</code> from <code>sos-domain-eo.po</code>. We have to do
 this for each language. When bundling the plugin for release, include
 langs directory and MO files. The POT and PO files are not required in
-the plugin zip file.</p><p>With that, the plugin localization is complete.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=validation>Validation</h3><p>We would like to verify whether internationalization and localization of
+the plugin zip file.</p><p>With that, the plugin localization is complete.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=validation>Validation</h3><p>We would like to verify whether internationalization and localization of
 the plugin is done properly.</p><p>Open WordPress Admin Screen and go to <strong>Settings</strong> → <strong>General</strong> and
 select Esperanto in <strong>Site Language</strong> field.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-sos-select-lang.png alt="WordPress Plugin Localization - Validate Language"></figure><p>We can also change site language through <strong>WPLANG</strong> setting in
 <code>wp-settings.php</code></p><p>WordPress Admin screen flips to Esperanto and Share on Social Plugin

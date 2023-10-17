@@ -79,8 +79,7 @@ with WordPress function <a href=http://codex.wordpress.org/Function_Reference/up
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span></code></pre></div><p>In the helper method, we obtain the data from $_POST if it is set and
 then sanitize it using WordPress function <a href=http://codex.wordpress.org/Function_Reference/sanitize_text_field target=_blank>sanitize_text_field()</a>.</p><p>Similarly, we handle other meta data field such as locker id, share on
-and locker text.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=duplicate-id>Duplicate ID</h3><p>By using WordPress Post management framework, we avoid lots of code to
+and locker text.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=duplicate-id>Duplicate ID</h3><p>By using WordPress Post management framework, we avoid lots of code to
 save the locker. But there is a glitch. When we add multiple lockers
 with same id, WordPress happily saves them as it is not equipped to
 distinguish the duplicate posts. Lockers have to enforce unique
@@ -171,8 +170,7 @@ hook post_updated_messages.</p><p><code>share-on-social/admin/class-sos.php</cod
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nv>$messages</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>WordPress passes array of messages as parameter to the callback
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>WordPress passes array of messages as parameter to the callback
 function. If post type is sos, we change messages at index 1 and 6 which
 corresponds to update and save respectively and return the modified
 array back to the WordPress. For other post types, return the unmodified

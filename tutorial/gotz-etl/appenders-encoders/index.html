@@ -32,8 +32,7 @@ the following sorts by row and then on col</p><div class=highlight><pre tabindex
 </span></span></code></pre></div><p>The CsvEncoder outputs one member per line and to output in table format
 use CsvRecordEncoder.</p><p>It is possible specify separate appender for each task by overriding the
 commonSteps. It is also possible to specify multiple appenders either in
-commonSteps or overridden steps.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=dbappender>DbAppender</h2><p>The Example-12 appends data to a database table dataset and the
+commonSteps or overridden steps.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=dbappender>DbAppender</h2><p>The Example-12 appends data to a database table dataset and the
 definition is as follows</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;step</span> <span class=na>name=</span><span class=s>&#34;appender&#34;</span> <span class=na>class=</span><span class=s>&#34;org.codetab.gotz.step.load.DataAppender&#34;</span><span class=nt>&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;nextStep&gt;</span>end<span class=nt>&lt;/nextStep&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;db&#34;</span> <span class=na>stream=</span><span class=s>&#34;false&#34;</span>

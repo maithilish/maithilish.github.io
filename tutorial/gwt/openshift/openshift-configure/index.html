@@ -65,8 +65,7 @@ variables with their actual values and throws exception. OpenShift forum
 suggests to use <strong>${env.OPENSHIFT_MYSQL_DB_HOST}</strong> but that too
 fails.</p><p>Another option is to add a JNDI datasource to Tomcat context file -
 <code>META-INF/context.xml</code> with these env variables. But, even Tomcat fails
-to patch the variable with actual values.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Fortunately OpenShift JBoss EWS comes with a pre-configured JNDI
+to patch the variable with actual values.</p><div>&nbsp;</div><div>&nbsp;</div><p>Fortunately OpenShift JBoss EWS comes with a pre-configured JNDI
 datasource for MySQL and PostgreSQL, which is in
 <code>.openshift/config/context.xml</code> in cloned application folder . It
 defines two JNDI resources; <strong>jdbc/MysqlDS</strong> and <strong>jdbc/PostgreSQLDS</strong>
@@ -97,8 +96,7 @@ to jdoconfig.xml.</p><p><code>META-INF/jdoconfig.xml</code></p><div class=highli
 </span></span></code></pre></div><p>Value generator <strong>uuid-string</strong> throws duplicate key exception for
 MySQL, instead it requires <strong>auid</strong> as value generator. In
 <code>src/in/fins/shared/package.jdo</code> value-strategy attribute of Data and
-DataGroup is set to <strong>auid</strong>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=form-url>Form URL</h5><p>For FormPanel, we had given form action as <strong>/upload</strong>, but this fails
+DataGroup is set to <strong>auid</strong>.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=form-url>Form URL</h5><p>For FormPanel, we had given form action as <strong>/upload</strong>, but this fails
 to work in OpenShift. For OpenShift, we have to remove the leading <strong>/</strong>
 from <strong>/upload</strong> in <code>in/fins/client/widget/UploadPanel.ui.xml</code> and
 <code>in/fins/client/widget/CachePanel.ui.xml</code>.</p><p>With these changes, Fins is ready for deployment and the next section

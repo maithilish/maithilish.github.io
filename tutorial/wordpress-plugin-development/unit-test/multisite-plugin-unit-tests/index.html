@@ -38,8 +38,7 @@ for multisite tests. As with actual installation, here too, we can&rsquo;t
 have both single and multisite instance active at the same time. This
 essentially means that Test Lib can create and handle only one instance
 during test run - either plain site or a multisite.</p><p>Because of this, we need an entirely new PHPUnit configuration to force
-WordPress Test Lib to create and use WordPress Multisite Installation.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=configure-phpunit-for-multisite>Configure PHPUnit for Multisite</h3><p>For WordPress Test Lib to create multisite installation, we have to set
+WordPress Test Lib to create and use WordPress Multisite Installation.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=configure-phpunit-for-multisite>Configure PHPUnit for Multisite</h3><p>For WordPress Test Lib to create multisite installation, we have to set
 a PHP constant <strong>WP_TESTS_MULTISITE</strong> in PHPUnit configuration file.</p><p>Earlier, for single site tests, we placed PHPUnit configuration file
 <code>phpunit.xml</code> in top folder of the plugin and we reserve this file
 exclusively for single site testing. For multisite testing, we use a new
@@ -88,8 +87,7 @@ multisite, use -c tests/phpunit/multisite.xml</strong>. For this reason, we
 place multisite.xml in tests/phpunit directory. Tests will go through
 even when it is in top folder, but we go with the WordPress standard and
 place it in <code>tests/phpunit</code> folder.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-ms-usage.png alt="WordPress Multisite Plugin Unit Tests"></figure><p>Execute Multisite tests with following command.</p><pre tabindex=0><code class=language-screen data-lang=screen>$ phpunit -c tests/phpunit/multisite.xml
-</code></pre><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=multisite-tests>Multisite Tests</h3><p>When we run PHPUnit using multisite.xml, WordPress Test Lib creates an
+</code></pre><div>&nbsp;</div><div>&nbsp;</div><h3 id=multisite-tests>Multisite Tests</h3><p>When we run PHPUnit using multisite.xml, WordPress Test Lib creates an
 instance of WordPress Multisite. However, it will have only one default
 site. For tests, we require one more site in the network and to add
 additional site, we use <code>WP_UnitTestCase::add_blog()</code> method in test

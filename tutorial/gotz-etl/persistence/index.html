@@ -17,8 +17,7 @@ figure and click OK.</p><figure class=text-center><img class="lazy img-fluid" da
 disabled it by setting <strong>gotz.useDatastore</strong> property as <strong>false</strong> in
 <strong>conf/gotz.properties</strong> file. To enable persistence, either set this
 property as <strong>true</strong> or remove the property by hashing it out.</p><p>Now run Example-10 and you should have locator, datadef, data and
-document tables with data in gotz database.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=live>Live</h2><p>When we first run Example-10 with persistence enabled, document table
+document tables with data in gotz database.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=live>Live</h2><p>When we first run Example-10 with persistence enabled, document table
 which contains compressed contents of the pages - acme-quote-links.html,
 acme-bs.html and acme-pl.html will end up with three rows and table data
 which holds the parsed data will have five rows - finLinks, price,
@@ -62,8 +61,7 @@ persistence, we add persist/data as false to fin links task.</p><div class=highl
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;/task&gt;</span>
 </span></span></code></pre></div><p>Similarly we can set persist/locator for tasks element which disable
 persistence of locators group and their pages. The persist/data is set
-in task element where as persist/locator is set in tasks element.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=use-gotz-with-other-databases>Use Gotz with other Databases</h2><p>Gotz uses JDO and <a href=http://www.datanucleus.org/ target=_blank>DataNucleus
+in task element where as persist/locator is set in tasks element.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=use-gotz-with-other-databases>Use Gotz with other Databases</h2><p>Gotz uses JDO and <a href=http://www.datanucleus.org/ target=_blank>DataNucleus
 AccessPlatform</a> which works with variety of
 databases. Gotz is tested with MySQL, MariaDB and MongoDB and
 configuration for each of them is in <strong>conf/jdoconfig.properties</strong> file.</p><p>In the next chapter we look at appenders and persist output data to

@@ -49,8 +49,7 @@ all functions based on its functionality. The version of the same is
 <a href=http://developer.wordpress.org/reference target=_blank>WordPress Code Reference</a></p><p>Keep them handy to explore the WordPress API while developing the plugin.</p><h3 id=hide-the-contents>Hide the contents</h3><p>In Share on Social plugin, we use shortcode <strong>share-on-social</strong> to hide
 the content and display the locker. We will explain the complete details
 in a later chapter and for now just show how to hide the content using
-shortcode.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Add following code to wp-simple-plugin.php.</p><p><code>wp-simple-plugin/wp-simple-plugin.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>add_shortcode(&#39;share-on-social&#39;, hide_content_handler);
+shortcode.</p><div>&nbsp;</div><div>&nbsp;</div><p>Add following code to wp-simple-plugin.php.</p><p><code>wp-simple-plugin/wp-simple-plugin.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>add_shortcode(&#39;share-on-social&#39;, hide_content_handler);
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>function hide_content_handler ( $atts, $content ) {
 </span></span><span class=line><span class=cl>      $html = &#34;<span class=nt>&lt;div</span> <span class=na>style=</span><span class=s>&#39;display: none;&#39;</span><span class=nt>&gt;</span>&#34; . $content .

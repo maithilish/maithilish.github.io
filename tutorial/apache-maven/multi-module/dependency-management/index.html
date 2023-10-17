@@ -59,8 +59,7 @@ dependencyManagement and referred it in required modules using simpler
 reference i.e. just groupId + artifactId and without the version.</p><h2 id=dependency-management-vs-inheritance>Dependency Management vs Inheritance</h2><p><strong>Dependency management</strong></p><ul><li>used when dependency is required by some of the child modules</li><li>declared in parent POM using
 <code>dependencyManagement/dependencies/dependency</code> element</li><li>need to refer them in the required child modules using simpler
 reference i.e. just groupId + artifactId, but without the version</li></ul><p><strong>Dependency inheritance</strong>, which we explained in the previous tutorial</p><ul><li>used when dependency is required by all child modules</li><li>declared in parent POM using <code>dependencies/dependency</code> element</li><li>no need to refer them in the child modules as they are inherited by
-all child modules by default</li></ul><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=plugin-management>Plugin Management</h2><p>Let&rsquo;s suppose that all modules of extended-app should compile as Java
+all child modules by default</li></ul><div>&nbsp;</div><div>&nbsp;</div><h2 id=plugin-management>Plugin Management</h2><p>Let&rsquo;s suppose that all modules of extended-app should compile as Java
 1.7. One way to do this is configure compiler plugin by adding following
 snippet to app, util and config POM.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;build&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;plugins&gt;</span>
@@ -102,8 +101,7 @@ and add following lines</p><div class=highlight><pre tabindex=0 class=chroma><co
 </span></span><span class=line><span class=cl><span class=nt>&lt;/build&gt;</span>
 </span></span></code></pre></div><p>While referring the plugin in the modules, specify plugin groupId,
 artifactId and there is no need to repeat the version as well as the
-configuration as they are inherited from the parent POM.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Child module POM can override the configuration if required. For
+configuration as they are inherited from the parent POM.</p><div>&nbsp;</div><div>&nbsp;</div><p>Child module POM can override the configuration if required. For
 example, replace compiler plugin reference in <code>shared/config/pom.xml</code> as
 below</p><p><code>shared/config/pom.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;build&gt;</span>        
 </span></span><span class=line><span class=cl>        <span class=nt>&lt;plugins&gt;</span>

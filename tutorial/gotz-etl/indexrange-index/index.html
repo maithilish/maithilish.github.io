@@ -37,8 +37,7 @@ for the first column (Dec 2016). DataDef is as below</p><div class=highlight><pr
 </span></span></code></pre></div><p>Index can be specified in two ways - <strong>index</strong> or <strong>indexRange</strong>. The
 above dataDef uses index in col axis and indexRange in row axis. It is
 important to note that the <strong>index is attribute</strong> of the member whereas
-<strong>indexRange is &lt;xf:fields></strong>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>The col axis uses index attribute in member element with the index value
+<strong>indexRange is &lt;xf:fields></strong>.</p><div>&nbsp;</div><div>&nbsp;</div><p>The col axis uses index attribute in member element with the index value
 of 2. The query selector td:nth-child(%{col.index}) uses substitution
 variable %{col.index} which is replaced by index value 2 and content of
 second &lt;td> which is nothing but data for Dec &lsquo;16 is returned by the
@@ -64,8 +63,7 @@ to 6-38 and run Gotz. The output data should have 33 rows of data for
 the one year i.e. Dec 2016.</p><p>Next, in col axis, remove index attribute from member and copy the
 xf:fields which contains indexRange from row axis to col axis member and
 change its range to 2-7. Now, run Gotz and you should have about 198
-rows of data in output. We leave these as exercise.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=breakafter>BreakAfter</h2><p>In the previous example, finding indexRange for col was easy because of
+rows of data in output. We leave these as exercise.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=breakafter>BreakAfter</h2><p>In the previous example, finding indexRange for col was easy because of
 limited number of columns, but for row, it was tedious.</p><p>The <strong>breakAfter</strong> feature comes handy when rows or columns are more or
 when in-between data grows or contracts.</p><p>The job.xml file of Example-4 is same as the third example, but for row
 axis, it uses <strong>breakAfter</strong> along with index instead of IndexRange.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;axis</span> <span class=na>name=</span><span class=s>&#34;row&#34;</span><span class=nt>&gt;</span>

@@ -50,8 +50,7 @@ creates a folder - Apps/&lt;dropbox-app-name> and save the file under it.
 After uploading, script deletes the backup set from OpenShift to
 conserve storage. In the screenshot, backup gzip file is in folder named
 <code>WordPress Tutorial Backup</code> (Dropbox app name) under the <code>Apps</code> folder.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress/media/wp-dropbox-folder.png alt="WordPress Dropbox Backup - Dropbox Apps folder"></figure><h3 id=automate-wordpress-dropbox-backup>Automate WordPress Dropbox Backup</h3><p>To automate WordPress Dropbox Backup, we have to add Cron cartridge to
-OpenShift and then add the backup script to the Cron folder.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>We can use RHC or OpenShift Web Console to add a new cartridge to our
+OpenShift and then add the backup script to the Cron folder.</p><div>&nbsp;</div><div>&nbsp;</div><p>We can use RHC or OpenShift Web Console to add a new cartridge to our
 application. First, we need to know the full name of the Cron cartridge.
 To list the available cartridges run:</p><pre tabindex=0><code class=language-screen data-lang=screen>C:&gt; rhc cartridges
 </code></pre><p>From the list, we know name of the cartridge is cron-1.4. To add the
@@ -118,8 +117,7 @@ Linux
 $ git push
 </code></pre><p>Git pushes all the changes back to the repository in the server. As part
 of deployment, Git also restarts our application and cartridges so that
-changes becomes effective.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>From hereon, Cron takes over and runs the backup script every month. For
+changes becomes effective.</p><div>&nbsp;</div><div>&nbsp;</div><p>From hereon, Cron takes over and runs the backup script every month. For
 CodeTab, we have set monthly backup as changes are less frequent.
 Additionally, we run manual backup in the OpenShift shell whenever we
 create new pages.</p><p>In the next section, we do a full WordPress restore from the backup set.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>

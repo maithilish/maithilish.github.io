@@ -37,8 +37,7 @@ share artifacts with your other projects. For example, suppose you have
 a utility library which is used by your other projects. Then, you can
 install the util library in local repository and add it as dependency,
 just like any other Maven dependency, in other projects .</p><p>The default location of the local repository is <code>$HOME/.m2/repository</code>.
-The command <code>mvn install</code> publishes the project to local repository.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=deploy-to-shared-repository>Deploy to Shared Repository</h2><p>Remote repository is handy to share artifacts with other developers.
+The command <code>mvn install</code> publishes the project to local repository.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=deploy-to-shared-repository>Deploy to Shared Repository</h2><p>Remote repository is handy to share artifacts with other developers.
 Maven Central Repository is an example of public remote repository.
 However, we can also setup a private shared repository to share
 artifacts among a small group developers on local network.</p><p>Maven phase deploy uses deploy:deploy goal of <a href=https://maven.apache.org/plugins/maven-deploy-plugin/ target=_blank>Maven Deploy Plugin</a> to deploy
@@ -157,8 +156,7 @@ done for Sue. Also, Ron has to add settings.xml file (same contents as
 Sue) to his $HOME/.m2 directory and login to maven-repo once through ssh
 to add the server as known host.</p><p>When Ron runs Maven build command such as <code>mvn compile</code>, it will trigger
 the download simple-app artifacts deployed by Sue from the shared
-repository to Ron&rsquo;s local repository.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=try-out-locally>Try out locally</h2><p>If you don&rsquo;t have local area network, you can try out the shared
+repository to Ron&rsquo;s local repository.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=try-out-locally>Try out locally</h2><p>If you don&rsquo;t have local area network, you can try out the shared
 repository on your system by creating three users - <strong>maven</strong>, <strong>sue</strong>
 and <strong>ron</strong>.</p><p>In Sue&rsquo;s and Ron&rsquo;s pom.xml, for repository URL, instead of maven-repo,
 use localhost as hostname (or localhost.localdomain depending on your

@@ -74,8 +74,7 @@ method for a specific request. In <code>data</code> parameter we also provide
 another bit of information to the server in <code>action: 'save-stats'</code>,
 which tells admin-ajax.php that it has to invoke method or function
 attached to the action hooks <strong>wp_ajax_save-stats</strong> or
-<strong>wp_ajax_nopriv_save-stats</strong>.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>So, we have to add action method to these two hooks and that is done in
+<strong>wp_ajax_nopriv_save-stats</strong>.</p><div>&nbsp;</div><div>&nbsp;</div><p>So, we have to add action method to these two hooks and that is done in
 plugins&rsquo; Ajax file<code>- admin/class-ajax.php</code>.</p><p><code>share-on-social/admin/class-ajax.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=k>class</span> <span class=nc>Sos_Ajax</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>setup</span> <span class=p>()</span> <span class=p>{</span>
@@ -146,8 +145,7 @@ Sos_Ajax::update_sos_stats() method.</p><p><code>share-on-social/admin/class-aja
 </span></span></code></pre></div><p>It uses <code>get_option()</code> function to check whether option <strong>sos_stats</strong>
 exists in the database else creates a new one. Next, it creates an array
 from the data sent by the client and update it as WordPress Option
-<strong>sos_stats</strong> using <code>update_option()</code> function.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>In the next two sections, we revisit some the topics covered so far in
+<strong>sos_stats</strong> using <code>update_option()</code> function.</p><div>&nbsp;</div><div>&nbsp;</div><p>In the next two sections, we revisit some the topics covered so far in
 the tutorial such as WordPress Menu, Enqueue Scripts and WordPress Ajax
 to create a new sub menu and display the Share Statistics in Google
 Charts.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>

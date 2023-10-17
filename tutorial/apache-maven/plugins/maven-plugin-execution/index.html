@@ -58,8 +58,7 @@ execution. In configuration, we set <em><code>task</code></em> and <em><code>ech
 antrun:run goal to echo the build directory name.</p><p>In the above execution, we attached antrun:run goal to compile phase.
 But it can be any other phase and during execution of that phase ant
 will echo the output. Change the phase to test or verify phase and
-observe the output.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=maven-properties>Maven Properties</h2><p>In the configuration, we used a Maven property
+observe the output.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=maven-properties>Maven Properties</h2><p>In the configuration, we used a Maven property
 ${project.build.directory}. Maven properties are value placeholder, like
 properties in Ant and their values are accessible anywhere within a POM
 by using the notation ${X}, where X is the property.</p><p>Maven allows five types of properties - Environment variables, Project
@@ -97,8 +96,7 @@ multiple execution declarations to achieve this.</p><p><code>simple-app/pom.xml<
 </span></span><span class=line><span class=cl>        <span class=nt>&lt;/executions&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;/plugin&gt;</span>
 </span></span><span class=line><span class=cl>    ...
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>In execution with id default-jar we exclude some package and then add
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>In execution with id default-jar we exclude some package and then add
 one more execution where jar:jar is again binds to package phase and in
 its configuration we include some package. The classifier parameter of
 jar:jar appends the string to jar name. The above snippet, generates two

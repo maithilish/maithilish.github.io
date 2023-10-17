@@ -25,8 +25,7 @@ of the best free plugin for WordPress backup. It comes with features to
 move the backup files to various cloud storages including Dropbox.</p><p>However, we use a command line scripts to backup codetab.org which is:</p><ul><li><p>Simple to setup and use.</p></li><li><p>Backups the whole setup and contents.</p></li><li><p>Schedules automatic backup on OpenShift.</p></li><li><p>Push the compressed backup set to DropBox.</p></li><li><p>Restore the full site from the backup set.</p></li><li><p>Clone the site from the backup set.</p></li></ul><p>Benefit of learning the backup at command line (CLI) is that it helps to
 understand structure and layout WordPress installation and this
 knowledge comes handy when we recover the site and to troubleshoot any
-other site related issues.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>How data is stored in WordPress</p><p>Before we get into the WordPress backup, it is important to understand
+other site related issues.</p><div>&nbsp;</div><div>&nbsp;</div><p>How data is stored in WordPress</p><p>Before we get into the WordPress backup, it is important to understand
 how WordPress stores the data.</p><p>WordPress installation consists of two parts - core WordPress
 installation and user added data. Core installation contains the PHP and
 setup files that powers the WordPress. We need not consider them for
@@ -69,8 +68,7 @@ dumps the MySQL database as SQL statements.</p><p><code>backup/local-backup.sh</
 </span></span><span class=line><span class=cl>          -S $OPENSHIFT_MYSQL_DB_SOCKET $DB_NAME &gt; $BACKUP_DIR/$MYSQLDUMP_FILE
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>...
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>OpenShift environment variables are useful to pass Username, Password
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>OpenShift environment variables are useful to pass Username, Password
 and Socket details to the mysqldump. For the application named
 <strong>quickstart</strong>, OpenShift sets OPENSHIFT_APP_NAME to <strong>quickstart</strong>
 and creates a database named <strong>quickstart</strong>. By using variable

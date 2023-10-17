@@ -20,8 +20,7 @@ this shares site URL.</li><li><strong>Site</strong> -  shares the URL of the si
 example,</p><pre><code>[share-on-social id='my locker']
   some locked content ..
 [/share-on-social] 
-</code></pre><p>uses a locker whose id is <strong>my locker</strong>. We can place multiple lockers with same or different id on a page. When user shares any one, all of them opens together. But, lockers placed in other pages are not affected. In the next section, we explain how to control this behavior.  </p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h1 id=locker-groups>Locker Groups</h1><p>When we place multiple lockers (basic or using id attribute) in a page
+</code></pre><p>uses a locker whose id is <strong>my locker</strong>. We can place multiple lockers with same or different id on a page. When user shares any one, all of them opens together. But, lockers placed in other pages are not affected. In the next section, we explain how to control this behavior.  </p><div>&nbsp;</div><div>&nbsp;</div><h1 id=locker-groups>Locker Groups</h1><p>When we place multiple lockers (basic or using id attribute) in a page
 they all get unlocked when user share any one of them. Using <strong>Locker Groups</strong> we can alter this default behavior.</p><p>In shortcode, use <strong>name</strong> attribute to group lockers. For example, place following two lockers in a page.  </p><pre><code>[share-on-social name='Share A']
   some locked content ..
 [/share-on-social]
@@ -55,8 +54,7 @@ they all get unlocked when user share any one of them. Using <strong>Locker Grou
 [/share-on-social]
 </code></pre><p>When user open WordPress Tutorial share in Page 1, it unlocks that locker as well as the locker in Page 2. Likewise, when user opens the Drupal Tutorial share in Page 3 it unlocks itself and also the Drupal share in Page 1. With Grouping, we can link lockers in a page and also the lockers
 spanned across many pages. All linked lockers, lock or unlock in unison.</p><p>In above examples, we used Basic locker, but we can also use Groups
-with custom lockers in the same manner.    </p><p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div>   </p><h2 id=change-target>Change Target</h2><p>By default, Share on Social shares the URL of <strong>Page</strong>, <strong>Parent</strong> or
+with custom lockers in the same manner.    </p><p><div>&nbsp;</div><div>&nbsp;</div>   </p><h2 id=change-target>Change Target</h2><p>By default, Share on Social shares the URL of <strong>Page</strong>, <strong>Parent</strong> or
 <strong>Site</strong> as specified in Locker – <strong>Share [which URL]</strong> radio button.</p><p>At times, we may wish to override this behavior. In shortcode, use<strong>link</strong> attribute to override the target. The following example, uses <strong>Basic</strong> locker but shares <code>http://example.org</code> instead of the <strong>Page</strong> URL.  </p><pre><code>[share-on-social link='http://example.org']
   some locked content ..
 [/share-on-social]

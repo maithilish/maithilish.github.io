@@ -61,8 +61,7 @@ which is called only when we click Statistics sub menu.</p><p><code>share-on-soc
 </span></span><span class=line><span class=cl>        <span class=o>....</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span></code></pre></div><p>We use script handles to enqueue, so we need to register them before
-they actually enqueue.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>We do that in <code>Sos_Stats::setup()</code> where we add
+they actually enqueue.</p><div>&nbsp;</div><div>&nbsp;</div><p>We do that in <code>Sos_Stats::setup()</code> where we add
 <code>Sos_Stats::init_chart_scripts()</code> to <strong>admin_init</strong> action hook.</p><p><code>share-on-social/admin/class-stats.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=k>class</span> <span class=nc>Sos_Stats</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>public</span> <span class=k>function</span> <span class=nf>setup</span> <span class=p>()</span> <span class=p>{</span>
@@ -106,7 +105,6 @@ the <code>js/chart.js</code> using WordPress function <code>wp_localize_script()
 </span></span><span class=line><span class=cl>            <span class=p>)</span> <span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span></code></pre></div><p>Apart from the standard WordPress Ajax URL, we also pass <strong>title</strong> and
-<strong>nonce</strong> for the two charts.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>In the next section, we use WordPress Ajax to fetch the data from the
+<strong>nonce</strong> for the two charts.</p><div>&nbsp;</div><div>&nbsp;</div><p>In the next section, we use WordPress Ajax to fetch the data from the
 server and draw chart with the Google Chart API.</p></main></div></div><aside id=sidebar-right class=col-md-2><div class="row my-5 justify-content-center border"><div>&nbsp;</div><div>&nbsp;</div></div></aside></div></div><footer class="container-fluid mt-5"><div class=row><div class="col ml-auto"><div class="row mb-1 ml-2"><a class=text-muted href=/privacy-policy>Privacy</a></div><div class="row text-muted mb-2 ml-2"><span>&copy; 2019 &#183;Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span></div></div><div class="col mr-auto"><span class=float-right><a href=# id=back_to_top><i class="icon-up-open h1 text-secondary"></i></a></span></div></div></footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
 <script src=/js/vendor.min.e0afe83ba5579b9676fc5f849c1becff1395739520a7c0bc45535f04acd819c3.js></script></body></html>

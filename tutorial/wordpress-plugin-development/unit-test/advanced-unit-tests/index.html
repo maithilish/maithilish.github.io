@@ -88,8 +88,7 @@ loads admin files in addition to the front end files. We test whether
 admin files are included and also, whether function load_sos_admin()
 is hooked to action <strong>plugin_loaded</strong>. Once tests are over, we revert
 back to site screen by assigning the current_screen to null.</p><p>We use WP_Screen also in some test methods in <code>Test_Help</code> and
-<code>Test_Sos</code> test cases.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=wordpress-global-variables-and-classes>WordPress Global Variables and Classes.</h3><p>More often than not, WordPress functions use variety of global arrays to
+<code>Test_Sos</code> test cases.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=wordpress-global-variables-and-classes>WordPress Global Variables and Classes.</h3><p>More often than not, WordPress functions use variety of global arrays to
 hold data of menu items, actions, scripts etc., which are subsequently
 used to build the response that is sent to the browser. Similarly, some
 functions use class objects such as WP_Screen, WP_Scripts etc., to
@@ -186,8 +185,7 @@ options page and WordPress holds sub menu data in global array
 </span></span><span class=line><span class=cl>                        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>sos_options</span><span class=p>,</span> <span class=s1>&#39;render_settings_page&#39;</span> <span class=p>)</span> <span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span></code></pre></div><p>Throughout the Share on Social Plugin test suit you will find many such
-tests that uses WordPress global arrays and class objects.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=find-global-variable-and-class>Find Global Variable and Class</h3><p>When you write tests extensively then it is important to learn a
+tests that uses WordPress global arrays and class objects.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=find-global-variable-and-class>Find Global Variable and Class</h3><p>When you write tests extensively then it is important to learn a
 technique to find out whether a WordPress function uses global array or
 class object. Let&rsquo;s explain this with an example.</p><p>Method <code>Sos_Options::register_settings_page()</code> uses WordPress function
 <code>add_submenu_page()</code>. To know, whether this function uses any global

@@ -57,8 +57,7 @@ following contents.</p><p><code>simple-app/src/main/java/com/xyz/App.java</code>
 </span></span><span class=line><span class=cl><span class=o>}</span>
 </span></span></code></pre></div><p>The App outputs just a greeting and nothing more. In the examples, we
 use simple and trivial code so that we can focus more on Maven rather
-than the project.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=add-pom>Add POM</h2><p>Finally, add Maven Project Object Model (POM) file named <code>pom.xml</code> to
+than the project.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=add-pom>Add POM</h2><p>Finally, add Maven Project Object Model (POM) file named <code>pom.xml</code> to
 the top level folder of the project i.e. to the <code>simple-app</code>
 folder.</p><p><code>simple-app/pom.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span class=line><span class=cl>        <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span class=nt>&gt;</span>
@@ -108,8 +107,7 @@ Maven downloads <strong>Apache Resources Plugin</strong> and <strong>Apache Comp
 Plugin</strong> from its central repository and saves it in the local
 repository and then uses the Complier Plugin to compile the project. On
 subsequent invocation of the command, it finds the Complier Plugin in
-local repository and uses it to execute the command.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=maven-cli>Maven CLI</h2><p>The command line interface (CLI) of Maven is <code>mvn</code>, which is used to
+local repository and uses it to execute the command.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=maven-cli>Maven CLI</h2><p>The command line interface (CLI) of Maven is <code>mvn</code>, which is used to
 build, manage and also to interact with Maven. Everything in Maven is
 done through <code>mvn</code> and it&rsquo;s always executed from the top folder of the
 project that contains the <code>pom.xml</code>.</p><p>Let&rsquo;s now package the our app for distribution with Maven.</p><pre tabindex=0><code class=language-screen data-lang=screen>$ mvn package

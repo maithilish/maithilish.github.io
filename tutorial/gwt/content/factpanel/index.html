@@ -85,8 +85,7 @@ from two Facts and displays them in a single FactItem. Constructor
 splits string variable, match, into <code>String</code>[] and which is used later
 to match against Fact with key &ldquo;52 Wk High&rdquo; and another Fact with &ldquo;52 Wk
 Low&rdquo;.</p><p>Next we have to pass the selected <code>Symbol</code> to <code>FactPanel</code> so that it
-displays the fact values.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=symbolevent-and-symbolaction>SymbolEvent and SymbolAction</h5><p>When user selects a name in <code>AutoSuggest</code>, it has to fetch the <code>Symbol</code>
+displays the fact values.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=symbolevent-and-symbolaction>SymbolEvent and SymbolAction</h5><p>When user selects a name in <code>AutoSuggest</code>, it has to fetch the <code>Symbol</code>
 from <code>SymbolDatabase</code> and fire a <code>SymbolEvent</code> so that any interested
 client may retrieve the Symbol from SymbolEvent. Symbol holds data in
 <code>DataGroup</code>, <code>Data</code> and <code>Fact</code>, and FactPanel has to iterate over the
@@ -175,8 +174,7 @@ selects a name.</p><p>Finally, make FactPanel as a handler for SymbolEvent</p><p
 </span></span><span class=line><span class=cl>                <span class=n>EventBus</span><span class=o>.</span><span class=na>get</span><span class=o>().</span><span class=na>addHandlerToSource</span><span class=o>(</span><span class=n>SymbolEvent</span><span class=o>.</span><span class=na>TYPE</span><span class=o>,</span> <span class=k>this</span><span class=o>,</span> <span class=n>fp</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=n>fp</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=filtermap>FilterMap</h2><p>SymbolDatabase populates the Symbol with Fact based on keys in FilterMap
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><h2 id=filtermap>FilterMap</h2><p>SymbolDatabase populates the Symbol with Fact based on keys in FilterMap
 and this makes the job of minting new Symbols with random values quite
 easy. Its real purpose is not that instead it reduces the data
 transmitted over the network. In actual data store, there are more than

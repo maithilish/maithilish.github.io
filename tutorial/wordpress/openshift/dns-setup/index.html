@@ -64,16 +64,14 @@ dialog and choose CNAME as Record type in the dialog.</p><p>In <strong>Edit Zone
 tuts-codedrops.rhcloud.com (real name). In other words, <a href=https://www.codetab.org>www.codetab.org</a>
 points to tuts-codedrops.rhcloud.com.</p><p>After the save, DNS propagates the changes to all root name servers.
 Domain dashboard displays a message that it may take 24 or 48 hours to
-changes to take effect. Normally, we see changes in minutes.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>OpenShift Alias</p><p>Next, we have to set alias to our OpenShift application. Aliases allow
+changes to take effect. Normally, we see changes in minutes.</p><div>&nbsp;</div><div>&nbsp;</div><p>OpenShift Alias</p><p>Next, we have to set alias to our OpenShift application. Aliases allow
 us to use custom domain names for the applications on OpenShift. Log in
 to OpenShift Web Console and select <strong>Applications</strong> tab. Select the
 WordPress application and click <strong>Change</strong> link in the top bar (next to
 the public URL of the application). OpenShift displays the <strong>New Alias</strong>
 screen.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress/media/wp-dns-newalias.png alt="OpenShift DNS Setup - Alias screen"></figure><p>Enter domain name as <a href=https://www.codetab.org>www.codetab.org</a>, the CNAME we set in DNS Zone file
 and save the new alias.</p><p>After the DNS changes take effect, we should be able to see the
-WordPress site when we open <a href=https://www.codetab.org>www.codetab.org</a> in the browser.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=domain-name-forwarding>Domain Name Forwarding</h2><p>When we access the plain domain name - codetab.org, we get a page from
+WordPress site when we open <a href=https://www.codetab.org>www.codetab.org</a> in the browser.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=domain-name-forwarding>Domain Name Forwarding</h2><p>When we access the plain domain name - codetab.org, we get a page from
 the domain provider site. Visitors, who use the plain URL, leave the
 site thinking that it is under construction. To overcome this, use
 <strong>Domain Forwarding</strong>.</p><p>The plain domain name without a suffix or subdomain name is called

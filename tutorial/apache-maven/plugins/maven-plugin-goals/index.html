@@ -20,8 +20,7 @@
 job. It is also known as Mojo - Maven Plain Old Java Object.</p><p>For example, Maven uses <strong>maven-surefire-plugin</strong> to run tests and it
 comes with two goals.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/apache-maven/media/mvn-plugins-surefire-goals.png alt="Maven Plugin Goals - maven-surefire-plugin goals"></figure><p>Similarly, Maven uses <strong>maven-compiler-plugin</strong> to compile the source
 and test files and it provides three goals - compiler:compile,
-compiler:testCompile and compiler:help.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=list-plugin-goals>List Plugin Goals</h2><p>We can use help goal to list the plugin goals. To list goals of
+compiler:testCompile and compiler:help.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=list-plugin-goals>List Plugin Goals</h2><p>We can use help goal to list the plugin goals. To list goals of
 maven-compiler-plugin use following command.</p><pre tabindex=0><code class=language-screen data-lang=screen>$ mvn compiler:help
 </code></pre><p>We can also refer Plugin Reference documentation to know more about
 plugin goals and usage. Go to <a href=http://maven.apache.org/plugins/index.html target=_blank>Maven Plugin Directory</a> and select the plugin to visit its documentation page.</p><h2 id=run-plugin-goal>Run Plugin Goal</h2><p>Normally, we use lifecycle phase with <code>mvn</code> command, but it can also
@@ -45,8 +44,7 @@ $ mvn compiler:testCompile
 $ mvn surefire:test
 </code></pre><p>Here we execute goals - compiler:compile and compiler:testCompile to
 compile source files and test cases and once class files are in place we
-can run surefire:test and tests goes through successfully.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>We showed the above example just to demonstrate the difference between
+can run surefire:test and tests goes through successfully.</p><div>&nbsp;</div><div>&nbsp;</div><p>We showed the above example just to demonstrate the difference between
 running lifecycle phase and plugins goal. But, in real-life we never do
 that, instead we invoke lifecycle phase test as <code>mvn test</code>, which
 executes all the dependent goals for us as explained in <a href=/tutorial/apache-maven/lifecycle-phases/>Maven Lifecycle

@@ -93,8 +93,7 @@ separately configured Backend instance of the app where each task
 persists one symbol into App Engine datastore. There is no 60
 seconds timeout for queues and tasks as they run in background.</p></li></ol><p>Rest of the chapter implements this logic to add a menu option to Manage
 Data that works seamlessly, in both App Engine as well as in generic app
-servers.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=111upload-xml-data>11.1. Upload XML Data</h2><p>In this section, we going to add a new content page to Fins which allows
+servers.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=111upload-xml-data>11.1. Upload XML Data</h2><p>In this section, we going to add a new content page to Fins which allows
 the user to upload zip files to the server. On the client side, we
 design a custom widget, <code>UploadPanel</code>, with GWT <code>FileUpload</code> and
 <code>FormPanel</code> widgets. On the server, <code>UploadService</code>, handles the upload
@@ -221,8 +220,7 @@ upload and submit method is set to <strong>POST</strong>. ClickEvent handler is
 attached to the button which on click submits the form. To handle the
 response, <code>SubmitCompleteEvent</code> is attached to the form, and this
 handler, displays the response in the status bar.</p><p>Second form, clearListForm, is to clear the symbol list, and its design
-is similar to the uploadForm.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=uploadservice>UploadService</h5><p><code>UploadService</code> extends <code>HttpServlet</code>. It uses Apache Commons FileUpload
+is similar to the uploadForm.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=uploadservice>UploadService</h5><p><code>UploadService</code> extends <code>HttpServlet</code>. It uses Apache Commons FileUpload
 and IOUtils to handle the upload content. <code>HttpServlet.doPost()</code> method
 handles the upload as follows.</p><ol><li><p>uses Apache Commons <code>ServletFileUpload</code> to get the form fields and
 file contents.</p></li><li><p>if it is file, it uses <code>IOUtils.toByteArray()</code> method to convert the

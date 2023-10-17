@@ -102,8 +102,7 @@ iterates through the LayoutPanels and adds the handler to all MenuItems.</p><p><
 </span></span><span class=line><span class=cl><span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=o>....</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p> </p><p>With this, menu adds tab to ContentPanel.</p><p>This is the traditional way to handle events which directly couples
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p> </p><p>With this, menu adds tab to ContentPanel.</p><p>This is the traditional way to handle events which directly couples
 MenuBar and ContentPanel. <code>EventBus</code> mechanism, introduced in GWT 2.1,
 is an elegant way to decouple events source and handler. Revert back the
 modifications done in this section i.e. remove ClickHandler
@@ -227,8 +226,7 @@ the name of the selected menu from <code>MenuEvent</code> and adds a tab with
 with menu name to <code>EventBus</code>. On click, MenuItem sends a MenuEvent to
 EventBus, and it in turn, dispatches it to any interested handler i.e.
 to ContentPanel and all these without any direct coupling between Menu
-and ContentPanel.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>GWT EventBus coding is slightly complicated as compared to
+and ContentPanel.</p><div>&nbsp;</div><div>&nbsp;</div><p>GWT EventBus coding is slightly complicated as compared to
 event-listener and you may want to switch back to event-listener model.
 But hold that thought, once we get to the next widget benefits of
 EventBus become apparent. Throughout the application, we are going to

@@ -211,8 +211,7 @@ uses <code>GaePersistTask</code>.</p><p><code>in.fins.server.task/PersistTask.ja
 </span></span></code></pre></div><p>Here execute() method obtains symbol name and queue name from parameters
 and then adds a task to App Engine task queue. Later, App Engine
 dequeues the tasks one by one, which persist the symbol.</p><p>It is a two step process, first we have to define a Task and then, add
-them to Queue. Let&rsquo;s see how it is done in detail.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=app-engine-tasks>App Engine Tasks</h5><p>App Engine Task is simply a regular servlet, and <code>GaePersistTask</code>
+them to Queue. Let&rsquo;s see how it is done in detail.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=app-engine-tasks>App Engine Tasks</h5><p>App Engine Task is simply a regular servlet, and <code>GaePersistTask</code>
 extends <code>HttpServlet</code> so that it acts as a App Engine Task. Please note
 that we combined <code>ITask</code> and <code>HttpServlet</code> into a single class,
 <code>GaePersistTask</code>, just reduce a file, but it may be split into separate
@@ -277,8 +276,7 @@ the task is <strong>/fins/gaePersistTask</strong> and symbol name is a request
 parameter and method is POST. Then, task is added to queue. App Engine
 dequeues the tasks one by one by calling the URL
 <strong>/fins/gaePersistTask</strong> which invokes the GaePersistTask and calls it
-doPost() method with symbol name as the request parameter.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=task-instances>Task instances</h5><p>Now, question is how many instances of GaePersistTask gets created when
+doPost() method with symbol name as the request parameter.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=task-instances>Task instances</h5><p>Now, question is how many instances of GaePersistTask gets created when
 we persist say, three symbols and the answer is four instances. First,
 we create an instance of GaePersist task in
 <code>SymbolService.persistSymbols()</code> method and call its execute method

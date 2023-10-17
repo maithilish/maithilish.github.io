@@ -57,8 +57,7 @@ tab to the TabLayoutPanel.</p><p><code>in.fins.client.widget/ContentPanel.java</
 </span></span><span class=line><span class=cl>                <span class=n>tab</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>content</span><span class=o>,</span> <span class=n>closePanel</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>                <span class=n>tab</span><span class=o>.</span><span class=na>selectTab</span><span class=o>(</span><span class=n>tab</span><span class=o>.</span><span class=na>getWidgetCount</span><span class=o>()</span> <span class=o>-</span> <span class=n>1</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p> </p><h5 id=closeevent>CloseEvent</h5><p>We can not create a <code>CloseEvent</code> like we use to create the custom events
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p> </p><h5 id=closeevent>CloseEvent</h5><p>We can not create a <code>CloseEvent</code> like we use to create the custom events
 as it has protected constructor. Hence it is not possible to use
 EventBus mechanism instead, we have to use the traditional way of
 handling the events. <code>ClickHandler</code> is attached to the Close Icon and
@@ -89,8 +88,7 @@ handler which triggers removal of the tab.</p><p><code>in.fins.client.widget/Con
 </span></span><span class=line><span class=cl>                        <span class=n>event</span><span class=o>.</span><span class=na>getTarget</span><span class=o>().</span><span class=na>removeFromParent</span><span class=o>();</span>
 </span></span><span class=line><span class=cl>                <span class=o>}</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>With that, we come the end of GWT client side coding. Example code
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>With that, we come the end of GWT client side coding. Example code
 contains additional menu options and corresponding content pages to add
 and manage watch lists. These options are not covered in the book as
 they are similar in design, and readers may go through them after

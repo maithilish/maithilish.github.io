@@ -30,8 +30,7 @@ configurations from multiple sources such as XML, property file or
 system. But, for simplicity, in extended-multi we just hardcoded a
 config value and retrieve it via getter. In case, you like to use it any
 of your projects, then see our Gotz Project <a href=https://github.com/maithilish/gotz/blob/master/src/main/java/org/codetab/gotz/shared/ConfigService.java target=_blank>ConfigService class</a>
-for complete example.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=example>Example</h2><p>Let&rsquo;s go through the structure of <code>extended-multi</code> project. The top
+for complete example.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=example>Example</h2><p>Let&rsquo;s go through the structure of <code>extended-multi</code> project. The top
 level directory contains parent POM and two module directories - app and
 shared.</p><p>The parent POM specifies maven coordinates and packaging type as pom.
 The <code>modules/module</code> element adds app and shared modules.</p><p><code>extended-multi/pom.xml</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl>....
@@ -84,8 +83,7 @@ uses commons configurations as dependency.</p><p><code>shared/config/pom.xml</co
 </span></span><span class=line><span class=cl><span class=nt>&lt;/dependencies&gt;</span>
 </span></span><span class=line><span class=cl>....
 </span></span></code></pre></div><p>Similarly, the <code>shared/util/pom.xml</code> specifies that shared module is its
-parent.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h2 id=build>Build</h2><p>To build maven multi module project, we have to run maven commands from
+parent.</p><div>&nbsp;</div><div>&nbsp;</div><h2 id=build>Build</h2><p>To build maven multi module project, we have to run maven commands from
 the top level folder of the project. Maven processes top level POM and
 the module POMs and after all POMs are processed, the reactor properly
 sequences the modules and then builds each module.</p><p>When <code>mvn test</code> command is run, Maven first runs test phase for

@@ -65,8 +65,7 @@ widgets are added by implementing the HasWidget interface.</p><p>Following Ui de
 </span></span><span class=line><span class=cl>        <span class=nt>&lt;/g:row&gt;</span>
 </span></span></code></pre></div><p>This UI declaration adds FDP to Snapshot and a ChartPanel to FDP and
 ChartPanel uses attributes width, rangeSelector etc to customize the
-chart.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=haswidgets>HasWidgets</h5><p>To enable custom widget to hold other widgets, we have to implement
+chart.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=haswidgets>HasWidgets</h5><p>To enable custom widget to hold other widgets, we have to implement
 <code>HasWidget</code> interface, and FDP has to hold ChartPanel and for this it
 implements <code>HasWidget</code>. This interface enables the widget to add or
 remove child widgets and to enumerate the widgets it contains. It
@@ -101,8 +100,7 @@ from DataGroup we can get <code>List&lt;Data></code> and each Data contains
 List&lt;Fact> which has Price Fact.</p><p><code>DataGroupAction</code> fetches <code>DataGroup</code> of a category and fires
 <code>DataGroupEvent</code>. Like SymbolAction, which was covered earlier,
 DataGroupAction is a mediator between two widgets and is responsible to
-fetch DataGroup from datastore.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=flow-of-events>Flow of events</h5><p>Flow of event is as shown in next figure.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/fdp-events.png alt="Flow of Events"></figure><h6 id=figure67flow-of-events>Figure 6.7. Flow of Events</h6><p>Event flow happens in two stages. Initially, when user selects a name,
+fetch DataGroup from datastore.</p><div>&nbsp;</div><div>&nbsp;</div><h5 id=flow-of-events>Flow of events</h5><p>Flow of event is as shown in next figure.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/gwt/media/fdp-events.png alt="Flow of Events"></figure><h6 id=figure67flow-of-events>Figure 6.7. Flow of Events</h6><p>Event flow happens in two stages. Initially, when user selects a name,
 <code>SymbolAction</code> fires a <code>SymbolEvent</code> which is handled by
 <code>DataGroupAction</code> and assigns this symbol to a field for later use. This
 event is common for the entire Snapshot page, and consumed by other

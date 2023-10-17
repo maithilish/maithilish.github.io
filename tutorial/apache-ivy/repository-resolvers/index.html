@@ -34,8 +34,7 @@ Resolvers</strong></p><table><thead><tr><th>Name</th><th>Type</th><th>Descriptio
 </span></span><span class=line><span class=cl><span class=nt>&lt;/ivysettings&gt;</span>
 </span></span></code></pre></div><p>The resolver named url-example will look for ivy.xml using &lt;ivy>
 element and artifacts using &lt;artifact>. In the both elements, location
-and layout of the repository are defined in pattern attribute.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Apache Ivy Resolvers Examples</p><p>Resolver is one the important concepts in Apache Ivy and understanding
+and layout of the repository are defined in pattern attribute.</p><div>&nbsp;</div><div>&nbsp;</div><p>Apache Ivy Resolvers Examples</p><p>Resolver is one the important concepts in Apache Ivy and understanding
 it thoroughly is quite essential. Examples listed below will help to
 reinforce the concept.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-XML data-lang=XML><span class=line><span class=cl><span class=nt>&lt;resolvers&gt;</span>
 </span></span><span class=line><span class=cl>      <span class=nt>&lt;ibiblio</span> <span class=na>name=</span><span class=s>&#34;xyz&#34;</span> <span class=na>m2compatible=</span><span class=s>&#34;true&#34;</span> <span class=nt>/&gt;</span>
@@ -83,8 +82,7 @@ defines the repository layout.</p><div class=highlight><pre tabindex=0 class=chr
 </span></span></code></pre></div><p>defines a Chain resolver. Chain is a composite resolver which delegates
 to a chain of sub resolvers. Here Ivy first tries to resolve through the
 local filesystem resolver and on failure, it will try maven2 public
-repository.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Apache Ivy Default Resolvers</p><p>In the absence of user defined resolvers, Ivy uses default resolvers
+repository.</p><div>&nbsp;</div><div>&nbsp;</div><p>Apache Ivy Default Resolvers</p><p>In the absence of user defined resolvers, Ivy uses default resolvers
 which comes bundled with it.</p><p><strong>Table 5.4. Default
 Resolvers</strong></p><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>local</td><td>standard</td><td>Filesystem resolver points to $HOME/.ivy2/local</td></tr><tr><td>shared</td><td>standard</td><td>Filesystem resolver points to $HOME/.ivy2/shared</td></tr><tr><td>public</td><td>standard</td><td>Ibiblio resolver points <a href=https://repo1.maven.org/maven2>https://repo1.maven.org/maven2</a></td></tr><tr><td>main</td><td>composite</td><td>Chain and Dual resolver to shared and public</td></tr><tr><td>default</td><td>composite</td><td>Chain resolver to local and main</td></tr></tbody></table><p>Hierarchical relationship of default resolvers is as follows</p><ul><li><p>default</p><ul><li><p>local</p></li><li><p>main</p><ul><li><p>shared</p></li><li><p>public</p></li></ul></li></ul></li></ul><p>Ivy by default uses resolver named default which first tries the local
 and on failure looks for shared and finally public. We can check this by

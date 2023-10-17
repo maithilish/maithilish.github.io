@@ -90,8 +90,7 @@ are loaded, WordPress calls our function load_sos_admin().</p></li><li><p>in <co
 <code>Sos_Admin</code> and call its <code>setup()</code> method.</p></li><li><p>when is_admin is false, we include class-frontend.php and load its
 class.</p></li></ul><p>It is important to note that <code>load_sos_admin()</code> and
 <code>load_sos_frontend()</code> are not called immediately by add_action() in
-<code>setup_sos_plugin()</code>, but their execution is deferred.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Just for the sake of explanation, we split this into two phases. When we
+<code>setup_sos_plugin()</code>, but their execution is deferred.</p><div>&nbsp;</div><div>&nbsp;</div><p>Just for the sake of explanation, we split this into two phases. When we
 access the site, as part of phase one, WordPress processes all activated
 plugins. When <code>share-on-social.php</code> is processed its
 <code>setup_sos_plugin()</code> function is called. In this function, WordPress

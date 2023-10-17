@@ -45,8 +45,7 @@ exists.</p><p>Let&rsquo;s run test and see how it progresses.</p><pre tabindex=0
 $ phpunit
 </code></pre><p>PHPUnit is called from the top directory of the plugin where it reads
 the phpunit.xml and executes test files defined by it.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-sos-ut-first-run.png alt="WordPress Test Setup - PHPUnit run tests"></figure><p>If all is well, then you should get see OK at the end of result with
-counts of tests and assertions.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=troubleshoot-the-setup>Troubleshoot the Setup</h3><p>But, many things tends to go wrong when we first execute the tests. Some
+counts of tests and assertions.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=troubleshoot-the-setup>Troubleshoot the Setup</h3><p>But, many things tends to go wrong when we first execute the tests. Some
 of the typical errors and how to troubleshoot them are explained here.</p><p>Database Connection Error</p><p>When Test Lib is unable to connect to test database, it displays error
 message in HTML format. Resolve database connection error by going
 through following steps.</p><ul><li><p>check whether you are able to connect to wptest database through
@@ -96,8 +95,7 @@ explained in <a href=/tutorial/wordpress-plugin-development/unit-test/plugin-uni
 dependency error which happened when /opt/lampp/bin was in users $PATH.
 However, subsequently the problem has not repeated. We have never faced
 this problem when we use stock PHP that comes with Linux and
-phpunit.phar installed as explained in the previous blog.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=wordpress-options-and-tests>WordPress Options and Tests</h3><p>In the previous blog, we used following code in
+phpunit.phar installed as explained in the previous blog.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=wordpress-options-and-tests>WordPress Options and Tests</h3><p>In the previous blog, we used following code in
 <code>tests/phpunit/bootstrap.php</code> to activate and load the plugin.</p><p><code>wp-simple-plugin/tests/phpunit/bootstrap.php</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=nv>$GLOBALS</span><span class=p>[</span> <span class=s1>&#39;wp_tests_options&#39;</span> <span class=p>]</span> <span class=o>=</span> <span class=k>array</span><span class=p>(</span>
 </span></span><span class=line><span class=cl>        <span class=s1>&#39;active_plugins&#39;</span> <span class=o>=&gt;</span> <span class=k>array</span><span class=p>(</span>
 </span></span><span class=line><span class=cl>                <span class=s1>&#39;wp-simple-plugin/wp-simple-plugin.php&#39;</span>

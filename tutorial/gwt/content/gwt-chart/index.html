@@ -48,8 +48,7 @@ following line.</p><p><code>in.fins/fins.gwt.xml</code></p><div class=highlight>
 </span></span></code></pre></div><p>In the half finished <code>ChartPanel</code>, we used <code>DataGroupAction</code> to fetch
 data for a category for all dates available in datastore. For example,
 to draw Price chart we fetch <code>DataGroup</code> for Quote category that
-contains Price facts for all dates.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p> </p><p>Once <code>DataGroupAction</code> fetches <code>DataGroup</code>, it fires <code>DataGroupEvent</code>
+contains Price facts for all dates.</p><div>&nbsp;</div><div>&nbsp;</div><p> </p><p>Once <code>DataGroupAction</code> fetches <code>DataGroup</code>, it fires <code>DataGroupEvent</code>
 which is handled by <code>onDataGroupChange()</code> method, but it is not possible
 to draw the chart in this method Reason being, to load the Google Chart
 Tools API module, we have to invoke the Google Ajax Loader with a
@@ -121,8 +120,7 @@ Gallery</a>.
 Method <code>createTable()</code> returns <code>DataTable</code> of two columns, one for date
 and another for the number. This method, traverses <code>List&lt;Data></code> and sets
 the date from each Data to the first column and gets matching fact from
-List&lt;Fact> and sets its value to the second column.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>Let&rsquo;s understand how Ajax Loader executes the callback method
+List&lt;Fact> and sets its value to the second column.</p><div>&nbsp;</div><div>&nbsp;</div><p>Let&rsquo;s understand how Ajax Loader executes the callback method
 <code>onLoadCallback()</code>.</p><p><code>in.fins.client.widget/ChartPanel.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl>        <span class=nd>@Override</span>
 </span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onDataGroupChange</span><span class=o>(</span><span class=n>DataGroupEvent</span> <span class=n>dataGroupEvent</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>                <span class=n>log</span><span class=o>.</span><span class=na>fine</span><span class=o>(</span><span class=s>&#34;dataGroupEvent received. Load charts &#34;</span><span class=o>);</span>

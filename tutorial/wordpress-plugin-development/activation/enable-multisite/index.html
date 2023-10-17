@@ -50,8 +50,7 @@ mysql&gt; create database wordpress_ms;
 mysql&gt; GRANT ALL PRIVILEGES ON wordpress_ms.* TO wp@localhost IDENTIFIED BY &#39;wp&#39;;
 mysql&gt; flush privileges;
 mysql&gt; exit
-</code></pre></li></ul><p>To install multiple instances the installation process require some minor changes. Before proceeding with the usual WordPress installation, go through the next section which explain how to add default site when you use multiple instances of WordPress.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=add-default-site>Add Default Site</h3><p>With everything in place, open browser and access <code>http://localhost</code> to
+</code></pre></li></ul><p>To install multiple instances the installation process require some minor changes. Before proceeding with the usual WordPress installation, go through the next section which explain how to add default site when you use multiple instances of WordPress.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=add-default-site>Add Default Site</h3><p>With everything in place, open browser and access <code>http://localhost</code> to
 bring up the WordPress Installation screen.</p><p>In the Installation Screen, give site name as WP 1. It becomes the first
 site (default site) under the WordPress Multisite, so we name it as WP</p><ol><li>But, you are free to choose any other name. Complete the installation
 process after entering other fields.</li></ol><p>Now, we can use URL <code>http://localhost/wordpress-ms/wp-admin/</code> to login to
@@ -76,8 +75,7 @@ define(&#39;WP_ALLOW_MULTISITE&#39;,true);
 
 /* That&#39;s all, stop editing! Happy blogging. */
    ....
-</code></pre><p>This config will add a new sub menu <strong>Network Setup</strong> to <strong>Tools</strong> menu.</p><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h3 id=setup-network>Setup Network</h3><p>Next step is to setup a network of WordPress sites.</p><p>To do that, do a fresh login as admin and in admin menu select <strong>Tools</strong>
+</code></pre><p>This config will add a new sub menu <strong>Network Setup</strong> to <strong>Tools</strong> menu.</p><div>&nbsp;</div><div>&nbsp;</div><h3 id=setup-network>Setup Network</h3><p>Next step is to setup a network of WordPress sites.</p><p>To do that, do a fresh login as admin and in admin menu select <strong>Tools</strong>
 → <strong>Network Setup</strong> to open the <strong>Create a Network of WordPress Sites</strong>
 page.</p><figure class=text-center><img class="lazy img-fluid" data-src=/tutorial/wordpress-plugin-development/media/wp-pd-ms-network-setup.png alt="Enable WordPress Multisite"></figure><p>In Network Title field, enter the network title as WP Multi Sites and
 click <strong>Create Network</strong> to create the network.</p><p><strong>Network Types</strong></p><p>WordPress supports two types of network installation - <strong>Sub-directory

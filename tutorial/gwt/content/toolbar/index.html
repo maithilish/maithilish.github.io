@@ -87,8 +87,7 @@ Style <em>fins-Toolbar-Image</em> adds margin to the sides of the image</p><p><c
 </span></span><span class=line><span class=cl>                        <span class=o>....</span>
 </span></span><span class=line><span class=cl>                <span class=o>}</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><h5 id=dataaction-and-dataevent>DataAction and DataEvent</h5><p>On load, FactTable handles <code>SymbolEvent</code> fired by <code>SymbolAction</code> and
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><h5 id=dataaction-and-dataevent>DataAction and DataEvent</h5><p>On load, FactTable handles <code>SymbolEvent</code> fired by <code>SymbolAction</code> and
 displays data for the latest period. <code>SymbolEvent.Symbol</code> holds data for
 the latest date only as eagerly loading data for all periods is a waste
 and hence it is of little use for data of other periods. Instead, an
@@ -146,8 +145,7 @@ and fires a <code>DataEvent</code>.</p><p><code>in.fins.client.action/DataAction
 </span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onSymbolChange</span><span class=o>(</span><span class=n>SymbolEvent</span> <span class=n>symbolEvent</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>                <span class=k>this</span><span class=o>.</span><span class=na>symbol</span> <span class=o>=</span> <span class=n>symbolEvent</span><span class=o>.</span><span class=na>getSymbol</span><span class=o>();</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span></code></pre></div><div>&nbsp;</div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1281079745125126 data-ad-slot=6135368983></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div>&nbsp;</div><p>All that is left is to handle the DataEvent by FactTable.</p><p><code>in.fins.client.widget/FactTable.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl>        <span class=nd>@Override</span>
+</span></span></code></pre></div><div>&nbsp;</div><div>&nbsp;</div><p>All that is left is to handle the DataEvent by FactTable.</p><p><code>in.fins.client.widget/FactTable.java</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Java data-lang=Java><span class=line><span class=cl>        <span class=nd>@Override</span>
 </span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kt>void</span> <span class=nf>add</span><span class=o>(</span><span class=n>Widget</span> <span class=n>w</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>w</span> <span class=k>instanceof</span> <span class=n>FactTable</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>                        <span class=n>vPanel</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>w</span><span class=o>);</span>
